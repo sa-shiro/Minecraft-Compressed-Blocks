@@ -1,0 +1,9 @@
+{
+  "block.compressedblocks.double_compressed_stone": "Double Compressed Stone",
+  "block.compressedblocks.double_compressed_granite": "Double Compressed Granite",
+  "block.compressedblocks.double_compressed_diorite": "Double Compressed Diorite",
+
+  "item.testing.itemone": "Item One",
+
+  "itemGroup.double_compressed_blocks": "Double Compressed Blocks"
+}
