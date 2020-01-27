@@ -1,9 +1,14 @@
 {
+  "block.compressedblocks.compressed_stone": "Compressed Stone",
   "block.compressedblocks.double_compressed_stone": "Double Compressed Stone",
-  "block.compressedblocks.double_compressed_granite": "Double Compressed Granite",
-  "block.compressedblocks.double_compressed_diorite": "Double Compressed Diorite",
-
+  "block.compressedblocks.triple_compressed_stone": "Triple Compressed Stone",
+  "block.compressedblocks.quadruple_compressed_stone": "Quadruple Compressed Stone",
+  "block.compressedblocks.quintuple_compressed_stone": "Quintuple Compressed Stone",
+  "block.compressedblocks.sextuple_compressed_stone": "Sextuple Compressed Stone",
+  "block.compressedblocks.septuple_compressed_stone": "Septuple Compressed Stone",
+  "block.compressedblocks.octuple_compressed_stone": "Octuple Compressed Stone",
+  "block.compressedblocks.compressed_granite": "Compressed Granite",
+  "block.compressedblocks.compressed_diorite": "Compressed Diorite",
   "item.testing.itemone": "Item One",
-
-  "itemGroup.double_compressed_blocks": "Double Compressed Blocks"
+  "itemGroup.compressed_blocks": "Compressed Blocks"
 }

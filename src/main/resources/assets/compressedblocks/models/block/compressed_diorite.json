@@ -1,9 +1,9 @@
 {
   "parent": "block/block",
   "textures": {
-    "particle": "compressedblocks:block/double_compressed_granite",
-    "sides": "minecraft:block/granite",
-    "overlay": "compressedblocks:block/double_compressed_granite"
+    "particle": "compressedblocks:block/compressed_stone",
+    "sides": "minecraft:block/diorite",
+    "overlay": "compressedblocks:block/compressed_stone"
   },
   "elements": [
     {

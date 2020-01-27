@@ -15,9 +15,9 @@
 {
   "parent": "block/block",
   "textures": {
-    "particle": "compressedblocks:block/double_compressed_stone",
+    "particle": "compressedblocks:block/compressed_stone",
     "sides": "minecraft:block/stone",
-    "overlay": "compressedblocks:block/double_compressed_stone"
+    "overlay": "compressedblocks:block/compressed_stone"
   },
   "elements": [
     {
