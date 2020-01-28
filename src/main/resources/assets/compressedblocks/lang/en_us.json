@@ -7,8 +7,14 @@
   "block.compressedblocks.sextuple_compressed_stone": "Sextuple Compressed Stone",
   "block.compressedblocks.septuple_compressed_stone": "Septuple Compressed Stone",
   "block.compressedblocks.octuple_compressed_stone": "Octuple Compressed Stone",
+  "block.compressedblocks.mega_compressed_stone": "Mega Compressed Stone",
+  "block.compressedblocks.giga_compressed_stone": "Giga Compressed Stone",
+
+
   "block.compressedblocks.compressed_granite": "Compressed Granite",
   "block.compressedblocks.compressed_diorite": "Compressed Diorite",
+
+
   "item.testing.itemone": "Item One",
   "itemGroup.compressed_blocks": "Compressed Blocks"
 }

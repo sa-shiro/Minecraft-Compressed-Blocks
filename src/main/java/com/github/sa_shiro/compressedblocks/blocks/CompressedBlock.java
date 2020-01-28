@@ -24,9 +24,9 @@ public class CompressedBlock extends Block {
      * @param sound        Minecraft SoundType
      * @param compression  Compression Level ( 0 - 9 )
      * @param registryName Block registry name
-     * @param hardness     Block hardness
-     * @param resistance   Block resistance
-     * @param harvestLevel Block harvest level
+     * @param hardness     Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
+     * @param resistance   Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
+     * @param harvestLevel Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
      */
     public CompressedBlock(Material material, SoundType sound, int compression, String registryName, float hardness, float resistance, int harvestLevel) {
         super(Properties.create(material)
@@ -35,6 +35,7 @@ public class CompressedBlock extends Block {
                 .harvestLevel(harvestLevel)
                 .variableOpacity()
         );
+        float res = resistance;
         switch (compression) {
             case 0:
                 this.blockCount = "9";
@@ -78,12 +79,12 @@ public class CompressedBlock extends Block {
                 break;
             case 8:
                 this.blockCount = "387.420.489";
-                this.color = TextFormatting.DARK_RED;
+                this.color = TextFormatting.RED;
                 this.registryName = "mega_compressed_";
                 break;
             case 9:
                 this.blockCount = "3.486.784.101";
-                this.color = TextFormatting.BLACK;
+                this.color = TextFormatting.DARK_RED;
                 this.registryName = "giga_compressed_";
                 break;
             default:

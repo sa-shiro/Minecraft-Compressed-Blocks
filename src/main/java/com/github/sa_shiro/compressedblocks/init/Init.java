@@ -8,7 +8,7 @@ public class Init {
     public static ItemGroup compressedGroup = new ItemGroup("compressed_blocks") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(CompressedBlocksInit.COMPRESSED_STONE);
+            return new ItemStack(CompressedBlocksInit.Single.COMPRESSED_STONE);
         }
 
         @Override

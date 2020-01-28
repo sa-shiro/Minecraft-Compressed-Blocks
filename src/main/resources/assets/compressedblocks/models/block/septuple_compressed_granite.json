@@ -1,23 +1,9 @@
 {
-  "parent": "block/cube_all",
-  "textures": {
-    "particle": "testing:block/energycube",
-    "all": "testing:block/energycube",
-    "up": "...",
-    "down": "...",
-    "west": "...",
-    "east": "...",
-    "north": "...",
-    "south": "..."
-  }
-}
-
-{
   "parent": "block/block",
   "textures": {
-    "particle": "compressedblocks:block/compressed_stone",
-    "sides": "minecraft:block/stone",
-    "overlay": "compressedblocks:block/compressed_stone"
+    "particle": "compressedblocks:block/septuple_compressed_granite",
+    "sides": "minecraft:block/granite",
+    "overlay": "compressedblocks:block/septuple_compressed_granite"
   },
   "elements": [
     {

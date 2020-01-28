@@ -1,9 +1,9 @@
 {
   "parent": "block/block",
   "textures": {
-    "particle": "compressedblocks:block/quadruple_compressed_stone",
-    "sides": "minecraft:block/stone",
-    "overlay": "compressedblocks:block/quadruple_compressed_stone"
+    "particle": "compressedblocks:block/octuple_compressed_granite",
+    "sides": "minecraft:block/granite",
+    "overlay": "compressedblocks:block/octuple_compressed_granite"
   },
   "elements": [
     {

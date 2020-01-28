@@ -1,7 +1,6 @@
 package com.github.sa_shiro.compressedblocks;
 
 import com.github.sa_shiro.compressedblocks.init.Init;
-import net.minecraft.block.BlockRenderType;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -12,10 +11,9 @@ import org.apache.logging.log4j.Logger;
 
 @Mod("compressedblocks")
 public class CompressedBlocks {
-    private static final Logger logger = LogManager.getLogger();
-
     public static final Init INIT = new Init();
     public static final String MOD_ID = "compressedblocks";
+    private static final Logger logger = LogManager.getLogger();
 
     public CompressedBlocks() {
         // Register the setup method for modloading
