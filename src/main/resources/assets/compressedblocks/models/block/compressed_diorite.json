@@ -1,7 +1,7 @@
 {
   "parent": "block/block",
   "textures": {
-    "particle": "compressedblocks:block/compressed_stone",
+    "particle": "minecraft:block/diorite",
     "sides": "minecraft:block/diorite",
     "overlay": "compressedblocks:block/compressed_stone"
   },

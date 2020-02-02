@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:mega_compressed_dirt"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:giga_compressed_dirt"
+  }
+}

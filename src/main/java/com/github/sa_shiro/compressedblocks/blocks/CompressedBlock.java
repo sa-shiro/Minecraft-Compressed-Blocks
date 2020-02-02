@@ -35,7 +35,6 @@ public class CompressedBlock extends Block {
                 .harvestLevel(harvestLevel)
                 .variableOpacity()
         );
-        float res = resistance;
         switch (compression) {
             case 0:
                 this.blockCount = "9";

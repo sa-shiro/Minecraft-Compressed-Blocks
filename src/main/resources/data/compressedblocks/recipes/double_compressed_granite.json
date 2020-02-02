@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:double_compressed_granite"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:compressed_granite",
+    "count": 9
+  }
+}
