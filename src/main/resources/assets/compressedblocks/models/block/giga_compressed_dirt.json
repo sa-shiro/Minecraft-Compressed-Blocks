@@ -3,7 +3,7 @@
   "textures": {
     "particle": "minecraft:block/dirt",
     "sides": "minecraft:block/dirt",
-    "overlay": "compressedblocks:block/mega_compressed_stone"
+    "overlay": "compressedblocks:block/giga_compressed_stone"
   },
   "elements": [
     {

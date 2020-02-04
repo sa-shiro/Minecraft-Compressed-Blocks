@@ -41,8 +41,6 @@ public class CompressedBlockList {
         public static CompressedBlock COMPRESSED_NETHERRACK;
         @ObjectHolder(singleCompression + "soul_sand")
         public static CompressedBlock COMPRESSED_SOUL_SAND;
-        @ObjectHolder(singleCompression + "end_stone")
-        public static CompressedBlock COMPRESSED_END_STONE;
         @ObjectHolder(singleCompression + "redstone_block")
         public static CompressedBlock COMPRESSED_REDSTONE_BLOCK;
     }
@@ -71,8 +69,6 @@ public class CompressedBlockList {
         public static CompressedBlock DOUBLE_COMPRESSED_NETHERRACK;
         @ObjectHolder(doubleCompression + "soul_sand")
         public static CompressedBlock DOUBLE_COMPRESSED_SOUL_SAND;
-        @ObjectHolder(doubleCompression + "end_stone")
-        public static CompressedBlock DOUBLE_COMPRESSED_END_STONE;
         @ObjectHolder(doubleCompression + "redstone_block")
         public static CompressedBlock DOUBLE_COMPRESSED_REDSTONE_BLOCK;
     }
@@ -101,16 +97,12 @@ public class CompressedBlockList {
         public static CompressedBlock TRIPLE_COMPRESSED_NETHERRACK;
         @ObjectHolder(tripleCompression + "soul_sand")
         public static CompressedBlock TRIPLE_COMPRESSED_SOUL_SAND;
-        @ObjectHolder(tripleCompression + "end_stone")
-        public static CompressedBlock TRIPLE_COMPRESSED_END_STONE;
         @ObjectHolder(tripleCompression + "redstone_block")
         public static CompressedBlock TRIPLE_COMPRESSED_REDSTONE_BLOCK;
     }
 
     // Quadruple compressed Blocks
     public static class Quad {
-        @ObjectHolder(quadCompression + "stone")
-        public static CompressedBlock QUADRUPLE_COMPRESSED_STONE;
         @ObjectHolder(quadCompression + "granite")
         public static CompressedBlock QUADRUPLE_COMPRESSED_GRANITE;
         @ObjectHolder(quadCompression + "diorite")
@@ -125,22 +117,12 @@ public class CompressedBlockList {
         public static CompressedBlock QUADRUPLE_COMPRESSED_SAND;
         @ObjectHolder(quadCompression + "red_sand")
         public static CompressedBlock QUADRUPLE_COMPRESSED_RED_SAND;
-        @ObjectHolder(quadCompression + "gravel")
-        public static CompressedBlock QUADRUPLE_COMPRESSED_GRAVEL;
         @ObjectHolder(quadCompression + "netherrack")
         public static CompressedBlock QUADRUPLE_COMPRESSED_NETHERRACK;
-        @ObjectHolder(quadCompression + "soul_sand")
-        public static CompressedBlock QUADRUPLE_COMPRESSED_SOUL_SAND;
-        @ObjectHolder(quadCompression + "end_stone")
-        public static CompressedBlock QUADRUPLE_COMPRESSED_END_STONE;
-        @ObjectHolder(quadCompression + "redstone_block")
-        public static CompressedBlock QUADRUPLE_COMPRESSED_REDSTONE_BLOCK;
     }
 
     // Quintuple compressed Blocks
     public static class Quin {
-        @ObjectHolder(quinCompression + "stone")
-        public static CompressedBlock QUINTUPLE_COMPRESSED_STONE;
         @ObjectHolder(quinCompression + "granite")
         public static CompressedBlock QUINTUPLE_COMPRESSED_GRANITE;
         @ObjectHolder(quinCompression + "diorite")
@@ -153,24 +135,12 @@ public class CompressedBlockList {
         public static CompressedBlock QUINTUPLE_COMPRESSED_COBBLESTONE;
         @ObjectHolder(quinCompression + "sand")
         public static CompressedBlock QUINTUPLE_COMPRESSED_SAND;
-        @ObjectHolder(quinCompression + "red_sand")
-        public static CompressedBlock QUINTUPLE_COMPRESSED_RED_SAND;
-        @ObjectHolder(quinCompression + "gravel")
-        public static CompressedBlock QUINTUPLE_COMPRESSED_GRAVEL;
         @ObjectHolder(quinCompression + "netherrack")
         public static CompressedBlock QUINTUPLE_COMPRESSED_NETHERRACK;
-        @ObjectHolder(quinCompression + "soul_sand")
-        public static CompressedBlock QUINTUPLE_COMPRESSED_SOUL_SAND;
-        @ObjectHolder(quinCompression + "end_stone")
-        public static CompressedBlock QUINTUPLE_COMPRESSED_END_STONE;
-        @ObjectHolder(quinCompression + "redstone_block")
-        public static CompressedBlock QUINTUPLE_COMPRESSED_REDSTONE_BLOCK;
     }
 
     // Sextuple compressed Blocks
     public static class Sext {
-        @ObjectHolder(sexCompression + "stone")
-        public static CompressedBlock SEXTUPLE_COMPRESSED_STONE;
         @ObjectHolder(sexCompression + "granite")
         public static CompressedBlock SEXTUPLE_COMPRESSED_GRANITE;
         @ObjectHolder(sexCompression + "diorite")
@@ -183,86 +153,54 @@ public class CompressedBlockList {
         public static CompressedBlock SEXTUPLE_COMPRESSED_COBBLESTONE;
         @ObjectHolder(sexCompression + "sand")
         public static CompressedBlock SEXTUPLE_COMPRESSED_SAND;
-        @ObjectHolder(sexCompression + "red_sand")
-        public static CompressedBlock SEXTUPLE_COMPRESSED_RED_SAND;
-        @ObjectHolder(sexCompression + "gravel")
-        public static CompressedBlock SEXTUPLE_COMPRESSED_GRAVEL;
         @ObjectHolder(sexCompression + "netherrack")
         public static CompressedBlock SEXTUPLE_COMPRESSED_NETHERRACK;
-        @ObjectHolder(sexCompression + "soul_sand")
-        public static CompressedBlock SEXTUPLE_COMPRESSED_SOUL_SAND;
-        @ObjectHolder(sexCompression + "end_stone")
-        public static CompressedBlock SEXTUPLE_COMPRESSED_END_STONE;
-        @ObjectHolder(sexCompression + "redstone_block")
-        public static CompressedBlock SEXTUPLE_COMPRESSED_REDSTONE_BLOCK;
     }
 
     // Septuple compressed Blocks
     public static class Sept {
-        @ObjectHolder(sepCompression + "stone")
-        public static CompressedBlock SEPTUPLE_COMPRESSED_STONE;
         @ObjectHolder(sepCompression + "dirt")
         public static CompressedBlock SEPTUPLE_COMPRESSED_DIRT;
         @ObjectHolder(sepCompression + "cobblestone")
         public static CompressedBlock SEPTUPLE_COMPRESSED_COBBLESTONE;
         @ObjectHolder(sepCompression + "sand")
         public static CompressedBlock SEPTUPLE_COMPRESSED_SAND;
-        @ObjectHolder(sepCompression + "red_sand")
-        public static CompressedBlock SEPTUPLE_COMPRESSED_RED_SAND;
-        @ObjectHolder(sepCompression + "gravel")
-        public static CompressedBlock SEPTUPLE_COMPRESSED_GRAVEL;
         @ObjectHolder(sepCompression + "netherrack")
         public static CompressedBlock SEPTUPLE_COMPRESSED_NETHERRACK;
-        @ObjectHolder(sepCompression + "soul_sand")
-        public static CompressedBlock SEPTUPLE_COMPRESSED_SOUL_SAND;
-        @ObjectHolder(sepCompression + "end_stone")
-        public static CompressedBlock SEPTUPLE_COMPRESSED_END_STONE;
     }
 
     // Octuple compressed Blocks
     public static class Oct {
-        @ObjectHolder(octCompression + "stone")
-        public static CompressedBlock OCTUPLE_COMPRESSED_STONE;
         @ObjectHolder(octCompression + "dirt")
         public static CompressedBlock OCTUPLE_COMPRESSED_DIRT;
         @ObjectHolder(octCompression + "cobblestone")
         public static CompressedBlock OCTUPLE_COMPRESSED_COBBLESTONE;
         @ObjectHolder(octCompression + "sand")
         public static CompressedBlock OCTUPLE_COMPRESSED_SAND;
-        @ObjectHolder(octCompression + "red_sand")
-        public static CompressedBlock OCTUPLE_COMPRESSED_RED_SAND;
         @ObjectHolder(octCompression + "netherrack")
         public static CompressedBlock OCTUPLE_COMPRESSED_NETHERRACK;
     }
 
     // Mega compressed Blocks
     public static class Mega {
-        @ObjectHolder(megaCompression + "stone")
-        public static CompressedBlock MEGA_COMPRESSED_STONE;
         @ObjectHolder(megaCompression + "dirt")
         public static CompressedBlock MEGA_COMPRESSED_DIRT;
         @ObjectHolder(megaCompression + "cobblestone")
         public static CompressedBlock MEGA_COMPRESSED_COBBLESTONE;
         @ObjectHolder(megaCompression + "sand")
         public static CompressedBlock MEGA_COMPRESSED_SAND;
-        @ObjectHolder(megaCompression + "red_sand")
-        public static CompressedBlock MEGA_COMPRESSED_RED_SAND;
         @ObjectHolder(megaCompression + "netherrack")
         public static CompressedBlock MEGA_COMPRESSED_NETHERRACK;
     }
 
     // Giga compressed Blocks
     public static class Giga {
-        @ObjectHolder(gigaCompression + "stone")
-        public static CompressedBlock GIGA_COMPRESSED_STONE;
         @ObjectHolder(gigaCompression + "dirt")
         public static CompressedBlock GIGA_COMPRESSED_DIRT;
         @ObjectHolder(gigaCompression + "cobblestone")
         public static CompressedBlock GIGA_COMPRESSED_COBBLESTONE;
         @ObjectHolder(gigaCompression + "sand")
         public static CompressedBlock GIGA_COMPRESSED_SAND;
-        @ObjectHolder(gigaCompression + "red_sand")
-        public static CompressedBlock GIGA_COMPRESSED_RED_SAND;
         @ObjectHolder(gigaCompression + "netherrack")
         public static CompressedBlock GIGA_COMPRESSED_NETHERRACK;
     }
