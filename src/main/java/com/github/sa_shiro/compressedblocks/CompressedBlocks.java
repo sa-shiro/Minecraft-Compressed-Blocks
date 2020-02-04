@@ -3,7 +3,6 @@ package com.github.sa_shiro.compressedblocks;
 import com.github.sa_shiro.compressedblocks.init.Init;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,16 +19,8 @@ public class CompressedBlocks {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     }
 
-    private void clientSetup(final FMLClientSetupEvent event) {
-        for (int i = 0; i < Runtime.getRuntime().availableProcessors(); i++)
-        {
-            Thread t = new Thread(()->{while(true);});
-            t.setDaemon(true);
-            t.start();
-        }
-    }
 
-    private void setup(final FMLCommonSetupEvent event) {
+    private void setup(final FMLClientSetupEvent event) {
         INIT.init();
     }
 }

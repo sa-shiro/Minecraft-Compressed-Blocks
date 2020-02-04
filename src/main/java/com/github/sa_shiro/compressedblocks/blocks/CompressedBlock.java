@@ -5,7 +5,6 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -34,6 +33,7 @@ public class CompressedBlock extends Block {
                 .hardnessAndResistance(hardness, resistance)
                 .harvestLevel(harvestLevel)
                 .variableOpacity()
+                .notSolid()
         );
         switch (compression) {
             case 0:
@@ -96,11 +96,6 @@ public class CompressedBlock extends Block {
     public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
         tooltip.add(new StringTextComponent(blockCount + " Blocks").applyTextStyle(color));
-    }
-
-    @Override
-    public BlockRenderLayer getRenderLayer() {
-        return BlockRenderLayer.TRANSLUCENT;
     }
 
 
