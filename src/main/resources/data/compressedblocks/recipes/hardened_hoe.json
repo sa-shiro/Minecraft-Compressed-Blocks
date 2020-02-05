@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "BB ",
+    "CB ",
     " A ",
     " A "
   ],
@@ -11,6 +11,9 @@
     },
     "B": {
       "item": "compressedblocks:compressed_diamond_block"
+    },
+    "C": {
+      "item": "minecraft:diamond"
     }
   },
   "result": {
