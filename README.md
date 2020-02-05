@@ -6,4 +6,4 @@ Compress your Blocks to make more free space (up to **3.486.784.101** Blocks in 
 
 1.14.4 version can be found under the "1.14.4" branch
 ---
-To compile this project you need to manually install the forge 1.15.2 MDK
+To compile this project you need to manually install the forge 1.15.2 MDK or use my [Multi-project Setup](https://github.com/sa-shiro/MDK_1.15-multi_project)
