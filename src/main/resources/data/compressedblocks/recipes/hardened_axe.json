@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BB ",
+    "BA ",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:hardened_stick"
+    },
+    "B": {
+      "item": "compressedblocks:compressed_diamond_block"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:hardened_axe"
+  }
+}

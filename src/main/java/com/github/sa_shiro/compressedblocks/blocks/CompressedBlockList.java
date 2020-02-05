@@ -19,6 +19,8 @@ public class CompressedBlockList {
 
     // Single compressed Blocks
     public static class Single {
+        @ObjectHolder(singleCompression + "diamond_block")
+        public static CompressedBlock COMPRESSED_DIAMOND_BLOCK;
         @ObjectHolder(singleCompression + "stone")
         public static CompressedBlock COMPRESSED_STONE;
         @ObjectHolder(singleCompression + "granite")

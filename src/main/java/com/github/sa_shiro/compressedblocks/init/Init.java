@@ -33,6 +33,7 @@ public class Init {
         RenderTypeLookup.setRenderLayer(CompressedBlockList.Single.COMPRESSED_SAND, rendertype);
         RenderTypeLookup.setRenderLayer(CompressedBlockList.Single.COMPRESSED_SOUL_SAND, rendertype);
         RenderTypeLookup.setRenderLayer(CompressedBlockList.Single.COMPRESSED_STONE, rendertype);
+        RenderTypeLookup.setRenderLayer(CompressedBlockList.Single.COMPRESSED_DIAMOND_BLOCK, rendertype);
 
         RenderTypeLookup.setRenderLayer(CompressedBlockList.Double.DOUBLE_COMPRESSED_ANDESITE, rendertype);
         RenderTypeLookup.setRenderLayer(CompressedBlockList.Double.DOUBLE_COMPRESSED_COBBLESTONE, rendertype);

@@ -3,10 +3,12 @@ package com.github.sa_shiro.compressedblocks.Events;
 import com.github.sa_shiro.compressedblocks.blocks.CompressedBlock;
 import com.github.sa_shiro.compressedblocks.blocks.CompressedBlockList;
 import com.github.sa_shiro.compressedblocks.init.Init;
+import com.github.sa_shiro.compressedblocks.items.CompressedItemList;
+import com.github.sa_shiro.compressedblocks.items.CompressedMaterialList;
+import com.github.sa_shiro.compressedblocks.items.CompressedTools;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -17,7 +19,34 @@ import java.util.Objects;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class RegistryEvents {
-    private static final RenderType rendertype = RenderType.translucent();
+
+    @SubscribeEvent
+    public static void registerItems(RegistryEvent.Register<Item> e) {
+        e.getRegistry().registerAll(
+                CompressedItemList.HARDENED_STICK = new Item(new Item.Properties().group(Init.compressedGroup)).setRegistryName("hardened_stick"),
+
+                CompressedItemList.HARDENED_PICKAXE = new CompressedTools.HardenedPickaxe(CompressedMaterialList.hardenedMaterial, 1, -2.8F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_pickaxe"),
+                CompressedItemList.HARDENED_AXE = new CompressedTools.HardeneAxe(CompressedMaterialList.hardenedMaterial, 6, -3.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_axe"),
+                CompressedItemList.HARDENED_SHOVEL = new CompressedTools.HardeneShovel(CompressedMaterialList.hardenedMaterial, 1.5F, -3.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_shovel"),
+                CompressedItemList.HARDENED_HOE = new CompressedTools.HardenedHoe(CompressedMaterialList.hardenedMaterial,  0.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_hoe"),
+                CompressedItemList.HARDENED_SWORD = new CompressedTools.HardeneSword(CompressedMaterialList.hardenedMaterial, 4, -2.4F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_sword")
+        );
+    }
+
+    @SubscribeEvent
+    public static void registerCompressedDiamondBlock(final RegistryEvent.Register<Block> e) {
+        e.getRegistry().registerAll(
+                CompressedBlockList.Single.COMPRESSED_DIAMOND_BLOCK = new CompressedBlock(Material.ROCK, SoundType.STONE, 0, "diamond_block", 2.0f, 35.0f, 0)
+        );
+    }
+    @SubscribeEvent
+    public static void registerCompressedDiamondBlockItems(final RegistryEvent.Register<Item> e) {
+        Item.Properties props = new Item.Properties()
+                .group(Init.compressedGroup);
+        e.getRegistry().registerAll(
+                new BlockItem(CompressedBlockList.Single.COMPRESSED_DIAMOND_BLOCK, props).setRegistryName(Objects.requireNonNull(CompressedBlockList.Single.COMPRESSED_DIAMOND_BLOCK.getRegistryName()))
+        );
+    }
 
     @SubscribeEvent
     public static void registerCompressedStone(final RegistryEvent.Register<Block> e) {
@@ -27,7 +56,6 @@ public class RegistryEvents {
                 CompressedBlockList.Triple.TRIPLE_COMPRESSED_STONE = new CompressedBlock(Material.ROCK, SoundType.STONE, 2, "stone", 10.0f, 50.0f, 1)
         );
     }
-
     @SubscribeEvent
     public static void registerCompressedStoneItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()

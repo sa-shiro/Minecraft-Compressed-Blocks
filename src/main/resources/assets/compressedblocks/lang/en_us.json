@@ -85,6 +85,16 @@
   "block.compressedblocks.double_compressed_redstone_block": "Double Compressed Redstone Block",
   "block.compressedblocks.triple_compressed_redstone_block": "Triple Compressed Redstone Block",
 
+  "block.compressedblocks.compressed_diamond_block": "Compressed Diamond Block",
+
+
+  "item.compressedblocks.hardened_pickaxe": "Hardened Diamond Pickaxe",
+  "item.compressedblocks.hardened_axe": "Hardened Diamond Axe",
+  "item.compressedblocks.hardened_shovel": "Hardened Diamond Shovel",
+  "item.compressedblocks.hardened_hoe": "Hardened Diamond Hoe",
+  "item.compressedblocks.hardened_sword": "Hardened Diamond Sword",
+  "item.compressedblocks.hardened_stick": "Hardened Stick",
+
 
   "itemGroup.compressed_blocks": "Compressed Blocks"
 }
