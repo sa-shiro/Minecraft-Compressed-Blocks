@@ -7,7 +7,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 public class Init {
-    private static final RenderType rendertype = RenderType.translucent();
+    private static final RenderType rendertype = RenderType.func_228645_f_();
     public static ItemGroup compressedGroup = new ItemGroup("compressed_blocks") {
         @Override
         public ItemStack createIcon() {

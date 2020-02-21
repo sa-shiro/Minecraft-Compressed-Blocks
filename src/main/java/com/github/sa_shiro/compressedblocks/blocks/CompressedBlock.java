@@ -33,7 +33,6 @@ public class CompressedBlock extends Block {
                 .hardnessAndResistance(hardness, resistance)
                 .harvestLevel(harvestLevel)
                 .variableOpacity()
-                .notSolid()
         );
         switch (compression) {
             case 0:
