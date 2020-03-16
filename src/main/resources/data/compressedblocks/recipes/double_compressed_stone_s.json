@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "###",
-    "###",
-    "###"
+    "AAA",
+    "AAA",
+    "AAA"
   ],
   "key": {
-    "#": {
-      "tag": "compressedblocks:compressed_stone"
+    "A": {
+      "item": "compressedblocks:compressed_stone"
     }
   },
   "result": {

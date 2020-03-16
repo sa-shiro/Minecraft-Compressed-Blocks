@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "minecraft:stone"
+      "item": "compressedblocks:compressed_stone"
     }
   },
   "result": {
-    "item": "compressedblocks:compressed_stone"
+    "item": "compressedblocks:double_compressed_stone"
   }
 }
