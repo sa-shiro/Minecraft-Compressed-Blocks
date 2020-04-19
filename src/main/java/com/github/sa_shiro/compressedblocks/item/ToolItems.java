@@ -1,9 +1,9 @@
-package com.github.sa_shiro.compressedblocks.items;
+package com.github.sa_shiro.compressedblocks.item;
 
 import net.minecraft.item.*;
 
 
-public class CompressedTools {
+public class ToolItems {
 
     public static class HardenedPickaxe extends PickaxeItem {
         public HardenedPickaxe(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder) {

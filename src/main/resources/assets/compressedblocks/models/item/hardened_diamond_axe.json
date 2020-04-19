@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "compressedblocks:item/hardened_diamond_axe"
+  }
+}

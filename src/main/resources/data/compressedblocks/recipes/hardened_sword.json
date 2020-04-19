@@ -1,19 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " C ",
+    " B ",
     " B ",
     " A "
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:hardened_stick"
+      "item": "compressedblocks:compressed_stick"
     },
     "B": {
-      "item": "compressedblocks:compressed_diamond_block"
-    },
-    "C": {
-      "item": "minecraft:diamond"
+      "item": "compressedblocks:compressed_cobblestone"
     }
   },
   "result": {

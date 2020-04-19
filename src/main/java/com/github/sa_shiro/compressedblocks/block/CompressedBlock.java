@@ -1,4 +1,4 @@
-package com.github.sa_shiro.compressedblocks.blocks;
+package com.github.sa_shiro.compressedblocks.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;

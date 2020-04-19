@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:hardened_stick"
+      "item": "compressedblocks:compressed_stick"
     },
     "B": {
-      "item": "compressedblocks:compressed_diamond_block"
+      "item": "compressedblocks:compressed_cobblestone"
     }
   },
   "result": {

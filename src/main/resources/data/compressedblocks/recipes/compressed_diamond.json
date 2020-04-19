@@ -1,19 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "   ",
+    "AAA",
     "ABA",
-    "ABA"
+    "AAA"
   ],
   "key": {
     "A": {
       "item": "compressedblocks:double_compressed_cobblestone"
     },
     "B": {
-      "item": "minecraft:stick"
+      "item": "minecraft:diamond"
     }
   },
   "result": {
-    "item": "compressedblocks:hardened_stick"
+    "item": "compressedblocks:compressed_diamond"
   }
 }

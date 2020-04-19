@@ -6,12 +6,12 @@ archivesBaseName = modBaseName
 jar {
     manifest {
         attributes([
-            "Specification-Title": "testing",
-            "Specification-Vendor": "examplemodsareus",
+            "Specification-Title": "compressedblocks",
+            "Specification-Vendor": "compressedblocks",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"examplemodsareus",
+            "Implementation-Vendor" :"compressedblocks",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
