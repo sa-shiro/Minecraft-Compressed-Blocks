@@ -6,13 +6,13 @@
 # The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
 modLoader="javafml" #mandatory
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[31.1,]" #mandatory (26 is current forge version)
+loaderVersion="[31,)" #mandatory (26 is current forge version)
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
 modId="compressedblocks" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
-version="2.4.1b" #mandatory
+version="2.4.1" #mandatory
 # A display name for the mod
 displayName="compressedblocks" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
@@ -35,11 +35,11 @@ Compressed Blocks Mod'''
     # Does this dependency have to exist - if not, ordering below must be specified
     mandatory=true #mandatory
     # The version range of the dependency
-    versionRange="[31.1.46]" #mandatory
+    versionRange="[31.1.46,)" #mandatory
     # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
-    side="CLIENT"
+    side="BOTH"
 # Here's another dependency
 [[dependencies.compressedblocks]]
     modId="minecraft"
