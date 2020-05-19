@@ -2,28 +2,24 @@
   "block.compressedblocks.compressed_stone": "Compressed Stone",
   "block.compressedblocks.double_compressed_stone": "Double Compressed Stone",
   "block.compressedblocks.triple_compressed_stone": "Triple Compressed Stone",
-
   "block.compressedblocks.compressed_granite": "Compressed Granite",
   "block.compressedblocks.double_compressed_granite": "Double Compressed Granite",
   "block.compressedblocks.triple_compressed_granite": "Triple Compressed Granite",
   "block.compressedblocks.quadruple_compressed_granite": "Quadruple Compressed Granite",
   "block.compressedblocks.quintuple_compressed_granite": "Quintuple Compressed Granite",
   "block.compressedblocks.sextuple_compressed_granite": "Sextuple Compressed Granite",
-
   "block.compressedblocks.compressed_diorite": "Compressed Diorite",
   "block.compressedblocks.double_compressed_diorite": "Double Compressed Diorite",
   "block.compressedblocks.triple_compressed_diorite": "Triple Compressed Diorite",
   "block.compressedblocks.quadruple_compressed_diorite": "Quadruple Compressed Diorite",
   "block.compressedblocks.quintuple_compressed_diorite": "Quintuple Compressed Diorite",
   "block.compressedblocks.sextuple_compressed_diorite": "Sextuple Compressed Diorite",
-
   "block.compressedblocks.compressed_andesite": "Compressed Andesite",
   "block.compressedblocks.double_compressed_andesite": "Double Compressed Andesite",
   "block.compressedblocks.triple_compressed_andesite": "Triple Compressed Andesite",
   "block.compressedblocks.quadruple_compressed_andesite": "Quadruple Compressed Andesite",
   "block.compressedblocks.quintuple_compressed_andesite": "Quintuple Compressed Andesite",
   "block.compressedblocks.sextuple_compressed_andesite": "Sextuple Compressed Andesite",
-
   "block.compressedblocks.compressed_dirt": "Compressed Dirt",
   "block.compressedblocks.double_compressed_dirt": "Double Compressed Dirt",
   "block.compressedblocks.triple_compressed_dirt": "Triple Compressed Dirt",
@@ -34,7 +30,6 @@
   "block.compressedblocks.octuple_compressed_dirt": "Octuple Compressed Dirt",
   "block.compressedblocks.mega_compressed_dirt": "Mega Compressed Dirt",
   "block.compressedblocks.giga_compressed_dirt": "Giga Compressed Dirt",
-
   "block.compressedblocks.compressed_cobblestone": "Compressed Cobblestone",
   "block.compressedblocks.double_compressed_cobblestone": "Double Compressed Cobblestone",
   "block.compressedblocks.triple_compressed_cobblestone": "Triple Compressed Cobblestone",
@@ -45,7 +40,6 @@
   "block.compressedblocks.octuple_compressed_cobblestone": "Octuple Compressed Cobblestone",
   "block.compressedblocks.mega_compressed_cobblestone": "Mega Compressed Cobblestone",
   "block.compressedblocks.giga_compressed_cobblestone": "Giga Compressed Cobblestone",
-
   "block.compressedblocks.compressed_sand": "Compressed Sand",
   "block.compressedblocks.double_compressed_sand": "Double Compressed Sand",
   "block.compressedblocks.triple_compressed_sand": "Triple Compressed Sand",
@@ -56,16 +50,13 @@
   "block.compressedblocks.octuple_compressed_sand": "Octuple Compressed Sand",
   "block.compressedblocks.mega_compressed_sand": "Mega Compressed Sand",
   "block.compressedblocks.giga_compressed_sand": "Giga Compressed Sand",
-
   "block.compressedblocks.compressed_red_sand": "Compressed Red Sand",
   "block.compressedblocks.double_compressed_red_sand": "Double Compressed Red Sand",
   "block.compressedblocks.triple_compressed_red_sand": "Triple Compressed Red Sand",
   "block.compressedblocks.quadruple_compressed_red_sand": "Quadruple Compressed Red Sand",
-
   "block.compressedblocks.compressed_gravel": "Compressed Gravel",
   "block.compressedblocks.double_compressed_gravel": "Double Compressed Gravel",
   "block.compressedblocks.triple_compressed_gravel": "Triple Compressed Gravel",
-
   "block.compressedblocks.compressed_netherrack": "Compressed Netherrack",
   "block.compressedblocks.double_compressed_netherrack": "Double Compressed Netherrack",
   "block.compressedblocks.triple_compressed_netherrack": "Triple Compressed Netherrack",
@@ -76,23 +67,18 @@
   "block.compressedblocks.octuple_compressed_netherrack": "Octuple Compressed Netherrack",
   "block.compressedblocks.mega_compressed_netherrack": "Mega Compressed Netherrack",
   "block.compressedblocks.giga_compressed_netherrack": "Giga Compressed Netherrack",
-
   "block.compressedblocks.compressed_soul_sand": "Compressed Soul Sand",
   "block.compressedblocks.double_compressed_soul_sand": "Double Compressed Soul Sand",
   "block.compressedblocks.triple_compressed_soul_sand": "Triple Compressed Soul Sand",
-
   "block.compressedblocks.compressed_redstone_block": "Compressed Redstone Block",
   "block.compressedblocks.double_compressed_redstone_block": "Double Compressed Redstone Block",
   "block.compressedblocks.triple_compressed_redstone_block": "Triple Compressed Redstone Block",
-
   "block.compressedblocks.compressed_diamond_block": "Compressed Diamond Block",
-
   "item.compressedblocks.hardened_wooden_pickaxe": "Hardened Wooden Pickaxe",
   "item.compressedblocks.hardened_wooden_axe": "Hardened Wooden Axe",
   "item.compressedblocks.hardened_wooden_shovel": "Hardened Wooden Shovel",
   "item.compressedblocks.hardened_wooden_hoe": "Hardened Wooden Hoe",
   "item.compressedblocks.hardened_wooden_sword": "Hardened Wooden Sword",
-
   "item.compressedblocks.hardened_pickaxe": "Hardened Pickaxe",
   "item.compressedblocks.hardened_axe": "Hardened Axe",
   "item.compressedblocks.hardened_shovel": "Hardened Shovel",
@@ -113,13 +99,10 @@
   "item.compressedblocks.hardened_diamond_shovel": "Hardened Diamond Shovel",
   "item.compressedblocks.hardened_diamond_hoe": "Hardened Diamond Hoe",
   "item.compressedblocks.hardened_diamond_sword": "Hardened Diamond Sword",
-
   "item.compressedblocks.compressed_stick": "Compressed Stick",
   "item.compressedblocks.compressed_wood": "Compressed Wood",
   "item.compressedblocks.compressed_iron": "Compressed Iron",
   "item.compressedblocks.compressed_gold": "Compressed Gold",
   "item.compressedblocks.compressed_diamond": "Compressed Diamond",
-
-
   "itemGroup.compressed_blocks": "Compressed Blocks"
 }

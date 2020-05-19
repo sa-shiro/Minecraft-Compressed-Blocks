@@ -4,6 +4,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.registries.ObjectHolder;
 
 import static com.github.sa_shiro.compressedblocks.CompressedBlocks.MOD_ID;
+
 @ObjectHolder(MOD_ID)
 public class Items {
 

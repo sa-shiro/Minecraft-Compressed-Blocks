@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model":  "compressedblocks:block/double_compressed_stone"}
+    "": {
+      "model": "compressedblocks:block/double_compressed_stone"
+    }
   }
 }

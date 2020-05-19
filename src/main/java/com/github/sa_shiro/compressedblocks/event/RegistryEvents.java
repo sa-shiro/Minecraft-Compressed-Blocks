@@ -1,11 +1,11 @@
 package com.github.sa_shiro.compressedblocks.event;
 
-import com.github.sa_shiro.compressedblocks.block.CompressedBlock;
 import com.github.sa_shiro.compressedblocks.block.Blocks;
-import com.github.sa_shiro.compressedblocks.init.Init;
-import com.github.sa_shiro.compressedblocks.item.Items;
+import com.github.sa_shiro.compressedblocks.block.CompressedBlock;
 import com.github.sa_shiro.compressedblocks.item.EnumItemTier;
+import com.github.sa_shiro.compressedblocks.item.Items;
 import com.github.sa_shiro.compressedblocks.item.ToolItems;
+import com.github.sa_shiro.compressedblocks.util.ItemGroup;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -23,42 +23,42 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> e) {
         e.getRegistry().registerAll(
-                Items.COMPRESSED_STICK = new Item(new Item.Properties().group(Init.compressedGroup)).setRegistryName("compressed_stick"),
+                Items.COMPRESSED_STICK = new Item(new Item.Properties().group(ItemGroup.compressedGroup)).setRegistryName("compressed_stick"),
 
-                Items.COMPRESSED_WOOD = new Item(new Item.Properties().group(Init.compressedGroup)).setRegistryName("compressed_wood"),
-                Items.COMPRESSED_IRON = new Item(new Item.Properties().group(Init.compressedGroup)).setRegistryName("compressed_iron"),
-                Items.COMPRESSED_GOLD = new Item(new Item.Properties().group(Init.compressedGroup)).setRegistryName("compressed_gold"),
-                Items.COMPRESSED_DIAMOND = new Item(new Item.Properties().group(Init.compressedGroup)).setRegistryName("compressed_diamond"),
+                Items.COMPRESSED_WOOD = new Item(new Item.Properties().group(ItemGroup.compressedGroup)).setRegistryName("compressed_wood"),
+                Items.COMPRESSED_IRON = new Item(new Item.Properties().group(ItemGroup.compressedGroup)).setRegistryName("compressed_iron"),
+                Items.COMPRESSED_GOLD = new Item(new Item.Properties().group(ItemGroup.compressedGroup)).setRegistryName("compressed_gold"),
+                Items.COMPRESSED_DIAMOND = new Item(new Item.Properties().group(ItemGroup.compressedGroup)).setRegistryName("compressed_diamond"),
 
-                Items.HARDENED_WOODEN_PICKAXE = new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_WOOD, 1, -2.8F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_wooden_pickaxe"),
-                Items.HARDENED_WOODEN_AXE = new ToolItems.HardeneAxe(EnumItemTier.HARDENED_WOOD, 5, -3.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_wooden_axe"),
-                Items.HARDENED_WOODEN_SHOVEL = new ToolItems.HardeneShovel(EnumItemTier.HARDENED_WOOD, 1.5F, -3.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_wooden_shovel"),
-                Items.HARDENED_WOODEN_HOE = new ToolItems.HardenedHoe(EnumItemTier.HARDENED_WOOD,  0.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_wooden_hoe"),
-                Items.HARDENED_WOODEN_SWORD = new ToolItems.HardeneSword(EnumItemTier.HARDENED_WOOD, 3, -2.4F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_wooden_sword"),
+                Items.HARDENED_WOODEN_PICKAXE = new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_WOOD, 1, -2.8F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_wooden_pickaxe"),
+                Items.HARDENED_WOODEN_AXE = new ToolItems.HardeneAxe(EnumItemTier.HARDENED_WOOD, 5, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_wooden_axe"),
+                Items.HARDENED_WOODEN_SHOVEL = new ToolItems.HardeneShovel(EnumItemTier.HARDENED_WOOD, 1.5F, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_wooden_shovel"),
+                Items.HARDENED_WOODEN_HOE = new ToolItems.HardenedHoe(EnumItemTier.HARDENED_WOOD, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_wooden_hoe"),
+                Items.HARDENED_WOODEN_SWORD = new ToolItems.HardeneSword(EnumItemTier.HARDENED_WOOD, 3, -2.4F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_wooden_sword"),
 
-                Items.HARDENED_PICKAXE = new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_STONE, 1, -2.8F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_pickaxe"),
-                Items.HARDENED_AXE = new ToolItems.HardeneAxe(EnumItemTier.HARDENED_STONE, 5, -3.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_axe"),
-                Items.HARDENED_SHOVEL = new ToolItems.HardeneShovel(EnumItemTier.HARDENED_STONE, 1.5F, -3.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_shovel"),
-                Items.HARDENED_HOE = new ToolItems.HardenedHoe(EnumItemTier.HARDENED_STONE,  0.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_hoe"),
-                Items.HARDENED_SWORD = new ToolItems.HardeneSword(EnumItemTier.HARDENED_STONE, 4, -2.4F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_sword"),
+                Items.HARDENED_PICKAXE = new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_STONE, 1, -2.8F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_pickaxe"),
+                Items.HARDENED_AXE = new ToolItems.HardeneAxe(EnumItemTier.HARDENED_STONE, 5, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_axe"),
+                Items.HARDENED_SHOVEL = new ToolItems.HardeneShovel(EnumItemTier.HARDENED_STONE, 1.5F, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_shovel"),
+                Items.HARDENED_HOE = new ToolItems.HardenedHoe(EnumItemTier.HARDENED_STONE, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_hoe"),
+                Items.HARDENED_SWORD = new ToolItems.HardeneSword(EnumItemTier.HARDENED_STONE, 4, -2.4F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_sword"),
 
-                Items.HARDENED_IRON_PICKAXE = new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_IRON, 1, -2.8F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_iron_pickaxe"),
-                Items.HARDENED_IRON_AXE = new ToolItems.HardeneAxe(EnumItemTier.HARDENED_IRON, 6, -3.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_iron_axe"),
-                Items.HARDENED_IRON_SHOVEL = new ToolItems.HardeneShovel(EnumItemTier.HARDENED_IRON, 1.5F, -3.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_iron_shovel"),
-                Items.HARDENED_IRON_HOE = new ToolItems.HardenedHoe(EnumItemTier.HARDENED_IRON,  0.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_iron_hoe"),
-                Items.HARDENED_IRON_SWORD = new ToolItems.HardeneSword(EnumItemTier.HARDENED_IRON, 4, -2.4F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_iron_sword"),
+                Items.HARDENED_IRON_PICKAXE = new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_IRON, 1, -2.8F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_iron_pickaxe"),
+                Items.HARDENED_IRON_AXE = new ToolItems.HardeneAxe(EnumItemTier.HARDENED_IRON, 6, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_iron_axe"),
+                Items.HARDENED_IRON_SHOVEL = new ToolItems.HardeneShovel(EnumItemTier.HARDENED_IRON, 1.5F, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_iron_shovel"),
+                Items.HARDENED_IRON_HOE = new ToolItems.HardenedHoe(EnumItemTier.HARDENED_IRON, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_iron_hoe"),
+                Items.HARDENED_IRON_SWORD = new ToolItems.HardeneSword(EnumItemTier.HARDENED_IRON, 4, -2.4F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_iron_sword"),
 
-                Items.HARDENED_GOLDEN_PICKAXE = new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_GOLD, 1, -2.8F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_golden_pickaxe"),
-                Items.HARDENED_GOLDEN_AXE = new ToolItems.HardeneAxe(EnumItemTier.HARDENED_GOLD, 6, -3.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_golden_axe"),
-                Items.HARDENED_GOLDEN_SHOVEL = new ToolItems.HardeneShovel(EnumItemTier.HARDENED_GOLD, 1.5F, -3.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_golden_shovel"),
-                Items.HARDENED_GOLDEN_HOE = new ToolItems.HardenedHoe(EnumItemTier.HARDENED_GOLD,  0.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_golden_hoe"),
-                Items.HARDENED_GOLDEN_SWORD = new ToolItems.HardeneSword(EnumItemTier.HARDENED_GOLD, 4, -2.4F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_golden_sword"),
+                Items.HARDENED_GOLDEN_PICKAXE = new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_GOLD, 1, -2.8F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_golden_pickaxe"),
+                Items.HARDENED_GOLDEN_AXE = new ToolItems.HardeneAxe(EnumItemTier.HARDENED_GOLD, 6, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_golden_axe"),
+                Items.HARDENED_GOLDEN_SHOVEL = new ToolItems.HardeneShovel(EnumItemTier.HARDENED_GOLD, 1.5F, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_golden_shovel"),
+                Items.HARDENED_GOLDEN_HOE = new ToolItems.HardenedHoe(EnumItemTier.HARDENED_GOLD, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_golden_hoe"),
+                Items.HARDENED_GOLDEN_SWORD = new ToolItems.HardeneSword(EnumItemTier.HARDENED_GOLD, 4, -2.4F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_golden_sword"),
 
-                Items.HARDENED_DIAMOND_PICKAXE = new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_DIAMOND, 1, -2.8F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_diamond_pickaxe"),
-                Items.HARDENED_DIAMOND_AXE = new ToolItems.HardeneAxe(EnumItemTier.HARDENED_DIAMOND, 7, -3.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_diamond_axe"),
-                Items.HARDENED_DIAMOND_SHOVEL = new ToolItems.HardeneShovel(EnumItemTier.HARDENED_DIAMOND, 1.5F, -3.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_diamond_shovel"),
-                Items.HARDENED_DIAMOND_HOE = new ToolItems.HardenedHoe(EnumItemTier.HARDENED_DIAMOND,  0.0F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_diamond_hoe"),
-                Items.HARDENED_DIAMOND_SWORD = new ToolItems.HardeneSword(EnumItemTier.HARDENED_DIAMOND, 5, -2.4F, (new Item.Properties()).group(Init.compressedGroup)).setRegistryName("hardened_diamond_sword")
+                Items.HARDENED_DIAMOND_PICKAXE = new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_DIAMOND, 1, -2.8F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_diamond_pickaxe"),
+                Items.HARDENED_DIAMOND_AXE = new ToolItems.HardeneAxe(EnumItemTier.HARDENED_DIAMOND, 7, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_diamond_axe"),
+                Items.HARDENED_DIAMOND_SHOVEL = new ToolItems.HardeneShovel(EnumItemTier.HARDENED_DIAMOND, 1.5F, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_diamond_shovel"),
+                Items.HARDENED_DIAMOND_HOE = new ToolItems.HardenedHoe(EnumItemTier.HARDENED_DIAMOND, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_diamond_hoe"),
+                Items.HARDENED_DIAMOND_SWORD = new ToolItems.HardeneSword(EnumItemTier.HARDENED_DIAMOND, 5, -2.4F, (new Item.Properties()).group(ItemGroup.compressedGroup)).setRegistryName("hardened_diamond_sword")
         );
     }
 
@@ -68,10 +68,11 @@ public class RegistryEvents {
                 Blocks.Single.COMPRESSED_DIAMOND_BLOCK = new CompressedBlock(Material.ROCK, SoundType.STONE, 0, "diamond_block", 2.0f, 35.0f, 0)
         );
     }
+
     @SubscribeEvent
     public static void registerCompressedDiamondBlockItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_DIAMOND_BLOCK, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_DIAMOND_BLOCK.getRegistryName()))
         );
@@ -85,10 +86,11 @@ public class RegistryEvents {
                 Blocks.Triple.TRIPLE_COMPRESSED_STONE = new CompressedBlock(Material.ROCK, SoundType.STONE, 2, "stone", 10.0f, 50.0f, 1)
         );
     }
+
     @SubscribeEvent
     public static void registerCompressedStoneItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_STONE, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_STONE.getRegistryName())),
                 new BlockItem(Blocks.Double.DOUBLE_COMPRESSED_STONE, props).setRegistryName(Objects.requireNonNull(Blocks.Double.DOUBLE_COMPRESSED_STONE.getRegistryName())),
@@ -111,7 +113,7 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void registerCompressedGraniteItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_GRANITE, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_GRANITE.getRegistryName())),
                 new BlockItem(Blocks.Double.DOUBLE_COMPRESSED_GRANITE, props).setRegistryName(Objects.requireNonNull(Blocks.Double.DOUBLE_COMPRESSED_GRANITE.getRegistryName())),
@@ -137,7 +139,7 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void registerCompressedDioriteItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_DIORITE, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_DIORITE.getRegistryName())),
                 new BlockItem(Blocks.Double.DOUBLE_COMPRESSED_DIORITE, props).setRegistryName(Objects.requireNonNull(Blocks.Double.DOUBLE_COMPRESSED_DIORITE.getRegistryName())),
@@ -165,7 +167,7 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void registerCompressedAndesiteItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_ANDESITE, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_ANDESITE.getRegistryName())),
                 new BlockItem(Blocks.Double.DOUBLE_COMPRESSED_ANDESITE, props).setRegistryName(Objects.requireNonNull(Blocks.Double.DOUBLE_COMPRESSED_ANDESITE.getRegistryName())),
@@ -195,7 +197,7 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void registerCompressedDirtItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_DIRT, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_DIRT.getRegistryName())),
                 new BlockItem(Blocks.Double.DOUBLE_COMPRESSED_DIRT, props).setRegistryName(Objects.requireNonNull(Blocks.Double.DOUBLE_COMPRESSED_DIRT.getRegistryName())),
@@ -229,7 +231,7 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void registerCompressedCobblestoneItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_COBBLESTONE, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_COBBLESTONE.getRegistryName())),
                 new BlockItem(Blocks.Double.DOUBLE_COMPRESSED_COBBLESTONE, props).setRegistryName(Objects.requireNonNull(Blocks.Double.DOUBLE_COMPRESSED_COBBLESTONE.getRegistryName())),
@@ -263,7 +265,7 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void registerCompressedSandItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_SAND, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_SAND.getRegistryName())),
                 new BlockItem(Blocks.Double.DOUBLE_COMPRESSED_SAND, props).setRegistryName(Objects.requireNonNull(Blocks.Double.DOUBLE_COMPRESSED_SAND.getRegistryName())),
@@ -291,7 +293,7 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void registerCompressedRedSandItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_RED_SAND, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_RED_SAND.getRegistryName())),
                 new BlockItem(Blocks.Double.DOUBLE_COMPRESSED_RED_SAND, props).setRegistryName(Objects.requireNonNull(Blocks.Double.DOUBLE_COMPRESSED_RED_SAND.getRegistryName())),
@@ -312,7 +314,7 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void registerCompressedGravelItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_GRAVEL, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_GRAVEL.getRegistryName())),
                 new BlockItem(Blocks.Double.DOUBLE_COMPRESSED_GRAVEL, props).setRegistryName(Objects.requireNonNull(Blocks.Double.DOUBLE_COMPRESSED_GRAVEL.getRegistryName())),
@@ -339,7 +341,7 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void registerCompressedNetherrackItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_NETHERRACK, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_NETHERRACK.getRegistryName())),
                 new BlockItem(Blocks.Double.DOUBLE_COMPRESSED_NETHERRACK, props).setRegistryName(Objects.requireNonNull(Blocks.Double.DOUBLE_COMPRESSED_NETHERRACK.getRegistryName())),
@@ -366,7 +368,7 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void registerCompressedSoulSandItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_SOUL_SAND, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_SOUL_SAND.getRegistryName())),
                 new BlockItem(Blocks.Double.DOUBLE_COMPRESSED_SOUL_SAND, props).setRegistryName(Objects.requireNonNull(Blocks.Double.DOUBLE_COMPRESSED_SOUL_SAND.getRegistryName())),
@@ -386,7 +388,7 @@ public class RegistryEvents {
     @SubscribeEvent
     public static void registerCompressedRedstoneBlockItems(final RegistryEvent.Register<Item> e) {
         Item.Properties props = new Item.Properties()
-                .group(Init.compressedGroup);
+                .group(ItemGroup.compressedGroup);
         e.getRegistry().registerAll(
                 new BlockItem(Blocks.Single.COMPRESSED_REDSTONE_BLOCK, props).setRegistryName(Objects.requireNonNull(Blocks.Single.COMPRESSED_REDSTONE_BLOCK.getRegistryName())),
                 new BlockItem(Blocks.Double.DOUBLE_COMPRESSED_REDSTONE_BLOCK, props).setRegistryName(Objects.requireNonNull(Blocks.Double.DOUBLE_COMPRESSED_REDSTONE_BLOCK.getRegistryName())),
