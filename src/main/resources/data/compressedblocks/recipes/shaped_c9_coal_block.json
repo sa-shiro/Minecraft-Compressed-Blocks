@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c8_coal_block"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c9_coal_block"
+  }
+}

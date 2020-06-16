@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c4_gold_block"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c5_gold_block"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "homepage": "https://www.curseforge.com/minecraft/mc-mods/the-compressed-blocks-mod",
+  "1.15.2": {
+    "3.0.0": "Changed how Blocks & Items are registered (BACKUP YOUR WORLD BEFORE JOINING!)\n Increased compression level of existing blocks\n added a bunch of new blocks\n new Items: Egg Bag & Ender PearlBag\n updated Forge & Mappings\n compressed blocks now have their non-compressed functions such as Redstone power ...",
+    "2.4.3": "see #2.4.3 at GitHub",
+    "2.4.1": "fixed version restriction to 31.1.46",
+    "2.4.1b": "added AccessTransformer",
+    "2.4.0": "see #2.4.0 at GitHub",
+    "2.3.3": "see #2.3.3 at GitHub",
+    "2.3.2": "see #2.3.2 at GitHub",
+    "2.3.1": "fixed RenderType function\nfixed \"Compressed Stone\" recipes",
+    "2.3.0": "see #2.3.0 at GitHub",
+    "2.2.2": "made the recipes for hardened tools cheaper",
+    "2.2.1": "added compressed diamond block",
+    "2.1.0": "update to 1.15.2"
+  },
+  "promos": {
+    "1.15.2-latest": "2.4.3",
+    "1.15.2-recommended": "2.4.3"
+  }
+}

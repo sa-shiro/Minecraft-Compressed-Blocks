@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c2_stone_bricks"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c3_stone_bricks"
+  }
+}

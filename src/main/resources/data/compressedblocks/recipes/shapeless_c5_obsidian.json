@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c5_obsidian"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c4_obsidian",
+    "count": 9
+  }
+}
