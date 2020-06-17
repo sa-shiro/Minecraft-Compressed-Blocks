@@ -16,7 +16,7 @@ version="${file.jarVersion}" #mandatory
 # A display name for the mod
 displayName="compressedblocks" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
-updateJSONURL="https://github.com/sa-shiro/Minecraft-Compressed-Blocks/update.json" #optional
+updateJSONURL="https://raw.githubusercontent.com/sa-shiro/Minecraft-Compressed-Blocks/master/update.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
 displayURL="https://www.curseforge.com/minecraft/mc-mods/the-compressed-blocks-mod" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
