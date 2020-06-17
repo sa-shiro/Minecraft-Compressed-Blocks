@@ -204,6 +204,8 @@ public class DeferredRegistryEvent {
 
     public static final RegistryObject<Item> ENDER_PEARL_BAG = ITEMS.register("ender_pearl_bag", () -> new BagItem(0, "Ender Pearls"));
     public static final RegistryObject<Item> HUGE_ENDER_PEARL_BAG = ITEMS.register("huge_ender_pearl_bag", () -> new BagItem(1, "Ender Pearls"));
+    public static final RegistryObject<Item> ENDER_EYE_BAG = ITEMS.register("ender_eye_bag", () -> new BagItem(0, "Ender Eyes"));
+    public static final RegistryObject<Item> HUGE_ENDER_EYE_BAG = ITEMS.register("huge_ender_eye_bag", () -> new BagItem(1, "Ender Eyes"));
     public static final RegistryObject<Item> EGG_BAG = ITEMS.register("egg_bag", () -> new BagItem(0, "Egg"));
     public static final RegistryObject<Item> HUGE_EGG_BAG = ITEMS.register("huge_egg_bag", () -> new BagItem(1, "Eggs"));
     public static final RegistryObject<Item> COMPRESSED_STICK = ITEMS.register("compressed_stick", () -> new Item(new Item.Properties().maxStackSize(64).group(ItemGroup.compressedGroup)));
