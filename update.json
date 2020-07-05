@@ -1,6 +1,7 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/the-compressed-blocks-mod/files",
   "1.15.2": {
+    "3.0.3": "Added missing recipes (Compressed Iron, Gold, Diamond, Stick",
     "3.0.2": "Fixed Update Checker not working",
     "3.0.1": "Fixed lang: Ender Eye Bag > Ender Pearl Bag\nAdded Ender Eye Bag",
     "3.0.0": "Changed how Blocks & Items are registered (BACKUP YOUR WORLD BEFORE JOINING!)\n Increased compression level of existing blocks\n added a bunch of new blocks\n new Items: Egg Bag & Ender PearlBag\n updated Forge & Mappings\n compressed blocks now have their non-compressed functions such as Redstone power ...",

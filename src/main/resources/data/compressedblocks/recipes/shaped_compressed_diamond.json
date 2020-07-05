@@ -8,13 +8,13 @@
   ],
   "key": {
     "A": {
-      "item": "minecraft:oak_planks"
+      "item": "minecraft:diamond"
     },
     "B": {
-      "item": "compressedblocks:compressed_stone"
+      "item": "compressedblocks:c0_stone"
     }
   },
   "result": {
-    "item": "compressedblocks:compressed_wood"
+    "item": "compressedblocks:compressed_diamond"
   }
 }

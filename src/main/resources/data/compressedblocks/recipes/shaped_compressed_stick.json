@@ -8,13 +8,13 @@
   ],
   "key": {
     "A": {
-      "item": "minecraft:gold_ingot"
+      "item": "minecraft:stick"
     },
     "B": {
-      "item": "compressedblocks:compressed_stone"
+      "item": "compressedblocks:c0_stone"
     }
   },
   "result": {
-    "item": "compressedblocks:compressed_gold"
+    "item": "compressedblocks:compressed_stick"
   }
 }
