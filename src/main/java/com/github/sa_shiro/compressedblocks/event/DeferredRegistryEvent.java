@@ -32,8 +32,8 @@ public class DeferredRegistryEvent {
 
     private static final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
     private static final Item.Properties props = new Item.Properties().group(ItemGroup.compressedGroup);
-    private static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, CompressedBlocks.MOD_ID);
-    private static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, CompressedBlocks.MOD_ID);
+    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CompressedBlocks.MOD_ID);
+    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CompressedBlocks.MOD_ID);
     private static int index = 0;
     
     public static ArrayList<String> BLOCK_NAMES = new ArrayList<>();
@@ -217,30 +217,30 @@ public class DeferredRegistryEvent {
     public static final RegistryObject<Item> HARDENED_WOODEN_PICKAXE = ITEMS.register("hardened_wooden_pickaxe", () -> new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_WOOD, 1, -2.8F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
     public static final RegistryObject<Item> HARDENED_WOODEN_AXE = ITEMS.register("hardened_wooden_axe", () -> new ToolItems.HardeneAxe(EnumItemTier.HARDENED_WOOD, 5, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
     public static final RegistryObject<Item> HARDENED_WOODEN_SHOVEL = ITEMS.register("hardened_wooden_shovel", () -> new ToolItems.HardeneShovel(EnumItemTier.HARDENED_WOOD, 1.5F, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
-    public static final RegistryObject<Item> HARDENED_WOODEN_HOE = ITEMS.register("hardened_wooden_hoe", () -> new ToolItems.HardenedHoe(EnumItemTier.HARDENED_WOOD, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
+    public static final RegistryObject<Item> HARDENED_WOODEN_HOE = ITEMS.register("hardened_wooden_hoe", () -> new ToolItems.HardenedHoe(EnumItemTier.HARDENED_WOOD, 1, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup))); /** change variable p_i231595_2_ {@link com.github.sa_shiro.compressedblocks.item.ToolItems.HardenedHoe} */ // fixme: change field p_i231595_2_
     public static final RegistryObject<Item> HARDENED_WOODEN_SWORD = ITEMS.register("hardened_wooden_sword", () -> new ToolItems.HardeneSword(EnumItemTier.HARDENED_WOOD, 3, -2.4F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
 
     public static final RegistryObject<Item> HARDENED_PICKAXE = ITEMS.register("hardened_pickaxe", () -> new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_STONE, 1, -2.8F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
     public static final RegistryObject<Item> HARDENED_AXE = ITEMS.register("hardened_axe", () -> new ToolItems.HardeneAxe(EnumItemTier.HARDENED_STONE, 5, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
     public static final RegistryObject<Item> HARDENED_SHOVEL = ITEMS.register("hardened_shovel", () -> new ToolItems.HardeneShovel(EnumItemTier.HARDENED_STONE, 1.5F, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
-    public static final RegistryObject<Item> HARDENED_HOE = ITEMS.register("hardened_hoe", () -> new ToolItems.HardenedHoe(EnumItemTier.HARDENED_STONE, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
+    public static final RegistryObject<Item> HARDENED_HOE = ITEMS.register("hardened_hoe", () -> new ToolItems.HardenedHoe(EnumItemTier.HARDENED_STONE, 1, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup))); /** change variable p_i231595_2_ {@link com.github.sa_shiro.compressedblocks.item.ToolItems.HardenedHoe} */ // fixme: change field p_i231595_2_
     public static final RegistryObject<Item> HARDENED_SWORD = ITEMS.register("hardened_sword", () -> new ToolItems.HardeneSword(EnumItemTier.HARDENED_STONE, 4, -2.4F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
 
     public static final RegistryObject<Item> HARDENED_IRON_PICKAXE = ITEMS.register("hardened_iron_pickaxe", () -> new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_IRON, 1, -2.8F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
     public static final RegistryObject<Item> HARDENED_IRON_AXE = ITEMS.register("hardened_iron_axe", () -> new ToolItems.HardeneAxe(EnumItemTier.HARDENED_IRON, 6, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
     public static final RegistryObject<Item> HARDENED_IRON_SHOVEL = ITEMS.register("hardened_iron_shovel", () -> new ToolItems.HardeneShovel(EnumItemTier.HARDENED_IRON, 1.5F, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
-    public static final RegistryObject<Item> HARDENED_IRON_HOE = ITEMS.register("hardened_iron_hoe", () -> new ToolItems.HardenedHoe(EnumItemTier.HARDENED_IRON, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
+    public static final RegistryObject<Item> HARDENED_IRON_HOE = ITEMS.register("hardened_iron_hoe", () -> new ToolItems.HardenedHoe(EnumItemTier.HARDENED_IRON, 1, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup))); /** change variable p_i231595_2_ {@link com.github.sa_shiro.compressedblocks.item.ToolItems.HardenedHoe} */ // fixme: change field p_i231595_2_
     public static final RegistryObject<Item> HARDENED_IRON_SWORD = ITEMS.register("hardened_iron_sword", () -> new ToolItems.HardeneSword(EnumItemTier.HARDENED_IRON, 4, -2.4F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
 
     public static final RegistryObject<Item> HARDENED_GOLDEN_PICKAXE = ITEMS.register("hardened_golden_pickaxe", () -> new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_GOLD, 1, -2.8F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
     public static final RegistryObject<Item> HARDENED_GOLDEN_AXE = ITEMS.register("hardened_golden_axe", () -> new ToolItems.HardeneAxe(EnumItemTier.HARDENED_GOLD, 6, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
     public static final RegistryObject<Item> HARDENED_GOLDEN_SHOVEL = ITEMS.register("hardened_golden_shovel", () -> new ToolItems.HardeneShovel(EnumItemTier.HARDENED_GOLD, 1.5F, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
-    public static final RegistryObject<Item> HARDENED_GOLDEN_HOE = ITEMS.register("hardened_golden_hoe", () -> new ToolItems.HardenedHoe(EnumItemTier.HARDENED_GOLD, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
+    public static final RegistryObject<Item> HARDENED_GOLDEN_HOE = ITEMS.register("hardened_golden_hoe", () -> new ToolItems.HardenedHoe(EnumItemTier.HARDENED_GOLD, 1, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup))); /** change variable p_i231595_2_ {@link com.github.sa_shiro.compressedblocks.item.ToolItems.HardenedHoe} */ // fixme: change field p_i231595_2_
     public static final RegistryObject<Item> HARDENED_GOLDEN_SWORD = ITEMS.register("hardened_golden_sword", () -> new ToolItems.HardeneSword(EnumItemTier.HARDENED_GOLD, 4, -2.4F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
 
     public static final RegistryObject<Item> HARDENED_DIAMOND_PICKAXE = ITEMS.register("hardened_diamond_pickaxe", () -> new ToolItems.HardenedPickaxe(EnumItemTier.HARDENED_DIAMOND, 1, -2.8F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
     public static final RegistryObject<Item> HARDENED_DIAMOND_AXE = ITEMS.register("hardened_diamond_axe", () -> new ToolItems.HardeneAxe(EnumItemTier.HARDENED_DIAMOND, 7, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
     public static final RegistryObject<Item> HARDENED_DIAMOND_SHOVEL = ITEMS.register("hardened_diamond_shovel", () -> new ToolItems.HardeneShovel(EnumItemTier.HARDENED_DIAMOND, 1.5F, -3.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
-    public static final RegistryObject<Item> HARDENED_DIAMOND_HOE = ITEMS.register("hardened_diamond_hoe", () -> new ToolItems.HardenedHoe(EnumItemTier.HARDENED_DIAMOND, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
+    public static final RegistryObject<Item> HARDENED_DIAMOND_HOE = ITEMS.register("hardened_diamond_hoe", () -> new ToolItems.HardenedHoe(EnumItemTier.HARDENED_DIAMOND, 1, 0.0F, (new Item.Properties()).group(ItemGroup.compressedGroup))); /** change variable p_i231595_2_ {@link com.github.sa_shiro.compressedblocks.item.ToolItems.HardenedHoe} */ // fixme: change field p_i231595_2_
     public static final RegistryObject<Item> HARDENED_DIAMOND_SWORD = ITEMS.register("hardened_diamond_sword", () -> new ToolItems.HardeneSword(EnumItemTier.HARDENED_DIAMOND, 5, -2.4F, (new Item.Properties()).group(ItemGroup.compressedGroup)));
 }
