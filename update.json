@@ -17,8 +17,13 @@
     "2.2.1": "added compressed diamond block",
     "2.1.0": "update to 1.15.2"
   },
+  "1.16.1": {
+    "4.0.0": "Update to Forge 1.16.1\n Rendering may be buggy!"
+  },
   "promos": {
-    "1.15.2-latest": "2.4.3",
-    "1.15.2-recommended": "2.4.3"
+    "1.15.2-latest": "3.0.3",
+    "1.15.2-recommended": "3.0.3",
+    "1.16.1-latest": "4.0.0",
+    "1.16.1-recommended": "4.0.0"
   }
 }
