@@ -82,6 +82,6 @@ public class CompressedMagmaBlock extends MagmaBlock {
     @Override
     public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new StringTextComponent(blockCount + " Blocks").applyTextStyle(color));
+        tooltip.add(new StringTextComponent(blockCount + " Blocks").func_240699_a_(color)); // fixme: needs mapping
     }
 }

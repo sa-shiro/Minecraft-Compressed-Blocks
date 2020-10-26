@@ -24,8 +24,8 @@ public class ToolItems {
     }
 
     public static class HardenedHoe extends HoeItem {
-        public HardenedHoe(IItemTier tier, float attackSpeedIn, Properties builder) {
-            super(tier, attackSpeedIn, builder);
+        public HardenedHoe(IItemTier tier, int p_i231595_2_, float attackSpeedIn, Properties builder) { // fixme: change name p_i231595_2_
+            super(tier, p_i231595_2_, attackSpeedIn, builder);
         }
     }
 

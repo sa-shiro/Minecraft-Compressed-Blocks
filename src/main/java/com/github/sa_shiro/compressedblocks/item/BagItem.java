@@ -7,7 +7,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -15,24 +14,21 @@ import java.util.List;
 
 public class BagItem extends Item {
 
-    private TextFormatting color;
-    private int level;
-    private String itemCount;
-    private String text;
+    private final TextFormatting color;
+    private final String itemCount;
+    private final String text;
 
     /**
-     *
-     * @param level            A int between 0 and 1 representing how much Items the BagItem contains<br>
-     *                         0 = 9<br>
-     *                         1 = 81
-     * @param toolTipText       The text that will be added after the representation of how much Items the BagItem contains
+     * @param level       A int between 0 and 1 representing how much Items the BagItem contains<br>
+     *                    <ul><li>0 = 9<br></li>
+     *                    <li>1 = 81</li></ul>
+     * @param toolTipText The text that will be added after the representation of how much Items the BagItem contains
      */
     public BagItem(int level, String toolTipText) {
         super(new Properties()
                 .group(ItemGroup.compressedGroup)
                 .maxStackSize(64)
         );
-        this.level = level;
         this.text = toolTipText;
 
         switch (level) {
@@ -51,6 +47,6 @@ public class BagItem extends Item {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new StringTextComponent(itemCount + text).applyTextStyle(color));
+        tooltip.add(new StringTextComponent(itemCount + text).func_240699_a_(color));
     }
 }

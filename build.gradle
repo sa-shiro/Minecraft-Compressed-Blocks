@@ -1,3 +1,4 @@
+// Gradle BuildScript (c) sashiro, Version: 4
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
@@ -13,22 +14,22 @@ repositories {
 }
 apply plugin: 'net.minecraftforge.gradle'
 
-version = modVersion
-group = modGroup
-archivesBaseName = modBaseName
+version = "${modVersion}"
+group = "${modGroup}"
+archivesBaseName = "${modBaseName}-${minecraftVersion}"
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = "${javaVersion}"
 
 apply plugin: 'idea'
 idea {
     module {
         inheritOutputDirs = false
-        outputDir = file("${outMain}\\${project.name}")
-        testOutputDir = file("${outTest}\\${project.name}")
+        outputDir = file("${outMain}/${minecraftVersion}/${project.name}")
+        testOutputDir = file("${outTest}/${minecraftVersion}/${project.name}")
     }
 }
 
-buildDir = "${outBuild}\\${project.name}"
+buildDir = "${outBuild}/${minecraftVersion}/${project.name}"
 
 
 minecraft {
@@ -43,12 +44,12 @@ minecraft {
 
     runs {
         client {
-            workingDirectory "${mcDir}"
+            workingDirectory "${mcDir}/${minecraftVersion}"
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                compressedblocks {
+                "${modBaseName}"{
                     source sourceSets.main
                 }
             }
@@ -60,7 +61,7 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft "net.minecraftforge:forge:1.15.2-${forgeVersion}"
+    minecraft "net.minecraftforge:forge:${minecraftVersion}-${forgeVersion}"
 }
 
 jar {
@@ -72,8 +73,10 @@ jar {
                 "Implementation-Version"  : "${version}",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd' - 'HH:mm:ss"),
 
-                "Specification-Title"     : "${desc}",
+                "Specification-Title"     : "Minecraft ${minecraftVersion} Forge-Mod for Java ${javaVersion}",
                 "Specification-Version"   : "1" // We are version 1 of ourselves
         ])
     }
 }
+
+jar.finalizedBy('reobfJar')
