@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "minecraft:granite"
+      "item": "compressedblocks:c0_granite"
     }
   },
   "result": {
-    "item": "compressedblocks:c0_granite"
+    "item": "compressedblocks:c1_granite"
   }
 }

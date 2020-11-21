@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c2_dirt"
+      "item": "compressedblocks:c3_dirt"
     }
   },
   "result": {
-    "item": "compressedblocks:c3_dirt"
+    "item": "compressedblocks:c4_dirt"
   }
 }

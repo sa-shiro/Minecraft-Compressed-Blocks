@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "compressedblocks:c8_netherrack"
+      "item": "compressedblocks:c9_netherrack"
     }
   ],
   "result": {
-    "item": "compressedblocks:c7_netherrack",
+    "item": "compressedblocks:c8_netherrack",
     "count": 9
   }
 }

@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c0_andesite"
+      "item": "compressedblocks:c1_andesite"
     }
   },
   "result": {
-    "item": "compressedblocks:c1_andesite"
+    "item": "compressedblocks:c2_andesite"
   }
 }

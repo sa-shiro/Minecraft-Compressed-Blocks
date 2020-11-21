@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c6_coarse_dirt"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c7_coarse_dirt"
+  }
+}

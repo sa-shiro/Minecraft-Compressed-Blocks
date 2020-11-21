@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c0_prismarine"
+    }
+  ],
+  "result": {
+    "item": "minecraft:prismarine",
+    "count": 9
+  }
+}

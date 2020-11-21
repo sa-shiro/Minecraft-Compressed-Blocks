@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "compressedblocks:c6_gold_block"
+      "item": "compressedblocks:c7_gold_block"
     }
   ],
   "result": {
-    "item": "compressedblocks:c5_gold_block",
+    "item": "compressedblocks:c6_gold_block",
     "count": 9
   }
 }

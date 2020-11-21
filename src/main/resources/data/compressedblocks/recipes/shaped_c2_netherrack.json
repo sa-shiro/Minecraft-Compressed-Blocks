@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c1_netherrack"
+      "item": "compressedblocks:c2_netherrack"
     }
   },
   "result": {
-    "item": "compressedblocks:c2_netherrack"
+    "item": "compressedblocks:c3_netherrack"
   }
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c8_soul_soil"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c9_soul_soil"
+  }
+}

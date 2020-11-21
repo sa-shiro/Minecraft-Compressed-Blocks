@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "compressedblocks:c1_stone"
+      "item": "compressedblocks:c2_stone"
     }
   ],
   "result": {
-    "item": "compressedblocks:c0_stone",
+    "item": "compressedblocks:c1_stone",
     "count": 9
   }
 }

@@ -1,86 +1,60 @@
 package com.github.sa_shiro.compressedblocks.block;
 
+import com.github.sa_shiro.compressedblocks.event.DeferredRegistryEvent;
+import com.github.sa_shiro.compressedblocks.event.RegisterBlock;
+import net.minecraft.block.Block;
 import net.minecraft.block.RedstoneBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockReader;
+import net.minecraftforge.common.ToolType;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class CompressedRedstoneBlock extends RedstoneBlock {
-    private String blockCount;
-    private TextFormatting color;
+/**
+ * This class is not intended for the creation of custom Compressed Blocks.<br>
+ * Create your own Block class and extend {@link ICompressedBlock} or use {@link CompressedBlock#createBlock}.<br>
+ * You can register your custom compressed blocks using {@link RegisterBlock#registerNewBlock}.<br>
+ * For an example, see {@link DeferredRegistryEvent}
+ */
+class CompressedRedstoneBlock extends RedstoneBlock implements ICompressedBlock {
+    private final Compression comp = new Compression();
 
     /**
-     * @param material     Minecraft Material
-     * @param sound        Minecraft SoundType
+     * @param material Minecraft {@link Material}
+     * @param materialColor Minecraft {@link MaterialColor}
+     * @param sound Minecraft {@link SoundType}
      * @param compression  Compression Level ( 0 - 9 )
      * @param hardness     Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
      * @param resistance   Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
      * @param harvestLevel Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
      */
-    public CompressedRedstoneBlock(Material material, SoundType sound, int compression, float hardness, float resistance, int harvestLevel) {
-        super(Properties.create(material)
+    protected CompressedRedstoneBlock(Material material, MaterialColor materialColor, SoundType sound, int compression, float hardness, float resistance, int harvestLevel) {
+        super(Properties.create(material, materialColor)
                 .sound(sound)
                 .hardnessAndResistance(hardness, resistance)
                 .harvestLevel(harvestLevel)
                 .variableOpacity()
+                .harvestTool(ToolType.PICKAXE)
         );
-        switch (compression) {
-            case 0:
-                this.blockCount = "9";
-                this.color = TextFormatting.WHITE;
-                break;
-            case 1:
-                this.blockCount = "81";
-                this.color = TextFormatting.YELLOW;
-                break;
-            case 2:
-                this.blockCount = "729";
-                this.color = TextFormatting.YELLOW;
-                break;
-            case 3:
-                this.blockCount = "6.561";
-                this.color = TextFormatting.YELLOW;
-                break;
-            case 4:
-                this.blockCount = "59.049";
-                this.color = TextFormatting.AQUA;
-                break;
-            case 5:
-                this.blockCount = "531.441";
-                this.color = TextFormatting.AQUA;
-                break;
-            case 6:
-                this.blockCount = "4.782.969";
-                this.color = TextFormatting.LIGHT_PURPLE;
-                break;
-            case 7:
-                this.blockCount = "43.046.721";
-                this.color = TextFormatting.DARK_PURPLE;
-                break;
-            case 8:
-                this.blockCount = "387.420.489";
-                this.color = TextFormatting.RED;
-                break;
-            case 9:
-                this.blockCount = "3.486.784.101";
-                this.color = TextFormatting.DARK_RED;
-                break;
-            default:
-                break;
-        }
+        comp.setCompressionLevel(compression);
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+    public void addInformation(@Nonnull ItemStack stack, @Nullable IBlockReader worldIn, @Nonnull List<ITextComponent> tooltip, @Nonnull ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new StringTextComponent(blockCount + " Blocks").func_240699_a_(color)); // fixme: needs mapping
+        tooltip.add(new StringTextComponent(comp.blockCount + " Blocks").setStyle(comp.style));
+    }
+
+    @Override
+    public Block getBlock() {
+        return this;
     }
 }

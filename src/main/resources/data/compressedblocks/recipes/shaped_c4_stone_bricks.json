@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c3_stone_bricks"
+      "item": "compressedblocks:c4_stone_bricks"
     }
   },
   "result": {
-    "item": "compressedblocks:c4_stone_bricks"
+    "item": "compressedblocks:c5_stone_bricks"
   }
 }

@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c0_redstone_block"
+      "item": "compressedblocks:c1_redstone_block"
     }
   },
   "result": {
-    "item": "compressedblocks:c1_redstone_block"
+    "item": "compressedblocks:c2_redstone_block"
   }
 }

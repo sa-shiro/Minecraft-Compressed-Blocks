@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "minecraft:iron_block"
+      "item": "compressedblocks:c0_iron_block"
     }
   },
   "result": {
-    "item": "compressedblocks:c0_iron_block"
+    "item": "compressedblocks:c1_iron_block"
   }
 }

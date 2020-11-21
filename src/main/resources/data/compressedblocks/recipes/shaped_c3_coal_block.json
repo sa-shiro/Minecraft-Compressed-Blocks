@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c2_coal_block"
+      "item": "compressedblocks:c3_coal_block"
     }
   },
   "result": {
-    "item": "compressedblocks:c3_coal_block"
+    "item": "compressedblocks:c4_coal_block"
   }
 }

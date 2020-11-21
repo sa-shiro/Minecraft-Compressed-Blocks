@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "compressedblocks:c6_obsidian"
+      "item": "compressedblocks:c7_obsidian"
     }
   ],
   "result": {
-    "item": "compressedblocks:c5_obsidian",
+    "item": "compressedblocks:c6_obsidian",
     "count": 9
   }
 }

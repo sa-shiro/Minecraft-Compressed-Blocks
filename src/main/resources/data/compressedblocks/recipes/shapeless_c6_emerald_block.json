@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "compressedblocks:c6_emerald_block"
+      "item": "compressedblocks:c7_emerald_block"
     }
   ],
   "result": {
-    "item": "compressedblocks:c5_emerald_block",
+    "item": "compressedblocks:c6_emerald_block",
     "count": 9
   }
 }

@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c1_diorite"
+      "item": "compressedblocks:c2_diorite"
     }
   },
   "result": {
-    "item": "compressedblocks:c2_diorite"
+    "item": "compressedblocks:c3_diorite"
   }
 }

@@ -1,10 +1,8 @@
 package com.github.sa_shiro.compressedblocks.item;
 
 import com.github.sa_shiro.compressedblocks.event.DeferredRegistryEvent;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.IItemProvider;
 import net.minecraft.util.LazyValue;
 
 import java.util.function.Supplier;
@@ -15,7 +13,7 @@ public enum EnumItemTier implements IItemTier {
         return Ingredient.fromItems(DeferredRegistryEvent.COMPRESSED_WOOD.get());
     }),
     HARDENED_STONE(3, 512, 15.0F, 1.5F, 14, () -> {
-        return Ingredient.fromItems((IItemProvider) DeferredRegistryEvent.BLOCK_REGISTRY.get(1).get());
+        return Ingredient.fromItems(DeferredRegistryEvent.BLOCK_REGISTRY.get(1).get());
     }),
     HARDENED_IRON(4, 1024, 19.0F, 2.5F, 17, () -> {
         return Ingredient.fromItems(DeferredRegistryEvent.COMPRESSED_IRON.get());

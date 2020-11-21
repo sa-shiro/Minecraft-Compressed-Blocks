@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "compressedblocks:c4_dirt"
+      "item": "compressedblocks:c5_dirt"
     }
   ],
   "result": {
-    "item": "compressedblocks:c3_dirt",
+    "item": "compressedblocks:c4_dirt",
     "count": 9
   }
 }

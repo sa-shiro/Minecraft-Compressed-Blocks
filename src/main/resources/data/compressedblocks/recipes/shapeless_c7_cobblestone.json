@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "compressedblocks:c7_cobblestone"
+      "item": "compressedblocks:c8_cobblestone"
     }
   ],
   "result": {
-    "item": "compressedblocks:c6_cobblestone",
+    "item": "compressedblocks:c7_cobblestone",
     "count": 9
   }
 }

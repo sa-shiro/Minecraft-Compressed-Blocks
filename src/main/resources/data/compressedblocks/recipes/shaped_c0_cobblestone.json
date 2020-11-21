@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "minecraft:cobblestone"
+      "item": "compressedblocks:c0_cobblestone"
     }
   },
   "result": {
-    "item": "compressedblocks:c0_cobblestone"
+    "item": "compressedblocks:c1_cobblestone"
   }
 }

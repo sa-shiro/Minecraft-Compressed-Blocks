@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "minecraft:sand"
+      "item": "compressedblocks:c0_sand"
     }
   },
   "result": {
-    "item": "compressedblocks:c0_sand"
+    "item": "compressedblocks:c1_sand"
   }
 }

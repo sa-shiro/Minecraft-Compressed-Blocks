@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c2_diamond_block"
+      "item": "compressedblocks:c3_diamond_block"
     }
   },
   "result": {
-    "item": "compressedblocks:c3_diamond_block"
+    "item": "compressedblocks:c4_diamond_block"
   }
 }

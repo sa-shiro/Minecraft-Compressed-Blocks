@@ -6,32 +6,32 @@ import net.minecraft.item.*;
 public class ToolItems {
 
     public static class HardenedPickaxe extends PickaxeItem {
-        public HardenedPickaxe(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder) {
-            super(tier, attackDamageIn, attackSpeedIn, builder);
+        public HardenedPickaxe(IItemTier itemTier, int attackDamageIn, float attackSpeedIn, Item.Properties properties) {
+            super(itemTier, attackDamageIn, attackSpeedIn, properties);
         }
     }
 
-    public static class HardeneAxe extends AxeItem {
-        public HardeneAxe(IItemTier tier, float attackDamageIn, float attackSpeedIn, Properties builder) {
-            super(tier, attackDamageIn, attackSpeedIn, builder);
+    public static class HardenedAxe extends AxeItem {
+        public HardenedAxe(IItemTier itemTier, float attackDamageIn, float attackSpeedIn, Item.Properties properties) {
+            super(itemTier, attackDamageIn, attackSpeedIn, properties);
         }
     }
 
-    public static class HardeneShovel extends ShovelItem {
-        public HardeneShovel(IItemTier tier, float attackDamageIn, float attackSpeedIn, Properties builder) {
-            super(tier, attackDamageIn, attackSpeedIn, builder);
+    public static class HardenedShovel extends ShovelItem {
+        public HardenedShovel(IItemTier itemTier, float attackDamageIn, float attackSpeedIn, Item.Properties properties) {
+            super(itemTier, attackDamageIn, attackSpeedIn, properties);
         }
     }
 
     public static class HardenedHoe extends HoeItem {
-        public HardenedHoe(IItemTier tier, int p_i231595_2_, float attackSpeedIn, Properties builder) { // fixme: change name p_i231595_2_
-            super(tier, p_i231595_2_, attackSpeedIn, builder);
+        public HardenedHoe(IItemTier itemTier, int attackDamage, float attackSpeed, Item.Properties properties) {
+            super(itemTier, attackDamage, attackSpeed, properties);
         }
     }
 
-    public static class HardeneSword extends SwordItem {
-        public HardeneSword(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder) {
-            super(tier, attackDamageIn, attackSpeedIn, builder);
+    public static class HardenedSword extends SwordItem {
+        public HardenedSword(IItemTier itemTier, int attackDamageIn, float attackSpeedIn, Item.Properties properties) {
+            super(itemTier, attackDamageIn, attackSpeedIn, properties);
         }
     }
 }

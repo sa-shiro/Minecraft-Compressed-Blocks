@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c0_obsidian"
+      "item": "compressedblocks:c1_obsidian"
     }
   },
   "result": {
-    "item": "compressedblocks:c1_obsidian"
+    "item": "compressedblocks:c2_obsidian"
   }
 }

@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "minecraft:gravel"
+      "item": "compressedblocks:c0_gravel"
     }
   },
   "result": {
-    "item": "compressedblocks:c0_gravel"
+    "item": "compressedblocks:c1_gravel"
   }
 }

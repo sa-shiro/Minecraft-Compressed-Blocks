@@ -1,4 +1,4 @@
-// Gradle BuildScript (c) sashiro, Version: 4
+// Gradle BuildScript (c) sashiro, Version: 5
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
@@ -16,7 +16,7 @@ apply plugin: 'net.minecraftforge.gradle'
 
 version = "${modVersion}"
 group = "${modGroup}"
-archivesBaseName = "${modBaseName}-${minecraftVersion}"
+archivesBaseName = "[${minecraftVersion}]${modBaseName}"
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = "${javaVersion}"
 
@@ -49,7 +49,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                "${modBaseName}"{
+                "${modBaseName}" {
                     source sourceSets.main
                 }
             }

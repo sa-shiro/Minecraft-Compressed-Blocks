@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c2_granite"
+      "item": "compressedblocks:c3_granite"
     }
   },
   "result": {
-    "item": "compressedblocks:c3_granite"
+    "item": "compressedblocks:c4_granite"
   }
 }

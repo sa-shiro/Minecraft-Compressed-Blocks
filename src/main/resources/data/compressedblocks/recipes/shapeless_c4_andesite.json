@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "compressedblocks:c4_andesite"
+      "item": "compressedblocks:c5_andesite"
     }
   ],
   "result": {
-    "item": "compressedblocks:c3_andesite",
+    "item": "compressedblocks:c4_andesite",
     "count": 9
   }
 }

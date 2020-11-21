@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "compressedblocks:c4_red_sand"
+      "item": "compressedblocks:c5_red_sand"
     }
   ],
   "result": {
-    "item": "compressedblocks:c3_red_sand",
+    "item": "compressedblocks:c4_red_sand",
     "count": 9
   }
 }

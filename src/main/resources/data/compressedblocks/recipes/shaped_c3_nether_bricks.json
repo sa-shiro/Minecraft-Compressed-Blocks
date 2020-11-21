@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c2_nether_bricks"
+      "item": "compressedblocks:c3_nether_bricks"
     }
   },
   "result": {
-    "item": "compressedblocks:c3_nether_bricks"
+    "item": "compressedblocks:c4_nether_bricks"
   }
 }

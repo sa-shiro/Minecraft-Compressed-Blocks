@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "minecraft:gold_block"
+      "item": "compressedblocks:c0_gold_block"
     }
   },
   "result": {
-    "item": "compressedblocks:c0_gold_block"
+    "item": "compressedblocks:c1_gold_block"
   }
 }

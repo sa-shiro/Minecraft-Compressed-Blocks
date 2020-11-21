@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c3_sand"
+      "item": "compressedblocks:c4_sand"
     }
   },
   "result": {
-    "item": "compressedblocks:c4_sand"
+    "item": "compressedblocks:c5_sand"
   }
 }

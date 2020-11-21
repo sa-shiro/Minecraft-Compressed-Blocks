@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c3_light_gray_terracotta"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c4_light_gray_terracotta"
+  }
+}

@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "minecraft:emerald_block"
+      "item": "compressedblocks:c0_emerald_block"
     }
   },
   "result": {
-    "item": "compressedblocks:c0_emerald_block"
+    "item": "compressedblocks:c1_emerald_block"
   }
 }

@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c2_gravel"
+      "item": "compressedblocks:c3_gravel"
     }
   },
   "result": {
-    "item": "compressedblocks:c3_gravel"
+    "item": "compressedblocks:c4_gravel"
   }
 }

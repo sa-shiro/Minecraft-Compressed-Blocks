@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c8_mossy_cobblestone"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c7_mossy_cobblestone",
+    "count": 9
+  }
+}

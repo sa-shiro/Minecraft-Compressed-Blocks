@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "minecraft:soul_sand"
+      "item": "compressedblocks:c0_soul_sand"
     }
   },
   "result": {
-    "item": "compressedblocks:c0_soul_sand"
+    "item": "compressedblocks:c1_soul_sand"
   }
 }

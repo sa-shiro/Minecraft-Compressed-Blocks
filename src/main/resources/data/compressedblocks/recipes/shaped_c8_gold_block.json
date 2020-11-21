@@ -7,10 +7,10 @@
   ],
   "key": {
     "A": {
-      "item": "compressedblocks:c7_gold_block"
+      "item": "compressedblocks:c8_gold_block"
     }
   },
   "result": {
-    "item": "compressedblocks:c8_gold_block"
+    "item": "compressedblocks:c9_gold_block"
   }
 }

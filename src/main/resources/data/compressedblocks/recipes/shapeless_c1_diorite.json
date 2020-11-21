@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "compressedblocks:c1_diorite"
+      "item": "compressedblocks:c2_diorite"
     }
   ],
   "result": {
-    "item": "compressedblocks:c0_diorite",
+    "item": "compressedblocks:c1_diorite",
     "count": 9
   }
 }
