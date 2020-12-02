@@ -16,6 +16,7 @@ import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 /**
@@ -33,6 +34,7 @@ class CompressedGravel extends GravelBlock implements ICompressedBlock {
      * @param resistance   Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
      * @param harvestLevel Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
      */
+    @ParametersAreNonnullByDefault
     protected CompressedGravel(Material material, MaterialColor materialColor, SoundType sound, int compression, float hardness, float resistance, int harvestLevel) {
         super(Properties.create(material, materialColor)
                 .sound(sound)

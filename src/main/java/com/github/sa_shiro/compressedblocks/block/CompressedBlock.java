@@ -12,6 +12,7 @@ import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 public class CompressedBlock extends Block implements ICompressedBlock {
@@ -26,6 +27,7 @@ public class CompressedBlock extends Block implements ICompressedBlock {
      * @param resistance   Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
      * @param harvestLevel Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
      */
+    @ParametersAreNonnullByDefault
     protected CompressedBlock(Material material, MaterialColor materialColor, SoundType sound, int compression, float hardness, float resistance, int harvestLevel) {
         super(Properties.create(material, materialColor)
                 .sound(sound)
@@ -38,23 +40,25 @@ public class CompressedBlock extends Block implements ICompressedBlock {
 
     public static ICompressedBlock createBlock(@Nonnull BlockType type, int compression, @Nonnull Material material, @Nullable MaterialColor materialColor, @Nonnull SoundType soundType, float hardness, float resistance, int harvestLevel) {
         if (materialColor == null) materialColor = material.getColor();
-        if (type == BlockType.DEFAULT)
-            return new CompressedBlock(material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
-        if (type == BlockType.SAND)
-            return new CompressedSand(14406560, material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
-        if (type == BlockType.RED_SAND)
-            return new CompressedSand(11098145, material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
-        if (type == BlockType.GRAVEL)
-            return new CompressedGravel(material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
-        if (type == BlockType.REDSTONE)
-            return new CompressedRedstoneBlock(material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
-        if (type == BlockType.SOUL_SAND)
-            return new CompressedSoulSandBlock(material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
-        if (type == BlockType.WOOL)
-            return new CompressedWool(material, materialColor, soundType, compression);
-        if (type == BlockType.SLIME)
-            return new CompressedSlimeBlock(material, materialColor, soundType, compression);
-        else return null; // fixme: this should not return null !!!
+        switch (type) {
+            default:
+            case DEFAULT:
+                return new CompressedBlock(material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
+            case SAND:
+                return new CompressedSand(14406560, material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
+            case RED_SAND:
+                return new CompressedSand(11098145, material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
+            case GRAVEL:
+                return new CompressedGravel(material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
+            case REDSTONE:
+                return new CompressedRedstoneBlock(material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
+            case SOUL_SAND:
+                return new CompressedSoulSandBlock(material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
+            case WOOL:
+                return new CompressedWool(material, materialColor, soundType, compression);
+            case SLIME:
+                return new CompressedSlimeBlock(material, materialColor, soundType, compression);
+        }
     }
 
     public static ICompressedBlock createSandBlock(int dustColor, int compression, @Nonnull Material material, @Nullable MaterialColor materialColor, @Nonnull SoundType soundType, float hardness, float resistance, int harvestLevel) {

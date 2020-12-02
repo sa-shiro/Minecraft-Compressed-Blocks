@@ -58,7 +58,6 @@ public class Lists {
     public static final BlockFactory PRISMARINE_BRICKS = new BlockFactory(BlockType.DEFAULT, "prismarine_bricks", Material.ROCK, MaterialColor.DIAMOND, SoundType.STONE);
     public static final BlockFactory DARK_PRISMARINE = new BlockFactory(BlockType.DEFAULT, "dark_prismarine", Material.ROCK, MaterialColor.DIAMOND, SoundType.STONE);
     public static final BlockFactory BLACKSTONE = new BlockFactory(BlockType.DEFAULT, "blackstone", Material.ANVIL, MaterialColor.BLACK, SoundType.STONE);
-
     public static final BlockFactory WHITE_WOOL = new BlockFactory(BlockType.WOOL, "white_wool", Material.WOOL, MaterialColor.SNOW, SoundType.CLOTH);
     public static final BlockFactory ORANGE_WOOL = new BlockFactory(BlockType.WOOL, "orange_wool", Material.WOOL, MaterialColor.ADOBE, SoundType.CLOTH);
     public static final BlockFactory MAGENTA_WOOL = new BlockFactory(BlockType.WOOL, "magenta_wool", Material.WOOL, MaterialColor.MAGENTA, SoundType.CLOTH);
@@ -75,7 +74,6 @@ public class Lists {
     public static final BlockFactory GREEN_WOOL = new BlockFactory(BlockType.WOOL, "green_wool", Material.WOOL, MaterialColor.GREEN, SoundType.CLOTH);
     public static final BlockFactory RED_WOOL = new BlockFactory(BlockType.WOOL, "red_wool", Material.WOOL, MaterialColor.RED, SoundType.CLOTH);
     public static final BlockFactory BLACK_WOOL = new BlockFactory(BlockType.WOOL, "black_wool", Material.WOOL, MaterialColor.BLACK, SoundType.CLOTH);
-
     public static final BlockFactory TERRACOTTA = new BlockFactory(BlockType.DEFAULT, "terracotta", Material.ROCK, MaterialColor.ADOBE, SoundType.STONE);
     public static final BlockFactory WHITE_TERRACOTTA = new BlockFactory(BlockType.DEFAULT, "white_terracotta", Material.ROCK, MaterialColor.WHITE_TERRACOTTA, SoundType.STONE);
     public static final BlockFactory ORANGE_TERRACOTTA = new BlockFactory(BlockType.DEFAULT, "orange_terracotta", Material.ROCK, MaterialColor.ORANGE_TERRACOTTA, SoundType.STONE);
@@ -93,7 +91,6 @@ public class Lists {
     public static final BlockFactory GREEN_TERRACOTTA = new BlockFactory(BlockType.DEFAULT, "green_terracotta", Material.ROCK, MaterialColor.GREEN_TERRACOTTA, SoundType.STONE);
     public static final BlockFactory RED_TERRACOTTA = new BlockFactory(BlockType.DEFAULT, "red_terracotta", Material.ROCK, MaterialColor.RED_TERRACOTTA, SoundType.STONE);
     public static final BlockFactory BLACK_TERRACOTTA = new BlockFactory(BlockType.DEFAULT, "black_terracotta", Material.ROCK, MaterialColor.BLACK_TERRACOTTA, SoundType.STONE);
-
     public static final BlockFactory WHITE_CONCRETE = new BlockFactory(BlockType.DEFAULT, "white_concrete", Material.ROCK, MaterialColor.SNOW, SoundType.STONE);
     public static final BlockFactory ORANGE_CONCRETE = new BlockFactory(BlockType.DEFAULT, "orange_concrete", Material.ROCK, MaterialColor.ADOBE, SoundType.STONE);
     public static final BlockFactory MAGENTA_CONCRETE = new BlockFactory(BlockType.DEFAULT, "magenta_concrete", Material.ROCK, MaterialColor.MAGENTA, SoundType.STONE);

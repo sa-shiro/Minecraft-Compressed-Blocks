@@ -5,7 +5,7 @@ import com.github.sa_shiro.compressedblocks.util.ItemGroups;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 
-import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
  * This class is used to register new Compressed Blocks.<br>
@@ -22,7 +22,8 @@ public class RegisterBlock {
      * @param registryName     the Block's registry name
      * @param compressionLevel refers to a loop variable for the compression (0 - 9)
      */
-    public static void registerNewBlock(@Nonnull ICompressedBlock blockIn, @Nonnull String registryName, int compressionLevel) {
+    @ParametersAreNonnullByDefault
+    public static void registerNewBlock(ICompressedBlock blockIn, String registryName, int compressionLevel) {
         registerBlock(blockIn, registryName, compressionLevel, PROPERTIES);
     }
 
@@ -34,11 +35,13 @@ public class RegisterBlock {
      * @param compressionLevel refers to a loop variable for the compression (0 - 9)
      * @param properties Item Properties such as Item Group
      */
-    public static void registerNewBlock(@Nonnull ICompressedBlock blockIn, @Nonnull String registryName, int compressionLevel, @Nonnull Item.Properties properties) {
+    @ParametersAreNonnullByDefault
+    public static void registerNewBlock(ICompressedBlock blockIn, String registryName, int compressionLevel, Item.Properties properties) {
         registerBlock(blockIn, registryName, compressionLevel, properties);
     }
 
-    private static void registerBlock(@Nonnull ICompressedBlock iBlock, @Nonnull String blockName, int compressionLevel, @Nonnull Item.Properties properties) {
+    @ParametersAreNonnullByDefault
+    private static void registerBlock(ICompressedBlock iBlock, String blockName, int compressionLevel, Item.Properties properties) {
         int index2 = INDEX; // required for ITEMS.register()
 
         DeferredRegistryEvent.BLOCK_REGISTRY.add(INDEX, DeferredRegistryEvent.BLOCKS.register("c" + compressionLevel + "_" + blockName, iBlock::getBlock));

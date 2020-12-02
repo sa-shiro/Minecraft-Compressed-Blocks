@@ -23,7 +23,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class DeferredRegistryEvent {
 
@@ -41,7 +40,6 @@ public class DeferredRegistryEvent {
 
         if( ModList.get().isLoaded("mekanism") ) { registerMekanismBlocks(); }
 
-        //fixme: !!! Deprecated !!!
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> FMLJavaModLoadingContext.get().getModEventBus().addListener(DeferredRegistryEvent::translucentRender));
     }
 
@@ -49,7 +47,7 @@ public class DeferredRegistryEvent {
     private static void registerBlocks() {
         for (BlockFactory factory : Lists.blockList) {
             for (int level = 0; level < 10; level++) {
-                RegisterBlock.registerNewBlock(Objects.requireNonNull(CompressedBlock.createBlock(factory.getType(), level, factory.getMaterial(), factory.getMaterialColor(), factory.getSoundType(), Lists.HARDNESS.get(level), Lists.RESISTANCE.get(level), Lists.HARVEST_LEVEL.get(level))), factory.getRegistryName(), level);
+                RegisterBlock.registerNewBlock(CompressedBlock.createBlock(factory.getType(), level, factory.getMaterial(), factory.getMaterialColor(), factory.getSoundType(), Lists.HARDNESS.get(level), Lists.RESISTANCE.get(level), Lists.HARVEST_LEVEL.get(level)), factory.getRegistryName(), level);
             }
         }
     }
@@ -58,7 +56,7 @@ public class DeferredRegistryEvent {
         Item.Properties mekanismProperties = new Item.Properties().group(ItemGroups.compressedCustomBlockGroup);
         for (BlockFactory factory : Lists.mekanismBlockList) {
             for (int level = 0; level < 10; level++) {
-                RegisterBlock.registerNewBlock(Objects.requireNonNull(CompressedBlock.createBlock(factory.getType(), level, factory.getMaterial(), factory.getMaterialColor(), factory.getSoundType(), Lists.HARDNESS.get(level), Lists.RESISTANCE.get(level), Lists.HARVEST_LEVEL.get(level))), factory.getRegistryName(), level, mekanismProperties);
+                //RegisterBlock.registerNewBlock(CompressedBlock.createBlock(factory.getType(), level, factory.getMaterial(), factory.getMaterialColor(), factory.getSoundType(), Lists.HARDNESS.get(level), Lists.RESISTANCE.get(level), Lists.HARVEST_LEVEL.get(level)), factory.getRegistryName(), level, mekanismProperties);
             }
         }
     }

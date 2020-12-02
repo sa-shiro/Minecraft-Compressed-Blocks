@@ -21,6 +21,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 /**
@@ -38,6 +39,7 @@ class CompressedSlimeBlock extends SlimeBlock implements ICompressedBlock {
      * @param sound Minecraft {@link SoundType}
      * @param compression  Compression Level ( 0 - 9 )
      */
+    @ParametersAreNonnullByDefault
     protected CompressedSlimeBlock(Material material, MaterialColor materialColor, SoundType sound, int compression) {
         super(Properties.create(material, materialColor)
                 .sound(sound)

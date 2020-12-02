@@ -15,6 +15,7 @@ import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 /**
@@ -32,6 +33,7 @@ class CompressedWool extends Block implements ICompressedBlock {
      * @param sound Minecraft {@link SoundType}
      * @param compression  Compression Level ( 0 - 9 )
      */
+    @ParametersAreNonnullByDefault
     protected CompressedWool(Material material, MaterialColor materialColor, SoundType sound, int compression) {
         super(Properties.create(material, materialColor)
                 .sound(sound)
