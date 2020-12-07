@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c0_emerald_ore"
+    }
+  ],
+  "result": {
+    "item": "minecraft:emerald_ore",
+    "count": 9
+  }
+}

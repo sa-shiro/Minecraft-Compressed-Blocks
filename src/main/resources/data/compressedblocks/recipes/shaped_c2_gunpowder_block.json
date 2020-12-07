@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c2_gunpowder_block"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c3_gunpowder_block"
+  }
+}

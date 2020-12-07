@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c8_rotten_flesh_block"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c9_rotten_flesh_block"
+  }
+}

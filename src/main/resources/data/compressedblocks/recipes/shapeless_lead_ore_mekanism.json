@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c0_lead_ore_mekanism"
+    }
+  ],
+  "result": {
+    "item": "mekanism:lead_ore",
+    "count": 9
+  }
+}

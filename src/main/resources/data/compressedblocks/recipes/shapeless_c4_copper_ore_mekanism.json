@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c5_copper_ore_mekanism"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c4_copper_ore_mekanism",
+    "count": 9
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "mekanism:block_uranium"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c0_uranium_block_mekanism"
+  }
+}

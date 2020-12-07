@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c2_redstone_ore"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c3_redstone_ore"
+  }
+}

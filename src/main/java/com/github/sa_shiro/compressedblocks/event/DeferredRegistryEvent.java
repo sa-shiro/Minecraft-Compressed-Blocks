@@ -38,7 +38,15 @@ public class DeferredRegistryEvent {
         Lists.populate();
         registerBlocks();
 
-        if( ModList.get().isLoaded("mekanism") ) { registerMekanismBlocks(); }
+        if( ModList.get().isLoaded("mekanism") ) {
+            Lists.populateMekanism();
+            registerMekanismBlocks();
+        }
+        /* fixme: cant be implemented yet, because of how thermal is using / assigning their textures
+        if( ModList.get().isLoaded("thermal") ) {
+            Lists.populateThermal();
+            registerThermalBlocks();
+        }*/
 
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> FMLJavaModLoadingContext.get().getModEventBus().addListener(DeferredRegistryEvent::translucentRender));
     }
@@ -56,10 +64,20 @@ public class DeferredRegistryEvent {
         Item.Properties mekanismProperties = new Item.Properties().group(ItemGroups.compressedCustomBlockGroup);
         for (BlockFactory factory : Lists.mekanismBlockList) {
             for (int level = 0; level < 10; level++) {
-                //RegisterBlock.registerNewBlock(CompressedBlock.createBlock(factory.getType(), level, factory.getMaterial(), factory.getMaterialColor(), factory.getSoundType(), Lists.HARDNESS.get(level), Lists.RESISTANCE.get(level), Lists.HARVEST_LEVEL.get(level)), factory.getRegistryName(), level, mekanismProperties);
+                RegisterBlock.registerNewBlock(CompressedBlock.createBlock(factory.getType(), level, factory.getMaterial(), factory.getMaterialColor(), factory.getSoundType(), Lists.HARDNESS.get(level), Lists.RESISTANCE.get(level), Lists.HARVEST_LEVEL.get(level)), factory.getRegistryName(), level, mekanismProperties);
             }
         }
     }
+
+    /*
+    private static void registerThermalBlocks() {
+        Item.Properties thermalProperties = new Item.Properties().group(ItemGroups.compressedCustomBlockGroup);
+        for (BlockFactory factory : Lists.thermalBlockList) {
+            for (int level = 0; level < 10; level++) {
+                RegisterBlock.registerNewBlock(CompressedBlock.createBlock(factory.getType(), level, factory.getMaterial(), factory.getMaterialColor(), factory.getSoundType(), Lists.HARDNESS.get(level), Lists.RESISTANCE.get(level), Lists.HARVEST_LEVEL.get(level)), factory.getRegistryName(), level, thermalProperties);
+            }
+        }
+    }*/
 
     private static void translucentRender(final FMLClientSetupEvent e) {
         final RenderType TRANSLUCENT = RenderType.getTranslucent();

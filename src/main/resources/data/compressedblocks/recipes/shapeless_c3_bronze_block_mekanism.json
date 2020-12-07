@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c4_bronze_block_mekanism"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c3_bronze_block_mekanism",
+    "count": 9
+  }
+}

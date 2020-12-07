@@ -23,5 +23,5 @@ run
 logs/
 src/non-generated/
 src/generated/
-!create_jsons.sh
-!create_lang.sh
+generate/
+!generate.sh

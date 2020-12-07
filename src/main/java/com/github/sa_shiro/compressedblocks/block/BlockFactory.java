@@ -34,6 +34,15 @@ public class BlockFactory {
         this.soundType = soundTypeIn;
     }
 
+    /**
+     * Utility to create new Blocks to iterate over for registering
+     * @param typeIn {@link BlockType}
+     * @param registryNameIn Registry Name
+     * @param dustColorIn Dust Color (used for sand and co)
+     * @param materialIn Minecraft {@link Material}
+     * @param materialColorIn Minecraft {@link MaterialColor}
+     * @param soundTypeIn Minecraft {@link SoundType}
+     */
     public BlockFactory(@Nonnull BlockType typeIn, @Nonnull String registryNameIn, int dustColorIn, @Nonnull Material materialIn, @Nullable MaterialColor materialColorIn, @Nonnull SoundType soundTypeIn) {
         if (materialColorIn == null) materialColorIn = materialIn.getColor();
         this.type = typeIn;
