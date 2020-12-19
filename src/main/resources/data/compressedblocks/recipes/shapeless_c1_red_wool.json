@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c2_red_wool"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c1_red_wool",
+    "count": 9
+  }
+}

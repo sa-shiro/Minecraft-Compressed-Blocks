@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c3_lime_concrete"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c4_lime_concrete"
+  }
+}

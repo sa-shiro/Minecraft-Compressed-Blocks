@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    " B ",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:compressed_stick"
+    },
+    "B": {
+      "item": "compressedblocks:compressed_iron"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:hardened_iron_sword"
+  }
+}

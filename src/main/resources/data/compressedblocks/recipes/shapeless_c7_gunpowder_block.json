@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c8_gunpowder_block"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c7_gunpowder_block",
+    "count": 9
+  }
+}

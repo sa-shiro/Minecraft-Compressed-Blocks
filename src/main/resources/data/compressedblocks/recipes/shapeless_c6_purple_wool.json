@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c7_purple_wool"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c6_purple_wool",
+    "count": 9
+  }
+}

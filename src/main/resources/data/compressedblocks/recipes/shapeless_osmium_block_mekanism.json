@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c0_osmium_block_mekanism"
+    }
+  ],
+  "result": {
+    "item": "mekanism:block_osmium",
+    "count": 9
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c1_white_concrete"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c2_white_concrete"
+  }
+}

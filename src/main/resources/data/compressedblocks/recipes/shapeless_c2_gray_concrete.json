@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c3_gray_concrete"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c2_gray_concrete",
+    "count": 9
+  }
+}

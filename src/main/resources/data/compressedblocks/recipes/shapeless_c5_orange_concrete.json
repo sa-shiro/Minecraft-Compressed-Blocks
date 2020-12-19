@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c6_orange_concrete"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c5_orange_concrete",
+    "count": 9
+  }
+}

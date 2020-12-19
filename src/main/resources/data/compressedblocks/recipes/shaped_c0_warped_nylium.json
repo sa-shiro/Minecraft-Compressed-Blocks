@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c0_warped_nylium"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c1_warped_nylium"
+  }
+}

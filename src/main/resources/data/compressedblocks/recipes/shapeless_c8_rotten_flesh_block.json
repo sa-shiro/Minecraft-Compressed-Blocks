@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c9_rotten_flesh_block"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c8_rotten_flesh_block",
+    "count": 9
+  }
+}

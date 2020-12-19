@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c0_soul_soil"
+    }
+  ],
+  "result": {
+    "item": "minecraft:soul_soil",
+    "count": 9
+  }
+}

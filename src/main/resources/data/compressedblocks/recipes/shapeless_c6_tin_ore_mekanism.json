@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c7_tin_ore_mekanism"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c6_tin_ore_mekanism",
+    "count": 9
+  }
+}

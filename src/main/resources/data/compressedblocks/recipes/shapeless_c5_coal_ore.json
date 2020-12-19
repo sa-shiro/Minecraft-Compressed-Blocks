@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c6_coal_ore"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c5_coal_ore",
+    "count": 9
+  }
+}
