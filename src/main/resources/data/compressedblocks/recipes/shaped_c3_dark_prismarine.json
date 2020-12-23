@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "compressedblocks:c3_dark_prismarine"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c4_dark_prismarine"
+  }
+}

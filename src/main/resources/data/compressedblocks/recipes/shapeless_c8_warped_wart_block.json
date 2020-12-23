@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c9_warped_wart_block"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c8_warped_wart_block",
+    "count": 9
+  }
+}

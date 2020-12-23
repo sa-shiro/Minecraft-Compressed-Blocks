@@ -1,0 +1,82 @@
+// Gradle BuildScript (c) sashiro, Version: 5
+buildscript {
+    repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+    }
+}
+repositories {
+    jcenter()
+}
+apply plugin: 'net.minecraftforge.gradle'
+
+version = "${modVersion}"
+group = "${modGroup}"
+archivesBaseName = "[${minecraftVersion}]${modBaseName}"
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = "${javaVersion}"
+
+apply plugin: 'idea'
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("${outMain}/${minecraftVersion}/${project.name}")
+        testOutputDir = file("${outTest}/${minecraftVersion}/${project.name}")
+    }
+}
+
+buildDir = "${outBuild}/${minecraftVersion}/${project.name}"
+
+
+minecraft {
+    // The mappings can be changed at any time, and must be in the following format.
+    // snapshot_YYYYMMDD   Snapshot are built nightly.
+    // stable_#            Stables are built at the discretion of the MCP team.
+    // Use non-default mappings at your own risk. they may not always work.
+    // Simply re-run your setup task after changing the mappings to update your workspace.
+    mappings channel: "${mappingsChannel}", version: "${mappingsVersion}"
+    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
+    runs {
+        client {
+            workingDirectory "${mcDir}/${minecraftVersion}"
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                "${modBaseName}" {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
+    // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
+    // The userdev artifact is a special name and will get all sorts of transformations applied to it.
+    minecraft "net.minecraftforge:forge:${minecraftVersion}-${forgeVersion}"
+}
+
+jar {
+    manifest {
+        attributes([
+                "Creatd-By"               : "${creator}",
+
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : "${version}",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd' - 'HH:mm:ss"),
+
+                "Specification-Title"     : "Minecraft ${minecraftVersion} Forge-Mod for Java ${javaVersion}",
+                "Specification-Version"   : "1" // We are version 1 of ourselves
+        ])
+    }
+}
+
+jar.finalizedBy('reobfJar')

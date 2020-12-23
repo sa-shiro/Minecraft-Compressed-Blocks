@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c0_lime_concrete"
+    }
+  ],
+  "result": {
+    "item": "minecraft:lime_concrete",
+    "count": 9
+  }
+}

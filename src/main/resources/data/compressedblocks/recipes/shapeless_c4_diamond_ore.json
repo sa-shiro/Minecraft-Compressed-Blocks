@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c5_diamond_ore"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c4_diamond_ore",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c8_white_concrete"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c7_white_concrete",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c8_nether_quartz_ore"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c7_nether_quartz_ore",
+    "count": 9
+  }
+}

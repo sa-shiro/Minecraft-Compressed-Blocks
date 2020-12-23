@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c0_yellow_terracotta"
+    }
+  ],
+  "result": {
+    "item": "minecraft:yellow_terracotta",
+    "count": 9
+  }
+}

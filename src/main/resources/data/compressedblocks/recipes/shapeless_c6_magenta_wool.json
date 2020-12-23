@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c7_magenta_wool"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c6_magenta_wool",
+    "count": 9
+  }
+}

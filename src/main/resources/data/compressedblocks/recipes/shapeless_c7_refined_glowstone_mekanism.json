@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c8_refined_glowstone_mekanism"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c7_refined_glowstone_mekanism",
+    "count": 9
+  }
+}

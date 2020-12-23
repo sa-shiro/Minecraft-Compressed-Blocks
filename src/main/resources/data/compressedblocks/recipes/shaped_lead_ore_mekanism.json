@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "mekanism:lead_ore"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c0_lead_ore_mekanism"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:huge_ender_pearl_bag"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:ender_pearl_bag",
+    "count": 9
+  }
+}

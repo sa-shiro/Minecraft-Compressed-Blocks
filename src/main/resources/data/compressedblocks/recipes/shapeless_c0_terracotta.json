@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c1_terracotta"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c0_terracotta",
+    "count": 9
+  }
+}
