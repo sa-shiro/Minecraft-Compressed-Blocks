@@ -1,4 +1,4 @@
-# CB: Compressed Blocks
+# CB: Compressed Blocks 1.16
  
 A Block Compression mod for Minecraft 1.14.4, 1.15.2 and 1.16
 

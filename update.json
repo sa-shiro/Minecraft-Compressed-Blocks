@@ -1,7 +1,8 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/cb-compressed-blocks",
   "1.14.4": {
-    "4.0.0": "Update to latest version!"
+    "4.0.0": "Update to latest version!",
+    "5.0.4": "Version Backport: 1.16 -> 1.14"
   },
   "1.15.2": {
     "3.0.3": "Added missing recipes (Compressed Iron, Gold, Diamond, Stick",
@@ -18,43 +19,56 @@
     "2.3.0": "see #2.3.0 at GitHub",
     "2.2.2": "made the recipes for hardened tools cheaper",
     "2.2.1": "added compressed diamond block",
-    "2.1.0": "update to 1.15.2"
+    "2.1.0": "update to 1.15.2",
+    "5.0.4": "Version Backport: 1.16 -> 1.15"
   },
   "1.16.1": {
     "4.0.0": "Update to Forge 1.16.1\n Rendering may be buggy!",
     "4.0.1": "Removed Version Restriction (1.16.1 -> 1.16)",
     "5.0.1": "Major rewrite, added tons of new blocks!",
     "5.0.2": "Added missing recipes",
-    "5.0.3": "Updated Logo\nAdded several new blocks\nAdded compressed Mekanism blocks"
+    "5.0.3": "Updated Logo\nAdded several new blocks\nAdded compressed Mekanism blocks",
+    "5.0.4": "Version bump"
   },
   "1.16.2": {
     "5.0.1": "Major rewrite, added tons of new blocks!",
     "5.0.2": "Added missing recipes",
-    "5.0.3": "Updated Logo\nAdded several new blocks\nAdded compressed Mekanism blocks"
+    "5.0.3": "Updated Logo\nAdded several new blocks\nAdded compressed Mekanism blocks",
+    "5.0.4": "Version bump"
   },
   "1.16.3": {
     "4.0.1": "Removed Version Restriction (1.16.1 -> 1.16)",
     "5.0.1": "Major rewrite, added tons of new blocks!",
     "5.0.2": "Added missing recipes",
-    "5.0.3": "Updated Logo\nAdded several new blocks\nAdded compressed Mekanism blocks"
+    "5.0.3": "Updated Logo\nAdded several new blocks\nAdded compressed Mekanism blocks",
+    "5.0.4": "Version bump"
   },
   "1.16.4": {
     "5.0.1": "Major rewrite, added tons of new blocks!",
     "5.0.2": "Added missing recipes",
-    "5.0.3": "Updated Logo\nAdded several new blocks\nAdded compressed Mekanism blocks"
+    "5.0.3": "Updated Logo\nAdded several new blocks\nAdded compressed Mekanism blocks",
+    "5.0.4": "Version bump"
   },
   "promos": {
-    "1.14.4-latest": "4.0.0",
-    "1.14.4-recommended": "4.0.0",
-    "1.15.2-latest": "3.0.3",
-    "1.15.2-recommended": "3.0.3",
-    "1.16.1-latest": "5.0.3",
+    "1.14.1-latest": "5.0.4",
+    "1.14.1-recommended": "5.0.4",
+    "1.14.2-latest": "5.0.4",
+    "1.14.2-recommended": "5.0.4",
+    "1.14.3-latest": "5.0.4",
+    "1.14.3-recommended": "5.0.4",
+    "1.14.4-latest": "5.0.4",
+    "1.14.4-recommended": "5.0.4",
+    "1.15.1-latest": "5.0.4",
+    "1.15.1-recommended": "5.0.4",
+    "1.15.2-latest": "5.0.4",
+    "1.15.2-recommended": "5.0.4",
+    "1.16.1-latest": "5.0.4",
     "1.16.1-recommended": "5.0.3",
-    "1.16.2-latest": "5.0.3",
+    "1.16.2-latest": "5.0.4",
     "1.16.2-recommended": "5.0.3",
-    "1.16.3-latest": "5.0.3",
+    "1.16.3-latest": "5.0.4",
     "1.16.3-recommended": "5.0.3",
-    "1.16.4-latest": "5.0.3",
+    "1.16.4-latest": "5.0.4",
     "1.16.4-recommended": "5.0.3"
   }
 }
