@@ -65,13 +65,19 @@ public class Compression {
 
     /**
      * Function to get the current Block Count
+     *
      * @return Block Count
      */
-    public String getBlockCount() { return this.blockCount; }
+    public String getBlockCount() {
+        return this.blockCount;
+    }
 
     /**
      * Function to get the current Style
+     *
      * @return Style
      */
-    public Style getStyle() { return this.style; }
+    public Style getStyle() {
+        return this.style;
+    }
 }

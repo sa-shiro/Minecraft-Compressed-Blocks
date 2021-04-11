@@ -34,10 +34,10 @@ class CompressedSlimeBlock extends SlimeBlock implements ICompressedBlock {
     private final Compression comp = new Compression();
 
     /**
-     * @param material Minecraft {@link Material}
+     * @param material      Minecraft {@link Material}
      * @param materialColor Minecraft {@link MaterialColor}
-     * @param sound Minecraft {@link SoundType}
-     * @param compression  Compression Level ( 0 - 9 )
+     * @param sound         Minecraft {@link SoundType}
+     * @param compression   Compression Level ( 0 - 9 )
      */
     @ParametersAreNonnullByDefault
     protected CompressedSlimeBlock(Material material, MaterialColor materialColor, SoundType sound, int compression) {

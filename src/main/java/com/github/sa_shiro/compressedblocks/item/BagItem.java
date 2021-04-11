@@ -37,7 +37,7 @@ public class BagItem extends Item {
     /**
      * @param level       A int between 0 and 9 representing how much Items the BagItem contains<br>
      * @param toolTipText The text that will be added after the representation of how much Items the BagItem contains
-     * @param itemGroup The Item Group the Item should be placed in
+     * @param itemGroup   The Item Group the Item should be placed in
      */
     public BagItem(int level, String toolTipText, ItemGroup itemGroup) {
         super(new Properties()

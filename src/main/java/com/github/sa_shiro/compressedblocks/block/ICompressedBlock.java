@@ -7,6 +7,7 @@ public interface ICompressedBlock {
 
     /**
      * Function to get the Block
+     *
      * @return The Block
      */
     Block getBlock();

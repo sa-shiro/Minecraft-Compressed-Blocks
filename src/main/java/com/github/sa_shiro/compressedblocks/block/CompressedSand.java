@@ -29,14 +29,14 @@ class CompressedSand extends SandBlock implements ICompressedBlock {
     private final Compression comp = new Compression();
 
     /**
-     * @param dustColor Dust Color
-     * @param material Minecraft {@link Material}
+     * @param dustColor     Dust Color
+     * @param material      Minecraft {@link Material}
      * @param materialColor Minecraft {@link MaterialColor}
-     * @param sound Minecraft {@link SoundType}
-     * @param compression  Compression Level ( 0 - 9 )
-     * @param hardness     Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
-     * @param resistance   Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
-     * @param harvestLevel Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
+     * @param sound         Minecraft {@link SoundType}
+     * @param compression   Compression Level ( 0 - 9 )
+     * @param hardness      Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
+     * @param resistance    Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
+     * @param harvestLevel  Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
      */
     @ParametersAreNonnullByDefault
     protected CompressedSand(int dustColor, Material material, MaterialColor materialColor, SoundType sound, int compression, float hardness, float resistance, int harvestLevel) {
@@ -57,5 +57,7 @@ class CompressedSand extends SandBlock implements ICompressedBlock {
     }
 
     @Override
-    public Block getBlock() { return this; }
+    public Block getBlock() {
+        return this;
+    }
 }

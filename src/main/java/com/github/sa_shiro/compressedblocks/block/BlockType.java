@@ -19,5 +19,7 @@ public enum BlockType {
         type = typeIn;
     }
 
-    public String getType() { return type; }
+    public String getType() {
+        return type;
+    }
 }

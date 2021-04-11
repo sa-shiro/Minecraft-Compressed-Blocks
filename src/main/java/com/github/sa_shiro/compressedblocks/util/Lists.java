@@ -14,7 +14,6 @@ public class Lists {
     public final static ArrayList<Integer> HARVEST_LEVEL = new ArrayList<>();
     public static final ArrayList<BlockFactory> blockList = new ArrayList<>();
     public static final ArrayList<BlockFactory> mekanismBlockList = new ArrayList<>();
-    //public static final ArrayList<BlockFactory> thermalBlockList = new ArrayList<>();
 
     //------------------------------------------------------------------------------------------------------------------
     // Minecraft Blocks
@@ -40,7 +39,7 @@ public class Lists {
     public static final BlockFactory IRON_ORE = new BlockFactory(BlockType.DEFAULT, "iron_ore", Material.ROCK, null, SoundType.STONE);
     public static final BlockFactory GOLD_ORE = new BlockFactory(BlockType.DEFAULT, "gold_ore", Material.ROCK, null, SoundType.STONE);
     public static final BlockFactory NETHER_GOLD_ORE = new BlockFactory(BlockType.DEFAULT, "nether_gold_ore", Material.ROCK, MaterialColor.NETHERRACK, SoundType.STONE);
-    public static final BlockFactory NETHER_QUARTZ_ORE= new BlockFactory(BlockType.DEFAULT, "nether_quartz_ore", Material.ROCK, MaterialColor.NETHERRACK, SoundType.STONE);
+    public static final BlockFactory NETHER_QUARTZ_ORE = new BlockFactory(BlockType.DEFAULT, "nether_quartz_ore", Material.ROCK, MaterialColor.NETHERRACK, SoundType.STONE);
     public static final BlockFactory LAPIS_ORE = new BlockFactory(BlockType.DEFAULT, "lapis_ore", Material.ROCK, null, SoundType.STONE);
     public static final BlockFactory EMERALD_ORE = new BlockFactory(BlockType.DEFAULT, "emerald_ore", Material.ROCK, null, SoundType.STONE);
     public static final BlockFactory REDSTONE_ORE = new BlockFactory(BlockType.DEFAULT, "redstone_ore", Material.ROCK, null, SoundType.STONE);
@@ -141,47 +140,6 @@ public class Lists {
     public static final BlockFactory REFINED_GLOWSTONE_MEKANISM = new BlockFactory(BlockType.GLASS, "refined_glowstone_mekanism", Material.GLASS, null, SoundType.GLASS);
     public static final BlockFactory STEEL_BLOCK_MEKANISM = new BlockFactory(BlockType.DEFAULT, "steel_block_mekanism", Material.IRON, null, SoundType.METAL);
     // END Mekanism Blocks
-    //------------------------------------------------------------------------------------------------------------------
-
-    //------------------------------------------------------------------------------------------------------------------
-    // Thermal Blocks
-    /*
-    public static final BlockFactory CHARCOAL_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "charcoal_block_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory GUNPOWDER_BLOCK_THERMAL = new BlockFactory(BlockType.SAND, "gunpowder_block_thermal", Material.SAND, null, SoundType.SAND);
-    public static final BlockFactory APATITE_ORE_THERMAL = new BlockFactory(BlockType.DEFAULT, "apatite_ore_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory CINNABAR_ORE_THERMAL = new BlockFactory(BlockType.DEFAULT, "cinnabar_ore_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory NITER_ORE_THERMAL = new BlockFactory(BlockType.DEFAULT, "niter_ore_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory SULFUR_ORE_THERMAL = new BlockFactory(BlockType.DEFAULT, "sulfur_ore_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory COPPER_ORE_THERMAL = new BlockFactory(BlockType.DEFAULT, "copper_ore_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory TIN_ORE_THERMAL = new BlockFactory(BlockType.DEFAULT, "tin_ore_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory LEAD_ORE_THERMAL = new BlockFactory(BlockType.DEFAULT, "lead_ore_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory SILVER_ORE_THERMAL = new BlockFactory(BlockType.DEFAULT, "silver_ore_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory NICKEL_ORE_THERMAL = new BlockFactory(BlockType.DEFAULT, "nickel_ore_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory APATITE_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "apatite_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory CINNABAR_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "cinnabar_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory NITER_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "niter_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory SULFUR_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "sulfur_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory COPPER_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "copper_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory TIN_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "tin_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory LEAD_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "lead_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory SILVER_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "silver_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory NICKEL_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "nickel_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory BRONZE_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "bronze_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory ELECTRUM_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "electrum_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory INVAR_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "invar_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory CONSTANTAN_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "constantan_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory SIGNALUM_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "signalum_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory LUMIUM_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "lumium_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory ENDERIUM_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "enderium_block_thermal", Material.IRON, null, SoundType.METAL);
-    public static final BlockFactory COAL_COKE_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "coal_coke_block_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory SAWDUST_BLOCK_THERMAL = new BlockFactory(BlockType.SAND, "sawdust_block_thermal", Material.SAND, null, SoundType.SAND);
-    public static final BlockFactory ROSIN_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "rosin_block_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory RUBBER_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "rubber_block_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory CURED_RUBBER_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "cured_rubber_block_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory SLAG_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "slag_block_thermal", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory RICH_SLAG_BLOCK_THERMAL = new BlockFactory(BlockType.DEFAULT, "rich_slag_block_thermal", Material.ROCK, null, SoundType.STONE);
-    */
-    // END Thermal Blocks
     //------------------------------------------------------------------------------------------------------------------
 
     public static void populate() {
@@ -340,43 +298,4 @@ public class Lists {
         mekanismBlockList.add(REFINED_GLOWSTONE_MEKANISM);
         mekanismBlockList.add(STEEL_BLOCK_MEKANISM);
     }
-
-    /*
-    public static void populateThermal() {
-        thermalBlockList.add(CHARCOAL_BLOCK_THERMAL);
-        thermalBlockList.add(GUNPOWDER_BLOCK_THERMAL);
-        thermalBlockList.add(APATITE_ORE_THERMAL);
-        thermalBlockList.add(CINNABAR_ORE_THERMAL);
-        thermalBlockList.add(NITER_ORE_THERMAL);
-        thermalBlockList.add(SULFUR_ORE_THERMAL);
-        thermalBlockList.add(COPPER_ORE_THERMAL);
-        thermalBlockList.add(TIN_ORE_THERMAL);
-        thermalBlockList.add(LEAD_ORE_THERMAL);
-        thermalBlockList.add(SILVER_ORE_THERMAL);
-        thermalBlockList.add(NICKEL_ORE_THERMAL);
-        thermalBlockList.add(APATITE_BLOCK_THERMAL);
-        thermalBlockList.add(CINNABAR_BLOCK_THERMAL);
-        thermalBlockList.add(NITER_BLOCK_THERMAL);
-        thermalBlockList.add(SULFUR_BLOCK_THERMAL);
-        thermalBlockList.add(COPPER_BLOCK_THERMAL);
-        thermalBlockList.add(TIN_BLOCK_THERMAL);
-        thermalBlockList.add(LEAD_BLOCK_THERMAL);
-        thermalBlockList.add(SILVER_BLOCK_THERMAL);
-        thermalBlockList.add(NICKEL_BLOCK_THERMAL);
-        thermalBlockList.add(BRONZE_BLOCK_THERMAL);
-        thermalBlockList.add(ELECTRUM_BLOCK_THERMAL);
-        thermalBlockList.add(INVAR_BLOCK_THERMAL);
-        thermalBlockList.add(CONSTANTAN_BLOCK_THERMAL);
-        thermalBlockList.add(SIGNALUM_BLOCK_THERMAL);
-        thermalBlockList.add(LUMIUM_BLOCK_THERMAL);
-        thermalBlockList.add(ENDERIUM_BLOCK_THERMAL);
-        thermalBlockList.add(COAL_COKE_BLOCK_THERMAL);
-        thermalBlockList.add(SAWDUST_BLOCK_THERMAL);
-        thermalBlockList.add(ROSIN_BLOCK_THERMAL);
-        thermalBlockList.add(RUBBER_BLOCK_THERMAL);
-        thermalBlockList.add(CURED_RUBBER_BLOCK_THERMAL);
-        thermalBlockList.add(SLAG_BLOCK_THERMAL);
-        thermalBlockList.add(RICH_SLAG_BLOCK_THERMAL);
-    }
-    */
 }

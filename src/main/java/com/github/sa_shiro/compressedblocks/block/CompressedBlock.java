@@ -19,13 +19,13 @@ public class CompressedBlock extends Block implements ICompressedBlock {
     private final Compression comp = new Compression();
 
     /**
-     * @param material Minecraft {@link Material}
+     * @param material      Minecraft {@link Material}
      * @param materialColor Minecraft {@link MaterialColor}
-     * @param sound Minecraft {@link SoundType}
-     * @param compression  Compression Level ( 0 - 9 )
-     * @param hardness     Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
-     * @param resistance   Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
-     * @param harvestLevel Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
+     * @param sound         Minecraft {@link SoundType}
+     * @param compression   Compression Level ( 0 - 9 )
+     * @param hardness      Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
+     * @param resistance    Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
+     * @param harvestLevel  Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
      */
     @ParametersAreNonnullByDefault
     protected CompressedBlock(Material material, MaterialColor materialColor, SoundType sound, int compression, float hardness, float resistance, int harvestLevel) {
@@ -37,6 +37,7 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         );
         comp.setCompressionLevel(compression);
     }
+
     @ParametersAreNonnullByDefault
     protected CompressedBlock(Material material, MaterialColor materialColor, SoundType sound, int compression, float slipperiness) {
         super(Properties.create(material, materialColor)
@@ -50,14 +51,14 @@ public class CompressedBlock extends Block implements ICompressedBlock {
     }
 
     /**
-     * @param type {@link BlockType}
-     * @param compression  Compression Level ( 0 - 9 )
-     * @param material Minecraft {@link Material}
+     * @param type          {@link BlockType}
+     * @param compression   Compression Level ( 0 - 9 )
+     * @param material      Minecraft {@link Material}
      * @param materialColor Minecraft {@link MaterialColor}
-     * @param soundType Minecraft {@link SoundType}
-     * @param hardness     Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
-     * @param resistance   Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
-     * @param harvestLevel Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
+     * @param soundType     Minecraft {@link SoundType}
+     * @param hardness      Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
+     * @param resistance    Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
+     * @param harvestLevel  Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
      */
     public static ICompressedBlock createBlock(@Nonnull BlockType type, int compression, @Nonnull Material material, @Nullable MaterialColor materialColor, @Nonnull SoundType soundType, float hardness, float resistance, int harvestLevel) {
         if (materialColor == null) materialColor = material.getColor();
@@ -66,7 +67,7 @@ public class CompressedBlock extends Block implements ICompressedBlock {
             case DEFAULT:
                 return new CompressedBlock(material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
             case SAND:
-                return new CompressedSand(14406560, material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
+                return createSandBlock(14406560, material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
             case RED_SAND:
                 return new CompressedSand(11098145, material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
             case GRAVEL:
@@ -87,16 +88,16 @@ public class CompressedBlock extends Block implements ICompressedBlock {
     }
 
     /**
-     * @param dustColor  Dust Color
-     * @param compression  Compression Level ( 0 - 9 )
-     * @param material Minecraft {@link Material}
+     * @param dustColor     Dust Color
+     * @param material      Minecraft {@link Material}
      * @param materialColor Minecraft {@link MaterialColor}
-     * @param soundType Minecraft {@link SoundType}
-     * @param hardness     Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
-     * @param resistance   Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
-     * @param harvestLevel Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
+     * @param soundType     Minecraft {@link SoundType}
+     * @param compression   Compression Level ( 0 - 9 )
+     * @param hardness      Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
+     * @param resistance    Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
+     * @param harvestLevel  Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
      */
-    public static ICompressedBlock createSandBlock(int dustColor, int compression, @Nonnull Material material, @Nullable MaterialColor materialColor, @Nonnull SoundType soundType, float hardness, float resistance, int harvestLevel) {
+    public static ICompressedBlock createSandBlock(int dustColor, @Nonnull Material material, @Nullable MaterialColor materialColor, @Nonnull SoundType soundType, int compression, float hardness, float resistance, int harvestLevel) {
         if (materialColor == null) materialColor = material.getColor();
         return new CompressedSand(dustColor, material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
     }

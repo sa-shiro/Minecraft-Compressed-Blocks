@@ -29,13 +29,13 @@ class CompressedRedstoneBlock extends RedstoneBlock implements ICompressedBlock 
     private final Compression comp = new Compression();
 
     /**
-     * @param material Minecraft {@link Material}
+     * @param material      Minecraft {@link Material}
      * @param materialColor Minecraft {@link MaterialColor}
-     * @param sound Minecraft {@link SoundType}
-     * @param compression  Compression Level ( 0 - 9 )
-     * @param hardness     Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
-     * @param resistance   Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
-     * @param harvestLevel Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
+     * @param sound         Minecraft {@link SoundType}
+     * @param compression   Compression Level ( 0 - 9 )
+     * @param hardness      Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
+     * @param resistance    Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
+     * @param harvestLevel  Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
      */
     @ParametersAreNonnullByDefault
     protected CompressedRedstoneBlock(Material material, MaterialColor materialColor, SoundType sound, int compression, float hardness, float resistance, int harvestLevel) {

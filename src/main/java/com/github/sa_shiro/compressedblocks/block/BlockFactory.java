@@ -18,11 +18,12 @@ public class BlockFactory {
 
     /**
      * Utility to create new Blocks to iterate over for registering
-     * @param typeIn {@link BlockType}
-     * @param registryNameIn Registry Name
-     * @param materialIn Minecraft {@link Material}
+     *
+     * @param typeIn          {@link BlockType}
+     * @param registryNameIn  Registry Name
+     * @param materialIn      Minecraft {@link Material}
      * @param materialColorIn Minecraft {@link MaterialColor}
-     * @param soundTypeIn Minecraft {@link SoundType}
+     * @param soundTypeIn     Minecraft {@link SoundType}
      */
     public BlockFactory(@Nonnull BlockType typeIn, @Nonnull String registryNameIn, @Nonnull Material materialIn, @Nullable MaterialColor materialColorIn, @Nonnull SoundType soundTypeIn) {
         if (materialColorIn == null) materialColorIn = materialIn.getColor();
@@ -36,12 +37,13 @@ public class BlockFactory {
 
     /**
      * Utility to create new Blocks to iterate over for registering
-     * @param typeIn {@link BlockType}
-     * @param registryNameIn Registry Name
-     * @param dustColorIn Dust Color (used for sand and co)
-     * @param materialIn Minecraft {@link Material}
+     *
+     * @param typeIn          {@link BlockType}
+     * @param registryNameIn  Registry Name
+     * @param dustColorIn     Dust Color (used for sand and co)
+     * @param materialIn      Minecraft {@link Material}
      * @param materialColorIn Minecraft {@link MaterialColor}
-     * @param soundTypeIn Minecraft {@link SoundType}
+     * @param soundTypeIn     Minecraft {@link SoundType}
      */
     public BlockFactory(@Nonnull BlockType typeIn, @Nonnull String registryNameIn, int dustColorIn, @Nonnull Material materialIn, @Nullable MaterialColor materialColorIn, @Nonnull SoundType soundTypeIn) {
         if (materialColorIn == null) materialColorIn = materialIn.getColor();
@@ -55,37 +57,55 @@ public class BlockFactory {
 
     /**
      * Function to get the Block's Type
+     *
      * @return {@link BlockType}
      */
-    public BlockType getType() { return type; }
+    public BlockType getType() {
+        return type;
+    }
 
     /**
      * Function to get the Block's Registry Name
+     *
      * @return Registry Name
      */
-    public String getRegistryName() { return registryName; }
+    public String getRegistryName() {
+        return registryName;
+    }
 
     /**
      * Function to get the Block's Dust Color
+     *
      * @return Dust Color
      */
-    public int getDurstColor() { return durstColor; }
+    public int getDurstColor() {
+        return durstColor;
+    }
 
     /**
      * Function to get the Block's Material
+     *
      * @return Minecraft {@link Material}
      */
-    public Material getMaterial() { return material; }
+    public Material getMaterial() {
+        return material;
+    }
 
     /**
      * Function to get the Block's Material Color
+     *
      * @return {@link MaterialColor}
      */
-    public MaterialColor getMaterialColor() { return materialColor; }
+    public MaterialColor getMaterialColor() {
+        return materialColor;
+    }
 
     /**
      * Function to get the Block's Sound Type
+     *
      * @return Minecraft {@link SoundType}
      */
-    public SoundType getSoundType() { return soundType; }
+    public SoundType getSoundType() {
+        return soundType;
+    }
 }

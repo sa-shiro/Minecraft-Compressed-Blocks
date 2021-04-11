@@ -18,26 +18,28 @@ public class RegisterBlock {
     /**
      * Function to register new Compressed Blocks.<br>
      * See {@link DeferredRegistryEvent} for an example.<br>
+     *
      * @param blockIn          the Block you want to register
      * @param registryName     the Block's registry name
      * @param compressionLevel refers to a loop variable for the compression (0 - 9)
      */
     @ParametersAreNonnullByDefault
-    public static void registerNewBlock(ICompressedBlock blockIn, String registryName, int compressionLevel) {
-        registerBlock(blockIn, registryName, compressionLevel, PROPERTIES);
+    public static void registerNewBlock(ICompressedBlock blockIn, String registryName, int compressionLevel, boolean isEnabled) {
+        if (isEnabled) registerBlock(blockIn, registryName, compressionLevel, PROPERTIES);
     }
 
     /**
      * Function to register new Compressed Blocks.<br>
      * See {@link DeferredRegistryEvent} for an example.<br>
+     *
      * @param blockIn          the Block you want to register
      * @param registryName     the Block's registry name
      * @param compressionLevel refers to a loop variable for the compression (0 - 9)
-     * @param properties Item Properties such as Item Group
+     * @param properties       Item Properties such as Item Group
      */
     @ParametersAreNonnullByDefault
-    public static void registerNewBlock(ICompressedBlock blockIn, String registryName, int compressionLevel, Item.Properties properties) {
-        registerBlock(blockIn, registryName, compressionLevel, properties);
+    public static void registerNewBlock(ICompressedBlock blockIn, String registryName, int compressionLevel, Item.Properties properties, boolean isEnabled) {
+        if (isEnabled) registerBlock(blockIn, registryName, compressionLevel, properties);
     }
 
     @ParametersAreNonnullByDefault
