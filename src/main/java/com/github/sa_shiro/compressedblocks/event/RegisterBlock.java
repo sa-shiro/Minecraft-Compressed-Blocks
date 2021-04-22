@@ -17,7 +17,7 @@ public class RegisterBlock {
 
     /**
      * Function to register new Compressed Blocks.<br>
-     * See {@link DeferredRegistryEvent} for an example.<br>
+     * See {@link RegistryEvent} for an example.<br>
      *
      * @param blockIn          the Block you want to register
      * @param registryName     the Block's registry name
@@ -30,7 +30,7 @@ public class RegisterBlock {
 
     /**
      * Function to register new Compressed Blocks.<br>
-     * See {@link DeferredRegistryEvent} for an example.<br>
+     * See {@link RegistryEvent} for an example.<br>
      *
      * @param blockIn          the Block you want to register
      * @param registryName     the Block's registry name
@@ -46,8 +46,8 @@ public class RegisterBlock {
     private static void registerBlock(ICompressedBlock iBlock, String blockName, int compressionLevel, Item.Properties properties) {
         int index2 = INDEX; // required for ITEMS.register()
 
-        DeferredRegistryEvent.BLOCK_REGISTRY.add(INDEX, DeferredRegistryEvent.BLOCKS.register("c" + compressionLevel + "_" + blockName, iBlock::getBlock));
-        DeferredRegistryEvent.ITEMS.register("c" + compressionLevel + "_" + blockName, () -> new BlockItem(DeferredRegistryEvent.BLOCK_REGISTRY.get(index2).get(), properties));
+        RegistryEvent.BLOCK_REGISTRY.add(INDEX, RegistryEvent.BLOCKS.register("c" + compressionLevel + "_" + blockName, iBlock::getBlock));
+        RegistryEvent.ITEMS.register("c" + compressionLevel + "_" + blockName, () -> new BlockItem(RegistryEvent.BLOCK_REGISTRY.get(index2).get(), properties));
         INDEX++;
     }
 }
