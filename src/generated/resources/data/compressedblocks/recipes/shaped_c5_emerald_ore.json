@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:c4_emerald_ore"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c5_emerald_ore"
+  }
+}

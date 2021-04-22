@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:c1_brown_wool"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c2_brown_wool"
+  }
+}

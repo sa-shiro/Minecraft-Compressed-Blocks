@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "** ",
+    "*# ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:compressed_stick"
+    },
+    "*": {
+      "item": "compressedblocks:compressed_gold"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:hardened_golden_axe"
+  }
+}

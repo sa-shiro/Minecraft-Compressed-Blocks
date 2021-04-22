@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:c3_orange_concrete"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c4_orange_concrete"
+  }
+}

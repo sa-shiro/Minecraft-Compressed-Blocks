@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:c1_cyan_terracotta"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c2_cyan_terracotta"
+  }
+}

@@ -21,7 +21,5 @@ build
 eclipse
 run
 logs/
-src/non-generated/
-src/generated/
 generate/
 !generate.sh

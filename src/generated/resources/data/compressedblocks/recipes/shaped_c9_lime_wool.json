@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:c8_lime_wool"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c9_lime_wool"
+  }
+}

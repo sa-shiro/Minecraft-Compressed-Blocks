@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "key": {
+    "*": {
+      "item": "minecraft:diamond"
+    },
+    "#": {
+      "item": "compressedblocks:c1_stone"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:compressed_diamond"
+  }
+}

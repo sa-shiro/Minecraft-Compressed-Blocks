@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:c8_diamond_ore"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c9_diamond_ore"
+  }
+}

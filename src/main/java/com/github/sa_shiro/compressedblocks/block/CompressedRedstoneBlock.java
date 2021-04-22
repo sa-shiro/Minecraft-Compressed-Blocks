@@ -1,7 +1,7 @@
 package com.github.sa_shiro.compressedblocks.block;
 
-import com.github.sa_shiro.compressedblocks.event.DeferredRegistryEvent;
 import com.github.sa_shiro.compressedblocks.event.RegisterBlock;
+import com.github.sa_shiro.compressedblocks.event.RegistryEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.RedstoneBlock;
 import net.minecraft.block.SoundType;
@@ -23,7 +23,7 @@ import java.util.List;
  * This class is not intended for the creation of custom Compressed Blocks.<br>
  * Create your own Block class and extend {@link ICompressedBlock} or use {@link CompressedBlock#createBlock}.<br>
  * You can register your custom compressed blocks using {@link RegisterBlock#registerNewBlock}.<br>
- * For an example, see {@link DeferredRegistryEvent}
+ * For an example, see {@link RegistryEvent}
  */
 class CompressedRedstoneBlock extends RedstoneBlock implements ICompressedBlock {
     private final Compression comp = new Compression();

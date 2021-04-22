@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:c8_ancient_debris"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c9_ancient_debris"
+  }
+}

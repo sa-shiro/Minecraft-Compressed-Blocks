@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c0_ancient_debris"
+    }
+  ],
+  "result": {
+    "item": "minecraft:ancient_debris",
+    "count": 9
+  }
+}

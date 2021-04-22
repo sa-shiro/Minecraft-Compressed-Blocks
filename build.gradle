@@ -54,7 +54,27 @@ minecraft {
                 }
             }
         }
+        data {
+            workingDirectory "${mcDir}/${minecraftVersion}"
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
+
+            args '--mod', 'compressedblocks', '--all',
+                    '--existing', file('src/main/resources/'),
+                    '--existing', file('src/generated/resources/'),
+                    '--output', file('src/generated/resources/')
+
+            mods {
+                "${modBaseName}" {
+                    source sourceSets.main
+                }
+            }
+        }
     }
+}
+
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
 }
 
 dependencies {
