@@ -17,6 +17,7 @@ public class CompressedBlocks {
 
     // Required for the runData task
     // !!! before running the runData task, comment out the above and uncomment this and change the path to a existing and working config file !!!
+    // to generate the latest configs, run the game (runClient task) first before running the runData task
     //public static final String CONFIG_ENABLED_BLOCKS = "D:\\Projects\\Java\\_run\\1.16.3\\config\\compressedblocks.json";
     //public static final String CONFIG_COMPRESSION_LEVEL = "D:\\Projects\\Java\\_run\\1.16.3\\config\\compressedblocks_compression_level.json";
 
