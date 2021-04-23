@@ -13,7 +13,7 @@ public class Lists {
     public final static ArrayList<Float> RESISTANCE = new ArrayList<>();
     public final static ArrayList<Integer> HARVEST_LEVEL = new ArrayList<>();
     public static final ArrayList<BlockFactory> blockList = new ArrayList<>();
-    public static final ArrayList<BlockFactory> mekanismBlockList = new ArrayList<>();
+    //public static final ArrayList<BlockFactory> mekanismBlockList = new ArrayList<>();
 
     //------------------------------------------------------------------------------------------------------------------
     // Minecraft Blocks
