@@ -54,6 +54,18 @@ minecraft {
                 }
             }
         }
+
+        server {
+            workingDirectory "${mcDir}/${minecraftVersion}/server"
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                "${modBaseName}" {
+                    source sourceSets.main
+                }
+            }
+        }
         data {
             workingDirectory "${mcDir}/${minecraftVersion}"
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'

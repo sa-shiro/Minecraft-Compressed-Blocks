@@ -13,7 +13,6 @@ public class Lists {
     public final static ArrayList<Float> RESISTANCE = new ArrayList<>();
     public final static ArrayList<Integer> HARVEST_LEVEL = new ArrayList<>();
     public static final ArrayList<BlockFactory> blockList = new ArrayList<>();
-    //public static final ArrayList<BlockFactory> mekanismBlockList = new ArrayList<>();
 
     //------------------------------------------------------------------------------------------------------------------
     // Minecraft Blocks
@@ -123,28 +122,6 @@ public class Lists {
     public static final BlockFactory NETHERITE_BLOCK = new BlockFactory(BlockType.DEFAULT, "netherite_block", Material.IRON, MaterialColor.BLACK, SoundType.NETHERITE);
     public static final BlockFactory ANCIENT_DEBRIS = new BlockFactory(BlockType.DEFAULT, "ancient_debris", Material.IRON, MaterialColor.BLACK, SoundType.ANCIENT_DEBRIS);
 
-    /*
-        //------------------------------------------------------------------------------------------------------------------
-        // Mekanism Blocks
-        public static final BlockFactory OSMIUM_BLOCK_MEKANISM = new BlockFactory(BlockType.DEFAULT, "osmium_block_mekanism", Material.IRON, null, SoundType.METAL);
-        public static final BlockFactory COPPER_BLOCK_MEKANISM = new BlockFactory(BlockType.DEFAULT, "copper_block_mekanism", Material.IRON, null, SoundType.METAL);
-        public static final BlockFactory TIN_BLOCK_MEKANISM = new BlockFactory(BlockType.DEFAULT, "tin_block_mekanism", Material.IRON, null, SoundType.METAL);
-        public static final BlockFactory LEAD_BLOCK_MEKANISM = new BlockFactory(BlockType.DEFAULT, "lead_block_mekanism", Material.IRON, null, SoundType.METAL);
-        public static final BlockFactory URANIUM_BLOCK_MEKANISM = new BlockFactory(BlockType.DEFAULT, "uranium_block_mekanism", Material.IRON, null, SoundType.METAL);
-        public static final BlockFactory COPPER_ORE_MEKANISM = new BlockFactory(BlockType.DEFAULT, "copper_ore_mekanism", Material.ROCK, null, SoundType.STONE);
-        public static final BlockFactory TIN_ORE_MEKANISM = new BlockFactory(BlockType.DEFAULT, "tin_ore_mekanism", Material.ROCK, null, SoundType.STONE);
-        public static final BlockFactory OSMIUM_ORE_MEKANISM = new BlockFactory(BlockType.DEFAULT, "osmium_ore_mekanism", Material.ROCK, null, SoundType.STONE);
-        public static final BlockFactory URANIUM_ORE_MEKANISM = new BlockFactory(BlockType.DEFAULT, "uranium_ore_mekanism", Material.ROCK, null, SoundType.STONE);
-        public static final BlockFactory FLUORITE_ORE_MEKANISM = new BlockFactory(BlockType.DEFAULT, "fluorite_ore_mekanism", Material.ROCK, null, SoundType.STONE);
-        public static final BlockFactory LEAD_ORE_MEKANISM = new BlockFactory(BlockType.DEFAULT, "lead_ore_mekanism", Material.ROCK, null, SoundType.STONE);
-        public static final BlockFactory BRONZE_BLOCK_MEKANISM = new BlockFactory(BlockType.DEFAULT, "bronze_block_mekanism", Material.IRON, null, SoundType.METAL);
-        public static final BlockFactory REFINED_OBSIDIAN_MEKANISM = new BlockFactory(BlockType.DEFAULT, "refined_obsidian_mekanism", Material.ROCK, null, SoundType.STONE);
-        public static final BlockFactory CHARCOAL_BLOCK_MEKANISM = new BlockFactory(BlockType.DEFAULT, "charcoal_block_mekanism", Material.ROCK, null, SoundType.STONE);
-        public static final BlockFactory REFINED_GLOWSTONE_MEKANISM = new BlockFactory(BlockType.GLASS, "refined_glowstone_mekanism", Material.GLASS, null, SoundType.GLASS);
-        public static final BlockFactory STEEL_BLOCK_MEKANISM = new BlockFactory(BlockType.DEFAULT, "steel_block_mekanism", Material.IRON, null, SoundType.METAL);
-        // END Mekanism Blocks
-        //------------------------------------------------------------------------------------------------------------------
-    */
     public static void populate() {
         blockList.add(STONE);
         blockList.add(GRANITE);
@@ -284,23 +261,4 @@ public class Lists {
         HARVEST_LEVEL.add(8, 4);
         HARVEST_LEVEL.add(9, 4);
     }
-/*
-    public static void populateMekanism() {
-        mekanismBlockList.add(OSMIUM_BLOCK_MEKANISM);
-        mekanismBlockList.add(COPPER_BLOCK_MEKANISM);
-        mekanismBlockList.add(TIN_BLOCK_MEKANISM);
-        mekanismBlockList.add(LEAD_BLOCK_MEKANISM);
-        mekanismBlockList.add(URANIUM_BLOCK_MEKANISM);
-        mekanismBlockList.add(COPPER_ORE_MEKANISM);
-        mekanismBlockList.add(TIN_ORE_MEKANISM);
-        mekanismBlockList.add(OSMIUM_ORE_MEKANISM);
-        mekanismBlockList.add(URANIUM_ORE_MEKANISM);
-        mekanismBlockList.add(FLUORITE_ORE_MEKANISM);
-        mekanismBlockList.add(LEAD_ORE_MEKANISM);
-        mekanismBlockList.add(BRONZE_BLOCK_MEKANISM);
-        mekanismBlockList.add(REFINED_OBSIDIAN_MEKANISM);
-        mekanismBlockList.add(CHARCOAL_BLOCK_MEKANISM);
-        mekanismBlockList.add(REFINED_GLOWSTONE_MEKANISM);
-        mekanismBlockList.add(STEEL_BLOCK_MEKANISM);
-    }*/
 }
