@@ -22,7 +22,8 @@ public class GenBlockStateProvider extends BlockStateProvider {
         assert false;
 
         for (RegistryObject<Block> block : RegistryEvent.BLOCK_REGISTRY) {
-            if (!block.get().getRegistryName().toString().contains("grass_block") || !block.get().getRegistryName().toString().contains("ancient_debris"))
+            String blockName = block.get().getRegistryName().toString().replace("compressedblocks:", "");
+            if (!blockName.contains("grass") && !blockName.contains("ancient_debris")) {
                 simpleBlock(
                         block.get().getBlock(), models().cubeAll(
                                 block.get().getRegistryName().toString(),
@@ -52,8 +53,7 @@ public class GenBlockStateProvider extends BlockStateProvider {
                                 .face(Direction.WEST).texture("#overlay").end()
                                 .end()
                 );
-
-            if (block.get().getRegistryName().toString().contains("grass_block"))
+            } else if (blockName.contains("grass")) {
                 simpleBlock(
                         block.get().getBlock(), models().cubeAll(
                                 block.get().getRegistryName().toString(),
@@ -85,11 +85,9 @@ public class GenBlockStateProvider extends BlockStateProvider {
                                 .face(Direction.WEST).texture("#overlay").end()
                                 .end()
                 );
-
-            if (block.get().getRegistryName().toString().contains("ancient_debris"))
+            } else if (blockName.contains("ancient_debris")) {
                 simpleBlock(
-                        block.get().getBlock(), models().cubeAll(
-                                block.get().getRegistryName().toString(),
+                        block.get().getBlock(), models().cubeAll(block.get().getRegistryName().toString(),
                                 new ResourceLocation("compressedblocks", "block/ancient_debris_side")
                         )
                                 .texture("particle", new ResourceLocation("compressedblocks", "block/ancient_debris_side"))
@@ -118,6 +116,7 @@ public class GenBlockStateProvider extends BlockStateProvider {
                                 .face(Direction.WEST).texture("#overlay").end()
                                 .end()
                 );
+            }
         }
     }
 

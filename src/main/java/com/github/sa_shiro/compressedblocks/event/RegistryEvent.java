@@ -6,7 +6,6 @@ import com.github.sa_shiro.compressedblocks.block.CompressedBlock;
 import com.github.sa_shiro.compressedblocks.item.BagItem;
 import com.github.sa_shiro.compressedblocks.item.EnumItemTier;
 import com.github.sa_shiro.compressedblocks.item.ToolItems;
-import com.github.sa_shiro.compressedblocks.util.ConfigManager;
 import com.github.sa_shiro.compressedblocks.util.ItemGroups;
 import com.github.sa_shiro.compressedblocks.util.Lists;
 import net.minecraft.block.Block;
@@ -14,19 +13,21 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class RegistryEvent {
-
+    private static final Logger LOGGER = LogManager.getLogger();
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CompressedBlocks.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CompressedBlocks.MOD_ID);
     public static final RegistryObject<Item> ENDER_PEARL_BAG = ITEMS.register("ender_pearl_bag", () -> new BagItem(0, "Ender Pearls"));
@@ -68,22 +69,16 @@ public class RegistryEvent {
     private static final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
     public static ArrayList<RegistryObject<Block>> BLOCK_REGISTRY = new ArrayList<>();
 
-    public static void register() throws IOException {
+    public static void register() {
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);
-
         registerBlocks();
-        /*
-        if (ModList.get().isLoaded("mekanism")) {
-            registerMekanismBlocks();
-        }*/
-
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> FMLJavaModLoadingContext.get().getModEventBus().addListener(RegistryEvent::translucentRender));
     }
 
-    private static void registerBlocks() throws IOException {
+    private static void registerBlocks() {
         for (BlockFactory factory : Lists.blockList) {
-            for (int level = 0; level <= ConfigManager.getMaxCompressionLevel(); level++) {
+            for (int level = 0; level <= 9; level++) { // ConfigManager.getMaxCompressionLevel()
                 RegisterBlock.registerNewBlock(
                         CompressedBlock.createBlock(
                                 factory.getType(),
@@ -95,34 +90,15 @@ public class RegistryEvent {
                                 Lists.RESISTANCE.get(level),
                                 Lists.HARVEST_LEVEL.get(level)
                         ),
-                        factory.getRegistryName(), level, ConfigManager.isBlockEnabled(factory.getRegistryName())
+                        factory.getRegistryName(), level, true // ConfigManager.isBlockEnabled(factory.getRegistryName()
                 );
             }
         }
+        LOGGER.info("Registration finished.");
     }
-/*
-    private static void registerMekanismBlocks() throws IOException {
-        Item.Properties mekanismProperties = new Item.Properties().group(ItemGroups.compressedCustomBlockGroup);
-        for (BlockFactory factory : Lists.mekanismBlockList) {
-            for (int level = 0; level <= ConfigManager.getMaxCompressionLevel(); level++) {
-                RegisterBlock.registerNewBlock(
-                        CompressedBlock.createBlock(
-                                factory.getType(),
-                                level,
-                                factory.getMaterial(),
-                                factory.getMaterialColor(),
-                                factory.getSoundType(),
-                                Lists.HARDNESS.get(level),
-                                Lists.RESISTANCE.get(level),
-                                Lists.HARVEST_LEVEL.get(level)
-                        ),
-                        factory.getRegistryName(), level, mekanismProperties, ConfigManager.isBlockEnabled(factory.getRegistryName())
-                );
-            }
-        }
-    }*/
 
-    private static void translucentRender(final FMLClientSetupEvent e) {
+    private static void translucentRender(final FMLCommonSetupEvent e) {
+        e.setPhase(EventPriority.NORMAL);
         final RenderType TRANSLUCENT = RenderType.getTranslucent();
         for (RegistryObject<Block> registryObject : BLOCK_REGISTRY) {
             RenderTypeLookup.setRenderLayer(registryObject.get(), TRANSLUCENT);
