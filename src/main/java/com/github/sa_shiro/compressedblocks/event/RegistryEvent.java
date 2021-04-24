@@ -27,7 +27,6 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 
 public class RegistryEvent {
-    private static final Logger LOGGER = LogManager.getLogger();
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CompressedBlocks.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CompressedBlocks.MOD_ID);
     public static final RegistryObject<Item> ENDER_PEARL_BAG = ITEMS.register("ender_pearl_bag", () -> new BagItem(0, "Ender Pearls"));
@@ -66,6 +65,7 @@ public class RegistryEvent {
     public static final RegistryObject<Item> HARDENED_DIAMOND_SHOVEL = ITEMS.register("hardened_diamond_shovel", () -> new ToolItems.HardenedShovel(EnumItemTier.HARDENED_DIAMOND, 1.5F, -3.0F, (new Item.Properties()).group(ItemGroups.compressedBlockGroup)));
     public static final RegistryObject<Item> HARDENED_DIAMOND_HOE = ITEMS.register("hardened_diamond_hoe", () -> new ToolItems.HardenedHoe(EnumItemTier.HARDENED_DIAMOND, 1, 0.0F, (new Item.Properties()).group(ItemGroups.compressedBlockGroup)));
     public static final RegistryObject<Item> HARDENED_DIAMOND_SWORD = ITEMS.register("hardened_diamond_sword", () -> new ToolItems.HardenedSword(EnumItemTier.HARDENED_DIAMOND, 5, -2.4F, (new Item.Properties()).group(ItemGroups.compressedBlockGroup)));
+    private static final Logger LOGGER = LogManager.getLogger();
     private static final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
     public static ArrayList<RegistryObject<Block>> BLOCK_REGISTRY = new ArrayList<>();
 

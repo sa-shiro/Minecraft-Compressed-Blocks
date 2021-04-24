@@ -1,10 +1,13 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "all": "compressedblocks:block/grass_side",
+    "down": "compressedblocks:block/grass_bottom",
+    "up": "compressedblocks:block/grass_top",
+    "north": "compressedblocks:block/grass_side",
+    "south": "compressedblocks:block/grass_side",
+    "east": "compressedblocks:block/grass_side",
+    "west": "compressedblocks:block/grass_side",
     "particle": "compressedblocks:block/grass_bottom",
-    "top": "compressedblocks:block/grass_top",
-    "bottom": "compressedblocks:block/grass_bottom",
     "overlay": "compressedblocks:block/compression_level_5"
   },
   "elements": [
@@ -21,22 +24,22 @@
       ],
       "faces": {
         "down": {
-          "texture": "#bottom"
+          "texture": "#down"
         },
         "up": {
-          "texture": "#top"
+          "texture": "#up"
         },
         "north": {
-          "texture": "#all"
+          "texture": "#north"
         },
         "south": {
-          "texture": "#all"
+          "texture": "#south"
         },
         "west": {
-          "texture": "#all"
+          "texture": "#west"
         },
         "east": {
-          "texture": "#all"
+          "texture": "#east"
         }
       }
     },

@@ -1,10 +1,13 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "all": "compressedblocks:block/ancient_debris_side",
+    "down": "compressedblocks:block/ancient_debris_top",
+    "up": "compressedblocks:block/ancient_debris_top",
+    "north": "compressedblocks:block/ancient_debris_side",
+    "south": "compressedblocks:block/ancient_debris_side",
+    "east": "compressedblocks:block/ancient_debris_side",
+    "west": "compressedblocks:block/ancient_debris_side",
     "particle": "compressedblocks:block/ancient_debris_side",
-    "top": "compressedblocks:block/ancient_debris_top",
-    "bottom": "compressedblocks:block/ancient_debris_top",
     "overlay": "compressedblocks:block/compression_level_0"
   },
   "elements": [
@@ -21,22 +24,22 @@
       ],
       "faces": {
         "down": {
-          "texture": "#bottom"
+          "texture": "#down"
         },
         "up": {
-          "texture": "#top"
+          "texture": "#up"
         },
         "north": {
-          "texture": "#all"
+          "texture": "#north"
         },
         "south": {
-          "texture": "#all"
+          "texture": "#south"
         },
         "west": {
-          "texture": "#all"
+          "texture": "#west"
         },
         "east": {
-          "texture": "#all"
+          "texture": "#east"
         }
       }
     },

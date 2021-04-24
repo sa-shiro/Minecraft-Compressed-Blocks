@@ -1,7 +1,9 @@
 package com.github.sa_shiro.compressedblocks.data.generators;
 
 import com.github.sa_shiro.compressedblocks.CompressedBlocks;
+import com.github.sa_shiro.compressedblocks.block.BlockFactory;
 import com.github.sa_shiro.compressedblocks.event.RegistryEvent;
+import com.github.sa_shiro.compressedblocks.util.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.Direction;
@@ -21,104 +23,88 @@ public class GenBlockStateProvider extends BlockStateProvider {
         ModelFile.UncheckedModelFile blockBlock = new ModelFile.UncheckedModelFile("block/block");
         assert false;
 
-        for (RegistryObject<Block> block : RegistryEvent.BLOCK_REGISTRY) {
-            String blockName = block.get().getRegistryName().toString().replace("compressedblocks:", "");
-            if (!blockName.contains("grass") && !blockName.contains("ancient_debris")) {
-                simpleBlock(
-                        block.get().getBlock(), models().cubeAll(
-                                block.get().getRegistryName().toString(),
-                                getActualResourceLocation(block.get().getRegistryName().toString())
-                        )
-                                .texture("particle", getActualResourceLocation(block.get().getRegistryName().toString()))
-                                .texture("overlay", getCompressionOverlay(block.get().getRegistryName().toString()))
-                                .parent(blockBlock)
-                                .element()
-                                .from(0, 0, 0)
-                                .to(16, 16, 16)
-                                .face(Direction.DOWN).texture("#all").end()
-                                .face(Direction.UP).texture("#all").end()
-                                .face(Direction.NORTH).texture("#all").end()
-                                .face(Direction.SOUTH).texture("#all").end()
-                                .face(Direction.EAST).texture("#all").end()
-                                .face(Direction.WEST).texture("#all").end()
-                                .end()
-                                .element()
-                                .from(0, 0, 0)
-                                .to(16, 16, 16)
-                                .face(Direction.DOWN).texture("#overlay").end()
-                                .face(Direction.UP).texture("#overlay").end()
-                                .face(Direction.NORTH).texture("#overlay").end()
-                                .face(Direction.SOUTH).texture("#overlay").end()
-                                .face(Direction.EAST).texture("#overlay").end()
-                                .face(Direction.WEST).texture("#overlay").end()
-                                .end()
-                );
-            } else if (blockName.contains("grass")) {
-                simpleBlock(
-                        block.get().getBlock(), models().cubeAll(
-                                block.get().getRegistryName().toString(),
-                                new ResourceLocation("compressedblocks", "block/grass_side")
-                        )
-                                .texture("particle", new ResourceLocation("compressedblocks", "block/grass_bottom"))
-                                .texture("top", new ResourceLocation("compressedblocks", "block/grass_top"))
-                                .texture("bottom", new ResourceLocation("compressedblocks", "block/grass_bottom"))
-                                .texture("overlay", getCompressionOverlay(block.get().getRegistryName().toString()))
-                                .parent(blockBlock)
-                                .element()
-                                .from(0, 0, 0)
-                                .to(16, 16, 16)
-                                .face(Direction.DOWN).texture("#bottom").end()
-                                .face(Direction.UP).texture("#top").end()
-                                .face(Direction.NORTH).texture("#all").end()
-                                .face(Direction.SOUTH).texture("#all").end()
-                                .face(Direction.EAST).texture("#all").end()
-                                .face(Direction.WEST).texture("#all").end()
-                                .end()
-                                .element()
-                                .from(0, 0, 0)
-                                .to(16, 16, 16)
-                                .face(Direction.DOWN).texture("#overlay").end()
-                                .face(Direction.UP).texture("#overlay").end()
-                                .face(Direction.NORTH).texture("#overlay").end()
-                                .face(Direction.SOUTH).texture("#overlay").end()
-                                .face(Direction.EAST).texture("#overlay").end()
-                                .face(Direction.WEST).texture("#overlay").end()
-                                .end()
-                );
-            } else if (blockName.contains("ancient_debris")) {
-                simpleBlock(
-                        block.get().getBlock(), models().cubeAll(block.get().getRegistryName().toString(),
-                                new ResourceLocation("compressedblocks", "block/ancient_debris_side")
-                        )
-                                .texture("particle", new ResourceLocation("compressedblocks", "block/ancient_debris_side"))
-                                .texture("top", new ResourceLocation("compressedblocks", "block/ancient_debris_top"))
-                                .texture("bottom", new ResourceLocation("compressedblocks", "block/ancient_debris_top"))
-                                .texture("overlay", getCompressionOverlay(block.get().getRegistryName().toString()))
-                                .parent(blockBlock)
-                                .element()
-                                .from(0, 0, 0)
-                                .to(16, 16, 16)
-                                .face(Direction.DOWN).texture("#bottom").end()
-                                .face(Direction.UP).texture("#top").end()
-                                .face(Direction.NORTH).texture("#all").end()
-                                .face(Direction.SOUTH).texture("#all").end()
-                                .face(Direction.EAST).texture("#all").end()
-                                .face(Direction.WEST).texture("#all").end()
-                                .end()
-                                .element()
-                                .from(0, 0, 0)
-                                .to(16, 16, 16)
-                                .face(Direction.DOWN).texture("#overlay").end()
-                                .face(Direction.UP).texture("#overlay").end()
-                                .face(Direction.NORTH).texture("#overlay").end()
-                                .face(Direction.SOUTH).texture("#overlay").end()
-                                .face(Direction.EAST).texture("#overlay").end()
-                                .face(Direction.WEST).texture("#overlay").end()
-                                .end()
-                );
+        for (BlockFactory factory : Lists.blockList) {
+            for (RegistryObject<Block> block : RegistryEvent.BLOCK_REGISTRY) {
+                String str = "";
+                for (int i = 0; i <= 9; i++) {
+                    if (block.get().getRegistryName().toString().contains("compressedblocks:c" + i)) {
+                        str = block.get().getRegistryName().toString().replace("compressedblocks:c" + i + "_", "");
+                    }
+                }
+
+                if (factory.getRegistryName().equals(str)) {
+                    if (!factory.getHasCustomTexture()) {
+                        simpleBlock(
+                                block.get().getBlock(), models().cubeAll(
+                                        block.get().getBlock().getRegistryName().toString(),
+                                        getActualResourceLocation(block.get().getBlock().getRegistryName().toString())
+                                )
+                                        .texture("particle", getActualResourceLocation(block.get().getBlock().getRegistryName().toString()))
+                                        .texture("overlay", getCompressionOverlay(block.get().getBlock().getRegistryName().toString()))
+                                        .parent(blockBlock)
+                                        .element()
+                                        .from(0, 0, 0)
+                                        .to(16, 16, 16)
+                                        .face(Direction.DOWN).texture("#all").end()
+                                        .face(Direction.UP).texture("#all").end()
+                                        .face(Direction.NORTH).texture("#all").end()
+                                        .face(Direction.SOUTH).texture("#all").end()
+                                        .face(Direction.EAST).texture("#all").end()
+                                        .face(Direction.WEST).texture("#all").end()
+                                        .end()
+                                        .element()
+                                        .from(0, 0, 0)
+                                        .to(16, 16, 16)
+                                        .face(Direction.DOWN).texture("#overlay").end()
+                                        .face(Direction.UP).texture("#overlay").end()
+                                        .face(Direction.NORTH).texture("#overlay").end()
+                                        .face(Direction.SOUTH).texture("#overlay").end()
+                                        .face(Direction.EAST).texture("#overlay").end()
+                                        .face(Direction.WEST).texture("#overlay").end()
+                                        .end()
+                        );
+
+                    } else if (factory.getHasCustomTexture()) {
+                        simpleBlock(
+                                block.get().getBlock(), models().cube(
+                                        block.get().getBlock().getRegistryName().toString(),
+                                        new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.DOWN)),
+                                        new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.UP)),
+                                        new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.NORTH)),
+                                        new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.SOUTH)),
+                                        new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.EAST)),
+                                        new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.WEST))
+                                )
+                                        .texture("particle", new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.PARTICLE)))
+                                        .texture("overlay", getCompressionOverlay(block.get().getBlock().getRegistryName().toString()))
+                                        .parent(blockBlock)
+                                        .element()
+                                        .from(0, 0, 0)
+                                        .to(16, 16, 16)
+                                        .face(Direction.DOWN).texture("#down").end()
+                                        .face(Direction.UP).texture("#up").end()
+                                        .face(Direction.NORTH).texture("#north").end()
+                                        .face(Direction.SOUTH).texture("#south").end()
+                                        .face(Direction.EAST).texture("#east").end()
+                                        .face(Direction.WEST).texture("#west").end()
+                                        .end()
+                                        .element()
+                                        .from(0, 0, 0)
+                                        .to(16, 16, 16)
+                                        .face(Direction.DOWN).texture("#overlay").end()
+                                        .face(Direction.UP).texture("#overlay").end()
+                                        .face(Direction.NORTH).texture("#overlay").end()
+                                        .face(Direction.SOUTH).texture("#overlay").end()
+                                        .face(Direction.EAST).texture("#overlay").end()
+                                        .face(Direction.WEST).texture("#overlay").end()
+                                        .end()
+                        );
+                    }
+                }
             }
         }
     }
+
 
     private ResourceLocation getActualResourceLocation(String blockName) {
         for (int i = 0; i <= 9; i++) {
