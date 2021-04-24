@@ -6,6 +6,7 @@ import com.github.sa_shiro.compressedblocks.block.CompressedBlock;
 import com.github.sa_shiro.compressedblocks.item.BagItem;
 import com.github.sa_shiro.compressedblocks.item.EnumItemTier;
 import com.github.sa_shiro.compressedblocks.item.ToolItems;
+import com.github.sa_shiro.compressedblocks.util.ForgeConfigManager;
 import com.github.sa_shiro.compressedblocks.util.ItemGroups;
 import com.github.sa_shiro.compressedblocks.util.Lists;
 import net.minecraft.block.Block;
@@ -78,23 +79,41 @@ public class RegistryEvent {
 
     private static void registerBlocks() {
         for (BlockFactory factory : Lists.blockList) {
-            for (int level = 0; level <= 9; level++) { // ConfigManager.getMaxCompressionLevel()
-                RegisterBlock.registerNewBlock(
-                        CompressedBlock.createBlock(
-                                factory.getType(),
-                                level,
-                                factory.getMaterial(),
-                                factory.getMaterialColor(),
-                                factory.getSoundType(),
-                                Lists.HARDNESS.get(level),
-                                Lists.RESISTANCE.get(level),
-                                Lists.HARVEST_LEVEL.get(level)
-                        ),
-                        factory.getRegistryName(), level, true // ConfigManager.isBlockEnabled(factory.getRegistryName()
-                );
+            if (factory.getRegistryName().equals("stone") || factory.getRegistryName().equals("cobblestone")) {
+                for (int level = 0; level <= 9; level++) {
+                    RegisterBlock.registerNewBlock(
+                            CompressedBlock.createBlock(
+                                    factory.getType(),
+                                    level,
+                                    factory.getMaterial(),
+                                    factory.getMaterialColor(),
+                                    factory.getSoundType(),
+                                    Lists.HARDNESS.get(level),
+                                    Lists.RESISTANCE.get(level),
+                                    Lists.HARVEST_LEVEL.get(level)
+                            ),
+                            factory.getRegistryName(), level, ForgeConfigManager.getIsBlockEnabled(factory.getRegistryName()) // ConfigManager.isBlockEnabled(factory.getRegistryName()
+                    );
+                }
+            } else {
+                for (int level = 0; level <= ForgeConfigManager.maxCompressionLevel.get(); level++) {
+                    RegisterBlock.registerNewBlock(
+                            CompressedBlock.createBlock(
+                                    factory.getType(),
+                                    level,
+                                    factory.getMaterial(),
+                                    factory.getMaterialColor(),
+                                    factory.getSoundType(),
+                                    Lists.HARDNESS.get(level),
+                                    Lists.RESISTANCE.get(level),
+                                    Lists.HARVEST_LEVEL.get(level)
+                            ),
+                            factory.getRegistryName(), level, ForgeConfigManager.getIsBlockEnabled(factory.getRegistryName()) // ConfigManager.isBlockEnabled(factory.getRegistryName()
+                    );
+                }
             }
+            LOGGER.info("Registration finished.");
         }
-        LOGGER.info("Registration finished.");
     }
 
     private static void translucentRender(final FMLCommonSetupEvent e) {
