@@ -22,7 +22,9 @@ public class Lists {
     public static final BlockFactory DIORITE = new BlockFactory(BlockType.DEFAULT, "diorite", Material.ROCK, MaterialColor.QUARTZ, SoundType.STONE);
     public static final BlockFactory ANDESITE = new BlockFactory(BlockType.DEFAULT, "andesite", Material.ROCK, MaterialColor.STONE, SoundType.STONE);
     public static final BlockFactory DIRT = new BlockFactory(BlockType.DEFAULT, "dirt", Material.EARTH, MaterialColor.DIRT, SoundType.GROUND);
-    public static final BlockFactory GRASS_BLOCK = new BlockFactory(BlockType.DEFAULT, "grass_block", Material.EARTH, MaterialColor.DIRT, SoundType.GROUND);
+    public static final BlockFactory GRASS_BLOCK = new BlockFactory(BlockType.DEFAULT, "grass_block", Material.EARTH, MaterialColor.DIRT, SoundType.GROUND)
+            .hasCustomTexture()
+            .setCustomTexture("grass_bottom", "grass_bottom", "grass_top", "grass_side", "grass_side", "grass_side", "grass_side");
     public static final BlockFactory COARSE_DIRT = new BlockFactory(BlockType.DEFAULT, "coarse_dirt", Material.EARTH, MaterialColor.DIRT, SoundType.GROUND);
     public static final BlockFactory CRIMSON_NYLIUM = new BlockFactory(BlockType.DEFAULT, "crimson_nylium", Material.ROCK, MaterialColor.CRIMSON_NYLIUM, SoundType.NYLIUM);
     public static final BlockFactory WARPED_NYLIUM = new BlockFactory(BlockType.DEFAULT, "warped_nylium", Material.ROCK, MaterialColor.WARPED_NYLIUM, SoundType.NYLIUM);
@@ -120,7 +122,9 @@ public class Lists {
     public static final BlockFactory FLINT_BLOCK = new BlockFactory(BlockType.DEFAULT, "flint_block", Material.ROCK, null, SoundType.STONE);
     public static final BlockFactory GUNPOWDER_BLOCK = new BlockFactory(BlockType.SAND, "gunpowder_block", 5000268, Material.SAND, null, SoundType.SAND);
     public static final BlockFactory NETHERITE_BLOCK = new BlockFactory(BlockType.DEFAULT, "netherite_block", Material.IRON, MaterialColor.BLACK, SoundType.NETHERITE);
-    public static final BlockFactory ANCIENT_DEBRIS = new BlockFactory(BlockType.DEFAULT, "ancient_debris", Material.IRON, MaterialColor.BLACK, SoundType.ANCIENT_DEBRIS);
+    public static final BlockFactory ANCIENT_DEBRIS = new BlockFactory(BlockType.DEFAULT, "ancient_debris", Material.IRON, MaterialColor.BLACK, SoundType.ANCIENT_DEBRIS)
+            .hasCustomTexture()
+            .setCustomTexture("ancient_debris_side", "ancient_debris_top", "ancient_debris_top", "ancient_debris_side", "ancient_debris_side", "ancient_debris_side", "ancient_debris_side");
 
     public static void populate() {
         blockList.add(STONE);

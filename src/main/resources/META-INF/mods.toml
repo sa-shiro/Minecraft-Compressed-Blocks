@@ -10,7 +10,7 @@ version = "${file.jarVersion}" #mandatory, # The version number of the mod
 displayName = "CB: Compressed Blocks" #mandatory, A display name for the mod
 updateJSONURL = "https://raw.githubusercontent.com/sa-shiro/Minecraft-Compressed-Blocks/master/update.json" #optional, A URL to query for updates for this mod
 displayURL = "https://www.curseforge.com/minecraft/mc-mods/cb-compressed-blocks" #optional, A URL for the "homepage" for this mod, displayed in the mod UI
-logoFile="logo.png" #optional, A file name (in the root of the mod JAR) containing a logo for display
+logoFile = "logo.png" #optional, A file name (in the root of the mod JAR) containing a logo for display
 #credits="" #optional, A text field displayed in the mod UI
 authors = "Sashiro" #optional, A text field displayed in the mod UI
 # The description text for the mod (multi line!) (#mandatory)

@@ -15,6 +15,8 @@ public class BlockFactory {
     private final Material material;
     private final MaterialColor materialColor;
     private final SoundType soundType;
+    private String textureParticle, textureDown, textureUp, textureNorth, textureSouth, textureEast, textureWest;
+    private boolean isCustom = false;
 
     /**
      * Utility to create new Blocks to iterate over for registering
@@ -107,5 +109,90 @@ public class BlockFactory {
      */
     public SoundType getSoundType() {
         return soundType;
+    }
+
+    /**
+     * Function to set if the Block has a custom Texture
+     *
+     * @return this
+     */
+    public BlockFactory hasCustomTexture() {
+        isCustom = true;
+        return this;
+    }
+
+    /**
+     * Function to check if the Block has a custom Texture
+     *
+     * @return true if it has a custom Texture set
+     */
+    public boolean getHasCustomTexture() {
+        return isCustom;
+    }
+
+    public BlockFactory setCustomTexture(String particle, String down, String up, String north, String south, String east, String west) {
+        textureParticle = particle;
+        textureDown = down;
+        textureUp = up;
+        textureNorth = north;
+        textureSouth = south;
+        textureEast = east;
+        textureWest = west;
+        return this;
+    }
+
+    public BlockFactory setCustomSideTexture(String down, String up, String north, String south, String east, String west) {
+        textureDown = down;
+        textureUp = up;
+        textureNorth = north;
+        textureSouth = south;
+        textureEast = east;
+        textureWest = west;
+        return this;
+    }
+
+    public BlockFactory setCustomParticleTexture(String particle) {
+        textureParticle = particle;
+        return this;
+    }
+
+    public String getCustomTexture(TextureLocation location) {
+        switch (location) {
+            case DOWN:
+                return textureDown;
+            case NORTH:
+                return textureNorth;
+            case SOUTH:
+                return textureSouth;
+            case EAST:
+                return textureEast;
+            case WEST:
+                return textureWest;
+            case PARTICLE:
+                return textureParticle;
+            case UP:
+            default:
+                return textureUp;
+        }
+    }
+
+    public enum TextureLocation {
+        PARTICLE("particle"),
+        UP("up"),
+        DOWN("down"),
+        NORTH("north"),
+        SOUTH("south"),
+        EAST("east"),
+        WEST("west");
+
+        private final String textureLocation;
+
+        TextureLocation(String typeIn) {
+            textureLocation = typeIn;
+        }
+
+        public String getTextureLocation() {
+            return textureLocation;
+        }
     }
 }
