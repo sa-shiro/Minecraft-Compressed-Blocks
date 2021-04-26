@@ -3,9 +3,11 @@ package com.github.sa_shiro.compressedblocks.data.generators;
 import com.github.sa_shiro.compressedblocks.event.RegistryEvent;
 import net.minecraft.block.Block;
 import net.minecraft.data.*;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.Consumer;
@@ -19,25 +21,48 @@ public class GenRecipeProvider extends RecipeProvider {
     protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
         assert false;
         for (int i = 0; i < RegistryEvent.BLOCK_REGISTRY.size(); i++) {
-            if (RegistryEvent.BLOCK_REGISTRY.get(i).get().getRegistryName().toString().contains("c0_")) {
-                String str = RegistryEvent.BLOCK_REGISTRY.get(i).get().getRegistryName().toString().replace("compressedblocks:c0_", "");
-                for (Block block : ForgeRegistries.BLOCKS) {
-                    String str2 = block.getRegistryName().toString().replace("minecraft:", "");
-                    if (str.equals(str2)) {
+            String blockName = RegistryEvent.BLOCK_REGISTRY.get(i).get().getRegistryName().toString();
+            boolean isSpecial = blockName.contains("c0_rotten_flesh_block") || blockName.contains("c0_gunpowder_block") || blockName.contains("c0_flint_block");
+            if (blockName.contains("c0_") && !isSpecial) {
+                String cbBlockName = blockName.replace("compressedblocks:c0_", "");
+                for (Block mcBlock : ForgeRegistries.BLOCKS) {
+                    String mcBlockName = mcBlock.getRegistryName().toString().replace("minecraft:", "");
+                    if (cbBlockName.equals(mcBlockName) && !isSpecial) {
                         ShapedRecipeBuilder.shapedRecipe(
                                 RegistryEvent.BLOCK_REGISTRY.get(i).get()) // result
-                                .key('#', block) // ingredient
+                                .key('#', mcBlock) // ingredient
                                 .patternLine("###")
                                 .patternLine("###")
                                 .patternLine("###")
-                                .addCriterion("has_item", hasItem(block.asItem()))
-                                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.BLOCK_REGISTRY.get(i).get().getRegistryName().toString().replace("compressedblocks:", "")));
-                        ShapelessRecipeBuilder.shapelessRecipe(block, 9)
+                                .addCriterion("has_item", hasItem(mcBlock.asItem()))
+                                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName.replace("compressedblocks:", "")));
+                        ShapelessRecipeBuilder.shapelessRecipe(mcBlock, 9)
                                 .addIngredient(RegistryEvent.BLOCK_REGISTRY.get(i).get())
                                 .addCriterion("has_item", hasItem(RegistryEvent.BLOCK_REGISTRY.get(i).get().asItem()))
-                                .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.BLOCK_REGISTRY.get(i).get().getRegistryName().toString().replace("compressedblocks:", "")));
+                                .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName.replace("compressedblocks:", "")));
                     }
                 }
+            } else if (isSpecial) {
+                Item item;
+                if (blockName.contains("gunpowder")) {
+                    item = Items.GUNPOWDER;
+                } else if (blockName.contains("rotten_flesh")) {
+                    item = Items.ROTTEN_FLESH;
+                } else {
+                    item = Items.FLINT;
+                }
+                ShapedRecipeBuilder.shapedRecipe(RegistryEvent.BLOCK_REGISTRY.get(i).get()) // result
+                        .key('#', item) // ingredient
+                        .patternLine("###")
+                        .patternLine("###")
+                        .patternLine("###")
+                        .addCriterion("has_item", hasItem(item))
+                        .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName.replace("compressedblocks:", "")));
+                ShapelessRecipeBuilder.shapelessRecipe(item, 9)
+                        .addIngredient(RegistryEvent.BLOCK_REGISTRY.get(i).get())
+                        .addCriterion("has_item", hasItem(RegistryEvent.BLOCK_REGISTRY.get(i).get().asItem()))
+                        .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName.replace("compressedblocks:", "")));
+
             } else {
                 ShapedRecipeBuilder.shapedRecipe(RegistryEvent.BLOCK_REGISTRY.get(i).get()) // result
                         .key('#', RegistryEvent.BLOCK_REGISTRY.get(i - 1).get()) // ingredient
@@ -45,11 +70,11 @@ public class GenRecipeProvider extends RecipeProvider {
                         .patternLine("###")
                         .patternLine("###")
                         .addCriterion("has_item", hasItem(RegistryEvent.BLOCK_REGISTRY.get(i - 1).get().asItem()))
-                        .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.BLOCK_REGISTRY.get(i).get().getRegistryName().toString().replace("compressedblocks:", "")));
+                        .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName.replace("compressedblocks:", "")));
                 ShapelessRecipeBuilder.shapelessRecipe(RegistryEvent.BLOCK_REGISTRY.get(i - 1).get(), 9)
                         .addIngredient(RegistryEvent.BLOCK_REGISTRY.get(i).get())
                         .addCriterion("has_item", hasItem(RegistryEvent.BLOCK_REGISTRY.get(i).get().asItem()))
-                        .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.BLOCK_REGISTRY.get(i).get().getRegistryName().toString().replace("compressedblocks:", "")));
+                        .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName.replace("compressedblocks:", "")));
             }
         }
 
@@ -333,5 +358,23 @@ public class GenRecipeProvider extends RecipeProvider {
                 .patternLine(" # ")
                 .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_DIAMOND.get()))
                 .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_DIAMOND_SWORD.get().getRegistryName().toString().replace("compressedblocks:", "")));
+
+        for (RegistryObject<Block> block : RegistryEvent.BLOCK_REGISTRY) {
+            if (block.get().getRegistryName().toString().contains("c0_flesh_block")) {
+                ShapedRecipeBuilder.shapedRecipe(block.get()) // result
+                        .key('*', Items.ROTTEN_FLESH) // ingredient
+                        .key('#', block.get()) // ingredient
+                        .patternLine("###")
+                        .patternLine("#*#")
+                        .patternLine("###")
+                        .addCriterion("has_item", hasItem(Items.ROTTEN_FLESH))
+                        .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + block.get().getRegistryName().toString().replace("compressedblocks:", "")));
+                ShapelessRecipeBuilder.shapelessRecipe(Items.ROTTEN_FLESH, 9)
+                        .addIngredient(block.get())
+                        .addCriterion("has_item", hasItem(block.get()))
+                        .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + block.get().getRegistryName().toString().replace("compressedblocks:", "")));
+
+            }
+        }
     }
 }
