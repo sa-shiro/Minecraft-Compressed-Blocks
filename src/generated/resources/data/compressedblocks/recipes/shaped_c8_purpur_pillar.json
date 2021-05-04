@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:c7_purpur_pillar"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c8_purpur_pillar"
+  }
+}

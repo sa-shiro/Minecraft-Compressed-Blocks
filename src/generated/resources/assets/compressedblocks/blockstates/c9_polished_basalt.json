@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "compressedblocks:block/c9_polished_basalthorizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "compressedblocks:block/c9_polished_basalt"
+    },
+    "axis=z": {
+      "model": "compressedblocks:block/c9_polished_basalthorizontal",
+      "x": 90
+    }
+  }
+}

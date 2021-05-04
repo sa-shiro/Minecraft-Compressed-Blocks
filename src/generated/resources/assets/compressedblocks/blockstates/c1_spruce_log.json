@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "compressedblocks:block/c1_spruce_loghorizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "compressedblocks:block/c1_spruce_log"
+    },
+    "axis=z": {
+      "model": "compressedblocks:block/c1_spruce_loghorizontal",
+      "x": 90
+    }
+  }
+}

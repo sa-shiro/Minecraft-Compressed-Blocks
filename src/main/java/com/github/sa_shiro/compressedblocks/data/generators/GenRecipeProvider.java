@@ -7,7 +7,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.Consumer;
@@ -358,23 +357,5 @@ public class GenRecipeProvider extends RecipeProvider {
                 .patternLine(" # ")
                 .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_DIAMOND.get()))
                 .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_DIAMOND_SWORD.get().getRegistryName().toString().replace("compressedblocks:", "")));
-
-        for (RegistryObject<Block> block : RegistryEvent.BLOCK_REGISTRY) {
-            if (block.get().getRegistryName().toString().contains("c0_flesh_block")) {
-                ShapedRecipeBuilder.shapedRecipe(block.get()) // result
-                        .key('*', Items.ROTTEN_FLESH) // ingredient
-                        .key('#', block.get()) // ingredient
-                        .patternLine("###")
-                        .patternLine("#*#")
-                        .patternLine("###")
-                        .addCriterion("has_item", hasItem(Items.ROTTEN_FLESH))
-                        .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + block.get().getRegistryName().toString().replace("compressedblocks:", "")));
-                ShapelessRecipeBuilder.shapelessRecipe(Items.ROTTEN_FLESH, 9)
-                        .addIngredient(block.get())
-                        .addCriterion("has_item", hasItem(block.get()))
-                        .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + block.get().getRegistryName().toString().replace("compressedblocks:", "")));
-
-            }
-        }
     }
 }

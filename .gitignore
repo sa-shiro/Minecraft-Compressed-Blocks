@@ -21,5 +21,4 @@ build
 eclipse
 run
 logs/
-generate/
-!generate.sh
+/src/generated/resources/.cache/

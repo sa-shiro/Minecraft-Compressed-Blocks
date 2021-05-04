@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:c6_warped_stem"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c7_warped_stem"
+  }
+}

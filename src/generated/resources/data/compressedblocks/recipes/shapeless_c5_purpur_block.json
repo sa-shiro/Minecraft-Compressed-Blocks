@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c5_purpur_block"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c4_purpur_block",
+    "count": 9
+  }
+}

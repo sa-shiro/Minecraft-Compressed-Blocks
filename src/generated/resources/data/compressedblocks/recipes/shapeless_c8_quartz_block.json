@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c8_quartz_block"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c7_quartz_block",
+    "count": 9
+  }
+}

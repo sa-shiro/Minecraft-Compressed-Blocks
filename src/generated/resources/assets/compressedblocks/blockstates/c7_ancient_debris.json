@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "compressedblocks:block/c7_ancient_debrishorizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
       "model": "compressedblocks:block/c7_ancient_debris"
+    },
+    "axis=z": {
+      "model": "compressedblocks:block/c7_ancient_debrishorizontal",
+      "x": 90
     }
   }
 }

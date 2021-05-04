@@ -6,17 +6,18 @@ import net.minecraft.block.material.MaterialColor;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 
 public class BlockFactory {
 
     private final BlockType type;
     private final String registryName;
-    private final int durstColor;
     private final Material material;
-    private final MaterialColor materialColor;
     private final SoundType soundType;
-    private String textureParticle, textureDown, textureUp, textureNorth, textureSouth, textureEast, textureWest;
-    private boolean isCustom = false;
+    private int durstColor;
+    private MaterialColor materialColor, materialColorSide, materialColorEnd;
+    private String textureSide, textureEnd, textureParticle, textureDown, textureUp, textureNorth, textureSouth, textureEast, textureWest, namespace = null;
+    private boolean hasCustomTexture = false, hasRotation = false, isLogBlock = false;
 
     /**
      * Utility to create new Blocks to iterate over for registering
@@ -27,7 +28,8 @@ public class BlockFactory {
      * @param materialColorIn Minecraft {@link MaterialColor}
      * @param soundTypeIn     Minecraft {@link SoundType}
      */
-    public BlockFactory(@Nonnull BlockType typeIn, @Nonnull String registryNameIn, @Nonnull Material materialIn, @Nullable MaterialColor materialColorIn, @Nonnull SoundType soundTypeIn) {
+    @ParametersAreNonnullByDefault
+    public BlockFactory(BlockType typeIn, String registryNameIn, Material materialIn, @Nullable MaterialColor materialColorIn, SoundType soundTypeIn) {
         if (materialColorIn == null) materialColorIn = materialIn.getColor();
         this.type = typeIn;
         this.registryName = registryNameIn;
@@ -47,13 +49,22 @@ public class BlockFactory {
      * @param materialColorIn Minecraft {@link MaterialColor}
      * @param soundTypeIn     Minecraft {@link SoundType}
      */
-    public BlockFactory(@Nonnull BlockType typeIn, @Nonnull String registryNameIn, int dustColorIn, @Nonnull Material materialIn, @Nullable MaterialColor materialColorIn, @Nonnull SoundType soundTypeIn) {
+    @ParametersAreNonnullByDefault
+    public BlockFactory(BlockType typeIn, String registryNameIn, int dustColorIn, Material materialIn, @Nullable MaterialColor materialColorIn, SoundType soundTypeIn) {
         if (materialColorIn == null) materialColorIn = materialIn.getColor();
         this.type = typeIn;
         this.registryName = registryNameIn;
         this.durstColor = dustColorIn;
         this.material = materialIn;
         this.materialColor = materialColorIn;
+        this.soundType = soundTypeIn;
+    }
+
+    @ParametersAreNonnullByDefault
+    public BlockFactory(@Nonnull BlockType typeIn, String registryNameIn, Material materialIn, SoundType soundTypeIn) {
+        this.type = typeIn;
+        this.registryName = registryNameIn;
+        this.material = materialIn;
         this.soundType = soundTypeIn;
     }
 
@@ -102,6 +113,20 @@ public class BlockFactory {
         return materialColor;
     }
 
+    public BlockFactory setMaterialColor(MaterialColor materialColorSide, MaterialColor materialColorEnd) {
+        this.materialColorSide = materialColorSide;
+        this.materialColorEnd = materialColorEnd;
+        return this;
+    }
+
+    public MaterialColor getMaterialColorEnd() {
+        return materialColorEnd;
+    }
+
+    public MaterialColor getMaterialColorSide() {
+        return materialColorSide;
+    }
+
     /**
      * Function to get the Block's Sound Type
      *
@@ -112,25 +137,43 @@ public class BlockFactory {
     }
 
     /**
-     * Function to set if the Block has a custom Texture
-     *
-     * @return this
-     */
-    public BlockFactory hasCustomTexture() {
-        isCustom = true;
-        return this;
-    }
-
-    /**
      * Function to check if the Block has a custom Texture
      *
      * @return true if it has a custom Texture set
      */
     public boolean getHasCustomTexture() {
-        return isCustom;
+        return hasCustomTexture;
     }
 
+    public String getTexturePath() {
+        return namespace == null ? "minecraft" : namespace;
+    }
+
+    @ParametersAreNonnullByDefault
+    public BlockFactory setCustomTexture(String particle, String side, String end) {
+        hasCustomTexture = true;
+        textureSide = side;
+        textureEnd = end;
+        return setCustomTexture(getTexturePath(), particle, end, end, side, side, side, side);
+    }
+
+    @ParametersAreNonnullByDefault
+    public BlockFactory setCustomTexture(String modID, String particle, String side, String end) {
+        hasCustomTexture = true;
+        textureSide = side;
+        textureEnd = end;
+        return setCustomTexture(modID, particle, end, end, side, side, side, side);
+    }
+
+    @ParametersAreNonnullByDefault
     public BlockFactory setCustomTexture(String particle, String down, String up, String north, String south, String east, String west) {
+        return setCustomTexture(getTexturePath(), particle, down, up, north, south, east, west);
+    }
+
+    @ParametersAreNonnullByDefault
+    public BlockFactory setCustomTexture(@Nullable String modID, String particle, String down, String up, String north, String south, String east, String west) {
+        namespace = modID;
+        hasCustomTexture = true;
         textureParticle = particle;
         textureDown = down;
         textureUp = up;
@@ -141,18 +184,30 @@ public class BlockFactory {
         return this;
     }
 
-    public BlockFactory setCustomSideTexture(String down, String up, String north, String south, String east, String west) {
-        textureDown = down;
-        textureUp = up;
-        textureNorth = north;
-        textureSouth = south;
-        textureEast = east;
-        textureWest = west;
-        return this;
-    }
-
-    public BlockFactory setCustomParticleTexture(String particle) {
-        textureParticle = particle;
+    @ParametersAreNonnullByDefault
+    public BlockFactory setCustomTexture(@Nullable String modID, TextureLocation location, String texture) {
+        hasCustomTexture = true;
+        namespace = modID;
+        switch (location) {
+            case DOWN:
+                textureDown = texture;
+            case UP:
+                textureUp = texture;
+            case NORTH:
+                textureNorth = texture;
+            case SOUTH:
+                textureSouth = texture;
+            case EAST:
+                textureEast = texture;
+            case WEST:
+                textureWest = texture;
+            case PARTICLE:
+                textureParticle = texture;
+            case SIDE:
+                textureSide = texture;
+            case END:
+                textureEnd = texture;
+        }
         return this;
     }
 
@@ -170,10 +225,32 @@ public class BlockFactory {
                 return textureWest;
             case PARTICLE:
                 return textureParticle;
+            case SIDE:
+                return textureSide;
+            case END:
+                return textureEnd;
             case UP:
             default:
                 return textureUp;
         }
+    }
+
+    public boolean getHasRotation() {
+        return hasRotation;
+    }
+
+    public BlockFactory hasRotation() {
+        hasRotation = true;
+        return this;
+    }
+
+    public BlockFactory isLogBlock() {
+        isLogBlock = true;
+        return this;
+    }
+
+    public boolean getIsLogBlock() {
+        return isLogBlock;
     }
 
     public enum TextureLocation {
@@ -183,7 +260,9 @@ public class BlockFactory {
         NORTH("north"),
         SOUTH("south"),
         EAST("east"),
-        WEST("west");
+        WEST("west"),
+        SIDE("side"),
+        END("end");
 
         private final String textureLocation;
 

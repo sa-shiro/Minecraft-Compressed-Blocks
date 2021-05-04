@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:c4_spruce_log"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c5_spruce_log"
+  }
+}
