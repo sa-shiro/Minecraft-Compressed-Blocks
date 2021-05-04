@@ -22,9 +22,9 @@ public class Lists {
     public static final BlockFactory DIORITE = new BlockFactory(BlockType.DEFAULT, "diorite", Material.ROCK, MaterialColor.QUARTZ, SoundType.STONE);
     public static final BlockFactory ANDESITE = new BlockFactory(BlockType.DEFAULT, "andesite", Material.ROCK, MaterialColor.STONE, SoundType.STONE);
     public static final BlockFactory DIRT = new BlockFactory(BlockType.DEFAULT, "dirt", Material.EARTH, MaterialColor.DIRT, SoundType.GROUND);
+    // fixme: make compressed grass block act like minecraft grass block
     public static final BlockFactory GRASS_BLOCK = new BlockFactory(BlockType.DEFAULT, "grass_block", Material.EARTH, MaterialColor.DIRT, SoundType.GROUND)
-            .hasCustomTexture()
-            .setCustomTexture("grass_bottom", "grass_bottom", "grass_top", "grass_side", "grass_side", "grass_side", "grass_side");
+            .setCustomTexture("compressedblocks", "grass_bottom", "grass_bottom", "grass_top", "grass_side", "grass_side", "grass_side", "grass_side");
     public static final BlockFactory COARSE_DIRT = new BlockFactory(BlockType.DEFAULT, "coarse_dirt", Material.EARTH, MaterialColor.DIRT, SoundType.GROUND);
     public static final BlockFactory CRIMSON_NYLIUM = new BlockFactory(BlockType.DEFAULT, "crimson_nylium", Material.ROCK, MaterialColor.CRIMSON_NYLIUM, SoundType.NYLIUM);
     public static final BlockFactory WARPED_NYLIUM = new BlockFactory(BlockType.DEFAULT, "warped_nylium", Material.ROCK, MaterialColor.WARPED_NYLIUM, SoundType.NYLIUM);
@@ -123,8 +123,68 @@ public class Lists {
     public static final BlockFactory GUNPOWDER_BLOCK = new BlockFactory(BlockType.SAND, "gunpowder_block", 5000268, Material.SAND, null, SoundType.SAND);
     public static final BlockFactory NETHERITE_BLOCK = new BlockFactory(BlockType.DEFAULT, "netherite_block", Material.IRON, MaterialColor.BLACK, SoundType.NETHERITE);
     public static final BlockFactory ANCIENT_DEBRIS = new BlockFactory(BlockType.DEFAULT, "ancient_debris", Material.IRON, MaterialColor.BLACK, SoundType.ANCIENT_DEBRIS)
-            .hasCustomTexture()
-            .setCustomTexture("ancient_debris_side", "ancient_debris_top", "ancient_debris_top", "ancient_debris_side", "ancient_debris_side", "ancient_debris_side", "ancient_debris_side");
+            .setCustomTexture("ancient_debris_side", "ancient_debris_side", "ancient_debris_top")
+            .hasRotation()
+            .isLogBlock();
+    public static final BlockFactory OAK_LOG = new BlockFactory(BlockType.DEFAULT, "oak_log", Material.WOOD, SoundType.WOOD)
+            .setCustomTexture("oak_log", "oak_log", "oak_log_top")
+            .setMaterialColor(MaterialColor.WOOD, MaterialColor.OBSIDIAN)
+            .hasRotation()
+            .isLogBlock();
+    public static final BlockFactory SPRUCE_LOG = new BlockFactory(BlockType.DEFAULT, "spruce_log", Material.WOOD, MaterialColor.WOOD, SoundType.WOOD)
+            .setCustomTexture("spruce_log", "spruce_log", "spruce_log_top")
+            .setMaterialColor(MaterialColor.OBSIDIAN, MaterialColor.BROWN)
+            .hasRotation()
+            .isLogBlock();
+    public static final BlockFactory BIRCH_LOG = new BlockFactory(BlockType.DEFAULT, "birch_log", Material.WOOD, MaterialColor.WOOD, SoundType.WOOD)
+            .setCustomTexture("birch_log", "birch_log", "birch_log_top")
+            .setMaterialColor(MaterialColor.SAND, MaterialColor.QUARTZ)
+            .hasRotation()
+            .isLogBlock();
+    public static final BlockFactory JUNGLE_LOG = new BlockFactory(BlockType.DEFAULT, "jungle_log", Material.WOOD, MaterialColor.WOOD, SoundType.WOOD)
+            .setCustomTexture("jungle_log", "jungle_log", "jungle_log_top")
+            .setMaterialColor(MaterialColor.DIRT, MaterialColor.OBSIDIAN)
+            .hasRotation()
+            .isLogBlock();
+    public static final BlockFactory ACACIA_LOG = new BlockFactory(BlockType.DEFAULT, "acacia_log", Material.WOOD, MaterialColor.WOOD, SoundType.WOOD)
+            .setCustomTexture("acacia_log", "acacia_log", "acacia_log_top")
+            .setMaterialColor(MaterialColor.ADOBE, MaterialColor.STONE)
+            .hasRotation()
+            .isLogBlock();
+    public static final BlockFactory DARK_OAK_LOG = new BlockFactory(BlockType.DEFAULT, "dark_oak_log", Material.NETHER_WOOD, MaterialColor.NETHERRACK, SoundType.WOOD)
+            .setCustomTexture("dark_oak_log", "dark_oak_log", "dark_oak_log_top")
+            .setMaterialColor(MaterialColor.BROWN, MaterialColor.BROWN)
+            .hasRotation()
+            .isLogBlock();
+    public static final BlockFactory WARPED_STEM = new BlockFactory(BlockType.DEFAULT, "warped_stem", Material.NETHER_WOOD, MaterialColor.WARPED_STEM, SoundType.HYPHAE)
+            .setCustomTexture("warped_stem", "warped_stem", "warped_stem_top")
+            .hasRotation();
+    public static final BlockFactory CRIMSON_STEM = new BlockFactory(BlockType.DEFAULT, "crimson_stem", Material.NETHER_WOOD, MaterialColor.CRIMSON_STEM, SoundType.HYPHAE)
+            .setCustomTexture("crimson_stem", "crimson_stem", "crimson_stem_top")
+            .hasRotation();
+    public static final BlockFactory OAK_PLANKS = new BlockFactory(BlockType.DEFAULT, "oak_planks", Material.WOOD, MaterialColor.WOOD, SoundType.WOOD);
+    public static final BlockFactory SPRUCE_PLANKS = new BlockFactory(BlockType.DEFAULT, "spruce_planks", Material.WOOD, MaterialColor.WOOD, SoundType.WOOD);
+    public static final BlockFactory BIRCH_PLANKS = new BlockFactory(BlockType.DEFAULT, "birch_planks", Material.WOOD, MaterialColor.WOOD, SoundType.WOOD);
+    public static final BlockFactory JUNGLE_PLANKS = new BlockFactory(BlockType.DEFAULT, "jungle_planks", Material.WOOD, MaterialColor.WOOD, SoundType.WOOD);
+    public static final BlockFactory ACACIA_PLANKS = new BlockFactory(BlockType.DEFAULT, "acacia_planks", Material.WOOD, MaterialColor.WOOD, SoundType.WOOD);
+    public static final BlockFactory DARK_OAK_PLANKS = new BlockFactory(BlockType.DEFAULT, "dark_oak_planks", Material.WOOD, MaterialColor.WOOD, SoundType.WOOD);
+    public static final BlockFactory WARPED_PLANKS = new BlockFactory(BlockType.DEFAULT, "warped_planks", Material.WOOD, MaterialColor.WOOD, SoundType.WOOD);
+    public static final BlockFactory CRIMSON_PLANKS = new BlockFactory(BlockType.DEFAULT, "crimson_planks", Material.WOOD, MaterialColor.WOOD, SoundType.WOOD);
+    public static final BlockFactory PURPUR_BLOCK = new BlockFactory(BlockType.DEFAULT, "purpur_block", Material.ROCK, MaterialColor.PURPLE, SoundType.STONE);
+    public static final BlockFactory PURPUR_PILLAR = new BlockFactory(BlockType.DEFAULT, "purpur_pillar", Material.ROCK, MaterialColor.PURPLE, SoundType.STONE);
+    public static final BlockFactory BASALT = new BlockFactory(BlockType.DEFAULT, "basalt", Material.ROCK, MaterialColor.BLACK, SoundType.STONE)
+            .setCustomTexture("basalt_side", "basalt_side", "basalt_top")
+            .hasRotation();
+    public static final BlockFactory POLISHED_BASALT = new BlockFactory(BlockType.DEFAULT, "polished_basalt", Material.ROCK, MaterialColor.PURPLE, SoundType.STONE)
+            .setCustomTexture("polished_basalt_side", "polished_basalt_side", "polished_basalt_top")
+            .hasRotation();
+    public static final BlockFactory QUARTZ_BLOCK = new BlockFactory(BlockType.DEFAULT, "quartz_block", Material.ROCK, MaterialColor.PURPLE, SoundType.STONE)
+            .setCustomTexture("quartz_block_side", "quartz_block_side", "quartz_block_top")
+            .hasRotation();
+    public static final BlockFactory HAY_BLOCK = new BlockFactory(BlockType.DEFAULT, "hay_block", Material.ORGANIC, MaterialColor.YELLOW, SoundType.PLANT)
+            .setCustomTexture("hay_block_side", "hay_block_side", "hay_block_top")
+            .hasRotation();
+    public static final BlockFactory GLASS = new BlockFactory(BlockType.GLASS, "glass", Material.AIR, MaterialColor.AIR, SoundType.GLASS);
 
     public static void populate() {
         blockList.add(STONE);
@@ -231,6 +291,29 @@ public class Lists {
         blockList.add(GUNPOWDER_BLOCK);
         blockList.add(NETHERITE_BLOCK);
         blockList.add(ANCIENT_DEBRIS);
+        blockList.add(OAK_LOG);
+        blockList.add(SPRUCE_LOG);
+        blockList.add(BIRCH_LOG);
+        blockList.add(JUNGLE_LOG);
+        blockList.add(ACACIA_LOG);
+        blockList.add(DARK_OAK_LOG);
+        blockList.add(WARPED_STEM);
+        blockList.add(CRIMSON_STEM);
+        blockList.add(OAK_PLANKS);
+        blockList.add(SPRUCE_PLANKS);
+        blockList.add(BIRCH_PLANKS);
+        blockList.add(JUNGLE_PLANKS);
+        blockList.add(ACACIA_PLANKS);
+        blockList.add(DARK_OAK_PLANKS);
+        blockList.add(WARPED_PLANKS);
+        blockList.add(CRIMSON_PLANKS);
+        blockList.add(PURPUR_BLOCK);
+        blockList.add(PURPUR_PILLAR);
+        blockList.add(BASALT);
+        blockList.add(POLISHED_BASALT);
+        blockList.add(QUARTZ_BLOCK);
+        blockList.add(HAY_BLOCK);
+        blockList.add(GLASS);
 
         HARDNESS.add(0, 8.0f);
         HARDNESS.add(1, 10.5f);

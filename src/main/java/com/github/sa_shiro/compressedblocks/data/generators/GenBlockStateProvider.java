@@ -5,6 +5,7 @@ import com.github.sa_shiro.compressedblocks.block.BlockFactory;
 import com.github.sa_shiro.compressedblocks.event.RegistryEvent;
 import com.github.sa_shiro.compressedblocks.util.Lists;
 import net.minecraft.block.Block;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
@@ -21,6 +22,8 @@ public class GenBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         ModelFile.UncheckedModelFile blockBlock = new ModelFile.UncheckedModelFile("block/block");
+        ModelFile.UncheckedModelFile cubeColumn = new ModelFile.UncheckedModelFile("block/cube_column");
+        ModelFile.UncheckedModelFile cubeColumnHorizontal = new ModelFile.UncheckedModelFile("block/cube_column_horizontal");
         assert false;
 
         for (BlockFactory factory : Lists.blockList) {
@@ -33,7 +36,7 @@ public class GenBlockStateProvider extends BlockStateProvider {
                 }
 
                 if (factory.getRegistryName().equals(str)) {
-                    if (!factory.getHasCustomTexture()) {
+                    if (!factory.getHasCustomTexture() && !factory.getHasRotation()) {
                         simpleBlock(
                                 block.get().getBlock(), models().cubeAll(
                                         block.get().getBlock().getRegistryName().toString(),
@@ -64,18 +67,18 @@ public class GenBlockStateProvider extends BlockStateProvider {
                                         .end()
                         );
 
-                    } else if (factory.getHasCustomTexture()) {
+                    } else if (factory.getHasCustomTexture() && !factory.getHasRotation()) {
                         simpleBlock(
                                 block.get().getBlock(), models().cube(
                                         block.get().getBlock().getRegistryName().toString(),
-                                        new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.DOWN)),
-                                        new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.UP)),
-                                        new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.NORTH)),
-                                        new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.SOUTH)),
-                                        new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.EAST)),
-                                        new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.WEST))
+                                        new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.DOWN)),
+                                        new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.UP)),
+                                        new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.NORTH)),
+                                        new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.SOUTH)),
+                                        new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.EAST)),
+                                        new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.WEST))
                                 )
-                                        .texture("particle", new ResourceLocation("compressedblocks", "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.PARTICLE)))
+                                        .texture("particle", new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.PARTICLE)))
                                         .texture("overlay", getCompressionOverlay(block.get().getBlock().getRegistryName().toString()))
                                         .parent(blockBlock)
                                         .element()
@@ -87,6 +90,67 @@ public class GenBlockStateProvider extends BlockStateProvider {
                                         .face(Direction.SOUTH).texture("#south").end()
                                         .face(Direction.EAST).texture("#east").end()
                                         .face(Direction.WEST).texture("#west").end()
+                                        .end()
+                                        .element()
+                                        .from(0, 0, 0)
+                                        .to(16, 16, 16)
+                                        .face(Direction.DOWN).texture("#overlay").end()
+                                        .face(Direction.UP).texture("#overlay").end()
+                                        .face(Direction.NORTH).texture("#overlay").end()
+                                        .face(Direction.SOUTH).texture("#overlay").end()
+                                        .face(Direction.EAST).texture("#overlay").end()
+                                        .face(Direction.WEST).texture("#overlay").end()
+                                        .end()
+                        );
+                    } else if (factory.getHasCustomTexture() && factory.getHasRotation()) {
+                        axisBlock(
+                                (RotatedPillarBlock) block.get().getBlock(),
+                                models().cubeColumn(
+                                        block.get().getBlock().getRegistryName().toString(),
+                                        new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.SIDE)),
+                                        new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.END))
+                                )
+                                        .texture("particle", new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.PARTICLE)))
+                                        .texture("overlay", getCompressionOverlay(block.get().getBlock().getRegistryName().toString()))
+                                        .parent(cubeColumn)
+                                        .element()
+                                        .from(0, 0, 0)
+                                        .to(16, 16, 16)
+                                        .face(Direction.DOWN).texture("#end").end()
+                                        .face(Direction.UP).texture("#end").end()
+                                        .face(Direction.NORTH).texture("#side").end()
+                                        .face(Direction.SOUTH).texture("#side").end()
+                                        .face(Direction.EAST).texture("#side").end()
+                                        .face(Direction.WEST).texture("#side").end()
+                                        .end()
+                                        .element()
+                                        .from(0, 0, 0)
+                                        .to(16, 16, 16)
+                                        .face(Direction.DOWN).texture("#overlay").end()
+                                        .face(Direction.UP).texture("#overlay").end()
+                                        .face(Direction.NORTH).texture("#overlay").end()
+                                        .face(Direction.SOUTH).texture("#overlay").end()
+                                        .face(Direction.EAST).texture("#overlay").end()
+                                        .face(Direction.WEST).texture("#overlay").end()
+                                        .end()
+                                ,
+                                models().cubeColumn(
+                                        block.get().getBlock().getRegistryName().toString() + "horizontal",
+                                        new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.SIDE)),
+                                        new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.END))
+                                )
+                                        .texture("particle", new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.PARTICLE)))
+                                        .texture("overlay", getCompressionOverlay(block.get().getBlock().getRegistryName().toString()))
+                                        .parent(cubeColumnHorizontal)
+                                        .element()
+                                        .from(0, 0, 0)
+                                        .to(16, 16, 16)
+                                        .face(Direction.DOWN).texture("#end").end()
+                                        .face(Direction.UP).texture("#end").end()
+                                        .face(Direction.NORTH).texture("#side").end()
+                                        .face(Direction.SOUTH).texture("#side").end()
+                                        .face(Direction.EAST).texture("#side").end()
+                                        .face(Direction.WEST).texture("#side").end()
                                         .end()
                                         .element()
                                         .from(0, 0, 0)

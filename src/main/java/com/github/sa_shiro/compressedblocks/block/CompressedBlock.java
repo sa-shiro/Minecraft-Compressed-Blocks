@@ -10,7 +10,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.IBlockReader;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
@@ -60,14 +59,15 @@ public class CompressedBlock extends Block implements ICompressedBlock {
      * @param resistance    Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
      * @param harvestLevel  Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
      */
-    public static ICompressedBlock createBlock(@Nonnull BlockType type, int compression, @Nonnull Material material, @Nullable MaterialColor materialColor, @Nonnull SoundType soundType, float hardness, float resistance, int harvestLevel) {
+    @ParametersAreNonnullByDefault
+    public static ICompressedBlock createBlock(BlockType type, int compression, Material material, @Nullable MaterialColor materialColor, SoundType soundType, float hardness, float resistance, int harvestLevel) {
         if (materialColor == null) materialColor = material.getColor();
         switch (type) {
             default:
             case DEFAULT:
                 return new CompressedBlock(material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
             case SAND:
-                return createSandBlock(14406560, material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
+                return new CompressedSand(14406560, material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
             case RED_SAND:
                 return new CompressedSand(11098145, material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
             case GRAVEL:
@@ -77,33 +77,29 @@ public class CompressedBlock extends Block implements ICompressedBlock {
             case SOUL_SAND:
                 return new CompressedSoulSandBlock(material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
             case WOOL:
-                return new CompressedWool(material, materialColor, soundType, compression);
+                return new CompressedBlock(material, materialColor, soundType, compression, 5.0F, 5.0F, 0);
             case SLIME:
                 return new CompressedSlimeBlock(material, materialColor, soundType, compression);
             case CUSTOM: // fixme: currently only used / usable for compressed flesh block
                 return new CompressedBlock(material, materialColor, soundType, compression, 0.85f);
             case GLASS:
-                return new CompressedBlock(Material.GLASS, MaterialColor.AIR, SoundType.GLASS, compression, 0.5F, 0.5F, 0);
+                return new CompressedTransparentBlock(compression);
         }
     }
 
-    /**
-     * @param dustColor     Dust Color
-     * @param material      Minecraft {@link Material}
-     * @param materialColor Minecraft {@link MaterialColor}
-     * @param soundType     Minecraft {@link SoundType}
-     * @param compression   Compression Level ( 0 - 9 )
-     * @param hardness      Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
-     * @param resistance    Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
-     * @param harvestLevel  Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
-     */
-    public static ICompressedBlock createSandBlock(int dustColor, @Nonnull Material material, @Nullable MaterialColor materialColor, @Nonnull SoundType soundType, int compression, float hardness, float resistance, int harvestLevel) {
-        if (materialColor == null) materialColor = material.getColor();
-        return new CompressedSand(dustColor, material, materialColor, soundType, compression, hardness, resistance, harvestLevel);
+    @ParametersAreNonnullByDefault
+    public static ICompressedBlock createRotationalBlock(int compression, Material material, MaterialColor materialColorTop, MaterialColor materialColorEnd, SoundType soundType, float hardness, float resistance, int harvestLevel) {
+        return new CompressedRotationalBlock(material, soundType, materialColorTop, materialColorEnd, compression, hardness, resistance, harvestLevel);
+    }
+
+    @ParametersAreNonnullByDefault
+    public static ICompressedBlock createRotationalBlock(int compression, Material material, MaterialColor materialColor, SoundType soundType, float hardness, float resistance, int harvestLevel) {
+        return new CompressedRotationalBlock(material, soundType, materialColor, compression, hardness, resistance, harvestLevel);
     }
 
     @Override
-    public void addInformation(@Nonnull ItemStack stack, @Nullable IBlockReader worldIn, @Nonnull List<ITextComponent> tooltip, @Nonnull ITooltipFlag flagIn) {
+    @ParametersAreNonnullByDefault
+    public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
         tooltip.add(new StringTextComponent(comp.getBlockCount() + " Blocks").setStyle(comp.getStyle()));
     }
