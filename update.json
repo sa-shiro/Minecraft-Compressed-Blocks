@@ -35,7 +35,7 @@
     "5.0.8": "removed config so client & server works again",
     "5.0.9": "Updated Data Generator\nConfig is back!! enable/disable certain blocks or limit the compression level (currently there is no ingame gui to change the config)",
     "5.0.10": "Added missing recipes",
-    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt"
+    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass"
   },
   "1.16.2": {
     "5.0.1": "Major rewrite, added tons of new blocks!",
@@ -48,7 +48,7 @@
     "5.0.8": "removed config so client & server works again",
     "5.0.9": "Updated Data Generator\nConfig is back!! enable/disable certain blocks or limit the compression level (currently there is no ingame gui to change the config)",
     "5.0.10": "Added missing recipes",
-    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt"
+    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass"
   },
   "1.16.3": {
     "4.0.1": "Removed Version Restriction (1.16.1 -> 1.16)",
@@ -62,7 +62,7 @@
     "5.0.8": "removed config so client & server works again",
     "5.0.9": "Updated Data Generator\nConfig is back!! enable/disable certain blocks or limit the compression level (currently there is no ingame gui to change the config)",
     "5.0.10": "Added missing recipes",
-    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt"
+    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass"
   },
   "1.16.4": {
     "5.0.1": "Major rewrite, added tons of new blocks!",
@@ -75,7 +75,7 @@
     "5.0.8": "removed config so client & server works again",
     "5.0.9": "Updated Data Generator\nConfig is back!! enable/disable certain blocks or limit the compression level (currently there is no ingame gui to change the config)",
     "5.0.10": "Added missing recipes",
-    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt"
+    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass"
   },
   "1.16.5": {
     "5.0.5": "Added 1.16.5 to update.json\nAdded config to disable blocks",
@@ -84,7 +84,7 @@
     "5.0.8": "removed config so client & server works again",
     "5.0.9": "Updated Data Generator\nConfig is back!! enable/disable certain blocks or limit the compression level (currently there is no ingame gui to change the config)",
     "5.0.10": "Added missing recipes",
-    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt"
+    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass"
   },
   "promos": {
     "1.14.1-latest": "5.0.4",
