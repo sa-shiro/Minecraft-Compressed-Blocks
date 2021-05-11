@@ -10,7 +10,7 @@ public enum BlockType {
     SOUL_SAND("soul_sand"),
     WOOL("wool"),
     SLIME("slime"),
-    CUSTOM("custom"), // fixme: properly change / implement this type
+    FLESH("flesh"),
     GLASS("glass");
 
     private final String type;
