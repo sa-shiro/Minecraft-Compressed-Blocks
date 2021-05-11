@@ -183,7 +183,7 @@ public class Lists {
     public static final BlockFactory HAY_BLOCK = new BlockFactory(BlockType.DEFAULT, "hay_block", Material.ORGANIC, MaterialColor.YELLOW, SoundType.PLANT)
             .setCustomTexture("hay_block_side", "hay_block_side", "hay_block_top")
             .hasRotation();
-    public static final BlockFactory GLASS = new BlockFactory(BlockType.GLASS, "glass", Material.AIR, MaterialColor.AIR, SoundType.GLASS);
+    public static final BlockFactory GLASS = new BlockFactory(BlockType.GLASS, "glass", Material.GLASS, MaterialColor.AIR, SoundType.GLASS);
 
     public static void populate() {
         blockList.add(STONE);
