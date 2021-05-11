@@ -26,16 +26,4 @@ public class ItemGroups {
             return true;
         }
     };
-/*
-    public static ItemGroup compressedCustomBlockGroup = new ItemGroup("compressed_custom_blocks") {
-        @Override
-        public ItemStack createIcon() {
-            return new ItemStack(RegistryEvent.BLOCK_REGISTRY.get(9).get());
-        }
-
-        @Override
-        public boolean hasScrollbar() {
-            return true;
-        }
-    };*/
 }

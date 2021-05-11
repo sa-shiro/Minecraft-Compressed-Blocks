@@ -118,13 +118,12 @@ public class Lists {
     public static final BlockFactory GREEN_CONCRETE = new BlockFactory(BlockType.DEFAULT, "green_concrete", Material.ROCK, MaterialColor.GREEN, SoundType.STONE);
     public static final BlockFactory RED_CONCRETE = new BlockFactory(BlockType.DEFAULT, "red_concrete", Material.ROCK, MaterialColor.RED, SoundType.STONE);
     public static final BlockFactory BLACK_CONCRETE = new BlockFactory(BlockType.DEFAULT, "black_concrete", Material.ROCK, MaterialColor.BLACK, SoundType.STONE);
-    public static final BlockFactory ROTTEN_FLESH_BLOCK = new BlockFactory(BlockType.CUSTOM, "rotten_flesh_block", Material.ORGANIC, MaterialColor.RED, SoundType.SLIME);
-    public static final BlockFactory FLINT_BLOCK = new BlockFactory(BlockType.DEFAULT, "flint_block", Material.ROCK, null, SoundType.STONE);
-    public static final BlockFactory GUNPOWDER_BLOCK = new BlockFactory(BlockType.SAND, "gunpowder_block", 5000268, Material.SAND, null, SoundType.SAND);
+    public static final BlockFactory ROTTEN_FLESH_BLOCK = new BlockFactory(BlockType.FLESH, "rotten_flesh_block", Material.ORGANIC, MaterialColor.RED, SoundType.SLIME);
+    public static final BlockFactory FLINT_BLOCK = new BlockFactory(BlockType.DEFAULT, "flint_block", Material.ROCK, MaterialColor.GRAY, SoundType.STONE);
+    public static final BlockFactory GUNPOWDER_BLOCK = new BlockFactory(BlockType.SAND, "gunpowder_block", 5000268, Material.SAND, MaterialColor.GRAY, SoundType.SAND);
     public static final BlockFactory NETHERITE_BLOCK = new BlockFactory(BlockType.DEFAULT, "netherite_block", Material.IRON, MaterialColor.BLACK, SoundType.NETHERITE);
     public static final BlockFactory ANCIENT_DEBRIS = new BlockFactory(BlockType.DEFAULT, "ancient_debris", Material.IRON, MaterialColor.BLACK, SoundType.ANCIENT_DEBRIS)
             .setCustomTexture("ancient_debris_side", "ancient_debris_side", "ancient_debris_top")
-            .hasRotation()
             .isLogBlock();
     public static final BlockFactory OAK_LOG = new BlockFactory(BlockType.DEFAULT, "oak_log", Material.WOOD, SoundType.WOOD)
             .setCustomTexture("oak_log", "oak_log", "oak_log_top")

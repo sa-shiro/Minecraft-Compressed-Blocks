@@ -14,7 +14,7 @@ public class BlockFactory {
     private final String registryName;
     private final Material material;
     private final SoundType soundType;
-    private int durstColor;
+    private int dustColor;
     private MaterialColor materialColor, materialColorSide, materialColorEnd;
     private String textureSide, textureEnd, textureParticle, textureDown, textureUp, textureNorth, textureSouth, textureEast, textureWest, namespace = null;
     private boolean hasCustomTexture = false, hasRotation = false, isLogBlock = false;
@@ -33,7 +33,7 @@ public class BlockFactory {
         if (materialColorIn == null) materialColorIn = materialIn.getColor();
         this.type = typeIn;
         this.registryName = registryNameIn;
-        this.durstColor = 0;
+        this.dustColor = 0;
         this.material = materialIn;
         this.materialColor = materialColorIn;
         this.soundType = soundTypeIn;
@@ -54,7 +54,7 @@ public class BlockFactory {
         if (materialColorIn == null) materialColorIn = materialIn.getColor();
         this.type = typeIn;
         this.registryName = registryNameIn;
-        this.durstColor = dustColorIn;
+        this.dustColor = dustColorIn;
         this.material = materialIn;
         this.materialColor = materialColorIn;
         this.soundType = soundTypeIn;
@@ -91,8 +91,8 @@ public class BlockFactory {
      *
      * @return Dust Color
      */
-    public int getDurstColor() {
-        return durstColor;
+    public int getDustColor() {
+        return dustColor;
     }
 
     /**
@@ -158,7 +158,7 @@ public class BlockFactory {
     }
 
     @ParametersAreNonnullByDefault
-    public BlockFactory setCustomTexture(String modID, String particle, String side, String end) {
+    public BlockFactory setCustomTexture(@Nullable String modID, String particle, String side, String end) {
         hasCustomTexture = true;
         textureSide = side;
         textureEnd = end;
@@ -254,24 +254,12 @@ public class BlockFactory {
     }
 
     public enum TextureLocation {
-        PARTICLE("particle"),
-        UP("up"),
-        DOWN("down"),
-        NORTH("north"),
-        SOUTH("south"),
-        EAST("east"),
-        WEST("west"),
-        SIDE("side"),
-        END("end");
+        PARTICLE,
+        UP, DOWN,
+        NORTH, SOUTH, EAST, WEST,
+        SIDE, END;
 
-        private final String textureLocation;
-
-        TextureLocation(String typeIn) {
-            textureLocation = typeIn;
-        }
-
-        public String getTextureLocation() {
-            return textureLocation;
+        TextureLocation() {
         }
     }
 }
