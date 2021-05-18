@@ -3,6 +3,7 @@ package com.github.sa_shiro.compressedblocks.event;
 import com.github.sa_shiro.compressedblocks.CompressedBlocks;
 import com.github.sa_shiro.compressedblocks.block.BlockFactory;
 import com.github.sa_shiro.compressedblocks.block.CompressedBlock;
+import com.github.sa_shiro.compressedblocks.block.ICompressedBlock;
 import com.github.sa_shiro.compressedblocks.item.BagItem;
 import com.github.sa_shiro.compressedblocks.item.EnumItemTier;
 import com.github.sa_shiro.compressedblocks.item.ToolItems;
@@ -79,40 +80,27 @@ public class RegistryEvent {
 
     private static void registerBlocks() {
         for (BlockFactory factory : Lists.blockList) {
-            if (factory.getRegistryName().equals("stone") || factory.getRegistryName().equals("cobblestone") && !factory.getHasRotation()) {
-                for (int level = 0; level <= 9; level++) {
-                    RegisterBlock.registerNewBlock(
-                            CompressedBlock.createBlock(
-                                    factory.getType(),
-                                    level,
-                                    factory.getMaterial(),
-                                    factory.getMaterialColor(),
-                                    factory.getSoundType(),
-                                    Lists.HARDNESS.get(level),
-                                    Lists.RESISTANCE.get(level),
-                                    Lists.HARVEST_LEVEL.get(level)
-                            ),
-                            factory.getRegistryName(), level, ForgeConfigManager.getIsBlockEnabled(factory.getRegistryName()) // ConfigManager.isBlockEnabled(factory.getRegistryName()
+            for (int level = 0; level <= 9; level++) {
+                ICompressedBlock block = CompressedBlock.createBlock(
+                        factory.getType(),
+                        level,
+                        factory.getMaterial(),
+                        factory.getMaterialColor(),
+                        factory.getSoundType(),
+                        Lists.HARDNESS.get(level),
+                        Lists.RESISTANCE.get(level),
+                        Lists.HARVEST_LEVEL.get(level));
+
+                if (factory.getRegistryName().equals("stone") || factory.getRegistryName().equals("cobblestone") && !factory.getHasRotation()) {
+                    RegisterBlock.registerNewBlock(block,
+                            factory.getRegistryName(), level, ForgeConfigManager.getIsBlockEnabled(factory.getRegistryName())
                     );
-                }
-            } else if (!factory.getHasRotation()) {
-                for (int level = 0; level <= ForgeConfigManager.maxCompressionLevel.get(); level++) {
+                } else if (!factory.getHasRotation()) {
                     RegisterBlock.registerNewBlock(
-                            CompressedBlock.createBlock(
-                                    factory.getType(),
-                                    level,
-                                    factory.getMaterial(),
-                                    factory.getMaterialColor(),
-                                    factory.getSoundType(),
-                                    Lists.HARDNESS.get(level),
-                                    Lists.RESISTANCE.get(level),
-                                    Lists.HARVEST_LEVEL.get(level)
-                            ),
-                            factory.getRegistryName(), level, ForgeConfigManager.getIsBlockEnabled(factory.getRegistryName()) // ConfigManager.isBlockEnabled(factory.getRegistryName()
+                            block,
+                            factory.getRegistryName(), level, ForgeConfigManager.getIsBlockEnabled(factory.getRegistryName())
                     );
-                }
-            } else if (factory.getIsLogBlock()) {
-                for (int level = 0; level <= ForgeConfigManager.maxCompressionLevel.get(); level++) {
+                } else if (factory.getIsLogBlock()) {
                     RegisterBlock.registerNewBlock(
                             CompressedBlock.createRotationalBlock(
                                     level,
@@ -124,11 +112,9 @@ public class RegistryEvent {
                                     Lists.RESISTANCE.get(level),
                                     Lists.HARVEST_LEVEL.get(level)
                             ),
-                            factory.getRegistryName(), level, ForgeConfigManager.getIsBlockEnabled(factory.getRegistryName()) // ConfigManager.isBlockEnabled(factory.getRegistryName()
+                            factory.getRegistryName(), level, ForgeConfigManager.getIsBlockEnabled(factory.getRegistryName())
                     );
-                }
-            } else if (factory.getHasRotation()) {
-                for (int level = 0; level <= ForgeConfigManager.maxCompressionLevel.get(); level++) {
+                } else if (factory.getHasRotation()) {
                     RegisterBlock.registerNewBlock(
                             CompressedBlock.createRotationalBlock(
                                     level,
@@ -139,7 +125,7 @@ public class RegistryEvent {
                                     Lists.RESISTANCE.get(level),
                                     Lists.HARVEST_LEVEL.get(level)
                             ),
-                            factory.getRegistryName(), level, ForgeConfigManager.getIsBlockEnabled(factory.getRegistryName()) // ConfigManager.isBlockEnabled(factory.getRegistryName()
+                            factory.getRegistryName(), level, ForgeConfigManager.getIsBlockEnabled(factory.getRegistryName())
                     );
                 }
             }
