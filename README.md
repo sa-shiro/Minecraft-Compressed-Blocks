@@ -3,143 +3,150 @@
 A Block Compression mod for Minecraft 1.14.4, 1.15.2 and 1.16
 
 Compress your Blocks to make more free space (up to **3.486.784.101** Blocks in just ***one single Block***)<br>
-This mod currently features <b>102</b> compressed minecraft blocks and <b>16</b> compressed modded blocks as well as <b>36</b> custom items and tools.
+This mod currently features <b>127</b> compressed minecraft blocks as well as <b>36</b> custom items and tools.
 
 [curseforge link](https://www.curseforge.com/minecraft/mc-mods/cb-compressed-blocks)
 
 ## Full List of compressed blocks
+
 <details>
   <summary>List of all  available compressed blocks (in registry name format) (<i>click to expand</i>)<br><br></summary>
 
 <details>
     <summary><b>Minecraft Blocks</b></summary><br>
-    
-* stone
-* granite
-* diorite
-* andesite
-* dirt
-* coarse_dirt
-* crimson_nylium
-* warped_nylium
-* cobblestone
-* mossy_cobblestone
-* clay
-* sand
-* red_sand
-* gravel
-* sandstone
-* red_sandstone
-* coal_ore
-* iron_ore
-* gold_ore
-* nether_gold_ore
-* nether_quartz_ore
-* lapis_ore
-* emerald_ore
-* redstone_ore
-* diamond_ore
-* iron_block
-* gold_block
-* diamond_block
-* lapis_block
-* emerald_block
-* redstone_block
-* coal_block
-* obsidian
-* slime_block
-* bricks
-* stone_bricks
-* netherrack
-* nether_bricks
-* red_nether_bricks
-* nether_wart_block
-* warped_wart_block
-* soul_sand
-* soul_soil
-* end_stone
-* end_stone_bricks
-* prismarine
-* prismarine_bricks
-* dark_prismarine
-* blackstone
-* white_wool
-* orange_wool
-* magenta_wool
-* light_blue_wool
-* yellow_wool
-* lime_wool
-* pink_wool
-* gray_wool
-* light_gray_wool
-* cyan_wool
-* purple_wool
-* blue_wool
-* brown_wool
-* green_wool
-* red_wool
-* black_wool
-* terracotta
-* white_terracotta
-* orange_terracotta
-* magenta_terracotta
-* light_blue_terracotta
-* yellow_terracotta
-* lime_terracotta
-* pink_terracotta
-* gray_terracotta
-* light_gray_terracotta
-* cyan_terracotta
-* purple_terracotta
-* blue_terracotta
-* brown_terracotta
-* green_terracotta
-* red_terracotta
-* black_terracotta
-* white_concrete
-* orange_concrete
-* magenta_concrete
-* light_blue_concrete
-* yellow_concrete
-* lime_concrete
-* pink_concrete
-* gray_concrete
-* light_gray_concrete
-* cyan_concrete
-* purple_concrete
-* blue_concrete
-* brown_concrete
-* green_concrete
-* red_concrete
-* black_concrete
-* rotten_flesh_block
-* grass_block
-* flint_block
-* gunpowder_block
-</details><br>
-<details>
-    <summary><b>Mekanism Blocks</b></summary><br>
-    
-* osmium_block_mekanism
-* copper_block_mekanism
-* tin_block_mekanism
-* lead_block_mekanism
-* uranium_block_mekanism
-* bronze_block_mekanism
-* refined_obsidian_mekanism
-* charcoal_block_mekanism
-* refined_glowstone_mekanism
-* steel_block_mekanism
-* copper_ore_mekanism
-* tin_ore_mekanism
-* osmium_ore_mekanism
-* uranium_ore_mekanism
-* fluorite_ore_mekanism
-* lead_ore_mekanism
+
+* STONE
+* GRANITE
+* DIORITE
+* ANDESITE
+* DIRT
+* GRASS_BLOCK
+* COARSE_DIRT
+* CRIMSON_NYLIUM
+* WARPED_NYLIUM
+* COBBLESTONE
+* MOSSY_COBBLESTONE
+* CLAY
+* SAND
+* RED_SAND
+* GRAVEL
+* SANDSTONE
+* RED_SANDSTONE
+* COAL_ORE
+* IRON_ORE
+* GOLD_ORE
+* NETHER_GOLD_ORE
+* NETHER_QUARTZ_ORE
+* LAPIS_ORE
+* EMERALD_ORE
+* REDSTONE_ORE
+* DIAMOND_ORE
+* IRON_BLOCK
+* GOLD_BLOCK
+* DIAMOND_BLOCK
+* LAPIS_BLOCK
+* EMERALD_BLOCK
+* REDSTONE_BLOCK
+* COAL_BLOCK
+* OBSIDIAN
+* SLIME_BLOCK
+* BRICKS
+* STONE_BRICKS
+* NETHERRACK
+* NETHER_BRICKS
+* RED_NETHER_BRICKS
+* NETHER_WART_BLOCK
+* WARPED_WART_BLOCK
+* SOUL_SAND
+* SOUL_SOIL
+* END_STONE
+* END_STONE_BRICKS
+* PRISMARINE
+* PRISMARINE_BRICKS
+* DARK_PRISMARINE
+* BLACKSTONE
+* WHITE_WOOL
+* ORANGE_WOOL
+* MAGENTA_WOOL
+* LIGHT_BLUE_WOOL
+* YELLOW_WOOL
+* LIME_WOOL
+* PINK_WOOL
+* GRAY_WOOL
+* LIGHT_GRAY_WOOL
+* CYAN_WOOL
+* PURPLE_WOOL
+* BLUE_WOOL
+* BROWN_WOOL
+* GREEN_WOOL
+* RED_WOOL
+* BLACK_WOOL
+* TERRACOTTA
+* WHITE_TERRACOTTA
+* ORANGE_TERRACOTTA
+* MAGENTA_TERRACOTTA
+* LIGHT_BLUE_TERRACOTTA
+* YELLOW_TERRACOTTA
+* LIME_TERRACOTTA
+* PINK_TERRACOTTA
+* GRAY_TERRACOTTA
+* LIGHT_GRAY_TERRACOTTA
+* CYAN_TERRACOTTA
+* PURPLE_TERRACOTTA
+* BLUE_TERRACOTTA
+* BROWN_TERRACOTTA
+* GREEN_TERRACOTTA
+* RED_TERRACOTTA
+* BLACK_TERRACOTTA
+* WHITE_CONCRETE
+* ORANGE_CONCRETE
+* MAGENTA_CONCRETE
+* LIGHT_BLUE_CONCRETE
+* YELLOW_CONCRETE
+* LIME_CONCRETE
+* PINK_CONCRETE
+* GRAY_CONCRETE
+* LIGHT_GRAY_CONCRETE
+* CYAN_CONCRETE
+* PURPLE_CONCRETE
+* BLUE_CONCRETE
+* BROWN_CONCRETE
+* GREEN_CONCRETE
+* RED_CONCRETE
+* BLACK_CONCRETE
+* ROTTEN_FLESH_BLOCK
+* FLINT_BLOCK
+* GUNPOWDER_BLOCK
+* NETHERITE_BLOCK
+* ANCIENT_DEBRIS
+* OAK_LOG
+* SPRUCE_LOG
+* BIRCH_LOG
+* JUNGLE_LOG
+* ACACIA_LOG
+* DARK_OAK_LOG
+* WARPED_STEM
+* CRIMSON_STEM
+* OAK_PLANKS
+* SPRUCE_PLANKS
+* BIRCH_PLANKS
+* JUNGLE_PLANKS
+* ACACIA_PLANKS
+* DARK_OAK_PLANKS
+* WARPED_PLANKS
+* CRIMSON_PLANKS
+* PURPUR_BLOCK
+* PURPUR_PILLAR
+* BASALT
+* POLISHED_BASALT
+* QUARTZ_BLOCK
+* HAY_BLOCK
+* GLASS
+
 </details><br>
 <details>
     <summary><b>Custom Items and Tools</b></summary><br>
-    
+
 * Hardened Wooden Pickaxe
 * Hardened Wooden Axe
 * Hardened Wooden Shovel

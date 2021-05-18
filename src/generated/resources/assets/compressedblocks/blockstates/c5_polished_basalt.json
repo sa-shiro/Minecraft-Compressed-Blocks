@@ -1,7 +1,7 @@
 {
   "variants": {
     "axis=x": {
-      "model": "compressedblocks:block/c5_polished_basalthorizontal",
+      "model": "compressedblocks:block/c5_polished_basalt_horizontal",
       "x": 90,
       "y": 90
     },
@@ -9,7 +9,7 @@
       "model": "compressedblocks:block/c5_polished_basalt"
     },
     "axis=z": {
-      "model": "compressedblocks:block/c5_polished_basalthorizontal",
+      "model": "compressedblocks:block/c5_polished_basalt_horizontal",
       "x": 90
     }
   }

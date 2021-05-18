@@ -17,10 +17,11 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 public class CompressedBlock extends Block implements ICompressedBlock {
-    protected static final Compression compressor = new Compression();
+    private final Compression compressor = new Compression();
 
-    private CompressedBlock(Properties p) {
+    protected CompressedBlock(Properties p, int l) {
         super(p);
+        compressor.setCompressionLevel(l);
     }
 
     /**
@@ -44,50 +45,38 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         switch (type) {
             default:
             case DEFAULT:
-                compressor.setCompressionLevel(compression);
-                return new CompressedBlock(p0);
+                return new CompressedBlock(p0, compression);
             case SAND:
-                compressor.setCompressionLevel(compression);
-                return new CompressedSandBlock(14406560, p0);
+                return new CompressedSandBlock(14406560, p0, compression);
             case RED_SAND:
-                compressor.setCompressionLevel(compression);
-                return new CompressedSandBlock(11098145, p0);
+                return new CompressedSandBlock(11098145, p0, compression);
             case GRAVEL:
-                compressor.setCompressionLevel(compression);
-                return new CompressedGravelBlock(p0);
+                return new CompressedGravelBlock(p0, compression);
             case REDSTONE:
-                compressor.setCompressionLevel(compression);
-                return new CompressedRedstoneBlock(p0);
+                return new CompressedRedstoneBlock(p0, compression);
             case SOUL_SAND:
-                compressor.setCompressionLevel(compression);
-                return new CompressedSoulSandBlock(p0);
+                return new CompressedSoulSandBlock(p0, compression);
             case WOOL:
-                compressor.setCompressionLevel(compression);
-                return new CompressedBlock(p1);
+                return new CompressedBlock(p1, compression);
             case SLIME:
-                compressor.setCompressionLevel(compression);
-                return new CompressedSlimeBlock(p2);
+                return new CompressedSlimeBlock(p2, compression);
             case FLESH:
-                compressor.setCompressionLevel(compression);
-                return new CompressedBlock(p3);
+                return new CompressedBlock(p3, compression);
             case GLASS:
-                compressor.setCompressionLevel(compression);
-                return new CompressedTransparentBlock(p4);
+                return new CompressedTransparentBlock(p4, compression);
         }
     }
 
     @ParametersAreNonnullByDefault
     public static ICompressedBlock createRotationalBlock(int compression, Material material, MaterialColor materialColorTop, MaterialColor materialColorEnd, SoundType soundType, float hardness, float resistance, int harvestLevel) {
         Properties p = Properties.create(material, (state) -> state.get(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? materialColorTop : materialColorEnd).sound(soundType).hardnessAndResistance(hardness, resistance).harvestLevel(harvestLevel);
-        compressor.setCompressionLevel(compression);
-        return new CompressedRotationalBlock(p);
+        return new CompressedRotationalBlock(p, compression);
     }
 
     @ParametersAreNonnullByDefault
     public static ICompressedBlock createRotationalBlock(int compression, Material material, MaterialColor materialColor, SoundType soundType, float hardness, float resistance, int harvestLevel) {
         Properties p = Properties.create(material, (state) -> materialColor).sound(soundType).hardnessAndResistance(hardness, resistance).harvestLevel(harvestLevel);
-        compressor.setCompressionLevel(compression);
-        return new CompressedRotationalBlock(p);
+        return new CompressedRotationalBlock(p, compression);
     }
 
     private static boolean isNotTransparent(BlockState state, IBlockReader reader, BlockPos pos) {
@@ -107,8 +96,11 @@ public class CompressedBlock extends Block implements ICompressedBlock {
     }
 
     protected static class CompressedGravelBlock extends GravelBlock implements ICompressedBlock {
-        protected CompressedGravelBlock(Properties p) {
+        private final Compression compressor = new Compression();
+
+        protected CompressedGravelBlock(Properties p, int l) {
             super(p);
+            compressor.setCompressionLevel(l);
         }
 
         @Override
@@ -124,8 +116,11 @@ public class CompressedBlock extends Block implements ICompressedBlock {
     }
 
     protected static class CompressedRedstoneBlock extends RedstoneBlock implements ICompressedBlock {
-        protected CompressedRedstoneBlock(Properties p) {
+        private final Compression compressor = new Compression();
+
+        protected CompressedRedstoneBlock(Properties p, int l) {
             super(p);
+            compressor.setCompressionLevel(l);
         }
 
         @Override
@@ -141,8 +136,11 @@ public class CompressedBlock extends Block implements ICompressedBlock {
     }
 
     protected static class CompressedSandBlock extends SandBlock implements ICompressedBlock {
-        protected CompressedSandBlock(int dustColor, Properties p) {
-            super(dustColor, p);
+        private final Compression compressor = new Compression();
+
+        protected CompressedSandBlock(int d, Properties p, int l) {
+            super(d, p);
+            compressor.setCompressionLevel(l);
         }
 
         @Override
@@ -158,8 +156,11 @@ public class CompressedBlock extends Block implements ICompressedBlock {
     }
 
     protected static class CompressedSlimeBlock extends SlimeBlock implements ICompressedBlock {
-        protected CompressedSlimeBlock(Properties p) {
+        private final Compression compressor = new Compression();
+
+        protected CompressedSlimeBlock(Properties p, int l) {
             super(p);
+            compressor.setCompressionLevel(l);
         }
 
         @Override
@@ -175,8 +176,11 @@ public class CompressedBlock extends Block implements ICompressedBlock {
     }
 
     protected static class CompressedSoulSandBlock extends SoulSandBlock implements ICompressedBlock {
-        protected CompressedSoulSandBlock(Properties p) {
+        private final Compression compressor = new Compression();
+
+        protected CompressedSoulSandBlock(Properties p, int l) {
             super(p);
+            compressor.setCompressionLevel(l);
         }
 
         @Override
@@ -192,9 +196,12 @@ public class CompressedBlock extends Block implements ICompressedBlock {
     }
 
     protected static class CompressedRotationalBlock extends RotatedPillarBlock implements ICompressedBlock {
-        protected CompressedRotationalBlock(Properties p) {
+        private final Compression compressor = new Compression();
+
+        protected CompressedRotationalBlock(Properties p, int l) {
             super(p);
             this.setDefaultState(this.getDefaultState().with(AXIS, Direction.Axis.Y));
+            compressor.setCompressionLevel(l);
         }
 
         @Override
@@ -210,8 +217,11 @@ public class CompressedBlock extends Block implements ICompressedBlock {
     }
 
     protected static class CompressedTransparentBlock extends GlassBlock implements ICompressedBlock {
-        protected CompressedTransparentBlock(Properties p) {
+        private final Compression compressor = new Compression();
+
+        protected CompressedTransparentBlock(Properties p, int l) {
             super(p);
+            compressor.setCompressionLevel(l);
         }
 
         @Override

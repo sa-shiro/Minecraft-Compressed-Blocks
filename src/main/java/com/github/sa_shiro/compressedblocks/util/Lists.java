@@ -124,7 +124,7 @@ public class Lists {
     public static final BlockFactory NETHERITE_BLOCK = new BlockFactory(BlockType.DEFAULT, "netherite_block", Material.IRON, MaterialColor.BLACK, SoundType.NETHERITE);
     public static final BlockFactory ANCIENT_DEBRIS = new BlockFactory(BlockType.DEFAULT, "ancient_debris", Material.IRON, MaterialColor.BLACK, SoundType.ANCIENT_DEBRIS)
             .setCustomTexture("ancient_debris_side", "ancient_debris_side", "ancient_debris_top")
-            .isLogBlock();
+            .hasRotation();
     public static final BlockFactory OAK_LOG = new BlockFactory(BlockType.DEFAULT, "oak_log", Material.WOOD, SoundType.WOOD)
             .setCustomTexture("oak_log", "oak_log", "oak_log_top")
             .setMaterialColor(MaterialColor.WOOD, MaterialColor.OBSIDIAN)

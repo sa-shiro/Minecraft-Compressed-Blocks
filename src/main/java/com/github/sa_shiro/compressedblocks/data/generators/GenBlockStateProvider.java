@@ -40,9 +40,9 @@ public class GenBlockStateProvider extends BlockStateProvider {
                         simpleBlock(
                                 block.get().getBlock(), models().cubeAll(
                                         block.get().getBlock().getRegistryName().toString(),
-                                        getActualResourceLocation(block.get().getBlock().getRegistryName().toString())
+                                        getActualResourceLocation(factory.getRegistryName())
                                 )
-                                        .texture("particle", getActualResourceLocation(block.get().getBlock().getRegistryName().toString()))
+                                        .texture("particle", getActualResourceLocation(factory.getRegistryName()))
                                         .texture("overlay", getCompressionOverlay(block.get().getBlock().getRegistryName().toString()))
                                         .parent(blockBlock)
                                         .element()
@@ -135,7 +135,7 @@ public class GenBlockStateProvider extends BlockStateProvider {
                                         .end()
                                 ,
                                 models().cubeColumn(
-                                        block.get().getBlock().getRegistryName().toString() + "horizontal",
+                                        block.get().getBlock().getRegistryName().toString() + "_horizontal",
                                         new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.SIDE)),
                                         new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.END))
                                 )
@@ -169,11 +169,7 @@ public class GenBlockStateProvider extends BlockStateProvider {
         }
     }
 
-
     private ResourceLocation getActualResourceLocation(String blockName) {
-        for (int i = 0; i <= 9; i++) {
-            blockName = blockName.replace("compressedblocks:c" + i + "_", "");
-        }
         switch (blockName) {
             case "flesh_block":
                 return new ResourceLocation("compressedblocks", "block/flesh");

@@ -1,7 +1,7 @@
 {
   "variants": {
     "axis=x": {
-      "model": "compressedblocks:block/c9_quartz_blockhorizontal",
+      "model": "compressedblocks:block/c9_quartz_block_horizontal",
       "x": 90,
       "y": 90
     },
@@ -9,7 +9,7 @@
       "model": "compressedblocks:block/c9_quartz_block"
     },
     "axis=z": {
-      "model": "compressedblocks:block/c9_quartz_blockhorizontal",
+      "model": "compressedblocks:block/c9_quartz_block_horizontal",
       "x": 90
     }
   }
