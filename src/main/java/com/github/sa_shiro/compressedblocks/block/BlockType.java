@@ -11,7 +11,8 @@ public enum BlockType {
     WOOL("wool"),
     SLIME("slime"),
     FLESH("flesh"),
-    GLASS("glass");
+    GLASS("glass"),
+    MAGMA("magma");
 
     private final String type;
 

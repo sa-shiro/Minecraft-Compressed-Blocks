@@ -11,7 +11,7 @@ import java.util.Objects;
 public class ItemGroups {
     public static ItemGroup compressedBlockGroup = new ItemGroup("compressed_blocks") {
         @Override
-        public ItemStack createIcon() {
+        public ItemStack makeIcon() {
             Block icon = null;
             for (RegistryObject<Block> block : RegistryEvent.BLOCK_REGISTRY) {
                 if (Objects.requireNonNull(block.get().getRegistryName()).toString().equals("compressedblocks:c9_stone")) {
@@ -22,7 +22,7 @@ public class ItemGroups {
         }
 
         @Override
-        public boolean hasScrollbar() {
+        public boolean canScroll() {
             return true;
         }
     };

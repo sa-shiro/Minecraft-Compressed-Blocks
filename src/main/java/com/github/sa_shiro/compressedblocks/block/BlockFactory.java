@@ -16,7 +16,17 @@ public class BlockFactory {
     private final SoundType soundType;
     private int dustColor;
     private MaterialColor materialColor, materialColorSide, materialColorEnd;
-    private String textureSide, textureEnd, textureParticle, textureDown, textureUp, textureNorth, textureSouth, textureEast, textureWest, namespace = null;
+    private final String textureAll;
+    private String textureSide;
+    private String textureEnd;
+    private String textureParticle;
+    private String textureDown;
+    private String textureUp;
+    private String textureNorth;
+    private String textureSouth;
+    private String textureEast;
+    private String textureWest;
+    private String namespace = null;
     private boolean hasCustomTexture = false, hasRotation = false, isLogBlock = false;
 
     /**
@@ -37,6 +47,7 @@ public class BlockFactory {
         this.material = materialIn;
         this.materialColor = materialColorIn;
         this.soundType = soundTypeIn;
+        this.textureAll = registryNameIn;
     }
 
     /**
@@ -58,6 +69,7 @@ public class BlockFactory {
         this.material = materialIn;
         this.materialColor = materialColorIn;
         this.soundType = soundTypeIn;
+        this.textureAll = registryNameIn;
     }
 
     @ParametersAreNonnullByDefault
@@ -66,6 +78,7 @@ public class BlockFactory {
         this.registryName = registryNameIn;
         this.material = materialIn;
         this.soundType = soundTypeIn;
+        this.textureAll = registryNameIn;
     }
 
     /**
@@ -213,6 +226,8 @@ public class BlockFactory {
 
     public String getCustomTexture(TextureLocation location) {
         switch (location) {
+            case ALL:
+                return textureAll;
             case DOWN:
                 return textureDown;
             case NORTH:
@@ -254,7 +269,7 @@ public class BlockFactory {
     }
 
     public enum TextureLocation {
-        PARTICLE,
+        ALL, PARTICLE,
         UP, DOWN,
         NORTH, SOUTH, EAST, WEST,
         SIDE, END;

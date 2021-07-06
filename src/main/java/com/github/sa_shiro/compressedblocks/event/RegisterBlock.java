@@ -7,39 +7,13 @@ import net.minecraft.item.Item;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-/**
- * This class is used to register new Compressed Blocks.<br>
- * New custom Compressed Blocks need to extend {@link ICompressedBlock}<br>
- */
 public class RegisterBlock {
-    private static final Item.Properties PROPERTIES = new Item.Properties().group(ItemGroups.compressedBlockGroup);
+    private static final Item.Properties PROPERTIES = new Item.Properties().tab(ItemGroups.compressedBlockGroup);
     private static int INDEX = 0;
 
-    /**
-     * Function to register new Compressed Blocks.<br>
-     * See {@link RegistryEvent} for an example.<br>
-     *
-     * @param blockIn          the Block you want to register
-     * @param registryName     the Block's registry name
-     * @param compressionLevel refers to a loop variable for the compression (0 - 9)
-     */
     @ParametersAreNonnullByDefault
     public static void registerNewBlock(ICompressedBlock blockIn, String registryName, int compressionLevel, boolean isEnabled) {
         if (isEnabled) registerBlock(blockIn, registryName, compressionLevel, PROPERTIES);
-    }
-
-    /**
-     * Function to register new Compressed Blocks.<br>
-     * See {@link RegistryEvent} for an example.<br>
-     *
-     * @param blockIn          the Block you want to register
-     * @param registryName     the Block's registry name
-     * @param compressionLevel refers to a loop variable for the compression (0 - 9)
-     * @param properties       Item Properties such as Item Group
-     */
-    @ParametersAreNonnullByDefault
-    public static void registerNewBlock(ICompressedBlock blockIn, String registryName, int compressionLevel, Item.Properties properties, boolean isEnabled) {
-        if (isEnabled) registerBlock(blockIn, registryName, compressionLevel, properties);
     }
 
     @ParametersAreNonnullByDefault

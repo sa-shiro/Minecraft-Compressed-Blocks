@@ -179,6 +179,8 @@ public class GenBlockStateProvider extends BlockStateProvider {
                 return new ResourceLocation("compressedblocks", "block/gunpowder");
             case "flint_block":
                 return new ResourceLocation("compressedblocks", "block/flint");
+            case "magma_block":
+                return new ResourceLocation("minecraft", "block/magma");
             default:
                 return new ResourceLocation("minecraft", "block/" + blockName);
         }
