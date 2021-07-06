@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "all": "compressedblocks:block/logo_block"
+  }
+}

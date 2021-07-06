@@ -10,19 +10,19 @@ import java.util.function.Supplier;
 public enum EnumItemTier implements IItemTier {
 
     HARDENED_WOOD(3, 256, 11.0F, 0.0F, 12, () -> {
-        return Ingredient.fromItems(RegistryEvent.COMPRESSED_WOOD.get());
+        return Ingredient.of(RegistryEvent.COMPRESSED_WOOD.get());
     }),
     HARDENED_STONE(3, 512, 15.0F, 1.5F, 14, () -> {
-        return Ingredient.fromItems(RegistryEvent.BLOCK_REGISTRY.get(1).get());
+        return Ingredient.of(RegistryEvent.BLOCK_REGISTRY.get(1).get());
     }),
     HARDENED_IRON(4, 1024, 19.0F, 2.5F, 17, () -> {
-        return Ingredient.fromItems(RegistryEvent.COMPRESSED_IRON.get());
+        return Ingredient.of(RegistryEvent.COMPRESSED_IRON.get());
     }),
     HARDENED_GOLD(3, 64, 30.0F, 0.0F, 30, () -> {
-        return Ingredient.fromItems(RegistryEvent.COMPRESSED_GOLD.get());
+        return Ingredient.of(RegistryEvent.COMPRESSED_GOLD.get());
     }),
     HARDENED_DIAMOND(5, 8192, 24.0F, 3.5F, 16, () -> {
-        return Ingredient.fromItems(RegistryEvent.COMPRESSED_DIAMOND.get());
+        return Ingredient.of(RegistryEvent.COMPRESSED_DIAMOND.get());
     });
 
 
@@ -43,32 +43,32 @@ public enum EnumItemTier implements IItemTier {
     }
 
     @Override
-    public int getMaxUses() {
+    public int getUses() {
         return this.maxUses;
     }
 
     @Override
-    public float getEfficiency() {
+    public float getSpeed() {
         return this.efficiency;
     }
 
     @Override
-    public float getAttackDamage() {
+    public float getAttackDamageBonus() {
         return this.attackDamage;
     }
 
     @Override
-    public int getHarvestLevel() {
+    public int getLevel() {
         return this.harvestLevel;
     }
 
     @Override
-    public int getEnchantability() {
+    public int getEnchantmentValue() {
         return this.enchantability;
     }
 
     @Override
-    public Ingredient getRepairMaterial() {
-        return this.repairMaterial.getValue();
+    public Ingredient getRepairIngredient() {
+        return this.repairMaterial.get();
     }
 }
