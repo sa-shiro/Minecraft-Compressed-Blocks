@@ -1,14 +1,8 @@
 package com.github.sa_shiro.compressedblocks;
 
-import com.github.sa_shiro.compressedblocks.block.BlockReader;
 import com.github.sa_shiro.compressedblocks.event.RegistryEvent;
-import com.github.sa_shiro.compressedblocks.util.Client;
 import com.github.sa_shiro.compressedblocks.util.ForgeConfigManager;
 import com.github.sa_shiro.compressedblocks.util.Lists;
-import com.github.sa_shiro.compressedblocks.util.ResourceGenerator;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -21,8 +15,6 @@ public class CompressedBlocks {
 
     public CompressedBlocks() {
         Lists.populate();
-        ResourceGenerator.INSTANCE.init();
-        BlockReader.INSTANCE.init();
 
         String config1 = "compressedblocks_compression.toml";
         String config2 = "compressedblocks_blocks.toml";
@@ -34,11 +26,5 @@ public class CompressedBlocks {
         ForgeConfigManager.loadConfig(ForgeConfigManager.configEnabledBlocks, FMLPaths.CONFIGDIR.get().resolve(config2).toString());
 
         RegistryEvent.register();
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> this::initClient);
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    public void initClient() {
-        Client.INSTANCE.init();
     }
 }
