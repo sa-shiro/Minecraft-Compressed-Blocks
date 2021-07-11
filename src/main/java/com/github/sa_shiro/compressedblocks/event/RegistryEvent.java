@@ -89,6 +89,10 @@ public class RegistryEvent {
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> FMLJavaModLoadingContext.get().getModEventBus().addListener(RegistryEvent::translucentRender));
     }
 
+    // fixme: !!! ADDING BLOCKS DYNAMICALLY IS NOT RECOMMENDED AND STRICTLY DISCOURAGED BY THE FORGE TEAM !!!
+    // however for now i will not remove this feature (also the reason why i updated
+    // the config to json format, instead of toml format), but keep in mind that it's likely to be removed in the next major update!
+    // This feature will be completely removed with the 1.17 update.
     private static void registerBlocks() {
         for (BlockFactory factory : Lists.blockList) {
             for (JSONConfig.BlockManager manager : JSONConfig.INSTANCE.blocks) {
