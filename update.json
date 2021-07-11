@@ -38,7 +38,7 @@
     "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass, Quartz",
     "5.0.12": "Fixed Glass having Material set to Air\nCode Cleanup",
     "5.0.12.1": "Fixed Tooltip",
-    "5.0.15": "Added Magma Block, Logo Block"
+    "5.0.15": "Added Magma Block, Logo Block, changed config language"
   },
   "1.16.2": {
     "5.0.1": "Major rewrite, added tons of new blocks!",
@@ -54,7 +54,7 @@
     "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass, Quartz",
     "5.0.12": "Fixed Glass having Material set to Air\nCode Cleanup",
     "5.0.12.1": "Fixed Tooltip",
-    "5.0.15": "Added Magma Block, Logo Block"
+    "5.0.15": "Added Magma Block, Logo Block, changed config language"
   },
   "1.16.3": {
     "4.0.1": "Removed Version Restriction (1.16.1 -> 1.16)",
@@ -71,7 +71,7 @@
     "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass, Quartz",
     "5.0.12": "Fixed Glass having Material set to Air\nCode Cleanup",
     "5.0.12.1": "Fixed Tooltip",
-    "5.0.15": "Added Magma Block, Logo Block"
+    "5.0.15": "Added Magma Block, Logo Block, changed config language"
   },
   "1.16.4": {
     "5.0.1": "Major rewrite, added tons of new blocks!",
@@ -87,7 +87,7 @@
     "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass, Quartz",
     "5.0.12": "Fixed Glass having Material set to Air\nCode Cleanup",
     "5.0.12.1": "Fixed Tooltip",
-    "5.0.15": "Added Magma Block, Logo Block"
+    "5.0.15": "Added Magma Block, Logo Block, changed config language"
   },
   "1.16.5": {
     "5.0.5": "Added 1.16.5 to update.json\nAdded config to disable blocks",
@@ -99,7 +99,7 @@
     "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass, Quartz",
     "5.0.12": "Fixed Glass having Material set to Air\nCode Cleanup",
     "5.0.12.1": "Fixed Tooltip",
-    "5.0.15": "Added Magma Block, Logo Block"
+    "5.0.15": "Added Magma Block, Logo Block, changed config language"
   },
   "promos": {
     "1.14.1-latest": "5.0.4",
