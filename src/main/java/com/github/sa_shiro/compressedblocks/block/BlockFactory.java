@@ -254,7 +254,7 @@ public class BlockFactory {
     }
 
     public enum TextureLocation {
-        PARTICLE,
+        ALL, PARTICLE,
         UP, DOWN,
         NORTH, SOUTH, EAST, WEST,
         SIDE, END;

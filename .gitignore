@@ -19,7 +19,6 @@ build
 
 # other
 eclipse
-run
+run/
 logs/
-/src/generated/resources/.cache/
-/src/generated/resources/.cache/cache
+/src/generated/

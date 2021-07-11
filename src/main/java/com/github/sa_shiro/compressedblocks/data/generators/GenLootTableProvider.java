@@ -32,14 +32,14 @@ public class GenLootTableProvider extends LootTableProvider {
 
     @Override
     protected void validate(Map<ResourceLocation, LootTable> map, ValidationTracker validationtracker) {
-        map.forEach((id, lootTable) -> LootTableManager.validateLootTable(validationtracker, id, lootTable));
+        map.forEach((id, lootTable) -> LootTableManager.validate(validationtracker, id, lootTable));
     }
 
     public static class CompressedLootTable extends BlockLootTables {
         @Override
         protected void addTables() {
             for (RegistryObject<Block> block : RegistryEvent.BLOCK_REGISTRY) {
-                registerDropSelfLootTable(block.get());
+                dropSelf(block.get());
             }
         }
 

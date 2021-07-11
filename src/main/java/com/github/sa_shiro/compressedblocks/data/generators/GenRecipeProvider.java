@@ -9,6 +9,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.function.Consumer;
 
 public class GenRecipeProvider extends RecipeProvider {
@@ -17,7 +18,8 @@ public class GenRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
+    @ParametersAreNonnullByDefault
+    protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
         assert false;
         for (int i = 0; i < RegistryEvent.BLOCK_REGISTRY.size(); i++) {
             String blockName = RegistryEvent.BLOCK_REGISTRY.get(i).get().getRegistryName().toString();
@@ -27,18 +29,18 @@ public class GenRecipeProvider extends RecipeProvider {
                 for (Block mcBlock : ForgeRegistries.BLOCKS) {
                     String mcBlockName = mcBlock.getRegistryName().toString().replace("minecraft:", "");
                     if (cbBlockName.equals(mcBlockName) && !isSpecial) {
-                        ShapedRecipeBuilder.shapedRecipe(
+                        ShapedRecipeBuilder.shaped(
                                 RegistryEvent.BLOCK_REGISTRY.get(i).get()) // result
-                                .key('#', mcBlock) // ingredient
-                                .patternLine("###")
-                                .patternLine("###")
-                                .patternLine("###")
-                                .addCriterion("has_item", hasItem(mcBlock.asItem()))
-                                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName.replace("compressedblocks:", "")));
-                        ShapelessRecipeBuilder.shapelessRecipe(mcBlock, 9)
-                                .addIngredient(RegistryEvent.BLOCK_REGISTRY.get(i).get())
-                                .addCriterion("has_item", hasItem(RegistryEvent.BLOCK_REGISTRY.get(i).get().asItem()))
-                                .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName.replace("compressedblocks:", "")));
+                                .define('#', mcBlock) // ingredient
+                                .pattern("###")
+                                .pattern("###")
+                                .pattern("###")
+                                .unlockedBy("has_item", has(mcBlock.asItem()))
+                                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName.replace("compressedblocks:", "")));
+                        ShapelessRecipeBuilder.shapeless(mcBlock, 9)
+                                .requires(RegistryEvent.BLOCK_REGISTRY.get(i).get())
+                                .unlockedBy("has_item", has(RegistryEvent.BLOCK_REGISTRY.get(i).get().asItem()))
+                                .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName.replace("compressedblocks:", "")));
                     }
                 }
             } else if (isSpecial) {
@@ -50,312 +52,312 @@ public class GenRecipeProvider extends RecipeProvider {
                 } else {
                     item = Items.FLINT;
                 }
-                ShapedRecipeBuilder.shapedRecipe(RegistryEvent.BLOCK_REGISTRY.get(i).get()) // result
-                        .key('#', item) // ingredient
-                        .patternLine("###")
-                        .patternLine("###")
-                        .patternLine("###")
-                        .addCriterion("has_item", hasItem(item))
-                        .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName.replace("compressedblocks:", "")));
-                ShapelessRecipeBuilder.shapelessRecipe(item, 9)
-                        .addIngredient(RegistryEvent.BLOCK_REGISTRY.get(i).get())
-                        .addCriterion("has_item", hasItem(RegistryEvent.BLOCK_REGISTRY.get(i).get().asItem()))
-                        .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName.replace("compressedblocks:", "")));
+                ShapedRecipeBuilder.shaped(RegistryEvent.BLOCK_REGISTRY.get(i).get()) // result
+                        .define('#', item) // ingredient
+                        .pattern("###")
+                        .pattern("###")
+                        .pattern("###")
+                        .unlockedBy("has_item", has(item))
+                        .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName.replace("compressedblocks:", "")));
+                ShapelessRecipeBuilder.shapeless(item, 9)
+                        .requires(RegistryEvent.BLOCK_REGISTRY.get(i).get())
+                        .unlockedBy("has_item", has(RegistryEvent.BLOCK_REGISTRY.get(i).get().asItem()))
+                        .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName.replace("compressedblocks:", "")));
 
             } else {
-                ShapedRecipeBuilder.shapedRecipe(RegistryEvent.BLOCK_REGISTRY.get(i).get()) // result
-                        .key('#', RegistryEvent.BLOCK_REGISTRY.get(i - 1).get()) // ingredient
-                        .patternLine("###")
-                        .patternLine("###")
-                        .patternLine("###")
-                        .addCriterion("has_item", hasItem(RegistryEvent.BLOCK_REGISTRY.get(i - 1).get().asItem()))
-                        .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName.replace("compressedblocks:", "")));
-                ShapelessRecipeBuilder.shapelessRecipe(RegistryEvent.BLOCK_REGISTRY.get(i - 1).get(), 9)
-                        .addIngredient(RegistryEvent.BLOCK_REGISTRY.get(i).get())
-                        .addCriterion("has_item", hasItem(RegistryEvent.BLOCK_REGISTRY.get(i).get().asItem()))
-                        .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName.replace("compressedblocks:", "")));
+                ShapedRecipeBuilder.shaped(RegistryEvent.BLOCK_REGISTRY.get(i).get()) // result
+                        .define('#', RegistryEvent.BLOCK_REGISTRY.get(i - 1).get()) // ingredient
+                        .pattern("###")
+                        .pattern("###")
+                        .pattern("###")
+                        .unlockedBy("has_item", has(RegistryEvent.BLOCK_REGISTRY.get(i - 1).get().asItem()))
+                        .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName.replace("compressedblocks:", "")));
+                ShapelessRecipeBuilder.shapeless(RegistryEvent.BLOCK_REGISTRY.get(i - 1).get(), 9)
+                        .requires(RegistryEvent.BLOCK_REGISTRY.get(i).get())
+                        .unlockedBy("has_item", has(RegistryEvent.BLOCK_REGISTRY.get(i).get().asItem()))
+                        .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName.replace("compressedblocks:", "")));
             }
         }
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.COMPRESSED_DIAMOND.get()) // result
-                .key('*', Items.DIAMOND) // ingredient
-                .key('#', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
-                .patternLine("###")
-                .patternLine("#*#")
-                .patternLine("###")
-                .addCriterion("has_item", hasItem(Items.DIAMOND))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.COMPRESSED_DIAMOND.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.COMPRESSED_DIAMOND.get()) // result
+                .define('*', Items.DIAMOND) // ingredient
+                .define('#', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
+                .pattern("###")
+                .pattern("#*#")
+                .pattern("###")
+                .unlockedBy("has_item", has(Items.DIAMOND))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.COMPRESSED_DIAMOND.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.COMPRESSED_GOLD.get()) // result
-                .key('*', Items.GOLD_INGOT) // ingredient
-                .key('#', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
-                .patternLine("###")
-                .patternLine("#*#")
-                .patternLine("###")
-                .addCriterion("has_item", hasItem(Items.GOLD_INGOT))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.COMPRESSED_GOLD.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.COMPRESSED_GOLD.get()) // result
+                .define('*', Items.GOLD_INGOT) // ingredient
+                .define('#', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
+                .pattern("###")
+                .pattern("#*#")
+                .pattern("###")
+                .unlockedBy("has_item", has(Items.GOLD_INGOT))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.COMPRESSED_GOLD.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.COMPRESSED_IRON.get()) // result
-                .key('*', Items.IRON_INGOT) // ingredient
-                .key('#', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
-                .patternLine("###")
-                .patternLine("#*#")
-                .patternLine("###")
-                .addCriterion("has_item", hasItem(Items.IRON_INGOT))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.COMPRESSED_IRON.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.COMPRESSED_IRON.get()) // result
+                .define('*', Items.IRON_INGOT) // ingredient
+                .define('#', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
+                .pattern("###")
+                .pattern("#*#")
+                .pattern("###")
+                .unlockedBy("has_item", has(Items.IRON_INGOT))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.COMPRESSED_IRON.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.COMPRESSED_STICK.get()) // result
-                .key('*', Items.STICK) // ingredient
-                .key('#', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
-                .patternLine("###")
-                .patternLine("#*#")
-                .patternLine("###")
-                .addCriterion("has_item", hasItem(Items.STICK))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.COMPRESSED_STICK.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.COMPRESSED_STICK.get()) // result
+                .define('*', Items.STICK) // ingredient
+                .define('#', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
+                .pattern("###")
+                .pattern("#*#")
+                .pattern("###")
+                .unlockedBy("has_item", has(Items.STICK))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.COMPRESSED_STICK.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.COMPRESSED_WOOD.get()) // result
-                .key('*', ItemTags.PLANKS) // ingredient
-                .key('#', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
-                .patternLine("###")
-                .patternLine("#*#")
-                .patternLine("###")
-                .addCriterion("has_item", hasItem(ItemTags.PLANKS))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.COMPRESSED_WOOD.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.COMPRESSED_WOOD.get()) // result
+                .define('*', ItemTags.PLANKS) // ingredient
+                .define('#', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
+                .pattern("###")
+                .pattern("#*#")
+                .pattern("###")
+                .unlockedBy("has_item", has(ItemTags.PLANKS))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.COMPRESSED_WOOD.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.EGG_BAG.get()) // result
-                .key('#', Items.EGG) // ingredient
-                .patternLine("###")
-                .patternLine("###")
-                .patternLine("###")
-                .addCriterion("has_item", hasItem(Items.EGG))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.EGG_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapelessRecipeBuilder.shapelessRecipe(Items.EGG, 9)
-                .addIngredient(RegistryEvent.EGG_BAG.get())
-                .addCriterion("has_item", hasItem(RegistryEvent.EGG_BAG.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.EGG_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.EGG_BAG.get()) // result
+                .define('#', Items.EGG) // ingredient
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_item", has(Items.EGG))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.EGG_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapelessRecipeBuilder.shapeless(Items.EGG, 9)
+                .requires(RegistryEvent.EGG_BAG.get())
+                .unlockedBy("has_item", has(RegistryEvent.EGG_BAG.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.EGG_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HUGE_EGG_BAG.get()) // result
-                .key('#', RegistryEvent.EGG_BAG.get()) // ingredient
-                .patternLine("###")
-                .patternLine("###")
-                .patternLine("###")
-                .addCriterion("has_item", hasItem(RegistryEvent.EGG_BAG.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HUGE_EGG_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapelessRecipeBuilder.shapelessRecipe(RegistryEvent.EGG_BAG.get(), 9)
-                .addIngredient(RegistryEvent.HUGE_EGG_BAG.get())
-                .addCriterion("has_item", hasItem(RegistryEvent.HUGE_EGG_BAG.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.HUGE_EGG_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HUGE_EGG_BAG.get()) // result
+                .define('#', RegistryEvent.EGG_BAG.get()) // ingredient
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_item", has(RegistryEvent.EGG_BAG.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HUGE_EGG_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapelessRecipeBuilder.shapeless(RegistryEvent.EGG_BAG.get(), 9)
+                .requires(RegistryEvent.HUGE_EGG_BAG.get())
+                .unlockedBy("has_item", has(RegistryEvent.HUGE_EGG_BAG.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.HUGE_EGG_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.ENDER_EYE_BAG.get()) // result
-                .key('#', Items.ENDER_EYE) // ingredient
-                .patternLine("###")
-                .patternLine("###")
-                .patternLine("###")
-                .addCriterion("has_item", hasItem(Items.ENDER_EYE))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.ENDER_EYE_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapelessRecipeBuilder.shapelessRecipe(Items.ENDER_EYE, 9)
-                .addIngredient(RegistryEvent.ENDER_EYE_BAG.get())
-                .addCriterion("has_item", hasItem(Items.ENDER_EYE))
-                .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.ENDER_EYE_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.ENDER_EYE_BAG.get()) // result
+                .define('#', Items.ENDER_EYE) // ingredient
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_item", has(Items.ENDER_EYE))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.ENDER_EYE_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapelessRecipeBuilder.shapeless(Items.ENDER_EYE, 9)
+                .requires(RegistryEvent.ENDER_EYE_BAG.get())
+                .unlockedBy("has_item", has(Items.ENDER_EYE))
+                .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.ENDER_EYE_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HUGE_ENDER_EYE_BAG.get()) // result
-                .key('#', RegistryEvent.ENDER_EYE_BAG.get()) // ingredient
-                .patternLine("###")
-                .patternLine("###")
-                .patternLine("###")
-                .addCriterion("has_item", hasItem(RegistryEvent.ENDER_EYE_BAG.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HUGE_ENDER_EYE_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapelessRecipeBuilder.shapelessRecipe(RegistryEvent.ENDER_EYE_BAG.get(), 9)
-                .addIngredient(RegistryEvent.HUGE_ENDER_EYE_BAG.get())
-                .addCriterion("has_item", hasItem(RegistryEvent.HUGE_ENDER_EYE_BAG.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.HUGE_ENDER_EYE_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HUGE_ENDER_EYE_BAG.get()) // result
+                .define('#', RegistryEvent.ENDER_EYE_BAG.get()) // ingredient
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_item", has(RegistryEvent.ENDER_EYE_BAG.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HUGE_ENDER_EYE_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapelessRecipeBuilder.shapeless(RegistryEvent.ENDER_EYE_BAG.get(), 9)
+                .requires(RegistryEvent.HUGE_ENDER_EYE_BAG.get())
+                .unlockedBy("has_item", has(RegistryEvent.HUGE_ENDER_EYE_BAG.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.HUGE_ENDER_EYE_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.ENDER_PEARL_BAG.get()) // result
-                .key('#', Items.ENDER_PEARL) // ingredient
-                .patternLine("###")
-                .patternLine("###")
-                .patternLine("###")
-                .addCriterion("has_item", hasItem(Items.ENDER_PEARL))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.ENDER_PEARL_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapelessRecipeBuilder.shapelessRecipe(Items.ENDER_PEARL, 9)
-                .addIngredient(RegistryEvent.ENDER_PEARL_BAG.get())
-                .addCriterion("has_item", hasItem(RegistryEvent.ENDER_PEARL_BAG.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.ENDER_PEARL_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.ENDER_PEARL_BAG.get()) // result
+                .define('#', Items.ENDER_PEARL) // ingredient
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_item", has(Items.ENDER_PEARL))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.ENDER_PEARL_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapelessRecipeBuilder.shapeless(Items.ENDER_PEARL, 9)
+                .requires(RegistryEvent.ENDER_PEARL_BAG.get())
+                .unlockedBy("has_item", has(RegistryEvent.ENDER_PEARL_BAG.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.ENDER_PEARL_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HUGE_ENDER_PEARL_BAG.get()) // result
-                .key('#', RegistryEvent.ENDER_PEARL_BAG.get()) // ingredient
-                .patternLine("###")
-                .patternLine("###")
-                .patternLine("###")
-                .addCriterion("has_item", hasItem(RegistryEvent.ENDER_PEARL_BAG.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HUGE_ENDER_PEARL_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapelessRecipeBuilder.shapelessRecipe(RegistryEvent.ENDER_PEARL_BAG.get(), 9)
-                .addIngredient(RegistryEvent.HUGE_ENDER_PEARL_BAG.get())
-                .addCriterion("has_item", hasItem(RegistryEvent.HUGE_ENDER_PEARL_BAG.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.HUGE_ENDER_PEARL_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HUGE_ENDER_PEARL_BAG.get()) // result
+                .define('#', RegistryEvent.ENDER_PEARL_BAG.get()) // ingredient
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_item", has(RegistryEvent.ENDER_PEARL_BAG.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HUGE_ENDER_PEARL_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapelessRecipeBuilder.shapeless(RegistryEvent.ENDER_PEARL_BAG.get(), 9)
+                .requires(RegistryEvent.HUGE_ENDER_PEARL_BAG.get())
+                .unlockedBy("has_item", has(RegistryEvent.HUGE_ENDER_PEARL_BAG.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + RegistryEvent.HUGE_ENDER_PEARL_BAG.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_AXE.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
-                .patternLine("** ")
-                .patternLine("*# ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_STICK.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_AXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_HOE.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
-                .patternLine("** ")
-                .patternLine(" # ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_STICK.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_HOE.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_PICKAXE.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
-                .patternLine("***")
-                .patternLine(" # ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_STICK.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_PICKAXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_SHOVEL.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
-                .patternLine(" * ")
-                .patternLine(" # ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.ENDER_PEARL_BAG.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_SHOVEL.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_SWORD.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
-                .patternLine(" * ")
-                .patternLine(" * ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_STICK.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_SWORD.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_AXE.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
+                .pattern("** ")
+                .pattern("*# ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_STICK.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_AXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_HOE.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
+                .pattern("** ")
+                .pattern(" # ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_STICK.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_HOE.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_PICKAXE.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
+                .pattern("***")
+                .pattern(" # ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_STICK.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_PICKAXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_SHOVEL.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
+                .pattern(" * ")
+                .pattern(" # ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.ENDER_PEARL_BAG.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_SHOVEL.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_SWORD.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.BLOCK_REGISTRY.get(1).get()) // ingredient
+                .pattern(" * ")
+                .pattern(" * ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_STICK.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_SWORD.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_IRON_AXE.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_IRON.get()) // ingredient
-                .patternLine("** ")
-                .patternLine("*# ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_IRON.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_IRON_AXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_IRON_HOE.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_IRON.get()) // ingredient
-                .patternLine("** ")
-                .patternLine(" # ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_IRON.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_IRON_HOE.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_IRON_PICKAXE.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_IRON.get()) // ingredient
-                .patternLine("***")
-                .patternLine(" # ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_IRON.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_IRON_PICKAXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_IRON_SHOVEL.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_IRON.get()) // ingredient
-                .patternLine(" * ")
-                .patternLine(" # ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_IRON.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_IRON_SHOVEL.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_IRON_SWORD.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_IRON.get()) // ingredient
-                .patternLine(" * ")
-                .patternLine(" * ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_IRON.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_IRON_SWORD.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_IRON_AXE.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_IRON.get()) // ingredient
+                .pattern("** ")
+                .pattern("*# ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_IRON.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_IRON_AXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_IRON_HOE.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_IRON.get()) // ingredient
+                .pattern("** ")
+                .pattern(" # ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_IRON.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_IRON_HOE.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_IRON_PICKAXE.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_IRON.get()) // ingredient
+                .pattern("***")
+                .pattern(" # ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_IRON.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_IRON_PICKAXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_IRON_SHOVEL.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_IRON.get()) // ingredient
+                .pattern(" * ")
+                .pattern(" # ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_IRON.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_IRON_SHOVEL.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_IRON_SWORD.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_IRON.get()) // ingredient
+                .pattern(" * ")
+                .pattern(" * ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_IRON.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_IRON_SWORD.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_GOLDEN_AXE.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_GOLD.get()) // ingredient
-                .patternLine("** ")
-                .patternLine("*# ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_GOLD.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_GOLDEN_AXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_GOLDEN_HOE.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_GOLD.get()) // ingredient
-                .patternLine("** ")
-                .patternLine(" # ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_GOLD.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_GOLDEN_HOE.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_GOLDEN_PICKAXE.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_GOLD.get()) // ingredient
-                .patternLine("***")
-                .patternLine(" # ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_GOLD.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_GOLDEN_PICKAXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_GOLDEN_SHOVEL.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_GOLD.get()) // ingredient
-                .patternLine(" * ")
-                .patternLine(" # ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_GOLD.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_GOLDEN_SHOVEL.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_GOLDEN_SWORD.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_GOLD.get()) // ingredient
-                .patternLine(" * ")
-                .patternLine(" * ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_GOLD.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_GOLDEN_SWORD.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_GOLDEN_AXE.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_GOLD.get()) // ingredient
+                .pattern("** ")
+                .pattern("*# ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_GOLD.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_GOLDEN_AXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_GOLDEN_HOE.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_GOLD.get()) // ingredient
+                .pattern("** ")
+                .pattern(" # ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_GOLD.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_GOLDEN_HOE.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_GOLDEN_PICKAXE.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_GOLD.get()) // ingredient
+                .pattern("***")
+                .pattern(" # ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_GOLD.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_GOLDEN_PICKAXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_GOLDEN_SHOVEL.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_GOLD.get()) // ingredient
+                .pattern(" * ")
+                .pattern(" # ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_GOLD.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_GOLDEN_SHOVEL.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_GOLDEN_SWORD.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_GOLD.get()) // ingredient
+                .pattern(" * ")
+                .pattern(" * ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_GOLD.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_GOLDEN_SWORD.get().getRegistryName().toString().replace("compressedblocks:", "")));
 
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_DIAMOND_AXE.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_DIAMOND.get()) // ingredient
-                .patternLine("** ")
-                .patternLine("*# ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_DIAMOND.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_DIAMOND_AXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_DIAMOND_HOE.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_DIAMOND.get()) // ingredient
-                .patternLine("** ")
-                .patternLine(" # ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_DIAMOND.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_DIAMOND_HOE.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_DIAMOND_PICKAXE.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_DIAMOND.get()) // ingredient
-                .patternLine("***")
-                .patternLine(" # ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_DIAMOND.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_DIAMOND_PICKAXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_DIAMOND_SHOVEL.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_DIAMOND.get()) // ingredient
-                .patternLine(" * ")
-                .patternLine(" # ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_DIAMOND.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_DIAMOND_SHOVEL.get().getRegistryName().toString().replace("compressedblocks:", "")));
-        ShapedRecipeBuilder.shapedRecipe(RegistryEvent.HARDENED_DIAMOND_SWORD.get()) // result
-                .key('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
-                .key('*', RegistryEvent.COMPRESSED_DIAMOND.get()) // ingredient
-                .patternLine(" * ")
-                .patternLine(" * ")
-                .patternLine(" # ")
-                .addCriterion("has_item", hasItem(RegistryEvent.COMPRESSED_DIAMOND.get()))
-                .build(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_DIAMOND_SWORD.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_DIAMOND_AXE.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_DIAMOND.get()) // ingredient
+                .pattern("** ")
+                .pattern("*# ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_DIAMOND.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_DIAMOND_AXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_DIAMOND_HOE.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_DIAMOND.get()) // ingredient
+                .pattern("** ")
+                .pattern(" # ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_DIAMOND.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_DIAMOND_HOE.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_DIAMOND_PICKAXE.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_DIAMOND.get()) // ingredient
+                .pattern("***")
+                .pattern(" # ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_DIAMOND.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_DIAMOND_PICKAXE.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_DIAMOND_SHOVEL.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_DIAMOND.get()) // ingredient
+                .pattern(" * ")
+                .pattern(" # ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_DIAMOND.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_DIAMOND_SHOVEL.get().getRegistryName().toString().replace("compressedblocks:", "")));
+        ShapedRecipeBuilder.shaped(RegistryEvent.HARDENED_DIAMOND_SWORD.get()) // result
+                .define('#', RegistryEvent.COMPRESSED_STICK.get()) // ingredient
+                .define('*', RegistryEvent.COMPRESSED_DIAMOND.get()) // ingredient
+                .pattern(" * ")
+                .pattern(" * ")
+                .pattern(" # ")
+                .unlockedBy("has_item", has(RegistryEvent.COMPRESSED_DIAMOND.get()))
+                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + RegistryEvent.HARDENED_DIAMOND_SWORD.get().getRegistryName().toString().replace("compressedblocks:", "")));
     }
 }

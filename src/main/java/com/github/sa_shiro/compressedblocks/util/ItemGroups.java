@@ -4,25 +4,17 @@ import com.github.sa_shiro.compressedblocks.event.RegistryEvent;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.RegistryObject;
-
-import java.util.Objects;
 
 public class ItemGroups {
     public static ItemGroup compressedBlockGroup = new ItemGroup("compressed_blocks") {
         @Override
-        public ItemStack createIcon() {
-            Block icon = null;
-            for (RegistryObject<Block> block : RegistryEvent.BLOCK_REGISTRY) {
-                if (Objects.requireNonNull(block.get().getRegistryName()).toString().equals("compressedblocks:c9_stone")) {
-                    icon = block.get();
-                }
-            }
+        public ItemStack makeIcon() {
+            Block icon = RegistryEvent.LOGO_BLOCK;
             return new ItemStack(icon);
         }
 
         @Override
-        public boolean hasScrollbar() {
+        public boolean canScroll() {
             return true;
         }
     };
