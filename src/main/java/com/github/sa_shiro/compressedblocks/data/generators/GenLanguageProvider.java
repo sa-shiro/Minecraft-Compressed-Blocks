@@ -62,6 +62,7 @@ public class GenLanguageProvider extends LanguageProvider {
         add("item.compressedblocks.huge_ender_eye_bag", "Huge Sack of Ender Eyes");
         add("item.compressedblocks.egg_bag", "Sack of Eggs");
         add("item.compressedblocks.huge_egg_bag", "Huge Sack of Eggs");
+        add("item.compressedblocks.logo_block", "Logo Block (This Block has no use and is only used as the Creative Tab Logo)");
 
         for (BlockFactory factory : Lists.blockList) {
             add("block.compressedblocks.c0_" + factory.getRegistryName(), "Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
