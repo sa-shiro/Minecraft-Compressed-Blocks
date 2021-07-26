@@ -1,15 +1,19 @@
 package com.github.sa_shiro.compressedblocks.data.generators;
 
-import com.github.sa_shiro.compressedblocks.event.RegistryEvent;
+import com.github.sa_shiro.compressedblocks.event.ModRegistryObjects;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.LootTableProvider;
-import net.minecraft.data.loot.BlockLootTables;
-import net.minecraft.loot.*;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.LootTables;
+import net.minecraft.world.level.storage.loot.ValidationContext;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraftforge.fmllegacy.RegistryObject;
 
 import java.util.List;
 import java.util.Map;
@@ -24,28 +28,28 @@ public class GenLootTableProvider extends LootTableProvider {
     }
 
     @Override
-    protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootParameterSet>> getTables() {
+    protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
         return ImmutableList.of(
-                Pair.of(CompressedLootTable::new, LootParameterSets.BLOCK)
+                Pair.of(CompressedLootTable::new, LootContextParamSets.BLOCK)
         );
     }
 
     @Override
-    protected void validate(Map<ResourceLocation, LootTable> map, ValidationTracker validationtracker) {
-        map.forEach((id, lootTable) -> LootTableManager.validate(validationtracker, id, lootTable));
+    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationtracker) {
+        map.forEach((id, lootTable) -> LootTables.validate(validationtracker, id, lootTable));
     }
 
-    public static class CompressedLootTable extends BlockLootTables {
+    public static class CompressedLootTable extends BlockLoot {
         @Override
         protected void addTables() {
-            for (RegistryObject<Block> block : RegistryEvent.BLOCK_REGISTRY) {
+            for (RegistryObject<Block> block : ModRegistryObjects.BLOCK_REGISTRY) {
                 dropSelf(block.get());
             }
         }
 
         @Override
         protected Iterable<Block> getKnownBlocks() {
-            return RegistryEvent.BLOCKS.getEntries().stream()
+            return ModRegistryObjects.BLOCKS.getEntries().stream()
                     .map(RegistryObject::get)
                     .collect(Collectors.toList());
         }

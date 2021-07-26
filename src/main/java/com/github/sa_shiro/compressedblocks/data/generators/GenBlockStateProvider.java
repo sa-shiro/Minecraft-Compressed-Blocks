@@ -2,17 +2,17 @@ package com.github.sa_shiro.compressedblocks.data.generators;
 
 import com.github.sa_shiro.compressedblocks.CompressedBlocks;
 import com.github.sa_shiro.compressedblocks.block.BlockFactory;
-import com.github.sa_shiro.compressedblocks.event.RegistryEvent;
+import com.github.sa_shiro.compressedblocks.event.ModRegistryObjects;
 import com.github.sa_shiro.compressedblocks.util.Lists;
-import net.minecraft.block.Block;
-import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fmllegacy.RegistryObject;
 
 public class GenBlockStateProvider extends BlockStateProvider {
     public GenBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
@@ -27,7 +27,7 @@ public class GenBlockStateProvider extends BlockStateProvider {
         assert false;
 
         for (BlockFactory factory : Lists.blockList) {
-            for (RegistryObject<Block> block : RegistryEvent.BLOCK_REGISTRY) {
+            for (RegistryObject<Block> block : ModRegistryObjects.BLOCK_REGISTRY) {
                 String str = "";
                 for (int i = 0; i <= 9; i++) {
                     if (block.get().getRegistryName().toString().contains("compressedblocks:c" + i)) {
@@ -35,15 +35,24 @@ public class GenBlockStateProvider extends BlockStateProvider {
                     }
                 }
 
+                simpleBlock(
+                        ModRegistryObjects.LOGO_BLOCK.getBlock(), models().cubeAll(
+                                "logo_block", new ResourceLocation("compressedblocks", "block/logo_block")
+                        )
+                                .parent(blockBlock)
+                                .element()
+                                .cube("logo_block")
+                                .end()
+                );
                 if (factory.getRegistryName().equals(str)) {
                     if (!factory.getHasCustomTexture() && !factory.getHasRotation()) {
                         simpleBlock(
-                                block.get().getBlock(), models().cubeAll(
-                                        block.get().getBlock().getRegistryName().toString(),
+                                block.get(), models().cubeAll(
+                                        block.get().getRegistryName().toString(),
                                         getActualResourceLocation(factory.getRegistryName())
                                 )
                                         .texture("particle", getActualResourceLocation(factory.getRegistryName()))
-                                        .texture("overlay", getCompressionOverlay(block.get().getBlock().getRegistryName().toString()))
+                                        .texture("overlay", getCompressionOverlay(block.get().getRegistryName().toString()))
                                         .parent(blockBlock)
                                         .element()
                                         .from(0, 0, 0)
@@ -69,8 +78,8 @@ public class GenBlockStateProvider extends BlockStateProvider {
 
                     } else if (factory.getHasCustomTexture() && !factory.getHasRotation()) {
                         simpleBlock(
-                                block.get().getBlock(), models().cube(
-                                        block.get().getBlock().getRegistryName().toString(),
+                                block.get(), models().cube(
+                                        block.get().getRegistryName().toString(),
                                         new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.DOWN)),
                                         new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.UP)),
                                         new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.NORTH)),
@@ -79,7 +88,7 @@ public class GenBlockStateProvider extends BlockStateProvider {
                                         new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.WEST))
                                 )
                                         .texture("particle", new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.PARTICLE)))
-                                        .texture("overlay", getCompressionOverlay(block.get().getBlock().getRegistryName().toString()))
+                                        .texture("overlay", getCompressionOverlay(block.get().getRegistryName().toString()))
                                         .parent(blockBlock)
                                         .element()
                                         .from(0, 0, 0)
@@ -104,14 +113,14 @@ public class GenBlockStateProvider extends BlockStateProvider {
                         );
                     } else if (factory.getHasCustomTexture() && factory.getHasRotation()) {
                         axisBlock(
-                                (RotatedPillarBlock) block.get().getBlock(),
+                                (RotatedPillarBlock) block.get(),
                                 models().cubeColumn(
-                                        block.get().getBlock().getRegistryName().toString(),
+                                        block.get().getRegistryName().toString(),
                                         new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.SIDE)),
                                         new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.END))
                                 )
                                         .texture("particle", new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.PARTICLE)))
-                                        .texture("overlay", getCompressionOverlay(block.get().getBlock().getRegistryName().toString()))
+                                        .texture("overlay", getCompressionOverlay(block.get().getRegistryName().toString()))
                                         .parent(cubeColumn)
                                         .element()
                                         .from(0, 0, 0)
@@ -135,12 +144,12 @@ public class GenBlockStateProvider extends BlockStateProvider {
                                         .end()
                                 ,
                                 models().cubeColumn(
-                                        block.get().getBlock().getRegistryName().toString() + "_horizontal",
+                                        block.get().getRegistryName().toString() + "_horizontal",
                                         new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.SIDE)),
                                         new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.END))
                                 )
                                         .texture("particle", new ResourceLocation(factory.getTexturePath(), "block/" + factory.getCustomTexture(BlockFactory.TextureLocation.PARTICLE)))
-                                        .texture("overlay", getCompressionOverlay(block.get().getBlock().getRegistryName().toString()))
+                                        .texture("overlay", getCompressionOverlay(block.get().getRegistryName().toString()))
                                         .parent(cubeColumnHorizontal)
                                         .element()
                                         .from(0, 0, 0)
@@ -170,20 +179,14 @@ public class GenBlockStateProvider extends BlockStateProvider {
     }
 
     private ResourceLocation getActualResourceLocation(String blockName) {
-        switch (blockName) {
-            case "flesh_block":
-                return new ResourceLocation("compressedblocks", "block/flesh");
-            case "rotten_flesh_block":
-                return new ResourceLocation("compressedblocks", "block/rotten_flesh");
-            case "gunpowder_block":
-                return new ResourceLocation("compressedblocks", "block/gunpowder");
-            case "flint_block":
-                return new ResourceLocation("compressedblocks", "block/flint");
-            case "magma_block":
-                return new ResourceLocation("minecraft", "block/magma");
-            default:
-                return new ResourceLocation("minecraft", "block/" + blockName);
-        }
+        return switch (blockName) {
+            case "flesh_block" -> new ResourceLocation("compressedblocks", "block/flesh");
+            case "rotten_flesh_block" -> new ResourceLocation("compressedblocks", "block/rotten_flesh");
+            case "gunpowder_block" -> new ResourceLocation("compressedblocks", "block/gunpowder");
+            case "flint_block" -> new ResourceLocation("compressedblocks", "block/flint");
+            case "magma_block" -> new ResourceLocation("minecraft", "block/magma");
+            default -> new ResourceLocation("minecraft", "block/" + blockName);
+        };
     }
 
     private ResourceLocation getCompressionOverlay(String blockName) {

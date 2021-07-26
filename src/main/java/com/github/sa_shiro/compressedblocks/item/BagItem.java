@@ -2,15 +2,14 @@ package com.github.sa_shiro.compressedblocks.item;
 
 import com.github.sa_shiro.compressedblocks.block.Compression;
 import com.github.sa_shiro.compressedblocks.util.ItemGroups;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.world.World;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 public class BagItem extends Item {
@@ -33,9 +32,10 @@ public class BagItem extends Item {
         this.itemCount = comp.getBlockCount();
     }
 
+
     @Override
-    @ParametersAreNonnullByDefault
-    public void appendHoverText(ItemStack i, @Nullable World w, List<ITextComponent> t, ITooltipFlag f) {
-        t.add(new StringTextComponent(itemCount + " " + toolTipText).setStyle(comp.getStyle()));
+    public void appendHoverText(ItemStack s, @Nullable Level l, List<Component> c, TooltipFlag t) {
+        super.appendHoverText(s, l, c, t);
+        c.add(new TextComponent(itemCount + " " + toolTipText).setStyle(comp.getStyle()));
     }
 }

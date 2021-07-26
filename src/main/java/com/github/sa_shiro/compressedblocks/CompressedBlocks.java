@@ -1,7 +1,7 @@
 package com.github.sa_shiro.compressedblocks;
 
-import com.github.sa_shiro.compressedblocks.event.RegistryEvent;
-import com.github.sa_shiro.compressedblocks.util.JSONConfig;
+import com.github.sa_shiro.compressedblocks.event.ModRegistryEvent;
+import com.github.sa_shiro.compressedblocks.event.ModRegistryObjects;
 import com.github.sa_shiro.compressedblocks.util.Lists;
 import net.minecraftforge.fml.common.Mod;
 
@@ -12,7 +12,8 @@ public class CompressedBlocks {
 
     public CompressedBlocks() {
         Lists.populate();
-        JSONConfig.INSTANCE.init();
-        RegistryEvent.register();
+        ModRegistryObjects.populate();
+        ModRegistryEvent.register();
     }
 }
+

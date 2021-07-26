@@ -2,10 +2,10 @@ package com.github.sa_shiro.compressedblocks.util;
 
 import com.github.sa_shiro.compressedblocks.block.BlockFactory;
 import com.github.sa_shiro.compressedblocks.block.BlockType;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
-import net.minecraft.item.DyeColor;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 
 import java.util.ArrayList;
 
@@ -14,6 +14,7 @@ public class Lists {
     public final static ArrayList<Float> RESISTANCE = new ArrayList<>();
     public final static ArrayList<Integer> HARVEST_LEVEL = new ArrayList<>();
     public static final ArrayList<BlockFactory> blockList = new ArrayList<>();
+    public static final ArrayList<String> ITEMS = new ArrayList<>();
 
     //------------------------------------------------------------------------------------------------------------------
     // Minecraft Blocks
@@ -317,16 +318,16 @@ public class Lists {
         blockList.add(GLASS);
         blockList.add(MAGMA_BLOCK);
 
-        HARDNESS.add(0, 8.0f);
-        HARDNESS.add(1, 10.5f);
-        HARDNESS.add(2, 15.0f);
-        HARDNESS.add(3, 20.0f);
-        HARDNESS.add(4, 25.0f);
-        HARDNESS.add(5, 35.0f);
-        HARDNESS.add(6, 40.0f);
-        HARDNESS.add(7, 45.0f);
-        HARDNESS.add(8, 50.0f);
-        HARDNESS.add(9, 55.0f);
+        HARDNESS.add(0, 1.0f);
+        HARDNESS.add(1, 1.1f);
+        HARDNESS.add(2, 1.15f);
+        HARDNESS.add(3, 1.2f);
+        HARDNESS.add(4, 1.25f);
+        HARDNESS.add(5, 1.3f);
+        HARDNESS.add(6, 1.35f);
+        HARDNESS.add(7, 1.4f);
+        HARDNESS.add(8, 1.6f);
+        HARDNESS.add(9, 1.8f);
 
         RESISTANCE.add(0, 35.0f);
         RESISTANCE.add(1, 40.0f);
@@ -347,7 +348,32 @@ public class Lists {
         HARVEST_LEVEL.add(5, 2);
         HARVEST_LEVEL.add(6, 3);
         HARVEST_LEVEL.add(7, 3);
-        HARVEST_LEVEL.add(8, 4);
-        HARVEST_LEVEL.add(9, 4);
+        HARVEST_LEVEL.add(8, 3);
+        HARVEST_LEVEL.add(9, 3);
+
+        ITEMS.add("apples");
+        ITEMS.add("arrows");
+        ITEMS.add("beetroots");
+        ITEMS.add("beetroot_seeds");
+        ITEMS.add("blaze_powder");
+        ITEMS.add("blaze_rods");
+        ITEMS.add("bones");
+        ITEMS.add("carrots");
+        ITEMS.add("eggs");
+        ITEMS.add("ender_eyes");
+        ITEMS.add("ender_pearls");
+        ITEMS.add("feathers");
+        ITEMS.add("leather");
+        ITEMS.add("melons");
+        ITEMS.add("potatoes");
+        ITEMS.add("sugar_canes");
+        ITEMS.add("melon_seeds");
+        ITEMS.add("pumpkin");
+        ITEMS.add("pumpkin_seeds");
+        ITEMS.add("wheat_seeds");
+        ITEMS.add("spider_eyes");
+        ITEMS.add("strings");
+        ITEMS.add("sticks");
+        ITEMS.add("sugar");
     }
 }
