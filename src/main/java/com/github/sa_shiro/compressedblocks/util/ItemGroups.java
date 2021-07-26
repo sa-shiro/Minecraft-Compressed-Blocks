@@ -1,15 +1,15 @@
 package com.github.sa_shiro.compressedblocks.util;
 
-import com.github.sa_shiro.compressedblocks.event.RegistryEvent;
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import com.github.sa_shiro.compressedblocks.event.ModRegistryObjects;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 
 public class ItemGroups {
-    public static ItemGroup compressedBlockGroup = new ItemGroup("compressed_blocks") {
+    public static CreativeModeTab compressedBlockGroup = new CreativeModeTab("compressed_blocks") {
         @Override
         public ItemStack makeIcon() {
-            Block icon = RegistryEvent.LOGO_BLOCK;
+            Block icon = ModRegistryObjects.LOGO_BLOCK.getBlock();
             return new ItemStack(icon);
         }
 

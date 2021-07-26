@@ -1,16 +1,17 @@
 package com.github.sa_shiro.compressedblocks.block;
 
-import net.minecraft.block.*;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.EntityType;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -22,6 +23,10 @@ public class CompressedBlock extends Block implements ICompressedBlock {
     protected CompressedBlock(Properties p, int l) {
         super(p);
         compressor.setCompressionLevel(l);
+    }
+
+    public CompressedBlock() {
+        super(Properties.of(Material.STONE));
     }
 
     /**
@@ -43,31 +48,19 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         Properties p3 = Properties.of(material, materialColor).sound(soundType).strength(5.0F).harvestLevel(0).friction(0.85F);
         Properties p4 = Properties.of(material, materialColor).sound(soundType).strength(0.3F).harvestLevel(0).noOcclusion().noOcclusion().isSuffocating(CompressedBlock::nil).isViewBlocking(CompressedBlock::nil).isRedstoneConductor(CompressedBlock::nil).isValidSpawn(CompressedBlock::nil);
         Properties p5 = Properties.of(material, materialColor).sound(soundType).strength(hardness, resistance).harvestLevel(harvestLevel).lightLevel((s) -> 4);
-        switch (type) {
-            default:
-            case DEFAULT:
-                return new CompressedBlock(p0, compression);
-            case SAND:
-                return new CompressedSandBlock(14406560, p0, compression);
-            case RED_SAND:
-                return new CompressedSandBlock(11098145, p0, compression);
-            case GRAVEL:
-                return new CompressedGravelBlock(p0, compression);
-            case REDSTONE:
-                return new CompressedRedstoneBlock(p0, compression);
-            case SOUL_SAND:
-                return new CompressedSoulSandBlock(p0, compression);
-            case WOOL:
-                return new CompressedBlock(p1, compression);
-            case SLIME:
-                return new CompressedSlimeBlock(p2, compression);
-            case FLESH:
-                return new CompressedBlock(p3, compression);
-            case GLASS:
-                return new CompressedTransparentBlock(p4, compression);
-            case MAGMA:
-                return new CompressedMagmaBlock(p5, compression);
-        }
+        return switch (type) {
+            case DEFAULT -> new CompressedBlock(p0, compression);
+            case SAND -> new CompressedSandBlock(14406560, p0, compression);
+            case RED_SAND -> new CompressedSandBlock(11098145, p0, compression);
+            case GRAVEL -> new CompressedGravelBlock(p0, compression);
+            case REDSTONE -> new CompressedRedstoneBlock(p0, compression);
+            case SOUL_SAND -> new CompressedSoulSandBlock(p0, compression);
+            case WOOL -> new CompressedBlock(p1, compression);
+            case SLIME -> new CompressedSlimeBlock(p2, compression);
+            case FLESH -> new CompressedBlock(p3, compression);
+            case GLASS -> new CompressedTransparentBlock(p4, compression);
+            case MAGMA -> new CompressedMagmaBlock(p5, compression);
+        };
     }
 
     @ParametersAreNonnullByDefault
@@ -82,19 +75,18 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         return new CompressedRotationalBlock(p, compression);
     }
 
-    private static boolean nil(BlockState s, IBlockReader r, BlockPos p) {
+    private static boolean nil(BlockState s, BlockGetter g, BlockPos p) {
         return false;
     }
 
-    private static boolean nil(BlockState s, IBlockReader r, BlockPos b, EntityType<?> e) {
+    private static boolean nil(BlockState s, BlockGetter g, BlockPos b, EntityType<?> e) {
         return false;
     }
 
     @Override
-    @ParametersAreNonnullByDefault
-    public void appendHoverText(ItemStack s, @Nullable IBlockReader w, List<ITextComponent> t, ITooltipFlag i) {
-        super.appendHoverText(s, w, t, i);
-        t.add(new StringTextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
+    public void appendHoverText(ItemStack s, @Nullable BlockGetter g, List<Component> c, TooltipFlag t) {
+        super.appendHoverText(s, g, c, t);
+        c.add(new TextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
     }
 
     @Override
@@ -111,10 +103,9 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         }
 
         @Override
-        @ParametersAreNonnullByDefault
-        public void appendHoverText(ItemStack s, @Nullable IBlockReader w, List<ITextComponent> t, ITooltipFlag i) {
-            super.appendHoverText(s, w, t, i);
-            t.add(new StringTextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
+        public void appendHoverText(ItemStack s, @Nullable BlockGetter g, List<Component> c, TooltipFlag t) {
+            super.appendHoverText(s, g, c, t);
+            c.add(new TextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
         }
 
         @Override
@@ -123,7 +114,7 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         }
     }
 
-    protected static class CompressedRedstoneBlock extends RedstoneBlock implements ICompressedBlock {
+    protected static class CompressedRedstoneBlock extends RedStoneWireBlock implements ICompressedBlock {
         private final Compression compressor = new Compression();
 
         protected CompressedRedstoneBlock(Properties p, int l) {
@@ -132,10 +123,9 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         }
 
         @Override
-        @ParametersAreNonnullByDefault
-        public void appendHoverText(ItemStack s, @Nullable IBlockReader w, List<ITextComponent> t, ITooltipFlag i) {
-            super.appendHoverText(s, w, t, i);
-            t.add(new StringTextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
+        public void appendHoverText(ItemStack s, @Nullable BlockGetter g, List<Component> c, TooltipFlag t) {
+            super.appendHoverText(s, g, c, t);
+            c.add(new TextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
         }
 
         @Override
@@ -153,10 +143,9 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         }
 
         @Override
-        @ParametersAreNonnullByDefault
-        public void appendHoverText(ItemStack s, @Nullable IBlockReader w, List<ITextComponent> t, ITooltipFlag i) {
-            super.appendHoverText(s, w, t, i);
-            t.add(new StringTextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
+        public void appendHoverText(ItemStack s, @Nullable BlockGetter g, List<Component> c, TooltipFlag t) {
+            super.appendHoverText(s, g, c, t);
+            c.add(new TextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
         }
 
         @Override
@@ -174,10 +163,9 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         }
 
         @Override
-        @ParametersAreNonnullByDefault
-        public void appendHoverText(ItemStack s, @Nullable IBlockReader w, List<ITextComponent> t, ITooltipFlag i) {
-            super.appendHoverText(s, w, t, i);
-            t.add(new StringTextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
+        public void appendHoverText(ItemStack s, @Nullable BlockGetter g, List<Component> c, TooltipFlag t) {
+            super.appendHoverText(s, g, c, t);
+            c.add(new TextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
         }
 
         @Override
@@ -195,10 +183,9 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         }
 
         @Override
-        @ParametersAreNonnullByDefault
-        public void appendHoverText(ItemStack s, @Nullable IBlockReader w, List<ITextComponent> t, ITooltipFlag i) {
-            super.appendHoverText(s, w, t, i);
-            t.add(new StringTextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
+        public void appendHoverText(ItemStack s, @Nullable BlockGetter g, List<Component> c, TooltipFlag t) {
+            super.appendHoverText(s, g, c, t);
+            c.add(new TextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
         }
 
         @Override
@@ -217,10 +204,9 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         }
 
         @Override
-        @ParametersAreNonnullByDefault
-        public void appendHoverText(ItemStack s, @Nullable IBlockReader w, List<ITextComponent> t, ITooltipFlag i) {
-            super.appendHoverText(s, w, t, i);
-            t.add(new StringTextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
+        public void appendHoverText(ItemStack s, @Nullable BlockGetter g, List<Component> c, TooltipFlag t) {
+            super.appendHoverText(s, g, c, t);
+            c.add(new TextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
         }
 
         @Override
@@ -238,10 +224,9 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         }
 
         @Override
-        @ParametersAreNonnullByDefault
-        public void appendHoverText(ItemStack s, @Nullable IBlockReader w, List<ITextComponent> t, ITooltipFlag i) {
-            super.appendHoverText(s, w, t, i);
-            t.add(new StringTextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
+        public void appendHoverText(ItemStack s, @Nullable BlockGetter g, List<Component> c, TooltipFlag t) {
+            super.appendHoverText(s, g, c, t);
+            c.add(new TextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
         }
 
         @Override
@@ -259,10 +244,9 @@ public class CompressedBlock extends Block implements ICompressedBlock {
         }
 
         @Override
-        @ParametersAreNonnullByDefault
-        public void appendHoverText(ItemStack s, @Nullable IBlockReader w, List<ITextComponent> t, ITooltipFlag i) {
-            super.appendHoverText(s, w, t, i);
-            t.add(new StringTextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
+        public void appendHoverText(ItemStack s, @Nullable BlockGetter g, List<Component> c, TooltipFlag t) {
+            super.appendHoverText(s, g, c, t);
+            c.add(new TextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
         }
 
         @Override

@@ -22,3 +22,5 @@ eclipse
 run/
 logs/
 /src/generated/
+# Files from Forge MDK
+forge*changelog.txt

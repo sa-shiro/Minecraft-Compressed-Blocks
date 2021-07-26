@@ -1,8 +1,8 @@
 package com.github.sa_shiro.compressedblocks.block;
 
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -31,7 +31,7 @@ public class BlockFactory {
     @ParametersAreNonnullByDefault
     public BlockFactory(BlockType typeIn, String registryNameIn, Material materialIn, @Nullable MaterialColor materialColorIn, SoundType soundTypeIn) {
         if (materialColorIn == null) materialColorIn = materialIn.getColor();
-        this.type = typeIn;
+        type = typeIn;
         this.registryName = registryNameIn;
         this.dustColor = 0;
         this.material = materialIn;
@@ -52,7 +52,7 @@ public class BlockFactory {
     @ParametersAreNonnullByDefault
     public BlockFactory(BlockType typeIn, String registryNameIn, int dustColorIn, Material materialIn, @Nullable MaterialColor materialColorIn, SoundType soundTypeIn) {
         if (materialColorIn == null) materialColorIn = materialIn.getColor();
-        this.type = typeIn;
+        type = typeIn;
         this.registryName = registryNameIn;
         this.dustColor = dustColorIn;
         this.material = materialIn;
@@ -62,7 +62,7 @@ public class BlockFactory {
 
     @ParametersAreNonnullByDefault
     public BlockFactory(@Nonnull BlockType typeIn, String registryNameIn, Material materialIn, SoundType soundTypeIn) {
-        this.type = typeIn;
+        type = typeIn;
         this.registryName = registryNameIn;
         this.material = materialIn;
         this.soundType = soundTypeIn;
@@ -212,27 +212,17 @@ public class BlockFactory {
     }
 
     public String getCustomTexture(TextureLocation location) {
-        switch (location) {
-            case DOWN:
-                return textureDown;
-            case NORTH:
-                return textureNorth;
-            case SOUTH:
-                return textureSouth;
-            case EAST:
-                return textureEast;
-            case WEST:
-                return textureWest;
-            case PARTICLE:
-                return textureParticle;
-            case SIDE:
-                return textureSide;
-            case END:
-                return textureEnd;
-            case UP:
-            default:
-                return textureUp;
-        }
+        return switch (location) {
+            case DOWN -> textureDown;
+            case NORTH -> textureNorth;
+            case SOUTH -> textureSouth;
+            case EAST -> textureEast;
+            case WEST -> textureWest;
+            case PARTICLE -> textureParticle;
+            case SIDE -> textureSide;
+            case END -> textureEnd;
+            default -> textureUp;
+        };
     }
 
     public boolean getHasRotation() {
