@@ -340,17 +340,6 @@ public class Lists {
         RESISTANCE.add(8, 150.0f);
         RESISTANCE.add(9, 200.0f);
 
-        HARVEST_LEVEL.add(0, 1);
-        HARVEST_LEVEL.add(1, 1);
-        HARVEST_LEVEL.add(2, 1);
-        HARVEST_LEVEL.add(3, 2);
-        HARVEST_LEVEL.add(4, 2);
-        HARVEST_LEVEL.add(5, 2);
-        HARVEST_LEVEL.add(6, 3);
-        HARVEST_LEVEL.add(7, 3);
-        HARVEST_LEVEL.add(8, 3);
-        HARVEST_LEVEL.add(9, 3);
-
         ITEMS.add("apples");
         ITEMS.add("arrows");
         ITEMS.add("beetroots");

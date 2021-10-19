@@ -20,5 +20,6 @@ public class DataGen {
         gen.addProvider(new GenLanguageProvider(gen, "en_us"));
         gen.addProvider(new GenRecipeProvider(gen));
         gen.addProvider(new GenLootTableProvider(gen));
+        gen.addProvider(new GenTagProvider(gen, CompressedBlocks.MOD_ID, existingFileHelper));
     }
 }

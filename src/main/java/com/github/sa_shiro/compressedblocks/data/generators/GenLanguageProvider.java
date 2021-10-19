@@ -39,5 +39,18 @@ public class GenLanguageProvider extends LanguageProvider {
             add("block.compressedblocks.c8_" + factory.getRegistryName(), "Mega Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
             add("block.compressedblocks.c9_" + factory.getRegistryName(), "Giga Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
         }
+
+        for (String itemName : Lists.ITEMS) {
+            add("item.compressedblocks.crated_" + itemName, "Crate of " + stringFormat(itemName.replace("_", " ")));
+            add("item.compressedblocks.double_crated_" + itemName, "Double Crate of " + stringFormat(itemName.replace("_", " ")));
+            add("item.compressedblocks.triple_crated_" + itemName, "Triple Crate of " + stringFormat(itemName.replace("_", " ")));
+            add("item.compressedblocks.quadruple_crated_" + itemName, "Quadruple Crate of " + stringFormat(itemName.replace("_", " ")));
+            add("item.compressedblocks.quintuple_crated_" + itemName, "Quintuple Crate of " + stringFormat(itemName.replace("_", " ")));
+            add("item.compressedblocks.sextuple_crated_" + itemName, "Sextuple Crate of " + stringFormat(itemName.replace("_", " ")));
+            add("item.compressedblocks.septuple_crated_" + itemName, "Septuple Crate of " + stringFormat(itemName.replace("_", " ")));
+            add("item.compressedblocks.octuple_crated_" + itemName, "Octuple Crate of " + stringFormat(itemName.replace("_", " ")));
+            add("item.compressedblocks.mega_crated_" + itemName, "Mega Crate of " + stringFormat(itemName.replace("_", " ")));
+            add("item.compressedblocks.giga_crated_" + itemName, "Giga Crate of " + stringFormat(itemName.replace("_", " ")));
+        }
     }
 }

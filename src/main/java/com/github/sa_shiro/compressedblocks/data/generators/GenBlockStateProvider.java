@@ -26,6 +26,16 @@ public class GenBlockStateProvider extends BlockStateProvider {
         ModelFile.UncheckedModelFile cubeColumnHorizontal = new ModelFile.UncheckedModelFile("block/cube_column_horizontal");
         assert false;
 
+        simpleBlock(
+                ModRegistryObjects.LOGO_BLOCK.getBlock(), models().cubeAll(
+                                "logo_block", new ResourceLocation("compressedblocks", "block/logo_block")
+                        )
+                        .parent(blockBlock)
+                        .element()
+                        .cube("#all")
+                        .end()
+        );
+
         for (BlockFactory factory : Lists.blockList) {
             for (RegistryObject<Block> block : ModRegistryObjects.BLOCK_REGISTRY) {
                 String str = "";
@@ -35,22 +45,13 @@ public class GenBlockStateProvider extends BlockStateProvider {
                     }
                 }
 
-                simpleBlock(
-                        ModRegistryObjects.LOGO_BLOCK.getBlock(), models().cubeAll(
-                                "logo_block", new ResourceLocation("compressedblocks", "block/logo_block")
-                        )
-                                .parent(blockBlock)
-                                .element()
-                                .cube("logo_block")
-                                .end()
-                );
                 if (factory.getRegistryName().equals(str)) {
                     if (!factory.getHasCustomTexture() && !factory.getHasRotation()) {
                         simpleBlock(
                                 block.get(), models().cubeAll(
-                                        block.get().getRegistryName().toString(),
-                                        getActualResourceLocation(factory.getRegistryName())
-                                )
+                                                block.get().getRegistryName().toString(),
+                                                getActualResourceLocation(factory.getRegistryName())
+                                        )
                                         .texture("particle", getActualResourceLocation(factory.getRegistryName()))
                                         .texture("overlay", getCompressionOverlay(block.get().getRegistryName().toString()))
                                         .parent(blockBlock)

@@ -102,7 +102,8 @@
     "5.0.15": "Added Magma Block, Logo Block, changed config language"
   },
   "1.17.1": {
-    "6.0.0": "Update to 1.17.1!"
+    "6.0.0": "Update to 1.17.1!",
+    "6.0.1": "Update to latest forge.\n * removed harvest level -> added minable tag\n  * added missing translations"
   },
   "promos": {
     "1.14.1-latest": "5.0.4",
@@ -127,7 +128,7 @@
     "1.16.4-recommended": "5.0.15",
     "1.16.5-latest": "5.0.15",
     "1.16.5-recommended": "5.0.15",
-    "1.17.1-latest": "6.0.0",
-    "1.17.1-recommended": "6.0.0"
+    "1.17.1-latest": "6.0.1",
+    "1.17.1-recommended": "6.0.1"
   }
 }

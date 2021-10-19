@@ -54,9 +54,8 @@ public class ModRegistryEvent {
                                     factory.getMaterialColor(),
                                     factory.getSoundType(),
                                     Lists.HARDNESS.get(level),
-                                    Lists.RESISTANCE.get(level),
-                                    Lists.HARVEST_LEVEL.get(level)),
-                            factory.getRegistryName(), level);
+                                    Lists.RESISTANCE.get(level)
+                            ), factory.getRegistryName(), level);
                 }
                 // Registering rotational log blocks
                 else if (factory.getIsLogBlock()) {
@@ -68,9 +67,8 @@ public class ModRegistryEvent {
                                     factory.getMaterialColorEnd(),
                                     factory.getSoundType(),
                                     Lists.HARDNESS.get(level),
-                                    Lists.RESISTANCE.get(level),
-                                    Lists.HARVEST_LEVEL.get(level)),
-                            factory.getRegistryName(), level);
+                                    Lists.RESISTANCE.get(level)
+                            ), factory.getRegistryName(), level);
 
                 }
                 // Registering rotational blocks (excluding log blocks)
@@ -82,9 +80,8 @@ public class ModRegistryEvent {
                                     factory.getMaterialColor(),
                                     factory.getSoundType(),
                                     Lists.HARDNESS.get(level),
-                                    Lists.RESISTANCE.get(level),
-                                    Lists.HARVEST_LEVEL.get(level)),
-                            factory.getRegistryName(), level);
+                                    Lists.RESISTANCE.get(level)
+                            ), factory.getRegistryName(), level);
 
                 }
             }
