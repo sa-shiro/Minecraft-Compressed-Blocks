@@ -37,17 +37,16 @@ public class CompressedBlock extends Block implements ICompressedBlock {
      * @param soundType     Minecraft {@link SoundType}
      * @param hardness      Block hardness               https://minecraftmodcustomstuff.fandom.com/wiki/Hardness
      * @param resistance    Block resistance             https://minecraftmodcustomstuff.fandom.com/wiki/Resistance
-     * @param harvestLevel  Block harvest level          0: Wood, 1: Stone/Gold, 2: Iron, 3: Diamond
      */
     @ParametersAreNonnullByDefault
-    public static ICompressedBlock createBlock(BlockType type, int compression, Material material, @Nullable MaterialColor materialColor, SoundType soundType, float hardness, float resistance, int harvestLevel) {
+    public static ICompressedBlock createBlock(BlockType type, int compression, Material material, @Nullable MaterialColor materialColor, SoundType soundType, float hardness, float resistance) {
         if (materialColor == null) materialColor = material.getColor();
-        Properties p0 = Properties.of(material, materialColor).sound(soundType).strength(hardness, resistance).harvestLevel(harvestLevel);
-        Properties p1 = Properties.of(material, materialColor).sound(soundType).strength(5.0F).harvestLevel(0);
-        Properties p2 = Properties.of(material, materialColor).sound(soundType).strength(0.5F).harvestLevel(0).noOcclusion().friction(0.85F);
-        Properties p3 = Properties.of(material, materialColor).sound(soundType).strength(5.0F).harvestLevel(0).friction(0.85F);
-        Properties p4 = Properties.of(material, materialColor).sound(soundType).strength(0.3F).harvestLevel(0).noOcclusion().noOcclusion().isSuffocating(CompressedBlock::nil).isViewBlocking(CompressedBlock::nil).isRedstoneConductor(CompressedBlock::nil).isValidSpawn(CompressedBlock::nil);
-        Properties p5 = Properties.of(material, materialColor).sound(soundType).strength(hardness, resistance).harvestLevel(harvestLevel).lightLevel((s) -> 4);
+        Properties p0 = Properties.of(material, materialColor).sound(soundType).strength(hardness, resistance).requiresCorrectToolForDrops();
+        Properties p1 = Properties.of(material, materialColor).sound(soundType).strength(5.0F).requiresCorrectToolForDrops();
+        Properties p2 = Properties.of(material, materialColor).sound(soundType).strength(0.5F).noOcclusion().friction(0.85F).requiresCorrectToolForDrops();
+        Properties p3 = Properties.of(material, materialColor).sound(soundType).strength(5.0F).friction(0.85F).requiresCorrectToolForDrops();
+        Properties p4 = Properties.of(material, materialColor).sound(soundType).strength(0.3F).noOcclusion().noOcclusion().isSuffocating(CompressedBlock::nil).isViewBlocking(CompressedBlock::nil).isRedstoneConductor(CompressedBlock::nil).isValidSpawn(CompressedBlock::nil);
+        Properties p5 = Properties.of(material, materialColor).sound(soundType).strength(hardness, resistance).lightLevel((s) -> 4).requiresCorrectToolForDrops();
         return switch (type) {
             case DEFAULT -> new CompressedBlock(p0, compression);
             case SAND -> new CompressedSandBlock(14406560, p0, compression);
@@ -64,14 +63,14 @@ public class CompressedBlock extends Block implements ICompressedBlock {
     }
 
     @ParametersAreNonnullByDefault
-    public static ICompressedBlock createRotationalBlock(int compression, Material material, MaterialColor materialColorTop, MaterialColor materialColorEnd, SoundType soundType, float hardness, float resistance, int harvestLevel) {
-        Properties p = Properties.of(material, (s) -> s.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? materialColorTop : materialColorEnd).sound(soundType).strength(hardness, resistance).harvestLevel(harvestLevel);
+    public static ICompressedBlock createRotationalBlock(int compression, Material material, MaterialColor materialColorTop, MaterialColor materialColorEnd, SoundType soundType, float hardness, float resistance) {
+        Properties p = Properties.of(material, (s) -> s.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? materialColorTop : materialColorEnd).sound(soundType).strength(hardness, resistance);
         return new CompressedRotationalBlock(p, compression);
     }
 
     @ParametersAreNonnullByDefault
-    public static ICompressedBlock createRotationalBlock(int compression, Material material, MaterialColor materialColor, SoundType soundType, float hardness, float resistance, int harvestLevel) {
-        Properties p = Properties.of(material, (state) -> materialColor).sound(soundType).strength(hardness, resistance).harvestLevel(harvestLevel);
+    public static ICompressedBlock createRotationalBlock(int compression, Material material, MaterialColor materialColor, SoundType soundType, float hardness, float resistance) {
+        Properties p = Properties.of(material, (state) -> materialColor).sound(soundType).strength(hardness, resistance);
         return new CompressedRotationalBlock(p, compression);
     }
 
