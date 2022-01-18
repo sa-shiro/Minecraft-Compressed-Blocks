@@ -7,7 +7,7 @@ This mod currently features <b>128</b> compressed minecraft blocks as well as <b
 
 [curseforge link](https://www.curseforge.com/minecraft/mc-mods/cb-compressed-blocks)
 
-## Full List of compressed blocks
+## Full List of compressed blocks (applies only to versions prior to 1.x.x.x)
 
 <details>
   <summary>List of all  available compressed blocks (in registry name format) (<i>click to expand</i>)<br><br></summary>

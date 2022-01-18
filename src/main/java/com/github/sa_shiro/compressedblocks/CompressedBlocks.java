@@ -1,7 +1,6 @@
 package com.github.sa_shiro.compressedblocks;
 
 import com.github.sa_shiro.compressedblocks.event.ModRegistryEvent;
-import com.github.sa_shiro.compressedblocks.event.ModRegistryObjects;
 import com.github.sa_shiro.compressedblocks.util.Lists;
 import net.minecraftforge.fml.common.Mod;
 
@@ -12,7 +11,7 @@ public class CompressedBlocks {
 
     public CompressedBlocks() {
         Lists.populate();
-        ModRegistryObjects.populate();
+        ModRegistryEvent.populate();
         ModRegistryEvent.register();
     }
 }
