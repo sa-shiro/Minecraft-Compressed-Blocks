@@ -27,6 +27,8 @@ public class ModRegistryEvent {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CompressedBlocks.MOD_ID);
     public static final DeferredRegister<Block> BLOCKS2 = DeferredRegister.create(ForgeRegistries.BLOCKS, CompressedBlocks.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CompressedBlocks.MOD_ID);
+    private static final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    private static final Item.Properties PROPERTIES = new Item.Properties().tab(ItemGroups.compressedBlockGroup);
     public static final RegistryObject<Block> LOGO_BLOCK = BLOCKS.register("logo_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
     public static final RegistryObject<Item> LOGO_BLOCK_ITEM = ITEMS.register("logo_block", () -> new BlockItem(LOGO_BLOCK.get(), PROPERTIES));
     public static final RegistryObject<Block> STONE_0 = BLOCKS.register("c0_stone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(2.0F, 10.0F).requiresCorrectToolForDrops()));
@@ -418,8 +420,6 @@ public class ModRegistryEvent {
     public static final RegistryObject<Block> LAPIS_ORE_3 = BLOCKS.register("c3_lapis_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(12.5F, 150.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Item> LAPIS_ORE_3_ITEM = ITEMS.register("c3_lapis_ore", () -> new BlockItem(LAPIS_ORE_3.get(), PROPERTIES));
     public static final RegistryObject<Block> LAPIS_ORE_4 = BLOCKS.register("c4_lapis_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(15.0F, 300.0F).requiresCorrectToolForDrops()));
-    private static final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-    private static final Item.Properties PROPERTIES = new Item.Properties().tab(ItemGroups.compressedBlockGroup);
     public static final RegistryObject<Item> LAPIS_ORE_4_ITEM = ITEMS.register("c4_lapis_ore", () -> new BlockItem(LAPIS_ORE_4.get(), PROPERTIES));
     public static final RegistryObject<Block> LAPIS_ORE_5 = BLOCKS.register("c5_lapis_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(18.5F, 500.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Item> LAPIS_ORE_5_ITEM = ITEMS.register("c5_lapis_ore", () -> new BlockItem(LAPIS_ORE_5.get(), PROPERTIES));
