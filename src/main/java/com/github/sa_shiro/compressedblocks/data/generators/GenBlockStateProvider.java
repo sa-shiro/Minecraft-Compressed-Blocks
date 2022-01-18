@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fmllegacy.RegistryObject;
+import net.minecraftforge.registries.RegistryObject;
 
 public class GenBlockStateProvider extends BlockStateProvider {
     public GenBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
