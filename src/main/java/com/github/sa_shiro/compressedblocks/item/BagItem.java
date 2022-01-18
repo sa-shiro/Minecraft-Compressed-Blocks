@@ -10,6 +10,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 public class BagItem extends Item {
@@ -19,8 +20,8 @@ public class BagItem extends Item {
     private final Compression comp = new Compression();
 
     /**
-     * @param level       A int between 0 and 9 representing how much Items the BagItem contains<br>
-     * @param toolTipText The text that will be added after the representation of how much Items the BagItem contains
+     * @param level       An int between 0 and 9 representing how many Items the BagItem contains<br>
+     * @param toolTipText The text that will be added after the representation of how many Items the BagItem contains
      */
     public BagItem(int level, String toolTipText) {
         super(new Properties()
@@ -34,6 +35,7 @@ public class BagItem extends Item {
 
 
     @Override
+    @ParametersAreNonnullByDefault
     public void appendHoverText(ItemStack s, @Nullable Level l, List<Component> c, TooltipFlag t) {
         super.appendHoverText(s, l, c, t);
         c.add(new TextComponent(itemCount + " " + toolTipText).setStyle(comp.getStyle()));

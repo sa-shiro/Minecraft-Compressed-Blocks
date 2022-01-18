@@ -1,12 +1,14 @@
 package com.github.sa_shiro.compressedblocks.data.generators;
 
 import com.github.sa_shiro.compressedblocks.CompressedBlocks;
-import com.github.sa_shiro.compressedblocks.block.BlockFactory;
+import com.github.sa_shiro.compressedblocks.event.ModRegistryEvent;
 import com.github.sa_shiro.compressedblocks.util.Lists;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fmllegacy.RegistryObject;
 
 public class GenItemModelProvider extends ItemModelProvider {
     public GenItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
@@ -15,10 +17,11 @@ public class GenItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        for (BlockFactory factory : Lists.blockList) {
-            for (int i = 0; i <= 9; i++) {
-                withExistingParent("c" + i + "_" + factory.getRegistryName(), modLoc("block/" + "c" + i + "_" + factory.getRegistryName()));
-            }
+        for (RegistryObject<Block> block : ModRegistryEvent.BLOCKS.getEntries()) {
+            assert false;
+            String name = block.get().getRegistryName().toString().replace("compressedblocks:", "");
+            withExistingParent(name, modLoc("block/" + name));
+
         }
 
         withExistingParent("logo_block", modLoc("block/logo_block"));

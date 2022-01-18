@@ -1,10 +1,12 @@
 package com.github.sa_shiro.compressedblocks.data.generators;
 
 import com.github.sa_shiro.compressedblocks.CompressedBlocks;
-import com.github.sa_shiro.compressedblocks.block.BlockFactory;
+import com.github.sa_shiro.compressedblocks.event.ModRegistryEvent;
 import com.github.sa_shiro.compressedblocks.util.Lists;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.fmllegacy.RegistryObject;
 
 public class GenLanguageProvider extends LanguageProvider {
     public GenLanguageProvider(DataGenerator gen, String locale) {
@@ -22,22 +24,39 @@ public class GenLanguageProvider extends LanguageProvider {
         return stringFormat.toString().trim();
     }
 
+    private String compressionLevel(String registryName) {
+        String str = registryName.substring(0, 2);
+        return switch (str) {
+            case "c0" -> "Compressed ";
+            case "c1" -> "Double Compressed ";
+            case "c2" -> "Triple Compressed ";
+            case "c3" -> "Quadruple Compressed ";
+            case "c4" -> "Quintuple Compressed ";
+            case "c5" -> "Sextuple Compressed ";
+            case "c6" -> "Septuple Compressed ";
+            case "c7" -> "Octuple Compressed ";
+            case "c8" -> "Mega Compressed ";
+            case "c9" -> "Giga Compressed ";
+            default -> "";
+        };
+    }
+
+
     @Override
     protected void addTranslations() {
         add("itemGroup.compressed_blocks", "Compressed Blocks");
         add("block.compressedblocks.logo_block", "Logo Block (This Block has no use and is only used as the Creative Tab Logo)");
 
-        for (BlockFactory factory : Lists.blockList) {
-            add("block.compressedblocks.c0_" + factory.getRegistryName(), "Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
-            add("block.compressedblocks.c1_" + factory.getRegistryName(), "Double Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
-            add("block.compressedblocks.c2_" + factory.getRegistryName(), "Triple Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
-            add("block.compressedblocks.c3_" + factory.getRegistryName(), "Quadruple Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
-            add("block.compressedblocks.c4_" + factory.getRegistryName(), "Quintuple Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
-            add("block.compressedblocks.c5_" + factory.getRegistryName(), "Sextuple Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
-            add("block.compressedblocks.c6_" + factory.getRegistryName(), "Septuple Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
-            add("block.compressedblocks.c7_" + factory.getRegistryName(), "Octuple Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
-            add("block.compressedblocks.c8_" + factory.getRegistryName(), "Mega Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
-            add("block.compressedblocks.c9_" + factory.getRegistryName(), "Giga Compressed " + stringFormat(factory.getRegistryName().replace("_", " ")));
+        for (RegistryObject<Block> block : ModRegistryEvent.BLOCKS.getEntries()) {
+            assert false;
+            String name = block.get().getRegistryName().toString().replace("compressedblocks:", "");
+            String name2 = "";
+            for (int i = 0; i < 10; i++) {
+                if (name.contains("c" + i))
+                    name2 = name.replace("c" + i + "_", "");
+            }
+            if (!name.contains("logo_block"))
+                add("block.compressedblocks." + name, compressionLevel(name) + stringFormat(name2.replace("_", " ")));
         }
 
         for (String itemName : Lists.ITEMS) {
