@@ -1,12 +1,14 @@
 # CB: Compressed Blocks 1.16
- 
-A Block Compression mod for Minecraft 1.14.4, 1.15.2 and 1.16
+
+A Block Compression mod for Minecraft 1.14.4 up to 1.18
 
 Compress your Blocks to make more free space (up to **3.486.784.101** Blocks in just ***one single Block***)<br>
-This mod currently features <b>127</b> compressed minecraft blocks as well as <b>36</b> custom items and tools.
 
 [curseforge link](https://www.curseforge.com/minecraft/mc-mods/cb-compressed-blocks)
 
+The below applies only to versions prior to 1.x.x.x
+
+This mod currently features <b>128</b> compressed minecraft blocks as well as <b>24</b>items.
 ## Full List of compressed blocks
 
 <details>

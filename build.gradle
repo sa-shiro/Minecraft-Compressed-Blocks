@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
@@ -16,16 +16,6 @@ archivesBaseName = "[${minecraftVersion}]${modBaseName}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
-
-apply plugin: 'idea'
-idea {
-    module {
-        inheritOutputDirs = false
-        outputDir = file("${outMain}/${minecraftVersion}/${project.name}")
-        testOutputDir = file("${outTest}/${minecraftVersion}/${project.name}")
-    }
-}
-buildDir = "${outBuild}/${minecraftVersion}/${project.name}"
 
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
@@ -46,7 +36,7 @@ minecraft {
 
     runs {
         client {
-            workingDirectory "${mcDir}/${minecraftVersion}"
+            workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
             // The markers can be changed as needed.
@@ -68,7 +58,7 @@ minecraft {
         }
 
         server {
-            workingDirectory "${mcDir}/${minecraftVersion}/server"
+            workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
@@ -79,12 +69,12 @@ minecraft {
             }
         }
         data {
-            workingDirectory "${mcDir}/${minecraftVersion}"
+            workingDirectory project.file('run')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'compressedblocks', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
                 "${modBaseName}" {
@@ -127,11 +117,9 @@ jar {
     manifest {
         attributes([
                 "Creatd-By"               : "${creator}",
-
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : getArchiveVersion(),
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd' - 'HH:mm:ss"),
-
                 "Specification-Title"     : "Minecraft ${minecraftVersion} Forge-Mod for Java ${javaVersion}",
                 "Specification-Version"   : "1" // We are version 1 of ourselves
         ])
