@@ -9,26 +9,18 @@ buildscript {
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'idea'
-idea {
-    module {
-        inheritOutputDirs = false
-        outputDir = file("${outMain}/${minecraftVersion}/${project.name}")
-        testOutputDir = file("${outTest}/${minecraftVersion}/${project.name}")
-    }
-}
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = "${modVersion}"
 group = "${modGroup}"
 archivesBaseName = "[${minecraftVersion}]${modBaseName}"
 
-// Mojang ships Java 16 to end users in 1.17+ instead of Java 8 in 1.16 or lower, so your mod should target Java 16.
+// Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 
-buildDir = "${outBuild}/${minecraftVersion}/${project.name}"
+println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 
 minecraft {
     // The mappings can be changed at any time and must be in the following format.
@@ -50,7 +42,7 @@ minecraft {
     // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
-            workingDirectory "${mcDir}/${minecraftVersion}"
+            workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
             // The markers can be added/remove as needed separated by commas.
@@ -72,7 +64,7 @@ minecraft {
         }
 
         server {
-            workingDirectory "${mcDir}/${minecraftVersion}/server"
+            workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
@@ -83,7 +75,7 @@ minecraft {
             }
         }
         data {
-            workingDirectory "${mcDir}/${minecraftVersion}"
+            workingDirectory project.file('run')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
 
@@ -135,11 +127,9 @@ jar {
     manifest {
         attributes([
                 "Creatd-By"               : "${creator}",
-
                 "Implementation-Title"    : project.name,
-                "Implementation-Version"  : getArchiveVersion(),
+                "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd' - 'HH:mm:ss"),
-
                 "Specification-Title"     : "Minecraft ${minecraftVersion} Forge-Mod for Java ${javaVersion}",
                 "Specification-Version"   : "1" // We are version 1 of ourselves
         ])
