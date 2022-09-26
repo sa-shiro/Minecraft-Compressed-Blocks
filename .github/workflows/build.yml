@@ -54,7 +54,7 @@ jobs:
           name: compressed_blocks-1.0.2.20220926-1.18
           version: 1.0.2.20220926
           version-type: release
-          #changelog-file: changelog.log
+          changelog-file: changelog.md
 
           loaders: |
             forge
