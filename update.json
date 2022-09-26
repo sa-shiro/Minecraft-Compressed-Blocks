@@ -108,7 +108,11 @@
     "1.0.0.20220118": "Rework, Backup your world before entering!! many Blocks have been removed. For mor detail see Changelog on CF/GH"
   },
   "1.18.1": {
-    "1.0.0.20220118": "Updated to 1.18.1, Updated the long forgotten mods.toml. Changelog: see 1.17.1"
+    "1.0.0.20220118": "Updated to 1.18.1, Updated the long forgotten mods.toml. Changelog: see 1.17.1",
+    "1.0.2.20220926": "[1.18.2] Added (almost) all missing items. Please tell me if there are still some (crate) items missing! ; Update to 1.19 will follow soon!"
+  },
+  "1.18.2": {
+    "1.0.2.20220926": "[1.18.2] Added (almost) all missing items. Please tell me if there are still some (crate) items missing! ; Update to 1.19 will follow soon!"
   },
   "promos": {
     "1.14.1-latest": "5.0.4",
@@ -135,7 +139,9 @@
     "1.16.5-recommended": "1.0.0.20220123",
     "1.17.1-latest": "1.0.0.20220118",
     "1.17.1-recommended": "1.0.0.20220118",
-    "1.18.1-latest": "1.0.0.20220118",
-    "1.18.1-recommended": "1.0.0.20220118"
+    "1.18.1-latest": "1.0.2.20220926",
+    "1.18.1-recommended": "1.0.2.20220926",
+    "1.18.2-latest": "1.0.2.20220926",
+    "1.18.2-recommended": "1.0.2.20220926"
   }
 }

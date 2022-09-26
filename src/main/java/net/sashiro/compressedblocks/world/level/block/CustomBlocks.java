@@ -15,7 +15,7 @@ import static net.sashiro.compressedblocks.world.level.block.CustomBlock.*;
 public class CustomBlocks {
     public static final float[] HARDNESS = {5.0F, 8.5F, 10.0F, 15.5F, 25.0F, 35.5F, 50.5F, 65.5F, 75.0F, 90.0F};
     public static final float[] RESISTANCE = {35.5F, 75.0F, 150.0F, 300.0F, 600.0F, 800.0F, 1250.0F, 2000.0F, 5000.0F, 7500.0F};
-    
+
     public static final RegistryObject<Block> LOGO_BLOCK = BLOCKS.register("logo_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
     public static final RegistryObject<Block> STONE_0 = BLOCKS.register("c0_stone", () -> new CustomDefaultBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[0], RESISTANCE[0]).requiresCorrectToolForDrops(), 0));
     public static final RegistryObject<Block> STONE_1 = BLOCKS.register("c1_stone", () -> new CustomDefaultBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[1], RESISTANCE[1]).requiresCorrectToolForDrops(), 1));
@@ -218,9 +218,9 @@ public class CustomBlocks {
     public static final RegistryObject<Block> LAPIS_ORE_8 = BLOCKS.register("c8_lapis_ore", () -> new CustomOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[8], RESISTANCE[8]).requiresCorrectToolForDrops(), 8));
     public static final RegistryObject<Block> LAPIS_ORE_9 = BLOCKS.register("c9_lapis_ore", () -> new CustomOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[9], RESISTANCE[9]).requiresCorrectToolForDrops(), 9));
     public static final RegistryObject<Block> REDSTONE_ORE_0 = BLOCKS.register("c0_redstone_ore", () -> new CustomOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[0], RESISTANCE[0]).requiresCorrectToolForDrops(), 0));
-    public static final RegistryObject<Block> REDSTONE_ORE_1 = BLOCKS.register("c1_redstone_ore", () -> new CustomOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[1], RESISTANCE[1]).requiresCorrectToolForDrops() ,1));
+    public static final RegistryObject<Block> REDSTONE_ORE_1 = BLOCKS.register("c1_redstone_ore", () -> new CustomOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[1], RESISTANCE[1]).requiresCorrectToolForDrops(), 1));
     public static final RegistryObject<Block> REDSTONE_ORE_2 = BLOCKS.register("c2_redstone_ore", () -> new CustomOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[2], RESISTANCE[2]).requiresCorrectToolForDrops(), 2));
-    public static final RegistryObject<Block> REDSTONE_ORE_3 = BLOCKS.register("c3_redstone_ore", () -> new CustomOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[3], RESISTANCE[3]).requiresCorrectToolForDrops(),3));
+    public static final RegistryObject<Block> REDSTONE_ORE_3 = BLOCKS.register("c3_redstone_ore", () -> new CustomOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[3], RESISTANCE[3]).requiresCorrectToolForDrops(), 3));
     public static final RegistryObject<Block> REDSTONE_ORE_4 = BLOCKS.register("c4_redstone_ore", () -> new CustomOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[4], RESISTANCE[4]).requiresCorrectToolForDrops(), 4));
     public static final RegistryObject<Block> REDSTONE_ORE_5 = BLOCKS.register("c5_redstone_ore", () -> new CustomOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[5], RESISTANCE[5]).requiresCorrectToolForDrops(), 5));
     public static final RegistryObject<Block> REDSTONE_ORE_6 = BLOCKS.register("c6_redstone_ore", () -> new CustomOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(HARDNESS[6], RESISTANCE[6]).requiresCorrectToolForDrops(), 6));
@@ -286,7 +286,7 @@ public class CustomBlocks {
     public static final RegistryObject<Block> SLIME_BLOCK_6 = BLOCKS.register("c6_slime_block", () -> new CustomSlimeBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.GRASS).strength(HARDNESS[5], RESISTANCE[3]).noOcclusion(), 6));
     public static final RegistryObject<Block> SLIME_BLOCK_7 = BLOCKS.register("c7_slime_block", () -> new CustomSlimeBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.GRASS).strength(HARDNESS[5], RESISTANCE[3]).noOcclusion(), 7));
     public static final RegistryObject<Block> SLIME_BLOCK_8 = BLOCKS.register("c8_slime_block", () -> new CustomSlimeBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.GRASS).strength(HARDNESS[6], RESISTANCE[4]).noOcclusion(), 8));
-    public static final RegistryObject<Block> SLIME_BLOCK_9 = BLOCKS.register("c9_slime_block", () -> new CustomSlimeBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.GRASS).strength(HARDNESS[6], RESISTANCE[4]).noOcclusion(),9));
+    public static final RegistryObject<Block> SLIME_BLOCK_9 = BLOCKS.register("c9_slime_block", () -> new CustomSlimeBlock(BlockBehaviour.Properties.of(Material.CLAY, MaterialColor.GRASS).strength(HARDNESS[6], RESISTANCE[4]).noOcclusion(), 9));
     public static final RegistryObject<Block> BRICKS_0 = BLOCKS.register("c0_bricks", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_RED).strength(HARDNESS[0], RESISTANCE[0]).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BRICKS_1 = BLOCKS.register("c1_bricks", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_RED).strength(HARDNESS[1], RESISTANCE[1]).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BRICKS_2 = BLOCKS.register("c2_bricks", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_RED).strength(HARDNESS[2], RESISTANCE[2]).requiresCorrectToolForDrops()));

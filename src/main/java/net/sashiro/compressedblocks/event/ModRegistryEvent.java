@@ -13,6 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.CompressedBlocks;
+import net.sashiro.compressedblocks.util.StringUtils;
 import net.sashiro.compressedblocks.world.level.item.BagItem;
 import net.sashiro.compressedblocks.world.level.item.ItemGroups;
 
@@ -45,27 +46,27 @@ public class ModRegistryEvent {
         assert false;
         RegistryObject<Item> item = itemArray.get(0);
         String itemName = item.get().getRegistryName().toString().replace("minecraft:", "");
-        
-        itemArray.add(1, ModRegistryEvent.ITEMS.register("crated_" + itemName, () -> new BagItem(0, stringFormat(itemName))));
-        itemArray.add(2, ModRegistryEvent.ITEMS.register("double_crated_" + itemName, () -> new BagItem(1, stringFormat(itemName))));
-        itemArray.add(3, ModRegistryEvent.ITEMS.register("triple_crated_" + itemName, () -> new BagItem(2, stringFormat(itemName))));
-        itemArray.add(4, ModRegistryEvent.ITEMS.register("quadruple_crated_" + itemName, () -> new BagItem(3, stringFormat(itemName))));
-        itemArray.add(5, ModRegistryEvent.ITEMS.register("quintuple_crated_" + itemName, () -> new BagItem(4, stringFormat(itemName))));
-        itemArray.add(6, ModRegistryEvent.ITEMS.register("sextuple_crated_" + itemName, () -> new BagItem(5, stringFormat(itemName))));
-        itemArray.add(7, ModRegistryEvent.ITEMS.register("septuple_crated_" + itemName, () -> new BagItem(6, stringFormat(itemName))));
-        itemArray.add(8, ModRegistryEvent.ITEMS.register("octuple_crated_" + itemName, () -> new BagItem(7, stringFormat(itemName))));
-        itemArray.add(9, ModRegistryEvent.ITEMS.register("mega_crated_" + itemName, () -> new BagItem(8, stringFormat(itemName))));
-        itemArray.add(10, ModRegistryEvent.ITEMS.register("giga_crated_" + itemName, () -> new BagItem(9, stringFormat(itemName))));
+
+        itemArray.add(1, ModRegistryEvent.ITEMS.register("crated_" + itemName, () -> new BagItem(0, StringUtils.stringFormat(itemName))));
+        itemArray.add(2, ModRegistryEvent.ITEMS.register("double_crated_" + itemName, () -> new BagItem(1, StringUtils.stringFormat(itemName))));
+        itemArray.add(3, ModRegistryEvent.ITEMS.register("triple_crated_" + itemName, () -> new BagItem(2, StringUtils.stringFormat(itemName))));
+        itemArray.add(4, ModRegistryEvent.ITEMS.register("quadruple_crated_" + itemName, () -> new BagItem(3, StringUtils.stringFormat(itemName))));
+        itemArray.add(5, ModRegistryEvent.ITEMS.register("quintuple_crated_" + itemName, () -> new BagItem(4, StringUtils.stringFormat(itemName))));
+        itemArray.add(6, ModRegistryEvent.ITEMS.register("sextuple_crated_" + itemName, () -> new BagItem(5, StringUtils.stringFormat(itemName))));
+        itemArray.add(7, ModRegistryEvent.ITEMS.register("septuple_crated_" + itemName, () -> new BagItem(6, StringUtils.stringFormat(itemName))));
+        itemArray.add(8, ModRegistryEvent.ITEMS.register("octuple_crated_" + itemName, () -> new BagItem(7, StringUtils.stringFormat(itemName))));
+        itemArray.add(9, ModRegistryEvent.ITEMS.register("mega_crated_" + itemName, () -> new BagItem(8, StringUtils.stringFormat(itemName))));
+        itemArray.add(10, ModRegistryEvent.ITEMS.register("giga_crated_" + itemName, () -> new BagItem(9, StringUtils.stringFormat(itemName))));
     }
 
     private static void registerItems() {
         registerCrateItems(APPLES);
         registerCrateItems(MUSHROOM_STEW);
         registerCrateItems(BREAD);
-        registerCrateItems(RAW_PORKCHOP);
+        registerCrateItems(PORKCHOP); // translation
         registerCrateItems(COOKED_PORKCHOP);
-        registerCrateItems(RAW_COD);
-        registerCrateItems(RAW_SALMON);
+        registerCrateItems(COD); // translation
+        registerCrateItems(SALMON); // translation
         registerCrateItems(TROPICAL_FISH);
         registerCrateItems(PUFFERFISH);
         registerCrateItems(COOKED_COD);
@@ -75,9 +76,9 @@ public class ModRegistryEvent {
         registerCrateItems(MELON_SLICES);
         registerCrateItems(MELON_SEEDS);
         registerCrateItems(DRIED_KELP);
-        registerCrateItems(RAW_BEEF);
+        registerCrateItems(BEEF); // translation
         registerCrateItems(COOKED_BEEF);
-        registerCrateItems(RAW_CHICKEN);
+        registerCrateItems(CHICKEN); // translation
         registerCrateItems(COOKED_CHICKEN);
         registerCrateItems(ROTTEN_FLESH);
         registerCrateItems(CARROTS);
@@ -85,10 +86,10 @@ public class ModRegistryEvent {
         registerCrateItems(BAKED_POTATOES);
         registerCrateItems(POISONOUS_POTATOES);
         registerCrateItems(PUMPKIN_PIES);
-        registerCrateItems(RAW_RABBIT);
+        registerCrateItems(RABBIT); // translation
         registerCrateItems(COOKED_RABBIT);
         registerCrateItems(RABBIT_STEW);
-        registerCrateItems(RAW_MUTTON);
+        registerCrateItems(MUTTON); // translation
         registerCrateItems(COOKED_MUTTON);
         registerCrateItems(BEETROOT);
         registerCrateItems(BEETROOT_SEEDS);
@@ -139,17 +140,5 @@ public class ModRegistryEvent {
         registerCrateItems(WARPED_FUNGUS);
         registerCrateItems(WITHER_ROSES);
         registerCrateItems(NETHER_WARTS);
-    }
-
-    private static String stringFormat(String formatString) {
-        formatString = formatString.replace("_", " ");
-        String[] words = formatString.split("\\s");
-        StringBuilder stringFormat = new StringBuilder();
-        for (String str : words) {
-            String first = str.substring(0, 1);
-            String afterFirst = str.substring(1);
-            stringFormat.append(first.toUpperCase()).append(afterFirst).append(" ");
-        }
-        return stringFormat.toString().trim();
     }
 }
