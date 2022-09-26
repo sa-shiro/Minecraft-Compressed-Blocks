@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quadruple_crated_beetroot_seeds"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:triple_crated_beetroot_seeds",
+    "count": 9
+  }
+}

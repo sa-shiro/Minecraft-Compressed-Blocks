@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_jungle_sapling"
+    }
+  ],
+  "result": {
+    "item": "minecraft:jungle_sapling",
+    "count": 9
+  }
+}

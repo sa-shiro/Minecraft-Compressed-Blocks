@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quintuple_crated_salmon"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:quadruple_crated_salmon",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:giga_crated_beetroot_soup"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:mega_crated_beetroot_soup",
+    "count": 9
+  }
+}

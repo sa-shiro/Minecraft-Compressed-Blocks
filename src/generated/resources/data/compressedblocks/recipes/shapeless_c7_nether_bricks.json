@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c7_nether_bricks"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c6_nether_bricks",
+    "count": 9
+  }
+}

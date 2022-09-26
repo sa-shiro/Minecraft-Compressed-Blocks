@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:beetroot_soup"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:crated_beetroot_soup"
+  }
+}

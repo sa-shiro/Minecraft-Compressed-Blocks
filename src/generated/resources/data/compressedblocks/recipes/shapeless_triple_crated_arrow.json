@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:triple_crated_arrow"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:double_crated_arrow",
+    "count": 9
+  }
+}

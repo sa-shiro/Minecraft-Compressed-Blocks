@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c5_nether_wart_block"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c4_nether_wart_block",
+    "count": 9
+  }
+}

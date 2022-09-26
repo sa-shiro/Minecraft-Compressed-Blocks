@@ -66,8 +66,7 @@ public class GenBlockStateProvider extends BlockStateProvider {
                                 .face(Direction.WEST).texture("#overlay").end()
                                 .end()
                 );
-            }
-            else if (!(block.get() == LOGO_BLOCK.get()) && !block.get().getRegistryName().toString().contains("basalt")) {
+            } else if (!(block.get() == LOGO_BLOCK.get()) && !block.get().getRegistryName().toString().contains("basalt")) {
                 simpleBlock(
                         block.get(), models().cubeAll(
                                         block.get().getRegistryName().toString(),

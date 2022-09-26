@@ -72,10 +72,10 @@ public class GenRecipeProvider extends RecipeProvider {
         makeRecipe(consumer, APPLES);
         makeRecipe(consumer, MUSHROOM_STEW);
         makeRecipe(consumer, BREAD);
-        makeRecipe(consumer, RAW_PORKCHOP);
+        makeRecipe(consumer, PORKCHOP);
         makeRecipe(consumer, COOKED_PORKCHOP);
-        makeRecipe(consumer, RAW_COD);
-        makeRecipe(consumer, RAW_SALMON);
+        makeRecipe(consumer, COD);
+        makeRecipe(consumer, SALMON);
         makeRecipe(consumer, TROPICAL_FISH);
         makeRecipe(consumer, PUFFERFISH);
         makeRecipe(consumer, COOKED_COD);
@@ -85,9 +85,9 @@ public class GenRecipeProvider extends RecipeProvider {
         makeRecipe(consumer, MELON_SLICES);
         makeRecipe(consumer, MELON_SEEDS);
         makeRecipe(consumer, DRIED_KELP);
-        makeRecipe(consumer, RAW_BEEF);
+        makeRecipe(consumer, BEEF);
         makeRecipe(consumer, COOKED_BEEF);
-        makeRecipe(consumer, RAW_CHICKEN);
+        makeRecipe(consumer, CHICKEN);
         makeRecipe(consumer, COOKED_CHICKEN);
         makeRecipe(consumer, ROTTEN_FLESH);
         makeRecipe(consumer, CARROTS);
@@ -95,10 +95,10 @@ public class GenRecipeProvider extends RecipeProvider {
         makeRecipe(consumer, BAKED_POTATOES);
         makeRecipe(consumer, POISONOUS_POTATOES);
         makeRecipe(consumer, PUMPKIN_PIES);
-        makeRecipe(consumer, RAW_RABBIT);
+        makeRecipe(consumer, RABBIT);
         makeRecipe(consumer, COOKED_RABBIT);
         makeRecipe(consumer, RABBIT_STEW);
-        makeRecipe(consumer, RAW_MUTTON);
+        makeRecipe(consumer, MUTTON);
         makeRecipe(consumer, COOKED_MUTTON);
         makeRecipe(consumer, BEETROOT);
         makeRecipe(consumer, BEETROOT_SEEDS);

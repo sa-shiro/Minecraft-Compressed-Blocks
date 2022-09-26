@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:sextuple_crated_ender_eye"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:quintuple_crated_ender_eye",
+    "count": 9
+  }
+}

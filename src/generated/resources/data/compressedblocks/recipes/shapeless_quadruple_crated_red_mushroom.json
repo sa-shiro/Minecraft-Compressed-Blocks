@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quadruple_crated_red_mushroom"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:triple_crated_red_mushroom",
+    "count": 9
+  }
+}

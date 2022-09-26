@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quadruple_crated_bone_meal"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:triple_crated_bone_meal",
+    "count": 9
+  }
+}

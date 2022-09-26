@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_cookie"
+    }
+  ],
+  "result": {
+    "item": "minecraft:cookie",
+    "count": 9
+  }
+}

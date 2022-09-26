@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:double_crated_cocoa_beans"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:crated_cocoa_beans",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c6_crimson_nylium"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c5_crimson_nylium",
+    "count": 9
+  }
+}

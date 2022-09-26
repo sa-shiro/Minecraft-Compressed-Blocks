@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c5_tuff"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c4_tuff",
+    "count": 9
+  }
+}

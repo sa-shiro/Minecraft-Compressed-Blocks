@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quadruple_crated_dried_kelp"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:triple_crated_dried_kelp",
+    "count": 9
+  }
+}

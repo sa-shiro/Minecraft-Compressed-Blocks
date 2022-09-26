@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c3_blackstone"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c2_blackstone",
+    "count": 9
+  }
+}

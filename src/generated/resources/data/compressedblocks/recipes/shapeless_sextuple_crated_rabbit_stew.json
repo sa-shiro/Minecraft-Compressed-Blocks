@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:sextuple_crated_rabbit_stew"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:quintuple_crated_rabbit_stew",
+    "count": 9
+  }
+}
