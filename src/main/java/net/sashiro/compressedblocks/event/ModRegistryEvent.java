@@ -1,13 +1,8 @@
 package net.sashiro.compressedblocks.event;
 
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -32,20 +27,21 @@ public class ModRegistryEvent {
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);
         registerItems();
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> FMLJavaModLoadingContext.get().getModEventBus().addListener(ModRegistryEvent::translucentRender));
+        //DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> FMLJavaModLoadingContext.get().getModEventBus().addListener(ModRegistryEvent::translucentRender));
     }
-
+/*
     private static void translucentRender(final FMLCommonSetupEvent e) {
         final RenderType TRANSLUCENT = RenderType.translucent();
         for (RegistryObject<Block> registryObject : BLOCKS.getEntries()) {
             ItemBlockRenderTypes.setRenderLayer(registryObject.get(), TRANSLUCENT);
         }
-    }
+    }*/
 
     private static void registerCrateItems(ArrayList<RegistryObject<Item>> itemArray) {
         assert false;
         RegistryObject<Item> item = itemArray.get(0);
-        String itemName = item.get().getRegistryName().toString().replace("minecraft:", "");
+        String str = item.get().asItem().getDescriptionId();
+        String itemName = item.get().asItem().getDescriptionId().replace("item.minecraft.", ""). toLowerCase();
 
         itemArray.add(1, ModRegistryEvent.ITEMS.register("crated_" + itemName, () -> new BagItem(0, StringUtils.stringFormat(itemName))));
         itemArray.add(2, ModRegistryEvent.ITEMS.register("double_crated_" + itemName, () -> new BagItem(1, StringUtils.stringFormat(itemName))));
@@ -71,7 +67,7 @@ public class ModRegistryEvent {
         registerCrateItems(PUFFERFISH);
         registerCrateItems(COOKED_COD);
         registerCrateItems(COOKED_SALMON);
-        registerCrateItems(CAKES);
+        //registerCrateItems(CAKES);
         registerCrateItems(COOKIES);
         registerCrateItems(MELON_SLICES);
         registerCrateItems(MELON_SEEDS);
@@ -97,9 +93,9 @@ public class ModRegistryEvent {
         registerCrateItems(SWEET_BERRIES);
         registerCrateItems(GLOW_BERRIES);
         registerCrateItems(EGGS);
-        registerCrateItems(SUGAR_CANES);
+        //registerCrateItems(SUGAR_CANES);
         registerCrateItems(SUGAR);
-        registerCrateItems(PUMPKINS);
+        //registerCrateItems(PUMPKINS);
         registerCrateItems(PUMPKIN_SEEDS);
         registerCrateItems(WHEAT);
         registerCrateItems(WHEAT_SEEDS);
@@ -124,21 +120,23 @@ public class ModRegistryEvent {
         registerCrateItems(SNOWBALLS);
         registerCrateItems(PAPER);
         registerCrateItems(FLINTS);
+        /*
         registerCrateItems(OAK_SAPLINGS);
         registerCrateItems(SPRUCE_SAPLINGS);
         registerCrateItems(BIRCH_SAPLINGS);
         registerCrateItems(JUNGLE_SAPLINGS);
         registerCrateItems(ACACIA_SAPLINGS);
         registerCrateItems(DARK_OAK_SAPLINGS);
+        */
         registerCrateItems(CHORUS_FRUITS);
-        registerCrateItems(SEAGRASS);
-        registerCrateItems(KELP);
-        registerCrateItems(BAMBOO);
-        registerCrateItems(BROWN_MUSHROOMS);
-        registerCrateItems(RED_MUSHROOMS);
-        registerCrateItems(CRIMSON_FUNGUS);
-        registerCrateItems(WARPED_FUNGUS);
-        registerCrateItems(WITHER_ROSES);
+        //registerCrateItems(SEAGRASS);
+        //registerCrateItems(KELP);
+        //registerCrateItems(BAMBOO);
+        //registerCrateItems(BROWN_MUSHROOMS);
+        //registerCrateItems(RED_MUSHROOMS);
+        //registerCrateItems(CRIMSON_FUNGUS);
+        //registerCrateItems(WARPED_FUNGUS);
+        //registerCrateItems(WITHER_ROSES);
         registerCrateItems(NETHER_WARTS);
     }
 }

@@ -30,11 +30,11 @@ public class GenRecipeProvider extends RecipeProvider {
         ArrayList<RegistryObject<Block>> blocks = new ArrayList<>(ModRegistryEvent.BLOCKS.getEntries());
 
         for (int i = 0; i < blocks.size(); i++) {
-            String blockName = blocks.get(i).get().getRegistryName().toString();
+            String blockName = blocks.get(i).get().getDescriptionId();
             if (blockName.contains("c0_")) {
                 String cbBlockName = blockName.replace("compressedblocks:c0_", "");
                 for (Block mcBlock : ForgeRegistries.BLOCKS) {
-                    String mcBlockName = mcBlock.getRegistryName().toString().replace("minecraft:", "");
+                    String mcBlockName = mcBlock.getDescriptionId().replace("minecraft:", "");
                     if (cbBlockName.equals(mcBlockName)) {
                         ShapedRecipeBuilder.shaped(
                                         blocks.get(i).get()) // result
@@ -167,12 +167,12 @@ public class GenRecipeProvider extends RecipeProvider {
                     .pattern("###")
                     .pattern("###")
                     .unlockedBy("has_item", has(ingredient)) // ingredient
-                    .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + result.getRegistryName().toString().replace("compressedblocks:", "").replace("minecraft:", "")));
+                    .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + result.getDescriptionId().replace("compressedblocks:", "").replace("minecraft:", "")));
 
             ShapelessRecipeBuilder.shapeless(ingredient, 9) // result, count
                     .requires(result) // ingredient
                     .unlockedBy("has_item", has(result))
-                    .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + result.getRegistryName().toString().replace("compressedblocks:", "").replace("minecraft:", "")));
+                    .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + result.getDescriptionId().replace("compressedblocks:", "").replace("minecraft:", "")));
         }
     }
 }

@@ -38,7 +38,7 @@ public class GenLanguageProvider extends LanguageProvider {
 
         for (RegistryObject<Block> block : ModRegistryEvent.BLOCKS.getEntries()) {
             assert false;
-            String name = block.get().getRegistryName().toString().replace("compressedblocks:", "");
+            String name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
             String name2 = "";
             for (int i = 0; i < 10; i++) {
                 if (name.contains("c" + i))

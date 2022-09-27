@@ -19,7 +19,7 @@ public class GenItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         for (RegistryObject<Block> block : ModRegistryEvent.BLOCKS.getEntries()) {
             assert false;
-            String name = block.get().getRegistryName().toString().replace("compressedblocks:", "");
+            String name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
             withExistingParent(name, modLoc("block/" + name));
         }
 
