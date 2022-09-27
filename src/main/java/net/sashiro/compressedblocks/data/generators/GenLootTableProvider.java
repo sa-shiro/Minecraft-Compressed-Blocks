@@ -14,6 +14,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.event.ModRegistryEvent;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Map;
@@ -27,16 +28,17 @@ public class GenLootTableProvider extends LootTableProvider {
         super(dataGeneratorIn);
     }
 
+
     @Override
-    protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
+    protected @NotNull List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
         return ImmutableList.of(
                 Pair.of(CompressedLootTable::new, LootContextParamSets.BLOCK)
         );
     }
 
     @Override
-    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationtracker) {
-        map.forEach((id, lootTable) -> LootTables.validate(validationtracker, id, lootTable));
+    protected void validate(Map<ResourceLocation, LootTable> map, @NotNull ValidationContext validationContext) {
+        map.forEach((id, lootTable) -> LootTables.validate(validationContext, id, lootTable));
     }
 
     public static class CompressedLootTable extends BlockLoot {
@@ -48,7 +50,7 @@ public class GenLootTableProvider extends LootTableProvider {
         }
 
         @Override
-        protected Iterable<Block> getKnownBlocks() {
+        protected @NotNull Iterable<Block> getKnownBlocks() {
             return ModRegistryEvent.BLOCKS.getEntries().stream()
                     .map(RegistryObject::get)
                     .collect(Collectors.toList());

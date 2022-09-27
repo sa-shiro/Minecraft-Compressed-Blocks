@@ -5,10 +5,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class CustomBlock {
 
     public static class CustomDefaultBlock extends Block {
@@ -20,7 +22,7 @@ public class CustomBlock {
         }
 
         @Override
-        public void appendHoverText(ItemStack is, @Nullable BlockGetter bg, List<Component> lC, TooltipFlag ttf) {
+        public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
             super.appendHoverText(is, bg, lC, ttf);
             lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
         }
@@ -35,7 +37,7 @@ public class CustomBlock {
         }
 
         @Override
-        public void appendHoverText(ItemStack is, @Nullable BlockGetter bg, List<Component> lC, TooltipFlag ttf) {
+        public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
             super.appendHoverText(is, bg, lC, ttf);
             lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
         }
@@ -50,7 +52,7 @@ public class CustomBlock {
         }
 
         @Override
-        public void appendHoverText(ItemStack is, @Nullable BlockGetter bg, List<Component> lC, TooltipFlag ttf) {
+        public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
             super.appendHoverText(is, bg, lC, ttf);
             lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
         }
@@ -65,7 +67,7 @@ public class CustomBlock {
         }
 
         @Override
-        public void appendHoverText(ItemStack is, @Nullable BlockGetter bg, List<Component> lC, TooltipFlag ttf) {
+        public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
             super.appendHoverText(is, bg, lC, ttf);
             lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
         }
@@ -80,7 +82,7 @@ public class CustomBlock {
         }
 
         @Override
-        public void appendHoverText(ItemStack is, @Nullable BlockGetter bg, List<Component> lC, TooltipFlag ttf) {
+        public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
             super.appendHoverText(is, bg, lC, ttf);
             lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
         }
@@ -95,7 +97,7 @@ public class CustomBlock {
         }
 
         @Override
-        public void appendHoverText(ItemStack is, @Nullable BlockGetter bg, List<Component> lC, TooltipFlag ttf) {
+        public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
             super.appendHoverText(is, bg, lC, ttf);
             lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
         }
@@ -110,7 +112,7 @@ public class CustomBlock {
         }
 
         @Override
-        public void appendHoverText(ItemStack is, @Nullable BlockGetter bg, List<Component> lC, TooltipFlag ttf) {
+        public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
             super.appendHoverText(is, bg, lC, ttf);
             lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
         }
@@ -125,7 +127,7 @@ public class CustomBlock {
         }
 
         @Override
-        public void appendHoverText(ItemStack is, @Nullable BlockGetter bg, List<Component> lC, TooltipFlag ttf) {
+        public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
             super.appendHoverText(is, bg, lC, ttf);
             lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
         }
@@ -141,7 +143,7 @@ public class CustomBlock {
         }
 
         @Override
-        public void appendHoverText(ItemStack is, @Nullable BlockGetter bg, List<Component> lC, TooltipFlag ttf) {
+        public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
             super.appendHoverText(is, bg, lC, ttf);
             lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
         }

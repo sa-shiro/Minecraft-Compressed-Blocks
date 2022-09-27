@@ -25,6 +25,7 @@ public class GenTagProvider extends BlockTagsProvider {
             Block block = registryObject.get();
             String name = block.getDescriptionId();
 
+            //noinspection StatementWithEmptyBody
             if (name.contains("slime")) /* do nothing */
                 ;
             else if (
