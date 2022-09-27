@@ -1,6 +1,7 @@
 package net.sashiro.compressedblocks.event;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -18,7 +19,6 @@ import static net.sashiro.compressedblocks.world.level.item.CustomItems.*;
 
 public class ModRegistryEvent {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CompressedBlocks.MOD_ID);
-    public static final DeferredRegister<Block> BLOCKS2 = DeferredRegister.create(ForgeRegistries.BLOCKS, CompressedBlocks.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CompressedBlocks.MOD_ID);
     public static final Item.Properties PROPERTIES = new Item.Properties().tab(ItemGroups.compressedBlockGroup);
     private static final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -27,21 +27,12 @@ public class ModRegistryEvent {
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);
         registerItems();
-        //DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> FMLJavaModLoadingContext.get().getModEventBus().addListener(ModRegistryEvent::translucentRender));
     }
-/*
-    private static void translucentRender(final FMLCommonSetupEvent e) {
-        final RenderType TRANSLUCENT = RenderType.translucent();
-        for (RegistryObject<Block> registryObject : BLOCKS.getEntries()) {
-            ItemBlockRenderTypes.setRenderLayer(registryObject.get(), TRANSLUCENT);
-        }
-    }*/
 
     private static void registerCrateItems(ArrayList<RegistryObject<Item>> itemArray) {
         assert false;
-        RegistryObject<Item> item = itemArray.get(0);
-        String str = item.get().asItem().getDescriptionId();
-        String itemName = item.get().asItem().getDescriptionId().replace("item.minecraft.", ""). toLowerCase();
+        Item item = itemArray.get(0).get().asItem();
+        String itemName = String.valueOf(StringUtils.stringResourceLocationFixer(item));
 
         itemArray.add(1, ModRegistryEvent.ITEMS.register("crated_" + itemName, () -> new BagItem(0, StringUtils.stringFormat(itemName))));
         itemArray.add(2, ModRegistryEvent.ITEMS.register("double_crated_" + itemName, () -> new BagItem(1, StringUtils.stringFormat(itemName))));
@@ -59,22 +50,22 @@ public class ModRegistryEvent {
         registerCrateItems(APPLES);
         registerCrateItems(MUSHROOM_STEW);
         registerCrateItems(BREAD);
-        registerCrateItems(PORKCHOP); // translation
+        registerCrateItems(PORKCHOP); // fixme: translation
         registerCrateItems(COOKED_PORKCHOP);
-        registerCrateItems(COD); // translation
-        registerCrateItems(SALMON); // translation
+        registerCrateItems(COD); // fixme: translation
+        registerCrateItems(SALMON); // fixme: translation
         registerCrateItems(TROPICAL_FISH);
         registerCrateItems(PUFFERFISH);
         registerCrateItems(COOKED_COD);
         registerCrateItems(COOKED_SALMON);
-        //registerCrateItems(CAKES);
+        registerCrateItems(CAKES);
         registerCrateItems(COOKIES);
         registerCrateItems(MELON_SLICES);
         registerCrateItems(MELON_SEEDS);
         registerCrateItems(DRIED_KELP);
-        registerCrateItems(BEEF); // translation
+        registerCrateItems(BEEF); // fixme: translation
         registerCrateItems(COOKED_BEEF);
-        registerCrateItems(CHICKEN); // translation
+        registerCrateItems(CHICKEN); // fixme: translation
         registerCrateItems(COOKED_CHICKEN);
         registerCrateItems(ROTTEN_FLESH);
         registerCrateItems(CARROTS);
@@ -82,10 +73,10 @@ public class ModRegistryEvent {
         registerCrateItems(BAKED_POTATOES);
         registerCrateItems(POISONOUS_POTATOES);
         registerCrateItems(PUMPKIN_PIES);
-        registerCrateItems(RABBIT); // translation
+        registerCrateItems(RABBIT); // fixme: translation
         registerCrateItems(COOKED_RABBIT);
         registerCrateItems(RABBIT_STEW);
-        registerCrateItems(MUTTON); // translation
+        registerCrateItems(MUTTON); // fixme: translation
         registerCrateItems(COOKED_MUTTON);
         registerCrateItems(BEETROOT);
         registerCrateItems(BEETROOT_SEEDS);
@@ -93,9 +84,9 @@ public class ModRegistryEvent {
         registerCrateItems(SWEET_BERRIES);
         registerCrateItems(GLOW_BERRIES);
         registerCrateItems(EGGS);
-        //registerCrateItems(SUGAR_CANES);
+        registerCrateItems(SUGAR_CANES);
         registerCrateItems(SUGAR);
-        //registerCrateItems(PUMPKINS);
+        registerCrateItems(PUMPKINS);
         registerCrateItems(PUMPKIN_SEEDS);
         registerCrateItems(WHEAT);
         registerCrateItems(WHEAT_SEEDS);
@@ -120,23 +111,21 @@ public class ModRegistryEvent {
         registerCrateItems(SNOWBALLS);
         registerCrateItems(PAPER);
         registerCrateItems(FLINTS);
-        /*
         registerCrateItems(OAK_SAPLINGS);
         registerCrateItems(SPRUCE_SAPLINGS);
         registerCrateItems(BIRCH_SAPLINGS);
         registerCrateItems(JUNGLE_SAPLINGS);
         registerCrateItems(ACACIA_SAPLINGS);
         registerCrateItems(DARK_OAK_SAPLINGS);
-        */
-        registerCrateItems(CHORUS_FRUITS);
-        //registerCrateItems(SEAGRASS);
-        //registerCrateItems(KELP);
-        //registerCrateItems(BAMBOO);
-        //registerCrateItems(BROWN_MUSHROOMS);
-        //registerCrateItems(RED_MUSHROOMS);
-        //registerCrateItems(CRIMSON_FUNGUS);
-        //registerCrateItems(WARPED_FUNGUS);
-        //registerCrateItems(WITHER_ROSES);
+        registerCrateItems(CHORUS_FRUITS); // fixme: translation
+        registerCrateItems(SEAGRASS);
+        registerCrateItems(KELP);
+        registerCrateItems(BAMBOO);
+        registerCrateItems(BROWN_MUSHROOMS);
+        registerCrateItems(RED_MUSHROOMS);
+        registerCrateItems(CRIMSON_FUNGUS);
+        registerCrateItems(WARPED_FUNGUS);
+        registerCrateItems(WITHER_ROSES); // fixme: translation
         registerCrateItems(NETHER_WARTS);
     }
 }

@@ -51,8 +51,8 @@ jobs:
 
           files: build/libs/*.jar
 
-          name: compressed_blocks_1.19--1.1.0.20220926
-          version: 1.1.0.20220926
+          name: Compressed Blocks 1.19 - 1.1.0.20220927
+          version: 1.1.0.20220927
           version-type: alpha
           changelog-file: changelog.md
 
