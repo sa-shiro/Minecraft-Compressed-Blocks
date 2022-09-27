@@ -36,15 +36,16 @@ public class GenBlockStateProvider extends BlockStateProvider {
         );
 
         for (RegistryObject<Block> block : ModRegistryEvent.BLOCKS.getEntries()) {
-            if (block.get().getRegistryName().toString().contains("basalt")) {
+            if (block.get().getDescriptionId().contains("basalt")) {
                 simpleBlock(
                         block.get(), models().cubeColumnHorizontal(
-                                        block.get().getRegistryName().toString(),
+                                        block.get().getDescriptionId().replace("block.compressedblocks.", ""),
                                         new ResourceLocation("block/basalt_side"), new ResourceLocation("block/basalt_top")
                                 )
                                 .texture("particle", new ResourceLocation("block/basalt_side"))
-                                .texture("overlay", getCompressionOverlay(block.get().getRegistryName().toString()))
+                                .texture("overlay", getCompressionOverlay(block.get().getDescriptionId()))
                                 .parent(blockBlock)
+                                .renderType("translucent")
                                 .element()
                                 .from(0, 0, 0)
                                 .to(16, 16, 16)
@@ -66,15 +67,16 @@ public class GenBlockStateProvider extends BlockStateProvider {
                                 .face(Direction.WEST).texture("#overlay").end()
                                 .end()
                 );
-            } else if (!(block.get() == LOGO_BLOCK.get()) && !block.get().getRegistryName().toString().contains("basalt")) {
+            } else if (!(block.get() == LOGO_BLOCK.get()) && !block.get().getDescriptionId().contains("basalt")) {
                 simpleBlock(
                         block.get(), models().cubeAll(
-                                        block.get().getRegistryName().toString(),
-                                        getActualResourceLocation(block.get().getRegistryName())
+                                        block.get().getDescriptionId().replace("block.compressedblocks.", ""),
+                                        getActualResourceLocation(block.get().getDescriptionId())
                                 )
-                                .texture("particle", getActualResourceLocation(block.get().getRegistryName()))
-                                .texture("overlay", getCompressionOverlay(block.get().getRegistryName().toString()))
+                                .texture("particle", getActualResourceLocation(block.get().getDescriptionId()))
+                                .texture("overlay", getCompressionOverlay(block.get().getDescriptionId()))
                                 .parent(blockBlock)
+                                .renderType("translucent")
                                 .element()
                                 .from(0, 0, 0)
                                 .to(16, 16, 16)
@@ -100,8 +102,8 @@ public class GenBlockStateProvider extends BlockStateProvider {
         }
     }
 
-    private ResourceLocation getActualResourceLocation(ResourceLocation resourceLocation) {
-        String blockName = resourceLocation.toString().replace("compressedblocks:", "");
+    private ResourceLocation getActualResourceLocation(String resourceLocation) {
+        String blockName = resourceLocation.replace("block.compressedblocks.", "");
         for (int i = 0; i < 10; i++) {
             if (blockName.contains("c" + i))
                 blockName = blockName.replace("c" + i + "_", "");

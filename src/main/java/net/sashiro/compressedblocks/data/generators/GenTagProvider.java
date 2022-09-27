@@ -23,7 +23,7 @@ public class GenTagProvider extends BlockTagsProvider {
         for (RegistryObject<Block> registryObject : ModRegistryEvent.BLOCKS.getEntries()) {
             assert false;
             Block block = registryObject.get();
-            String name = block.getRegistryName().toString();
+            String name = block.getDescriptionId();
 
             if (name.contains("slime")) /* do nothing */
                 ;

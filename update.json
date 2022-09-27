@@ -114,6 +114,9 @@
   "1.18.2": {
     "1.0.2.20220926": "[1.18.2] Added (almost) all missing items. Please tell me if there are still some (crate) items missing! ; Update to 1.19 will follow soon!"
   },
+  "1.19.2": {
+    "1.1.0.20220926": "Update to 1.19 ; New items/blocks added with 1.19 haven't been added yet!"
+  },
   "promos": {
     "1.14.1-latest": "5.0.4",
     "1.14.1-recommended": "5.0.4",
@@ -142,6 +145,8 @@
     "1.18.1-latest": "1.0.2.20220926",
     "1.18.1-recommended": "1.0.2.20220926",
     "1.18.2-latest": "1.0.2.20220926",
-    "1.18.2-recommended": "1.0.2.20220926"
+    "1.18.2-recommended": "1.0.2.20220926",
+    "1.19.2-latest": "1.1.0.20220926",
+    "1.19.2-recommended": "1.1.0.20220926"
   }
 }

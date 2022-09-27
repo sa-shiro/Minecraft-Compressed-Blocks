@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:triple_crated_cooked_porkchop"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:double_crated_cooked_porkchop"
+  }
+}

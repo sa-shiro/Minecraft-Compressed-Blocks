@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c0_deepslate"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:c0_deepslate"
+  }
+}

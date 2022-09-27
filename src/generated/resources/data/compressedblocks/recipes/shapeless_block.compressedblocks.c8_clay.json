@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c8_clay"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:c7_clay"
+  }
+}

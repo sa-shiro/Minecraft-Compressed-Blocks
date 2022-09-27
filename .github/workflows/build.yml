@@ -37,7 +37,7 @@ jobs:
         with:
           name: Artifacts
           path: build/libs/
-        # publishing with data generation fails
+        # publishing with data generation fails, uploaded generated resources to make this work
       - name: publish
         if: ${{ runner.os != 'Linux' }}
         uses: Kir-Antipov/mc-publish@v3.2
@@ -51,17 +51,17 @@ jobs:
 
           files: build/libs/*.jar
 
-          name: compressed_blocks-1.0.2.20220926-1.18
-          version: 1.0.2.20220926
-          version-type: release
+          name: compressed_blocks_1.19--1.1.0.20220926
+          version: 1.1.0.20220926
+          version-type: alpha
           changelog-file: changelog.md
 
           loaders: |
             forge
           game-versions: |
-            1.18
-            1.18.1
-            1.18.2
+            1.19
+            1.19.1
+            1.19.2
           java: |
             17
             18

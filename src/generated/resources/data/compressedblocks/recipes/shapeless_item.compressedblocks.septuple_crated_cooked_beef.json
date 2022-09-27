@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:septuple_crated_cooked_beef"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:sextuple_crated_cooked_beef"
+  }
+}

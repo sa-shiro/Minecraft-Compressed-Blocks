@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:mega_crated_egg"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:octuple_crated_egg"
+  }
+}

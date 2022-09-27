@@ -1,7 +1,6 @@
 package net.sashiro.compressedblocks.world.level.item;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -37,6 +36,6 @@ public class BagItem extends Item {
     @ParametersAreNonnullByDefault
     public void appendHoverText(ItemStack s, @Nullable Level l, List<Component> c, TooltipFlag t) {
         super.appendHoverText(s, l, c, t);
-        c.add(new TextComponent(itemCount + " " + toolTipText).setStyle(comp.getStyle()));
+        c.add(Component.literal(itemCount + " " + toolTipText).withStyle(comp.getStyle()));
     }
 }
