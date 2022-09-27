@@ -9,7 +9,7 @@ import static net.sashiro.compressedblocks.world.level.block.CustomBlocks.LOGO_B
 
 public class ItemGroups {
     @MethodsReturnNonnullByDefault
-    public static CreativeModeTab compressedBlockGroup = new CreativeModeTab("compressed_blocks") {
+    public static final CreativeModeTab compressedBlockGroup = new CreativeModeTab("compressed_blocks") {
         @Override
         public ItemStack makeIcon() {
             Block icon = LOGO_BLOCK.get();

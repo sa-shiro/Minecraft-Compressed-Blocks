@@ -21,7 +21,9 @@ public class GenBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         ModelFile.UncheckedModelFile blockBlock = new ModelFile.UncheckedModelFile("block/block");
+        //noinspection unused
         ModelFile.UncheckedModelFile cubeColumn = new ModelFile.UncheckedModelFile("block/cube_column");
+        //noinspection unused
         ModelFile.UncheckedModelFile cubeColumnHorizontal = new ModelFile.UncheckedModelFile("block/cube_column_horizontal");
         assert false;
 
@@ -115,7 +117,7 @@ public class GenBlockStateProvider extends BlockStateProvider {
     }
 
     private ResourceLocation getCompressionOverlay(String blockName) {
-        String overlay = "";
+        String overlay;
         if (blockName.contains("c0")) overlay = "compression_level_0";
         else if (blockName.contains("c1")) overlay = "compression_level_1";
         else if (blockName.contains("c2")) overlay = "compression_level_2";
