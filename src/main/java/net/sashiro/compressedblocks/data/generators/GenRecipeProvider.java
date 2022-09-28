@@ -68,7 +68,6 @@ public class GenRecipeProvider extends RecipeProvider {
         }
 
         // Crate Items
-
         makeRecipe(consumer, APPLES);
         makeRecipe(consumer, MUSHROOM_STEW);
         makeRecipe(consumer, BREAD);

@@ -3,10 +3,22 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
+def getGitHash = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-parse', '--short', 'HEAD'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}
 
-version = "${modVersion}"
+version = "${modVersion}-${getGitHash()}"
 group = "${modGroup}"
 archivesBaseName = "[${minecraftVersion}]${modBaseName}"
+
+task printVersionName {
+    println "${version}"
+}
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)

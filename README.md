@@ -1,6 +1,7 @@
 # CB: Compressed Blocks 1.19
 
 [![build](https://github.com/sa-shiro/Minecraft-Compressed-Blocks/actions/workflows/build.yml/badge.svg)](https://github.com/sa-shiro/Minecraft-Compressed-Blocks/actions/workflows/build.yml)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 A Block Compression mod for Minecraft 1.14 - 1.19
 
