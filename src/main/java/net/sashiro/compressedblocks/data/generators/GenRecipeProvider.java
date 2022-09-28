@@ -32,9 +32,9 @@ public class GenRecipeProvider extends RecipeProvider {
         for (int i = 0; i < blocks.size(); i++) {
             String blockName = blocks.get(i).get().getDescriptionId();
             if (blockName.contains("c0_")) {
-                String cbBlockName = blockName.replace("compressedblocks:c0_", "");
+                String cbBlockName = blockName.replace("block.compressedblocks.c0_", "");
                 for (Block mcBlock : ForgeRegistries.BLOCKS) {
-                    String mcBlockName = mcBlock.getDescriptionId().replace("minecraft:", "");
+                    String mcBlockName = mcBlock.getDescriptionId().replace("block.minecraft.", "");
                     if (cbBlockName.equals(mcBlockName)) {
                         ShapedRecipeBuilder.shaped(
                                         blocks.get(i).get()) // result
@@ -43,11 +43,11 @@ public class GenRecipeProvider extends RecipeProvider {
                                 .pattern("###")
                                 .pattern("###")
                                 .unlockedBy("has_item", has(mcBlock.asItem()))
-                                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName.replace("compressedblocks:", "")));
+                                .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName));
                         ShapelessRecipeBuilder.shapeless(mcBlock, 9)
                                 .requires(blocks.get(i).get())
                                 .unlockedBy("has_item", has(blocks.get(i).get().asItem()))
-                                .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName.replace("compressedblocks:", "")));
+                                .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName));
                     }
                 }
             } else {
@@ -58,11 +58,11 @@ public class GenRecipeProvider extends RecipeProvider {
                             .pattern("###")
                             .pattern("###")
                             .unlockedBy("has_item", has(blocks.get(i - 1).get().asItem()))
-                            .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName.replace("compressedblocks:", "")));
+                            .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName));
                     ShapelessRecipeBuilder.shapeless(blocks.get(i - 1).get(), 9)
                             .requires(blocks.get(i).get())
                             .unlockedBy("has_item", has(blocks.get(i).get().asItem()))
-                            .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName.replace("compressedblocks:", "")));
+                            .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName));
                 }
             }
         }
@@ -167,12 +167,12 @@ public class GenRecipeProvider extends RecipeProvider {
                     .pattern("###")
                     .pattern("###")
                     .unlockedBy("has_item", has(ingredient)) // ingredient
-                    .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + result.getDescriptionId().replace("compressedblocks:", "").replace("minecraft:", "")));
+                    .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + result.getDescriptionId()));
 
             ShapelessRecipeBuilder.shapeless(ingredient, 9) // result, count
                     .requires(result) // ingredient
                     .unlockedBy("has_item", has(result))
-                    .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + result.getDescriptionId().replace("compressedblocks:", "").replace("minecraft:", "")));
+                    .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + result.getDescriptionId()));
         }
     }
 }
