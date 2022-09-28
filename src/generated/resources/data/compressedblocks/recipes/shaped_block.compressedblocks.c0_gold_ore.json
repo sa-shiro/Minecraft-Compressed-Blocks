@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "compressedblocks:c0_gold_ore"
+      "item": "minecraft:gold_ore"
     }
   },
   "pattern": [

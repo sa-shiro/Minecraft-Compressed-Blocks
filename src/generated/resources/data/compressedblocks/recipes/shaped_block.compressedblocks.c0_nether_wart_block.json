@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "compressedblocks:c0_nether_wart_block"
+      "item": "minecraft:nether_wart_block"
     }
   },
   "pattern": [

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "compressedblocks:c0_cobbled_deepslate"
+      "item": "minecraft:cobbled_deepslate"
     }
   },
   "pattern": [

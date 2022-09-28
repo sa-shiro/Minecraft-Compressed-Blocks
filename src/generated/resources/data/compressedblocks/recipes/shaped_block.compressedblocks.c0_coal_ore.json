@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "compressedblocks:c0_coal_ore"
+      "item": "minecraft:coal_ore"
     }
   },
   "pattern": [

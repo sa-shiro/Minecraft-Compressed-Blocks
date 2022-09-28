@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "compressedblocks:c0_end_stone_bricks"
+      "item": "minecraft:end_stone_bricks"
     }
   },
   "pattern": [

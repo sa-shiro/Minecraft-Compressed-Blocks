@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "compressedblocks:c0_stone_bricks"
+      "item": "minecraft:stone_bricks"
     }
   },
   "pattern": [

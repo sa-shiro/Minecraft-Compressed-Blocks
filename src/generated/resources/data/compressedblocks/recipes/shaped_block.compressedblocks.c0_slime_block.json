@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "compressedblocks:c0_slime_block"
+      "item": "minecraft:slime_block"
     }
   },
   "pattern": [

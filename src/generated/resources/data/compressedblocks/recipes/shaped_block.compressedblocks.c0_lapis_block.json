@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "compressedblocks:c0_lapis_block"
+      "item": "minecraft:lapis_block"
     }
   },
   "pattern": [
