@@ -8,7 +8,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.event.ModRegistryEvent;
-import net.sashiro.compressedblocks.world.level.item.CustomItems;
+import net.sashiro.compressedblocks.world.level.item.CrateItems;
 
 public class GenItemModelProvider extends ItemModelProvider {
     public GenItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
@@ -27,7 +27,7 @@ public class GenItemModelProvider extends ItemModelProvider {
 
         ModelFile.ExistingModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
 
-        for (String str : CustomItems.CRATE_ITEMS) {
+        for (String str : CrateItems.CRATE_ITEMS) {
             for (int i = 0; i <= 9; i++) {
                 builder(i, str, itemGenerated);
             }

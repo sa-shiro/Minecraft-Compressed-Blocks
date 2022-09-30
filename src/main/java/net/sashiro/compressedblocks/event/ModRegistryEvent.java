@@ -9,12 +9,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.util.StringUtils;
-import net.sashiro.compressedblocks.world.level.item.BagItem;
+import net.sashiro.compressedblocks.world.level.item.CrateItem;
+import net.sashiro.compressedblocks.world.level.item.CrateItems;
 import net.sashiro.compressedblocks.world.level.item.ItemGroups;
 
 import java.util.ArrayList;
 
-import static net.sashiro.compressedblocks.world.level.item.CustomItems.*;
+import static net.sashiro.compressedblocks.world.level.item.CrateItems.*;
 
 public class ModRegistryEvent {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CompressedBlocks.MOD_ID);
@@ -33,46 +34,46 @@ public class ModRegistryEvent {
         Item item = itemArray.get(0).get().asItem();
         String itemName = String.valueOf(StringUtils.stringResourceLocationFixer(item));
 
-        itemArray.add(1, ModRegistryEvent.ITEMS.register("crated_" + itemName, () -> new BagItem(0, StringUtils.stringFormat(itemName))));
-        itemArray.add(2, ModRegistryEvent.ITEMS.register("double_crated_" + itemName, () -> new BagItem(1, StringUtils.stringFormat(itemName))));
-        itemArray.add(3, ModRegistryEvent.ITEMS.register("triple_crated_" + itemName, () -> new BagItem(2, StringUtils.stringFormat(itemName))));
-        itemArray.add(4, ModRegistryEvent.ITEMS.register("quadruple_crated_" + itemName, () -> new BagItem(3, StringUtils.stringFormat(itemName))));
-        itemArray.add(5, ModRegistryEvent.ITEMS.register("quintuple_crated_" + itemName, () -> new BagItem(4, StringUtils.stringFormat(itemName))));
-        itemArray.add(6, ModRegistryEvent.ITEMS.register("sextuple_crated_" + itemName, () -> new BagItem(5, StringUtils.stringFormat(itemName))));
-        itemArray.add(7, ModRegistryEvent.ITEMS.register("septuple_crated_" + itemName, () -> new BagItem(6, StringUtils.stringFormat(itemName))));
-        itemArray.add(8, ModRegistryEvent.ITEMS.register("octuple_crated_" + itemName, () -> new BagItem(7, StringUtils.stringFormat(itemName))));
-        itemArray.add(9, ModRegistryEvent.ITEMS.register("mega_crated_" + itemName, () -> new BagItem(8, StringUtils.stringFormat(itemName))));
-        itemArray.add(10, ModRegistryEvent.ITEMS.register("giga_crated_" + itemName, () -> new BagItem(9, StringUtils.stringFormat(itemName))));
+        itemArray.add(1, ModRegistryEvent.ITEMS.register("crated_" + itemName, () -> new CrateItem(0, StringUtils.stringFormat(itemName))));
+        itemArray.add(2, ModRegistryEvent.ITEMS.register("double_crated_" + itemName, () -> new CrateItem(1, StringUtils.stringFormat(itemName))));
+        itemArray.add(3, ModRegistryEvent.ITEMS.register("triple_crated_" + itemName, () -> new CrateItem(2, StringUtils.stringFormat(itemName))));
+        itemArray.add(4, ModRegistryEvent.ITEMS.register("quadruple_crated_" + itemName, () -> new CrateItem(3, StringUtils.stringFormat(itemName))));
+        itemArray.add(5, ModRegistryEvent.ITEMS.register("quintuple_crated_" + itemName, () -> new CrateItem(4, StringUtils.stringFormat(itemName))));
+        itemArray.add(6, ModRegistryEvent.ITEMS.register("sextuple_crated_" + itemName, () -> new CrateItem(5, StringUtils.stringFormat(itemName))));
+        itemArray.add(7, ModRegistryEvent.ITEMS.register("septuple_crated_" + itemName, () -> new CrateItem(6, StringUtils.stringFormat(itemName))));
+        itemArray.add(8, ModRegistryEvent.ITEMS.register("octuple_crated_" + itemName, () -> new CrateItem(7, StringUtils.stringFormat(itemName))));
+        itemArray.add(9, ModRegistryEvent.ITEMS.register("mega_crated_" + itemName, () -> new CrateItem(8, StringUtils.stringFormat(itemName))));
+        itemArray.add(10, ModRegistryEvent.ITEMS.register("giga_crated_" + itemName, () -> new CrateItem(9, StringUtils.stringFormat(itemName))));
     }
 
     private static void registerItems() {
-        registerCrateItems(APPLES);
+        registerCrateItems(APPLE);
         registerCrateItems(MUSHROOM_STEW);
         registerCrateItems(BREAD);
-        registerCrateItems(PORKCHOP); // fixme: translation
+        registerCrateItems(RAW_PORKCHOP); // fixme: translation
         registerCrateItems(COOKED_PORKCHOP);
-        registerCrateItems(COD); // fixme: translation
-        registerCrateItems(SALMON); // fixme: translation
+        registerCrateItems(RAW_COD); // fixme: translation
+        registerCrateItems(RAW_SALMON); // fixme: translation
         registerCrateItems(TROPICAL_FISH);
         registerCrateItems(PUFFERFISH);
         registerCrateItems(COOKED_COD);
         registerCrateItems(COOKED_SALMON);
-        registerCrateItems(CAKES);
-        registerCrateItems(COOKIES);
-        registerCrateItems(MELON_SLICES);
+        registerCrateItems(CAKE);
+        registerCrateItems(COOKIE);
+        registerCrateItems(MELON_SLICE);
         registerCrateItems(MELON_SEEDS);
         registerCrateItems(DRIED_KELP);
-        registerCrateItems(BEEF); // fixme: translation
+        registerCrateItems(RAW_BEEF); // fixme: translation
         registerCrateItems(COOKED_BEEF);
-        registerCrateItems(CHICKEN); // fixme: translation
+        registerCrateItems(RAW_CHICKEN); // fixme: translation
         registerCrateItems(COOKED_CHICKEN);
         registerCrateItems(ROTTEN_FLESH);
-        registerCrateItems(CARROTS);
-        registerCrateItems(POTATOES);
-        registerCrateItems(BAKED_POTATOES);
-        registerCrateItems(POISONOUS_POTATOES);
-        registerCrateItems(PUMPKIN_PIES);
-        registerCrateItems(RABBIT); // fixme: translation
+        registerCrateItems(CARROT);
+        registerCrateItems(POTATO);
+        registerCrateItems(BAKED_POTATO);
+        registerCrateItems(POISONOUS_POTATO);
+        registerCrateItems(PUMPKIN_PIE);
+        registerCrateItems(RAW_RABBIT); // fixme: translation
         registerCrateItems(COOKED_RABBIT);
         registerCrateItems(RABBIT_STEW);
         registerCrateItems(MUTTON); // fixme: translation
@@ -82,49 +83,49 @@ public class ModRegistryEvent {
         registerCrateItems(BEETROOT_SOUP);
         registerCrateItems(SWEET_BERRIES);
         registerCrateItems(GLOW_BERRIES);
-        registerCrateItems(EGGS);
-        registerCrateItems(SUGAR_CANES);
+        registerCrateItems(EGG);
+        registerCrateItems(SUGAR_CANE);
         registerCrateItems(SUGAR);
-        registerCrateItems(PUMPKINS);
+        registerCrateItems(PUMPKIN);
         registerCrateItems(PUMPKIN_SEEDS);
         registerCrateItems(WHEAT);
         registerCrateItems(WHEAT_SEEDS);
         registerCrateItems(COCOA_BEANS);
-        registerCrateItems(ARROWS);
-        registerCrateItems(SPIDER_EYES);
-        registerCrateItems(FERMENTED_SPIDER_EYES);
-        registerCrateItems(BLAZE_RODS);
+        registerCrateItems(ARROW);
+        registerCrateItems(SPIDER_EYE);
+        registerCrateItems(FERMENTED_SPIDER_EYE);
+        registerCrateItems(BLAZE_ROD);
         registerCrateItems(BLAZE_POWDER);
         registerCrateItems(MAGMA_CREAM);
-        registerCrateItems(BONES);
+        registerCrateItems(BONE);
         registerCrateItems(BONE_MEAL);
-        registerCrateItems(ENDER_EYES);
-        registerCrateItems(ENDER_PEARLS);
-        registerCrateItems(FEATHERS);
+        registerCrateItems(ENDER_EYE);
+        registerCrateItems(ENDER_PEARL);
+        registerCrateItems(CrateItems.FEATHER);
         registerCrateItems(LEATHER);
-        registerCrateItems(STRINGS);
+        registerCrateItems(CrateItems.STRING);
         registerCrateItems(INK_SACS);
         registerCrateItems(GLOW_INK_SACS);
-        registerCrateItems(STICKS);
-        registerCrateItems(GLASS_BOTTLES);
-        registerCrateItems(SNOWBALLS);
+        registerCrateItems(CrateItems.STICK);
+        registerCrateItems(GLASS_BOTTLE);
+        registerCrateItems(CrateItems.SNOWBALL);
         registerCrateItems(PAPER);
-        registerCrateItems(FLINTS);
-        registerCrateItems(OAK_SAPLINGS);
-        registerCrateItems(SPRUCE_SAPLINGS);
-        registerCrateItems(BIRCH_SAPLINGS);
-        registerCrateItems(JUNGLE_SAPLINGS);
-        registerCrateItems(ACACIA_SAPLINGS);
-        registerCrateItems(DARK_OAK_SAPLINGS);
-        registerCrateItems(CHORUS_FRUITS); // fixme: translation
+        registerCrateItems(FLINT);
+        registerCrateItems(OAK_SAPLING);
+        registerCrateItems(SPRUCE_SAPLING);
+        registerCrateItems(BIRCH_SAPLING);
+        registerCrateItems(JUNGLE_SAPLING);
+        registerCrateItems(ACACIA_SAPLING);
+        registerCrateItems(DARK_OAK_SAPLING);
+        registerCrateItems(CHORUS_FRUIT); // fixme: translation
         registerCrateItems(SEAGRASS);
         registerCrateItems(KELP);
         registerCrateItems(BAMBOO);
-        registerCrateItems(BROWN_MUSHROOMS);
-        registerCrateItems(RED_MUSHROOMS);
+        registerCrateItems(BROWN_MUSHROOM);
+        registerCrateItems(RED_MUSHROOM);
         registerCrateItems(CRIMSON_FUNGUS);
         registerCrateItems(WARPED_FUNGUS);
-        registerCrateItems(WITHER_ROSES); // fixme: translation
-        registerCrateItems(NETHER_WARTS);
+        registerCrateItems(WITHER_ROSE); // fixme: translation
+        registerCrateItems(NETHER_WART);
     }
 }

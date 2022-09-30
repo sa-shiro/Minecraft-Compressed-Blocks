@@ -1220,5 +1220,6 @@
   "item.compressedblocks.triple_crated_wheat": "Triple Crate of Wheat",
   "item.compressedblocks.triple_crated_wheat_seeds": "Triple Crate of Wheat Seeds",
   "item.compressedblocks.triple_crated_wither_rose": "Triple Crate of Wither Rose",
-  "itemGroup.compressed_blocks": "Compressed Blocks"
+  "itemGroup.compressed_blocks": "Compressed Blocks",
+  "itemGroup.compressed_items": "Compressed Items"
 }

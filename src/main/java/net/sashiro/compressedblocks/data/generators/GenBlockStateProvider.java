@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.event.ModRegistryEvent;
 
-import static net.sashiro.compressedblocks.world.level.block.CustomBlocks.LOGO_BLOCK;
+import static net.sashiro.compressedblocks.world.level.block.CompressedBlocks.LOGO_BLOCK;
 
 public class GenBlockStateProvider extends BlockStateProvider {
     public GenBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {

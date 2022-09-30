@@ -11,12 +11,13 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.event.ModRegistryEvent;
+import net.sashiro.compressedblocks.world.level.item.CrateItems;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
-import static net.sashiro.compressedblocks.world.level.item.CustomItems.*;
+import static net.sashiro.compressedblocks.world.level.item.CrateItems.*;
 
 public class GenRecipeProvider extends RecipeProvider {
     public GenRecipeProvider(DataGenerator generatorIn) {
@@ -68,33 +69,33 @@ public class GenRecipeProvider extends RecipeProvider {
         }
 
         // Crate Items
-        makeRecipe(consumer, APPLES);
+        makeRecipe(consumer, APPLE);
         makeRecipe(consumer, MUSHROOM_STEW);
         makeRecipe(consumer, BREAD);
-        makeRecipe(consumer, PORKCHOP);
+        makeRecipe(consumer, RAW_PORKCHOP);
         makeRecipe(consumer, COOKED_PORKCHOP);
-        makeRecipe(consumer, COD);
-        makeRecipe(consumer, SALMON);
+        makeRecipe(consumer, RAW_COD);
+        makeRecipe(consumer, RAW_SALMON);
         makeRecipe(consumer, TROPICAL_FISH);
         makeRecipe(consumer, PUFFERFISH);
         makeRecipe(consumer, COOKED_COD);
         makeRecipe(consumer, COOKED_SALMON);
-        makeRecipe(consumer, CAKES);
-        makeRecipe(consumer, COOKIES);
-        makeRecipe(consumer, MELON_SLICES);
+        makeRecipe(consumer, CAKE);
+        makeRecipe(consumer, COOKIE);
+        makeRecipe(consumer, MELON_SLICE);
         makeRecipe(consumer, MELON_SEEDS);
         makeRecipe(consumer, DRIED_KELP);
-        makeRecipe(consumer, BEEF);
+        makeRecipe(consumer, RAW_BEEF);
         makeRecipe(consumer, COOKED_BEEF);
-        makeRecipe(consumer, CHICKEN);
+        makeRecipe(consumer, RAW_CHICKEN);
         makeRecipe(consumer, COOKED_CHICKEN);
         makeRecipe(consumer, ROTTEN_FLESH);
-        makeRecipe(consumer, CARROTS);
-        makeRecipe(consumer, POTATOES);
-        makeRecipe(consumer, BAKED_POTATOES);
-        makeRecipe(consumer, POISONOUS_POTATOES);
-        makeRecipe(consumer, PUMPKIN_PIES);
-        makeRecipe(consumer, RABBIT);
+        makeRecipe(consumer, CARROT);
+        makeRecipe(consumer, POTATO);
+        makeRecipe(consumer, BAKED_POTATO);
+        makeRecipe(consumer, POISONOUS_POTATO);
+        makeRecipe(consumer, PUMPKIN_PIE);
+        makeRecipe(consumer, RAW_RABBIT);
         makeRecipe(consumer, COOKED_RABBIT);
         makeRecipe(consumer, RABBIT_STEW);
         makeRecipe(consumer, MUTTON);
@@ -104,54 +105,54 @@ public class GenRecipeProvider extends RecipeProvider {
         makeRecipe(consumer, BEETROOT_SOUP);
         makeRecipe(consumer, SWEET_BERRIES);
         makeRecipe(consumer, GLOW_BERRIES);
-        makeRecipe(consumer, EGGS);
-        makeRecipe(consumer, SUGAR_CANES);
+        makeRecipe(consumer, EGG);
+        makeRecipe(consumer, SUGAR_CANE);
         makeRecipe(consumer, SUGAR);
-        makeRecipe(consumer, PUMPKINS);
+        makeRecipe(consumer, PUMPKIN);
         makeRecipe(consumer, PUMPKIN_SEEDS);
         makeRecipe(consumer, WHEAT);
         makeRecipe(consumer, WHEAT_SEEDS);
         makeRecipe(consumer, COCOA_BEANS);
         // MOB LOOT
-        makeRecipe(consumer, ARROWS);
-        makeRecipe(consumer, SPIDER_EYES);
-        makeRecipe(consumer, FERMENTED_SPIDER_EYES);
-        makeRecipe(consumer, BLAZE_RODS);
+        makeRecipe(consumer, ARROW);
+        makeRecipe(consumer, SPIDER_EYE);
+        makeRecipe(consumer, FERMENTED_SPIDER_EYE);
+        makeRecipe(consumer, BLAZE_ROD);
         makeRecipe(consumer, BLAZE_POWDER);
         makeRecipe(consumer, MAGMA_CREAM);
-        makeRecipe(consumer, BONES);
+        makeRecipe(consumer, BONE);
         makeRecipe(consumer, BONE_MEAL);
-        makeRecipe(consumer, ENDER_EYES);
-        makeRecipe(consumer, ENDER_PEARLS);
-        makeRecipe(consumer, FEATHERS);
+        makeRecipe(consumer, ENDER_EYE);
+        makeRecipe(consumer, ENDER_PEARL);
+        makeRecipe(consumer, CrateItems.FEATHER);
         makeRecipe(consumer, LEATHER);
-        makeRecipe(consumer, STRINGS);
+        makeRecipe(consumer, CrateItems.STRING);
         makeRecipe(consumer, INK_SACS);
         makeRecipe(consumer, GLOW_INK_SACS);
         // MISC
-        makeRecipe(consumer, STICKS);
-        makeRecipe(consumer, GLASS_BOTTLES);
-        makeRecipe(consumer, SNOWBALLS);
+        makeRecipe(consumer, CrateItems.STICK);
+        makeRecipe(consumer, GLASS_BOTTLE);
+        makeRecipe(consumer, CrateItems.SNOWBALL);
         makeRecipe(consumer, PAPER);
-        makeRecipe(consumer, FLINTS);
+        makeRecipe(consumer, FLINT);
         // SAPLINGS / NATURE
-        makeRecipe(consumer, OAK_SAPLINGS);
-        makeRecipe(consumer, SPRUCE_SAPLINGS);
-        makeRecipe(consumer, BIRCH_SAPLINGS);
-        makeRecipe(consumer, JUNGLE_SAPLINGS);
-        makeRecipe(consumer, ACACIA_SAPLINGS);
-        makeRecipe(consumer, DARK_OAK_SAPLINGS);
-        makeRecipe(consumer, CHORUS_FRUITS);
+        makeRecipe(consumer, OAK_SAPLING);
+        makeRecipe(consumer, SPRUCE_SAPLING);
+        makeRecipe(consumer, BIRCH_SAPLING);
+        makeRecipe(consumer, JUNGLE_SAPLING);
+        makeRecipe(consumer, ACACIA_SAPLING);
+        makeRecipe(consumer, DARK_OAK_SAPLING);
+        makeRecipe(consumer, CHORUS_FRUIT);
         makeRecipe(consumer, SEAGRASS);
         makeRecipe(consumer, KELP);
         makeRecipe(consumer, BAMBOO);
-        makeRecipe(consumer, BROWN_MUSHROOMS);
-        makeRecipe(consumer, RED_MUSHROOMS);
+        makeRecipe(consumer, BROWN_MUSHROOM);
+        makeRecipe(consumer, RED_MUSHROOM);
         makeRecipe(consumer, CRIMSON_FUNGUS);
         makeRecipe(consumer, WARPED_FUNGUS);
-        makeRecipe(consumer, WITHER_ROSES);
+        makeRecipe(consumer, WITHER_ROSE);
 
-        makeRecipe(consumer, NETHER_WARTS);
+        makeRecipe(consumer, NETHER_WART);
     }
 
     private void makeRecipe(Consumer<FinishedRecipe> consumer, ArrayList<RegistryObject<Item>> baseItem) {
