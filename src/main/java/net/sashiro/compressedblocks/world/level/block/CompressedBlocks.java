@@ -6,13 +6,12 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
-import net.sashiro.compressedblocks.CompressedBlocks;
 
 import static net.sashiro.compressedblocks.event.ModRegistryEvent.BLOCKS;
-import static net.sashiro.compressedblocks.world.level.block.CustomBlock.*;
+import static net.sashiro.compressedblocks.world.level.block.CompressedBlock.*;
 
-@Mod.EventBusSubscriber(modid = CompressedBlocks.MOD_ID)
-public class CustomBlocks {
+@Mod.EventBusSubscriber(modid = net.sashiro.compressedblocks.CompressedBlocks.MOD_ID)
+public class CompressedBlocks {
     public static final float[] HARDNESS = {5.0F, 8.5F, 10.0F, 15.5F, 25.0F, 35.5F, 50.5F, 65.5F, 75.0F, 90.0F};
     public static final float[] RESISTANCE = {35.5F, 75.0F, 150.0F, 300.0F, 600.0F, 800.0F, 1250.0F, 2000.0F, 5000.0F, 7500.0F};
 

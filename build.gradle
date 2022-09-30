@@ -9,14 +9,14 @@ def getGitHash = { ->
         commandLine 'git', 'rev-parse', '--short', 'HEAD'
         standardOutput = stdout
     }
-    return stdout.toString().trim()
+    return stdout.toString().substring(0, 7)
 }
 
-version = "${modVersion}-${getGitHash()}"
+version = "${modVersion}"
 group = "${modGroup}"
-archivesBaseName = "[${minecraftVersion}]${modBaseName}"
+archivesBaseName = "${modBaseName}_${minecraftVersion}-${getGitHash()}"
 
-task printVersionName {
+task printVersion {
     println "${version}"
 }
 
@@ -143,7 +143,8 @@ jar {
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd' - 'HH:mm:ss"),
                 "Specification-Title"     : "Minecraft ${minecraftVersion} Forge-Mod for Java ${javaVersion}",
-                "Specification-Version"   : "1" // We are version 1 of ourselves
+                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Git-Hash"                : "${getGitHash()}"
         ])
     }
 }

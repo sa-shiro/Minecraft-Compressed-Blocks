@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class CustomBlock {
+public class CompressedBlock {
 
     public static class CustomDefaultBlock extends Block {
         private final Compression compressor = new Compression();

@@ -1,123 +1,13 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/cb-compressed-blocks",
-  "1.14.4": {
-    "4.0.0": "Update to latest version!",
-    "5.0.4": "Version Backport: 1.16 -> 1.14"
-  },
-  "1.15.2": {
-    "3.0.3": "Added missing recipes (Compressed Iron, Gold, Diamond, Stick",
-    "3.0.2": "Fixed Update Checker not working",
-    "3.0.1": "Fixed lang: Ender Eye Bag > Ender Pearl Bag\nAdded Ender Eye Bag",
-    "3.0.0": "Changed how Blocks & Items are registered (BACKUP YOUR WORLD BEFORE JOINING!)\n Increased compression level of existing blocks\n added a bunch of new blocks\n new Items: Egg Bag & Ender PearlBag\n updated Forge & Mappings\n compressed blocks now have their non-compressed functions such as Redstone power ...",
-    "2.4.3": "see #2.4.3 at GitHub",
-    "2.4.1": "fixed version restriction to 31.1.46",
-    "2.4.1b": "added AccessTransformer",
-    "2.4.0": "see #2.4.0 at GitHub",
-    "2.3.3": "see #2.3.3 at GitHub",
-    "2.3.2": "see #2.3.2 at GitHub",
-    "2.3.1": "fixed RenderType function\nfixed \"Compressed Stone\" recipes",
-    "2.3.0": "see #2.3.0 at GitHub",
-    "2.2.2": "made the recipes for hardened tools cheaper",
-    "2.2.1": "added compressed diamond block",
-    "2.1.0": "update to 1.15.2",
-    "5.0.4": "Version Backport: 1.16 -> 1.15"
-  },
-  "1.16.1": {
-    "4.0.0": "Update to Forge 1.16.1\n Rendering may be buggy!",
-    "4.0.1": "Removed Version Restriction (1.16.1 -> 1.16)",
-    "5.0.1": "Major rewrite, added tons of new blocks!",
-    "5.0.2": "Added missing recipes",
-    "5.0.3": "Updated Logo\nAdded several new blocks\nAdded compressed Mekanism blocks",
-    "5.0.4": "Version bump",
-    "5.0.5": "Added config to disable blocks",
-    "5.0.6": "Added Data Generators (temporarily removed mekanism blocks, tell me if you want them back!)\nAdded Ancient Debris and Netherite",
-    "5.0.7": "fixed config not being written correctly",
-    "5.0.8": "removed config so client & server works again",
-    "5.0.9": "Updated Data Generator\nConfig is back!! enable/disable certain blocks or limit the compression level (currently there is no ingame gui to change the config)",
-    "5.0.10": "Added missing recipes",
-    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass, Quartz",
-    "5.0.12": "Fixed Glass having Material set to Air\nCode Cleanup",
-    "5.0.12.1": "Fixed Tooltip",
-    "5.0.15": "Added Magma Block, Logo Block, changed config language"
-  },
-  "1.16.2": {
-    "5.0.1": "Major rewrite, added tons of new blocks!",
-    "5.0.2": "Added missing recipes",
-    "5.0.3": "Updated Logo\nAdded several new blocks\nAdded compressed Mekanism blocks",
-    "5.0.4": "Version bump",
-    "5.0.5": "Added config to disable blocks",
-    "5.0.6": "Added Data Generators (temporarily removed mekanism blocks, tell me if you want them back!)\nAdded Ancient Debris and Netherite",
-    "5.0.7": "fixed config not being written correctly",
-    "5.0.8": "removed config so client & server works again",
-    "5.0.9": "Updated Data Generator\nConfig is back!! enable/disable certain blocks or limit the compression level (currently there is no ingame gui to change the config)",
-    "5.0.10": "Added missing recipes",
-    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass, Quartz",
-    "5.0.12": "Fixed Glass having Material set to Air\nCode Cleanup",
-    "5.0.12.1": "Fixed Tooltip",
-    "5.0.15": "Added Magma Block, Logo Block, changed config language"
-  },
-  "1.16.3": {
-    "4.0.1": "Removed Version Restriction (1.16.1 -> 1.16)",
-    "5.0.1": "Major rewrite, added tons of new blocks!",
-    "5.0.2": "Added missing recipes",
-    "5.0.3": "Updated Logo\nAdded several new blocks\nAdded compressed Mekanism blocks",
-    "5.0.4": "Version bump",
-    "5.0.5": "Added config to disable blocks",
-    "5.0.6": "Added Data Generators (temporarily removed mekanism blocks, tell me if you want them back!)\nAdded Ancient Debris and Netherite",
-    "5.0.7": "fixed config not being written correctly",
-    "5.0.8": "removed config so client & server works again",
-    "5.0.9": "Updated Data Generator\nConfig is back!! enable/disable certain blocks or limit the compression level (currently there is no ingame gui to change the config)",
-    "5.0.10": "Added missing recipes",
-    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass, Quartz",
-    "5.0.12": "Fixed Glass having Material set to Air\nCode Cleanup",
-    "5.0.12.1": "Fixed Tooltip",
-    "5.0.15": "Added Magma Block, Logo Block, changed config language"
-  },
-  "1.16.4": {
-    "5.0.1": "Major rewrite, added tons of new blocks!",
-    "5.0.2": "Added missing recipes",
-    "5.0.3": "Updated Logo\nAdded several new blocks\nAdded compressed Mekanism blocks",
-    "5.0.4": "Version bump",
-    "5.0.5": "Added config to disable blocks",
-    "5.0.6": "Added Data Generators (temporarily removed mekanism blocks, tell me if you want them back!)\nAdded Ancient Debris and Netherite",
-    "5.0.7": "fixed config not being written correctly",
-    "5.0.8": "removed config so client & server works again",
-    "5.0.9": "Updated Data Generator\nConfig is back!! enable/disable certain blocks or limit the compression level (currently there is no ingame gui to change the config)",
-    "5.0.10": "Added missing recipes",
-    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass, Quartz",
-    "5.0.12": "Fixed Glass having Material set to Air\nCode Cleanup",
-    "5.0.12.1": "Fixed Tooltip",
-    "5.0.15": "Added Magma Block, Logo Block, changed config language"
-  },
-  "1.16.5": {
-    "5.0.5": "Added 1.16.5 to update.json\nAdded config to disable blocks",
-    "5.0.6": "Added Data Generators (temporarily removed mekanism blocks, tell me if you want them back!)\nAdded Ancient Debris and Netherite",
-    "5.0.7": "fixed config not being written correctly",
-    "5.0.8": "removed config so client & server works again",
-    "5.0.9": "Updated Data Generator\nConfig is back!! enable/disable certain blocks or limit the compression level (currently there is no ingame gui to change the config)",
-    "5.0.10": "Added missing recipes",
-    "5.0.11": "New Blocks: Logs, Planks, Purpur Blocks, Basalt, Hay, Glass, Quartz",
-    "5.0.12": "Fixed Glass having Material set to Air\nCode Cleanup",
-    "5.0.12.1": "Fixed Tooltip",
-    "5.0.15": "Added Magma Block, Logo Block, changed config language",
-    "1.0.0.20220123": "1.17 Backport, Changelog see 1.17. (Make sure to back up your world!)"
-  },
-  "1.17.1": {
-    "6.0.0": "Update to 1.17.1!",
-    "6.0.1": "Update to latest forge.\n * removed harvest level -> added minable tag\n  * added missing translations",
-    "1.0.0.20220118": "Rework, Backup your world before entering!! many Blocks have been removed. For mor detail see Changelog on CF/GH"
-  },
-  "1.18.1": {
-    "1.0.0.20220118": "Updated to 1.18.1, Updated the long forgotten mods.toml. Changelog: see 1.17.1",
-    "1.0.2.20220926": "[1.18.2] Added (almost) all missing items. Please tell me if there are still some (crate) items missing! ; Update to 1.19 will follow soon!"
-  },
   "1.18.2": {
     "1.0.2.20220926": "[1.18.2] Added (almost) all missing items. Please tell me if there are still some (crate) items missing! ; Update to 1.19 will follow soon!"
   },
   "1.19.2": {
     "1.1.0.20220926": "Update to 1.19 ; New items/blocks added with 1.19 haven't been added yet!",
     "1.1.0.20220927": "added missing items (bamboo etc.)",
-    "1.1.0.20220927": "fixed broken recipes"
+    "1.1.0.20220928": "fixed broken recipes",
+    "1.1.0.20220930": "FEEDBACK NEEDED: Please check github https://github.com/sa-shiro/Minecraft-Compressed-Blocks"
   },
   "promos": {
     "1.14.1-latest": "5.0.4",
@@ -148,7 +38,7 @@
     "1.18.1-recommended": "1.0.2.20220926",
     "1.18.2-latest": "1.0.2.20220926",
     "1.18.2-recommended": "1.0.2.20220926",
-    "1.19.2-latest": "1.1.0.20220928",
-    "1.19.2-recommended": "1.1.0.20220928"
+    "1.19.2-latest": "1.1.0.20220930",
+    "1.19.2-recommended": "1.1.0.20220930"
   }
 }

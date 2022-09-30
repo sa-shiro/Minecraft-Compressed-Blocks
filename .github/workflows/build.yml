@@ -39,7 +39,7 @@ jobs:
           path: build/libs/
       - name: Retrieve Version
         run: |
-          echo "::set-output name=VERSION::$(${{github.workspace}}/gradlew -q printVersionName)"
+          echo "::set-output name=VERSION::$(${{github.workspace}}/gradlew -q printVersion)"
         id: version
       - name: Get version
         run: |
@@ -58,8 +58,8 @@ jobs:
 
           files: build/libs/*.jar
 
-          name: Compressed Blocks 1.19 - ${{ env.version }}
-          version: ${{ env.version }}
+          name: Compressed Blocks 1.19 ${{ env.VERSION }}
+          version: ${{ env.VERSION }}
           version-type: alpha
           changelog-file: changelog.md
 

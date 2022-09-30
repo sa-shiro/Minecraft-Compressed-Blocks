@@ -7,7 +7,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.event.ModRegistryEvent;
 import net.sashiro.compressedblocks.util.StringUtils;
-import net.sashiro.compressedblocks.world.level.item.CustomItems;
+import net.sashiro.compressedblocks.world.level.item.CrateItems;
 
 public class GenLanguageProvider extends LanguageProvider {
     public GenLanguageProvider(DataGenerator gen, String locale) {
@@ -34,6 +34,7 @@ public class GenLanguageProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add("itemGroup.compressed_blocks", "Compressed Blocks");
+        add("itemGroup.compressed_items", "Compressed Items");
         add("block.compressedblocks.logo_block", "Logo Block (This Block has no use and is only used as the Creative Tab Logo)");
 
         for (RegistryObject<Block> block : ModRegistryEvent.BLOCKS.getEntries()) {
@@ -48,7 +49,7 @@ public class GenLanguageProvider extends LanguageProvider {
                 add("block.compressedblocks." + name, compressionLevel(name) + StringUtils.stringFormat(name2.replace("_", " ")));
         }
 
-        for (String itemName : CustomItems.CRATE_ITEMS) {
+        for (String itemName : CrateItems.CRATE_ITEMS) {
             add("item.compressedblocks.crated_" + itemName, "Crate of " + StringUtils.stringFormat(itemName.replace("_", " ")));
             add("item.compressedblocks.double_crated_" + itemName, "Double Crate of " + StringUtils.stringFormat(itemName.replace("_", " ")));
             add("item.compressedblocks.triple_crated_" + itemName, "Triple Crate of " + StringUtils.stringFormat(itemName.replace("_", " ")));

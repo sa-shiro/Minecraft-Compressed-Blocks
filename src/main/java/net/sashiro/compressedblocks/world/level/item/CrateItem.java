@@ -11,7 +11,7 @@ import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
-public class BagItem extends Item {
+public class CrateItem extends Item {
 
     private final String itemCount;
     private final String toolTipText;
@@ -21,9 +21,9 @@ public class BagItem extends Item {
      * @param level       An int between 0 and 9 representing how many Items the BagItem contains<br>
      * @param toolTipText The text that will be added after the representation of how many Items the BagItem contains
      */
-    public BagItem(int level, String toolTipText) {
+    public CrateItem(int level, String toolTipText) {
         super(new Properties()
-                .tab(ItemGroups.compressedBlockGroup)
+                .tab(ItemGroups.compressedItemGroup)
                 .stacksTo(64)
         );
         comp.setCompressionLevel(level);
