@@ -1,10 +1,10 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/cb-compressed-blocks",
   "1.19.2": {
-    "1.1.1": "Fixed Sand, Added Obsidian, Removed Crated Wheat"
+    "1.1.1": "Fixed broken textures"
   },
   "promos": {
-    "1.19.2-latest": "1.1.1",
-    "1.19.2-recommended": "1.1.1"
+    "1.19.2-latest": "1.1.2",
+    "1.19.2-recommended": "1.1.2"
   }
 }
