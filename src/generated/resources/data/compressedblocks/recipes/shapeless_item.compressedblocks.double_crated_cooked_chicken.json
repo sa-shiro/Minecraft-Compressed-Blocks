@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:double_crated_cooked_chicken"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:crated_cooked_chicken"
+  }
+}

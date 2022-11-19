@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:sextuple_crated_melon_seeds"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:quintuple_crated_melon_seeds"
+  }
+}
