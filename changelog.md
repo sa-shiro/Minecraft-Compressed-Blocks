@@ -1,3 +1,3 @@
-## [1.19.2 - 1.1.1 ]
+## [1.19.2 - 1.1.2 ]
 
-Fixed Sand, Added Obsidian, Removed Crated Wheat
+Fixed broken textures

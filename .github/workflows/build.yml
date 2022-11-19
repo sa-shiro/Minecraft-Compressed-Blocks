@@ -64,7 +64,7 @@ jobs:
 
           files: build/libs/*.jar
 
-          name: Compressed Blocks 1.19 ${{ env.VERSION }}
+          name: Compressed Blocks 1.19
           version: ${{ env.VERSION }}
           version-type: release
           changelog-file: changelog.md
@@ -82,4 +82,4 @@ jobs:
 
           retry-attempts: 2
           retry-delay: 10000
-          fail-mode: fail
+          fail-mode: warn
