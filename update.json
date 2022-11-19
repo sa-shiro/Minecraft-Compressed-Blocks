@@ -1,44 +1,10 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/cb-compressed-blocks",
-  "1.18.2": {
-    "1.0.2.20220926": "[1.18.2] Added (almost) all missing items. Please tell me if there are still some (crate) items missing! ; Update to 1.19 will follow soon!"
-  },
   "1.19.2": {
-    "1.1.0.20220926": "Update to 1.19 ; New items/blocks added with 1.19 haven't been added yet!",
-    "1.1.0.20220927": "added missing items (bamboo etc.)",
-    "1.1.0.20220928": "fixed broken recipes",
-    "1.1.0.20220930": "FEEDBACK NEEDED: Please check github https://github.com/sa-shiro/Minecraft-Compressed-Blocks"
+    "1.1.1": "Fixed Sand, Added Obsidian, Removed Crated Wheat"
   },
   "promos": {
-    "1.14.1-latest": "5.0.4",
-    "1.14.1-recommended": "5.0.4",
-    "1.14.2-latest": "5.0.4",
-    "1.14.2-recommended": "5.0.4",
-    "1.14.3-latest": "5.0.4",
-    "1.14.3-recommended": "5.0.4",
-    "1.14.4-latest": "5.0.4",
-    "1.14.4-recommended": "5.0.4",
-    "1.15.1-latest": "5.0.4",
-    "1.15.1-recommended": "5.0.4",
-    "1.15.2-latest": "5.0.4",
-    "1.15.2-recommended": "5.0.4",
-    "1.16.1-latest": "1.0.0.20220123",
-    "1.16.1-recommended": "1.0.0.20220123",
-    "1.16.2-latest": "1.0.0.20220123",
-    "1.16.2-recommended": "1.0.0.20220123",
-    "1.16.3-latest": "1.0.0.20220123",
-    "1.16.3-recommended": "1.0.0.20220123",
-    "1.16.4-latest": "1.0.0.20220123",
-    "1.16.4-recommended": "1.0.0.20220123",
-    "1.16.5-latest": "1.0.0.20220123",
-    "1.16.5-recommended": "1.0.0.20220123",
-    "1.17.1-latest": "1.0.0.20220118",
-    "1.17.1-recommended": "1.0.0.20220118",
-    "1.18.1-latest": "1.0.2.20220926",
-    "1.18.1-recommended": "1.0.2.20220926",
-    "1.18.2-latest": "1.0.2.20220926",
-    "1.18.2-recommended": "1.0.2.20220926",
-    "1.19.2-latest": "1.1.0.20220930",
-    "1.19.2-recommended": "1.1.0.20220930"
+    "1.19.2-latest": "1.1.1",
+    "1.19.2-recommended": "1.1.1"
   }
 }

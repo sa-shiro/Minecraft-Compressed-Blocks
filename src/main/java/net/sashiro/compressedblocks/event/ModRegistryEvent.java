@@ -88,7 +88,6 @@ public class ModRegistryEvent {
         registerCrateItems(SUGAR);
         registerCrateItems(PUMPKIN);
         registerCrateItems(PUMPKIN_SEEDS);
-        registerCrateItems(WHEAT);
         registerCrateItems(WHEAT_SEEDS);
         registerCrateItems(COCOA_BEANS);
         registerCrateItems(ARROW);

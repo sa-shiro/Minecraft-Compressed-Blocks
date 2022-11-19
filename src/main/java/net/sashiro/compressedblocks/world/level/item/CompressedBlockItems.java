@@ -434,4 +434,14 @@ public class CompressedBlockItems {
     public static final RegistryObject<Item> BASALT_7_ITEM = ITEMS.register("c7_basalt", () -> new BlockItem(BASALT_7.get(), PROPERTIES));
     public static final RegistryObject<Item> BASALT_8_ITEM = ITEMS.register("c8_basalt", () -> new BlockItem(BASALT_8.get(), PROPERTIES));
     public static final RegistryObject<Item> BASALT_9_ITEM = ITEMS.register("c9_basalt", () -> new BlockItem(BASALT_9.get(), PROPERTIES));
+    public static final RegistryObject<Item> OBSIDIAN_0_ITEM = ITEMS.register("c0_obsidian", () -> new BlockItem(OBSIDIAN_0.get(), PROPERTIES));
+    public static final RegistryObject<Item> OBSIDIAN_1_ITEM = ITEMS.register("c1_obsidian", () -> new BlockItem(OBSIDIAN_1.get(), PROPERTIES));
+    public static final RegistryObject<Item> OBSIDIAN_2_ITEM = ITEMS.register("c2_obsidian", () -> new BlockItem(OBSIDIAN_2.get(), PROPERTIES));
+    public static final RegistryObject<Item> OBSIDIAN_3_ITEM = ITEMS.register("c3_obsidian", () -> new BlockItem(OBSIDIAN_3.get(), PROPERTIES));
+    public static final RegistryObject<Item> OBSIDIAN_4_ITEM = ITEMS.register("c4_obsidian", () -> new BlockItem(OBSIDIAN_4.get(), PROPERTIES));
+    public static final RegistryObject<Item> OBSIDIAN_5_ITEM = ITEMS.register("c5_obsidian", () -> new BlockItem(OBSIDIAN_5.get(), PROPERTIES));
+    public static final RegistryObject<Item> OBSIDIAN_6_ITEM = ITEMS.register("c6_obsidian", () -> new BlockItem(OBSIDIAN_6.get(), PROPERTIES));
+    public static final RegistryObject<Item> OBSIDIAN_7_ITEM = ITEMS.register("c7_obsidian", () -> new BlockItem(OBSIDIAN_7.get(), PROPERTIES));
+    public static final RegistryObject<Item> OBSIDIAN_8_ITEM = ITEMS.register("c8_obsidian", () -> new BlockItem(OBSIDIAN_8.get(), PROPERTIES));
+    public static final RegistryObject<Item> OBSIDIAN_9_ITEM = ITEMS.register("c9_obsidian", () -> new BlockItem(OBSIDIAN_9.get(), PROPERTIES));
 }

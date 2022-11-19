@@ -1,6 +1,35 @@
 1.19.x Changelog
 43.1
 ====
+ - 43.1.52 Improve extensibility of DetectorRailBlock and PoweredRailBlock (#9130)
+ - 43.1.51 Fix launch handler minecraft classpath locator (#9120)
+ - 43.1.50 Add HitResult to `EntityTeleportEvent$EnderPearl` (#9135)
+ - 43.1.49 Throw aggregate exception for erroneous registry event dispatch (#9111)
+           This means that exceptions occurring during the dispatch of the registry
+           events, such as those from the suppliers of RegistryObjects, properly
+           cause a crash rather than merely being logged and allowing the game to
+           reach the main menu.
+           Fixes #8720
+ - 43.1.48 Add missing semi-colon near the Dist import statement in example mod.
+ - 43.1.47 Fix ClientModEvents example not subscribing to client-sided events (#9097)
+ - 43.1.46 Use GitHub action to lock issues with the `spam` label (#9087)
+ - 43.1.45 Remove structures slave map to Feature registry (#9091)
+ - 43.1.44 Improve logging of missing or unsupported dependencies (#9104)
+ - 43.1.43 [1.19.x] Fix ValueSpec caching the return value incorrectly (#9046)
+ - 43.1.42 [1.19.x] Add event for registering spawn placements, and modifying existing (#9024)
+ - 43.1.41 [1.19.x] Add event for items being stacked or swapped in a GUI. (#9050)
+ - 43.1.40 [1.19.x] Fix PlayerInteractEvent.EntityInteractSpecific not cancelling on a server (#9079)
+ - 43.1.39 Fix canceling phantom spawns preventing any further attempts that tick. (#9041)
+ - 43.1.38 Rename fluid type milk translation keys (#9077)
+ - 43.1.37 Fix minecart speed with water (#9076)
+ - 43.1.36 Add a cancellable event that gets fired when a Totem of Undying is used (#9069)
+ - 43.1.35 Fix performance issue and logging when resource caching is enabled (#9029)
+ - 43.1.34 Fix NPE when feeding wolves and cats (#9074)
+ - 43.1.33 Fix logically breaking change to ForgeConfigSpec.Builder#comment where modders could not add a empty line to the start of comments. (#9061)
+ - 43.1.32 Fix ServiceLoader bug
+ - 43.1.31 Fix ClientChatReceivedEvent for system messages
+ - 43.1.30 Make ForgeConfigSpec$Builder.comment able to be called multiple times for the same entry. (#9056)
+ - 43.1.29 Fix control modifier for mac with `KeyMapping`s  using Alt instead of Super (#9057)
  - 43.1.28 Fix is_desert tag not being applied correctly. (#9051)
  - 43.1.27 Fix mob griefing event for SmallFireballs not using owner entity. (#9038)
  - 43.1.26 Fix minecarts on rails not properly slowing down in water (#9033)
