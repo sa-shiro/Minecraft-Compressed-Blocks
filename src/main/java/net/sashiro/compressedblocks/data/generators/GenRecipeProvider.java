@@ -110,7 +110,6 @@ public class GenRecipeProvider extends RecipeProvider {
         makeRecipe(consumer, SUGAR);
         makeRecipe(consumer, PUMPKIN);
         makeRecipe(consumer, PUMPKIN_SEEDS);
-        makeRecipe(consumer, WHEAT);
         makeRecipe(consumer, WHEAT_SEEDS);
         makeRecipe(consumer, COCOA_BEANS);
         // MOB LOOT

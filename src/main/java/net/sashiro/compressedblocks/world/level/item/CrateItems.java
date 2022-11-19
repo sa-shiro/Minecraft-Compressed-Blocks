@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class CrateItems {
     public static final ArrayList<String> CRATE_ITEMS = new ArrayList<>();
     public static ArrayList<RegistryObject<Item>> PUMPKIN = new ArrayList<>();
-   // DECORATION
+    // DECORATION
     public static ArrayList<RegistryObject<Item>> OAK_SAPLING = new ArrayList<>();
     public static ArrayList<RegistryObject<Item>> SPRUCE_SAPLING = new ArrayList<>();
     public static ArrayList<RegistryObject<Item>> BIRCH_SAPLING = new ArrayList<>();
@@ -162,7 +162,6 @@ public class CrateItems {
     public static ArrayList<RegistryObject<Item>> FEATHER = new ArrayList<>();
     public static ArrayList<RegistryObject<Item>> GUNPOWDER = new ArrayList<>();
     public static ArrayList<RegistryObject<Item>> WHEAT_SEEDS = new ArrayList<>();
-    public static ArrayList<RegistryObject<Item>> WHEAT = new ArrayList<>();
     public static ArrayList<RegistryObject<Item>> FLINT = new ArrayList<>();
     public static ArrayList<RegistryObject<Item>> BUCKET = new ArrayList<>();
     public static ArrayList<RegistryObject<Item>> POWDER_SNOW_BUCKET = new ArrayList<>();
@@ -289,7 +288,6 @@ public class CrateItems {
         CRATE_ITEMS.add("sugar");
         CRATE_ITEMS.add("pumpkin");
         CRATE_ITEMS.add("pumpkin_seeds");
-        CRATE_ITEMS.add("wheat");
         CRATE_ITEMS.add("wheat_seeds");
         CRATE_ITEMS.add("cocoa_beans");
         // MOB LOOT
@@ -373,7 +371,6 @@ public class CrateItems {
         SUGAR.add(0, RegistryObject.create(StringUtils.resourceLocationFixer(Items.SUGAR), ForgeRegistries.ITEMS));
         PUMPKIN.add(0, RegistryObject.create(StringUtils.resourceLocationFixer(Items.PUMPKIN), ForgeRegistries.ITEMS));
         PUMPKIN_SEEDS.add(0, RegistryObject.create(StringUtils.resourceLocationFixer(Items.PUMPKIN_SEEDS), ForgeRegistries.ITEMS));
-        WHEAT.add(0, RegistryObject.create(StringUtils.resourceLocationFixer(Items.WHEAT), ForgeRegistries.ITEMS));
         WHEAT_SEEDS.add(0, RegistryObject.create(StringUtils.resourceLocationFixer(Items.WHEAT_SEEDS), ForgeRegistries.ITEMS));
         COCOA_BEANS.add(0, RegistryObject.create(StringUtils.resourceLocationFixer(Items.COCOA_BEANS), ForgeRegistries.ITEMS));
         ARROW.add(0, RegistryObject.create(StringUtils.resourceLocationFixer(Items.ARROW), ForgeRegistries.ITEMS));

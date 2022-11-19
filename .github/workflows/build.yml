@@ -49,6 +49,12 @@ jobs:
         if: ${{ runner.os != 'Linux' }}
         uses: Kir-Antipov/mc-publish@v3.2
         with:
+
+          modrinth-id: IQRVlbit
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          modrinth-featured: true
+          modrinth-unfeature-mode: subset
+
           curseforge-id: 361354
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
@@ -60,7 +66,7 @@ jobs:
 
           name: Compressed Blocks 1.19 ${{ env.VERSION }}
           version: ${{ env.VERSION }}
-          version-type: alpha
+          version-type: release
           changelog-file: changelog.md
 
           loaders: |

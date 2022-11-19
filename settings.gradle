@@ -4,4 +4,4 @@ pluginManagement {
         maven { url = 'https://maven.minecraftforge.net/' }
     }
 }
-rootProject.name = "Compressed Blocks 1.18"
+rootProject.name = "Compressed Blocks 1.19"
