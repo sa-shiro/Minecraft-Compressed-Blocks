@@ -31,11 +31,11 @@ jobs:
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
 
-      - name: prepare datagen
-        run: ./gradlew prepareRunData
+      #- name: prepare datagen
+      #  run: ./gradlew prepareRunData
 
-      - name: run datagen
-        run: ./gradlew runData
+      #- name: run datagen
+      #  run: ./gradlew runData
 
       - name: build
         run: ./gradlew build
