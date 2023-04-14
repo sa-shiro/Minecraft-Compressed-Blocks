@@ -1,6 +1,6 @@
 package net.sashiro.compressedblocks.data.generators;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.RegistryObject;
@@ -10,8 +10,8 @@ import net.sashiro.compressedblocks.util.StringUtils;
 import net.sashiro.compressedblocks.world.level.item.CrateItems;
 
 public class GenLanguageProvider extends LanguageProvider {
-    public GenLanguageProvider(DataGenerator gen, String locale) {
-        super(gen, CompressedBlocks.MOD_ID, locale);
+    public GenLanguageProvider(PackOutput packOutput, String locale) {
+        super(packOutput, CompressedBlocks.MOD_ID, locale);
     }
 
     private String compressionLevel(String registryName) {

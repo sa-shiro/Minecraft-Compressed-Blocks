@@ -1,7 +1,7 @@
 package net.sashiro.compressedblocks.data.generators;
 
 import net.minecraft.core.Direction;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -14,8 +14,8 @@ import net.sashiro.compressedblocks.event.ModRegistryEvent;
 import static net.sashiro.compressedblocks.world.level.block.CompressedBlocks.LOGO_BLOCK;
 
 public class GenBlockStateProvider extends BlockStateProvider {
-    public GenBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
-        super(gen, CompressedBlocks.MOD_ID, exFileHelper);
+    public GenBlockStateProvider(PackOutput packOutput, ExistingFileHelper exFileHelper) {
+        super(packOutput, CompressedBlocks.MOD_ID, exFileHelper);
     }
 
     @Override
