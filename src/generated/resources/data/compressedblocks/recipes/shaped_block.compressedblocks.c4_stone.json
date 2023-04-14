@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c3_stone"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:c4_stone"
-  }
+  },
+  "show_notification": true
 }

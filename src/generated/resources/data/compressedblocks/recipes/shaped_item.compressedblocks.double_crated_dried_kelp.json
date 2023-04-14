@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:crated_dried_kelp"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:double_crated_dried_kelp"
-  }
+  },
+  "show_notification": true
 }

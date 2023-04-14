@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:quintuple_crated_sweet_berries"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:sextuple_crated_sweet_berries"
-  }
+  },
+  "show_notification": true
 }

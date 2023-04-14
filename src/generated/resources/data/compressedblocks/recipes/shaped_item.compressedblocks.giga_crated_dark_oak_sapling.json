@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:mega_crated_dark_oak_sapling"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:giga_crated_dark_oak_sapling"
-  }
+  },
+  "show_notification": true
 }

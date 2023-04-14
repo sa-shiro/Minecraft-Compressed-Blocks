@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:leather"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:crated_leather"
-  }
+  },
+  "show_notification": true
 }

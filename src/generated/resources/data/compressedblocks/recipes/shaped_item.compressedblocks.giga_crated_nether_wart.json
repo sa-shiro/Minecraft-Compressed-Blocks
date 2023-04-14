@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:mega_crated_nether_wart"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:giga_crated_nether_wart"
-  }
+  },
+  "show_notification": true
 }

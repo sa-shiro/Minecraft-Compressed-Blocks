@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c7_coal_block"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:c8_coal_block"
-  }
+  },
+  "show_notification": true
 }

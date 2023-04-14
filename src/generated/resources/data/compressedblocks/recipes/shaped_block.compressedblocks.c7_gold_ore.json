@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c6_gold_ore"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:c7_gold_ore"
-  }
+  },
+  "show_notification": true
 }

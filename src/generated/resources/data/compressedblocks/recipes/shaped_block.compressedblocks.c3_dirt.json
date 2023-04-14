@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c2_dirt"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:c3_dirt"
-  }
+  },
+  "show_notification": true
 }

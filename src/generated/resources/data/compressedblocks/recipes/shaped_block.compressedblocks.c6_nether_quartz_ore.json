@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c5_nether_quartz_ore"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:c6_nether_quartz_ore"
-  }
+  },
+  "show_notification": true
 }

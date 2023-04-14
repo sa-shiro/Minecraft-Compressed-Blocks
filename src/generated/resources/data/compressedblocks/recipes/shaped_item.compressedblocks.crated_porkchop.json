@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:porkchop"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:crated_porkchop"
-  }
+  },
+  "show_notification": true
 }

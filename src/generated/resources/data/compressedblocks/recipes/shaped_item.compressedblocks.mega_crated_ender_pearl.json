@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:octuple_crated_ender_pearl"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:mega_crated_ender_pearl"
-  }
+  },
+  "show_notification": true
 }

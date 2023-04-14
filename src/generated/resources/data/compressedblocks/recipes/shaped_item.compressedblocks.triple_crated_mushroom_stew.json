@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:double_crated_mushroom_stew"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:triple_crated_mushroom_stew"
-  }
+  },
+  "show_notification": true
 }

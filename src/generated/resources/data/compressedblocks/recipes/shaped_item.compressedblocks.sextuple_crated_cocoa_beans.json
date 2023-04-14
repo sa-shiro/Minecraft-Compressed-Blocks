@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:quintuple_crated_cocoa_beans"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:sextuple_crated_cocoa_beans"
-  }
+  },
+  "show_notification": true
 }

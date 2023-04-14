@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:triple_crated_tropical_fish"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:quadruple_crated_tropical_fish"
-  }
+  },
+  "show_notification": true
 }

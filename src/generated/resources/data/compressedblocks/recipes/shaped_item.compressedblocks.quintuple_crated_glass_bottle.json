@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:quadruple_crated_glass_bottle"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:quintuple_crated_glass_bottle"
-  }
+  },
+  "show_notification": true
 }

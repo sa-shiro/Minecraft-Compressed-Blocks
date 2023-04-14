@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:pufferfish"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:crated_pufferfish"
-  }
+  },
+  "show_notification": true
 }

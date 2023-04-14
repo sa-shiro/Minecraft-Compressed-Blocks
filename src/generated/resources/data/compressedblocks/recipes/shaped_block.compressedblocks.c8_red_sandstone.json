@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c7_red_sandstone"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:c8_red_sandstone"
-  }
+  },
+  "show_notification": true
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:double_crated_chicken"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:triple_crated_chicken"
-  }
+  },
+  "show_notification": true
 }

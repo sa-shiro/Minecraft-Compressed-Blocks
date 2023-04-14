@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c2_nether_wart_block"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:c3_nether_wart_block"
-  }
+  },
+  "show_notification": true
 }

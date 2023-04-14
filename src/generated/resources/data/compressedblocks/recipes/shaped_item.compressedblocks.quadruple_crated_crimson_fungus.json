@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:triple_crated_crimson_fungus"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:quadruple_crated_crimson_fungus"
-  }
+  },
+  "show_notification": true
 }

@@ -1,3 +1,3 @@
-## [1.19.2 - 1.1.2 ]
+## [ 1.19.4 - 1.2.0 ]
 
-Fixed broken textures
+update to 1.19.4

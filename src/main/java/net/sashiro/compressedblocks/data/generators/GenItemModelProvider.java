@@ -1,6 +1,6 @@
 package net.sashiro.compressedblocks.data.generators;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -11,8 +11,8 @@ import net.sashiro.compressedblocks.event.ModRegistryEvent;
 import net.sashiro.compressedblocks.world.level.item.CrateItems;
 
 public class GenItemModelProvider extends ItemModelProvider {
-    public GenItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, CompressedBlocks.MOD_ID, existingFileHelper);
+    public GenItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
+        super(packOutput, CompressedBlocks.MOD_ID, existingFileHelper);
     }
 
     @Override

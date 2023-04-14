@@ -11,45 +11,55 @@ jobs:
     strategy:
       matrix:
         # Use these Java versions
-        java: [
-          17,    # Current Java LTS & minimum supported by Minecraft
-        ]
-        # and run on both Linux and Windows
-        os: [ ubuntu-20.04, windows-2022 ]
+        java: [ 17 ] # Current Java LTS & minimum supported by Minecraft
+        os: [ ubuntu-latest, windows-latest ]  # and run on both Linux and Windows
     runs-on: ${{ matrix.os }}
     steps:
       - name: checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
       - name: validate gradle wrapper
         uses: gradle/wrapper-validation-action@v1
+
       - name: setup jdk ${{ matrix.java }}
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with:
           java-version: ${{ matrix.java }}
+
       - name: make gradle wrapper executable
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
+
+      - name: prepare datagen
+        run: ./gradlew prepareRunData
+
+      - name: run datagen
+        run: ./gradlew runData
+
       - name: build
         run: ./gradlew build
+
       - name: capture build artifacts
         if: ${{ runner.os == 'Linux' && matrix.java == '17' }} # Only upload artifacts built from the latest java on one OS
         uses: actions/upload-artifact@v2
         with:
           name: Artifacts
           path: build/libs/
+
       - name: Retrieve Version
         run: |
           echo "::set-output name=VERSION::$(${{github.workspace}}/gradlew -q printVersion)"
         id: version
+
       - name: Get version
         run: |
           echo "VERSION=${{steps.version.outputs.VERSION}}" >> $GITHUB_ENV
         # publishing with data generation fails, uploaded generated resources to make this work
+
       - name: publish
         if: ${{ runner.os != 'Linux' }}
         uses: Kir-Antipov/mc-publish@v3.2
         with:
-
           modrinth-id: IQRVlbit
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           modrinth-featured: true
@@ -75,6 +85,8 @@ jobs:
             1.19
             1.19.1
             1.19.2
+            1.19.3
+            1.19.4
           java: |
             17
             18

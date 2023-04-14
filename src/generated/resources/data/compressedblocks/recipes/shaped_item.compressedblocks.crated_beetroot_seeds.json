@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:beetroot_seeds"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:crated_beetroot_seeds"
-  }
+  },
+  "show_notification": true
 }

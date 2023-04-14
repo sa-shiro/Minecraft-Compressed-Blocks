@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c0_lapis_ore"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:c1_lapis_ore"
-  }
+  },
+  "show_notification": true
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:bread"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:crated_bread"
-  }
+  },
+  "show_notification": true
 }

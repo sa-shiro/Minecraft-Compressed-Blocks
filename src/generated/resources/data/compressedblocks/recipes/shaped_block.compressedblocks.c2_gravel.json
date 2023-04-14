@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c1_gravel"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:c2_gravel"
-  }
+  },
+  "show_notification": true
 }

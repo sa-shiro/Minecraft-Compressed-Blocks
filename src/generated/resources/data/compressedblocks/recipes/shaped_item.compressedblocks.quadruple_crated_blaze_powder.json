@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:triple_crated_blaze_powder"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:quadruple_crated_blaze_powder"
-  }
+  },
+  "show_notification": true
 }

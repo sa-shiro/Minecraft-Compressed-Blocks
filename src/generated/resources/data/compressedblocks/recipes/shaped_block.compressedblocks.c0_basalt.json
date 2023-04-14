@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:basalt"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:c0_basalt"
-  }
+  },
+  "show_notification": true
 }

@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c2_iron_block"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:c3_iron_block"
-  }
+  },
+  "show_notification": true
 }

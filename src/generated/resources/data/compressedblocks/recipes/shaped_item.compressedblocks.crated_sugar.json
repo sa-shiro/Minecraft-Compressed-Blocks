@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:sugar"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:crated_sugar"
-  }
+  },
+  "show_notification": true
 }

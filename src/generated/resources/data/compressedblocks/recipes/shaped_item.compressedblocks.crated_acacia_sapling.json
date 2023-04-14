@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:acacia_sapling"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:crated_acacia_sapling"
-  }
+  },
+  "show_notification": true
 }

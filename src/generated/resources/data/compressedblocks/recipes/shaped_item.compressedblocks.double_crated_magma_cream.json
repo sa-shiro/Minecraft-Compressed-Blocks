@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:crated_magma_cream"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:double_crated_magma_cream"
-  }
+  },
+  "show_notification": true
 }

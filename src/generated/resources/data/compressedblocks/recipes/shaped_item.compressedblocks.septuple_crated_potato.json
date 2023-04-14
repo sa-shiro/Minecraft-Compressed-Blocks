@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:sextuple_crated_potato"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "compressedblocks:septuple_crated_potato"
-  }
+  },
+  "show_notification": true
 }

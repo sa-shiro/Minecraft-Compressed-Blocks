@@ -23,7 +23,6 @@ public class CrateItem extends Item {
      */
     public CrateItem(int level, String toolTipText) {
         super(new Properties()
-                .tab(ItemGroups.compressedItemGroup)
                 .stacksTo(64)
         );
         comp.setCompressionLevel(level);
