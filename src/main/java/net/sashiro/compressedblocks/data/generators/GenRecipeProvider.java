@@ -1,7 +1,10 @@
 package net.sashiro.compressedblocks.data.generators;
 
-import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.*;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -17,14 +20,13 @@ import java.util.function.Consumer;
 import static net.sashiro.compressedblocks.world.level.item.CrateItems.*;
 
 public class GenRecipeProvider extends RecipeProvider {
-    public GenRecipeProvider(PackOutput packOutput) {
-        super(packOutput);
+    public GenRecipeProvider(DataGenerator generatorIn) {
+        super(generatorIn);
     }
-
 
     @Override
     @ParametersAreNonnullByDefault
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         assert false;
         ArrayList<RegistryObject<Block>> blocks = new ArrayList<>(ModRegistryEvent.BLOCKS.getEntries());
 
@@ -35,14 +37,15 @@ public class GenRecipeProvider extends RecipeProvider {
                 for (Block mcBlock : ForgeRegistries.BLOCKS) {
                     String mcBlockName = mcBlock.getDescriptionId().replace("block.minecraft.", "");
                     if (cbBlockName.equals(mcBlockName)) {
-                        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, blocks.get(i).get()) // result
+                        ShapedRecipeBuilder.shaped(
+                                        blocks.get(i).get()) // result
                                 .define('#', mcBlock) // ingredient
                                 .pattern("###")
                                 .pattern("###")
                                 .pattern("###")
                                 .unlockedBy("has_item", has(mcBlock.asItem()))
                                 .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName));
-                        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, mcBlock, 9)
+                        ShapelessRecipeBuilder.shapeless(mcBlock, 9)
                                 .requires(blocks.get(i).get())
                                 .unlockedBy("has_item", has(blocks.get(i).get().asItem()))
                                 .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName));
@@ -50,14 +53,14 @@ public class GenRecipeProvider extends RecipeProvider {
                 }
             } else {
                 if (i > 0) {
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, blocks.get(i).get()) // result
+                    ShapedRecipeBuilder.shaped(blocks.get(i).get()) // result
                             .define('#', blocks.get(i - 1).get()) // ingredient
                             .pattern("###")
                             .pattern("###")
                             .pattern("###")
                             .unlockedBy("has_item", has(blocks.get(i - 1).get().asItem()))
                             .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + blockName));
-                    ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, blocks.get(i - 1).get(), 9)
+                    ShapelessRecipeBuilder.shapeless(blocks.get(i - 1).get(), 9)
                             .requires(blocks.get(i).get())
                             .unlockedBy("has_item", has(blocks.get(i).get().asItem()))
                             .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName));
@@ -157,7 +160,7 @@ public class GenRecipeProvider extends RecipeProvider {
             Item ingredient = baseItem.get(i).get();
             Item result = baseItem.get(i + 1).get();
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result) // result
+            ShapedRecipeBuilder.shaped(result) // result
                     .define('#', ingredient) // ingredient
                     .pattern("###")
                     .pattern("###")
@@ -165,7 +168,7 @@ public class GenRecipeProvider extends RecipeProvider {
                     .unlockedBy("has_item", has(ingredient)) // ingredient
                     .save(consumer, new ResourceLocation("compressedblocks", "shaped_" + result.getDescriptionId()));
 
-            ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ingredient, 9) // result, count
+            ShapelessRecipeBuilder.shapeless(ingredient, 9) // result, count
                     .requires(result) // ingredient
                     .unlockedBy("has_item", has(result))
                     .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + result.getDescriptionId()));
