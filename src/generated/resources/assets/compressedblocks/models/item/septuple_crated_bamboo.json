@@ -2,6 +2,7 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "compressedblocks:item/crate",
-    "layer1": "compressedblocks:item/bamboo"
+    "layer1": "compressedblocks:item/bamboo",
+    "layer2": "compressedblocks:item/7"
   }
 }

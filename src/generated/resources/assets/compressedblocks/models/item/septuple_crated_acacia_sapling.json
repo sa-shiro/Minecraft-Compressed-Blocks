@@ -2,6 +2,7 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "compressedblocks:item/crate",
-    "layer1": "compressedblocks:item/acacia_sapling"
+    "layer1": "compressedblocks:item/acacia_sapling",
+    "layer2": "compressedblocks:item/7"
   }
 }

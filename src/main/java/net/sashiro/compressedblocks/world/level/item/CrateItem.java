@@ -27,14 +27,15 @@ public class CrateItem extends Item {
         );
         comp.setCompressionLevel(level);
         this.toolTipText = toolTipText;
+        //if (comp.getBlockCount().equals("9")) itemCount = "8";
+        //else this.itemCount = comp.getBlockCount();
         this.itemCount = comp.getBlockCount();
     }
-
 
     @Override
     @ParametersAreNonnullByDefault
     public void appendHoverText(ItemStack s, @Nullable Level l, List<Component> c, TooltipFlag t) {
         super.appendHoverText(s, l, c, t);
-        c.add(Component.literal(itemCount + " " + toolTipText).withStyle(comp.getStyle()));
+        c.add(Component.literal(itemCount + "x " + toolTipText).withStyle(comp.getStyle()));
     }
 }

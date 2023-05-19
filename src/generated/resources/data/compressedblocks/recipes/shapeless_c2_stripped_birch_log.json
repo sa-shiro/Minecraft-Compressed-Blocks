@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c2_stripped_birch_log"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:c1_stripped_birch_log"
+  }
+}

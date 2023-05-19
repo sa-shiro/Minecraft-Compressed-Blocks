@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quintuple_crated_piston"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:quadruple_crated_piston"
+  }
+}
