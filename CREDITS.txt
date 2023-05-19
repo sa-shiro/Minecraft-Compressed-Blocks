@@ -37,7 +37,7 @@ pull requests, and just helping out the community in general. Thank you.
 
 This is Forge Mod Loader.
 
-You can find the source code at all times at https://github.com/MinecraftForge/MinecraftForge/tree/1.12.x/src/main/java/net/minecraftforge/fml
+You can find the source code at all times at https://github.com/MinecraftForge/MinecraftForge
 
 This minecraft mod is a clean open source implementation of a mod loader for minecraft servers
 and minecraft clients.

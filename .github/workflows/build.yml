@@ -47,16 +47,16 @@ jobs:
           name: Artifacts
           path: build/libs/
 
-      - name: Retrieve Version
-        run: |
-          echo "::set-output name=VERSION::$(${{github.workspace}}/gradlew -q printVersion)"
-        id: version
+      #- name: Retrieve Version
+      #  run: |
+      #    echo "::set-output name=VERSION::$(${{github.workspace}}/gradlew -q printVersion)"
+      #  id: version
 
-      - name: Get version
-        run: |
-          echo "VERSION=${{steps.version.outputs.VERSION}}" >> $GITHUB_ENV
-        # publishing with data generation fails, uploaded generated resources to make this work
+      #- name: Get version
+      #  run: |
+      #    echo "VERSION=${{steps.version.outputs.VERSION}}" >> $GITHUB_ENV
 
+      # publishing with data generation fails, uploaded generated resources to make this work
       - name: publish
         if: ${{ runner.os != 'Linux' }}
         uses: Kir-Antipov/mc-publish@v3.2
@@ -75,8 +75,8 @@ jobs:
 
           files: build/libs/*.jar
 
-          name: Compressed Blocks 1.19
-          version: ${{ env.VERSION }}
+          name: Version 1.2.2 (1.19.3 - 1.19.4)
+          version: 1.2.2 # this does not work for Modrinth: ${{ env.VERSION }}
           version-type: release
           changelog-file: changelog.md
 
