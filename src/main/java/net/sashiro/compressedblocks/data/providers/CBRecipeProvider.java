@@ -18,14 +18,14 @@ public class CBRecipeProvider extends RecipeProvider {
     public CBRecipeProvider(PackOutput packOutput) {
         super(packOutput);
     }
-
-
+    
+    
     @Override
     @ParametersAreNonnullByDefault
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-
+        
         ArrayList<RegistryObject<Block>> blocks = new ArrayList<>(CBRegistryEvent.BLOCKS.getEntries());
-
+        
         for (int i = 0; i < blocks.size(); i++) {
             String blockName = blocks.get(i).get().getDescriptionId().replace("block.compressedblocks.", "");
             if (blockName.contains("c0_")) {
@@ -58,15 +58,15 @@ public class CBRecipeProvider extends RecipeProvider {
                         .requires(blocks.get(i).get())
                         .unlockedBy("has_item", has(blocks.get(i).get().asItem()))
                         .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName));
-
+                
             }
         }
-
-        ArrayList<RegistryObject<Item>> crate_items = new ArrayList<>(CBRegistryEvent.CRATE_ITEMS.getEntries());
-
+        
+        ArrayList<RegistryObject<Block>> crate_items = new ArrayList<>(CBRegistryEvent.CRATE_BLOCKS.getEntries());
+        
         for (int i = 0; i < crate_items.size(); i++) {
-            String crate_itemName = crate_items.get(i).get().getDescriptionId().replace("item.compressedblocks.", "");
-
+            String crate_itemName = crate_items.get(i).get().getDescriptionId().replace("block.compressedblocks.", "");
+            
             if (crate_itemName.startsWith("crated")) {
                 String crate_itemName_clean = crate_itemName.replace("crated_", "");
                 for (Item vanillaItem : ForgeRegistries.ITEMS) {
@@ -98,7 +98,7 @@ public class CBRecipeProvider extends RecipeProvider {
                         .requires(crate_items.get(i).get())
                         .unlockedBy("has_item", has(crate_items.get(i).get().asItem()))
                         .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + crate_itemName));
-
+                
             }
         }
     }
