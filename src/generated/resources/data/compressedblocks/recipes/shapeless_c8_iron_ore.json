@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients": [
-    {
-      "item": "compressedblocks:c8_iron_ore"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:c7_iron_ore"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"building","ingredients":[{"item":"compressedblocks:c8_iron_ore"}],"result":{"count":9,"item":"compressedblocks:c7_iron_ore"}}

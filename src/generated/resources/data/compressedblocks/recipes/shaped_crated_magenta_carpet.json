@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "#": {
-      "item": "minecraft:magenta_carpet"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:crated_magenta_carpet"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"#":{"item":"minecraft:magenta_carpet"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:crated_magenta_carpet"},"show_notification":true}

@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "compressedblocks:septuple_crated_lily_of_the_valley"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:sextuple_crated_lily_of_the_valley"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"misc","ingredients":[{"item":"compressedblocks:septuple_crated_lily_of_the_valley"}],"result":{"count":9,"item":"compressedblocks:sextuple_crated_lily_of_the_valley"}}

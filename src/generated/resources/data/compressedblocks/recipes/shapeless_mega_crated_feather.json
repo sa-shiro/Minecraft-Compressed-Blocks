@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "compressedblocks:mega_crated_feather"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:octuple_crated_feather"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"misc","ingredients":[{"item":"compressedblocks:mega_crated_feather"}],"result":{"count":9,"item":"compressedblocks:octuple_crated_feather"}}

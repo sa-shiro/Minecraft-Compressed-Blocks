@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c4_acacia_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c4_acacia_planks"}}}

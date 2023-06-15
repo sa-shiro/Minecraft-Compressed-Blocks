@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c1_dirt"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c1_dirt"}}}

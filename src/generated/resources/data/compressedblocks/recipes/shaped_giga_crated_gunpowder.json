@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "#": {
-      "item": "compressedblocks:mega_crated_gunpowder"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:giga_crated_gunpowder"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"#":{"item":"compressedblocks:mega_crated_gunpowder"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:giga_crated_gunpowder"},"show_notification":true}

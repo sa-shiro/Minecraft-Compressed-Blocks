@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients": [
-    {
-      "item": "compressedblocks:c3_raw_gold_block"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:c2_raw_gold_block"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"building","ingredients":[{"item":"compressedblocks:c3_raw_gold_block"}],"result":{"count":9,"item":"compressedblocks:c2_raw_gold_block"}}

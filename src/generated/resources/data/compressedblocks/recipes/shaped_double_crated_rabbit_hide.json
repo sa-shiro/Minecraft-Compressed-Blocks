@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "#": {
-      "item": "compressedblocks:crated_rabbit_hide"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:double_crated_rabbit_hide"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"#":{"item":"compressedblocks:crated_rabbit_hide"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:double_crated_rabbit_hide"},"show_notification":true}

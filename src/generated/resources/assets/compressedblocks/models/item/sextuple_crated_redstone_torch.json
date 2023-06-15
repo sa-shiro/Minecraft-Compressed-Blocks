@@ -1,8 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "compressedblocks:item/crate",
-    "layer1": "compressedblocks:item/redstone_torch",
-    "layer2": "compressedblocks:item/6"
-  }
-}
+{"parent":"compressedblocks:block/sextuple_crated_redstone_torch"}

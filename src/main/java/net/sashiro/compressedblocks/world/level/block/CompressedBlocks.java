@@ -15,11 +15,12 @@ import net.minecraftforge.registries.RegistryObject;
 import static net.sashiro.compressedblocks.event.CBRegistryEvent.BLOCKS;
 import static net.sashiro.compressedblocks.world.level.block.CompressedBlock.*;
 
+@SuppressWarnings({"unused", "CanBeFinal"})
 @Mod.EventBusSubscriber(modid = net.sashiro.compressedblocks.CompressedBlocks.MOD_ID)
 public class CompressedBlocks {
     public static final float[] HARDNESS = {5.0F, 6.5F, 8.5F, 12.5F, 15.0F, 20.5F, 25.5F, 30.5F, 40.0F, 50.0F};
     public static final float[] RESISTANCE = {35.5F, 75.0F, 150.0F, 300.0F, 600.0F, 800.0F, 1250.0F, 2000.0F, 5000.0F, 7500.0F};
-
+    
     //------------------------------------------------------------------------------------------------------------------
     //region Dirt
     //------------------------------------------------------------------------------------------------------------------
@@ -1056,12 +1057,12 @@ public class CompressedBlocks {
     //------------------------------------------------------------------------------------------------------------------
     //endregion
     //------------------------------------------------------------------------------------------------------------------
-
-
-    private static Boolean isTrue(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, EntityType<?> entityType) {
+    
+    
+    private static boolean isTrue(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, EntityType<?> entityType) {
         return true;
     }
-
+    
     private static boolean isTrue(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
         return true;
     }

@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "#": {
-      "item": "compressedblocks:c1_granite"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:c2_granite"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"building","key":{"#":{"item":"compressedblocks:c1_granite"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:c2_granite"},"show_notification":true}

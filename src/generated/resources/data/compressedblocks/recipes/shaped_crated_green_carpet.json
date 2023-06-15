@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "#": {
-      "item": "minecraft:green_carpet"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:crated_green_carpet"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"#":{"item":"minecraft:green_carpet"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:crated_green_carpet"},"show_notification":true}

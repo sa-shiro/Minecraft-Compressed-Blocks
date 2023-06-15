@@ -1,8 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "compressedblocks:item/crate",
-    "layer1": "compressedblocks:item/pumpkin_seeds",
-    "layer2": "compressedblocks:item/2"
-  }
-}
+{"parent":"compressedblocks:block/double_crated_pumpkin_seeds"}

@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "compressedblocks:quadruple_crated_oxeye_daisy"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:triple_crated_oxeye_daisy"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"misc","ingredients":[{"item":"compressedblocks:quadruple_crated_oxeye_daisy"}],"result":{"count":9,"item":"compressedblocks:triple_crated_oxeye_daisy"}}

@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "#": {
-      "item": "compressedblocks:c2_diorite"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:c3_diorite"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"building","key":{"#":{"item":"compressedblocks:c2_diorite"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:c3_diorite"},"show_notification":true}

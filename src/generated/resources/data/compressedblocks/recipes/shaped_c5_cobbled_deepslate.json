@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "#": {
-      "item": "compressedblocks:c4_cobbled_deepslate"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:c5_cobbled_deepslate"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"building","key":{"#":{"item":"compressedblocks:c4_cobbled_deepslate"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:c5_cobbled_deepslate"},"show_notification":true}

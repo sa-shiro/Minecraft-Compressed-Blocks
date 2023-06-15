@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients": [
-    {
-      "item": "compressedblocks:c7_soul_soil"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:c6_soul_soil"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"building","ingredients":[{"item":"compressedblocks:c7_soul_soil"}],"result":{"count":9,"item":"compressedblocks:c6_soul_soil"}}

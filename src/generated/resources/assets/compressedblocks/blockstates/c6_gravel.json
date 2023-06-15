@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c6_gravel"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c6_gravel"}}}

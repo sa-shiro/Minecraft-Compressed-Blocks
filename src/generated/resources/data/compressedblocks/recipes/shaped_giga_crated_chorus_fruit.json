@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "#": {
-      "item": "compressedblocks:mega_crated_chorus_fruit"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:giga_crated_chorus_fruit"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"#":{"item":"compressedblocks:mega_crated_chorus_fruit"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:giga_crated_chorus_fruit"},"show_notification":true}

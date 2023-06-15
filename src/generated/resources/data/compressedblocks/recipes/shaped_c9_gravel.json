@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "#": {
-      "item": "compressedblocks:c8_gravel"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:c9_gravel"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"building","key":{"#":{"item":"compressedblocks:c8_gravel"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:c9_gravel"},"show_notification":true}

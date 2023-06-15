@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "#": {
-      "item": "minecraft:acacia_planks"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:c0_acacia_planks"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"building","key":{"#":{"item":"minecraft:acacia_planks"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:c0_acacia_planks"},"show_notification":true}

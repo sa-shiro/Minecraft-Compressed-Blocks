@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c1_dark_oak_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c1_dark_oak_planks"}}}

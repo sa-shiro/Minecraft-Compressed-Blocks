@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c9_coal_block"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c9_coal_block"}}}

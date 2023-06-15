@@ -1,2624 +1,1765 @@
 package net.sashiro.compressedblocks.world.level.item;
 
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.BlockItem;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.CompressedBlocks;
-import net.sashiro.compressedblocks.event.CBRegistryEvent;
-import net.sashiro.compressedblocks.util.StringUtils;
+import net.sashiro.compressedblocks.world.level.block.CrateBlocks;
+
+import static net.sashiro.compressedblocks.event.CBRegistryEvent.CRATE_ITEMS;
 
 @SuppressWarnings({"unused", "CanBeFinal"})
 @Mod.EventBusSubscriber(modid = CompressedBlocks.MOD_ID)
 public class CrateItems {
-    //------------------------------------------------------------------------------------------------------------------
-    //region Oak Sapling
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "oak_sapling", () -> new CrateItem(0, StringUtils.stringFormat("oak_sapling")));
-    public static RegistryObject<Item> DOUBLE_CRATED_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "oak_sapling", () -> new CrateItem(1, StringUtils.stringFormat("oak_sapling")));
-    public static RegistryObject<Item> TRIPLE_CRATED_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "oak_sapling", () -> new CrateItem(2, StringUtils.stringFormat("oak_sapling")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "oak_sapling", () -> new CrateItem(3, StringUtils.stringFormat("oak_sapling")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "oak_sapling", () -> new CrateItem(4, StringUtils.stringFormat("oak_sapling")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "oak_sapling", () -> new CrateItem(5, StringUtils.stringFormat("oak_sapling")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "oak_sapling", () -> new CrateItem(6, StringUtils.stringFormat("oak_sapling")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "oak_sapling", () -> new CrateItem(7, StringUtils.stringFormat("oak_sapling")));
-    public static RegistryObject<Item> MEGA_CRATED_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "oak_sapling", () -> new CrateItem(8, StringUtils.stringFormat("oak_sapling")));
-    public static RegistryObject<Item> GIGA_CRATED_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "oak_sapling", () -> new CrateItem(9, StringUtils.stringFormat("oak_sapling")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Spruce Sapling
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_SPRUCE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "spruce_sapling", () -> new CrateItem(0, StringUtils.stringFormat("spruce_sapling")));
-    public static RegistryObject<Item> DOUBLE_CRATED_SPRUCE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "spruce_sapling", () -> new CrateItem(1, StringUtils.stringFormat("spruce_sapling")));
-    public static RegistryObject<Item> TRIPLE_CRATED_SPRUCE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "spruce_sapling", () -> new CrateItem(2, StringUtils.stringFormat("spruce_sapling")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_SPRUCE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "spruce_sapling", () -> new CrateItem(3, StringUtils.stringFormat("spruce_sapling")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_SPRUCE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "spruce_sapling", () -> new CrateItem(4, StringUtils.stringFormat("spruce_sapling")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_SPRUCE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "spruce_sapling", () -> new CrateItem(5, StringUtils.stringFormat("spruce_sapling")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_SPRUCE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "spruce_sapling", () -> new CrateItem(6, StringUtils.stringFormat("spruce_sapling")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_SPRUCE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "spruce_sapling", () -> new CrateItem(7, StringUtils.stringFormat("spruce_sapling")));
-    public static RegistryObject<Item> MEGA_CRATED_SPRUCE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "spruce_sapling", () -> new CrateItem(8, StringUtils.stringFormat("spruce_sapling")));
-    public static RegistryObject<Item> GIGA_CRATED_SPRUCE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "spruce_sapling", () -> new CrateItem(9, StringUtils.stringFormat("spruce_sapling")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Birch Sapling
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BIRCH_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "birch_sapling", () -> new CrateItem(0, StringUtils.stringFormat("birch_sapling")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BIRCH_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "birch_sapling", () -> new CrateItem(1, StringUtils.stringFormat("birch_sapling")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BIRCH_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "birch_sapling", () -> new CrateItem(2, StringUtils.stringFormat("birch_sapling")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BIRCH_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "birch_sapling", () -> new CrateItem(3, StringUtils.stringFormat("birch_sapling")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BIRCH_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "birch_sapling", () -> new CrateItem(4, StringUtils.stringFormat("birch_sapling")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BIRCH_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "birch_sapling", () -> new CrateItem(5, StringUtils.stringFormat("birch_sapling")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BIRCH_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "birch_sapling", () -> new CrateItem(6, StringUtils.stringFormat("birch_sapling")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BIRCH_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "birch_sapling", () -> new CrateItem(7, StringUtils.stringFormat("birch_sapling")));
-    public static RegistryObject<Item> MEGA_CRATED_BIRCH_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "birch_sapling", () -> new CrateItem(8, StringUtils.stringFormat("birch_sapling")));
-    public static RegistryObject<Item> GIGA_CRATED_BIRCH_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "birch_sapling", () -> new CrateItem(9, StringUtils.stringFormat("birch_sapling")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Jungle Sapling
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_JUNGLE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "jungle_sapling", () -> new CrateItem(0, StringUtils.stringFormat("jungle_sapling")));
-    public static RegistryObject<Item> DOUBLE_CRATED_JUNGLE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "jungle_sapling", () -> new CrateItem(1, StringUtils.stringFormat("jungle_sapling")));
-    public static RegistryObject<Item> TRIPLE_CRATED_JUNGLE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "jungle_sapling", () -> new CrateItem(2, StringUtils.stringFormat("jungle_sapling")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_JUNGLE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "jungle_sapling", () -> new CrateItem(3, StringUtils.stringFormat("jungle_sapling")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_JUNGLE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "jungle_sapling", () -> new CrateItem(4, StringUtils.stringFormat("jungle_sapling")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_JUNGLE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "jungle_sapling", () -> new CrateItem(5, StringUtils.stringFormat("jungle_sapling")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_JUNGLE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "jungle_sapling", () -> new CrateItem(6, StringUtils.stringFormat("jungle_sapling")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_JUNGLE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "jungle_sapling", () -> new CrateItem(7, StringUtils.stringFormat("jungle_sapling")));
-    public static RegistryObject<Item> MEGA_CRATED_JUNGLE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "jungle_sapling", () -> new CrateItem(8, StringUtils.stringFormat("jungle_sapling")));
-    public static RegistryObject<Item> GIGA_CRATED_JUNGLE_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "jungle_sapling", () -> new CrateItem(9, StringUtils.stringFormat("jungle_sapling")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Acacia Sapling
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_ACACIA_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "acacia_sapling", () -> new CrateItem(0, StringUtils.stringFormat("acacia_sapling")));
-    public static RegistryObject<Item> DOUBLE_CRATED_ACACIA_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "acacia_sapling", () -> new CrateItem(1, StringUtils.stringFormat("acacia_sapling")));
-    public static RegistryObject<Item> TRIPLE_CRATED_ACACIA_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "acacia_sapling", () -> new CrateItem(2, StringUtils.stringFormat("acacia_sapling")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_ACACIA_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "acacia_sapling", () -> new CrateItem(3, StringUtils.stringFormat("acacia_sapling")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_ACACIA_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "acacia_sapling", () -> new CrateItem(4, StringUtils.stringFormat("acacia_sapling")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_ACACIA_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "acacia_sapling", () -> new CrateItem(5, StringUtils.stringFormat("acacia_sapling")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_ACACIA_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "acacia_sapling", () -> new CrateItem(6, StringUtils.stringFormat("acacia_sapling")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_ACACIA_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "acacia_sapling", () -> new CrateItem(7, StringUtils.stringFormat("acacia_sapling")));
-    public static RegistryObject<Item> MEGA_CRATED_ACACIA_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "acacia_sapling", () -> new CrateItem(8, StringUtils.stringFormat("acacia_sapling")));
-    public static RegistryObject<Item> GIGA_CRATED_ACACIA_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "acacia_sapling", () -> new CrateItem(9, StringUtils.stringFormat("acacia_sapling")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Dark Oak Sapling
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_DARK_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "dark_oak_sapling", () -> new CrateItem(0, StringUtils.stringFormat("dark_oak_sapling")));
-    public static RegistryObject<Item> DOUBLE_CRATED_DARK_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "dark_oak_sapling", () -> new CrateItem(1, StringUtils.stringFormat("dark_oak_sapling")));
-    public static RegistryObject<Item> TRIPLE_CRATED_DARK_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "dark_oak_sapling", () -> new CrateItem(2, StringUtils.stringFormat("dark_oak_sapling")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_DARK_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "dark_oak_sapling", () -> new CrateItem(3, StringUtils.stringFormat("dark_oak_sapling")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_DARK_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "dark_oak_sapling", () -> new CrateItem(4, StringUtils.stringFormat("dark_oak_sapling")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_DARK_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "dark_oak_sapling", () -> new CrateItem(5, StringUtils.stringFormat("dark_oak_sapling")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_DARK_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "dark_oak_sapling", () -> new CrateItem(6, StringUtils.stringFormat("dark_oak_sapling")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_DARK_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "dark_oak_sapling", () -> new CrateItem(7, StringUtils.stringFormat("dark_oak_sapling")));
-    public static RegistryObject<Item> MEGA_CRATED_DARK_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "dark_oak_sapling", () -> new CrateItem(8, StringUtils.stringFormat("dark_oak_sapling")));
-    public static RegistryObject<Item> GIGA_CRATED_DARK_OAK_SAPLING = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "dark_oak_sapling", () -> new CrateItem(9, StringUtils.stringFormat("dark_oak_sapling")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Mangrove Propagule
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_MANGROVE_PROPAGULE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "mangrove_propagule", () -> new CrateItem(0, StringUtils.stringFormat("mangrove_propagule")));
-    public static RegistryObject<Item> DOUBLE_CRATED_MANGROVE_PROPAGULE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "mangrove_propagule", () -> new CrateItem(1, StringUtils.stringFormat("mangrove_propagule")));
-    public static RegistryObject<Item> TRIPLE_CRATED_MANGROVE_PROPAGULE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "mangrove_propagule", () -> new CrateItem(2, StringUtils.stringFormat("mangrove_propagule")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_MANGROVE_PROPAGULE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "mangrove_propagule", () -> new CrateItem(3, StringUtils.stringFormat("mangrove_propagule")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_MANGROVE_PROPAGULE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "mangrove_propagule", () -> new CrateItem(4, StringUtils.stringFormat("mangrove_propagule")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_MANGROVE_PROPAGULE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "mangrove_propagule", () -> new CrateItem(5, StringUtils.stringFormat("mangrove_propagule")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_MANGROVE_PROPAGULE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "mangrove_propagule", () -> new CrateItem(6, StringUtils.stringFormat("mangrove_propagule")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_MANGROVE_PROPAGULE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "mangrove_propagule", () -> new CrateItem(7, StringUtils.stringFormat("mangrove_propagule")));
-    public static RegistryObject<Item> MEGA_CRATED_MANGROVE_PROPAGULE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "mangrove_propagule", () -> new CrateItem(8, StringUtils.stringFormat("mangrove_propagule")));
-    public static RegistryObject<Item> GIGA_CRATED_MANGROVE_PROPAGULE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "mangrove_propagule", () -> new CrateItem(9, StringUtils.stringFormat("mangrove_propagule")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Azalea
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "azalea", () -> new CrateItem(0, StringUtils.stringFormat("azalea")));
-    public static RegistryObject<Item> DOUBLE_CRATED_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "azalea", () -> new CrateItem(1, StringUtils.stringFormat("azalea")));
-    public static RegistryObject<Item> TRIPLE_CRATED_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "azalea", () -> new CrateItem(2, StringUtils.stringFormat("azalea")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "azalea", () -> new CrateItem(3, StringUtils.stringFormat("azalea")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "azalea", () -> new CrateItem(4, StringUtils.stringFormat("azalea")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "azalea", () -> new CrateItem(5, StringUtils.stringFormat("azalea")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "azalea", () -> new CrateItem(6, StringUtils.stringFormat("azalea")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "azalea", () -> new CrateItem(7, StringUtils.stringFormat("azalea")));
-    public static RegistryObject<Item> MEGA_CRATED_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "azalea", () -> new CrateItem(8, StringUtils.stringFormat("azalea")));
-    public static RegistryObject<Item> GIGA_CRATED_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "azalea", () -> new CrateItem(9, StringUtils.stringFormat("azalea")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Flowering Azalea
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_FLOWERING_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "flowering_azalea", () -> new CrateItem(0, StringUtils.stringFormat("flowering_azalea")));
-    public static RegistryObject<Item> DOUBLE_CRATED_FLOWERING_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "flowering_azalea", () -> new CrateItem(1, StringUtils.stringFormat("flowering_azalea")));
-    public static RegistryObject<Item> TRIPLE_CRATED_FLOWERING_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "flowering_azalea", () -> new CrateItem(2, StringUtils.stringFormat("flowering_azalea")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_FLOWERING_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "flowering_azalea", () -> new CrateItem(3, StringUtils.stringFormat("flowering_azalea")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_FLOWERING_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "flowering_azalea", () -> new CrateItem(4, StringUtils.stringFormat("flowering_azalea")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_FLOWERING_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "flowering_azalea", () -> new CrateItem(5, StringUtils.stringFormat("flowering_azalea")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_FLOWERING_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "flowering_azalea", () -> new CrateItem(6, StringUtils.stringFormat("flowering_azalea")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_FLOWERING_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "flowering_azalea", () -> new CrateItem(7, StringUtils.stringFormat("flowering_azalea")));
-    public static RegistryObject<Item> MEGA_CRATED_FLOWERING_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "flowering_azalea", () -> new CrateItem(8, StringUtils.stringFormat("flowering_azalea")));
-    public static RegistryObject<Item> GIGA_CRATED_FLOWERING_AZALEA = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "flowering_azalea", () -> new CrateItem(9, StringUtils.stringFormat("flowering_azalea")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Brown Mushroom
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BROWN_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "brown_mushroom", () -> new CrateItem(0, StringUtils.stringFormat("brown_mushroom")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BROWN_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "brown_mushroom", () -> new CrateItem(1, StringUtils.stringFormat("brown_mushroom")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BROWN_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "brown_mushroom", () -> new CrateItem(2, StringUtils.stringFormat("brown_mushroom")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BROWN_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "brown_mushroom", () -> new CrateItem(3, StringUtils.stringFormat("brown_mushroom")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BROWN_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "brown_mushroom", () -> new CrateItem(4, StringUtils.stringFormat("brown_mushroom")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BROWN_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "brown_mushroom", () -> new CrateItem(5, StringUtils.stringFormat("brown_mushroom")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BROWN_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "brown_mushroom", () -> new CrateItem(6, StringUtils.stringFormat("brown_mushroom")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BROWN_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "brown_mushroom", () -> new CrateItem(7, StringUtils.stringFormat("brown_mushroom")));
-    public static RegistryObject<Item> MEGA_CRATED_BROWN_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "brown_mushroom", () -> new CrateItem(8, StringUtils.stringFormat("brown_mushroom")));
-    public static RegistryObject<Item> GIGA_CRATED_BROWN_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "brown_mushroom", () -> new CrateItem(9, StringUtils.stringFormat("brown_mushroom")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Red Mushroom
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_RED_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "red_mushroom", () -> new CrateItem(0, StringUtils.stringFormat("red_mushroom")));
-    public static RegistryObject<Item> DOUBLE_CRATED_RED_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "red_mushroom", () -> new CrateItem(1, StringUtils.stringFormat("red_mushroom")));
-    public static RegistryObject<Item> TRIPLE_CRATED_RED_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "red_mushroom", () -> new CrateItem(2, StringUtils.stringFormat("red_mushroom")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_RED_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "red_mushroom", () -> new CrateItem(3, StringUtils.stringFormat("red_mushroom")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_RED_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "red_mushroom", () -> new CrateItem(4, StringUtils.stringFormat("red_mushroom")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_RED_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "red_mushroom", () -> new CrateItem(5, StringUtils.stringFormat("red_mushroom")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_RED_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "red_mushroom", () -> new CrateItem(6, StringUtils.stringFormat("red_mushroom")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_RED_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "red_mushroom", () -> new CrateItem(7, StringUtils.stringFormat("red_mushroom")));
-    public static RegistryObject<Item> MEGA_CRATED_RED_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "red_mushroom", () -> new CrateItem(8, StringUtils.stringFormat("red_mushroom")));
-    public static RegistryObject<Item> GIGA_CRATED_RED_MUSHROOM = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "red_mushroom", () -> new CrateItem(9, StringUtils.stringFormat("red_mushroom")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Crimson Fungus
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_CRIMSON_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "crimson_fungus", () -> new CrateItem(0, StringUtils.stringFormat("crimson_fungus")));
-    public static RegistryObject<Item> DOUBLE_CRATED_CRIMSON_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "crimson_fungus", () -> new CrateItem(1, StringUtils.stringFormat("crimson_fungus")));
-    public static RegistryObject<Item> TRIPLE_CRATED_CRIMSON_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "crimson_fungus", () -> new CrateItem(2, StringUtils.stringFormat("crimson_fungus")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_CRIMSON_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "crimson_fungus", () -> new CrateItem(3, StringUtils.stringFormat("crimson_fungus")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_CRIMSON_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "crimson_fungus", () -> new CrateItem(4, StringUtils.stringFormat("crimson_fungus")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_CRIMSON_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "crimson_fungus", () -> new CrateItem(5, StringUtils.stringFormat("crimson_fungus")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_CRIMSON_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "crimson_fungus", () -> new CrateItem(6, StringUtils.stringFormat("crimson_fungus")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_CRIMSON_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "crimson_fungus", () -> new CrateItem(7, StringUtils.stringFormat("crimson_fungus")));
-    public static RegistryObject<Item> MEGA_CRATED_CRIMSON_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "crimson_fungus", () -> new CrateItem(8, StringUtils.stringFormat("crimson_fungus")));
-    public static RegistryObject<Item> GIGA_CRATED_CRIMSON_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "crimson_fungus", () -> new CrateItem(9, StringUtils.stringFormat("crimson_fungus")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Warped Fungus
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_WARPED_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "warped_fungus", () -> new CrateItem(0, StringUtils.stringFormat("warped_fungus")));
-    public static RegistryObject<Item> DOUBLE_CRATED_WARPED_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "warped_fungus", () -> new CrateItem(1, StringUtils.stringFormat("warped_fungus")));
-    public static RegistryObject<Item> TRIPLE_CRATED_WARPED_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "warped_fungus", () -> new CrateItem(2, StringUtils.stringFormat("warped_fungus")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_WARPED_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "warped_fungus", () -> new CrateItem(3, StringUtils.stringFormat("warped_fungus")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_WARPED_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "warped_fungus", () -> new CrateItem(4, StringUtils.stringFormat("warped_fungus")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_WARPED_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "warped_fungus", () -> new CrateItem(5, StringUtils.stringFormat("warped_fungus")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_WARPED_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "warped_fungus", () -> new CrateItem(6, StringUtils.stringFormat("warped_fungus")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_WARPED_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "warped_fungus", () -> new CrateItem(7, StringUtils.stringFormat("warped_fungus")));
-    public static RegistryObject<Item> MEGA_CRATED_WARPED_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "warped_fungus", () -> new CrateItem(8, StringUtils.stringFormat("warped_fungus")));
-    public static RegistryObject<Item> GIGA_CRATED_WARPED_FUNGUS = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "warped_fungus", () -> new CrateItem(9, StringUtils.stringFormat("warped_fungus")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Dead Bush
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_DEAD_BUSH = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "dead_bush", () -> new CrateItem(0, StringUtils.stringFormat("dead_bush")));
-    public static RegistryObject<Item> DOUBLE_CRATED_DEAD_BUSH = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "dead_bush", () -> new CrateItem(1, StringUtils.stringFormat("dead_bush")));
-    public static RegistryObject<Item> TRIPLE_CRATED_DEAD_BUSH = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "dead_bush", () -> new CrateItem(2, StringUtils.stringFormat("dead_bush")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_DEAD_BUSH = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "dead_bush", () -> new CrateItem(3, StringUtils.stringFormat("dead_bush")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_DEAD_BUSH = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "dead_bush", () -> new CrateItem(4, StringUtils.stringFormat("dead_bush")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_DEAD_BUSH = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "dead_bush", () -> new CrateItem(5, StringUtils.stringFormat("dead_bush")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_DEAD_BUSH = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "dead_bush", () -> new CrateItem(6, StringUtils.stringFormat("dead_bush")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_DEAD_BUSH = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "dead_bush", () -> new CrateItem(7, StringUtils.stringFormat("dead_bush")));
-    public static RegistryObject<Item> MEGA_CRATED_DEAD_BUSH = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "dead_bush", () -> new CrateItem(8, StringUtils.stringFormat("dead_bush")));
-    public static RegistryObject<Item> GIGA_CRATED_DEAD_BUSH = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "dead_bush", () -> new CrateItem(9, StringUtils.stringFormat("dead_bush")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Dandelion
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_DANDELION = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "dandelion", () -> new CrateItem(0, StringUtils.stringFormat("dandelion")));
-    public static RegistryObject<Item> DOUBLE_CRATED_DANDELION = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "dandelion", () -> new CrateItem(1, StringUtils.stringFormat("dandelion")));
-    public static RegistryObject<Item> TRIPLE_CRATED_DANDELION = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "dandelion", () -> new CrateItem(2, StringUtils.stringFormat("dandelion")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_DANDELION = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "dandelion", () -> new CrateItem(3, StringUtils.stringFormat("dandelion")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_DANDELION = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "dandelion", () -> new CrateItem(4, StringUtils.stringFormat("dandelion")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_DANDELION = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "dandelion", () -> new CrateItem(5, StringUtils.stringFormat("dandelion")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_DANDELION = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "dandelion", () -> new CrateItem(6, StringUtils.stringFormat("dandelion")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_DANDELION = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "dandelion", () -> new CrateItem(7, StringUtils.stringFormat("dandelion")));
-    public static RegistryObject<Item> MEGA_CRATED_DANDELION = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "dandelion", () -> new CrateItem(8, StringUtils.stringFormat("dandelion")));
-    public static RegistryObject<Item> GIGA_CRATED_DANDELION = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "dandelion", () -> new CrateItem(9, StringUtils.stringFormat("dandelion")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Poppy
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_POPPY = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "poppy", () -> new CrateItem(0, StringUtils.stringFormat("poppy")));
-    public static RegistryObject<Item> DOUBLE_CRATED_POPPY = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "poppy", () -> new CrateItem(1, StringUtils.stringFormat("poppy")));
-    public static RegistryObject<Item> TRIPLE_CRATED_POPPY = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "poppy", () -> new CrateItem(2, StringUtils.stringFormat("poppy")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_POPPY = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "poppy", () -> new CrateItem(3, StringUtils.stringFormat("poppy")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_POPPY = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "poppy", () -> new CrateItem(4, StringUtils.stringFormat("poppy")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_POPPY = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "poppy", () -> new CrateItem(5, StringUtils.stringFormat("poppy")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_POPPY = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "poppy", () -> new CrateItem(6, StringUtils.stringFormat("poppy")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_POPPY = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "poppy", () -> new CrateItem(7, StringUtils.stringFormat("poppy")));
-    public static RegistryObject<Item> MEGA_CRATED_POPPY = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "poppy", () -> new CrateItem(8, StringUtils.stringFormat("poppy")));
-    public static RegistryObject<Item> GIGA_CRATED_POPPY = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "poppy", () -> new CrateItem(9, StringUtils.stringFormat("poppy")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Blue Orchid
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BLUE_ORCHID = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "blue_orchid", () -> new CrateItem(0, StringUtils.stringFormat("blue_orchid")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BLUE_ORCHID = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "blue_orchid", () -> new CrateItem(1, StringUtils.stringFormat("blue_orchid")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BLUE_ORCHID = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "blue_orchid", () -> new CrateItem(2, StringUtils.stringFormat("blue_orchid")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BLUE_ORCHID = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "blue_orchid", () -> new CrateItem(3, StringUtils.stringFormat("blue_orchid")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BLUE_ORCHID = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "blue_orchid", () -> new CrateItem(4, StringUtils.stringFormat("blue_orchid")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BLUE_ORCHID = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "blue_orchid", () -> new CrateItem(5, StringUtils.stringFormat("blue_orchid")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BLUE_ORCHID = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "blue_orchid", () -> new CrateItem(6, StringUtils.stringFormat("blue_orchid")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BLUE_ORCHID = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "blue_orchid", () -> new CrateItem(7, StringUtils.stringFormat("blue_orchid")));
-    public static RegistryObject<Item> MEGA_CRATED_BLUE_ORCHID = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "blue_orchid", () -> new CrateItem(8, StringUtils.stringFormat("blue_orchid")));
-    public static RegistryObject<Item> GIGA_CRATED_BLUE_ORCHID = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "blue_orchid", () -> new CrateItem(9, StringUtils.stringFormat("blue_orchid")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Allium
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_ALLIUM = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "allium", () -> new CrateItem(0, StringUtils.stringFormat("allium")));
-    public static RegistryObject<Item> DOUBLE_CRATED_ALLIUM = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "allium", () -> new CrateItem(1, StringUtils.stringFormat("allium")));
-    public static RegistryObject<Item> TRIPLE_CRATED_ALLIUM = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "allium", () -> new CrateItem(2, StringUtils.stringFormat("allium")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_ALLIUM = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "allium", () -> new CrateItem(3, StringUtils.stringFormat("allium")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_ALLIUM = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "allium", () -> new CrateItem(4, StringUtils.stringFormat("allium")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_ALLIUM = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "allium", () -> new CrateItem(5, StringUtils.stringFormat("allium")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_ALLIUM = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "allium", () -> new CrateItem(6, StringUtils.stringFormat("allium")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_ALLIUM = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "allium", () -> new CrateItem(7, StringUtils.stringFormat("allium")));
-    public static RegistryObject<Item> MEGA_CRATED_ALLIUM = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "allium", () -> new CrateItem(8, StringUtils.stringFormat("allium")));
-    public static RegistryObject<Item> GIGA_CRATED_ALLIUM = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "allium", () -> new CrateItem(9, StringUtils.stringFormat("allium")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Azure Bluet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_AZURE_BLUET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "azure_bluet", () -> new CrateItem(0, StringUtils.stringFormat("azure_bluet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_AZURE_BLUET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "azure_bluet", () -> new CrateItem(1, StringUtils.stringFormat("azure_bluet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_AZURE_BLUET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "azure_bluet", () -> new CrateItem(2, StringUtils.stringFormat("azure_bluet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_AZURE_BLUET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "azure_bluet", () -> new CrateItem(3, StringUtils.stringFormat("azure_bluet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_AZURE_BLUET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "azure_bluet", () -> new CrateItem(4, StringUtils.stringFormat("azure_bluet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_AZURE_BLUET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "azure_bluet", () -> new CrateItem(5, StringUtils.stringFormat("azure_bluet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_AZURE_BLUET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "azure_bluet", () -> new CrateItem(6, StringUtils.stringFormat("azure_bluet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_AZURE_BLUET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "azure_bluet", () -> new CrateItem(7, StringUtils.stringFormat("azure_bluet")));
-    public static RegistryObject<Item> MEGA_CRATED_AZURE_BLUET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "azure_bluet", () -> new CrateItem(8, StringUtils.stringFormat("azure_bluet")));
-    public static RegistryObject<Item> GIGA_CRATED_AZURE_BLUET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "azure_bluet", () -> new CrateItem(9, StringUtils.stringFormat("azure_bluet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Red Tulip
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_RED_TULIP = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "red_tulip", () -> new CrateItem(0, StringUtils.stringFormat("red_tulip")));
-    public static RegistryObject<Item> DOUBLE_CRATED_RED_TULIP = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "red_tulip", () -> new CrateItem(1, StringUtils.stringFormat("red_tulip")));
-    public static RegistryObject<Item> TRIPLE_CRATED_RED_TULIP = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "red_tulip", () -> new CrateItem(2, StringUtils.stringFormat("red_tulip")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_RED_TULIP = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "red_tulip", () -> new CrateItem(3, StringUtils.stringFormat("red_tulip")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_RED_TULIP = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "red_tulip", () -> new CrateItem(4, StringUtils.stringFormat("red_tulip")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_RED_TULIP = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "red_tulip", () -> new CrateItem(5, StringUtils.stringFormat("red_tulip")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_RED_TULIP = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "red_tulip", () -> new CrateItem(6, StringUtils.stringFormat("red_tulip")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_RED_TULIP = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "red_tulip", () -> new CrateItem(7, StringUtils.stringFormat("red_tulip")));
-    public static RegistryObject<Item> MEGA_CRATED_RED_TULIP = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "red_tulip", () -> new CrateItem(8, StringUtils.stringFormat("red_tulip")));
-    public static RegistryObject<Item> GIGA_CRATED_RED_TULIP = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "red_tulip", () -> new CrateItem(9, StringUtils.stringFormat("red_tulip")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Orange Tulip
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_ORANGE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "orange_tulip", () -> new CrateItem(0, StringUtils.stringFormat("orange_tulip")));
-    public static RegistryObject<Item> DOUBLE_CRATED_ORANGE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "orange_tulip", () -> new CrateItem(1, StringUtils.stringFormat("orange_tulip")));
-    public static RegistryObject<Item> TRIPLE_CRATED_ORANGE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "orange_tulip", () -> new CrateItem(2, StringUtils.stringFormat("orange_tulip")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_ORANGE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "orange_tulip", () -> new CrateItem(3, StringUtils.stringFormat("orange_tulip")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_ORANGE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "orange_tulip", () -> new CrateItem(4, StringUtils.stringFormat("orange_tulip")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_ORANGE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "orange_tulip", () -> new CrateItem(5, StringUtils.stringFormat("orange_tulip")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_ORANGE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "orange_tulip", () -> new CrateItem(6, StringUtils.stringFormat("orange_tulip")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_ORANGE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "orange_tulip", () -> new CrateItem(7, StringUtils.stringFormat("orange_tulip")));
-    public static RegistryObject<Item> MEGA_CRATED_ORANGE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "orange_tulip", () -> new CrateItem(8, StringUtils.stringFormat("orange_tulip")));
-    public static RegistryObject<Item> GIGA_CRATED_ORANGE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "orange_tulip", () -> new CrateItem(9, StringUtils.stringFormat("orange_tulip")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region White Tulip
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_WHITE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "white_tulip", () -> new CrateItem(0, StringUtils.stringFormat("white_tulip")));
-    public static RegistryObject<Item> DOUBLE_CRATED_WHITE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "white_tulip", () -> new CrateItem(1, StringUtils.stringFormat("white_tulip")));
-    public static RegistryObject<Item> TRIPLE_CRATED_WHITE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "white_tulip", () -> new CrateItem(2, StringUtils.stringFormat("white_tulip")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_WHITE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "white_tulip", () -> new CrateItem(3, StringUtils.stringFormat("white_tulip")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_WHITE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "white_tulip", () -> new CrateItem(4, StringUtils.stringFormat("white_tulip")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_WHITE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "white_tulip", () -> new CrateItem(5, StringUtils.stringFormat("white_tulip")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_WHITE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "white_tulip", () -> new CrateItem(6, StringUtils.stringFormat("white_tulip")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_WHITE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "white_tulip", () -> new CrateItem(7, StringUtils.stringFormat("white_tulip")));
-    public static RegistryObject<Item> MEGA_CRATED_WHITE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "white_tulip", () -> new CrateItem(8, StringUtils.stringFormat("white_tulip")));
-    public static RegistryObject<Item> GIGA_CRATED_WHITE_TULIP = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "white_tulip", () -> new CrateItem(9, StringUtils.stringFormat("white_tulip")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Pink Tulip
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_PINK_TULIP = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "pink_tulip", () -> new CrateItem(0, StringUtils.stringFormat("pink_tulip")));
-    public static RegistryObject<Item> DOUBLE_CRATED_PINK_TULIP = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "pink_tulip", () -> new CrateItem(1, StringUtils.stringFormat("pink_tulip")));
-    public static RegistryObject<Item> TRIPLE_CRATED_PINK_TULIP = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "pink_tulip", () -> new CrateItem(2, StringUtils.stringFormat("pink_tulip")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_PINK_TULIP = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "pink_tulip", () -> new CrateItem(3, StringUtils.stringFormat("pink_tulip")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_PINK_TULIP = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "pink_tulip", () -> new CrateItem(4, StringUtils.stringFormat("pink_tulip")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_PINK_TULIP = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "pink_tulip", () -> new CrateItem(5, StringUtils.stringFormat("pink_tulip")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_PINK_TULIP = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "pink_tulip", () -> new CrateItem(6, StringUtils.stringFormat("pink_tulip")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_PINK_TULIP = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "pink_tulip", () -> new CrateItem(7, StringUtils.stringFormat("pink_tulip")));
-    public static RegistryObject<Item> MEGA_CRATED_PINK_TULIP = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "pink_tulip", () -> new CrateItem(8, StringUtils.stringFormat("pink_tulip")));
-    public static RegistryObject<Item> GIGA_CRATED_PINK_TULIP = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "pink_tulip", () -> new CrateItem(9, StringUtils.stringFormat("pink_tulip")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Oxeye Daisy
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_OXEYE_DAISY = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "oxeye_daisy", () -> new CrateItem(0, StringUtils.stringFormat("oxeye_daisy")));
-    public static RegistryObject<Item> DOUBLE_CRATED_OXEYE_DAISY = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "oxeye_daisy", () -> new CrateItem(1, StringUtils.stringFormat("oxeye_daisy")));
-    public static RegistryObject<Item> TRIPLE_CRATED_OXEYE_DAISY = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "oxeye_daisy", () -> new CrateItem(2, StringUtils.stringFormat("oxeye_daisy")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_OXEYE_DAISY = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "oxeye_daisy", () -> new CrateItem(3, StringUtils.stringFormat("oxeye_daisy")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_OXEYE_DAISY = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "oxeye_daisy", () -> new CrateItem(4, StringUtils.stringFormat("oxeye_daisy")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_OXEYE_DAISY = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "oxeye_daisy", () -> new CrateItem(5, StringUtils.stringFormat("oxeye_daisy")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_OXEYE_DAISY = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "oxeye_daisy", () -> new CrateItem(6, StringUtils.stringFormat("oxeye_daisy")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_OXEYE_DAISY = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "oxeye_daisy", () -> new CrateItem(7, StringUtils.stringFormat("oxeye_daisy")));
-    public static RegistryObject<Item> MEGA_CRATED_OXEYE_DAISY = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "oxeye_daisy", () -> new CrateItem(8, StringUtils.stringFormat("oxeye_daisy")));
-    public static RegistryObject<Item> GIGA_CRATED_OXEYE_DAISY = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "oxeye_daisy", () -> new CrateItem(9, StringUtils.stringFormat("oxeye_daisy")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cornflower
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_CORNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cornflower", () -> new CrateItem(0, StringUtils.stringFormat("cornflower")));
-    public static RegistryObject<Item> DOUBLE_CRATED_CORNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cornflower", () -> new CrateItem(1, StringUtils.stringFormat("cornflower")));
-    public static RegistryObject<Item> TRIPLE_CRATED_CORNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cornflower", () -> new CrateItem(2, StringUtils.stringFormat("cornflower")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_CORNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cornflower", () -> new CrateItem(3, StringUtils.stringFormat("cornflower")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_CORNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cornflower", () -> new CrateItem(4, StringUtils.stringFormat("cornflower")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_CORNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cornflower", () -> new CrateItem(5, StringUtils.stringFormat("cornflower")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_CORNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cornflower", () -> new CrateItem(6, StringUtils.stringFormat("cornflower")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_CORNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cornflower", () -> new CrateItem(7, StringUtils.stringFormat("cornflower")));
-    public static RegistryObject<Item> MEGA_CRATED_CORNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cornflower", () -> new CrateItem(8, StringUtils.stringFormat("cornflower")));
-    public static RegistryObject<Item> GIGA_CRATED_CORNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cornflower", () -> new CrateItem(9, StringUtils.stringFormat("cornflower")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Lily of the Valley
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_LILY_OF_THE_VALLEY = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "lily_of_the_valley", () -> new CrateItem(0, StringUtils.stringFormat("lily_of_the_valley")));
-    public static RegistryObject<Item> DOUBLE_CRATED_LILY_OF_THE_VALLEY = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "lily_of_the_valley", () -> new CrateItem(1, StringUtils.stringFormat("lily_of_the_valley")));
-    public static RegistryObject<Item> TRIPLE_CRATED_LILY_OF_THE_VALLEY = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "lily_of_the_valley", () -> new CrateItem(2, StringUtils.stringFormat("lily_of_the_valley")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_LILY_OF_THE_VALLEY = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "lily_of_the_valley", () -> new CrateItem(3, StringUtils.stringFormat("lily_of_the_valley")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_LILY_OF_THE_VALLEY = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "lily_of_the_valley", () -> new CrateItem(4, StringUtils.stringFormat("lily_of_the_valley")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_LILY_OF_THE_VALLEY = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "lily_of_the_valley", () -> new CrateItem(5, StringUtils.stringFormat("lily_of_the_valley")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_LILY_OF_THE_VALLEY = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "lily_of_the_valley", () -> new CrateItem(6, StringUtils.stringFormat("lily_of_the_valley")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_LILY_OF_THE_VALLEY = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "lily_of_the_valley", () -> new CrateItem(7, StringUtils.stringFormat("lily_of_the_valley")));
-    public static RegistryObject<Item> MEGA_CRATED_LILY_OF_THE_VALLEY = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "lily_of_the_valley", () -> new CrateItem(8, StringUtils.stringFormat("lily_of_the_valley")));
-    public static RegistryObject<Item> GIGA_CRATED_LILY_OF_THE_VALLEY = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "lily_of_the_valley", () -> new CrateItem(9, StringUtils.stringFormat("lily_of_the_valley")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Bamboo
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BAMBOO = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "bamboo", () -> new CrateItem(0, StringUtils.stringFormat("bamboo")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BAMBOO = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "bamboo", () -> new CrateItem(1, StringUtils.stringFormat("bamboo")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BAMBOO = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "bamboo", () -> new CrateItem(2, StringUtils.stringFormat("bamboo")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BAMBOO = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "bamboo", () -> new CrateItem(3, StringUtils.stringFormat("bamboo")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BAMBOO = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "bamboo", () -> new CrateItem(4, StringUtils.stringFormat("bamboo")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BAMBOO = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "bamboo", () -> new CrateItem(5, StringUtils.stringFormat("bamboo")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BAMBOO = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "bamboo", () -> new CrateItem(6, StringUtils.stringFormat("bamboo")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BAMBOO = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "bamboo", () -> new CrateItem(7, StringUtils.stringFormat("bamboo")));
-    public static RegistryObject<Item> MEGA_CRATED_BAMBOO = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "bamboo", () -> new CrateItem(8, StringUtils.stringFormat("bamboo")));
-    public static RegistryObject<Item> GIGA_CRATED_BAMBOO = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "bamboo", () -> new CrateItem(9, StringUtils.stringFormat("bamboo")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Sugar Cane
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_SUGAR_CANE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "sugar_cane", () -> new CrateItem(0, StringUtils.stringFormat("sugar_cane")));
-    public static RegistryObject<Item> DOUBLE_CRATED_SUGAR_CANE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "sugar_cane", () -> new CrateItem(1, StringUtils.stringFormat("sugar_cane")));
-    public static RegistryObject<Item> TRIPLE_CRATED_SUGAR_CANE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "sugar_cane", () -> new CrateItem(2, StringUtils.stringFormat("sugar_cane")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_SUGAR_CANE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "sugar_cane", () -> new CrateItem(3, StringUtils.stringFormat("sugar_cane")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_SUGAR_CANE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "sugar_cane", () -> new CrateItem(4, StringUtils.stringFormat("sugar_cane")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_SUGAR_CANE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "sugar_cane", () -> new CrateItem(5, StringUtils.stringFormat("sugar_cane")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_SUGAR_CANE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "sugar_cane", () -> new CrateItem(6, StringUtils.stringFormat("sugar_cane")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_SUGAR_CANE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "sugar_cane", () -> new CrateItem(7, StringUtils.stringFormat("sugar_cane")));
-    public static RegistryObject<Item> MEGA_CRATED_SUGAR_CANE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "sugar_cane", () -> new CrateItem(8, StringUtils.stringFormat("sugar_cane")));
-    public static RegistryObject<Item> GIGA_CRATED_SUGAR_CANE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "sugar_cane", () -> new CrateItem(9, StringUtils.stringFormat("sugar_cane")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cactus
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_CACTUS = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cactus", () -> new CrateItem(0, StringUtils.stringFormat("cactus")));
-    public static RegistryObject<Item> DOUBLE_CRATED_CACTUS = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cactus", () -> new CrateItem(1, StringUtils.stringFormat("cactus")));
-    public static RegistryObject<Item> TRIPLE_CRATED_CACTUS = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cactus", () -> new CrateItem(2, StringUtils.stringFormat("cactus")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_CACTUS = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cactus", () -> new CrateItem(3, StringUtils.stringFormat("cactus")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_CACTUS = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cactus", () -> new CrateItem(4, StringUtils.stringFormat("cactus")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_CACTUS = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cactus", () -> new CrateItem(5, StringUtils.stringFormat("cactus")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_CACTUS = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cactus", () -> new CrateItem(6, StringUtils.stringFormat("cactus")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_CACTUS = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cactus", () -> new CrateItem(7, StringUtils.stringFormat("cactus")));
-    public static RegistryObject<Item> MEGA_CRATED_CACTUS = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cactus", () -> new CrateItem(8, StringUtils.stringFormat("cactus")));
-    public static RegistryObject<Item> GIGA_CRATED_CACTUS = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cactus", () -> new CrateItem(9, StringUtils.stringFormat("cactus")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Wither Rose
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_WITHER_ROSE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "wither_rose", () -> new CrateItem(0, StringUtils.stringFormat("wither_rose")));
-    public static RegistryObject<Item> DOUBLE_CRATED_WITHER_ROSE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "wither_rose", () -> new CrateItem(1, StringUtils.stringFormat("wither_rose")));
-    public static RegistryObject<Item> TRIPLE_CRATED_WITHER_ROSE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "wither_rose", () -> new CrateItem(2, StringUtils.stringFormat("wither_rose")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_WITHER_ROSE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "wither_rose", () -> new CrateItem(3, StringUtils.stringFormat("wither_rose")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_WITHER_ROSE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "wither_rose", () -> new CrateItem(4, StringUtils.stringFormat("wither_rose")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_WITHER_ROSE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "wither_rose", () -> new CrateItem(5, StringUtils.stringFormat("wither_rose")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_WITHER_ROSE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "wither_rose", () -> new CrateItem(6, StringUtils.stringFormat("wither_rose")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_WITHER_ROSE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "wither_rose", () -> new CrateItem(7, StringUtils.stringFormat("wither_rose")));
-    public static RegistryObject<Item> MEGA_CRATED_WITHER_ROSE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "wither_rose", () -> new CrateItem(8, StringUtils.stringFormat("wither_rose")));
-    public static RegistryObject<Item> GIGA_CRATED_WITHER_ROSE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "wither_rose", () -> new CrateItem(9, StringUtils.stringFormat("wither_rose")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Sunflower
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_SUNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "sunflower", () -> new CrateItem(0, StringUtils.stringFormat("sunflower")));
-    public static RegistryObject<Item> DOUBLE_CRATED_SUNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "sunflower", () -> new CrateItem(1, StringUtils.stringFormat("sunflower")));
-    public static RegistryObject<Item> TRIPLE_CRATED_SUNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "sunflower", () -> new CrateItem(2, StringUtils.stringFormat("sunflower")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_SUNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "sunflower", () -> new CrateItem(3, StringUtils.stringFormat("sunflower")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_SUNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "sunflower", () -> new CrateItem(4, StringUtils.stringFormat("sunflower")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_SUNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "sunflower", () -> new CrateItem(5, StringUtils.stringFormat("sunflower")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_SUNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "sunflower", () -> new CrateItem(6, StringUtils.stringFormat("sunflower")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_SUNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "sunflower", () -> new CrateItem(7, StringUtils.stringFormat("sunflower")));
-    public static RegistryObject<Item> MEGA_CRATED_SUNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "sunflower", () -> new CrateItem(8, StringUtils.stringFormat("sunflower")));
-    public static RegistryObject<Item> GIGA_CRATED_SUNFLOWER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "sunflower", () -> new CrateItem(9, StringUtils.stringFormat("sunflower")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Lilac
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_LILAC = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "lilac", () -> new CrateItem(0, StringUtils.stringFormat("lilac")));
-    public static RegistryObject<Item> DOUBLE_CRATED_LILAC = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "lilac", () -> new CrateItem(1, StringUtils.stringFormat("lilac")));
-    public static RegistryObject<Item> TRIPLE_CRATED_LILAC = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "lilac", () -> new CrateItem(2, StringUtils.stringFormat("lilac")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_LILAC = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "lilac", () -> new CrateItem(3, StringUtils.stringFormat("lilac")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_LILAC = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "lilac", () -> new CrateItem(4, StringUtils.stringFormat("lilac")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_LILAC = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "lilac", () -> new CrateItem(5, StringUtils.stringFormat("lilac")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_LILAC = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "lilac", () -> new CrateItem(6, StringUtils.stringFormat("lilac")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_LILAC = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "lilac", () -> new CrateItem(7, StringUtils.stringFormat("lilac")));
-    public static RegistryObject<Item> MEGA_CRATED_LILAC = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "lilac", () -> new CrateItem(8, StringUtils.stringFormat("lilac")));
-    public static RegistryObject<Item> GIGA_CRATED_LILAC = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "lilac", () -> new CrateItem(9, StringUtils.stringFormat("lilac")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Rose Bush
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_ROSE_BUSH = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "rose_bush", () -> new CrateItem(0, StringUtils.stringFormat("rose_bush")));
-    public static RegistryObject<Item> DOUBLE_CRATED_ROSE_BUSH = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "rose_bush", () -> new CrateItem(1, StringUtils.stringFormat("rose_bush")));
-    public static RegistryObject<Item> TRIPLE_CRATED_ROSE_BUSH = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "rose_bush", () -> new CrateItem(2, StringUtils.stringFormat("rose_bush")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_ROSE_BUSH = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "rose_bush", () -> new CrateItem(3, StringUtils.stringFormat("rose_bush")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_ROSE_BUSH = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "rose_bush", () -> new CrateItem(4, StringUtils.stringFormat("rose_bush")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_ROSE_BUSH = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "rose_bush", () -> new CrateItem(5, StringUtils.stringFormat("rose_bush")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_ROSE_BUSH = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "rose_bush", () -> new CrateItem(6, StringUtils.stringFormat("rose_bush")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_ROSE_BUSH = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "rose_bush", () -> new CrateItem(7, StringUtils.stringFormat("rose_bush")));
-    public static RegistryObject<Item> MEGA_CRATED_ROSE_BUSH = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "rose_bush", () -> new CrateItem(8, StringUtils.stringFormat("rose_bush")));
-    public static RegistryObject<Item> GIGA_CRATED_ROSE_BUSH = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "rose_bush", () -> new CrateItem(9, StringUtils.stringFormat("rose_bush")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Peony
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_PEONY = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "peony", () -> new CrateItem(0, StringUtils.stringFormat("peony")));
-    public static RegistryObject<Item> DOUBLE_CRATED_PEONY = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "peony", () -> new CrateItem(1, StringUtils.stringFormat("peony")));
-    public static RegistryObject<Item> TRIPLE_CRATED_PEONY = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "peony", () -> new CrateItem(2, StringUtils.stringFormat("peony")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_PEONY = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "peony", () -> new CrateItem(3, StringUtils.stringFormat("peony")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_PEONY = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "peony", () -> new CrateItem(4, StringUtils.stringFormat("peony")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_PEONY = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "peony", () -> new CrateItem(5, StringUtils.stringFormat("peony")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_PEONY = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "peony", () -> new CrateItem(6, StringUtils.stringFormat("peony")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_PEONY = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "peony", () -> new CrateItem(7, StringUtils.stringFormat("peony")));
-    public static RegistryObject<Item> MEGA_CRATED_PEONY = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "peony", () -> new CrateItem(8, StringUtils.stringFormat("peony")));
-    public static RegistryObject<Item> GIGA_CRATED_PEONY = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "peony", () -> new CrateItem(9, StringUtils.stringFormat("peony")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Big Dripleaf
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BIG_DRIPLEAF = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "big_dripleaf", () -> new CrateItem(0, StringUtils.stringFormat("big_dripleaf")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BIG_DRIPLEAF = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "big_dripleaf", () -> new CrateItem(1, StringUtils.stringFormat("big_dripleaf")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BIG_DRIPLEAF = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "big_dripleaf", () -> new CrateItem(2, StringUtils.stringFormat("big_dripleaf")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BIG_DRIPLEAF = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "big_dripleaf", () -> new CrateItem(3, StringUtils.stringFormat("big_dripleaf")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BIG_DRIPLEAF = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "big_dripleaf", () -> new CrateItem(4, StringUtils.stringFormat("big_dripleaf")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BIG_DRIPLEAF = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "big_dripleaf", () -> new CrateItem(5, StringUtils.stringFormat("big_dripleaf")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BIG_DRIPLEAF = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "big_dripleaf", () -> new CrateItem(6, StringUtils.stringFormat("big_dripleaf")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BIG_DRIPLEAF = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "big_dripleaf", () -> new CrateItem(7, StringUtils.stringFormat("big_dripleaf")));
-    public static RegistryObject<Item> MEGA_CRATED_BIG_DRIPLEAF = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "big_dripleaf", () -> new CrateItem(8, StringUtils.stringFormat("big_dripleaf")));
-    public static RegistryObject<Item> GIGA_CRATED_BIG_DRIPLEAF = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "big_dripleaf", () -> new CrateItem(9, StringUtils.stringFormat("big_dripleaf")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Chorus Flower
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_CHORUS_FLOWER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "chorus_flower", () -> new CrateItem(0, StringUtils.stringFormat("chorus_flower")));
-    public static RegistryObject<Item> DOUBLE_CRATED_CHORUS_FLOWER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "chorus_flower", () -> new CrateItem(1, StringUtils.stringFormat("chorus_flower")));
-    public static RegistryObject<Item> TRIPLE_CRATED_CHORUS_FLOWER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "chorus_flower", () -> new CrateItem(2, StringUtils.stringFormat("chorus_flower")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_CHORUS_FLOWER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "chorus_flower", () -> new CrateItem(3, StringUtils.stringFormat("chorus_flower")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_CHORUS_FLOWER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "chorus_flower", () -> new CrateItem(4, StringUtils.stringFormat("chorus_flower")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_CHORUS_FLOWER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "chorus_flower", () -> new CrateItem(5, StringUtils.stringFormat("chorus_flower")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_CHORUS_FLOWER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "chorus_flower", () -> new CrateItem(6, StringUtils.stringFormat("chorus_flower")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_CHORUS_FLOWER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "chorus_flower", () -> new CrateItem(7, StringUtils.stringFormat("chorus_flower")));
-    public static RegistryObject<Item> MEGA_CRATED_CHORUS_FLOWER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "chorus_flower", () -> new CrateItem(8, StringUtils.stringFormat("chorus_flower")));
-    public static RegistryObject<Item> GIGA_CRATED_CHORUS_FLOWER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "chorus_flower", () -> new CrateItem(9, StringUtils.stringFormat("chorus_flower")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Wheat Seeds
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_WHEAT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "wheat_seeds", () -> new CrateItem(0, StringUtils.stringFormat("wheat_seeds")));
-    public static RegistryObject<Item> DOUBLE_CRATED_WHEAT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "wheat_seeds", () -> new CrateItem(1, StringUtils.stringFormat("wheat_seeds")));
-    public static RegistryObject<Item> TRIPLE_CRATED_WHEAT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "wheat_seeds", () -> new CrateItem(2, StringUtils.stringFormat("wheat_seeds")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_WHEAT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "wheat_seeds", () -> new CrateItem(3, StringUtils.stringFormat("wheat_seeds")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_WHEAT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "wheat_seeds", () -> new CrateItem(4, StringUtils.stringFormat("wheat_seeds")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_WHEAT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "wheat_seeds", () -> new CrateItem(5, StringUtils.stringFormat("wheat_seeds")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_WHEAT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "wheat_seeds", () -> new CrateItem(6, StringUtils.stringFormat("wheat_seeds")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_WHEAT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "wheat_seeds", () -> new CrateItem(7, StringUtils.stringFormat("wheat_seeds")));
-    public static RegistryObject<Item> MEGA_CRATED_WHEAT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "wheat_seeds", () -> new CrateItem(8, StringUtils.stringFormat("wheat_seeds")));
-    public static RegistryObject<Item> GIGA_CRATED_WHEAT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "wheat_seeds", () -> new CrateItem(9, StringUtils.stringFormat("wheat_seeds")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cocoa Beans
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_COCOA_BEANS = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cocoa_beans", () -> new CrateItem(0, StringUtils.stringFormat("cocoa_beans")));
-    public static RegistryObject<Item> DOUBLE_CRATED_COCOA_BEANS = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cocoa_beans", () -> new CrateItem(1, StringUtils.stringFormat("cocoa_beans")));
-    public static RegistryObject<Item> TRIPLE_CRATED_COCOA_BEANS = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cocoa_beans", () -> new CrateItem(2, StringUtils.stringFormat("cocoa_beans")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_COCOA_BEANS = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cocoa_beans", () -> new CrateItem(3, StringUtils.stringFormat("cocoa_beans")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_COCOA_BEANS = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cocoa_beans", () -> new CrateItem(4, StringUtils.stringFormat("cocoa_beans")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_COCOA_BEANS = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cocoa_beans", () -> new CrateItem(5, StringUtils.stringFormat("cocoa_beans")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_COCOA_BEANS = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cocoa_beans", () -> new CrateItem(6, StringUtils.stringFormat("cocoa_beans")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_COCOA_BEANS = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cocoa_beans", () -> new CrateItem(7, StringUtils.stringFormat("cocoa_beans")));
-    public static RegistryObject<Item> MEGA_CRATED_COCOA_BEANS = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cocoa_beans", () -> new CrateItem(8, StringUtils.stringFormat("cocoa_beans")));
-    public static RegistryObject<Item> GIGA_CRATED_COCOA_BEANS = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cocoa_beans", () -> new CrateItem(9, StringUtils.stringFormat("cocoa_beans")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Pumpkin Seeds
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_PUMPKIN_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "pumpkin_seeds", () -> new CrateItem(0, StringUtils.stringFormat("pumpkin_seeds")));
-    public static RegistryObject<Item> DOUBLE_CRATED_PUMPKIN_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "pumpkin_seeds", () -> new CrateItem(1, StringUtils.stringFormat("pumpkin_seeds")));
-    public static RegistryObject<Item> TRIPLE_CRATED_PUMPKIN_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "pumpkin_seeds", () -> new CrateItem(2, StringUtils.stringFormat("pumpkin_seeds")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_PUMPKIN_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "pumpkin_seeds", () -> new CrateItem(3, StringUtils.stringFormat("pumpkin_seeds")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_PUMPKIN_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "pumpkin_seeds", () -> new CrateItem(4, StringUtils.stringFormat("pumpkin_seeds")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_PUMPKIN_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "pumpkin_seeds", () -> new CrateItem(5, StringUtils.stringFormat("pumpkin_seeds")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_PUMPKIN_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "pumpkin_seeds", () -> new CrateItem(6, StringUtils.stringFormat("pumpkin_seeds")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_PUMPKIN_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "pumpkin_seeds", () -> new CrateItem(7, StringUtils.stringFormat("pumpkin_seeds")));
-    public static RegistryObject<Item> MEGA_CRATED_PUMPKIN_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "pumpkin_seeds", () -> new CrateItem(8, StringUtils.stringFormat("pumpkin_seeds")));
-    public static RegistryObject<Item> GIGA_CRATED_PUMPKIN_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "pumpkin_seeds", () -> new CrateItem(9, StringUtils.stringFormat("pumpkin_seeds")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Melon Seeds
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_MELON_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "melon_seeds", () -> new CrateItem(0, StringUtils.stringFormat("melon_seeds")));
-    public static RegistryObject<Item> DOUBLE_CRATED_MELON_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "melon_seeds", () -> new CrateItem(1, StringUtils.stringFormat("melon_seeds")));
-    public static RegistryObject<Item> TRIPLE_CRATED_MELON_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "melon_seeds", () -> new CrateItem(2, StringUtils.stringFormat("melon_seeds")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_MELON_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "melon_seeds", () -> new CrateItem(3, StringUtils.stringFormat("melon_seeds")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_MELON_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "melon_seeds", () -> new CrateItem(4, StringUtils.stringFormat("melon_seeds")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_MELON_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "melon_seeds", () -> new CrateItem(5, StringUtils.stringFormat("melon_seeds")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_MELON_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "melon_seeds", () -> new CrateItem(6, StringUtils.stringFormat("melon_seeds")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_MELON_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "melon_seeds", () -> new CrateItem(7, StringUtils.stringFormat("melon_seeds")));
-    public static RegistryObject<Item> MEGA_CRATED_MELON_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "melon_seeds", () -> new CrateItem(8, StringUtils.stringFormat("melon_seeds")));
-    public static RegistryObject<Item> GIGA_CRATED_MELON_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "melon_seeds", () -> new CrateItem(9, StringUtils.stringFormat("melon_seeds")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Beetroot Seeds
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BEETROOT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "beetroot_seeds", () -> new CrateItem(0, StringUtils.stringFormat("beetroot_seeds")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BEETROOT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "beetroot_seeds", () -> new CrateItem(1, StringUtils.stringFormat("beetroot_seeds")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BEETROOT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "beetroot_seeds", () -> new CrateItem(2, StringUtils.stringFormat("beetroot_seeds")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BEETROOT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "beetroot_seeds", () -> new CrateItem(3, StringUtils.stringFormat("beetroot_seeds")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BEETROOT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "beetroot_seeds", () -> new CrateItem(4, StringUtils.stringFormat("beetroot_seeds")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BEETROOT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "beetroot_seeds", () -> new CrateItem(5, StringUtils.stringFormat("beetroot_seeds")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BEETROOT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "beetroot_seeds", () -> new CrateItem(6, StringUtils.stringFormat("beetroot_seeds")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BEETROOT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "beetroot_seeds", () -> new CrateItem(7, StringUtils.stringFormat("beetroot_seeds")));
-    public static RegistryObject<Item> MEGA_CRATED_BEETROOT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "beetroot_seeds", () -> new CrateItem(8, StringUtils.stringFormat("beetroot_seeds")));
-    public static RegistryObject<Item> GIGA_CRATED_BEETROOT_SEEDS = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "beetroot_seeds", () -> new CrateItem(9, StringUtils.stringFormat("beetroot_seeds")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Glow Berries
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_GLOW_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "glow_berries", () -> new CrateItem(0, StringUtils.stringFormat("glow_berries")));
-    public static RegistryObject<Item> DOUBLE_CRATED_GLOW_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "glow_berries", () -> new CrateItem(1, StringUtils.stringFormat("glow_berries")));
-    public static RegistryObject<Item> TRIPLE_CRATED_GLOW_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "glow_berries", () -> new CrateItem(2, StringUtils.stringFormat("glow_berries")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_GLOW_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "glow_berries", () -> new CrateItem(3, StringUtils.stringFormat("glow_berries")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_GLOW_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "glow_berries", () -> new CrateItem(4, StringUtils.stringFormat("glow_berries")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_GLOW_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "glow_berries", () -> new CrateItem(5, StringUtils.stringFormat("glow_berries")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_GLOW_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "glow_berries", () -> new CrateItem(6, StringUtils.stringFormat("glow_berries")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_GLOW_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "glow_berries", () -> new CrateItem(7, StringUtils.stringFormat("glow_berries")));
-    public static RegistryObject<Item> MEGA_CRATED_GLOW_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "glow_berries", () -> new CrateItem(8, StringUtils.stringFormat("glow_berries")));
-    public static RegistryObject<Item> GIGA_CRATED_GLOW_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "glow_berries", () -> new CrateItem(9, StringUtils.stringFormat("glow_berries")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Sweet Berries
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_SWEET_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "sweet_berries", () -> new CrateItem(0, StringUtils.stringFormat("sweet_berries")));
-    public static RegistryObject<Item> DOUBLE_CRATED_SWEET_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "sweet_berries", () -> new CrateItem(1, StringUtils.stringFormat("sweet_berries")));
-    public static RegistryObject<Item> TRIPLE_CRATED_SWEET_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "sweet_berries", () -> new CrateItem(2, StringUtils.stringFormat("sweet_berries")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_SWEET_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "sweet_berries", () -> new CrateItem(3, StringUtils.stringFormat("sweet_berries")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_SWEET_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "sweet_berries", () -> new CrateItem(4, StringUtils.stringFormat("sweet_berries")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_SWEET_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "sweet_berries", () -> new CrateItem(5, StringUtils.stringFormat("sweet_berries")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_SWEET_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "sweet_berries", () -> new CrateItem(6, StringUtils.stringFormat("sweet_berries")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_SWEET_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "sweet_berries", () -> new CrateItem(7, StringUtils.stringFormat("sweet_berries")));
-    public static RegistryObject<Item> MEGA_CRATED_SWEET_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "sweet_berries", () -> new CrateItem(8, StringUtils.stringFormat("sweet_berries")));
-    public static RegistryObject<Item> GIGA_CRATED_SWEET_BERRIES = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "sweet_berries", () -> new CrateItem(9, StringUtils.stringFormat("sweet_berries")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Nether Wart
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_NETHER_WART = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "nether_wart", () -> new CrateItem(0, StringUtils.stringFormat("nether_wart")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_NETHER_WART = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "nether_wart", () -> new CrateItem(1, StringUtils.stringFormat("nether_wart")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_NETHER_WART = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "nether_wart", () -> new CrateItem(2, StringUtils.stringFormat("nether_wart")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_NETHER_WART = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "nether_wart", () -> new CrateItem(3, StringUtils.stringFormat("nether_wart")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_NETHER_WART = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "nether_wart", () -> new CrateItem(4, StringUtils.stringFormat("nether_wart")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_NETHER_WART = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "nether_wart", () -> new CrateItem(5, StringUtils.stringFormat("nether_wart")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_NETHER_WART = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "nether_wart", () -> new CrateItem(6, StringUtils.stringFormat("nether_wart")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_NETHER_WART = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "nether_wart", () -> new CrateItem(7, StringUtils.stringFormat("nether_wart")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_NETHER_WART = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "nether_wart", () -> new CrateItem(8, StringUtils.stringFormat("nether_wart")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_NETHER_WART = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "nether_wart", () -> new CrateItem(9, StringUtils.stringFormat("nether_wart")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Seagrass
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_SEAGRASS = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "seagrass", () -> new CrateItem(0, StringUtils.stringFormat("seagrass")));
-    public static RegistryObject<Item> DOUBLE_CRATED_SEAGRASS = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "seagrass", () -> new CrateItem(1, StringUtils.stringFormat("seagrass")));
-    public static RegistryObject<Item> TRIPLE_CRATED_SEAGRASS = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "seagrass", () -> new CrateItem(2, StringUtils.stringFormat("seagrass")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_SEAGRASS = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "seagrass", () -> new CrateItem(3, StringUtils.stringFormat("seagrass")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_SEAGRASS = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "seagrass", () -> new CrateItem(4, StringUtils.stringFormat("seagrass")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_SEAGRASS = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "seagrass", () -> new CrateItem(5, StringUtils.stringFormat("seagrass")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_SEAGRASS = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "seagrass", () -> new CrateItem(6, StringUtils.stringFormat("seagrass")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_SEAGRASS = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "seagrass", () -> new CrateItem(7, StringUtils.stringFormat("seagrass")));
-    public static RegistryObject<Item> MEGA_CRATED_SEAGRASS = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "seagrass", () -> new CrateItem(8, StringUtils.stringFormat("seagrass")));
-    public static RegistryObject<Item> GIGA_CRATED_SEAGRASS = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "seagrass", () -> new CrateItem(9, StringUtils.stringFormat("seagrass")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Sea Pickle
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_SEA_PICKLE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "sea_pickle", () -> new CrateItem(0, StringUtils.stringFormat("sea_pickle")));
-    public static RegistryObject<Item> DOUBLE_CRATED_SEA_PICKLE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "sea_pickle", () -> new CrateItem(1, StringUtils.stringFormat("sea_pickle")));
-    public static RegistryObject<Item> TRIPLE_CRATED_SEA_PICKLE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "sea_pickle", () -> new CrateItem(2, StringUtils.stringFormat("sea_pickle")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_SEA_PICKLE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "sea_pickle", () -> new CrateItem(3, StringUtils.stringFormat("sea_pickle")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_SEA_PICKLE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "sea_pickle", () -> new CrateItem(4, StringUtils.stringFormat("sea_pickle")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_SEA_PICKLE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "sea_pickle", () -> new CrateItem(5, StringUtils.stringFormat("sea_pickle")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_SEA_PICKLE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "sea_pickle", () -> new CrateItem(6, StringUtils.stringFormat("sea_pickle")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_SEA_PICKLE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "sea_pickle", () -> new CrateItem(7, StringUtils.stringFormat("sea_pickle")));
-    public static RegistryObject<Item> MEGA_CRATED_SEA_PICKLE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "sea_pickle", () -> new CrateItem(8, StringUtils.stringFormat("sea_pickle")));
-    public static RegistryObject<Item> GIGA_CRATED_SEA_PICKLE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "sea_pickle", () -> new CrateItem(9, StringUtils.stringFormat("sea_pickle")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Kelp
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_KELP = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "kelp", () -> new CrateItem(0, StringUtils.stringFormat("kelp")));
-    public static RegistryObject<Item> DOUBLE_CRATED_KELP = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "kelp", () -> new CrateItem(1, StringUtils.stringFormat("kelp")));
-    public static RegistryObject<Item> TRIPLE_CRATED_KELP = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "kelp", () -> new CrateItem(2, StringUtils.stringFormat("kelp")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_KELP = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "kelp", () -> new CrateItem(3, StringUtils.stringFormat("kelp")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_KELP = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "kelp", () -> new CrateItem(4, StringUtils.stringFormat("kelp")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_KELP = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "kelp", () -> new CrateItem(5, StringUtils.stringFormat("kelp")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_KELP = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "kelp", () -> new CrateItem(6, StringUtils.stringFormat("kelp")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_KELP = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "kelp", () -> new CrateItem(7, StringUtils.stringFormat("kelp")));
-    public static RegistryObject<Item> MEGA_CRATED_KELP = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "kelp", () -> new CrateItem(8, StringUtils.stringFormat("kelp")));
-    public static RegistryObject<Item> GIGA_CRATED_KELP = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "kelp", () -> new CrateItem(9, StringUtils.stringFormat("kelp")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cobweb
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_COBWEB = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cobweb", () -> new CrateItem(0, StringUtils.stringFormat("cobweb")));
-    public static RegistryObject<Item> DOUBLE_CRATED_COBWEB = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cobweb", () -> new CrateItem(1, StringUtils.stringFormat("cobweb")));
-    public static RegistryObject<Item> TRIPLE_CRATED_COBWEB = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cobweb", () -> new CrateItem(2, StringUtils.stringFormat("cobweb")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_COBWEB = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cobweb", () -> new CrateItem(3, StringUtils.stringFormat("cobweb")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_COBWEB = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cobweb", () -> new CrateItem(4, StringUtils.stringFormat("cobweb")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_COBWEB = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cobweb", () -> new CrateItem(5, StringUtils.stringFormat("cobweb")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_COBWEB = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cobweb", () -> new CrateItem(6, StringUtils.stringFormat("cobweb")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_COBWEB = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cobweb", () -> new CrateItem(7, StringUtils.stringFormat("cobweb")));
-    public static RegistryObject<Item> MEGA_CRATED_COBWEB = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cobweb", () -> new CrateItem(8, StringUtils.stringFormat("cobweb")));
-    public static RegistryObject<Item> GIGA_CRATED_COBWEB = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cobweb", () -> new CrateItem(9, StringUtils.stringFormat("cobweb")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Pointed Dripstone
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_POINTED_DRIPSTONE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "pointed_dripstone", () -> new CrateItem(0, StringUtils.stringFormat("pointed_dripstone")));
-    public static RegistryObject<Item> DOUBLE_CRATED_POINTED_DRIPSTONE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "pointed_dripstone", () -> new CrateItem(1, StringUtils.stringFormat("pointed_dripstone")));
-    public static RegistryObject<Item> TRIPLE_CRATED_POINTED_DRIPSTONE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "pointed_dripstone", () -> new CrateItem(2, StringUtils.stringFormat("pointed_dripstone")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_POINTED_DRIPSTONE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "pointed_dripstone", () -> new CrateItem(3, StringUtils.stringFormat("pointed_dripstone")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_POINTED_DRIPSTONE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "pointed_dripstone", () -> new CrateItem(4, StringUtils.stringFormat("pointed_dripstone")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_POINTED_DRIPSTONE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "pointed_dripstone", () -> new CrateItem(5, StringUtils.stringFormat("pointed_dripstone")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_POINTED_DRIPSTONE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "pointed_dripstone", () -> new CrateItem(6, StringUtils.stringFormat("pointed_dripstone")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_POINTED_DRIPSTONE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "pointed_dripstone", () -> new CrateItem(7, StringUtils.stringFormat("pointed_dripstone")));
-    public static RegistryObject<Item> MEGA_CRATED_POINTED_DRIPSTONE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "pointed_dripstone", () -> new CrateItem(8, StringUtils.stringFormat("pointed_dripstone")));
-    public static RegistryObject<Item> GIGA_CRATED_POINTED_DRIPSTONE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "pointed_dripstone", () -> new CrateItem(9, StringUtils.stringFormat("pointed_dripstone")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Amethyst Shard
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_AMETHYST_SHARD = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "amethyst_shard", () -> new CrateItem(0, StringUtils.stringFormat("amethyst_shard")));
-    public static RegistryObject<Item> DOUBLE_CRATED_AMETHYST_SHARD = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "amethyst_shard", () -> new CrateItem(1, StringUtils.stringFormat("amethyst_shard")));
-    public static RegistryObject<Item> TRIPLE_CRATED_AMETHYST_SHARD = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "amethyst_shard", () -> new CrateItem(2, StringUtils.stringFormat("amethyst_shard")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_AMETHYST_SHARD = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "amethyst_shard", () -> new CrateItem(3, StringUtils.stringFormat("amethyst_shard")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_AMETHYST_SHARD = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "amethyst_shard", () -> new CrateItem(4, StringUtils.stringFormat("amethyst_shard")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_AMETHYST_SHARD = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "amethyst_shard", () -> new CrateItem(5, StringUtils.stringFormat("amethyst_shard")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_AMETHYST_SHARD = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "amethyst_shard", () -> new CrateItem(6, StringUtils.stringFormat("amethyst_shard")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_AMETHYST_SHARD = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "amethyst_shard", () -> new CrateItem(7, StringUtils.stringFormat("amethyst_shard")));
-    public static RegistryObject<Item> MEGA_CRATED_AMETHYST_SHARD = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "amethyst_shard", () -> new CrateItem(8, StringUtils.stringFormat("amethyst_shard")));
-    public static RegistryObject<Item> GIGA_CRATED_AMETHYST_SHARD = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "amethyst_shard", () -> new CrateItem(9, StringUtils.stringFormat("amethyst_shard")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Chain
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_CHAIN = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "chain", () -> new CrateItem(0, StringUtils.stringFormat("chain")));
-    public static RegistryObject<Item> DOUBLE_CRATED_CHAIN = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "chain", () -> new CrateItem(1, StringUtils.stringFormat("chain")));
-    public static RegistryObject<Item> TRIPLE_CRATED_CHAIN = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "chain", () -> new CrateItem(2, StringUtils.stringFormat("chain")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_CHAIN = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "chain", () -> new CrateItem(3, StringUtils.stringFormat("chain")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_CHAIN = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "chain", () -> new CrateItem(4, StringUtils.stringFormat("chain")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_CHAIN = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "chain", () -> new CrateItem(5, StringUtils.stringFormat("chain")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_CHAIN = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "chain", () -> new CrateItem(6, StringUtils.stringFormat("chain")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_CHAIN = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "chain", () -> new CrateItem(7, StringUtils.stringFormat("chain")));
-    public static RegistryObject<Item> MEGA_CRATED_CHAIN = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "chain", () -> new CrateItem(8, StringUtils.stringFormat("chain")));
-    public static RegistryObject<Item> GIGA_CRATED_CHAIN = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "chain", () -> new CrateItem(9, StringUtils.stringFormat("chain")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Iron Bars
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_IRON_BARS = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "iron_bars", () -> new CrateItem(0, StringUtils.stringFormat("iron_bars")));
-    public static RegistryObject<Item> DOUBLE_CRATED_IRON_BARS = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "iron_bars", () -> new CrateItem(1, StringUtils.stringFormat("iron_bars")));
-    public static RegistryObject<Item> TRIPLE_CRATED_IRON_BARS = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "iron_bars", () -> new CrateItem(2, StringUtils.stringFormat("iron_bars")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_IRON_BARS = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "iron_bars", () -> new CrateItem(3, StringUtils.stringFormat("iron_bars")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_IRON_BARS = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "iron_bars", () -> new CrateItem(4, StringUtils.stringFormat("iron_bars")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_IRON_BARS = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "iron_bars", () -> new CrateItem(5, StringUtils.stringFormat("iron_bars")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_IRON_BARS = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "iron_bars", () -> new CrateItem(6, StringUtils.stringFormat("iron_bars")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_IRON_BARS = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "iron_bars", () -> new CrateItem(7, StringUtils.stringFormat("iron_bars")));
-    public static RegistryObject<Item> MEGA_CRATED_IRON_BARS = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "iron_bars", () -> new CrateItem(8, StringUtils.stringFormat("iron_bars")));
-    public static RegistryObject<Item> GIGA_CRATED_IRON_BARS = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "iron_bars", () -> new CrateItem(9, StringUtils.stringFormat("iron_bars")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Torch
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_TORCH = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "torch", () -> new CrateItem(0, StringUtils.stringFormat("torch")));
-    public static RegistryObject<Item> DOUBLE_CRATED_TORCH = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "torch", () -> new CrateItem(1, StringUtils.stringFormat("torch")));
-    public static RegistryObject<Item> TRIPLE_CRATED_TORCH = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "torch", () -> new CrateItem(2, StringUtils.stringFormat("torch")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_TORCH = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "torch", () -> new CrateItem(3, StringUtils.stringFormat("torch")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_TORCH = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "torch", () -> new CrateItem(4, StringUtils.stringFormat("torch")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_TORCH = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "torch", () -> new CrateItem(5, StringUtils.stringFormat("torch")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_TORCH = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "torch", () -> new CrateItem(6, StringUtils.stringFormat("torch")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_TORCH = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "torch", () -> new CrateItem(7, StringUtils.stringFormat("torch")));
-    public static RegistryObject<Item> MEGA_CRATED_TORCH = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "torch", () -> new CrateItem(8, StringUtils.stringFormat("torch")));
-    public static RegistryObject<Item> GIGA_CRATED_TORCH = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "torch", () -> new CrateItem(9, StringUtils.stringFormat("torch")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Soul Torch
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_SOUL_TORCH = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "soul_torch", () -> new CrateItem(0, StringUtils.stringFormat("soul_torch")));
-    public static RegistryObject<Item> DOUBLE_CRATED_SOUL_TORCH = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "soul_torch", () -> new CrateItem(1, StringUtils.stringFormat("soul_torch")));
-    public static RegistryObject<Item> TRIPLE_CRATED_SOUL_TORCH = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "soul_torch", () -> new CrateItem(2, StringUtils.stringFormat("soul_torch")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_SOUL_TORCH = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "soul_torch", () -> new CrateItem(3, StringUtils.stringFormat("soul_torch")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_SOUL_TORCH = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "soul_torch", () -> new CrateItem(4, StringUtils.stringFormat("soul_torch")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_SOUL_TORCH = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "soul_torch", () -> new CrateItem(5, StringUtils.stringFormat("soul_torch")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_SOUL_TORCH = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "soul_torch", () -> new CrateItem(6, StringUtils.stringFormat("soul_torch")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_SOUL_TORCH = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "soul_torch", () -> new CrateItem(7, StringUtils.stringFormat("soul_torch")));
-    public static RegistryObject<Item> MEGA_CRATED_SOUL_TORCH = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "soul_torch", () -> new CrateItem(8, StringUtils.stringFormat("soul_torch")));
-    public static RegistryObject<Item> GIGA_CRATED_SOUL_TORCH = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "soul_torch", () -> new CrateItem(9, StringUtils.stringFormat("soul_torch")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Redstone Torch
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_REDSTONE_TORCH = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "redstone_torch", () -> new CrateItem(0, StringUtils.stringFormat("redstone_torch")));
-    public static RegistryObject<Item> DOUBLE_CRATED_REDSTONE_TORCH = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "redstone_torch", () -> new CrateItem(1, StringUtils.stringFormat("redstone_torch")));
-    public static RegistryObject<Item> TRIPLE_CRATED_REDSTONE_TORCH = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "redstone_torch", () -> new CrateItem(2, StringUtils.stringFormat("redstone_torch")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_REDSTONE_TORCH = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "redstone_torch", () -> new CrateItem(3, StringUtils.stringFormat("redstone_torch")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_REDSTONE_TORCH = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "redstone_torch", () -> new CrateItem(4, StringUtils.stringFormat("redstone_torch")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_REDSTONE_TORCH = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "redstone_torch", () -> new CrateItem(5, StringUtils.stringFormat("redstone_torch")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_REDSTONE_TORCH = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "redstone_torch", () -> new CrateItem(6, StringUtils.stringFormat("redstone_torch")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_REDSTONE_TORCH = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "redstone_torch", () -> new CrateItem(7, StringUtils.stringFormat("redstone_torch")));
-    public static RegistryObject<Item> MEGA_CRATED_REDSTONE_TORCH = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "redstone_torch", () -> new CrateItem(8, StringUtils.stringFormat("redstone_torch")));
-    public static RegistryObject<Item> GIGA_CRATED_REDSTONE_TORCH = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "redstone_torch", () -> new CrateItem(9, StringUtils.stringFormat("redstone_torch")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Lantern
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "lantern", () -> new CrateItem(0, StringUtils.stringFormat("lantern")));
-    public static RegistryObject<Item> DOUBLE_CRATED_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "lantern", () -> new CrateItem(1, StringUtils.stringFormat("lantern")));
-    public static RegistryObject<Item> TRIPLE_CRATED_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "lantern", () -> new CrateItem(2, StringUtils.stringFormat("lantern")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "lantern", () -> new CrateItem(3, StringUtils.stringFormat("lantern")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "lantern", () -> new CrateItem(4, StringUtils.stringFormat("lantern")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "lantern", () -> new CrateItem(5, StringUtils.stringFormat("lantern")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "lantern", () -> new CrateItem(6, StringUtils.stringFormat("lantern")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "lantern", () -> new CrateItem(7, StringUtils.stringFormat("lantern")));
-    public static RegistryObject<Item> MEGA_CRATED_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "lantern", () -> new CrateItem(8, StringUtils.stringFormat("lantern")));
-    public static RegistryObject<Item> GIGA_CRATED_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "lantern", () -> new CrateItem(9, StringUtils.stringFormat("lantern")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Soul Lantern
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_SOUL_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "soul_lantern", () -> new CrateItem(0, StringUtils.stringFormat("soul_lantern")));
-    public static RegistryObject<Item> DOUBLE_CRATED_SOUL_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "soul_lantern", () -> new CrateItem(1, StringUtils.stringFormat("soul_lantern")));
-    public static RegistryObject<Item> TRIPLE_CRATED_SOUL_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "soul_lantern", () -> new CrateItem(2, StringUtils.stringFormat("soul_lantern")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_SOUL_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "soul_lantern", () -> new CrateItem(3, StringUtils.stringFormat("soul_lantern")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_SOUL_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "soul_lantern", () -> new CrateItem(4, StringUtils.stringFormat("soul_lantern")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_SOUL_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "soul_lantern", () -> new CrateItem(5, StringUtils.stringFormat("soul_lantern")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_SOUL_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "soul_lantern", () -> new CrateItem(6, StringUtils.stringFormat("soul_lantern")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_SOUL_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "soul_lantern", () -> new CrateItem(7, StringUtils.stringFormat("soul_lantern")));
-    public static RegistryObject<Item> MEGA_CRATED_SOUL_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "soul_lantern", () -> new CrateItem(8, StringUtils.stringFormat("soul_lantern")));
-    public static RegistryObject<Item> GIGA_CRATED_SOUL_LANTERN = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "soul_lantern", () -> new CrateItem(9, StringUtils.stringFormat("soul_lantern")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region End Rod
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_END_ROD = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "end_rod", () -> new CrateItem(0, StringUtils.stringFormat("end_rod")));
-    public static RegistryObject<Item> DOUBLE_CRATED_END_ROD = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "end_rod", () -> new CrateItem(1, StringUtils.stringFormat("end_rod")));
-    public static RegistryObject<Item> TRIPLE_CRATED_END_ROD = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "end_rod", () -> new CrateItem(2, StringUtils.stringFormat("end_rod")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_END_ROD = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "end_rod", () -> new CrateItem(3, StringUtils.stringFormat("end_rod")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_END_ROD = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "end_rod", () -> new CrateItem(4, StringUtils.stringFormat("end_rod")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_END_ROD = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "end_rod", () -> new CrateItem(5, StringUtils.stringFormat("end_rod")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_END_ROD = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "end_rod", () -> new CrateItem(6, StringUtils.stringFormat("end_rod")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_END_ROD = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "end_rod", () -> new CrateItem(7, StringUtils.stringFormat("end_rod")));
-    public static RegistryObject<Item> MEGA_CRATED_END_ROD = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "end_rod", () -> new CrateItem(8, StringUtils.stringFormat("end_rod")));
-    public static RegistryObject<Item> GIGA_CRATED_END_ROD = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "end_rod", () -> new CrateItem(9, StringUtils.stringFormat("end_rod")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Ender Pearl
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_ENDER_PEARL = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "ender_pearl", () -> new CrateItem(0, StringUtils.stringFormat("ender_pearl")));
-    public static RegistryObject<Item> DOUBLE_CRATED_ENDER_PEARL = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "ender_pearl", () -> new CrateItem(1, StringUtils.stringFormat("ender_pearl")));
-    public static RegistryObject<Item> TRIPLE_CRATED_ENDER_PEARL = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "ender_pearl", () -> new CrateItem(2, StringUtils.stringFormat("ender_pearl")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_ENDER_PEARL = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "ender_pearl", () -> new CrateItem(3, StringUtils.stringFormat("ender_pearl")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_ENDER_PEARL = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "ender_pearl", () -> new CrateItem(4, StringUtils.stringFormat("ender_pearl")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_ENDER_PEARL = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "ender_pearl", () -> new CrateItem(5, StringUtils.stringFormat("ender_pearl")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_ENDER_PEARL = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "ender_pearl", () -> new CrateItem(6, StringUtils.stringFormat("ender_pearl")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_ENDER_PEARL = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "ender_pearl", () -> new CrateItem(7, StringUtils.stringFormat("ender_pearl")));
-    public static RegistryObject<Item> MEGA_CRATED_ENDER_PEARL = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "ender_pearl", () -> new CrateItem(8, StringUtils.stringFormat("ender_pearl")));
-    public static RegistryObject<Item> GIGA_CRATED_ENDER_PEARL = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "ender_pearl", () -> new CrateItem(9, StringUtils.stringFormat("ender_pearl")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Ender Eye
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_ENDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "ender_eye", () -> new CrateItem(0, StringUtils.stringFormat("ender_eye")));
-    public static RegistryObject<Item> DOUBLE_CRATED_ENDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "ender_eye", () -> new CrateItem(1, StringUtils.stringFormat("ender_eye")));
-    public static RegistryObject<Item> TRIPLE_CRATED_ENDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "ender_eye", () -> new CrateItem(2, StringUtils.stringFormat("ender_eye")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_ENDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "ender_eye", () -> new CrateItem(3, StringUtils.stringFormat("ender_eye")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_ENDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "ender_eye", () -> new CrateItem(4, StringUtils.stringFormat("ender_eye")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_ENDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "ender_eye", () -> new CrateItem(5, StringUtils.stringFormat("ender_eye")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_ENDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "ender_eye", () -> new CrateItem(6, StringUtils.stringFormat("ender_eye")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_ENDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "ender_eye", () -> new CrateItem(7, StringUtils.stringFormat("ender_eye")));
-    public static RegistryObject<Item> MEGA_CRATED_ENDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "ender_eye", () -> new CrateItem(8, StringUtils.stringFormat("ender_eye")));
-    public static RegistryObject<Item> GIGA_CRATED_ENDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "ender_eye", () -> new CrateItem(9, StringUtils.stringFormat("ender_eye")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region String
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_STRING = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "string", () -> new CrateItem(0, StringUtils.stringFormat("string")));
-    public static RegistryObject<Item> DOUBLE_CRATED_STRING = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "string", () -> new CrateItem(1, StringUtils.stringFormat("string")));
-    public static RegistryObject<Item> TRIPLE_CRATED_STRING = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "string", () -> new CrateItem(2, StringUtils.stringFormat("string")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_STRING = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "string", () -> new CrateItem(3, StringUtils.stringFormat("string")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_STRING = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "string", () -> new CrateItem(4, StringUtils.stringFormat("string")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_STRING = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "string", () -> new CrateItem(5, StringUtils.stringFormat("string")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_STRING = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "string", () -> new CrateItem(6, StringUtils.stringFormat("string")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_STRING = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "string", () -> new CrateItem(7, StringUtils.stringFormat("string")));
-    public static RegistryObject<Item> MEGA_CRATED_STRING = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "string", () -> new CrateItem(8, StringUtils.stringFormat("string")));
-    public static RegistryObject<Item> GIGA_CRATED_STRING = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "string", () -> new CrateItem(9, StringUtils.stringFormat("string")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Water Bucket
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_WATER_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "water_bucket", () -> new CrateItem(0, StringUtils.stringFormat("water_bucket")));
-    public static RegistryObject<Item> DOUBLE_CRATED_WATER_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "water_bucket", () -> new CrateItem(1, StringUtils.stringFormat("water_bucket")));
-    public static RegistryObject<Item> TRIPLE_CRATED_WATER_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "water_bucket", () -> new CrateItem(2, StringUtils.stringFormat("water_bucket")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_WATER_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "water_bucket", () -> new CrateItem(3, StringUtils.stringFormat("water_bucket")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_WATER_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "water_bucket", () -> new CrateItem(4, StringUtils.stringFormat("water_bucket")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_WATER_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "water_bucket", () -> new CrateItem(5, StringUtils.stringFormat("water_bucket")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_WATER_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "water_bucket", () -> new CrateItem(6, StringUtils.stringFormat("water_bucket")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_WATER_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "water_bucket", () -> new CrateItem(7, StringUtils.stringFormat("water_bucket")));
-    public static RegistryObject<Item> MEGA_CRATED_WATER_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "water_bucket", () -> new CrateItem(8, StringUtils.stringFormat("water_bucket")));
-    public static RegistryObject<Item> GIGA_CRATED_WATER_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "water_bucket", () -> new CrateItem(9, StringUtils.stringFormat("water_bucket")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Lava Bucket
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_LAVA_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "lava_bucket", () -> new CrateItem(0, StringUtils.stringFormat("lava_bucket")));
-    public static RegistryObject<Item> DOUBLE_CRATED_LAVA_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "lava_bucket", () -> new CrateItem(1, StringUtils.stringFormat("lava_bucket")));
-    public static RegistryObject<Item> TRIPLE_CRATED_LAVA_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "lava_bucket", () -> new CrateItem(2, StringUtils.stringFormat("lava_bucket")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_LAVA_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "lava_bucket", () -> new CrateItem(3, StringUtils.stringFormat("lava_bucket")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_LAVA_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "lava_bucket", () -> new CrateItem(4, StringUtils.stringFormat("lava_bucket")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_LAVA_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "lava_bucket", () -> new CrateItem(5, StringUtils.stringFormat("lava_bucket")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_LAVA_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "lava_bucket", () -> new CrateItem(6, StringUtils.stringFormat("lava_bucket")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_LAVA_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "lava_bucket", () -> new CrateItem(7, StringUtils.stringFormat("lava_bucket")));
-    public static RegistryObject<Item> MEGA_CRATED_LAVA_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "lava_bucket", () -> new CrateItem(8, StringUtils.stringFormat("lava_bucket")));
-    public static RegistryObject<Item> GIGA_CRATED_LAVA_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "lava_bucket", () -> new CrateItem(9, StringUtils.stringFormat("lava_bucket")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Powder Snow Bucket
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_POWDER_SNOW_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "powder_snow_bucket", () -> new CrateItem(0, StringUtils.stringFormat("powder_snow_bucket")));
-    public static RegistryObject<Item> DOUBLE_CRATED_POWDER_SNOW_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "powder_snow_bucket", () -> new CrateItem(1, StringUtils.stringFormat("powder_snow_bucket")));
-    public static RegistryObject<Item> TRIPLE_CRATED_POWDER_SNOW_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "powder_snow_bucket", () -> new CrateItem(2, StringUtils.stringFormat("powder_snow_bucket")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_POWDER_SNOW_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "powder_snow_bucket", () -> new CrateItem(3, StringUtils.stringFormat("powder_snow_bucket")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_POWDER_SNOW_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "powder_snow_bucket", () -> new CrateItem(4, StringUtils.stringFormat("powder_snow_bucket")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_POWDER_SNOW_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "powder_snow_bucket", () -> new CrateItem(5, StringUtils.stringFormat("powder_snow_bucket")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_POWDER_SNOW_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "powder_snow_bucket", () -> new CrateItem(6, StringUtils.stringFormat("powder_snow_bucket")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_POWDER_SNOW_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "powder_snow_bucket", () -> new CrateItem(7, StringUtils.stringFormat("powder_snow_bucket")));
-    public static RegistryObject<Item> MEGA_CRATED_POWDER_SNOW_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "powder_snow_bucket", () -> new CrateItem(8, StringUtils.stringFormat("powder_snow_bucket")));
-    public static RegistryObject<Item> GIGA_CRATED_POWDER_SNOW_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "powder_snow_bucket", () -> new CrateItem(9, StringUtils.stringFormat("powder_snow_bucket")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Milk Bucket
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_MILK_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "milk_bucket", () -> new CrateItem(0, StringUtils.stringFormat("milk_bucket")));
-    public static RegistryObject<Item> DOUBLE_CRATED_MILK_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "milk_bucket", () -> new CrateItem(1, StringUtils.stringFormat("milk_bucket")));
-    public static RegistryObject<Item> TRIPLE_CRATED_MILK_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "milk_bucket", () -> new CrateItem(2, StringUtils.stringFormat("milk_bucket")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_MILK_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "milk_bucket", () -> new CrateItem(3, StringUtils.stringFormat("milk_bucket")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_MILK_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "milk_bucket", () -> new CrateItem(4, StringUtils.stringFormat("milk_bucket")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_MILK_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "milk_bucket", () -> new CrateItem(5, StringUtils.stringFormat("milk_bucket")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_MILK_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "milk_bucket", () -> new CrateItem(6, StringUtils.stringFormat("milk_bucket")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_MILK_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "milk_bucket", () -> new CrateItem(7, StringUtils.stringFormat("milk_bucket")));
-    public static RegistryObject<Item> MEGA_CRATED_MILK_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "milk_bucket", () -> new CrateItem(8, StringUtils.stringFormat("milk_bucket")));
-    public static RegistryObject<Item> GIGA_CRATED_MILK_BUCKET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "milk_bucket", () -> new CrateItem(9, StringUtils.stringFormat("milk_bucket")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Egg
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_EGG = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "egg", () -> new CrateItem(0, StringUtils.stringFormat("egg")));
-    public static RegistryObject<Item> DOUBLE_CRATED_EGG = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "egg", () -> new CrateItem(1, StringUtils.stringFormat("egg")));
-    public static RegistryObject<Item> TRIPLE_CRATED_EGG = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "egg", () -> new CrateItem(2, StringUtils.stringFormat("egg")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_EGG = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "egg", () -> new CrateItem(3, StringUtils.stringFormat("egg")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_EGG = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "egg", () -> new CrateItem(4, StringUtils.stringFormat("egg")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_EGG = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "egg", () -> new CrateItem(5, StringUtils.stringFormat("egg")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_EGG = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "egg", () -> new CrateItem(6, StringUtils.stringFormat("egg")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_EGG = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "egg", () -> new CrateItem(7, StringUtils.stringFormat("egg")));
-    public static RegistryObject<Item> MEGA_CRATED_EGG = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "egg", () -> new CrateItem(8, StringUtils.stringFormat("egg")));
-    public static RegistryObject<Item> GIGA_CRATED_EGG = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "egg", () -> new CrateItem(9, StringUtils.stringFormat("egg")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Arrow
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_ARROW = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "arrow", () -> new CrateItem(0, StringUtils.stringFormat("arrow")));
-    public static RegistryObject<Item> DOUBLE_CRATED_ARROW = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "arrow", () -> new CrateItem(1, StringUtils.stringFormat("arrow")));
-    public static RegistryObject<Item> TRIPLE_CRATED_ARROW = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "arrow", () -> new CrateItem(2, StringUtils.stringFormat("arrow")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_ARROW = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "arrow", () -> new CrateItem(3, StringUtils.stringFormat("arrow")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_ARROW = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "arrow", () -> new CrateItem(4, StringUtils.stringFormat("arrow")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_ARROW = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "arrow", () -> new CrateItem(5, StringUtils.stringFormat("arrow")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_ARROW = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "arrow", () -> new CrateItem(6, StringUtils.stringFormat("arrow")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_ARROW = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "arrow", () -> new CrateItem(7, StringUtils.stringFormat("arrow")));
-    public static RegistryObject<Item> MEGA_CRATED_ARROW = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "arrow", () -> new CrateItem(8, StringUtils.stringFormat("arrow")));
-    public static RegistryObject<Item> GIGA_CRATED_ARROW = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "arrow", () -> new CrateItem(9, StringUtils.stringFormat("arrow")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Apple
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_APPLE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "apple", () -> new CrateItem(0, StringUtils.stringFormat("apple")));
-    public static RegistryObject<Item> DOUBLE_CRATED_APPLE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "apple", () -> new CrateItem(1, StringUtils.stringFormat("apple")));
-    public static RegistryObject<Item> TRIPLE_CRATED_APPLE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "apple", () -> new CrateItem(2, StringUtils.stringFormat("apple")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_APPLE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "apple", () -> new CrateItem(3, StringUtils.stringFormat("apple")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_APPLE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "apple", () -> new CrateItem(4, StringUtils.stringFormat("apple")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_APPLE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "apple", () -> new CrateItem(5, StringUtils.stringFormat("apple")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_APPLE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "apple", () -> new CrateItem(6, StringUtils.stringFormat("apple")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_APPLE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "apple", () -> new CrateItem(7, StringUtils.stringFormat("apple")));
-    public static RegistryObject<Item> MEGA_CRATED_APPLE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "apple", () -> new CrateItem(8, StringUtils.stringFormat("apple")));
-    public static RegistryObject<Item> GIGA_CRATED_APPLE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "apple", () -> new CrateItem(9, StringUtils.stringFormat("apple")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Golden Apple
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_GOLDEN_APPLE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "golden_apple", () -> new CrateItem(0, StringUtils.stringFormat("golden_apple")));
-    public static RegistryObject<Item> DOUBLE_CRATED_GOLDEN_APPLE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "golden_apple", () -> new CrateItem(1, StringUtils.stringFormat("golden_apple")));
-    public static RegistryObject<Item> TRIPLE_CRATED_GOLDEN_APPLE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "golden_apple", () -> new CrateItem(2, StringUtils.stringFormat("golden_apple")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_GOLDEN_APPLE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "golden_apple", () -> new CrateItem(3, StringUtils.stringFormat("golden_apple")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_GOLDEN_APPLE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "golden_apple", () -> new CrateItem(4, StringUtils.stringFormat("golden_apple")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_GOLDEN_APPLE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "golden_apple", () -> new CrateItem(5, StringUtils.stringFormat("golden_apple")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_GOLDEN_APPLE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "golden_apple", () -> new CrateItem(6, StringUtils.stringFormat("golden_apple")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_GOLDEN_APPLE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "golden_apple", () -> new CrateItem(7, StringUtils.stringFormat("golden_apple")));
-    public static RegistryObject<Item> MEGA_CRATED_GOLDEN_APPLE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "golden_apple", () -> new CrateItem(8, StringUtils.stringFormat("golden_apple")));
-    public static RegistryObject<Item> GIGA_CRATED_GOLDEN_APPLE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "golden_apple", () -> new CrateItem(9, StringUtils.stringFormat("golden_apple")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Melon Slice
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_MELON_SLICE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "melon_slice", () -> new CrateItem(0, StringUtils.stringFormat("melon_slice")));
-    public static RegistryObject<Item> DOUBLE_CRATED_MELON_SLICE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "melon_slice", () -> new CrateItem(1, StringUtils.stringFormat("melon_slice")));
-    public static RegistryObject<Item> TRIPLE_CRATED_MELON_SLICE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "melon_slice", () -> new CrateItem(2, StringUtils.stringFormat("melon_slice")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_MELON_SLICE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "melon_slice", () -> new CrateItem(3, StringUtils.stringFormat("melon_slice")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_MELON_SLICE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "melon_slice", () -> new CrateItem(4, StringUtils.stringFormat("melon_slice")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_MELON_SLICE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "melon_slice", () -> new CrateItem(5, StringUtils.stringFormat("melon_slice")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_MELON_SLICE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "melon_slice", () -> new CrateItem(6, StringUtils.stringFormat("melon_slice")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_MELON_SLICE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "melon_slice", () -> new CrateItem(7, StringUtils.stringFormat("melon_slice")));
-    public static RegistryObject<Item> MEGA_CRATED_MELON_SLICE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "melon_slice", () -> new CrateItem(8, StringUtils.stringFormat("melon_slice")));
-    public static RegistryObject<Item> GIGA_CRATED_MELON_SLICE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "melon_slice", () -> new CrateItem(9, StringUtils.stringFormat("melon_slice")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Chorus Fruit
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_CHORUS_FRUIT = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "chorus_fruit", () -> new CrateItem(0, StringUtils.stringFormat("chorus_fruit")));
-    public static RegistryObject<Item> DOUBLE_CRATED_CHORUS_FRUIT = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "chorus_fruit", () -> new CrateItem(1, StringUtils.stringFormat("chorus_fruit")));
-    public static RegistryObject<Item> TRIPLE_CRATED_CHORUS_FRUIT = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "chorus_fruit", () -> new CrateItem(2, StringUtils.stringFormat("chorus_fruit")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_CHORUS_FRUIT = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "chorus_fruit", () -> new CrateItem(3, StringUtils.stringFormat("chorus_fruit")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_CHORUS_FRUIT = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "chorus_fruit", () -> new CrateItem(4, StringUtils.stringFormat("chorus_fruit")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_CHORUS_FRUIT = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "chorus_fruit", () -> new CrateItem(5, StringUtils.stringFormat("chorus_fruit")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_CHORUS_FRUIT = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "chorus_fruit", () -> new CrateItem(6, StringUtils.stringFormat("chorus_fruit")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_CHORUS_FRUIT = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "chorus_fruit", () -> new CrateItem(7, StringUtils.stringFormat("chorus_fruit")));
-    public static RegistryObject<Item> MEGA_CRATED_CHORUS_FRUIT = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "chorus_fruit", () -> new CrateItem(8, StringUtils.stringFormat("chorus_fruit")));
-    public static RegistryObject<Item> GIGA_CRATED_CHORUS_FRUIT = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "chorus_fruit", () -> new CrateItem(9, StringUtils.stringFormat("chorus_fruit")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Carrot
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_CARROT = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "carrot", () -> new CrateItem(0, StringUtils.stringFormat("carrot")));
-    public static RegistryObject<Item> DOUBLE_CRATED_CARROT = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "carrot", () -> new CrateItem(1, StringUtils.stringFormat("carrot")));
-    public static RegistryObject<Item> TRIPLE_CRATED_CARROT = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "carrot", () -> new CrateItem(2, StringUtils.stringFormat("carrot")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_CARROT = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "carrot", () -> new CrateItem(3, StringUtils.stringFormat("carrot")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_CARROT = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "carrot", () -> new CrateItem(4, StringUtils.stringFormat("carrot")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_CARROT = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "carrot", () -> new CrateItem(5, StringUtils.stringFormat("carrot")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_CARROT = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "carrot", () -> new CrateItem(6, StringUtils.stringFormat("carrot")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_CARROT = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "carrot", () -> new CrateItem(7, StringUtils.stringFormat("carrot")));
-    public static RegistryObject<Item> MEGA_CRATED_CARROT = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "carrot", () -> new CrateItem(8, StringUtils.stringFormat("carrot")));
-    public static RegistryObject<Item> GIGA_CRATED_CARROT = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "carrot", () -> new CrateItem(9, StringUtils.stringFormat("carrot")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Golden Carrot
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_GOLDEN_CARROT = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "golden_carrot", () -> new CrateItem(0, StringUtils.stringFormat("golden_carrot")));
-    public static RegistryObject<Item> DOUBLE_CRATED_GOLDEN_CARROT = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "golden_carrot", () -> new CrateItem(1, StringUtils.stringFormat("golden_carrot")));
-    public static RegistryObject<Item> TRIPLE_CRATED_GOLDEN_CARROT = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "golden_carrot", () -> new CrateItem(2, StringUtils.stringFormat("golden_carrot")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_GOLDEN_CARROT = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "golden_carrot", () -> new CrateItem(3, StringUtils.stringFormat("golden_carrot")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_GOLDEN_CARROT = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "golden_carrot", () -> new CrateItem(4, StringUtils.stringFormat("golden_carrot")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_GOLDEN_CARROT = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "golden_carrot", () -> new CrateItem(5, StringUtils.stringFormat("golden_carrot")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_GOLDEN_CARROT = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "golden_carrot", () -> new CrateItem(6, StringUtils.stringFormat("golden_carrot")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_GOLDEN_CARROT = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "golden_carrot", () -> new CrateItem(7, StringUtils.stringFormat("golden_carrot")));
-    public static RegistryObject<Item> MEGA_CRATED_GOLDEN_CARROT = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "golden_carrot", () -> new CrateItem(8, StringUtils.stringFormat("golden_carrot")));
-    public static RegistryObject<Item> GIGA_CRATED_GOLDEN_CARROT = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "golden_carrot", () -> new CrateItem(9, StringUtils.stringFormat("golden_carrot")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Potato
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "potato", () -> new CrateItem(0, StringUtils.stringFormat("potato")));
-    public static RegistryObject<Item> DOUBLE_CRATED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "potato", () -> new CrateItem(1, StringUtils.stringFormat("potato")));
-    public static RegistryObject<Item> TRIPLE_CRATED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "potato", () -> new CrateItem(2, StringUtils.stringFormat("potato")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "potato", () -> new CrateItem(3, StringUtils.stringFormat("potato")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "potato", () -> new CrateItem(4, StringUtils.stringFormat("potato")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "potato", () -> new CrateItem(5, StringUtils.stringFormat("potato")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "potato", () -> new CrateItem(6, StringUtils.stringFormat("potato")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "potato", () -> new CrateItem(7, StringUtils.stringFormat("potato")));
-    public static RegistryObject<Item> MEGA_CRATED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "potato", () -> new CrateItem(8, StringUtils.stringFormat("potato")));
-    public static RegistryObject<Item> GIGA_CRATED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "potato", () -> new CrateItem(9, StringUtils.stringFormat("potato")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Oak Baked Potato
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BAKED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "baked_potato", () -> new CrateItem(0, StringUtils.stringFormat("baked_potato")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BAKED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "baked_potato", () -> new CrateItem(1, StringUtils.stringFormat("baked_potato")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BAKED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "baked_potato", () -> new CrateItem(2, StringUtils.stringFormat("baked_potato")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BAKED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "baked_potato", () -> new CrateItem(3, StringUtils.stringFormat("baked_potato")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BAKED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "baked_potato", () -> new CrateItem(4, StringUtils.stringFormat("baked_potato")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BAKED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "baked_potato", () -> new CrateItem(5, StringUtils.stringFormat("baked_potato")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BAKED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "baked_potato", () -> new CrateItem(6, StringUtils.stringFormat("baked_potato")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BAKED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "baked_potato", () -> new CrateItem(7, StringUtils.stringFormat("baked_potato")));
-    public static RegistryObject<Item> MEGA_CRATED_BAKED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "baked_potato", () -> new CrateItem(8, StringUtils.stringFormat("baked_potato")));
-    public static RegistryObject<Item> GIGA_CRATED_BAKED_POTATO = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "baked_potato", () -> new CrateItem(9, StringUtils.stringFormat("baked_potato")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Poisonous Potato
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_POISONOUS_POTATO = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "poisonous_potato", () -> new CrateItem(0, StringUtils.stringFormat("poisonous_potato")));
-    public static RegistryObject<Item> DOUBLE_CRATED_POISONOUS_POTATO = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "poisonous_potato", () -> new CrateItem(1, StringUtils.stringFormat("poisonous_potato")));
-    public static RegistryObject<Item> TRIPLE_CRATED_POISONOUS_POTATO = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "poisonous_potato", () -> new CrateItem(2, StringUtils.stringFormat("poisonous_potato")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_POISONOUS_POTATO = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "poisonous_potato", () -> new CrateItem(3, StringUtils.stringFormat("poisonous_potato")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_POISONOUS_POTATO = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "poisonous_potato", () -> new CrateItem(4, StringUtils.stringFormat("poisonous_potato")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_POISONOUS_POTATO = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "poisonous_potato", () -> new CrateItem(5, StringUtils.stringFormat("poisonous_potato")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_POISONOUS_POTATO = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "poisonous_potato", () -> new CrateItem(6, StringUtils.stringFormat("poisonous_potato")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_POISONOUS_POTATO = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "poisonous_potato", () -> new CrateItem(7, StringUtils.stringFormat("poisonous_potato")));
-    public static RegistryObject<Item> MEGA_CRATED_POISONOUS_POTATO = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "poisonous_potato", () -> new CrateItem(8, StringUtils.stringFormat("poisonous_potato")));
-    public static RegistryObject<Item> GIGA_CRATED_POISONOUS_POTATO = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "poisonous_potato", () -> new CrateItem(9, StringUtils.stringFormat("poisonous_potato")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Beetroot
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BEETROOT = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "beetroot", () -> new CrateItem(0, StringUtils.stringFormat("beetroot")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BEETROOT = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "beetroot", () -> new CrateItem(1, StringUtils.stringFormat("beetroot")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BEETROOT = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "beetroot", () -> new CrateItem(2, StringUtils.stringFormat("beetroot")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BEETROOT = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "beetroot", () -> new CrateItem(3, StringUtils.stringFormat("beetroot")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BEETROOT = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "beetroot", () -> new CrateItem(4, StringUtils.stringFormat("beetroot")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BEETROOT = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "beetroot", () -> new CrateItem(5, StringUtils.stringFormat("beetroot")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BEETROOT = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "beetroot", () -> new CrateItem(6, StringUtils.stringFormat("beetroot")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BEETROOT = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "beetroot", () -> new CrateItem(7, StringUtils.stringFormat("beetroot")));
-    public static RegistryObject<Item> MEGA_CRATED_BEETROOT = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "beetroot", () -> new CrateItem(8, StringUtils.stringFormat("beetroot")));
-    public static RegistryObject<Item> GIGA_CRATED_BEETROOT = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "beetroot", () -> new CrateItem(9, StringUtils.stringFormat("beetroot")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Dried Kelp
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_DRIED_KELP = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "dried_kelp", () -> new CrateItem(0, StringUtils.stringFormat("dried_kelp")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_DRIED_KELP = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "dried_kelp", () -> new CrateItem(1, StringUtils.stringFormat("dried_kelp")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_DRIED_KELP = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "dried_kelp", () -> new CrateItem(2, StringUtils.stringFormat("dried_kelp")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_DRIED_KELP = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "dried_kelp", () -> new CrateItem(3, StringUtils.stringFormat("dried_kelp")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_DRIED_KELP = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "dried_kelp", () -> new CrateItem(4, StringUtils.stringFormat("dried_kelp")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_DRIED_KELP = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "dried_kelp", () -> new CrateItem(5, StringUtils.stringFormat("dried_kelp")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_DRIED_KELP = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "dried_kelp", () -> new CrateItem(6, StringUtils.stringFormat("dried_kelp")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_DRIED_KELP = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "dried_kelp", () -> new CrateItem(7, StringUtils.stringFormat("dried_kelp")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_DRIED_KELP = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "dried_kelp", () -> new CrateItem(8, StringUtils.stringFormat("dried_kelp")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_DRIED_KELP = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "dried_kelp", () -> new CrateItem(9, StringUtils.stringFormat("dried_kelp")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Raw Beef
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_RAW_BEEF = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "raw_beef", () -> new CrateItem(0, StringUtils.stringFormat("raw_beef")));
-    public static RegistryObject<Item> DOUBLE_CRATED_RAW_BEEF = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "raw_beef", () -> new CrateItem(1, StringUtils.stringFormat("raw_beef")));
-    public static RegistryObject<Item> TRIPLE_CRATED_RAW_BEEF = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "raw_beef", () -> new CrateItem(2, StringUtils.stringFormat("raw_beef")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_RAW_BEEF = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "raw_beef", () -> new CrateItem(3, StringUtils.stringFormat("raw_beef")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_RAW_BEEF = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "raw_beef", () -> new CrateItem(4, StringUtils.stringFormat("raw_beef")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_RAW_BEEF = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "raw_beef", () -> new CrateItem(5, StringUtils.stringFormat("raw_beef")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_RAW_BEEF = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "raw_beef", () -> new CrateItem(6, StringUtils.stringFormat("raw_beef")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_RAW_BEEF = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "raw_beef", () -> new CrateItem(7, StringUtils.stringFormat("raw_beef")));
-    public static RegistryObject<Item> MEGA_CRATED_RAW_BEEF = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "raw_beef", () -> new CrateItem(8, StringUtils.stringFormat("raw_beef")));
-    public static RegistryObject<Item> GIGA_CRATED_RAW_BEEF = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "raw_beef", () -> new CrateItem(9, StringUtils.stringFormat("raw_beef")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Steak
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_STEAK = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cooked_beef", () -> new CrateItem(0, StringUtils.stringFormat("steak")));
-    public static RegistryObject<Item> DOUBLE_CRATED_STEAK = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cooked_beef", () -> new CrateItem(1, StringUtils.stringFormat("steak")));
-    public static RegistryObject<Item> TRIPLE_CRATED_STEAK = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cooked_beef", () -> new CrateItem(2, StringUtils.stringFormat("steak")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_STEAK = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cooked_beef", () -> new CrateItem(3, StringUtils.stringFormat("steak")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_STEAK = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cooked_beef", () -> new CrateItem(4, StringUtils.stringFormat("steak")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_STEAK = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cooked_beef", () -> new CrateItem(5, StringUtils.stringFormat("steak")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_STEAK = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cooked_beef", () -> new CrateItem(6, StringUtils.stringFormat("steak")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_STEAK = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cooked_beef", () -> new CrateItem(7, StringUtils.stringFormat("steak")));
-    public static RegistryObject<Item> MEGA_CRATED_STEAK = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cooked_beef", () -> new CrateItem(8, StringUtils.stringFormat("steak")));
-    public static RegistryObject<Item> GIGA_CRATED_STEAK = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cooked_beef", () -> new CrateItem(9, StringUtils.stringFormat("steak")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Raw Porkchop
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_RAW_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "raw_porkchop", () -> new CrateItem(0, StringUtils.stringFormat("raw_porkchop")));
-    public static RegistryObject<Item> DOUBLE_CRATED_RAW_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "raw_porkchop", () -> new CrateItem(1, StringUtils.stringFormat("raw_porkchop")));
-    public static RegistryObject<Item> TRIPLE_CRATED_RAW_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "raw_porkchop", () -> new CrateItem(2, StringUtils.stringFormat("raw_porkchop")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_RAW_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "raw_porkchop", () -> new CrateItem(3, StringUtils.stringFormat("raw_porkchop")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_RAW_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "raw_porkchop", () -> new CrateItem(4, StringUtils.stringFormat("raw_porkchop")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_RAW_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "raw_porkchop", () -> new CrateItem(5, StringUtils.stringFormat("raw_porkchop")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_RAW_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "raw_porkchop", () -> new CrateItem(6, StringUtils.stringFormat("raw_porkchop")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_RAW_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "raw_porkchop", () -> new CrateItem(7, StringUtils.stringFormat("raw_porkchop")));
-    public static RegistryObject<Item> MEGA_CRATED_RAW_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "raw_porkchop", () -> new CrateItem(8, StringUtils.stringFormat("raw_porkchop")));
-    public static RegistryObject<Item> GIGA_CRATED_RAW_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "raw_porkchop", () -> new CrateItem(9, StringUtils.stringFormat("raw_porkchop")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cooked Porkchop
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_COOKED_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cooked_porkchop", () -> new CrateItem(0, StringUtils.stringFormat("cooked_porkchop")));
-    public static RegistryObject<Item> DOUBLE_CRATED_COOKED_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cooked_porkchop", () -> new CrateItem(1, StringUtils.stringFormat("cooked_porkchop")));
-    public static RegistryObject<Item> TRIPLE_CRATED_COOKED_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cooked_porkchop", () -> new CrateItem(2, StringUtils.stringFormat("cooked_porkchop")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_COOKED_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cooked_porkchop", () -> new CrateItem(3, StringUtils.stringFormat("cooked_porkchop")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_COOKED_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cooked_porkchop", () -> new CrateItem(4, StringUtils.stringFormat("cooked_porkchop")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_COOKED_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cooked_porkchop", () -> new CrateItem(5, StringUtils.stringFormat("cooked_porkchop")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_COOKED_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cooked_porkchop", () -> new CrateItem(6, StringUtils.stringFormat("cooked_porkchop")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_COOKED_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cooked_porkchop", () -> new CrateItem(7, StringUtils.stringFormat("cooked_porkchop")));
-    public static RegistryObject<Item> MEGA_CRATED_COOKED_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cooked_porkchop", () -> new CrateItem(8, StringUtils.stringFormat("cooked_porkchop")));
-    public static RegistryObject<Item> GIGA_CRATED_COOKED_PORKCHOP = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cooked_porkchop", () -> new CrateItem(9, StringUtils.stringFormat("cooked_porkchop")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Raw Mutton
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_RAW_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "raw_mutton", () -> new CrateItem(0, StringUtils.stringFormat("raw_mutton")));
-    public static RegistryObject<Item> DOUBLE_CRATED_RAW_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "raw_mutton", () -> new CrateItem(1, StringUtils.stringFormat("raw_mutton")));
-    public static RegistryObject<Item> TRIPLE_CRATED_RAW_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "raw_mutton", () -> new CrateItem(2, StringUtils.stringFormat("raw_mutton")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_RAW_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "raw_mutton", () -> new CrateItem(3, StringUtils.stringFormat("raw_mutton")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_RAW_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "raw_mutton", () -> new CrateItem(4, StringUtils.stringFormat("raw_mutton")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_RAW_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "raw_mutton", () -> new CrateItem(5, StringUtils.stringFormat("raw_mutton")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_RAW_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "raw_mutton", () -> new CrateItem(6, StringUtils.stringFormat("raw_mutton")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_RAW_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "raw_mutton", () -> new CrateItem(7, StringUtils.stringFormat("raw_mutton")));
-    public static RegistryObject<Item> MEGA_CRATED_RAW_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "raw_mutton", () -> new CrateItem(8, StringUtils.stringFormat("raw_mutton")));
-    public static RegistryObject<Item> GIGA_CRATED_RAW_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "raw_mutton", () -> new CrateItem(9, StringUtils.stringFormat("raw_mutton")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cooked Mutton
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_COOKED_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cooked_mutton", () -> new CrateItem(0, StringUtils.stringFormat("cooked_mutton")));
-    public static RegistryObject<Item> DOUBLE_CRATED_COOKED_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cooked_mutton", () -> new CrateItem(1, StringUtils.stringFormat("cooked_mutton")));
-    public static RegistryObject<Item> TRIPLE_CRATED_COOKED_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cooked_mutton", () -> new CrateItem(2, StringUtils.stringFormat("cooked_mutton")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_COOKED_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cooked_mutton", () -> new CrateItem(3, StringUtils.stringFormat("cooked_mutton")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_COOKED_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cooked_mutton", () -> new CrateItem(4, StringUtils.stringFormat("cooked_mutton")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_COOKED_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cooked_mutton", () -> new CrateItem(5, StringUtils.stringFormat("cooked_mutton")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_COOKED_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cooked_mutton", () -> new CrateItem(6, StringUtils.stringFormat("cooked_mutton")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_COOKED_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cooked_mutton", () -> new CrateItem(7, StringUtils.stringFormat("cooked_mutton")));
-    public static RegistryObject<Item> MEGA_CRATED_COOKED_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cooked_mutton", () -> new CrateItem(8, StringUtils.stringFormat("cooked_mutton")));
-    public static RegistryObject<Item> GIGA_CRATED_COOKED_MUTTON = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cooked_mutton", () -> new CrateItem(9, StringUtils.stringFormat("cooked_mutton")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Raw Chicken
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_RAW_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "raw_chicken", () -> new CrateItem(0, StringUtils.stringFormat("raw_chicken")));
-    public static RegistryObject<Item> DOUBLE_CRATED_RAW_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "raw_chicken", () -> new CrateItem(1, StringUtils.stringFormat("raw_chicken")));
-    public static RegistryObject<Item> TRIPLE_CRATED_RAW_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "raw_chicken", () -> new CrateItem(2, StringUtils.stringFormat("raw_chicken")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_RAW_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "raw_chicken", () -> new CrateItem(3, StringUtils.stringFormat("raw_chicken")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_RAW_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "raw_chicken", () -> new CrateItem(4, StringUtils.stringFormat("raw_chicken")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_RAW_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "raw_chicken", () -> new CrateItem(5, StringUtils.stringFormat("raw_chicken")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_RAW_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "raw_chicken", () -> new CrateItem(6, StringUtils.stringFormat("raw_chicken")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_RAW_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "raw_chicken", () -> new CrateItem(7, StringUtils.stringFormat("raw_chicken")));
-    public static RegistryObject<Item> MEGA_CRATED_RAW_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "raw_chicken", () -> new CrateItem(8, StringUtils.stringFormat("raw_chicken")));
-    public static RegistryObject<Item> GIGA_CRATED_RAW_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "raw_chicken", () -> new CrateItem(9, StringUtils.stringFormat("raw_chicken")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cooked Chicken
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_COOKED_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cooked_chicken", () -> new CrateItem(0, StringUtils.stringFormat("cooked_chicken")));
-    public static RegistryObject<Item> DOUBLE_CRATED_COOKED_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cooked_chicken", () -> new CrateItem(1, StringUtils.stringFormat("cooked_chicken")));
-    public static RegistryObject<Item> TRIPLE_CRATED_COOKED_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cooked_chicken", () -> new CrateItem(2, StringUtils.stringFormat("cooked_chicken")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_COOKED_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cooked_chicken", () -> new CrateItem(3, StringUtils.stringFormat("cooked_chicken")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_COOKED_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cooked_chicken", () -> new CrateItem(4, StringUtils.stringFormat("cooked_chicken")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_COOKED_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cooked_chicken", () -> new CrateItem(5, StringUtils.stringFormat("cooked_chicken")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_COOKED_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cooked_chicken", () -> new CrateItem(6, StringUtils.stringFormat("cooked_chicken")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_COOKED_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cooked_chicken", () -> new CrateItem(7, StringUtils.stringFormat("cooked_chicken")));
-    public static RegistryObject<Item> MEGA_CRATED_COOKED_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cooked_chicken", () -> new CrateItem(8, StringUtils.stringFormat("cooked_chicken")));
-    public static RegistryObject<Item> GIGA_CRATED_COOKED_CHICKEN = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cooked_chicken", () -> new CrateItem(9, StringUtils.stringFormat("cooked_chicken")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Raw Rabbit
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_RAW_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "raw_rabbit", () -> new CrateItem(0, StringUtils.stringFormat("raw_rabbit")));
-    public static RegistryObject<Item> DOUBLE_CRATED_RAW_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "raw_rabbit", () -> new CrateItem(1, StringUtils.stringFormat("raw_rabbit")));
-    public static RegistryObject<Item> TRIPLE_CRATED_RAW_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "raw_rabbit", () -> new CrateItem(2, StringUtils.stringFormat("raw_rabbit")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_RAW_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "raw_rabbit", () -> new CrateItem(3, StringUtils.stringFormat("raw_rabbit")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_RAW_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "raw_rabbit", () -> new CrateItem(4, StringUtils.stringFormat("raw_rabbit")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_RAW_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "raw_rabbit", () -> new CrateItem(5, StringUtils.stringFormat("raw_rabbit")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_RAW_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "raw_rabbit", () -> new CrateItem(6, StringUtils.stringFormat("raw_rabbit")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_RAW_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "raw_rabbit", () -> new CrateItem(7, StringUtils.stringFormat("raw_rabbit")));
-    public static RegistryObject<Item> MEGA_CRATED_RAW_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "raw_rabbit", () -> new CrateItem(8, StringUtils.stringFormat("raw_rabbit")));
-    public static RegistryObject<Item> GIGA_CRATED_RAW_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "raw_rabbit", () -> new CrateItem(9, StringUtils.stringFormat("raw_rabbit")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cooked Rabbit
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_COOKED_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cooked_rabbit", () -> new CrateItem(0, StringUtils.stringFormat("cooked_rabbit")));
-    public static RegistryObject<Item> DOUBLE_CRATED_COOKED_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cooked_rabbit", () -> new CrateItem(1, StringUtils.stringFormat("cooked_rabbit")));
-    public static RegistryObject<Item> TRIPLE_CRATED_COOKED_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cooked_rabbit", () -> new CrateItem(2, StringUtils.stringFormat("cooked_rabbit")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_COOKED_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cooked_rabbit", () -> new CrateItem(3, StringUtils.stringFormat("cooked_rabbit")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_COOKED_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cooked_rabbit", () -> new CrateItem(4, StringUtils.stringFormat("cooked_rabbit")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_COOKED_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cooked_rabbit", () -> new CrateItem(5, StringUtils.stringFormat("cooked_rabbit")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_COOKED_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cooked_rabbit", () -> new CrateItem(6, StringUtils.stringFormat("cooked_rabbit")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_COOKED_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cooked_rabbit", () -> new CrateItem(7, StringUtils.stringFormat("cooked_rabbit")));
-    public static RegistryObject<Item> MEGA_CRATED_COOKED_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cooked_rabbit", () -> new CrateItem(8, StringUtils.stringFormat("cooked_rabbit")));
-    public static RegistryObject<Item> GIGA_CRATED_COOKED_RABBIT = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cooked_rabbit", () -> new CrateItem(9, StringUtils.stringFormat("cooked_rabbit")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Raw Cod
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_RAW_COD = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "raw_cod", () -> new CrateItem(0, StringUtils.stringFormat("raw_cod")));
-    public static RegistryObject<Item> DOUBLE_CRATED_RAW_COD = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "raw_cod", () -> new CrateItem(1, StringUtils.stringFormat("raw_cod")));
-    public static RegistryObject<Item> TRIPLE_CRATED_RAW_COD = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "raw_cod", () -> new CrateItem(2, StringUtils.stringFormat("raw_cod")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_RAW_COD = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "raw_cod", () -> new CrateItem(3, StringUtils.stringFormat("raw_cod")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_RAW_COD = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "raw_cod", () -> new CrateItem(4, StringUtils.stringFormat("raw_cod")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_RAW_COD = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "raw_cod", () -> new CrateItem(5, StringUtils.stringFormat("raw_cod")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_RAW_COD = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "raw_cod", () -> new CrateItem(6, StringUtils.stringFormat("raw_cod")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_RAW_COD = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "raw_cod", () -> new CrateItem(7, StringUtils.stringFormat("raw_cod")));
-    public static RegistryObject<Item> MEGA_CRATED_RAW_COD = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "raw_cod", () -> new CrateItem(8, StringUtils.stringFormat("raw_cod")));
-    public static RegistryObject<Item> GIGA_CRATED_RAW_COD = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "raw_cod", () -> new CrateItem(9, StringUtils.stringFormat("raw_cod")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cooked Cod
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_COOKED_COD = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cooked_cod", () -> new CrateItem(0, StringUtils.stringFormat("cooked_cod")));
-    public static RegistryObject<Item> DOUBLE_CRATED_COOKED_COD = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cooked_cod", () -> new CrateItem(1, StringUtils.stringFormat("cooked_cod")));
-    public static RegistryObject<Item> TRIPLE_CRATED_COOKED_COD = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cooked_cod", () -> new CrateItem(2, StringUtils.stringFormat("cooked_cod")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_COOKED_COD = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cooked_cod", () -> new CrateItem(3, StringUtils.stringFormat("cooked_cod")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_COOKED_COD = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cooked_cod", () -> new CrateItem(4, StringUtils.stringFormat("cooked_cod")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_COOKED_COD = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cooked_cod", () -> new CrateItem(5, StringUtils.stringFormat("cooked_cod")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_COOKED_COD = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cooked_cod", () -> new CrateItem(6, StringUtils.stringFormat("cooked_cod")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_COOKED_COD = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cooked_cod", () -> new CrateItem(7, StringUtils.stringFormat("cooked_cod")));
-    public static RegistryObject<Item> MEGA_CRATED_COOKED_COD = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cooked_cod", () -> new CrateItem(8, StringUtils.stringFormat("cooked_cod")));
-    public static RegistryObject<Item> GIGA_CRATED_COOKED_COD = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cooked_cod", () -> new CrateItem(9, StringUtils.stringFormat("cooked_cod")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Raw Salmon
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_RAW_SALMON = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "raw_salmon", () -> new CrateItem(0, StringUtils.stringFormat("raw_salmon")));
-    public static RegistryObject<Item> DOUBLE_CRATED_RAW_SALMON = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "raw_salmon", () -> new CrateItem(1, StringUtils.stringFormat("raw_salmon")));
-    public static RegistryObject<Item> TRIPLE_CRATED_RAW_SALMON = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "raw_salmon", () -> new CrateItem(2, StringUtils.stringFormat("raw_salmon")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_RAW_SALMON = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "raw_salmon", () -> new CrateItem(3, StringUtils.stringFormat("raw_salmon")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_RAW_SALMON = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "raw_salmon", () -> new CrateItem(4, StringUtils.stringFormat("raw_salmon")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_RAW_SALMON = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "raw_salmon", () -> new CrateItem(5, StringUtils.stringFormat("raw_salmon")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_RAW_SALMON = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "raw_salmon", () -> new CrateItem(6, StringUtils.stringFormat("raw_salmon")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_RAW_SALMON = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "raw_salmon", () -> new CrateItem(7, StringUtils.stringFormat("raw_salmon")));
-    public static RegistryObject<Item> MEGA_CRATED_RAW_SALMON = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "raw_salmon", () -> new CrateItem(8, StringUtils.stringFormat("raw_salmon")));
-    public static RegistryObject<Item> GIGA_CRATED_RAW_SALMON = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "raw_salmon", () -> new CrateItem(9, StringUtils.stringFormat("raw_salmon")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cooked Salmon
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_COOKED_SALMON = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cooked_salmon", () -> new CrateItem(0, StringUtils.stringFormat("cooked_salmon")));
-    public static RegistryObject<Item> DOUBLE_CRATED_COOKED_SALMON = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cooked_salmon", () -> new CrateItem(1, StringUtils.stringFormat("cooked_salmon")));
-    public static RegistryObject<Item> TRIPLE_CRATED_COOKED_SALMON = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cooked_salmon", () -> new CrateItem(2, StringUtils.stringFormat("cooked_salmon")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_COOKED_SALMON = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cooked_salmon", () -> new CrateItem(3, StringUtils.stringFormat("cooked_salmon")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_COOKED_SALMON = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cooked_salmon", () -> new CrateItem(4, StringUtils.stringFormat("cooked_salmon")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_COOKED_SALMON = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cooked_salmon", () -> new CrateItem(5, StringUtils.stringFormat("cooked_salmon")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_COOKED_SALMON = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cooked_salmon", () -> new CrateItem(6, StringUtils.stringFormat("cooked_salmon")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_COOKED_SALMON = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cooked_salmon", () -> new CrateItem(7, StringUtils.stringFormat("cooked_salmon")));
-    public static RegistryObject<Item> MEGA_CRATED_COOKED_SALMON = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cooked_salmon", () -> new CrateItem(8, StringUtils.stringFormat("cooked_salmon")));
-    public static RegistryObject<Item> GIGA_CRATED_COOKED_SALMON = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cooked_salmon", () -> new CrateItem(9, StringUtils.stringFormat("cooked_salmon")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Tropical Fish
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_TROPICAL_FISH = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "tropical_fish", () -> new CrateItem(0, StringUtils.stringFormat("tropical_fish")));
-    public static RegistryObject<Item> DOUBLE_CRATED_TROPICAL_FISH = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "tropical_fish", () -> new CrateItem(1, StringUtils.stringFormat("tropical_fish")));
-    public static RegistryObject<Item> TRIPLE_CRATED_TROPICAL_FISH = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "tropical_fish", () -> new CrateItem(2, StringUtils.stringFormat("tropical_fish")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_TROPICAL_FISH = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "tropical_fish", () -> new CrateItem(3, StringUtils.stringFormat("tropical_fish")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_TROPICAL_FISH = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "tropical_fish", () -> new CrateItem(4, StringUtils.stringFormat("tropical_fish")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_TROPICAL_FISH = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "tropical_fish", () -> new CrateItem(5, StringUtils.stringFormat("tropical_fish")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_TROPICAL_FISH = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "tropical_fish", () -> new CrateItem(6, StringUtils.stringFormat("tropical_fish")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_TROPICAL_FISH = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "tropical_fish", () -> new CrateItem(7, StringUtils.stringFormat("tropical_fish")));
-    public static RegistryObject<Item> MEGA_CRATED_TROPICAL_FISH = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "tropical_fish", () -> new CrateItem(8, StringUtils.stringFormat("tropical_fish")));
-    public static RegistryObject<Item> GIGA_CRATED_TROPICAL_FISH = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "tropical_fish", () -> new CrateItem(9, StringUtils.stringFormat("tropical_fish")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Pufferfish
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_PUFFERFISH = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "pufferfish", () -> new CrateItem(0, StringUtils.stringFormat("pufferfish")));
-    public static RegistryObject<Item> DOUBLE_CRATED_PUFFERFISH = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "pufferfish", () -> new CrateItem(1, StringUtils.stringFormat("pufferfish")));
-    public static RegistryObject<Item> TRIPLE_CRATED_PUFFERFISH = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "pufferfish", () -> new CrateItem(2, StringUtils.stringFormat("pufferfish")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_PUFFERFISH = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "pufferfish", () -> new CrateItem(3, StringUtils.stringFormat("pufferfish")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_PUFFERFISH = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "pufferfish", () -> new CrateItem(4, StringUtils.stringFormat("pufferfish")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_PUFFERFISH = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "pufferfish", () -> new CrateItem(5, StringUtils.stringFormat("pufferfish")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_PUFFERFISH = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "pufferfish", () -> new CrateItem(6, StringUtils.stringFormat("pufferfish")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_PUFFERFISH = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "pufferfish", () -> new CrateItem(7, StringUtils.stringFormat("pufferfish")));
-    public static RegistryObject<Item> MEGA_CRATED_PUFFERFISH = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "pufferfish", () -> new CrateItem(8, StringUtils.stringFormat("pufferfish")));
-    public static RegistryObject<Item> GIGA_CRATED_PUFFERFISH = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "pufferfish", () -> new CrateItem(9, StringUtils.stringFormat("pufferfish")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Bread
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BREAD = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "bread", () -> new CrateItem(0, StringUtils.stringFormat("bread")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BREAD = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "bread", () -> new CrateItem(1, StringUtils.stringFormat("bread")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BREAD = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "bread", () -> new CrateItem(2, StringUtils.stringFormat("bread")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BREAD = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "bread", () -> new CrateItem(3, StringUtils.stringFormat("bread")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BREAD = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "bread", () -> new CrateItem(4, StringUtils.stringFormat("bread")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BREAD = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "bread", () -> new CrateItem(5, StringUtils.stringFormat("bread")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BREAD = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "bread", () -> new CrateItem(6, StringUtils.stringFormat("bread")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BREAD = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "bread", () -> new CrateItem(7, StringUtils.stringFormat("bread")));
-    public static RegistryObject<Item> MEGA_CRATED_BREAD = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "bread", () -> new CrateItem(8, StringUtils.stringFormat("bread")));
-    public static RegistryObject<Item> GIGA_CRATED_BREAD = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "bread", () -> new CrateItem(9, StringUtils.stringFormat("bread")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cookie
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_COOKIE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cookie", () -> new CrateItem(0, StringUtils.stringFormat("cookie")));
-    public static RegistryObject<Item> DOUBLE_CRATED_COOKIE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cookie", () -> new CrateItem(1, StringUtils.stringFormat("cookie")));
-    public static RegistryObject<Item> TRIPLE_CRATED_COOKIE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cookie", () -> new CrateItem(2, StringUtils.stringFormat("cookie")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_COOKIE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cookie", () -> new CrateItem(3, StringUtils.stringFormat("cookie")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_COOKIE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cookie", () -> new CrateItem(4, StringUtils.stringFormat("cookie")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_COOKIE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cookie", () -> new CrateItem(5, StringUtils.stringFormat("cookie")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_COOKIE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cookie", () -> new CrateItem(6, StringUtils.stringFormat("cookie")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_COOKIE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cookie", () -> new CrateItem(7, StringUtils.stringFormat("cookie")));
-    public static RegistryObject<Item> MEGA_CRATED_COOKIE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cookie", () -> new CrateItem(8, StringUtils.stringFormat("cookie")));
-    public static RegistryObject<Item> GIGA_CRATED_COOKIE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cookie", () -> new CrateItem(9, StringUtils.stringFormat("cookie")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cake
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_CAKE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cake", () -> new CrateItem(0, StringUtils.stringFormat("cake")));
-    public static RegistryObject<Item> DOUBLE_CRATED_CAKE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cake", () -> new CrateItem(1, StringUtils.stringFormat("cake")));
-    public static RegistryObject<Item> TRIPLE_CRATED_CAKE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cake", () -> new CrateItem(2, StringUtils.stringFormat("cake")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_CAKE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cake", () -> new CrateItem(3, StringUtils.stringFormat("cake")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_CAKE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cake", () -> new CrateItem(4, StringUtils.stringFormat("cake")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_CAKE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cake", () -> new CrateItem(5, StringUtils.stringFormat("cake")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_CAKE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cake", () -> new CrateItem(6, StringUtils.stringFormat("cake")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_CAKE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cake", () -> new CrateItem(7, StringUtils.stringFormat("cake")));
-    public static RegistryObject<Item> MEGA_CRATED_CAKE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cake", () -> new CrateItem(8, StringUtils.stringFormat("cake")));
-    public static RegistryObject<Item> GIGA_CRATED_CAKE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cake", () -> new CrateItem(9, StringUtils.stringFormat("cake")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Pumpkin Pie
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_PUMPKIN_PIE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "pumpkin_pie", () -> new CrateItem(0, StringUtils.stringFormat("pumpkin_pie")));
-    public static RegistryObject<Item> DOUBLE_CRATED_PUMPKIN_PIE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "pumpkin_pie", () -> new CrateItem(1, StringUtils.stringFormat("pumpkin_pie")));
-    public static RegistryObject<Item> TRIPLE_CRATED_PUMPKIN_PIE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "pumpkin_pie", () -> new CrateItem(2, StringUtils.stringFormat("pumpkin_pie")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_PUMPKIN_PIE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "pumpkin_pie", () -> new CrateItem(3, StringUtils.stringFormat("pumpkin_pie")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_PUMPKIN_PIE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "pumpkin_pie", () -> new CrateItem(4, StringUtils.stringFormat("pumpkin_pie")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_PUMPKIN_PIE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "pumpkin_pie", () -> new CrateItem(5, StringUtils.stringFormat("pumpkin_pie")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_PUMPKIN_PIE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "pumpkin_pie", () -> new CrateItem(6, StringUtils.stringFormat("pumpkin_pie")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_PUMPKIN_PIE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "pumpkin_pie", () -> new CrateItem(7, StringUtils.stringFormat("pumpkin_pie")));
-    public static RegistryObject<Item> MEGA_CRATED_PUMPKIN_PIE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "pumpkin_pie", () -> new CrateItem(8, StringUtils.stringFormat("pumpkin_pie")));
-    public static RegistryObject<Item> GIGA_CRATED_PUMPKIN_PIE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "pumpkin_pie", () -> new CrateItem(9, StringUtils.stringFormat("pumpkin_pie")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Rotten Flesh
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_ROTTEN_FLESH = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "rotten_flesh", () -> new CrateItem(0, StringUtils.stringFormat("rotten_flesh")));
-    public static RegistryObject<Item> DOUBLE_CRATED_ROTTEN_FLESH = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "rotten_flesh", () -> new CrateItem(1, StringUtils.stringFormat("rotten_flesh")));
-    public static RegistryObject<Item> TRIPLE_CRATED_ROTTEN_FLESH = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "rotten_flesh", () -> new CrateItem(2, StringUtils.stringFormat("rotten_flesh")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_ROTTEN_FLESH = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "rotten_flesh", () -> new CrateItem(3, StringUtils.stringFormat("rotten_flesh")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_ROTTEN_FLESH = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "rotten_flesh", () -> new CrateItem(4, StringUtils.stringFormat("rotten_flesh")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_ROTTEN_FLESH = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "rotten_flesh", () -> new CrateItem(5, StringUtils.stringFormat("rotten_flesh")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_ROTTEN_FLESH = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "rotten_flesh", () -> new CrateItem(6, StringUtils.stringFormat("rotten_flesh")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_ROTTEN_FLESH = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "rotten_flesh", () -> new CrateItem(7, StringUtils.stringFormat("rotten_flesh")));
-    public static RegistryObject<Item> MEGA_CRATED_ROTTEN_FLESH = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "rotten_flesh", () -> new CrateItem(8, StringUtils.stringFormat("rotten_flesh")));
-    public static RegistryObject<Item> GIGA_CRATED_ROTTEN_FLESH = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "rotten_flesh", () -> new CrateItem(9, StringUtils.stringFormat("rotten_flesh")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Spider Eye
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "spider_eye", () -> new CrateItem(0, StringUtils.stringFormat("spider_eye")));
-    public static RegistryObject<Item> DOUBLE_CRATED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "spider_eye", () -> new CrateItem(1, StringUtils.stringFormat("spider_eye")));
-    public static RegistryObject<Item> TRIPLE_CRATED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "spider_eye", () -> new CrateItem(2, StringUtils.stringFormat("spider_eye")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "spider_eye", () -> new CrateItem(3, StringUtils.stringFormat("spider_eye")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "spider_eye", () -> new CrateItem(4, StringUtils.stringFormat("spider_eye")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "spider_eye", () -> new CrateItem(5, StringUtils.stringFormat("spider_eye")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "spider_eye", () -> new CrateItem(6, StringUtils.stringFormat("spider_eye")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "spider_eye", () -> new CrateItem(7, StringUtils.stringFormat("spider_eye")));
-    public static RegistryObject<Item> MEGA_CRATED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "spider_eye", () -> new CrateItem(8, StringUtils.stringFormat("spider_eye")));
-    public static RegistryObject<Item> GIGA_CRATED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "spider_eye", () -> new CrateItem(9, StringUtils.stringFormat("spider_eye")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Honey Bottle
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_HONEY_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "honey_bottle", () -> new CrateItem(0, StringUtils.stringFormat("honey_bottle")));
-    public static RegistryObject<Item> DOUBLE_CRATED_HONEY_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "honey_bottle", () -> new CrateItem(1, StringUtils.stringFormat("honey_bottle")));
-    public static RegistryObject<Item> TRIPLE_CRATED_HONEY_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "honey_bottle", () -> new CrateItem(2, StringUtils.stringFormat("honey_bottle")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_HONEY_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "honey_bottle", () -> new CrateItem(3, StringUtils.stringFormat("honey_bottle")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_HONEY_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "honey_bottle", () -> new CrateItem(4, StringUtils.stringFormat("honey_bottle")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_HONEY_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "honey_bottle", () -> new CrateItem(5, StringUtils.stringFormat("honey_bottle")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_HONEY_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "honey_bottle", () -> new CrateItem(6, StringUtils.stringFormat("honey_bottle")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_HONEY_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "honey_bottle", () -> new CrateItem(7, StringUtils.stringFormat("honey_bottle")));
-    public static RegistryObject<Item> MEGA_CRATED_HONEY_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "honey_bottle", () -> new CrateItem(8, StringUtils.stringFormat("honey_bottle")));
-    public static RegistryObject<Item> GIGA_CRATED_HONEY_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "honey_bottle", () -> new CrateItem(9, StringUtils.stringFormat("honey_bottle")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Water Bottle
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_WATER_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "water_bottle", () -> new CrateItem(0, StringUtils.stringFormat("water_bottle")));
-    public static RegistryObject<Item> DOUBLE_CRATED_WATER_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "water_bottle", () -> new CrateItem(1, StringUtils.stringFormat("water_bottle")));
-    public static RegistryObject<Item> TRIPLE_CRATED_WATER_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "water_bottle", () -> new CrateItem(2, StringUtils.stringFormat("water_bottle")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_WATER_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "water_bottle", () -> new CrateItem(3, StringUtils.stringFormat("water_bottle")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_WATER_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "water_bottle", () -> new CrateItem(4, StringUtils.stringFormat("water_bottle")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_WATER_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "water_bottle", () -> new CrateItem(5, StringUtils.stringFormat("water_bottle")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_WATER_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "water_bottle", () -> new CrateItem(6, StringUtils.stringFormat("water_bottle")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_WATER_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "water_bottle", () -> new CrateItem(7, StringUtils.stringFormat("water_bottle")));
-    public static RegistryObject<Item> MEGA_CRATED_WATER_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "water_bottle", () -> new CrateItem(8, StringUtils.stringFormat("water_bottle")));
-    public static RegistryObject<Item> GIGA_CRATED_WATER_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "water_bottle", () -> new CrateItem(9, StringUtils.stringFormat("water_bottle")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Coal
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_COAL = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "coal", () -> new CrateItem(0, StringUtils.stringFormat("coal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_COAL = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "coal", () -> new CrateItem(1, StringUtils.stringFormat("coal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_COAL = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "coal", () -> new CrateItem(2, StringUtils.stringFormat("coal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_COAL = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "coal", () -> new CrateItem(3, StringUtils.stringFormat("coal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_COAL = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "coal", () -> new CrateItem(4, StringUtils.stringFormat("coal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_COAL = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "coal", () -> new CrateItem(5, StringUtils.stringFormat("coal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_COAL = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "coal", () -> new CrateItem(6, StringUtils.stringFormat("coal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_COAL = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "coal", () -> new CrateItem(7, StringUtils.stringFormat("coal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_COAL = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "coal", () -> new CrateItem(8, StringUtils.stringFormat("coal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_COAL = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "coal", () -> new CrateItem(9, StringUtils.stringFormat("coal")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Charcoal
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_CHARCOAL = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "charcoal", () -> new CrateItem(0, StringUtils.stringFormat("charcoal")));
-    public static RegistryObject<Item> DOUBLE_CRATED_CHARCOAL = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "charcoal", () -> new CrateItem(1, StringUtils.stringFormat("charcoal")));
-    public static RegistryObject<Item> TRIPLE_CRATED_CHARCOAL = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "charcoal", () -> new CrateItem(2, StringUtils.stringFormat("charcoal")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_CHARCOAL = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "charcoal", () -> new CrateItem(3, StringUtils.stringFormat("charcoal")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_CHARCOAL = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "charcoal", () -> new CrateItem(4, StringUtils.stringFormat("charcoal")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_CHARCOAL = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "charcoal", () -> new CrateItem(5, StringUtils.stringFormat("charcoal")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_CHARCOAL = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "charcoal", () -> new CrateItem(6, StringUtils.stringFormat("charcoal")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_CHARCOAL = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "charcoal", () -> new CrateItem(7, StringUtils.stringFormat("charcoal")));
-    public static RegistryObject<Item> MEGA_CRATED_CHARCOAL = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "charcoal", () -> new CrateItem(8, StringUtils.stringFormat("charcoal")));
-    public static RegistryObject<Item> GIGA_CRATED_CHARCOAL = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "charcoal", () -> new CrateItem(9, StringUtils.stringFormat("charcoal")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Raw Iron
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_RAW_IRON = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "raw_iron", () -> new CrateItem(0, StringUtils.stringFormat("raw_iron")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_RAW_IRON = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "raw_iron", () -> new CrateItem(1, StringUtils.stringFormat("raw_iron")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_RAW_IRON = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "raw_iron", () -> new CrateItem(2, StringUtils.stringFormat("raw_iron")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_RAW_IRON = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "raw_iron", () -> new CrateItem(3, StringUtils.stringFormat("raw_iron")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_RAW_IRON = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "raw_iron", () -> new CrateItem(4, StringUtils.stringFormat("raw_iron")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_RAW_IRON = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "raw_iron", () -> new CrateItem(5, StringUtils.stringFormat("raw_iron")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_RAW_IRON = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "raw_iron", () -> new CrateItem(6, StringUtils.stringFormat("raw_iron")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_RAW_IRON = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "raw_iron", () -> new CrateItem(7, StringUtils.stringFormat("raw_iron")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_RAW_IRON = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "raw_iron", () -> new CrateItem(8, StringUtils.stringFormat("raw_iron")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_RAW_IRON = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "raw_iron", () -> new CrateItem(9, StringUtils.stringFormat("raw_iron")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Raw Copper
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_RAW_COPPER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "raw_copper", () -> new CrateItem(0, StringUtils.stringFormat("raw_copper")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_RAW_COPPER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "raw_copper", () -> new CrateItem(1, StringUtils.stringFormat("raw_copper")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_RAW_COPPER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "raw_copper", () -> new CrateItem(2, StringUtils.stringFormat("raw_copper")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_RAW_COPPER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "raw_copper", () -> new CrateItem(3, StringUtils.stringFormat("raw_copper")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_RAW_COPPER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "raw_copper", () -> new CrateItem(4, StringUtils.stringFormat("raw_copper")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_RAW_COPPER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "raw_copper", () -> new CrateItem(5, StringUtils.stringFormat("raw_copper")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_RAW_COPPER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "raw_copper", () -> new CrateItem(6, StringUtils.stringFormat("raw_copper")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_RAW_COPPER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "raw_copper", () -> new CrateItem(7, StringUtils.stringFormat("raw_copper")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_RAW_COPPER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "raw_copper", () -> new CrateItem(8, StringUtils.stringFormat("raw_copper")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_RAW_COPPER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "raw_copper", () -> new CrateItem(9, StringUtils.stringFormat("raw_copper")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Raw Gold
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_RAW_GOLD = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "raw_gold", () -> new CrateItem(0, StringUtils.stringFormat("raw_gold")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_RAW_GOLD = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "raw_gold", () -> new CrateItem(1, StringUtils.stringFormat("raw_gold")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_RAW_GOLD = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "raw_gold", () -> new CrateItem(2, StringUtils.stringFormat("raw_gold")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_RAW_GOLD = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "raw_gold", () -> new CrateItem(3, StringUtils.stringFormat("raw_gold")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_RAW_GOLD = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "raw_gold", () -> new CrateItem(4, StringUtils.stringFormat("raw_gold")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_RAW_GOLD = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "raw_gold", () -> new CrateItem(5, StringUtils.stringFormat("raw_gold")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_RAW_GOLD = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "raw_gold", () -> new CrateItem(6, StringUtils.stringFormat("raw_gold")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_RAW_GOLD = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "raw_gold", () -> new CrateItem(7, StringUtils.stringFormat("raw_gold")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_RAW_GOLD = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "raw_gold", () -> new CrateItem(8, StringUtils.stringFormat("raw_gold")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_RAW_GOLD = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "raw_gold", () -> new CrateItem(9, StringUtils.stringFormat("raw_gold")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Emerald
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_EMERALD = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "emerald", () -> new CrateItem(0, StringUtils.stringFormat("emerald")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_EMERALD = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "emerald", () -> new CrateItem(1, StringUtils.stringFormat("emerald")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_EMERALD = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "emerald", () -> new CrateItem(2, StringUtils.stringFormat("emerald")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_EMERALD = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "emerald", () -> new CrateItem(3, StringUtils.stringFormat("emerald")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_EMERALD = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "emerald", () -> new CrateItem(4, StringUtils.stringFormat("emerald")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_EMERALD = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "emerald", () -> new CrateItem(5, StringUtils.stringFormat("emerald")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_EMERALD = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "emerald", () -> new CrateItem(6, StringUtils.stringFormat("emerald")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_EMERALD = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "emerald", () -> new CrateItem(7, StringUtils.stringFormat("emerald")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_EMERALD = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "emerald", () -> new CrateItem(8, StringUtils.stringFormat("emerald")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_EMERALD = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "emerald", () -> new CrateItem(9, StringUtils.stringFormat("emerald")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Lapis Lazuli
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_LAPIS_LAZULI = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "lapis_lazuli", () -> new CrateItem(0, StringUtils.stringFormat("lapis_lazuli")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_LAPIS_LAZULI = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "lapis_lazuli", () -> new CrateItem(1, StringUtils.stringFormat("lapis_lazuli")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_LAPIS_LAZULI = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "lapis_lazuli", () -> new CrateItem(2, StringUtils.stringFormat("lapis_lazuli")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_LAPIS_LAZULI = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "lapis_lazuli", () -> new CrateItem(3, StringUtils.stringFormat("lapis_lazuli")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_LAPIS_LAZULI = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "lapis_lazuli", () -> new CrateItem(4, StringUtils.stringFormat("lapis_lazuli")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_LAPIS_LAZULI = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "lapis_lazuli", () -> new CrateItem(5, StringUtils.stringFormat("lapis_lazuli")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_LAPIS_LAZULI = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "lapis_lazuli", () -> new CrateItem(6, StringUtils.stringFormat("lapis_lazuli")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_LAPIS_LAZULI = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "lapis_lazuli", () -> new CrateItem(7, StringUtils.stringFormat("lapis_lazuli")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_LAPIS_LAZULI = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "lapis_lazuli", () -> new CrateItem(8, StringUtils.stringFormat("lapis_lazuli")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_LAPIS_LAZULI = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "lapis_lazuli", () -> new CrateItem(9, StringUtils.stringFormat("lapis_lazuli")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Diamond
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_DIAMOND = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "diamond", () -> new CrateItem(0, StringUtils.stringFormat("diamond")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_DIAMOND = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "diamond", () -> new CrateItem(1, StringUtils.stringFormat("diamond")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_DIAMOND = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "diamond", () -> new CrateItem(2, StringUtils.stringFormat("diamond")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_DIAMOND = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "diamond", () -> new CrateItem(3, StringUtils.stringFormat("diamond")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_DIAMOND = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "diamond", () -> new CrateItem(4, StringUtils.stringFormat("diamond")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_DIAMOND = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "diamond", () -> new CrateItem(5, StringUtils.stringFormat("diamond")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_DIAMOND = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "diamond", () -> new CrateItem(6, StringUtils.stringFormat("diamond")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_DIAMOND = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "diamond", () -> new CrateItem(7, StringUtils.stringFormat("diamond")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_DIAMOND = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "diamond", () -> new CrateItem(8, StringUtils.stringFormat("diamond")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_DIAMOND = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "diamond", () -> new CrateItem(9, StringUtils.stringFormat("diamond")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Nether Quartz
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_NETHER_QUARTZ = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "quartz", () -> new CrateItem(0, StringUtils.stringFormat("quartz")));
-    public static RegistryObject<Item> DOUBLE_CRATED_NETHER_QUARTZ = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "quartz", () -> new CrateItem(1, StringUtils.stringFormat("quartz")));
-    public static RegistryObject<Item> TRIPLE_CRATED_NETHER_QUARTZ = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "quartz", () -> new CrateItem(2, StringUtils.stringFormat("quartz")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_NETHER_QUARTZ = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "quartz", () -> new CrateItem(3, StringUtils.stringFormat("quartz")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_NETHER_QUARTZ = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "quartz", () -> new CrateItem(4, StringUtils.stringFormat("quartz")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_NETHER_QUARTZ = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "quartz", () -> new CrateItem(5, StringUtils.stringFormat("quartz")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_NETHER_QUARTZ = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "quartz", () -> new CrateItem(6, StringUtils.stringFormat("quartz")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_NETHER_QUARTZ = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "quartz", () -> new CrateItem(7, StringUtils.stringFormat("quartz")));
-    public static RegistryObject<Item> MEGA_CRATED_NETHER_QUARTZ = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "quartz", () -> new CrateItem(8, StringUtils.stringFormat("quartz")));
-    public static RegistryObject<Item> GIGA_CRATED_NETHER_QUARTZ = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "quartz", () -> new CrateItem(9, StringUtils.stringFormat("quartz")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Iron Nugget
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_IRON_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "iron_nugget", () -> new CrateItem(0, StringUtils.stringFormat("iron_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_IRON_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "iron_nugget", () -> new CrateItem(1, StringUtils.stringFormat("iron_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_IRON_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "iron_nugget", () -> new CrateItem(2, StringUtils.stringFormat("iron_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_IRON_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "iron_nugget", () -> new CrateItem(3, StringUtils.stringFormat("iron_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_IRON_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "iron_nugget", () -> new CrateItem(4, StringUtils.stringFormat("iron_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_IRON_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "iron_nugget", () -> new CrateItem(5, StringUtils.stringFormat("iron_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_IRON_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "iron_nugget", () -> new CrateItem(6, StringUtils.stringFormat("iron_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_IRON_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "iron_nugget", () -> new CrateItem(7, StringUtils.stringFormat("iron_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_IRON_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "iron_nugget", () -> new CrateItem(8, StringUtils.stringFormat("iron_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_IRON_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "iron_nugget", () -> new CrateItem(9, StringUtils.stringFormat("iron_nugget")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Gold Nugget
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_GOLD_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "gold_nugget", () -> new CrateItem(0, StringUtils.stringFormat("gold_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_GOLD_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "gold_nugget", () -> new CrateItem(1, StringUtils.stringFormat("gold_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_GOLD_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "gold_nugget", () -> new CrateItem(2, StringUtils.stringFormat("gold_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_GOLD_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "gold_nugget", () -> new CrateItem(3, StringUtils.stringFormat("gold_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_GOLD_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "gold_nugget", () -> new CrateItem(4, StringUtils.stringFormat("gold_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_GOLD_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "gold_nugget", () -> new CrateItem(5, StringUtils.stringFormat("gold_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_GOLD_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "gold_nugget", () -> new CrateItem(6, StringUtils.stringFormat("gold_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_GOLD_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "gold_nugget", () -> new CrateItem(7, StringUtils.stringFormat("gold_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_GOLD_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "gold_nugget", () -> new CrateItem(8, StringUtils.stringFormat("gold_nugget")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_GOLD_NUGGET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "gold_nugget", () -> new CrateItem(9, StringUtils.stringFormat("gold_nugget")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Iron Ingot
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_IRON_INGOT = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "iron_ingot", () -> new CrateItem(0, StringUtils.stringFormat("iron_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_IRON_INGOT = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "iron_ingot", () -> new CrateItem(1, StringUtils.stringFormat("iron_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_IRON_INGOT = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "iron_ingot", () -> new CrateItem(2, StringUtils.stringFormat("iron_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_IRON_INGOT = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "iron_ingot", () -> new CrateItem(3, StringUtils.stringFormat("iron_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_IRON_INGOT = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "iron_ingot", () -> new CrateItem(4, StringUtils.stringFormat("iron_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_IRON_INGOT = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "iron_ingot", () -> new CrateItem(5, StringUtils.stringFormat("iron_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_IRON_INGOT = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "iron_ingot", () -> new CrateItem(6, StringUtils.stringFormat("iron_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_IRON_INGOT = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "iron_ingot", () -> new CrateItem(7, StringUtils.stringFormat("iron_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_IRON_INGOT = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "iron_ingot", () -> new CrateItem(8, StringUtils.stringFormat("iron_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_IRON_INGOT = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "iron_ingot", () -> new CrateItem(9, StringUtils.stringFormat("iron_ingot")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Copper Ingot
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_COPPER_INGOT = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "copper_ingot", () -> new CrateItem(0, StringUtils.stringFormat("copper_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_COPPER_INGOT = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "copper_ingot", () -> new CrateItem(1, StringUtils.stringFormat("copper_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_COPPER_INGOT = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "copper_ingot", () -> new CrateItem(2, StringUtils.stringFormat("copper_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_COPPER_INGOT = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "copper_ingot", () -> new CrateItem(3, StringUtils.stringFormat("copper_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_COPPER_INGOT = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "copper_ingot", () -> new CrateItem(4, StringUtils.stringFormat("copper_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_COPPER_INGOT = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "copper_ingot", () -> new CrateItem(5, StringUtils.stringFormat("copper_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_COPPER_INGOT = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "copper_ingot", () -> new CrateItem(6, StringUtils.stringFormat("copper_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_COPPER_INGOT = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "copper_ingot", () -> new CrateItem(7, StringUtils.stringFormat("copper_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_COPPER_INGOT = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "copper_ingot", () -> new CrateItem(8, StringUtils.stringFormat("copper_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_COPPER_INGOT = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "copper_ingot", () -> new CrateItem(9, StringUtils.stringFormat("copper_ingot")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Gold Ingot
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_GOLD_INGOT = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "gold_ingot", () -> new CrateItem(0, StringUtils.stringFormat("gold_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_GOLD_INGOT = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "gold_ingot", () -> new CrateItem(1, StringUtils.stringFormat("gold_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_GOLD_INGOT = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "gold_ingot", () -> new CrateItem(2, StringUtils.stringFormat("gold_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_GOLD_INGOT = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "gold_ingot", () -> new CrateItem(3, StringUtils.stringFormat("gold_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_GOLD_INGOT = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "gold_ingot", () -> new CrateItem(4, StringUtils.stringFormat("gold_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_GOLD_INGOT = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "gold_ingot", () -> new CrateItem(5, StringUtils.stringFormat("gold_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_GOLD_INGOT = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "gold_ingot", () -> new CrateItem(6, StringUtils.stringFormat("gold_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_GOLD_INGOT = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "gold_ingot", () -> new CrateItem(7, StringUtils.stringFormat("gold_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_GOLD_INGOT = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "gold_ingot", () -> new CrateItem(8, StringUtils.stringFormat("gold_ingot")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_GOLD_INGOT = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "gold_ingot", () -> new CrateItem(9, StringUtils.stringFormat("gold_ingot")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Stick
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_STICK = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "stick", () -> new CrateItem(0, StringUtils.stringFormat("stick")));
-    public static RegistryObject<Item> DOUBLE_CRATED_STICK = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "stick", () -> new CrateItem(1, StringUtils.stringFormat("stick")));
-    public static RegistryObject<Item> TRIPLE_CRATED_STICK = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "stick", () -> new CrateItem(2, StringUtils.stringFormat("stick")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_STICK = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "stick", () -> new CrateItem(3, StringUtils.stringFormat("stick")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_STICK = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "stick", () -> new CrateItem(4, StringUtils.stringFormat("stick")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_STICK = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "stick", () -> new CrateItem(5, StringUtils.stringFormat("stick")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_STICK = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "stick", () -> new CrateItem(6, StringUtils.stringFormat("stick")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_STICK = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "stick", () -> new CrateItem(7, StringUtils.stringFormat("stick")));
-    public static RegistryObject<Item> MEGA_CRATED_STICK = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "stick", () -> new CrateItem(8, StringUtils.stringFormat("stick")));
-    public static RegistryObject<Item> GIGA_CRATED_STICK = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "stick", () -> new CrateItem(9, StringUtils.stringFormat("stick")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Wheat
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict ->public static RegistryObject<Item> CRATED_WHEAT = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "wheat", () -> new CrateItem(0, StringUtils.stringFormat("wheat")));
-    // removed: removed due to conflict ->public static RegistryObject<Item> DOUBLE_CRATED_WHEAT = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "wheat", () -> new CrateItem(1, StringUtils.stringFormat("wheat")));
-    // removed: removed due to conflict ->public static RegistryObject<Item> TRIPLE_CRATED_WHEAT = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "wheat", () -> new CrateItem(2, StringUtils.stringFormat("wheat")));
-    // removed: removed due to conflict ->public static RegistryObject<Item> QUADRUPLE_CRATED_WHEAT = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "wheat", () -> new CrateItem(3, StringUtils.stringFormat("wheat")));
-    // removed: removed due to conflict ->public static RegistryObject<Item> QUINTUPLE_CRATED_WHEAT = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "wheat", () -> new CrateItem(4, StringUtils.stringFormat("wheat")));
-    // removed: removed due to conflict ->public static RegistryObject<Item> SEXTUPLE_CRATED_WHEAT = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "wheat", () -> new CrateItem(5, StringUtils.stringFormat("wheat")));
-    // removed: removed due to conflict ->public static RegistryObject<Item> SEPTUPLE_CRATED_WHEAT = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "wheat", () -> new CrateItem(6, StringUtils.stringFormat("wheat")));
-    // removed: removed due to conflict ->public static RegistryObject<Item> OCTUPLE_CRATED_WHEAT = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "wheat", () -> new CrateItem(7, StringUtils.stringFormat("wheat")));
-    // removed: removed due to conflict ->public static RegistryObject<Item> MEGA_CRATED_WHEAT = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "wheat", () -> new CrateItem(8, StringUtils.stringFormat("wheat")));
-    // removed: removed due to conflict ->public static RegistryObject<Item> GIGA_CRATED_WHEAT = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "wheat", () -> new CrateItem(9, StringUtils.stringFormat("wheat")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Bone
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BONE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "bone", () -> new CrateItem(0, StringUtils.stringFormat("bone")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BONE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "bone", () -> new CrateItem(1, StringUtils.stringFormat("bone")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BONE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "bone", () -> new CrateItem(2, StringUtils.stringFormat("bone")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BONE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "bone", () -> new CrateItem(3, StringUtils.stringFormat("bone")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BONE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "bone", () -> new CrateItem(4, StringUtils.stringFormat("bone")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BONE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "bone", () -> new CrateItem(5, StringUtils.stringFormat("bone")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BONE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "bone", () -> new CrateItem(6, StringUtils.stringFormat("bone")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BONE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "bone", () -> new CrateItem(7, StringUtils.stringFormat("bone")));
-    public static RegistryObject<Item> MEGA_CRATED_BONE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "bone", () -> new CrateItem(8, StringUtils.stringFormat("bone")));
-    public static RegistryObject<Item> GIGA_CRATED_BONE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "bone", () -> new CrateItem(9, StringUtils.stringFormat("bone")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Bone Meal
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_BONE_MEAL = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "bone_meal", () -> new CrateItem(0, StringUtils.stringFormat("bone_meal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_BONE_MEAL = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "bone_meal", () -> new CrateItem(1, StringUtils.stringFormat("bone_meal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_BONE_MEAL = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "bone_meal", () -> new CrateItem(2, StringUtils.stringFormat("bone_meal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_BONE_MEAL = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "bone_meal", () -> new CrateItem(3, StringUtils.stringFormat("bone_meal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_BONE_MEAL = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "bone_meal", () -> new CrateItem(4, StringUtils.stringFormat("bone_meal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_BONE_MEAL = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "bone_meal", () -> new CrateItem(5, StringUtils.stringFormat("bone_meal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_BONE_MEAL = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "bone_meal", () -> new CrateItem(6, StringUtils.stringFormat("bone_meal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_BONE_MEAL = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "bone_meal", () -> new CrateItem(7, StringUtils.stringFormat("bone_meal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_BONE_MEAL = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "bone_meal", () -> new CrateItem(8, StringUtils.stringFormat("bone_meal")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_BONE_MEAL = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "bone_meal", () -> new CrateItem(9, StringUtils.stringFormat("bone_meal")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Feather
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_FEATHER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "feather", () -> new CrateItem(0, StringUtils.stringFormat("feather")));
-    public static RegistryObject<Item> DOUBLE_CRATED_FEATHER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "feather", () -> new CrateItem(1, StringUtils.stringFormat("feather")));
-    public static RegistryObject<Item> TRIPLE_CRATED_FEATHER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "feather", () -> new CrateItem(2, StringUtils.stringFormat("feather")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_FEATHER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "feather", () -> new CrateItem(3, StringUtils.stringFormat("feather")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_FEATHER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "feather", () -> new CrateItem(4, StringUtils.stringFormat("feather")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_FEATHER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "feather", () -> new CrateItem(5, StringUtils.stringFormat("feather")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_FEATHER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "feather", () -> new CrateItem(6, StringUtils.stringFormat("feather")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_FEATHER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "feather", () -> new CrateItem(7, StringUtils.stringFormat("feather")));
-    public static RegistryObject<Item> MEGA_CRATED_FEATHER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "feather", () -> new CrateItem(8, StringUtils.stringFormat("feather")));
-    public static RegistryObject<Item> GIGA_CRATED_FEATHER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "feather", () -> new CrateItem(9, StringUtils.stringFormat("feather")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Leather
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_LEATHER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "leather", () -> new CrateItem(0, StringUtils.stringFormat("leather")));
-    public static RegistryObject<Item> DOUBLE_CRATED_LEATHER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "leather", () -> new CrateItem(1, StringUtils.stringFormat("leather")));
-    public static RegistryObject<Item> TRIPLE_CRATED_LEATHER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "leather", () -> new CrateItem(2, StringUtils.stringFormat("leather")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_LEATHER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "leather", () -> new CrateItem(3, StringUtils.stringFormat("leather")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_LEATHER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "leather", () -> new CrateItem(4, StringUtils.stringFormat("leather")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_LEATHER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "leather", () -> new CrateItem(5, StringUtils.stringFormat("leather")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_LEATHER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "leather", () -> new CrateItem(6, StringUtils.stringFormat("leather")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_LEATHER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "leather", () -> new CrateItem(7, StringUtils.stringFormat("leather")));
-    public static RegistryObject<Item> MEGA_CRATED_LEATHER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "leather", () -> new CrateItem(8, StringUtils.stringFormat("leather")));
-    public static RegistryObject<Item> GIGA_CRATED_LEATHER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "leather", () -> new CrateItem(9, StringUtils.stringFormat("leather")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Rabbit Hide
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_RABBIT_HIDE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "rabbit_hide", () -> new CrateItem(0, StringUtils.stringFormat("rabbit_hide")));
-    public static RegistryObject<Item> DOUBLE_CRATED_RABBIT_HIDE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "rabbit_hide", () -> new CrateItem(1, StringUtils.stringFormat("rabbit_hide")));
-    public static RegistryObject<Item> TRIPLE_CRATED_RABBIT_HIDE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "rabbit_hide", () -> new CrateItem(2, StringUtils.stringFormat("rabbit_hide")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_RABBIT_HIDE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "rabbit_hide", () -> new CrateItem(3, StringUtils.stringFormat("rabbit_hide")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_RABBIT_HIDE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "rabbit_hide", () -> new CrateItem(4, StringUtils.stringFormat("rabbit_hide")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_RABBIT_HIDE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "rabbit_hide", () -> new CrateItem(5, StringUtils.stringFormat("rabbit_hide")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_RABBIT_HIDE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "rabbit_hide", () -> new CrateItem(6, StringUtils.stringFormat("rabbit_hide")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_RABBIT_HIDE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "rabbit_hide", () -> new CrateItem(7, StringUtils.stringFormat("rabbit_hide")));
-    public static RegistryObject<Item> MEGA_CRATED_RABBIT_HIDE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "rabbit_hide", () -> new CrateItem(8, StringUtils.stringFormat("rabbit_hide")));
-    public static RegistryObject<Item> GIGA_CRATED_RABBIT_HIDE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "rabbit_hide", () -> new CrateItem(9, StringUtils.stringFormat("rabbit_hide")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Honeycomb
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_HONEYCOMB = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "honeycomb", () -> new CrateItem(0, StringUtils.stringFormat("honeycomb")));
-    public static RegistryObject<Item> DOUBLE_CRATED_HONEYCOMB = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "honeycomb", () -> new CrateItem(1, StringUtils.stringFormat("honeycomb")));
-    public static RegistryObject<Item> TRIPLE_CRATED_HONEYCOMB = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "honeycomb", () -> new CrateItem(2, StringUtils.stringFormat("honeycomb")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_HONEYCOMB = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "honeycomb", () -> new CrateItem(3, StringUtils.stringFormat("honeycomb")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_HONEYCOMB = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "honeycomb", () -> new CrateItem(4, StringUtils.stringFormat("honeycomb")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_HONEYCOMB = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "honeycomb", () -> new CrateItem(5, StringUtils.stringFormat("honeycomb")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_HONEYCOMB = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "honeycomb", () -> new CrateItem(6, StringUtils.stringFormat("honeycomb")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_HONEYCOMB = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "honeycomb", () -> new CrateItem(7, StringUtils.stringFormat("honeycomb")));
-    public static RegistryObject<Item> MEGA_CRATED_HONEYCOMB = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "honeycomb", () -> new CrateItem(8, StringUtils.stringFormat("honeycomb")));
-    public static RegistryObject<Item> GIGA_CRATED_HONEYCOMB = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "honeycomb", () -> new CrateItem(9, StringUtils.stringFormat("honeycomb")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Inc Sac
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "inc_sac", () -> new CrateItem(0, StringUtils.stringFormat("inc_sac")));
-    public static RegistryObject<Item> DOUBLE_CRATED_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "inc_sac", () -> new CrateItem(1, StringUtils.stringFormat("inc_sac")));
-    public static RegistryObject<Item> TRIPLE_CRATED_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "inc_sac", () -> new CrateItem(2, StringUtils.stringFormat("inc_sac")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "inc_sac", () -> new CrateItem(3, StringUtils.stringFormat("inc_sac")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "inc_sac", () -> new CrateItem(4, StringUtils.stringFormat("inc_sac")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "inc_sac", () -> new CrateItem(5, StringUtils.stringFormat("inc_sac")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "inc_sac", () -> new CrateItem(6, StringUtils.stringFormat("inc_sac")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "inc_sac", () -> new CrateItem(7, StringUtils.stringFormat("inc_sac")));
-    public static RegistryObject<Item> MEGA_CRATED_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "inc_sac", () -> new CrateItem(8, StringUtils.stringFormat("inc_sac")));
-    public static RegistryObject<Item> GIGA_CRATED_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "inc_sac", () -> new CrateItem(9, StringUtils.stringFormat("inc_sac")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Glow Inc Sac
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_GLOW_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "glow_inc_sac", () -> new CrateItem(0, StringUtils.stringFormat("glow_inc_sac")));
-    public static RegistryObject<Item> DOUBLE_CRATED_GLOW_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "glow_inc_sac", () -> new CrateItem(1, StringUtils.stringFormat("glow_inc_sac")));
-    public static RegistryObject<Item> TRIPLE_CRATED_GLOW_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "glow_inc_sac", () -> new CrateItem(2, StringUtils.stringFormat("glow_inc_sac")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_GLOW_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "glow_inc_sac", () -> new CrateItem(3, StringUtils.stringFormat("glow_inc_sac")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_GLOW_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "glow_inc_sac", () -> new CrateItem(4, StringUtils.stringFormat("glow_inc_sac")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_GLOW_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "glow_inc_sac", () -> new CrateItem(5, StringUtils.stringFormat("glow_inc_sac")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_GLOW_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "glow_inc_sac", () -> new CrateItem(6, StringUtils.stringFormat("glow_inc_sac")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_GLOW_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "glow_inc_sac", () -> new CrateItem(7, StringUtils.stringFormat("glow_inc_sac")));
-    public static RegistryObject<Item> MEGA_CRATED_GLOW_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "glow_inc_sac", () -> new CrateItem(8, StringUtils.stringFormat("glow_inc_sac")));
-    public static RegistryObject<Item> GIGA_CRATED_GLOW_INC_SAC = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "glow_inc_sac", () -> new CrateItem(9, StringUtils.stringFormat("glow_inc_sac")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Slimeball
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_SLIMEBALL = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "slimeball", () -> new CrateItem(0, StringUtils.stringFormat("slimeball")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_SLIMEBALL = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "slimeball", () -> new CrateItem(1, StringUtils.stringFormat("slimeball")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_SLIMEBALL = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "slimeball", () -> new CrateItem(2, StringUtils.stringFormat("slimeball")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_SLIMEBALL = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "slimeball", () -> new CrateItem(3, StringUtils.stringFormat("slimeball")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_SLIMEBALL = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "slimeball", () -> new CrateItem(4, StringUtils.stringFormat("slimeball")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_SLIMEBALL = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "slimeball", () -> new CrateItem(5, StringUtils.stringFormat("slimeball")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_SLIMEBALL = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "slimeball", () -> new CrateItem(6, StringUtils.stringFormat("slimeball")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_SLIMEBALL = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "slimeball", () -> new CrateItem(7, StringUtils.stringFormat("slimeball")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_SLIMEBALL = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "slimeball", () -> new CrateItem(8, StringUtils.stringFormat("slimeball")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_SLIMEBALL = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "slimeball", () -> new CrateItem(9, StringUtils.stringFormat("slimeball")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Clay Ball
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_CLAY_BALL = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "clay_ball", () -> new CrateItem(0, StringUtils.stringFormat("clay_ball")));
-    public static RegistryObject<Item> DOUBLE_CRATED_CLAY_BALL = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "clay_ball", () -> new CrateItem(1, StringUtils.stringFormat("clay_ball")));
-    public static RegistryObject<Item> TRIPLE_CRATED_CLAY_BALL = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "clay_ball", () -> new CrateItem(2, StringUtils.stringFormat("clay_ball")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_CLAY_BALL = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "clay_ball", () -> new CrateItem(3, StringUtils.stringFormat("clay_ball")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_CLAY_BALL = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "clay_ball", () -> new CrateItem(4, StringUtils.stringFormat("clay_ball")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_CLAY_BALL = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "clay_ball", () -> new CrateItem(5, StringUtils.stringFormat("clay_ball")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_CLAY_BALL = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "clay_ball", () -> new CrateItem(6, StringUtils.stringFormat("clay_ball")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_CLAY_BALL = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "clay_ball", () -> new CrateItem(7, StringUtils.stringFormat("clay_ball")));
-    public static RegistryObject<Item> MEGA_CRATED_CLAY_BALL = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "clay_ball", () -> new CrateItem(8, StringUtils.stringFormat("clay_ball")));
-    public static RegistryObject<Item> GIGA_CRATED_CLAY_BALL = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "clay_ball", () -> new CrateItem(9, StringUtils.stringFormat("clay_ball")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Prismarine Shard
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_PRISMARINE_SHARD = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "prismarine_shard", () -> new CrateItem(0, StringUtils.stringFormat("prismarine_shard")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_PRISMARINE_SHARD = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "prismarine_shard", () -> new CrateItem(1, StringUtils.stringFormat("prismarine_shard")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_PRISMARINE_SHARD = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "prismarine_shard", () -> new CrateItem(2, StringUtils.stringFormat("prismarine_shard")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_PRISMARINE_SHARD = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "prismarine_shard", () -> new CrateItem(3, StringUtils.stringFormat("prismarine_shard")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_PRISMARINE_SHARD = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "prismarine_shard", () -> new CrateItem(4, StringUtils.stringFormat("prismarine_shard")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_PRISMARINE_SHARD = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "prismarine_shard", () -> new CrateItem(5, StringUtils.stringFormat("prismarine_shard")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_PRISMARINE_SHARD = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "prismarine_shard", () -> new CrateItem(6, StringUtils.stringFormat("prismarine_shard")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_PRISMARINE_SHARD = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "prismarine_shard", () -> new CrateItem(7, StringUtils.stringFormat("prismarine_shard")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_PRISMARINE_SHARD = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "prismarine_shard", () -> new CrateItem(8, StringUtils.stringFormat("prismarine_shard")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_PRISMARINE_SHARD = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "prismarine_shard", () -> new CrateItem(9, StringUtils.stringFormat("prismarine_shard")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Prismarine Crystals
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_PRISMARINE_CRYSTALS = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "prismarine_crystals", () -> new CrateItem(0, StringUtils.stringFormat("prismarine_crystals")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_PRISMARINE_CRYSTALS = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "prismarine_crystals", () -> new CrateItem(1, StringUtils.stringFormat("prismarine_crystals")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_PRISMARINE_CRYSTALS = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "prismarine_crystals", () -> new CrateItem(2, StringUtils.stringFormat("prismarine_crystals")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_PRISMARINE_CRYSTALS = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "prismarine_crystals", () -> new CrateItem(3, StringUtils.stringFormat("prismarine_crystals")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_PRISMARINE_CRYSTALS = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "prismarine_crystals", () -> new CrateItem(4, StringUtils.stringFormat("prismarine_crystals")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_PRISMARINE_CRYSTALS = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "prismarine_crystals", () -> new CrateItem(5, StringUtils.stringFormat("prismarine_crystals")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_PRISMARINE_CRYSTALS = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "prismarine_crystals", () -> new CrateItem(6, StringUtils.stringFormat("prismarine_crystals")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_PRISMARINE_CRYSTALS = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "prismarine_crystals", () -> new CrateItem(7, StringUtils.stringFormat("prismarine_crystals")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_PRISMARINE_CRYSTALS = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "prismarine_crystals", () -> new CrateItem(8, StringUtils.stringFormat("prismarine_crystals")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_PRISMARINE_CRYSTALS = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "prismarine_crystals", () -> new CrateItem(9, StringUtils.stringFormat("prismarine_crystals")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Blaze Rod
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BLAZE_ROD = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "blaze_rod", () -> new CrateItem(0, StringUtils.stringFormat("blaze_rod")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BLAZE_ROD = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "blaze_rod", () -> new CrateItem(1, StringUtils.stringFormat("blaze_rod")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BLAZE_ROD = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "blaze_rod", () -> new CrateItem(2, StringUtils.stringFormat("blaze_rod")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BLAZE_ROD = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "blaze_rod", () -> new CrateItem(3, StringUtils.stringFormat("blaze_rod")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BLAZE_ROD = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "blaze_rod", () -> new CrateItem(4, StringUtils.stringFormat("blaze_rod")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BLAZE_ROD = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "blaze_rod", () -> new CrateItem(5, StringUtils.stringFormat("blaze_rod")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BLAZE_ROD = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "blaze_rod", () -> new CrateItem(6, StringUtils.stringFormat("blaze_rod")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BLAZE_ROD = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "blaze_rod", () -> new CrateItem(7, StringUtils.stringFormat("blaze_rod")));
-    public static RegistryObject<Item> MEGA_CRATED_BLAZE_ROD = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "blaze_rod", () -> new CrateItem(8, StringUtils.stringFormat("blaze_rod")));
-    public static RegistryObject<Item> GIGA_CRATED_BLAZE_ROD = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "blaze_rod", () -> new CrateItem(9, StringUtils.stringFormat("blaze_rod")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Paper
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_PAPER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "paper", () -> new CrateItem(0, StringUtils.stringFormat("paper")));
-    public static RegistryObject<Item> DOUBLE_CRATED_PAPER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "paper", () -> new CrateItem(1, StringUtils.stringFormat("paper")));
-    public static RegistryObject<Item> TRIPLE_CRATED_PAPER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "paper", () -> new CrateItem(2, StringUtils.stringFormat("paper")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_PAPER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "paper", () -> new CrateItem(3, StringUtils.stringFormat("paper")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_PAPER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "paper", () -> new CrateItem(4, StringUtils.stringFormat("paper")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_PAPER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "paper", () -> new CrateItem(5, StringUtils.stringFormat("paper")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_PAPER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "paper", () -> new CrateItem(6, StringUtils.stringFormat("paper")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_PAPER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "paper", () -> new CrateItem(7, StringUtils.stringFormat("paper")));
-    public static RegistryObject<Item> MEGA_CRATED_PAPER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "paper", () -> new CrateItem(8, StringUtils.stringFormat("paper")));
-    public static RegistryObject<Item> GIGA_CRATED_PAPER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "paper", () -> new CrateItem(9, StringUtils.stringFormat("paper")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Book
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BOOK = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "book", () -> new CrateItem(0, StringUtils.stringFormat("book")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BOOK = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "book", () -> new CrateItem(1, StringUtils.stringFormat("book")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BOOK = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "book", () -> new CrateItem(2, StringUtils.stringFormat("book")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BOOK = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "book", () -> new CrateItem(3, StringUtils.stringFormat("book")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BOOK = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "book", () -> new CrateItem(4, StringUtils.stringFormat("book")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BOOK = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "book", () -> new CrateItem(5, StringUtils.stringFormat("book")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BOOK = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "book", () -> new CrateItem(6, StringUtils.stringFormat("book")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BOOK = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "book", () -> new CrateItem(7, StringUtils.stringFormat("book")));
-    public static RegistryObject<Item> MEGA_CRATED_BOOK = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "book", () -> new CrateItem(8, StringUtils.stringFormat("book")));
-    public static RegistryObject<Item> GIGA_CRATED_BOOK = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "book", () -> new CrateItem(9, StringUtils.stringFormat("book")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Glass Bottle
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_GLASS_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "glass_bottle", () -> new CrateItem(0, StringUtils.stringFormat("glass_bottle")));
-    public static RegistryObject<Item> DOUBLE_CRATED_GLASS_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "glass_bottle", () -> new CrateItem(1, StringUtils.stringFormat("glass_bottle")));
-    public static RegistryObject<Item> TRIPLE_CRATED_GLASS_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "glass_bottle", () -> new CrateItem(2, StringUtils.stringFormat("glass_bottle")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_GLASS_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "glass_bottle", () -> new CrateItem(3, StringUtils.stringFormat("glass_bottle")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_GLASS_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "glass_bottle", () -> new CrateItem(4, StringUtils.stringFormat("glass_bottle")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_GLASS_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "glass_bottle", () -> new CrateItem(5, StringUtils.stringFormat("glass_bottle")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_GLASS_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "glass_bottle", () -> new CrateItem(6, StringUtils.stringFormat("glass_bottle")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_GLASS_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "glass_bottle", () -> new CrateItem(7, StringUtils.stringFormat("glass_bottle")));
-    public static RegistryObject<Item> MEGA_CRATED_GLASS_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "glass_bottle", () -> new CrateItem(8, StringUtils.stringFormat("glass_bottle")));
-    public static RegistryObject<Item> GIGA_CRATED_GLASS_BOTTLE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "glass_bottle", () -> new CrateItem(9, StringUtils.stringFormat("glass_bottle")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Redstone Dust
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_REDSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "redstone", () -> new CrateItem(0, StringUtils.stringFormat("redstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_REDSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "redstone", () -> new CrateItem(1, StringUtils.stringFormat("redstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_REDSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "redstone", () -> new CrateItem(2, StringUtils.stringFormat("redstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_REDSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "redstone", () -> new CrateItem(3, StringUtils.stringFormat("redstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_REDSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "redstone", () -> new CrateItem(4, StringUtils.stringFormat("redstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_REDSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "redstone", () -> new CrateItem(5, StringUtils.stringFormat("redstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_REDSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "redstone", () -> new CrateItem(6, StringUtils.stringFormat("redstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_REDSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "redstone", () -> new CrateItem(7, StringUtils.stringFormat("redstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_REDSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "redstone", () -> new CrateItem(8, StringUtils.stringFormat("redstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_REDSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "redstone", () -> new CrateItem(9, StringUtils.stringFormat("redstone_dust")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Glowstone Dust
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_GLOWSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "glowstone_dust", () -> new CrateItem(0, StringUtils.stringFormat("glowstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_GLOWSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "glowstone_dust", () -> new CrateItem(1, StringUtils.stringFormat("glowstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_GLOWSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "glowstone_dust", () -> new CrateItem(2, StringUtils.stringFormat("glowstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_GLOWSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "glowstone_dust", () -> new CrateItem(3, StringUtils.stringFormat("glowstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_GLOWSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "glowstone_dust", () -> new CrateItem(4, StringUtils.stringFormat("glowstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_GLOWSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "glowstone_dust", () -> new CrateItem(5, StringUtils.stringFormat("glowstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_GLOWSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "glowstone_dust", () -> new CrateItem(6, StringUtils.stringFormat("glowstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_GLOWSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "glowstone_dust", () -> new CrateItem(7, StringUtils.stringFormat("glowstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_GLOWSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "glowstone_dust", () -> new CrateItem(8, StringUtils.stringFormat("glowstone_dust")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_GLOWSTONE_DUST = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "glowstone_dust", () -> new CrateItem(9, StringUtils.stringFormat("glowstone_dust")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Gunpowder
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_GUNPOWDER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "gunpowder", () -> new CrateItem(0, StringUtils.stringFormat("gunpowder")));
-    public static RegistryObject<Item> DOUBLE_CRATED_GUNPOWDER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "gunpowder", () -> new CrateItem(1, StringUtils.stringFormat("gunpowder")));
-    public static RegistryObject<Item> TRIPLE_CRATED_GUNPOWDER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "gunpowder", () -> new CrateItem(2, StringUtils.stringFormat("gunpowder")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_GUNPOWDER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "gunpowder", () -> new CrateItem(3, StringUtils.stringFormat("gunpowder")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_GUNPOWDER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "gunpowder", () -> new CrateItem(4, StringUtils.stringFormat("gunpowder")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_GUNPOWDER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "gunpowder", () -> new CrateItem(5, StringUtils.stringFormat("gunpowder")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_GUNPOWDER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "gunpowder", () -> new CrateItem(6, StringUtils.stringFormat("gunpowder")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_GUNPOWDER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "gunpowder", () -> new CrateItem(7, StringUtils.stringFormat("gunpowder")));
-    public static RegistryObject<Item> MEGA_CRATED_GUNPOWDER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "gunpowder", () -> new CrateItem(8, StringUtils.stringFormat("gunpowder")));
-    public static RegistryObject<Item> GIGA_CRATED_GUNPOWDER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "gunpowder", () -> new CrateItem(9, StringUtils.stringFormat("gunpowder")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Dragon's Breath
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_DRAGON_BREATH = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "dragon_breath", () -> new CrateItem(0, StringUtils.stringFormat("Dragon's Breath")));
-    public static RegistryObject<Item> DOUBLE_CRATED_DRAGON_BREATH = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "dragon_breath", () -> new CrateItem(1, StringUtils.stringFormat("Dragon's Breath")));
-    public static RegistryObject<Item> TRIPLE_CRATED_DRAGON_BREATH = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "dragon_breath", () -> new CrateItem(2, StringUtils.stringFormat("Dragon's Breath")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_DRAGON_BREATH = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "dragon_breath", () -> new CrateItem(3, StringUtils.stringFormat("Dragon's Breath")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_DRAGON_BREATH = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "dragon_breath", () -> new CrateItem(4, StringUtils.stringFormat("Dragon's Breath")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_DRAGON_BREATH = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "dragon_breath", () -> new CrateItem(5, StringUtils.stringFormat("Dragon's Breath")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_DRAGON_BREATH = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "dragon_breath", () -> new CrateItem(6, StringUtils.stringFormat("Dragon's Breath")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_DRAGON_BREATH = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "dragon_breath", () -> new CrateItem(7, StringUtils.stringFormat("Dragon's Breath")));
-    public static RegistryObject<Item> MEGA_CRATED_DRAGON_BREATH = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "dragon_breath", () -> new CrateItem(8, StringUtils.stringFormat("Dragon's Breath")));
-    public static RegistryObject<Item> GIGA_CRATED_DRAGON_BREATH = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "dragon_breath", () -> new CrateItem(9, StringUtils.stringFormat("Dragon's Breath")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Fermented Spider Eye
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_FERMENTED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "fermented_spider_eye", () -> new CrateItem(0, StringUtils.stringFormat("fermented_spider_eye")));
-    public static RegistryObject<Item> DOUBLE_CRATED_FERMENTED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "fermented_spider_eye", () -> new CrateItem(1, StringUtils.stringFormat("fermented_spider_eye")));
-    public static RegistryObject<Item> TRIPLE_CRATED_FERMENTED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "fermented_spider_eye", () -> new CrateItem(2, StringUtils.stringFormat("fermented_spider_eye")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_FERMENTED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "fermented_spider_eye", () -> new CrateItem(3, StringUtils.stringFormat("fermented_spider_eye")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_FERMENTED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "fermented_spider_eye", () -> new CrateItem(4, StringUtils.stringFormat("fermented_spider_eye")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_FERMENTED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "fermented_spider_eye", () -> new CrateItem(5, StringUtils.stringFormat("fermented_spider_eye")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_FERMENTED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "fermented_spider_eye", () -> new CrateItem(6, StringUtils.stringFormat("fermented_spider_eye")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_FERMENTED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "fermented_spider_eye", () -> new CrateItem(7, StringUtils.stringFormat("fermented_spider_eye")));
-    public static RegistryObject<Item> MEGA_CRATED_FERMENTED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "fermented_spider_eye", () -> new CrateItem(8, StringUtils.stringFormat("fermented_spider_eye")));
-    public static RegistryObject<Item> GIGA_CRATED_FERMENTED_SPIDER_EYE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "fermented_spider_eye", () -> new CrateItem(9, StringUtils.stringFormat("fermented_spider_eye")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Blaze Powder
-    //------------------------------------------------------------------------------------------------------------------
-    // removed: removed due to conflict -> public static RegistryObject<Item> CRATED_BLAZE_POWDER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "blaze_powder", () -> new CrateItem(0, StringUtils.stringFormat("blaze_powder")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> DOUBLE_CRATED_BLAZE_POWDER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "blaze_powder", () -> new CrateItem(1, StringUtils.stringFormat("blaze_powder")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> TRIPLE_CRATED_BLAZE_POWDER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "blaze_powder", () -> new CrateItem(2, StringUtils.stringFormat("blaze_powder")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUADRUPLE_CRATED_BLAZE_POWDER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "blaze_powder", () -> new CrateItem(3, StringUtils.stringFormat("blaze_powder")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> QUINTUPLE_CRATED_BLAZE_POWDER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "blaze_powder", () -> new CrateItem(4, StringUtils.stringFormat("blaze_powder")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEXTUPLE_CRATED_BLAZE_POWDER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "blaze_powder", () -> new CrateItem(5, StringUtils.stringFormat("blaze_powder")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> SEPTUPLE_CRATED_BLAZE_POWDER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "blaze_powder", () -> new CrateItem(6, StringUtils.stringFormat("blaze_powder")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> OCTUPLE_CRATED_BLAZE_POWDER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "blaze_powder", () -> new CrateItem(7, StringUtils.stringFormat("blaze_powder")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> MEGA_CRATED_BLAZE_POWDER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "blaze_powder", () -> new CrateItem(8, StringUtils.stringFormat("blaze_powder")));
-    // removed: removed due to conflict -> public static RegistryObject<Item> GIGA_CRATED_BLAZE_POWDER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "blaze_powder", () -> new CrateItem(9, StringUtils.stringFormat("blaze_powder")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Sugar
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_SUGAR = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "sugar", () -> new CrateItem(0, StringUtils.stringFormat("sugar")));
-    public static RegistryObject<Item> DOUBLE_CRATED_SUGAR = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "sugar", () -> new CrateItem(1, StringUtils.stringFormat("sugar")));
-    public static RegistryObject<Item> TRIPLE_CRATED_SUGAR = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "sugar", () -> new CrateItem(2, StringUtils.stringFormat("sugar")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_SUGAR = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "sugar", () -> new CrateItem(3, StringUtils.stringFormat("sugar")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_SUGAR = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "sugar", () -> new CrateItem(4, StringUtils.stringFormat("sugar")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_SUGAR = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "sugar", () -> new CrateItem(5, StringUtils.stringFormat("sugar")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_SUGAR = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "sugar", () -> new CrateItem(6, StringUtils.stringFormat("sugar")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_SUGAR = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "sugar", () -> new CrateItem(7, StringUtils.stringFormat("sugar")));
-    public static RegistryObject<Item> MEGA_CRATED_SUGAR = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "sugar", () -> new CrateItem(8, StringUtils.stringFormat("sugar")));
-    public static RegistryObject<Item> GIGA_CRATED_SUGAR = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "sugar", () -> new CrateItem(9, StringUtils.stringFormat("sugar")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Magma Cream
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_MAGMA_CREAM = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "magma_cream", () -> new CrateItem(0, StringUtils.stringFormat("magma_cream")));
-    public static RegistryObject<Item> DOUBLE_CRATED_MAGMA_CREAM = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "magma_cream", () -> new CrateItem(1, StringUtils.stringFormat("magma_cream")));
-    public static RegistryObject<Item> TRIPLE_CRATED_MAGMA_CREAM = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "magma_cream", () -> new CrateItem(2, StringUtils.stringFormat("magma_cream")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_MAGMA_CREAM = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "magma_cream", () -> new CrateItem(3, StringUtils.stringFormat("magma_cream")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_MAGMA_CREAM = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "magma_cream", () -> new CrateItem(4, StringUtils.stringFormat("magma_cream")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_MAGMA_CREAM = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "magma_cream", () -> new CrateItem(5, StringUtils.stringFormat("magma_cream")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_MAGMA_CREAM = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "magma_cream", () -> new CrateItem(6, StringUtils.stringFormat("magma_cream")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_MAGMA_CREAM = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "magma_cream", () -> new CrateItem(7, StringUtils.stringFormat("magma_cream")));
-    public static RegistryObject<Item> MEGA_CRATED_MAGMA_CREAM = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "magma_cream", () -> new CrateItem(8, StringUtils.stringFormat("magma_cream")));
-    public static RegistryObject<Item> GIGA_CRATED_MAGMA_CREAM = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "magma_cream", () -> new CrateItem(9, StringUtils.stringFormat("magma_cream")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Ghast Tear
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_GHAST_TEAR = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "ghast_tear", () -> new CrateItem(0, StringUtils.stringFormat("ghast_tear")));
-    public static RegistryObject<Item> DOUBLE_CRATED_GHAST_TEAR = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "ghast_tear", () -> new CrateItem(1, StringUtils.stringFormat("ghast_tear")));
-    public static RegistryObject<Item> TRIPLE_CRATED_GHAST_TEAR = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "ghast_tear", () -> new CrateItem(2, StringUtils.stringFormat("ghast_tear")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_GHAST_TEAR = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "ghast_tear", () -> new CrateItem(3, StringUtils.stringFormat("ghast_tear")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_GHAST_TEAR = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "ghast_tear", () -> new CrateItem(4, StringUtils.stringFormat("ghast_tear")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_GHAST_TEAR = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "ghast_tear", () -> new CrateItem(5, StringUtils.stringFormat("ghast_tear")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_GHAST_TEAR = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "ghast_tear", () -> new CrateItem(6, StringUtils.stringFormat("ghast_tear")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_GHAST_TEAR = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "ghast_tear", () -> new CrateItem(7, StringUtils.stringFormat("ghast_tear")));
-    public static RegistryObject<Item> MEGA_CRATED_GHAST_TEAR = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "ghast_tear", () -> new CrateItem(8, StringUtils.stringFormat("ghast_tear")));
-    public static RegistryObject<Item> GIGA_CRATED_GHAST_TEAR = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "ghast_tear", () -> new CrateItem(9, StringUtils.stringFormat("ghast_tear")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Totem of Undying
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_TOTEM_OF_UNDYING = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "totem_of_undying", () -> new CrateItem(0, StringUtils.stringFormat("totem_of_undying")));
-    public static RegistryObject<Item> DOUBLE_CRATED_TOTEM_OF_UNDYING = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "totem_of_undying", () -> new CrateItem(1, StringUtils.stringFormat("totem_of_undying")));
-    public static RegistryObject<Item> TRIPLE_CRATED_TOTEM_OF_UNDYING = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "totem_of_undying", () -> new CrateItem(2, StringUtils.stringFormat("totem_of_undying")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_TOTEM_OF_UNDYING = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "totem_of_undying", () -> new CrateItem(3, StringUtils.stringFormat("totem_of_undying")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_TOTEM_OF_UNDYING = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "totem_of_undying", () -> new CrateItem(4, StringUtils.stringFormat("totem_of_undying")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_TOTEM_OF_UNDYING = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "totem_of_undying", () -> new CrateItem(5, StringUtils.stringFormat("totem_of_undying")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_TOTEM_OF_UNDYING = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "totem_of_undying", () -> new CrateItem(6, StringUtils.stringFormat("totem_of_undying")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_TOTEM_OF_UNDYING = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "totem_of_undying", () -> new CrateItem(7, StringUtils.stringFormat("totem_of_undying")));
-    public static RegistryObject<Item> MEGA_CRATED_TOTEM_OF_UNDYING = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "totem_of_undying", () -> new CrateItem(8, StringUtils.stringFormat("totem_of_undying")));
-    public static RegistryObject<Item> GIGA_CRATED_TOTEM_OF_UNDYING = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "totem_of_undying", () -> new CrateItem(9, StringUtils.stringFormat("totem_of_undying")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Rail
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "rail", () -> new CrateItem(0, StringUtils.stringFormat("rail")));
-    public static RegistryObject<Item> DOUBLE_CRATED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "rail", () -> new CrateItem(1, StringUtils.stringFormat("rail")));
-    public static RegistryObject<Item> TRIPLE_CRATED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "rail", () -> new CrateItem(2, StringUtils.stringFormat("rail")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "rail", () -> new CrateItem(3, StringUtils.stringFormat("rail")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "rail", () -> new CrateItem(4, StringUtils.stringFormat("rail")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "rail", () -> new CrateItem(5, StringUtils.stringFormat("rail")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "rail", () -> new CrateItem(6, StringUtils.stringFormat("rail")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "rail", () -> new CrateItem(7, StringUtils.stringFormat("rail")));
-    public static RegistryObject<Item> MEGA_CRATED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "rail", () -> new CrateItem(8, StringUtils.stringFormat("rail")));
-    public static RegistryObject<Item> GIGA_CRATED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "rail", () -> new CrateItem(9, StringUtils.stringFormat("rail")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Powered Rail
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_POWERED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "powered_rail", () -> new CrateItem(0, StringUtils.stringFormat("powered_rail")));
-    public static RegistryObject<Item> DOUBLE_CRATED_POWERED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "powered_rail", () -> new CrateItem(1, StringUtils.stringFormat("powered_rail")));
-    public static RegistryObject<Item> TRIPLE_CRATED_POWERED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "powered_rail", () -> new CrateItem(2, StringUtils.stringFormat("powered_rail")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_POWERED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "powered_rail", () -> new CrateItem(3, StringUtils.stringFormat("powered_rail")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_POWERED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "powered_rail", () -> new CrateItem(4, StringUtils.stringFormat("powered_rail")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_POWERED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "powered_rail", () -> new CrateItem(5, StringUtils.stringFormat("powered_rail")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_POWERED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "powered_rail", () -> new CrateItem(6, StringUtils.stringFormat("powered_rail")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_POWERED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "powered_rail", () -> new CrateItem(7, StringUtils.stringFormat("powered_rail")));
-    public static RegistryObject<Item> MEGA_CRATED_POWERED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "powered_rail", () -> new CrateItem(8, StringUtils.stringFormat("powered_rail")));
-    public static RegistryObject<Item> GIGA_CRATED_POWERED_RAIL = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "powered_rail", () -> new CrateItem(9, StringUtils.stringFormat("powered_rail")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Detector Rail
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_DETECTOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "detector_rail", () -> new CrateItem(0, StringUtils.stringFormat("detector_rail")));
-    public static RegistryObject<Item> DOUBLE_CRATED_DETECTOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "detector_rail", () -> new CrateItem(1, StringUtils.stringFormat("detector_rail")));
-    public static RegistryObject<Item> TRIPLE_CRATED_DETECTOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "detector_rail", () -> new CrateItem(2, StringUtils.stringFormat("detector_rail")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_DETECTOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "detector_rail", () -> new CrateItem(3, StringUtils.stringFormat("detector_rail")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_DETECTOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "detector_rail", () -> new CrateItem(4, StringUtils.stringFormat("detector_rail")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_DETECTOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "detector_rail", () -> new CrateItem(5, StringUtils.stringFormat("detector_rail")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_DETECTOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "detector_rail", () -> new CrateItem(6, StringUtils.stringFormat("detector_rail")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_DETECTOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "detector_rail", () -> new CrateItem(7, StringUtils.stringFormat("detector_rail")));
-    public static RegistryObject<Item> MEGA_CRATED_DETECTOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "detector_rail", () -> new CrateItem(8, StringUtils.stringFormat("detector_rail")));
-    public static RegistryObject<Item> GIGA_CRATED_DETECTOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "detector_rail", () -> new CrateItem(9, StringUtils.stringFormat("detector_rail")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Activator Rail
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_ACTIVATOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "activator_rail", () -> new CrateItem(0, StringUtils.stringFormat("activator_rail")));
-    public static RegistryObject<Item> DOUBLE_CRATED_ACTIVATOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "activator_rail", () -> new CrateItem(1, StringUtils.stringFormat("activator_rail")));
-    public static RegistryObject<Item> TRIPLE_CRATED_ACTIVATOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "activator_rail", () -> new CrateItem(2, StringUtils.stringFormat("activator_rail")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_ACTIVATOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "activator_rail", () -> new CrateItem(3, StringUtils.stringFormat("activator_rail")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_ACTIVATOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "activator_rail", () -> new CrateItem(4, StringUtils.stringFormat("activator_rail")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_ACTIVATOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "activator_rail", () -> new CrateItem(5, StringUtils.stringFormat("activator_rail")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_ACTIVATOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "activator_rail", () -> new CrateItem(6, StringUtils.stringFormat("activator_rail")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_ACTIVATOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "activator_rail", () -> new CrateItem(7, StringUtils.stringFormat("activator_rail")));
-    public static RegistryObject<Item> MEGA_CRATED_ACTIVATOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "activator_rail", () -> new CrateItem(8, StringUtils.stringFormat("activator_rail")));
-    public static RegistryObject<Item> GIGA_CRATED_ACTIVATOR_RAIL = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "activator_rail", () -> new CrateItem(9, StringUtils.stringFormat("activator_rail")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Minecart
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_MINECART = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "minecart", () -> new CrateItem(0, StringUtils.stringFormat("minecart")));
-    public static RegistryObject<Item> DOUBLE_CRATED_MINECART = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "minecart", () -> new CrateItem(1, StringUtils.stringFormat("minecart")));
-    public static RegistryObject<Item> TRIPLE_CRATED_MINECART = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "minecart", () -> new CrateItem(2, StringUtils.stringFormat("minecart")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_MINECART = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "minecart", () -> new CrateItem(3, StringUtils.stringFormat("minecart")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_MINECART = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "minecart", () -> new CrateItem(4, StringUtils.stringFormat("minecart")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_MINECART = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "minecart", () -> new CrateItem(5, StringUtils.stringFormat("minecart")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_MINECART = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "minecart", () -> new CrateItem(6, StringUtils.stringFormat("minecart")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_MINECART = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "minecart", () -> new CrateItem(7, StringUtils.stringFormat("minecart")));
-    public static RegistryObject<Item> MEGA_CRATED_MINECART = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "minecart", () -> new CrateItem(8, StringUtils.stringFormat("minecart")));
-    public static RegistryObject<Item> GIGA_CRATED_MINECART = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "minecart", () -> new CrateItem(9, StringUtils.stringFormat("minecart")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Piston
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_PISTON = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "piston", () -> new CrateItem(0, StringUtils.stringFormat("piston")));
-    public static RegistryObject<Item> DOUBLE_CRATED_PISTON = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "piston", () -> new CrateItem(1, StringUtils.stringFormat("piston")));
-    public static RegistryObject<Item> TRIPLE_CRATED_PISTON = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "piston", () -> new CrateItem(2, StringUtils.stringFormat("piston")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_PISTON = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "piston", () -> new CrateItem(3, StringUtils.stringFormat("piston")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_PISTON = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "piston", () -> new CrateItem(4, StringUtils.stringFormat("piston")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_PISTON = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "piston", () -> new CrateItem(5, StringUtils.stringFormat("piston")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_PISTON = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "piston", () -> new CrateItem(6, StringUtils.stringFormat("piston")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_PISTON = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "piston", () -> new CrateItem(7, StringUtils.stringFormat("piston")));
-    public static RegistryObject<Item> MEGA_CRATED_PISTON = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "piston", () -> new CrateItem(8, StringUtils.stringFormat("piston")));
-    public static RegistryObject<Item> GIGA_CRATED_PISTON = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "piston", () -> new CrateItem(9, StringUtils.stringFormat("piston")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Sticky Piston
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_STICKY_PISTON = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "sticky_piston", () -> new CrateItem(0, StringUtils.stringFormat("sticky_piston")));
-    public static RegistryObject<Item> DOUBLE_CRATED_STICKY_PISTON = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "sticky_piston", () -> new CrateItem(1, StringUtils.stringFormat("sticky_piston")));
-    public static RegistryObject<Item> TRIPLE_CRATED_STICKY_PISTON = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "sticky_piston", () -> new CrateItem(2, StringUtils.stringFormat("sticky_piston")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_STICKY_PISTON = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "sticky_piston", () -> new CrateItem(3, StringUtils.stringFormat("sticky_piston")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_STICKY_PISTON = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "sticky_piston", () -> new CrateItem(4, StringUtils.stringFormat("sticky_piston")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_STICKY_PISTON = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "sticky_piston", () -> new CrateItem(5, StringUtils.stringFormat("sticky_piston")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_STICKY_PISTON = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "sticky_piston", () -> new CrateItem(6, StringUtils.stringFormat("sticky_piston")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_STICKY_PISTON = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "sticky_piston", () -> new CrateItem(7, StringUtils.stringFormat("sticky_piston")));
-    public static RegistryObject<Item> MEGA_CRATED_STICKY_PISTON = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "sticky_piston", () -> new CrateItem(8, StringUtils.stringFormat("sticky_piston")));
-    public static RegistryObject<Item> GIGA_CRATED_STICKY_PISTON = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "sticky_piston", () -> new CrateItem(9, StringUtils.stringFormat("sticky_piston")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Dispenser
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_DISPENSER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "dispenser", () -> new CrateItem(0, StringUtils.stringFormat("dispenser")));
-    public static RegistryObject<Item> DOUBLE_CRATED_DISPENSER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "dispenser", () -> new CrateItem(1, StringUtils.stringFormat("dispenser")));
-    public static RegistryObject<Item> TRIPLE_CRATED_DISPENSER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "dispenser", () -> new CrateItem(2, StringUtils.stringFormat("dispenser")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_DISPENSER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "dispenser", () -> new CrateItem(3, StringUtils.stringFormat("dispenser")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_DISPENSER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "dispenser", () -> new CrateItem(4, StringUtils.stringFormat("dispenser")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_DISPENSER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "dispenser", () -> new CrateItem(5, StringUtils.stringFormat("dispenser")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_DISPENSER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "dispenser", () -> new CrateItem(6, StringUtils.stringFormat("dispenser")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_DISPENSER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "dispenser", () -> new CrateItem(7, StringUtils.stringFormat("dispenser")));
-    public static RegistryObject<Item> MEGA_CRATED_DISPENSER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "dispenser", () -> new CrateItem(8, StringUtils.stringFormat("dispenser")));
-    public static RegistryObject<Item> GIGA_CRATED_DISPENSER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "dispenser", () -> new CrateItem(9, StringUtils.stringFormat("dispenser")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Dropper
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_DROPPER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "dropper", () -> new CrateItem(0, StringUtils.stringFormat("dropper")));
-    public static RegistryObject<Item> DOUBLE_CRATED_DROPPER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "dropper", () -> new CrateItem(1, StringUtils.stringFormat("dropper")));
-    public static RegistryObject<Item> TRIPLE_CRATED_DROPPER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "dropper", () -> new CrateItem(2, StringUtils.stringFormat("dropper")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_DROPPER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "dropper", () -> new CrateItem(3, StringUtils.stringFormat("dropper")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_DROPPER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "dropper", () -> new CrateItem(4, StringUtils.stringFormat("dropper")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_DROPPER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "dropper", () -> new CrateItem(5, StringUtils.stringFormat("dropper")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_DROPPER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "dropper", () -> new CrateItem(6, StringUtils.stringFormat("dropper")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_DROPPER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "dropper", () -> new CrateItem(7, StringUtils.stringFormat("dropper")));
-    public static RegistryObject<Item> MEGA_CRATED_DROPPER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "dropper", () -> new CrateItem(8, StringUtils.stringFormat("dropper")));
-    public static RegistryObject<Item> GIGA_CRATED_DROPPER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "dropper", () -> new CrateItem(9, StringUtils.stringFormat("dropper")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Hopper
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_HOPPER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "hopper", () -> new CrateItem(0, StringUtils.stringFormat("hopper")));
-    public static RegistryObject<Item> DOUBLE_CRATED_HOPPER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "hopper", () -> new CrateItem(1, StringUtils.stringFormat("hopper")));
-    public static RegistryObject<Item> TRIPLE_CRATED_HOPPER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "hopper", () -> new CrateItem(2, StringUtils.stringFormat("hopper")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_HOPPER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "hopper", () -> new CrateItem(3, StringUtils.stringFormat("hopper")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_HOPPER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "hopper", () -> new CrateItem(4, StringUtils.stringFormat("hopper")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_HOPPER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "hopper", () -> new CrateItem(5, StringUtils.stringFormat("hopper")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_HOPPER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "hopper", () -> new CrateItem(6, StringUtils.stringFormat("hopper")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_HOPPER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "hopper", () -> new CrateItem(7, StringUtils.stringFormat("hopper")));
-    public static RegistryObject<Item> MEGA_CRATED_HOPPER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "hopper", () -> new CrateItem(8, StringUtils.stringFormat("hopper")));
-    public static RegistryObject<Item> GIGA_CRATED_HOPPER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "hopper", () -> new CrateItem(9, StringUtils.stringFormat("hopper")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Observer
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_OBSERVER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "observer", () -> new CrateItem(0, StringUtils.stringFormat("observer")));
-    public static RegistryObject<Item> DOUBLE_CRATED_OBSERVER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "observer", () -> new CrateItem(1, StringUtils.stringFormat("observer")));
-    public static RegistryObject<Item> TRIPLE_CRATED_OBSERVER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "observer", () -> new CrateItem(2, StringUtils.stringFormat("observer")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_OBSERVER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "observer", () -> new CrateItem(3, StringUtils.stringFormat("observer")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_OBSERVER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "observer", () -> new CrateItem(4, StringUtils.stringFormat("observer")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_OBSERVER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "observer", () -> new CrateItem(5, StringUtils.stringFormat("observer")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_OBSERVER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "observer", () -> new CrateItem(6, StringUtils.stringFormat("observer")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_OBSERVER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "observer", () -> new CrateItem(7, StringUtils.stringFormat("observer")));
-    public static RegistryObject<Item> MEGA_CRATED_OBSERVER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "observer", () -> new CrateItem(8, StringUtils.stringFormat("observer")));
-    public static RegistryObject<Item> GIGA_CRATED_OBSERVER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "observer", () -> new CrateItem(9, StringUtils.stringFormat("observer")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cauldron
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_CAULDRON = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cauldron", () -> new CrateItem(0, StringUtils.stringFormat("cauldron")));
-    public static RegistryObject<Item> DOUBLE_CRATED_CAULDRON = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cauldron", () -> new CrateItem(1, StringUtils.stringFormat("cauldron")));
-    public static RegistryObject<Item> TRIPLE_CRATED_CAULDRON = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cauldron", () -> new CrateItem(2, StringUtils.stringFormat("cauldron")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_CAULDRON = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cauldron", () -> new CrateItem(3, StringUtils.stringFormat("cauldron")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_CAULDRON = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cauldron", () -> new CrateItem(4, StringUtils.stringFormat("cauldron")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_CAULDRON = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cauldron", () -> new CrateItem(5, StringUtils.stringFormat("cauldron")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_CAULDRON = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cauldron", () -> new CrateItem(6, StringUtils.stringFormat("cauldron")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_CAULDRON = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cauldron", () -> new CrateItem(7, StringUtils.stringFormat("cauldron")));
-    public static RegistryObject<Item> MEGA_CRATED_CAULDRON = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cauldron", () -> new CrateItem(8, StringUtils.stringFormat("cauldron")));
-    public static RegistryObject<Item> GIGA_CRATED_CAULDRON = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cauldron", () -> new CrateItem(9, StringUtils.stringFormat("cauldron")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Redstone Repeater
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_REDSTONE_REPEATER = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "repeater", () -> new CrateItem(0, StringUtils.stringFormat("redstone_repeater")));
-    public static RegistryObject<Item> DOUBLE_CRATED_REDSTONE_REPEATER = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "repeater", () -> new CrateItem(1, StringUtils.stringFormat("redstone_repeater")));
-    public static RegistryObject<Item> TRIPLE_CRATED_REDSTONE_REPEATER = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "repeater", () -> new CrateItem(2, StringUtils.stringFormat("redstone_repeater")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_REDSTONE_REPEATER = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "repeater", () -> new CrateItem(3, StringUtils.stringFormat("redstone_repeater")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_REDSTONE_REPEATER = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "repeater", () -> new CrateItem(4, StringUtils.stringFormat("redstone_repeater")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_REDSTONE_REPEATER = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "repeater", () -> new CrateItem(5, StringUtils.stringFormat("redstone_repeater")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_REDSTONE_REPEATER = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "repeater", () -> new CrateItem(6, StringUtils.stringFormat("redstone_repeater")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_REDSTONE_REPEATER = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "repeater", () -> new CrateItem(7, StringUtils.stringFormat("redstone_repeater")));
-    public static RegistryObject<Item> MEGA_CRATED_REDSTONE_REPEATER = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "repeater", () -> new CrateItem(8, StringUtils.stringFormat("redstone_repeater")));
-    public static RegistryObject<Item> GIGA_CRATED_REDSTONE_REPEATER = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "repeater", () -> new CrateItem(9, StringUtils.stringFormat("redstone_repeater")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Redstone Comparator
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_REDSTONE_COMPARATOR = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "comparator", () -> new CrateItem(0, StringUtils.stringFormat("redstone_comparator")));
-    public static RegistryObject<Item> DOUBLE_CRATED_REDSTONE_COMPARATOR = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "comparator", () -> new CrateItem(1, StringUtils.stringFormat("redstone_comparator")));
-    public static RegistryObject<Item> TRIPLE_CRATED_REDSTONE_COMPARATOR = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "comparator", () -> new CrateItem(2, StringUtils.stringFormat("redstone_comparator")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_REDSTONE_COMPARATOR = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "comparator", () -> new CrateItem(3, StringUtils.stringFormat("redstone_comparator")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_REDSTONE_COMPARATOR = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "comparator", () -> new CrateItem(4, StringUtils.stringFormat("redstone_comparator")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_REDSTONE_COMPARATOR = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "comparator", () -> new CrateItem(5, StringUtils.stringFormat("redstone_comparator")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_REDSTONE_COMPARATOR = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "comparator", () -> new CrateItem(6, StringUtils.stringFormat("redstone_comparator")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_REDSTONE_COMPARATOR = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "comparator", () -> new CrateItem(7, StringUtils.stringFormat("redstone_comparator")));
-    public static RegistryObject<Item> MEGA_CRATED_REDSTONE_COMPARATOR = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "comparator", () -> new CrateItem(8, StringUtils.stringFormat("redstone_comparator")));
-    public static RegistryObject<Item> GIGA_CRATED_REDSTONE_COMPARATOR = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "comparator", () -> new CrateItem(9, StringUtils.stringFormat("redstone_comparator")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region White Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_WHITE_CARPE = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "white_carpet", () -> new CrateItem(0, StringUtils.stringFormat("white_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_WHITE_CARPE = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "white_carpet", () -> new CrateItem(1, StringUtils.stringFormat("white_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_WHITE_CARPE = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "white_carpet", () -> new CrateItem(2, StringUtils.stringFormat("white_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_WHITE_CARPE = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "white_carpet", () -> new CrateItem(3, StringUtils.stringFormat("white_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_WHITE_CARPE = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "white_carpet", () -> new CrateItem(4, StringUtils.stringFormat("white_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_WHITE_CARPE = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "white_carpet", () -> new CrateItem(5, StringUtils.stringFormat("white_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_WHITE_CARPE = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "white_carpet", () -> new CrateItem(6, StringUtils.stringFormat("white_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_WHITE_CARPE = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "white_carpet", () -> new CrateItem(7, StringUtils.stringFormat("white_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_WHITE_CARPE = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "white_carpet", () -> new CrateItem(8, StringUtils.stringFormat("white_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_WHITE_CARPE = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "white_carpet", () -> new CrateItem(9, StringUtils.stringFormat("white_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Light Gray Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_LIGHT_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "light_gray_carpet", () -> new CrateItem(0, StringUtils.stringFormat("light_gray_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_LIGHT_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "light_gray_carpet", () -> new CrateItem(1, StringUtils.stringFormat("light_gray_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_LIGHT_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "light_gray_carpet", () -> new CrateItem(2, StringUtils.stringFormat("light_gray_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_LIGHT_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "light_gray_carpet", () -> new CrateItem(3, StringUtils.stringFormat("light_gray_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_LIGHT_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "light_gray_carpet", () -> new CrateItem(4, StringUtils.stringFormat("light_gray_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_LIGHT_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "light_gray_carpet", () -> new CrateItem(5, StringUtils.stringFormat("light_gray_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_LIGHT_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "light_gray_carpet", () -> new CrateItem(6, StringUtils.stringFormat("light_gray_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_LIGHT_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "light_gray_carpet", () -> new CrateItem(7, StringUtils.stringFormat("light_gray_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_LIGHT_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "light_gray_carpet", () -> new CrateItem(8, StringUtils.stringFormat("light_gray_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_LIGHT_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "light_gray_carpet", () -> new CrateItem(9, StringUtils.stringFormat("light_gray_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Gray Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "gray_carpet", () -> new CrateItem(0, StringUtils.stringFormat("gray_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "gray_carpet", () -> new CrateItem(1, StringUtils.stringFormat("gray_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "gray_carpet", () -> new CrateItem(2, StringUtils.stringFormat("gray_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "gray_carpet", () -> new CrateItem(3, StringUtils.stringFormat("gray_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "gray_carpet", () -> new CrateItem(4, StringUtils.stringFormat("gray_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "gray_carpet", () -> new CrateItem(5, StringUtils.stringFormat("gray_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "gray_carpet", () -> new CrateItem(6, StringUtils.stringFormat("gray_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "gray_carpet", () -> new CrateItem(7, StringUtils.stringFormat("gray_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "gray_carpet", () -> new CrateItem(8, StringUtils.stringFormat("gray_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_GRAY_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "gray_carpet", () -> new CrateItem(9, StringUtils.stringFormat("gray_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Black Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BLACK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "black_carpet", () -> new CrateItem(0, StringUtils.stringFormat("black_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BLACK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "black_carpet", () -> new CrateItem(1, StringUtils.stringFormat("black_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BLACK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "black_carpet", () -> new CrateItem(2, StringUtils.stringFormat("black_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BLACK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "black_carpet", () -> new CrateItem(3, StringUtils.stringFormat("black_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BLACK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "black_carpet", () -> new CrateItem(4, StringUtils.stringFormat("black_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BLACK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "black_carpet", () -> new CrateItem(5, StringUtils.stringFormat("black_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BLACK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "black_carpet", () -> new CrateItem(6, StringUtils.stringFormat("black_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BLACK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "black_carpet", () -> new CrateItem(7, StringUtils.stringFormat("black_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_BLACK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "black_carpet", () -> new CrateItem(8, StringUtils.stringFormat("black_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_BLACK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "black_carpet", () -> new CrateItem(9, StringUtils.stringFormat("black_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Brown Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BROWN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "brown_carpet", () -> new CrateItem(0, StringUtils.stringFormat("brown_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BROWN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "brown_carpet", () -> new CrateItem(1, StringUtils.stringFormat("brown_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BROWN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "brown_carpet", () -> new CrateItem(2, StringUtils.stringFormat("brown_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BROWN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "brown_carpet", () -> new CrateItem(3, StringUtils.stringFormat("brown_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BROWN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "brown_carpet", () -> new CrateItem(4, StringUtils.stringFormat("brown_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BROWN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "brown_carpet", () -> new CrateItem(5, StringUtils.stringFormat("brown_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BROWN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "brown_carpet", () -> new CrateItem(6, StringUtils.stringFormat("brown_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BROWN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "brown_carpet", () -> new CrateItem(7, StringUtils.stringFormat("brown_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_BROWN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "brown_carpet", () -> new CrateItem(8, StringUtils.stringFormat("brown_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_BROWN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "brown_carpet", () -> new CrateItem(9, StringUtils.stringFormat("brown_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Red Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_RED_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "red_carpet", () -> new CrateItem(0, StringUtils.stringFormat("red_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_RED_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "red_carpet", () -> new CrateItem(1, StringUtils.stringFormat("red_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_RED_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "red_carpet", () -> new CrateItem(2, StringUtils.stringFormat("red_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_RED_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "red_carpet", () -> new CrateItem(3, StringUtils.stringFormat("red_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_RED_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "red_carpet", () -> new CrateItem(4, StringUtils.stringFormat("red_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_RED_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "red_carpet", () -> new CrateItem(5, StringUtils.stringFormat("red_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_RED_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "red_carpet", () -> new CrateItem(6, StringUtils.stringFormat("red_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_RED_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "red_carpet", () -> new CrateItem(7, StringUtils.stringFormat("red_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_RED_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "red_carpet", () -> new CrateItem(8, StringUtils.stringFormat("red_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_RED_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "red_carpet", () -> new CrateItem(9, StringUtils.stringFormat("red_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Orange Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_ORANGE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "orange_carpet", () -> new CrateItem(0, StringUtils.stringFormat("orange_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_ORANGE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "orange_carpet", () -> new CrateItem(1, StringUtils.stringFormat("orange_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_ORANGE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "orange_carpet", () -> new CrateItem(2, StringUtils.stringFormat("orange_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_ORANGE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "orange_carpet", () -> new CrateItem(3, StringUtils.stringFormat("orange_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_ORANGE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "orange_carpet", () -> new CrateItem(4, StringUtils.stringFormat("orange_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_ORANGE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "orange_carpet", () -> new CrateItem(5, StringUtils.stringFormat("orange_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_ORANGE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "orange_carpet", () -> new CrateItem(6, StringUtils.stringFormat("orange_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_ORANGE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "orange_carpet", () -> new CrateItem(7, StringUtils.stringFormat("orange_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_ORANGE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "orange_carpet", () -> new CrateItem(8, StringUtils.stringFormat("orange_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_ORANGE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "orange_carpet", () -> new CrateItem(9, StringUtils.stringFormat("orange_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Yellow Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_YELLOW_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "yellow_carpet", () -> new CrateItem(0, StringUtils.stringFormat("yellow_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_YELLOW_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "yellow_carpet", () -> new CrateItem(1, StringUtils.stringFormat("yellow_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_YELLOW_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "yellow_carpet", () -> new CrateItem(2, StringUtils.stringFormat("yellow_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_YELLOW_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "yellow_carpet", () -> new CrateItem(3, StringUtils.stringFormat("yellow_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_YELLOW_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "yellow_carpet", () -> new CrateItem(4, StringUtils.stringFormat("yellow_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_YELLOW_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "yellow_carpet", () -> new CrateItem(5, StringUtils.stringFormat("yellow_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_YELLOW_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "yellow_carpet", () -> new CrateItem(6, StringUtils.stringFormat("yellow_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_YELLOW_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "yellow_carpet", () -> new CrateItem(7, StringUtils.stringFormat("yellow_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_YELLOW_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "yellow_carpet", () -> new CrateItem(8, StringUtils.stringFormat("yellow_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_YELLOW_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "yellow_carpet", () -> new CrateItem(9, StringUtils.stringFormat("yellow_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Lime Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_LIME_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "lime_carpet", () -> new CrateItem(0, StringUtils.stringFormat("lime_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_LIME_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "lime_carpet", () -> new CrateItem(1, StringUtils.stringFormat("lime_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_LIME_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "lime_carpet", () -> new CrateItem(2, StringUtils.stringFormat("lime_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_LIME_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "lime_carpet", () -> new CrateItem(3, StringUtils.stringFormat("lime_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_LIME_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "lime_carpet", () -> new CrateItem(4, StringUtils.stringFormat("lime_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_LIME_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "lime_carpet", () -> new CrateItem(5, StringUtils.stringFormat("lime_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_LIME_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "lime_carpet", () -> new CrateItem(6, StringUtils.stringFormat("lime_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_LIME_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "lime_carpet", () -> new CrateItem(7, StringUtils.stringFormat("lime_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_LIME_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "lime_carpet", () -> new CrateItem(8, StringUtils.stringFormat("lime_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_LIME_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "lime_carpet", () -> new CrateItem(9, StringUtils.stringFormat("lime_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Green Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_GREEN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "green_carpet", () -> new CrateItem(0, StringUtils.stringFormat("green_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_GREEN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "green_carpet", () -> new CrateItem(1, StringUtils.stringFormat("green_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_GREEN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "green_carpet", () -> new CrateItem(2, StringUtils.stringFormat("green_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_GREEN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "green_carpet", () -> new CrateItem(3, StringUtils.stringFormat("green_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_GREEN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "green_carpet", () -> new CrateItem(4, StringUtils.stringFormat("green_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_GREEN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "green_carpet", () -> new CrateItem(5, StringUtils.stringFormat("green_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_GREEN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "green_carpet", () -> new CrateItem(6, StringUtils.stringFormat("green_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_GREEN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "green_carpet", () -> new CrateItem(7, StringUtils.stringFormat("green_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_GREEN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "green_carpet", () -> new CrateItem(8, StringUtils.stringFormat("green_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_GREEN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "green_carpet", () -> new CrateItem(9, StringUtils.stringFormat("green_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cyan Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_CYAN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "cyan_carpet", () -> new CrateItem(0, StringUtils.stringFormat("cyan_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_CYAN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "cyan_carpet", () -> new CrateItem(1, StringUtils.stringFormat("cyan_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_CYAN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "cyan_carpet", () -> new CrateItem(2, StringUtils.stringFormat("cyan_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_CYAN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "cyan_carpet", () -> new CrateItem(3, StringUtils.stringFormat("cyan_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_CYAN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "cyan_carpet", () -> new CrateItem(4, StringUtils.stringFormat("cyan_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_CYAN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "cyan_carpet", () -> new CrateItem(5, StringUtils.stringFormat("cyan_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_CYAN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "cyan_carpet", () -> new CrateItem(6, StringUtils.stringFormat("cyan_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_CYAN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "cyan_carpet", () -> new CrateItem(7, StringUtils.stringFormat("cyan_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_CYAN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "cyan_carpet", () -> new CrateItem(8, StringUtils.stringFormat("cyan_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_CYAN_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "cyan_carpet", () -> new CrateItem(9, StringUtils.stringFormat("cyan_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Light Blue Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_LIGHT_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "light_blue_carpet", () -> new CrateItem(0, StringUtils.stringFormat("light_blue_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_LIGHT_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "light_blue_carpet", () -> new CrateItem(1, StringUtils.stringFormat("light_blue_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_LIGHT_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "light_blue_carpet", () -> new CrateItem(2, StringUtils.stringFormat("light_blue_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_LIGHT_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "light_blue_carpet", () -> new CrateItem(3, StringUtils.stringFormat("light_blue_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_LIGHT_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "light_blue_carpet", () -> new CrateItem(4, StringUtils.stringFormat("light_blue_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_LIGHT_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "light_blue_carpet", () -> new CrateItem(5, StringUtils.stringFormat("light_blue_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_LIGHT_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "light_blue_carpet", () -> new CrateItem(6, StringUtils.stringFormat("light_blue_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_LIGHT_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "light_blue_carpet", () -> new CrateItem(7, StringUtils.stringFormat("light_blue_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_LIGHT_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "light_blue_carpet", () -> new CrateItem(8, StringUtils.stringFormat("light_blue_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_LIGHT_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "light_blue_carpet", () -> new CrateItem(9, StringUtils.stringFormat("light_blue_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Blue Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "blue_carpet", () -> new CrateItem(0, StringUtils.stringFormat("blue_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "blue_carpet", () -> new CrateItem(1, StringUtils.stringFormat("blue_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "blue_carpet", () -> new CrateItem(2, StringUtils.stringFormat("blue_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "blue_carpet", () -> new CrateItem(3, StringUtils.stringFormat("blue_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "blue_carpet", () -> new CrateItem(4, StringUtils.stringFormat("blue_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "blue_carpet", () -> new CrateItem(5, StringUtils.stringFormat("blue_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "blue_carpet", () -> new CrateItem(6, StringUtils.stringFormat("blue_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "blue_carpet", () -> new CrateItem(7, StringUtils.stringFormat("blue_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "blue_carpet", () -> new CrateItem(8, StringUtils.stringFormat("blue_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_BLUE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "blue_carpet", () -> new CrateItem(9, StringUtils.stringFormat("blue_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Purple Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_PURPLE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "purple_carpet", () -> new CrateItem(0, StringUtils.stringFormat("purple_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_PURPLE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "purple_carpet", () -> new CrateItem(1, StringUtils.stringFormat("purple_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_PURPLE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "purple_carpet", () -> new CrateItem(2, StringUtils.stringFormat("purple_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_PURPLE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "purple_carpet", () -> new CrateItem(3, StringUtils.stringFormat("purple_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_PURPLE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "purple_carpet", () -> new CrateItem(4, StringUtils.stringFormat("purple_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_PURPLE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "purple_carpet", () -> new CrateItem(5, StringUtils.stringFormat("purple_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_PURPLE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "purple_carpet", () -> new CrateItem(6, StringUtils.stringFormat("purple_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_PURPLE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "purple_carpet", () -> new CrateItem(7, StringUtils.stringFormat("purple_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_PURPLE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "purple_carpet", () -> new CrateItem(8, StringUtils.stringFormat("purple_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_PURPLE_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "purple_carpet", () -> new CrateItem(9, StringUtils.stringFormat("purple_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Magenta Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_MAGENTA_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "magenta_carpet", () -> new CrateItem(0, StringUtils.stringFormat("magenta_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_MAGENTA_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "magenta_carpet", () -> new CrateItem(1, StringUtils.stringFormat("magenta_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_MAGENTA_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "magenta_carpet", () -> new CrateItem(2, StringUtils.stringFormat("magenta_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_MAGENTA_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "magenta_carpet", () -> new CrateItem(3, StringUtils.stringFormat("magenta_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_MAGENTA_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "magenta_carpet", () -> new CrateItem(4, StringUtils.stringFormat("magenta_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_MAGENTA_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "magenta_carpet", () -> new CrateItem(5, StringUtils.stringFormat("magenta_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_MAGENTA_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "magenta_carpet", () -> new CrateItem(6, StringUtils.stringFormat("magenta_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_MAGENTA_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "magenta_carpet", () -> new CrateItem(7, StringUtils.stringFormat("magenta_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_MAGENTA_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "magenta_carpet", () -> new CrateItem(8, StringUtils.stringFormat("magenta_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_MAGENTA_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "magenta_carpet", () -> new CrateItem(9, StringUtils.stringFormat("magenta_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Pink Carpet
-    //------------------------------------------------------------------------------------------------------------------
-    public static RegistryObject<Item> CRATED_PINK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("crated_" + "pink_carpet", () -> new CrateItem(0, StringUtils.stringFormat("pink_carpet")));
-    public static RegistryObject<Item> DOUBLE_CRATED_PINK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("double_crated_" + "pink_carpet", () -> new CrateItem(1, StringUtils.stringFormat("pink_carpet")));
-    public static RegistryObject<Item> TRIPLE_CRATED_PINK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("triple_crated_" + "pink_carpet", () -> new CrateItem(2, StringUtils.stringFormat("pink_carpet")));
-    public static RegistryObject<Item> QUADRUPLE_CRATED_PINK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quadruple_crated_" + "pink_carpet", () -> new CrateItem(3, StringUtils.stringFormat("pink_carpet")));
-    public static RegistryObject<Item> QUINTUPLE_CRATED_PINK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("quintuple_crated_" + "pink_carpet", () -> new CrateItem(4, StringUtils.stringFormat("pink_carpet")));
-    public static RegistryObject<Item> SEXTUPLE_CRATED_PINK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("sextuple_crated_" + "pink_carpet", () -> new CrateItem(5, StringUtils.stringFormat("pink_carpet")));
-    public static RegistryObject<Item> SEPTUPLE_CRATED_PINK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("septuple_crated_" + "pink_carpet", () -> new CrateItem(6, StringUtils.stringFormat("pink_carpet")));
-    public static RegistryObject<Item> OCTUPLE_CRATED_PINK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("octuple_crated_" + "pink_carpet", () -> new CrateItem(7, StringUtils.stringFormat("pink_carpet")));
-    public static RegistryObject<Item> MEGA_CRATED_PINK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("mega_crated_" + "pink_carpet", () -> new CrateItem(8, StringUtils.stringFormat("pink_carpet")));
-    public static RegistryObject<Item> GIGA_CRATED_PINK_CARPET = CBRegistryEvent.CRATE_ITEMS.register("giga_crated_" + "pink_carpet", () -> new CrateItem(9, StringUtils.stringFormat("pink_carpet")));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
+    public static final RegistryObject<BlockItem> GOLDEN_APPLE_0 = CRATE_ITEMS.register("crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_APPLE_0.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_APPLE_1 = CRATE_ITEMS.register("double_crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_APPLE_1.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_APPLE_2 = CRATE_ITEMS.register("triple_crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_APPLE_2.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_APPLE_3 = CRATE_ITEMS.register("quadruple_crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_APPLE_3.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_APPLE_4 = CRATE_ITEMS.register("quintuple_crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_APPLE_4.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_APPLE_5 = CRATE_ITEMS.register("sextuple_crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_APPLE_5.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_APPLE_6 = CRATE_ITEMS.register("septuple_crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_APPLE_6.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_APPLE_7 = CRATE_ITEMS.register("octuple_crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_APPLE_7.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_APPLE_8 = CRATE_ITEMS.register("mega_crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_APPLE_8.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_APPLE_9 = CRATE_ITEMS.register("giga_crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_APPLE_9.get()));
+    public static final RegistryObject<BlockItem> SWEET_BERRIES_0 = CRATE_ITEMS.register("crated_" + "SWEET_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.SWEET_BERRIES_0.get()));
+    public static final RegistryObject<BlockItem> SWEET_BERRIES_1 = CRATE_ITEMS.register("double_crated_" + "SWEET_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.SWEET_BERRIES_1.get()));
+    public static final RegistryObject<BlockItem> SWEET_BERRIES_2 = CRATE_ITEMS.register("triple_crated_" + "SWEET_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.SWEET_BERRIES_2.get()));
+    public static final RegistryObject<BlockItem> SWEET_BERRIES_3 = CRATE_ITEMS.register("quadruple_crated_" + "SWEET_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.SWEET_BERRIES_3.get()));
+    public static final RegistryObject<BlockItem> SWEET_BERRIES_4 = CRATE_ITEMS.register("quintuple_crated_" + "SWEET_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.SWEET_BERRIES_4.get()));
+    public static final RegistryObject<BlockItem> SWEET_BERRIES_5 = CRATE_ITEMS.register("sextuple_crated_" + "SWEET_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.SWEET_BERRIES_5.get()));
+    public static final RegistryObject<BlockItem> SWEET_BERRIES_6 = CRATE_ITEMS.register("septuple_crated_" + "SWEET_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.SWEET_BERRIES_6.get()));
+    public static final RegistryObject<BlockItem> SWEET_BERRIES_7 = CRATE_ITEMS.register("octuple_crated_" + "SWEET_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.SWEET_BERRIES_7.get()));
+    public static final RegistryObject<BlockItem> SWEET_BERRIES_8 = CRATE_ITEMS.register("mega_crated_" + "SWEET_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.SWEET_BERRIES_8.get()));
+    public static final RegistryObject<BlockItem> SWEET_BERRIES_9 = CRATE_ITEMS.register("giga_crated_" + "SWEET_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.SWEET_BERRIES_9.get()));
+    public static final RegistryObject<BlockItem> GLOW_BERRIES_0 = CRATE_ITEMS.register("crated_" + "GLOW_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_BERRIES_0.get()));
+    public static final RegistryObject<BlockItem> GLOW_BERRIES_1 = CRATE_ITEMS.register("double_crated_" + "GLOW_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_BERRIES_1.get()));
+    public static final RegistryObject<BlockItem> GLOW_BERRIES_2 = CRATE_ITEMS.register("triple_crated_" + "GLOW_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_BERRIES_2.get()));
+    public static final RegistryObject<BlockItem> GLOW_BERRIES_3 = CRATE_ITEMS.register("quadruple_crated_" + "GLOW_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_BERRIES_3.get()));
+    public static final RegistryObject<BlockItem> GLOW_BERRIES_4 = CRATE_ITEMS.register("quintuple_crated_" + "GLOW_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_BERRIES_4.get()));
+    public static final RegistryObject<BlockItem> GLOW_BERRIES_5 = CRATE_ITEMS.register("sextuple_crated_" + "GLOW_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_BERRIES_5.get()));
+    public static final RegistryObject<BlockItem> GLOW_BERRIES_6 = CRATE_ITEMS.register("septuple_crated_" + "GLOW_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_BERRIES_6.get()));
+    public static final RegistryObject<BlockItem> GLOW_BERRIES_7 = CRATE_ITEMS.register("octuple_crated_" + "GLOW_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_BERRIES_7.get()));
+    public static final RegistryObject<BlockItem> GLOW_BERRIES_8 = CRATE_ITEMS.register("mega_crated_" + "GLOW_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_BERRIES_8.get()));
+    public static final RegistryObject<BlockItem> GLOW_BERRIES_9 = CRATE_ITEMS.register("giga_crated_" + "GLOW_BERRIES".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_BERRIES_9.get()));
+    public static final RegistryObject<BlockItem> CHORUS_FRUIT_0 = CRATE_ITEMS.register("crated_" + "CHORUS_FRUIT".toLowerCase(), () -> new CrateItem(CrateBlocks.CHORUS_FRUIT_0.get()));
+    public static final RegistryObject<BlockItem> CHORUS_FRUIT_1 = CRATE_ITEMS.register("double_crated_" + "CHORUS_FRUIT".toLowerCase(), () -> new CrateItem(CrateBlocks.CHORUS_FRUIT_1.get()));
+    public static final RegistryObject<BlockItem> CHORUS_FRUIT_2 = CRATE_ITEMS.register("triple_crated_" + "CHORUS_FRUIT".toLowerCase(), () -> new CrateItem(CrateBlocks.CHORUS_FRUIT_2.get()));
+    public static final RegistryObject<BlockItem> CHORUS_FRUIT_3 = CRATE_ITEMS.register("quadruple_crated_" + "CHORUS_FRUIT".toLowerCase(), () -> new CrateItem(CrateBlocks.CHORUS_FRUIT_3.get()));
+    public static final RegistryObject<BlockItem> CHORUS_FRUIT_4 = CRATE_ITEMS.register("quintuple_crated_" + "CHORUS_FRUIT".toLowerCase(), () -> new CrateItem(CrateBlocks.CHORUS_FRUIT_4.get()));
+    public static final RegistryObject<BlockItem> CHORUS_FRUIT_5 = CRATE_ITEMS.register("sextuple_crated_" + "CHORUS_FRUIT".toLowerCase(), () -> new CrateItem(CrateBlocks.CHORUS_FRUIT_5.get()));
+    public static final RegistryObject<BlockItem> CHORUS_FRUIT_6 = CRATE_ITEMS.register("septuple_crated_" + "CHORUS_FRUIT".toLowerCase(), () -> new CrateItem(CrateBlocks.CHORUS_FRUIT_6.get()));
+    public static final RegistryObject<BlockItem> CHORUS_FRUIT_7 = CRATE_ITEMS.register("octuple_crated_" + "CHORUS_FRUIT".toLowerCase(), () -> new CrateItem(CrateBlocks.CHORUS_FRUIT_7.get()));
+    public static final RegistryObject<BlockItem> CHORUS_FRUIT_8 = CRATE_ITEMS.register("mega_crated_" + "CHORUS_FRUIT".toLowerCase(), () -> new CrateItem(CrateBlocks.CHORUS_FRUIT_8.get()));
+    public static final RegistryObject<BlockItem> CHORUS_FRUIT_9 = CRATE_ITEMS.register("giga_crated_" + "CHORUS_FRUIT".toLowerCase(), () -> new CrateItem(CrateBlocks.CHORUS_FRUIT_9.get()));
+    public static final RegistryObject<BlockItem> CARROT_0 = CRATE_ITEMS.register("crated_" + "CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.CARROT_0.get()));
+    public static final RegistryObject<BlockItem> CARROT_1 = CRATE_ITEMS.register("double_crated_" + "CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.CARROT_1.get()));
+    public static final RegistryObject<BlockItem> CARROT_2 = CRATE_ITEMS.register("triple_crated_" + "CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.CARROT_2.get()));
+    public static final RegistryObject<BlockItem> CARROT_3 = CRATE_ITEMS.register("quadruple_crated_" + "CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.CARROT_3.get()));
+    public static final RegistryObject<BlockItem> CARROT_4 = CRATE_ITEMS.register("quintuple_crated_" + "CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.CARROT_4.get()));
+    public static final RegistryObject<BlockItem> CARROT_5 = CRATE_ITEMS.register("sextuple_crated_" + "CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.CARROT_5.get()));
+    public static final RegistryObject<BlockItem> CARROT_6 = CRATE_ITEMS.register("septuple_crated_" + "CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.CARROT_6.get()));
+    public static final RegistryObject<BlockItem> CARROT_7 = CRATE_ITEMS.register("octuple_crated_" + "CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.CARROT_7.get()));
+    public static final RegistryObject<BlockItem> CARROT_8 = CRATE_ITEMS.register("mega_crated_" + "CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.CARROT_8.get()));
+    public static final RegistryObject<BlockItem> CARROT_9 = CRATE_ITEMS.register("giga_crated_" + "CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.CARROT_9.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_CARROT_0 = CRATE_ITEMS.register("crated_" + "GOLDEN_CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_CARROT_0.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_CARROT_1 = CRATE_ITEMS.register("double_crated_" + "GOLDEN_CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_CARROT_1.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_CARROT_2 = CRATE_ITEMS.register("triple_crated_" + "GOLDEN_CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_CARROT_2.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_CARROT_3 = CRATE_ITEMS.register("quadruple_crated_" + "GOLDEN_CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_CARROT_3.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_CARROT_4 = CRATE_ITEMS.register("quintuple_crated_" + "GOLDEN_CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_CARROT_4.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_CARROT_5 = CRATE_ITEMS.register("sextuple_crated_" + "GOLDEN_CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_CARROT_5.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_CARROT_6 = CRATE_ITEMS.register("septuple_crated_" + "GOLDEN_CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_CARROT_6.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_CARROT_7 = CRATE_ITEMS.register("octuple_crated_" + "GOLDEN_CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_CARROT_7.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_CARROT_8 = CRATE_ITEMS.register("mega_crated_" + "GOLDEN_CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_CARROT_8.get()));
+    public static final RegistryObject<BlockItem> GOLDEN_CARROT_9 = CRATE_ITEMS.register("giga_crated_" + "GOLDEN_CARROT".toLowerCase(), () -> new CrateItem(CrateBlocks.GOLDEN_CARROT_9.get()));
+    public static final RegistryObject<BlockItem> POTATO_0 = CRATE_ITEMS.register("crated_" + "POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POTATO_0.get()));
+    public static final RegistryObject<BlockItem> POTATO_1 = CRATE_ITEMS.register("double_crated_" + "POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POTATO_1.get()));
+    public static final RegistryObject<BlockItem> POTATO_2 = CRATE_ITEMS.register("triple_crated_" + "POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POTATO_2.get()));
+    public static final RegistryObject<BlockItem> POTATO_3 = CRATE_ITEMS.register("quadruple_crated_" + "POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POTATO_3.get()));
+    public static final RegistryObject<BlockItem> POTATO_4 = CRATE_ITEMS.register("quintuple_crated_" + "POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POTATO_4.get()));
+    public static final RegistryObject<BlockItem> POTATO_5 = CRATE_ITEMS.register("sextuple_crated_" + "POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POTATO_5.get()));
+    public static final RegistryObject<BlockItem> POTATO_6 = CRATE_ITEMS.register("septuple_crated_" + "POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POTATO_6.get()));
+    public static final RegistryObject<BlockItem> POTATO_7 = CRATE_ITEMS.register("octuple_crated_" + "POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POTATO_7.get()));
+    public static final RegistryObject<BlockItem> POTATO_8 = CRATE_ITEMS.register("mega_crated_" + "POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POTATO_8.get()));
+    public static final RegistryObject<BlockItem> POTATO_9 = CRATE_ITEMS.register("giga_crated_" + "POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POTATO_9.get()));
+    public static final RegistryObject<BlockItem> BAKED_POTATO_0 = CRATE_ITEMS.register("crated_" + "BAKED_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAKED_POTATO_0.get()));
+    public static final RegistryObject<BlockItem> BAKED_POTATO_1 = CRATE_ITEMS.register("double_crated_" + "BAKED_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAKED_POTATO_1.get()));
+    public static final RegistryObject<BlockItem> BAKED_POTATO_2 = CRATE_ITEMS.register("triple_crated_" + "BAKED_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAKED_POTATO_2.get()));
+    public static final RegistryObject<BlockItem> BAKED_POTATO_3 = CRATE_ITEMS.register("quadruple_crated_" + "BAKED_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAKED_POTATO_3.get()));
+    public static final RegistryObject<BlockItem> BAKED_POTATO_4 = CRATE_ITEMS.register("quintuple_crated_" + "BAKED_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAKED_POTATO_4.get()));
+    public static final RegistryObject<BlockItem> BAKED_POTATO_5 = CRATE_ITEMS.register("sextuple_crated_" + "BAKED_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAKED_POTATO_5.get()));
+    public static final RegistryObject<BlockItem> BAKED_POTATO_6 = CRATE_ITEMS.register("septuple_crated_" + "BAKED_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAKED_POTATO_6.get()));
+    public static final RegistryObject<BlockItem> BAKED_POTATO_7 = CRATE_ITEMS.register("octuple_crated_" + "BAKED_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAKED_POTATO_7.get()));
+    public static final RegistryObject<BlockItem> BAKED_POTATO_8 = CRATE_ITEMS.register("mega_crated_" + "BAKED_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAKED_POTATO_8.get()));
+    public static final RegistryObject<BlockItem> BAKED_POTATO_9 = CRATE_ITEMS.register("giga_crated_" + "BAKED_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAKED_POTATO_9.get()));
+    public static final RegistryObject<BlockItem> POISONOUS_POTATO_0 = CRATE_ITEMS.register("crated_" + "POISONOUS_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POISONOUS_POTATO_0.get()));
+    public static final RegistryObject<BlockItem> POISONOUS_POTATO_1 = CRATE_ITEMS.register("double_crated_" + "POISONOUS_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POISONOUS_POTATO_1.get()));
+    public static final RegistryObject<BlockItem> POISONOUS_POTATO_2 = CRATE_ITEMS.register("triple_crated_" + "POISONOUS_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POISONOUS_POTATO_2.get()));
+    public static final RegistryObject<BlockItem> POISONOUS_POTATO_3 = CRATE_ITEMS.register("quadruple_crated_" + "POISONOUS_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POISONOUS_POTATO_3.get()));
+    public static final RegistryObject<BlockItem> POISONOUS_POTATO_4 = CRATE_ITEMS.register("quintuple_crated_" + "POISONOUS_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POISONOUS_POTATO_4.get()));
+    public static final RegistryObject<BlockItem> POISONOUS_POTATO_5 = CRATE_ITEMS.register("sextuple_crated_" + "POISONOUS_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POISONOUS_POTATO_5.get()));
+    public static final RegistryObject<BlockItem> POISONOUS_POTATO_6 = CRATE_ITEMS.register("septuple_crated_" + "POISONOUS_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POISONOUS_POTATO_6.get()));
+    public static final RegistryObject<BlockItem> POISONOUS_POTATO_7 = CRATE_ITEMS.register("octuple_crated_" + "POISONOUS_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POISONOUS_POTATO_7.get()));
+    public static final RegistryObject<BlockItem> POISONOUS_POTATO_8 = CRATE_ITEMS.register("mega_crated_" + "POISONOUS_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POISONOUS_POTATO_8.get()));
+    public static final RegistryObject<BlockItem> POISONOUS_POTATO_9 = CRATE_ITEMS.register("giga_crated_" + "POISONOUS_POTATO".toLowerCase(), () -> new CrateItem(CrateBlocks.POISONOUS_POTATO_9.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_0 = CRATE_ITEMS.register("crated_" + "BEETROOT".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_0.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_1 = CRATE_ITEMS.register("double_crated_" + "BEETROOT".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_1.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_2 = CRATE_ITEMS.register("triple_crated_" + "BEETROOT".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_2.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_3 = CRATE_ITEMS.register("quadruple_crated_" + "BEETROOT".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_3.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_4 = CRATE_ITEMS.register("quintuple_crated_" + "BEETROOT".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_4.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_5 = CRATE_ITEMS.register("sextuple_crated_" + "BEETROOT".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_5.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_6 = CRATE_ITEMS.register("septuple_crated_" + "BEETROOT".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_6.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_7 = CRATE_ITEMS.register("octuple_crated_" + "BEETROOT".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_7.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_8 = CRATE_ITEMS.register("mega_crated_" + "BEETROOT".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_8.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_9 = CRATE_ITEMS.register("giga_crated_" + "BEETROOT".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_9.get()));
+    public static final RegistryObject<BlockItem> BEEF_0 = CRATE_ITEMS.register("crated_" + "BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.BEEF_0.get()));
+    public static final RegistryObject<BlockItem> BEEF_1 = CRATE_ITEMS.register("double_crated_" + "BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.BEEF_1.get()));
+    public static final RegistryObject<BlockItem> BEEF_2 = CRATE_ITEMS.register("triple_crated_" + "BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.BEEF_2.get()));
+    public static final RegistryObject<BlockItem> BEEF_3 = CRATE_ITEMS.register("quadruple_crated_" + "BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.BEEF_3.get()));
+    public static final RegistryObject<BlockItem> BEEF_4 = CRATE_ITEMS.register("quintuple_crated_" + "BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.BEEF_4.get()));
+    public static final RegistryObject<BlockItem> BEEF_5 = CRATE_ITEMS.register("sextuple_crated_" + "BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.BEEF_5.get()));
+    public static final RegistryObject<BlockItem> BEEF_6 = CRATE_ITEMS.register("septuple_crated_" + "BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.BEEF_6.get()));
+    public static final RegistryObject<BlockItem> BEEF_7 = CRATE_ITEMS.register("octuple_crated_" + "BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.BEEF_7.get()));
+    public static final RegistryObject<BlockItem> BEEF_8 = CRATE_ITEMS.register("mega_crated_" + "BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.BEEF_8.get()));
+    public static final RegistryObject<BlockItem> BEEF_9 = CRATE_ITEMS.register("giga_crated_" + "BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.BEEF_9.get()));
+    public static final RegistryObject<BlockItem> COOKED_BEEF_0 = CRATE_ITEMS.register("crated_" + "COOKED_BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_BEEF_0.get()));
+    public static final RegistryObject<BlockItem> COOKED_BEEF_1 = CRATE_ITEMS.register("double_crated_" + "COOKED_BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_BEEF_1.get()));
+    public static final RegistryObject<BlockItem> COOKED_BEEF_2 = CRATE_ITEMS.register("triple_crated_" + "COOKED_BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_BEEF_2.get()));
+    public static final RegistryObject<BlockItem> COOKED_BEEF_3 = CRATE_ITEMS.register("quadruple_crated_" + "COOKED_BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_BEEF_3.get()));
+    public static final RegistryObject<BlockItem> COOKED_BEEF_4 = CRATE_ITEMS.register("quintuple_crated_" + "COOKED_BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_BEEF_4.get()));
+    public static final RegistryObject<BlockItem> COOKED_BEEF_5 = CRATE_ITEMS.register("sextuple_crated_" + "COOKED_BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_BEEF_5.get()));
+    public static final RegistryObject<BlockItem> COOKED_BEEF_6 = CRATE_ITEMS.register("septuple_crated_" + "COOKED_BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_BEEF_6.get()));
+    public static final RegistryObject<BlockItem> COOKED_BEEF_7 = CRATE_ITEMS.register("octuple_crated_" + "COOKED_BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_BEEF_7.get()));
+    public static final RegistryObject<BlockItem> COOKED_BEEF_8 = CRATE_ITEMS.register("mega_crated_" + "COOKED_BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_BEEF_8.get()));
+    public static final RegistryObject<BlockItem> COOKED_BEEF_9 = CRATE_ITEMS.register("giga_crated_" + "COOKED_BEEF".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_BEEF_9.get()));
+    public static final RegistryObject<BlockItem> PORKCHOP_0 = CRATE_ITEMS.register("crated_" + "PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.PORKCHOP_0.get()));
+    public static final RegistryObject<BlockItem> PORKCHOP_1 = CRATE_ITEMS.register("double_crated_" + "PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.PORKCHOP_1.get()));
+    public static final RegistryObject<BlockItem> PORKCHOP_2 = CRATE_ITEMS.register("triple_crated_" + "PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.PORKCHOP_2.get()));
+    public static final RegistryObject<BlockItem> PORKCHOP_3 = CRATE_ITEMS.register("quadruple_crated_" + "PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.PORKCHOP_3.get()));
+    public static final RegistryObject<BlockItem> PORKCHOP_4 = CRATE_ITEMS.register("quintuple_crated_" + "PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.PORKCHOP_4.get()));
+    public static final RegistryObject<BlockItem> PORKCHOP_5 = CRATE_ITEMS.register("sextuple_crated_" + "PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.PORKCHOP_5.get()));
+    public static final RegistryObject<BlockItem> PORKCHOP_6 = CRATE_ITEMS.register("septuple_crated_" + "PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.PORKCHOP_6.get()));
+    public static final RegistryObject<BlockItem> PORKCHOP_7 = CRATE_ITEMS.register("octuple_crated_" + "PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.PORKCHOP_7.get()));
+    public static final RegistryObject<BlockItem> PORKCHOP_8 = CRATE_ITEMS.register("mega_crated_" + "PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.PORKCHOP_8.get()));
+    public static final RegistryObject<BlockItem> PORKCHOP_9 = CRATE_ITEMS.register("giga_crated_" + "PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.PORKCHOP_9.get()));
+    public static final RegistryObject<BlockItem> COOKED_PORKCHOP_0 = CRATE_ITEMS.register("crated_" + "COOKED_PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_PORKCHOP_0.get()));
+    public static final RegistryObject<BlockItem> COOKED_PORKCHOP_1 = CRATE_ITEMS.register("double_crated_" + "COOKED_PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_PORKCHOP_1.get()));
+    public static final RegistryObject<BlockItem> COOKED_PORKCHOP_2 = CRATE_ITEMS.register("triple_crated_" + "COOKED_PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_PORKCHOP_2.get()));
+    public static final RegistryObject<BlockItem> COOKED_PORKCHOP_3 = CRATE_ITEMS.register("quadruple_crated_" + "COOKED_PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_PORKCHOP_3.get()));
+    public static final RegistryObject<BlockItem> COOKED_PORKCHOP_4 = CRATE_ITEMS.register("quintuple_crated_" + "COOKED_PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_PORKCHOP_4.get()));
+    public static final RegistryObject<BlockItem> COOKED_PORKCHOP_5 = CRATE_ITEMS.register("sextuple_crated_" + "COOKED_PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_PORKCHOP_5.get()));
+    public static final RegistryObject<BlockItem> COOKED_PORKCHOP_6 = CRATE_ITEMS.register("septuple_crated_" + "COOKED_PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_PORKCHOP_6.get()));
+    public static final RegistryObject<BlockItem> COOKED_PORKCHOP_7 = CRATE_ITEMS.register("octuple_crated_" + "COOKED_PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_PORKCHOP_7.get()));
+    public static final RegistryObject<BlockItem> COOKED_PORKCHOP_8 = CRATE_ITEMS.register("mega_crated_" + "COOKED_PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_PORKCHOP_8.get()));
+    public static final RegistryObject<BlockItem> COOKED_PORKCHOP_9 = CRATE_ITEMS.register("giga_crated_" + "COOKED_PORKCHOP".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_PORKCHOP_9.get()));
+    public static final RegistryObject<BlockItem> MUTTON_0 = CRATE_ITEMS.register("crated_" + "MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.MUTTON_0.get()));
+    public static final RegistryObject<BlockItem> MUTTON_1 = CRATE_ITEMS.register("double_crated_" + "MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.MUTTON_1.get()));
+    public static final RegistryObject<BlockItem> MUTTON_2 = CRATE_ITEMS.register("triple_crated_" + "MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.MUTTON_2.get()));
+    public static final RegistryObject<BlockItem> MUTTON_3 = CRATE_ITEMS.register("quadruple_crated_" + "MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.MUTTON_3.get()));
+    public static final RegistryObject<BlockItem> MUTTON_4 = CRATE_ITEMS.register("quintuple_crated_" + "MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.MUTTON_4.get()));
+    public static final RegistryObject<BlockItem> MUTTON_5 = CRATE_ITEMS.register("sextuple_crated_" + "MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.MUTTON_5.get()));
+    public static final RegistryObject<BlockItem> MUTTON_6 = CRATE_ITEMS.register("septuple_crated_" + "MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.MUTTON_6.get()));
+    public static final RegistryObject<BlockItem> MUTTON_7 = CRATE_ITEMS.register("octuple_crated_" + "MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.MUTTON_7.get()));
+    public static final RegistryObject<BlockItem> MUTTON_8 = CRATE_ITEMS.register("mega_crated_" + "MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.MUTTON_8.get()));
+    public static final RegistryObject<BlockItem> MUTTON_9 = CRATE_ITEMS.register("giga_crated_" + "MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.MUTTON_9.get()));
+    public static final RegistryObject<BlockItem> COOKED_MUTTON_0 = CRATE_ITEMS.register("crated_" + "COOKED_MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_MUTTON_0.get()));
+    public static final RegistryObject<BlockItem> COOKED_MUTTON_1 = CRATE_ITEMS.register("double_crated_" + "COOKED_MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_MUTTON_1.get()));
+    public static final RegistryObject<BlockItem> COOKED_MUTTON_2 = CRATE_ITEMS.register("triple_crated_" + "COOKED_MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_MUTTON_2.get()));
+    public static final RegistryObject<BlockItem> COOKED_MUTTON_3 = CRATE_ITEMS.register("quadruple_crated_" + "COOKED_MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_MUTTON_3.get()));
+    public static final RegistryObject<BlockItem> COOKED_MUTTON_4 = CRATE_ITEMS.register("quintuple_crated_" + "COOKED_MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_MUTTON_4.get()));
+    public static final RegistryObject<BlockItem> COOKED_MUTTON_5 = CRATE_ITEMS.register("sextuple_crated_" + "COOKED_MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_MUTTON_5.get()));
+    public static final RegistryObject<BlockItem> COOKED_MUTTON_6 = CRATE_ITEMS.register("septuple_crated_" + "COOKED_MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_MUTTON_6.get()));
+    public static final RegistryObject<BlockItem> COOKED_MUTTON_7 = CRATE_ITEMS.register("octuple_crated_" + "COOKED_MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_MUTTON_7.get()));
+    public static final RegistryObject<BlockItem> COOKED_MUTTON_8 = CRATE_ITEMS.register("mega_crated_" + "COOKED_MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_MUTTON_8.get()));
+    public static final RegistryObject<BlockItem> COOKED_MUTTON_9 = CRATE_ITEMS.register("giga_crated_" + "COOKED_MUTTON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_MUTTON_9.get()));
+    public static final RegistryObject<BlockItem> CHICKEN_0 = CRATE_ITEMS.register("crated_" + "CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHICKEN_0.get()));
+    public static final RegistryObject<BlockItem> CHICKEN_1 = CRATE_ITEMS.register("double_crated_" + "CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHICKEN_1.get()));
+    public static final RegistryObject<BlockItem> CHICKEN_2 = CRATE_ITEMS.register("triple_crated_" + "CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHICKEN_2.get()));
+    public static final RegistryObject<BlockItem> CHICKEN_3 = CRATE_ITEMS.register("quadruple_crated_" + "CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHICKEN_3.get()));
+    public static final RegistryObject<BlockItem> CHICKEN_4 = CRATE_ITEMS.register("quintuple_crated_" + "CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHICKEN_4.get()));
+    public static final RegistryObject<BlockItem> CHICKEN_5 = CRATE_ITEMS.register("sextuple_crated_" + "CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHICKEN_5.get()));
+    public static final RegistryObject<BlockItem> CHICKEN_6 = CRATE_ITEMS.register("septuple_crated_" + "CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHICKEN_6.get()));
+    public static final RegistryObject<BlockItem> CHICKEN_7 = CRATE_ITEMS.register("octuple_crated_" + "CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHICKEN_7.get()));
+    public static final RegistryObject<BlockItem> CHICKEN_8 = CRATE_ITEMS.register("mega_crated_" + "CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHICKEN_8.get()));
+    public static final RegistryObject<BlockItem> CHICKEN_9 = CRATE_ITEMS.register("giga_crated_" + "CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHICKEN_9.get()));
+    public static final RegistryObject<BlockItem> COOKED_CHICKEN_0 = CRATE_ITEMS.register("crated_" + "COOKED_CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_CHICKEN_0.get()));
+    public static final RegistryObject<BlockItem> COOKED_CHICKEN_1 = CRATE_ITEMS.register("double_crated_" + "COOKED_CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_CHICKEN_1.get()));
+    public static final RegistryObject<BlockItem> COOKED_CHICKEN_2 = CRATE_ITEMS.register("triple_crated_" + "COOKED_CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_CHICKEN_2.get()));
+    public static final RegistryObject<BlockItem> COOKED_CHICKEN_3 = CRATE_ITEMS.register("quadruple_crated_" + "COOKED_CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_CHICKEN_3.get()));
+    public static final RegistryObject<BlockItem> COOKED_CHICKEN_4 = CRATE_ITEMS.register("quintuple_crated_" + "COOKED_CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_CHICKEN_4.get()));
+    public static final RegistryObject<BlockItem> COOKED_CHICKEN_5 = CRATE_ITEMS.register("sextuple_crated_" + "COOKED_CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_CHICKEN_5.get()));
+    public static final RegistryObject<BlockItem> COOKED_CHICKEN_6 = CRATE_ITEMS.register("septuple_crated_" + "COOKED_CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_CHICKEN_6.get()));
+    public static final RegistryObject<BlockItem> COOKED_CHICKEN_7 = CRATE_ITEMS.register("octuple_crated_" + "COOKED_CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_CHICKEN_7.get()));
+    public static final RegistryObject<BlockItem> COOKED_CHICKEN_8 = CRATE_ITEMS.register("mega_crated_" + "COOKED_CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_CHICKEN_8.get()));
+    public static final RegistryObject<BlockItem> COOKED_CHICKEN_9 = CRATE_ITEMS.register("giga_crated_" + "COOKED_CHICKEN".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_CHICKEN_9.get()));
+    public static final RegistryObject<BlockItem> RABBIT_0 = CRATE_ITEMS.register("crated_" + "RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_0.get()));
+    public static final RegistryObject<BlockItem> RABBIT_1 = CRATE_ITEMS.register("double_crated_" + "RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_1.get()));
+    public static final RegistryObject<BlockItem> RABBIT_2 = CRATE_ITEMS.register("triple_crated_" + "RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_2.get()));
+    public static final RegistryObject<BlockItem> RABBIT_3 = CRATE_ITEMS.register("quadruple_crated_" + "RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_3.get()));
+    public static final RegistryObject<BlockItem> RABBIT_4 = CRATE_ITEMS.register("quintuple_crated_" + "RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_4.get()));
+    public static final RegistryObject<BlockItem> RABBIT_5 = CRATE_ITEMS.register("sextuple_crated_" + "RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_5.get()));
+    public static final RegistryObject<BlockItem> RABBIT_6 = CRATE_ITEMS.register("septuple_crated_" + "RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_6.get()));
+    public static final RegistryObject<BlockItem> RABBIT_7 = CRATE_ITEMS.register("octuple_crated_" + "RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_7.get()));
+    public static final RegistryObject<BlockItem> RABBIT_8 = CRATE_ITEMS.register("mega_crated_" + "RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_8.get()));
+    public static final RegistryObject<BlockItem> RABBIT_9 = CRATE_ITEMS.register("giga_crated_" + "RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_9.get()));
+    public static final RegistryObject<BlockItem> COOKED_RABBIT_0 = CRATE_ITEMS.register("crated_" + "COOKED_RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_RABBIT_0.get()));
+    public static final RegistryObject<BlockItem> COOKED_RABBIT_1 = CRATE_ITEMS.register("double_crated_" + "COOKED_RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_RABBIT_1.get()));
+    public static final RegistryObject<BlockItem> COOKED_RABBIT_2 = CRATE_ITEMS.register("triple_crated_" + "COOKED_RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_RABBIT_2.get()));
+    public static final RegistryObject<BlockItem> COOKED_RABBIT_3 = CRATE_ITEMS.register("quadruple_crated_" + "COOKED_RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_RABBIT_3.get()));
+    public static final RegistryObject<BlockItem> COOKED_RABBIT_4 = CRATE_ITEMS.register("quintuple_crated_" + "COOKED_RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_RABBIT_4.get()));
+    public static final RegistryObject<BlockItem> COOKED_RABBIT_5 = CRATE_ITEMS.register("sextuple_crated_" + "COOKED_RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_RABBIT_5.get()));
+    public static final RegistryObject<BlockItem> COOKED_RABBIT_6 = CRATE_ITEMS.register("septuple_crated_" + "COOKED_RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_RABBIT_6.get()));
+    public static final RegistryObject<BlockItem> COOKED_RABBIT_7 = CRATE_ITEMS.register("octuple_crated_" + "COOKED_RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_RABBIT_7.get()));
+    public static final RegistryObject<BlockItem> COOKED_RABBIT_8 = CRATE_ITEMS.register("mega_crated_" + "COOKED_RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_RABBIT_8.get()));
+    public static final RegistryObject<BlockItem> COOKED_RABBIT_9 = CRATE_ITEMS.register("giga_crated_" + "COOKED_RABBIT".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_RABBIT_9.get()));
+    public static final RegistryObject<BlockItem> COD_0 = CRATE_ITEMS.register("crated_" + "COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COD_0.get()));
+    public static final RegistryObject<BlockItem> COD_1 = CRATE_ITEMS.register("double_crated_" + "COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COD_1.get()));
+    public static final RegistryObject<BlockItem> COD_2 = CRATE_ITEMS.register("triple_crated_" + "COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COD_2.get()));
+    public static final RegistryObject<BlockItem> COD_3 = CRATE_ITEMS.register("quadruple_crated_" + "COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COD_3.get()));
+    public static final RegistryObject<BlockItem> COD_4 = CRATE_ITEMS.register("quintuple_crated_" + "COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COD_4.get()));
+    public static final RegistryObject<BlockItem> COD_5 = CRATE_ITEMS.register("sextuple_crated_" + "COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COD_5.get()));
+    public static final RegistryObject<BlockItem> COD_6 = CRATE_ITEMS.register("septuple_crated_" + "COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COD_6.get()));
+    public static final RegistryObject<BlockItem> COD_7 = CRATE_ITEMS.register("octuple_crated_" + "COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COD_7.get()));
+    public static final RegistryObject<BlockItem> COD_8 = CRATE_ITEMS.register("mega_crated_" + "COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COD_8.get()));
+    public static final RegistryObject<BlockItem> COD_9 = CRATE_ITEMS.register("giga_crated_" + "COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COD_9.get()));
+    public static final RegistryObject<BlockItem> COOKED_COD_0 = CRATE_ITEMS.register("crated_" + "COOKED_COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_COD_0.get()));
+    public static final RegistryObject<BlockItem> COOKED_COD_1 = CRATE_ITEMS.register("double_crated_" + "COOKED_COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_COD_1.get()));
+    public static final RegistryObject<BlockItem> COOKED_COD_2 = CRATE_ITEMS.register("triple_crated_" + "COOKED_COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_COD_2.get()));
+    public static final RegistryObject<BlockItem> COOKED_COD_3 = CRATE_ITEMS.register("quadruple_crated_" + "COOKED_COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_COD_3.get()));
+    public static final RegistryObject<BlockItem> COOKED_COD_4 = CRATE_ITEMS.register("quintuple_crated_" + "COOKED_COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_COD_4.get()));
+    public static final RegistryObject<BlockItem> COOKED_COD_5 = CRATE_ITEMS.register("sextuple_crated_" + "COOKED_COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_COD_5.get()));
+    public static final RegistryObject<BlockItem> COOKED_COD_6 = CRATE_ITEMS.register("septuple_crated_" + "COOKED_COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_COD_6.get()));
+    public static final RegistryObject<BlockItem> COOKED_COD_7 = CRATE_ITEMS.register("octuple_crated_" + "COOKED_COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_COD_7.get()));
+    public static final RegistryObject<BlockItem> COOKED_COD_8 = CRATE_ITEMS.register("mega_crated_" + "COOKED_COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_COD_8.get()));
+    public static final RegistryObject<BlockItem> COOKED_COD_9 = CRATE_ITEMS.register("giga_crated_" + "COOKED_COD".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_COD_9.get()));
+    public static final RegistryObject<BlockItem> SALMON_0 = CRATE_ITEMS.register("crated_" + "SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.SALMON_0.get()));
+    public static final RegistryObject<BlockItem> SALMON_1 = CRATE_ITEMS.register("double_crated_" + "SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.SALMON_1.get()));
+    public static final RegistryObject<BlockItem> SALMON_2 = CRATE_ITEMS.register("triple_crated_" + "SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.SALMON_2.get()));
+    public static final RegistryObject<BlockItem> SALMON_3 = CRATE_ITEMS.register("quadruple_crated_" + "SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.SALMON_3.get()));
+    public static final RegistryObject<BlockItem> SALMON_4 = CRATE_ITEMS.register("quintuple_crated_" + "SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.SALMON_4.get()));
+    public static final RegistryObject<BlockItem> SALMON_5 = CRATE_ITEMS.register("sextuple_crated_" + "SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.SALMON_5.get()));
+    public static final RegistryObject<BlockItem> SALMON_6 = CRATE_ITEMS.register("septuple_crated_" + "SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.SALMON_6.get()));
+    public static final RegistryObject<BlockItem> SALMON_7 = CRATE_ITEMS.register("octuple_crated_" + "SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.SALMON_7.get()));
+    public static final RegistryObject<BlockItem> SALMON_8 = CRATE_ITEMS.register("mega_crated_" + "SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.SALMON_8.get()));
+    public static final RegistryObject<BlockItem> SALMON_9 = CRATE_ITEMS.register("giga_crated_" + "SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.SALMON_9.get()));
+    public static final RegistryObject<BlockItem> COOKED_SALMON_0 = CRATE_ITEMS.register("crated_" + "COOKED_SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_SALMON_0.get()));
+    public static final RegistryObject<BlockItem> COOKED_SALMON_1 = CRATE_ITEMS.register("double_crated_" + "COOKED_SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_SALMON_1.get()));
+    public static final RegistryObject<BlockItem> COOKED_SALMON_2 = CRATE_ITEMS.register("triple_crated_" + "COOKED_SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_SALMON_2.get()));
+    public static final RegistryObject<BlockItem> COOKED_SALMON_3 = CRATE_ITEMS.register("quadruple_crated_" + "COOKED_SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_SALMON_3.get()));
+    public static final RegistryObject<BlockItem> COOKED_SALMON_4 = CRATE_ITEMS.register("quintuple_crated_" + "COOKED_SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_SALMON_4.get()));
+    public static final RegistryObject<BlockItem> COOKED_SALMON_5 = CRATE_ITEMS.register("sextuple_crated_" + "COOKED_SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_SALMON_5.get()));
+    public static final RegistryObject<BlockItem> COOKED_SALMON_6 = CRATE_ITEMS.register("septuple_crated_" + "COOKED_SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_SALMON_6.get()));
+    public static final RegistryObject<BlockItem> COOKED_SALMON_7 = CRATE_ITEMS.register("octuple_crated_" + "COOKED_SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_SALMON_7.get()));
+    public static final RegistryObject<BlockItem> COOKED_SALMON_8 = CRATE_ITEMS.register("mega_crated_" + "COOKED_SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_SALMON_8.get()));
+    public static final RegistryObject<BlockItem> COOKED_SALMON_9 = CRATE_ITEMS.register("giga_crated_" + "COOKED_SALMON".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKED_SALMON_9.get()));
+    public static final RegistryObject<BlockItem> TROPICAL_FISH_0 = CRATE_ITEMS.register("crated_" + "TROPICAL_FISH".toLowerCase(), () -> new CrateItem(CrateBlocks.TROPICAL_FISH_0.get()));
+    public static final RegistryObject<BlockItem> TROPICAL_FISH_1 = CRATE_ITEMS.register("double_crated_" + "TROPICAL_FISH".toLowerCase(), () -> new CrateItem(CrateBlocks.TROPICAL_FISH_1.get()));
+    public static final RegistryObject<BlockItem> TROPICAL_FISH_2 = CRATE_ITEMS.register("triple_crated_" + "TROPICAL_FISH".toLowerCase(), () -> new CrateItem(CrateBlocks.TROPICAL_FISH_2.get()));
+    public static final RegistryObject<BlockItem> TROPICAL_FISH_3 = CRATE_ITEMS.register("quadruple_crated_" + "TROPICAL_FISH".toLowerCase(), () -> new CrateItem(CrateBlocks.TROPICAL_FISH_3.get()));
+    public static final RegistryObject<BlockItem> TROPICAL_FISH_4 = CRATE_ITEMS.register("quintuple_crated_" + "TROPICAL_FISH".toLowerCase(), () -> new CrateItem(CrateBlocks.TROPICAL_FISH_4.get()));
+    public static final RegistryObject<BlockItem> TROPICAL_FISH_5 = CRATE_ITEMS.register("sextuple_crated_" + "TROPICAL_FISH".toLowerCase(), () -> new CrateItem(CrateBlocks.TROPICAL_FISH_5.get()));
+    public static final RegistryObject<BlockItem> TROPICAL_FISH_6 = CRATE_ITEMS.register("septuple_crated_" + "TROPICAL_FISH".toLowerCase(), () -> new CrateItem(CrateBlocks.TROPICAL_FISH_6.get()));
+    public static final RegistryObject<BlockItem> TROPICAL_FISH_7 = CRATE_ITEMS.register("octuple_crated_" + "TROPICAL_FISH".toLowerCase(), () -> new CrateItem(CrateBlocks.TROPICAL_FISH_7.get()));
+    public static final RegistryObject<BlockItem> TROPICAL_FISH_8 = CRATE_ITEMS.register("mega_crated_" + "TROPICAL_FISH".toLowerCase(), () -> new CrateItem(CrateBlocks.TROPICAL_FISH_8.get()));
+    public static final RegistryObject<BlockItem> TROPICAL_FISH_9 = CRATE_ITEMS.register("giga_crated_" + "TROPICAL_FISH".toLowerCase(), () -> new CrateItem(CrateBlocks.TROPICAL_FISH_9.get()));
+    public static final RegistryObject<BlockItem> PUFFERFISH_0 = CRATE_ITEMS.register("crated_" + "PUFFERFISH".toLowerCase(), () -> new CrateItem(CrateBlocks.PUFFERFISH_0.get()));
+    public static final RegistryObject<BlockItem> PUFFERFISH_1 = CRATE_ITEMS.register("double_crated_" + "PUFFERFISH".toLowerCase(), () -> new CrateItem(CrateBlocks.PUFFERFISH_1.get()));
+    public static final RegistryObject<BlockItem> PUFFERFISH_2 = CRATE_ITEMS.register("triple_crated_" + "PUFFERFISH".toLowerCase(), () -> new CrateItem(CrateBlocks.PUFFERFISH_2.get()));
+    public static final RegistryObject<BlockItem> PUFFERFISH_3 = CRATE_ITEMS.register("quadruple_crated_" + "PUFFERFISH".toLowerCase(), () -> new CrateItem(CrateBlocks.PUFFERFISH_3.get()));
+    public static final RegistryObject<BlockItem> PUFFERFISH_4 = CRATE_ITEMS.register("quintuple_crated_" + "PUFFERFISH".toLowerCase(), () -> new CrateItem(CrateBlocks.PUFFERFISH_4.get()));
+    public static final RegistryObject<BlockItem> PUFFERFISH_5 = CRATE_ITEMS.register("sextuple_crated_" + "PUFFERFISH".toLowerCase(), () -> new CrateItem(CrateBlocks.PUFFERFISH_5.get()));
+    public static final RegistryObject<BlockItem> PUFFERFISH_6 = CRATE_ITEMS.register("septuple_crated_" + "PUFFERFISH".toLowerCase(), () -> new CrateItem(CrateBlocks.PUFFERFISH_6.get()));
+    public static final RegistryObject<BlockItem> PUFFERFISH_7 = CRATE_ITEMS.register("octuple_crated_" + "PUFFERFISH".toLowerCase(), () -> new CrateItem(CrateBlocks.PUFFERFISH_7.get()));
+    public static final RegistryObject<BlockItem> PUFFERFISH_8 = CRATE_ITEMS.register("mega_crated_" + "PUFFERFISH".toLowerCase(), () -> new CrateItem(CrateBlocks.PUFFERFISH_8.get()));
+    public static final RegistryObject<BlockItem> PUFFERFISH_9 = CRATE_ITEMS.register("giga_crated_" + "PUFFERFISH".toLowerCase(), () -> new CrateItem(CrateBlocks.PUFFERFISH_9.get()));
+    public static final RegistryObject<BlockItem> BREAD_0 = CRATE_ITEMS.register("crated_" + "BREAD".toLowerCase(), () -> new CrateItem(CrateBlocks.BREAD_0.get()));
+    public static final RegistryObject<BlockItem> BREAD_1 = CRATE_ITEMS.register("double_crated_" + "BREAD".toLowerCase(), () -> new CrateItem(CrateBlocks.BREAD_1.get()));
+    public static final RegistryObject<BlockItem> BREAD_2 = CRATE_ITEMS.register("triple_crated_" + "BREAD".toLowerCase(), () -> new CrateItem(CrateBlocks.BREAD_2.get()));
+    public static final RegistryObject<BlockItem> BREAD_3 = CRATE_ITEMS.register("quadruple_crated_" + "BREAD".toLowerCase(), () -> new CrateItem(CrateBlocks.BREAD_3.get()));
+    public static final RegistryObject<BlockItem> BREAD_4 = CRATE_ITEMS.register("quintuple_crated_" + "BREAD".toLowerCase(), () -> new CrateItem(CrateBlocks.BREAD_4.get()));
+    public static final RegistryObject<BlockItem> BREAD_5 = CRATE_ITEMS.register("sextuple_crated_" + "BREAD".toLowerCase(), () -> new CrateItem(CrateBlocks.BREAD_5.get()));
+    public static final RegistryObject<BlockItem> BREAD_6 = CRATE_ITEMS.register("septuple_crated_" + "BREAD".toLowerCase(), () -> new CrateItem(CrateBlocks.BREAD_6.get()));
+    public static final RegistryObject<BlockItem> BREAD_7 = CRATE_ITEMS.register("octuple_crated_" + "BREAD".toLowerCase(), () -> new CrateItem(CrateBlocks.BREAD_7.get()));
+    public static final RegistryObject<BlockItem> BREAD_8 = CRATE_ITEMS.register("mega_crated_" + "BREAD".toLowerCase(), () -> new CrateItem(CrateBlocks.BREAD_8.get()));
+    public static final RegistryObject<BlockItem> BREAD_9 = CRATE_ITEMS.register("giga_crated_" + "BREAD".toLowerCase(), () -> new CrateItem(CrateBlocks.BREAD_9.get()));
+    public static final RegistryObject<BlockItem> COOKIE_0 = CRATE_ITEMS.register("crated_" + "COOKIE".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKIE_0.get()));
+    public static final RegistryObject<BlockItem> COOKIE_1 = CRATE_ITEMS.register("double_crated_" + "COOKIE".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKIE_1.get()));
+    public static final RegistryObject<BlockItem> COOKIE_2 = CRATE_ITEMS.register("triple_crated_" + "COOKIE".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKIE_2.get()));
+    public static final RegistryObject<BlockItem> COOKIE_3 = CRATE_ITEMS.register("quadruple_crated_" + "COOKIE".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKIE_3.get()));
+    public static final RegistryObject<BlockItem> COOKIE_4 = CRATE_ITEMS.register("quintuple_crated_" + "COOKIE".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKIE_4.get()));
+    public static final RegistryObject<BlockItem> COOKIE_5 = CRATE_ITEMS.register("sextuple_crated_" + "COOKIE".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKIE_5.get()));
+    public static final RegistryObject<BlockItem> COOKIE_6 = CRATE_ITEMS.register("septuple_crated_" + "COOKIE".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKIE_6.get()));
+    public static final RegistryObject<BlockItem> COOKIE_7 = CRATE_ITEMS.register("octuple_crated_" + "COOKIE".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKIE_7.get()));
+    public static final RegistryObject<BlockItem> COOKIE_8 = CRATE_ITEMS.register("mega_crated_" + "COOKIE".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKIE_8.get()));
+    public static final RegistryObject<BlockItem> COOKIE_9 = CRATE_ITEMS.register("giga_crated_" + "COOKIE".toLowerCase(), () -> new CrateItem(CrateBlocks.COOKIE_9.get()));
+    public static final RegistryObject<BlockItem> ROTTEN_FLESH_0 = CRATE_ITEMS.register("crated_" + "ROTTEN_FLESH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROTTEN_FLESH_0.get()));
+    public static final RegistryObject<BlockItem> ROTTEN_FLESH_1 = CRATE_ITEMS.register("double_crated_" + "ROTTEN_FLESH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROTTEN_FLESH_1.get()));
+    public static final RegistryObject<BlockItem> ROTTEN_FLESH_2 = CRATE_ITEMS.register("triple_crated_" + "ROTTEN_FLESH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROTTEN_FLESH_2.get()));
+    public static final RegistryObject<BlockItem> ROTTEN_FLESH_3 = CRATE_ITEMS.register("quadruple_crated_" + "ROTTEN_FLESH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROTTEN_FLESH_3.get()));
+    public static final RegistryObject<BlockItem> ROTTEN_FLESH_4 = CRATE_ITEMS.register("quintuple_crated_" + "ROTTEN_FLESH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROTTEN_FLESH_4.get()));
+    public static final RegistryObject<BlockItem> ROTTEN_FLESH_5 = CRATE_ITEMS.register("sextuple_crated_" + "ROTTEN_FLESH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROTTEN_FLESH_5.get()));
+    public static final RegistryObject<BlockItem> ROTTEN_FLESH_6 = CRATE_ITEMS.register("septuple_crated_" + "ROTTEN_FLESH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROTTEN_FLESH_6.get()));
+    public static final RegistryObject<BlockItem> ROTTEN_FLESH_7 = CRATE_ITEMS.register("octuple_crated_" + "ROTTEN_FLESH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROTTEN_FLESH_7.get()));
+    public static final RegistryObject<BlockItem> ROTTEN_FLESH_8 = CRATE_ITEMS.register("mega_crated_" + "ROTTEN_FLESH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROTTEN_FLESH_8.get()));
+    public static final RegistryObject<BlockItem> ROTTEN_FLESH_9 = CRATE_ITEMS.register("giga_crated_" + "ROTTEN_FLESH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROTTEN_FLESH_9.get()));
+    public static final RegistryObject<BlockItem> SPIDER_EYE_0 = CRATE_ITEMS.register("crated_" + "SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.SPIDER_EYE_0.get()));
+    public static final RegistryObject<BlockItem> SPIDER_EYE_1 = CRATE_ITEMS.register("double_crated_" + "SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.SPIDER_EYE_1.get()));
+    public static final RegistryObject<BlockItem> SPIDER_EYE_2 = CRATE_ITEMS.register("triple_crated_" + "SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.SPIDER_EYE_2.get()));
+    public static final RegistryObject<BlockItem> SPIDER_EYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.SPIDER_EYE_3.get()));
+    public static final RegistryObject<BlockItem> SPIDER_EYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.SPIDER_EYE_4.get()));
+    public static final RegistryObject<BlockItem> SPIDER_EYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.SPIDER_EYE_5.get()));
+    public static final RegistryObject<BlockItem> SPIDER_EYE_6 = CRATE_ITEMS.register("septuple_crated_" + "SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.SPIDER_EYE_6.get()));
+    public static final RegistryObject<BlockItem> SPIDER_EYE_7 = CRATE_ITEMS.register("octuple_crated_" + "SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.SPIDER_EYE_7.get()));
+    public static final RegistryObject<BlockItem> SPIDER_EYE_8 = CRATE_ITEMS.register("mega_crated_" + "SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.SPIDER_EYE_8.get()));
+    public static final RegistryObject<BlockItem> SPIDER_EYE_9 = CRATE_ITEMS.register("giga_crated_" + "SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.SPIDER_EYE_9.get()));
+    public static final RegistryObject<BlockItem> MILK_BUCKET_0 = CRATE_ITEMS.register("crated_" + "MILK_BUCKET".toLowerCase(), () -> new CrateItem(CrateBlocks.MILK_BUCKET_0.get()));
+    public static final RegistryObject<BlockItem> MILK_BUCKET_1 = CRATE_ITEMS.register("double_crated_" + "MILK_BUCKET".toLowerCase(), () -> new CrateItem(CrateBlocks.MILK_BUCKET_1.get()));
+    public static final RegistryObject<BlockItem> MILK_BUCKET_2 = CRATE_ITEMS.register("triple_crated_" + "MILK_BUCKET".toLowerCase(), () -> new CrateItem(CrateBlocks.MILK_BUCKET_2.get()));
+    public static final RegistryObject<BlockItem> MILK_BUCKET_3 = CRATE_ITEMS.register("quadruple_crated_" + "MILK_BUCKET".toLowerCase(), () -> new CrateItem(CrateBlocks.MILK_BUCKET_3.get()));
+    public static final RegistryObject<BlockItem> MILK_BUCKET_4 = CRATE_ITEMS.register("quintuple_crated_" + "MILK_BUCKET".toLowerCase(), () -> new CrateItem(CrateBlocks.MILK_BUCKET_4.get()));
+    public static final RegistryObject<BlockItem> MILK_BUCKET_5 = CRATE_ITEMS.register("sextuple_crated_" + "MILK_BUCKET".toLowerCase(), () -> new CrateItem(CrateBlocks.MILK_BUCKET_5.get()));
+    public static final RegistryObject<BlockItem> MILK_BUCKET_6 = CRATE_ITEMS.register("septuple_crated_" + "MILK_BUCKET".toLowerCase(), () -> new CrateItem(CrateBlocks.MILK_BUCKET_6.get()));
+    public static final RegistryObject<BlockItem> MILK_BUCKET_7 = CRATE_ITEMS.register("octuple_crated_" + "MILK_BUCKET".toLowerCase(), () -> new CrateItem(CrateBlocks.MILK_BUCKET_7.get()));
+    public static final RegistryObject<BlockItem> MILK_BUCKET_8 = CRATE_ITEMS.register("mega_crated_" + "MILK_BUCKET".toLowerCase(), () -> new CrateItem(CrateBlocks.MILK_BUCKET_8.get()));
+    public static final RegistryObject<BlockItem> MILK_BUCKET_9 = CRATE_ITEMS.register("giga_crated_" + "MILK_BUCKET".toLowerCase(), () -> new CrateItem(CrateBlocks.MILK_BUCKET_9.get()));
+    public static final RegistryObject<BlockItem> HONEY_BOTTLE_0 = CRATE_ITEMS.register("crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEY_BOTTLE_0.get()));
+    public static final RegistryObject<BlockItem> HONEY_BOTTLE_1 = CRATE_ITEMS.register("double_crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEY_BOTTLE_1.get()));
+    public static final RegistryObject<BlockItem> HONEY_BOTTLE_2 = CRATE_ITEMS.register("triple_crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEY_BOTTLE_2.get()));
+    public static final RegistryObject<BlockItem> HONEY_BOTTLE_3 = CRATE_ITEMS.register("quadruple_crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEY_BOTTLE_3.get()));
+    public static final RegistryObject<BlockItem> HONEY_BOTTLE_4 = CRATE_ITEMS.register("quintuple_crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEY_BOTTLE_4.get()));
+    public static final RegistryObject<BlockItem> HONEY_BOTTLE_5 = CRATE_ITEMS.register("sextuple_crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEY_BOTTLE_5.get()));
+    public static final RegistryObject<BlockItem> HONEY_BOTTLE_6 = CRATE_ITEMS.register("septuple_crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEY_BOTTLE_6.get()));
+    public static final RegistryObject<BlockItem> HONEY_BOTTLE_7 = CRATE_ITEMS.register("octuple_crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEY_BOTTLE_7.get()));
+    public static final RegistryObject<BlockItem> HONEY_BOTTLE_8 = CRATE_ITEMS.register("mega_crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEY_BOTTLE_8.get()));
+    public static final RegistryObject<BlockItem> HONEY_BOTTLE_9 = CRATE_ITEMS.register("giga_crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEY_BOTTLE_9.get()));
+    // FIXME: POTION
+    //public static final RegistryObject<BlockItem> WATER_BOTTLE_0 = CRATE_ITEMS.register("crated_" + "WATER_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_0.get()));
+    //public static final RegistryObject<BlockItem> WATER_BOTTLE_1 = CRATE_ITEMS.register("double_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_0.get()));
+    //public static final RegistryObject<BlockItem> WATER_BOTTLE_2 = CRATE_ITEMS.register("triple_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_0.get()));
+    //public static final RegistryObject<BlockItem> WATER_BOTTLE_3 = CRATE_ITEMS.register("quadruple_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_0.get()));
+    //public static final RegistryObject<BlockItem> WATER_BOTTLE_4 = CRATE_ITEMS.register("quintuple_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_0.get()));
+    //public static final RegistryObject<BlockItem> WATER_BOTTLE_5 = CRATE_ITEMS.register("sextuple_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_0.get()));
+    //public static final RegistryObject<BlockItem> WATER_BOTTLE_6 = CRATE_ITEMS.register("septuple_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_0.get()));
+    //public static final RegistryObject<BlockItem> WATER_BOTTLE_7 = CRATE_ITEMS.register("octuple_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_0.get()));
+    //public static final RegistryObject<BlockItem> WATER_BOTTLE_8 = CRATE_ITEMS.register("mega_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_0.get()));
+    //public static final RegistryObject<BlockItem> WATER_BOTTLE_9 = CRATE_ITEMS.register("giga_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_0.get()));
+    public static final RegistryObject<BlockItem> CHARCOAL_0 = CRATE_ITEMS.register("crated_" + "CHARCOAL".toLowerCase(), () -> new CrateItem(CrateBlocks.CHARCOAL_0.get()));
+    public static final RegistryObject<BlockItem> CHARCOAL_1 = CRATE_ITEMS.register("double_crated_" + "CHARCOAL".toLowerCase(), () -> new CrateItem(CrateBlocks.CHARCOAL_1.get()));
+    public static final RegistryObject<BlockItem> CHARCOAL_2 = CRATE_ITEMS.register("triple_crated_" + "CHARCOAL".toLowerCase(), () -> new CrateItem(CrateBlocks.CHARCOAL_2.get()));
+    public static final RegistryObject<BlockItem> CHARCOAL_3 = CRATE_ITEMS.register("quadruple_crated_" + "CHARCOAL".toLowerCase(), () -> new CrateItem(CrateBlocks.CHARCOAL_3.get()));
+    public static final RegistryObject<BlockItem> CHARCOAL_4 = CRATE_ITEMS.register("quintuple_crated_" + "CHARCOAL".toLowerCase(), () -> new CrateItem(CrateBlocks.CHARCOAL_4.get()));
+    public static final RegistryObject<BlockItem> CHARCOAL_5 = CRATE_ITEMS.register("sextuple_crated_" + "CHARCOAL".toLowerCase(), () -> new CrateItem(CrateBlocks.CHARCOAL_5.get()));
+    public static final RegistryObject<BlockItem> CHARCOAL_6 = CRATE_ITEMS.register("septuple_crated_" + "CHARCOAL".toLowerCase(), () -> new CrateItem(CrateBlocks.CHARCOAL_6.get()));
+    public static final RegistryObject<BlockItem> CHARCOAL_7 = CRATE_ITEMS.register("octuple_crated_" + "CHARCOAL".toLowerCase(), () -> new CrateItem(CrateBlocks.CHARCOAL_7.get()));
+    public static final RegistryObject<BlockItem> CHARCOAL_8 = CRATE_ITEMS.register("mega_crated_" + "CHARCOAL".toLowerCase(), () -> new CrateItem(CrateBlocks.CHARCOAL_8.get()));
+    public static final RegistryObject<BlockItem> CHARCOAL_9 = CRATE_ITEMS.register("giga_crated_" + "CHARCOAL".toLowerCase(), () -> new CrateItem(CrateBlocks.CHARCOAL_9.get()));
+    public static final RegistryObject<BlockItem> QUARTZ_0 = CRATE_ITEMS.register("crated_" + "QUARTZ".toLowerCase(), () -> new CrateItem(CrateBlocks.QUARTZ_0.get()));
+    public static final RegistryObject<BlockItem> QUARTZ_1 = CRATE_ITEMS.register("double_crated_" + "QUARTZ".toLowerCase(), () -> new CrateItem(CrateBlocks.QUARTZ_1.get()));
+    public static final RegistryObject<BlockItem> QUARTZ_2 = CRATE_ITEMS.register("triple_crated_" + "QUARTZ".toLowerCase(), () -> new CrateItem(CrateBlocks.QUARTZ_2.get()));
+    public static final RegistryObject<BlockItem> QUARTZ_3 = CRATE_ITEMS.register("quadruple_crated_" + "QUARTZ".toLowerCase(), () -> new CrateItem(CrateBlocks.QUARTZ_3.get()));
+    public static final RegistryObject<BlockItem> QUARTZ_4 = CRATE_ITEMS.register("quintuple_crated_" + "QUARTZ".toLowerCase(), () -> new CrateItem(CrateBlocks.QUARTZ_4.get()));
+    public static final RegistryObject<BlockItem> QUARTZ_5 = CRATE_ITEMS.register("sextuple_crated_" + "QUARTZ".toLowerCase(), () -> new CrateItem(CrateBlocks.QUARTZ_5.get()));
+    public static final RegistryObject<BlockItem> QUARTZ_6 = CRATE_ITEMS.register("septuple_crated_" + "QUARTZ".toLowerCase(), () -> new CrateItem(CrateBlocks.QUARTZ_6.get()));
+    public static final RegistryObject<BlockItem> QUARTZ_7 = CRATE_ITEMS.register("octuple_crated_" + "QUARTZ".toLowerCase(), () -> new CrateItem(CrateBlocks.QUARTZ_7.get()));
+    public static final RegistryObject<BlockItem> QUARTZ_8 = CRATE_ITEMS.register("mega_crated_" + "QUARTZ".toLowerCase(), () -> new CrateItem(CrateBlocks.QUARTZ_8.get()));
+    public static final RegistryObject<BlockItem> QUARTZ_9 = CRATE_ITEMS.register("giga_crated_" + "QUARTZ".toLowerCase(), () -> new CrateItem(CrateBlocks.QUARTZ_9.get()));
+    public static final RegistryObject<BlockItem> AMETHYST_SHARD_0 = CRATE_ITEMS.register("crated_" + "AMETHYST_SHARD".toLowerCase(), () -> new CrateItem(CrateBlocks.AMETHYST_SHARD_0.get()));
+    public static final RegistryObject<BlockItem> AMETHYST_SHARD_1 = CRATE_ITEMS.register("double_crated_" + "AMETHYST_SHARD".toLowerCase(), () -> new CrateItem(CrateBlocks.AMETHYST_SHARD_1.get()));
+    public static final RegistryObject<BlockItem> AMETHYST_SHARD_2 = CRATE_ITEMS.register("triple_crated_" + "AMETHYST_SHARD".toLowerCase(), () -> new CrateItem(CrateBlocks.AMETHYST_SHARD_2.get()));
+    public static final RegistryObject<BlockItem> AMETHYST_SHARD_3 = CRATE_ITEMS.register("quadruple_crated_" + "AMETHYST_SHARD".toLowerCase(), () -> new CrateItem(CrateBlocks.AMETHYST_SHARD_3.get()));
+    public static final RegistryObject<BlockItem> AMETHYST_SHARD_4 = CRATE_ITEMS.register("quintuple_crated_" + "AMETHYST_SHARD".toLowerCase(), () -> new CrateItem(CrateBlocks.AMETHYST_SHARD_4.get()));
+    public static final RegistryObject<BlockItem> AMETHYST_SHARD_5 = CRATE_ITEMS.register("sextuple_crated_" + "AMETHYST_SHARD".toLowerCase(), () -> new CrateItem(CrateBlocks.AMETHYST_SHARD_5.get()));
+    public static final RegistryObject<BlockItem> AMETHYST_SHARD_6 = CRATE_ITEMS.register("septuple_crated_" + "AMETHYST_SHARD".toLowerCase(), () -> new CrateItem(CrateBlocks.AMETHYST_SHARD_6.get()));
+    public static final RegistryObject<BlockItem> AMETHYST_SHARD_7 = CRATE_ITEMS.register("octuple_crated_" + "AMETHYST_SHARD".toLowerCase(), () -> new CrateItem(CrateBlocks.AMETHYST_SHARD_7.get()));
+    public static final RegistryObject<BlockItem> AMETHYST_SHARD_8 = CRATE_ITEMS.register("mega_crated_" + "AMETHYST_SHARD".toLowerCase(), () -> new CrateItem(CrateBlocks.AMETHYST_SHARD_8.get()));
+    public static final RegistryObject<BlockItem> AMETHYST_SHARD_9 = CRATE_ITEMS.register("giga_crated_" + "AMETHYST_SHARD".toLowerCase(), () -> new CrateItem(CrateBlocks.AMETHYST_SHARD_9.get()));
+    public static final RegistryObject<BlockItem> STICK_0 = CRATE_ITEMS.register("crated_" + "STICK".toLowerCase(), () -> new CrateItem(CrateBlocks.STICK_0.get()));
+    public static final RegistryObject<BlockItem> STICK_1 = CRATE_ITEMS.register("double_crated_" + "STICK".toLowerCase(), () -> new CrateItem(CrateBlocks.STICK_1.get()));
+    public static final RegistryObject<BlockItem> STICK_2 = CRATE_ITEMS.register("triple_crated_" + "STICK".toLowerCase(), () -> new CrateItem(CrateBlocks.STICK_2.get()));
+    public static final RegistryObject<BlockItem> STICK_3 = CRATE_ITEMS.register("quadruple_crated_" + "STICK".toLowerCase(), () -> new CrateItem(CrateBlocks.STICK_3.get()));
+    public static final RegistryObject<BlockItem> STICK_4 = CRATE_ITEMS.register("quintuple_crated_" + "STICK".toLowerCase(), () -> new CrateItem(CrateBlocks.STICK_4.get()));
+    public static final RegistryObject<BlockItem> STICK_5 = CRATE_ITEMS.register("sextuple_crated_" + "STICK".toLowerCase(), () -> new CrateItem(CrateBlocks.STICK_5.get()));
+    public static final RegistryObject<BlockItem> STICK_6 = CRATE_ITEMS.register("septuple_crated_" + "STICK".toLowerCase(), () -> new CrateItem(CrateBlocks.STICK_6.get()));
+    public static final RegistryObject<BlockItem> STICK_7 = CRATE_ITEMS.register("octuple_crated_" + "STICK".toLowerCase(), () -> new CrateItem(CrateBlocks.STICK_7.get()));
+    public static final RegistryObject<BlockItem> STICK_8 = CRATE_ITEMS.register("mega_crated_" + "STICK".toLowerCase(), () -> new CrateItem(CrateBlocks.STICK_8.get()));
+    public static final RegistryObject<BlockItem> STICK_9 = CRATE_ITEMS.register("giga_crated_" + "STICK".toLowerCase(), () -> new CrateItem(CrateBlocks.STICK_9.get()));
+    public static final RegistryObject<BlockItem> FLINT_0 = CRATE_ITEMS.register("crated_" + "FLINT".toLowerCase(), () -> new CrateItem(CrateBlocks.FLINT_0.get()));
+    public static final RegistryObject<BlockItem> FLINT_1 = CRATE_ITEMS.register("double_crated_" + "FLINT".toLowerCase(), () -> new CrateItem(CrateBlocks.FLINT_1.get()));
+    public static final RegistryObject<BlockItem> FLINT_2 = CRATE_ITEMS.register("triple_crated_" + "FLINT".toLowerCase(), () -> new CrateItem(CrateBlocks.FLINT_2.get()));
+    public static final RegistryObject<BlockItem> FLINT_3 = CRATE_ITEMS.register("quadruple_crated_" + "FLINT".toLowerCase(), () -> new CrateItem(CrateBlocks.FLINT_3.get()));
+    public static final RegistryObject<BlockItem> FLINT_4 = CRATE_ITEMS.register("quintuple_crated_" + "FLINT".toLowerCase(), () -> new CrateItem(CrateBlocks.FLINT_4.get()));
+    public static final RegistryObject<BlockItem> FLINT_5 = CRATE_ITEMS.register("sextuple_crated_" + "FLINT".toLowerCase(), () -> new CrateItem(CrateBlocks.FLINT_5.get()));
+    public static final RegistryObject<BlockItem> FLINT_6 = CRATE_ITEMS.register("septuple_crated_" + "FLINT".toLowerCase(), () -> new CrateItem(CrateBlocks.FLINT_6.get()));
+    public static final RegistryObject<BlockItem> FLINT_7 = CRATE_ITEMS.register("octuple_crated_" + "FLINT".toLowerCase(), () -> new CrateItem(CrateBlocks.FLINT_7.get()));
+    public static final RegistryObject<BlockItem> FLINT_8 = CRATE_ITEMS.register("mega_crated_" + "FLINT".toLowerCase(), () -> new CrateItem(CrateBlocks.FLINT_8.get()));
+    public static final RegistryObject<BlockItem> FLINT_9 = CRATE_ITEMS.register("giga_crated_" + "FLINT".toLowerCase(), () -> new CrateItem(CrateBlocks.FLINT_9.get()));
+    public static final RegistryObject<BlockItem> BONE_0 = CRATE_ITEMS.register("crated_" + "BONE".toLowerCase(), () -> new CrateItem(CrateBlocks.BONE_0.get()));
+    public static final RegistryObject<BlockItem> BONE_1 = CRATE_ITEMS.register("double_crated_" + "BONE".toLowerCase(), () -> new CrateItem(CrateBlocks.BONE_1.get()));
+    public static final RegistryObject<BlockItem> BONE_2 = CRATE_ITEMS.register("triple_crated_" + "BONE".toLowerCase(), () -> new CrateItem(CrateBlocks.BONE_2.get()));
+    public static final RegistryObject<BlockItem> BONE_3 = CRATE_ITEMS.register("quadruple_crated_" + "BONE".toLowerCase(), () -> new CrateItem(CrateBlocks.BONE_3.get()));
+    public static final RegistryObject<BlockItem> BONE_4 = CRATE_ITEMS.register("quintuple_crated_" + "BONE".toLowerCase(), () -> new CrateItem(CrateBlocks.BONE_4.get()));
+    public static final RegistryObject<BlockItem> BONE_5 = CRATE_ITEMS.register("sextuple_crated_" + "BONE".toLowerCase(), () -> new CrateItem(CrateBlocks.BONE_5.get()));
+    public static final RegistryObject<BlockItem> BONE_6 = CRATE_ITEMS.register("septuple_crated_" + "BONE".toLowerCase(), () -> new CrateItem(CrateBlocks.BONE_6.get()));
+    public static final RegistryObject<BlockItem> BONE_7 = CRATE_ITEMS.register("octuple_crated_" + "BONE".toLowerCase(), () -> new CrateItem(CrateBlocks.BONE_7.get()));
+    public static final RegistryObject<BlockItem> BONE_8 = CRATE_ITEMS.register("mega_crated_" + "BONE".toLowerCase(), () -> new CrateItem(CrateBlocks.BONE_8.get()));
+    public static final RegistryObject<BlockItem> BONE_9 = CRATE_ITEMS.register("giga_crated_" + "BONE".toLowerCase(), () -> new CrateItem(CrateBlocks.BONE_9.get()));
+    public static final RegistryObject<BlockItem> STRING_0 = CRATE_ITEMS.register("crated_" + "STRING".toLowerCase(), () -> new CrateItem(CrateBlocks.STRING_0.get()));
+    public static final RegistryObject<BlockItem> STRING_1 = CRATE_ITEMS.register("double_crated_" + "STRING".toLowerCase(), () -> new CrateItem(CrateBlocks.STRING_1.get()));
+    public static final RegistryObject<BlockItem> STRING_2 = CRATE_ITEMS.register("triple_crated_" + "STRING".toLowerCase(), () -> new CrateItem(CrateBlocks.STRING_2.get()));
+    public static final RegistryObject<BlockItem> STRING_3 = CRATE_ITEMS.register("quadruple_crated_" + "STRING".toLowerCase(), () -> new CrateItem(CrateBlocks.STRING_3.get()));
+    public static final RegistryObject<BlockItem> STRING_4 = CRATE_ITEMS.register("quintuple_crated_" + "STRING".toLowerCase(), () -> new CrateItem(CrateBlocks.STRING_4.get()));
+    public static final RegistryObject<BlockItem> STRING_5 = CRATE_ITEMS.register("sextuple_crated_" + "STRING".toLowerCase(), () -> new CrateItem(CrateBlocks.STRING_5.get()));
+    public static final RegistryObject<BlockItem> STRING_6 = CRATE_ITEMS.register("septuple_crated_" + "STRING".toLowerCase(), () -> new CrateItem(CrateBlocks.STRING_6.get()));
+    public static final RegistryObject<BlockItem> STRING_7 = CRATE_ITEMS.register("octuple_crated_" + "STRING".toLowerCase(), () -> new CrateItem(CrateBlocks.STRING_7.get()));
+    public static final RegistryObject<BlockItem> STRING_8 = CRATE_ITEMS.register("mega_crated_" + "STRING".toLowerCase(), () -> new CrateItem(CrateBlocks.STRING_8.get()));
+    public static final RegistryObject<BlockItem> STRING_9 = CRATE_ITEMS.register("giga_crated_" + "STRING".toLowerCase(), () -> new CrateItem(CrateBlocks.STRING_9.get()));
+    public static final RegistryObject<BlockItem> FEATHER_0 = CRATE_ITEMS.register("crated_" + "FEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.FEATHER_0.get()));
+    public static final RegistryObject<BlockItem> FEATHER_1 = CRATE_ITEMS.register("double_crated_" + "FEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.FEATHER_1.get()));
+    public static final RegistryObject<BlockItem> FEATHER_2 = CRATE_ITEMS.register("triple_crated_" + "FEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.FEATHER_2.get()));
+    public static final RegistryObject<BlockItem> FEATHER_3 = CRATE_ITEMS.register("quadruple_crated_" + "FEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.FEATHER_3.get()));
+    public static final RegistryObject<BlockItem> FEATHER_4 = CRATE_ITEMS.register("quintuple_crated_" + "FEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.FEATHER_4.get()));
+    public static final RegistryObject<BlockItem> FEATHER_5 = CRATE_ITEMS.register("sextuple_crated_" + "FEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.FEATHER_5.get()));
+    public static final RegistryObject<BlockItem> FEATHER_6 = CRATE_ITEMS.register("septuple_crated_" + "FEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.FEATHER_6.get()));
+    public static final RegistryObject<BlockItem> FEATHER_7 = CRATE_ITEMS.register("octuple_crated_" + "FEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.FEATHER_7.get()));
+    public static final RegistryObject<BlockItem> FEATHER_8 = CRATE_ITEMS.register("mega_crated_" + "FEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.FEATHER_8.get()));
+    public static final RegistryObject<BlockItem> FEATHER_9 = CRATE_ITEMS.register("giga_crated_" + "FEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.FEATHER_9.get()));
+    public static final RegistryObject<BlockItem> SNOWBALL_0 = CRATE_ITEMS.register("crated_" + "SNOWBALL".toLowerCase(), () -> new CrateItem(CrateBlocks.SNOWBALL_0.get()));
+    public static final RegistryObject<BlockItem> SNOWBALL_1 = CRATE_ITEMS.register("double_crated_" + "SNOWBALL".toLowerCase(), () -> new CrateItem(CrateBlocks.SNOWBALL_1.get()));
+    public static final RegistryObject<BlockItem> SNOWBALL_2 = CRATE_ITEMS.register("triple_crated_" + "SNOWBALL".toLowerCase(), () -> new CrateItem(CrateBlocks.SNOWBALL_2.get()));
+    public static final RegistryObject<BlockItem> SNOWBALL_3 = CRATE_ITEMS.register("quadruple_crated_" + "SNOWBALL".toLowerCase(), () -> new CrateItem(CrateBlocks.SNOWBALL_3.get()));
+    public static final RegistryObject<BlockItem> SNOWBALL_4 = CRATE_ITEMS.register("quintuple_crated_" + "SNOWBALL".toLowerCase(), () -> new CrateItem(CrateBlocks.SNOWBALL_4.get()));
+    public static final RegistryObject<BlockItem> SNOWBALL_5 = CRATE_ITEMS.register("sextuple_crated_" + "SNOWBALL".toLowerCase(), () -> new CrateItem(CrateBlocks.SNOWBALL_5.get()));
+    public static final RegistryObject<BlockItem> SNOWBALL_6 = CRATE_ITEMS.register("septuple_crated_" + "SNOWBALL".toLowerCase(), () -> new CrateItem(CrateBlocks.SNOWBALL_6.get()));
+    public static final RegistryObject<BlockItem> SNOWBALL_7 = CRATE_ITEMS.register("octuple_crated_" + "SNOWBALL".toLowerCase(), () -> new CrateItem(CrateBlocks.SNOWBALL_7.get()));
+    public static final RegistryObject<BlockItem> SNOWBALL_8 = CRATE_ITEMS.register("mega_crated_" + "SNOWBALL".toLowerCase(), () -> new CrateItem(CrateBlocks.SNOWBALL_8.get()));
+    public static final RegistryObject<BlockItem> SNOWBALL_9 = CRATE_ITEMS.register("giga_crated_" + "SNOWBALL".toLowerCase(), () -> new CrateItem(CrateBlocks.SNOWBALL_9.get()));
+    public static final RegistryObject<BlockItem> EGG_0 = CRATE_ITEMS.register("crated_" + "EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.EGG_0.get()));
+    public static final RegistryObject<BlockItem> EGG_1 = CRATE_ITEMS.register("double_crated_" + "EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.EGG_1.get()));
+    public static final RegistryObject<BlockItem> EGG_2 = CRATE_ITEMS.register("triple_crated_" + "EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.EGG_2.get()));
+    public static final RegistryObject<BlockItem> EGG_3 = CRATE_ITEMS.register("quadruple_crated_" + "EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.EGG_3.get()));
+    public static final RegistryObject<BlockItem> EGG_4 = CRATE_ITEMS.register("quintuple_crated_" + "EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.EGG_4.get()));
+    public static final RegistryObject<BlockItem> EGG_5 = CRATE_ITEMS.register("sextuple_crated_" + "EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.EGG_5.get()));
+    public static final RegistryObject<BlockItem> EGG_6 = CRATE_ITEMS.register("septuple_crated_" + "EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.EGG_6.get()));
+    public static final RegistryObject<BlockItem> EGG_7 = CRATE_ITEMS.register("octuple_crated_" + "EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.EGG_7.get()));
+    public static final RegistryObject<BlockItem> EGG_8 = CRATE_ITEMS.register("mega_crated_" + "EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.EGG_8.get()));
+    public static final RegistryObject<BlockItem> EGG_9 = CRATE_ITEMS.register("giga_crated_" + "EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.EGG_9.get()));
+    public static final RegistryObject<BlockItem> LEATHER_0 = CRATE_ITEMS.register("crated_" + "LEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.LEATHER_0.get()));
+    public static final RegistryObject<BlockItem> LEATHER_1 = CRATE_ITEMS.register("double_crated_" + "LEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.LEATHER_1.get()));
+    public static final RegistryObject<BlockItem> LEATHER_2 = CRATE_ITEMS.register("triple_crated_" + "LEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.LEATHER_2.get()));
+    public static final RegistryObject<BlockItem> LEATHER_3 = CRATE_ITEMS.register("quadruple_crated_" + "LEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.LEATHER_3.get()));
+    public static final RegistryObject<BlockItem> LEATHER_4 = CRATE_ITEMS.register("quintuple_crated_" + "LEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.LEATHER_4.get()));
+    public static final RegistryObject<BlockItem> LEATHER_5 = CRATE_ITEMS.register("sextuple_crated_" + "LEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.LEATHER_5.get()));
+    public static final RegistryObject<BlockItem> LEATHER_6 = CRATE_ITEMS.register("septuple_crated_" + "LEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.LEATHER_6.get()));
+    public static final RegistryObject<BlockItem> LEATHER_7 = CRATE_ITEMS.register("octuple_crated_" + "LEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.LEATHER_7.get()));
+    public static final RegistryObject<BlockItem> LEATHER_8 = CRATE_ITEMS.register("mega_crated_" + "LEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.LEATHER_8.get()));
+    public static final RegistryObject<BlockItem> LEATHER_9 = CRATE_ITEMS.register("giga_crated_" + "LEATHER".toLowerCase(), () -> new CrateItem(CrateBlocks.LEATHER_9.get()));
+    public static final RegistryObject<BlockItem> RABBIT_HIDE_0 = CRATE_ITEMS.register("crated_" + "RABBIT_HIDE".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_HIDE_0.get()));
+    public static final RegistryObject<BlockItem> RABBIT_HIDE_1 = CRATE_ITEMS.register("double_crated_" + "RABBIT_HIDE".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_HIDE_1.get()));
+    public static final RegistryObject<BlockItem> RABBIT_HIDE_2 = CRATE_ITEMS.register("triple_crated_" + "RABBIT_HIDE".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_HIDE_2.get()));
+    public static final RegistryObject<BlockItem> RABBIT_HIDE_3 = CRATE_ITEMS.register("quadruple_crated_" + "RABBIT_HIDE".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_HIDE_3.get()));
+    public static final RegistryObject<BlockItem> RABBIT_HIDE_4 = CRATE_ITEMS.register("quintuple_crated_" + "RABBIT_HIDE".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_HIDE_4.get()));
+    public static final RegistryObject<BlockItem> RABBIT_HIDE_5 = CRATE_ITEMS.register("sextuple_crated_" + "RABBIT_HIDE".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_HIDE_5.get()));
+    public static final RegistryObject<BlockItem> RABBIT_HIDE_6 = CRATE_ITEMS.register("septuple_crated_" + "RABBIT_HIDE".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_HIDE_6.get()));
+    public static final RegistryObject<BlockItem> RABBIT_HIDE_7 = CRATE_ITEMS.register("octuple_crated_" + "RABBIT_HIDE".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_HIDE_7.get()));
+    public static final RegistryObject<BlockItem> RABBIT_HIDE_8 = CRATE_ITEMS.register("mega_crated_" + "RABBIT_HIDE".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_HIDE_8.get()));
+    public static final RegistryObject<BlockItem> RABBIT_HIDE_9 = CRATE_ITEMS.register("giga_crated_" + "RABBIT_HIDE".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_HIDE_9.get()));
+    public static final RegistryObject<BlockItem> HONEYCOMB_0 = CRATE_ITEMS.register("crated_" + "HONEYCOMB".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEYCOMB_0.get()));
+    public static final RegistryObject<BlockItem> HONEYCOMB_1 = CRATE_ITEMS.register("double_crated_" + "HONEYCOMB".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEYCOMB_1.get()));
+    public static final RegistryObject<BlockItem> HONEYCOMB_2 = CRATE_ITEMS.register("triple_crated_" + "HONEYCOMB".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEYCOMB_2.get()));
+    public static final RegistryObject<BlockItem> HONEYCOMB_3 = CRATE_ITEMS.register("quadruple_crated_" + "HONEYCOMB".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEYCOMB_3.get()));
+    public static final RegistryObject<BlockItem> HONEYCOMB_4 = CRATE_ITEMS.register("quintuple_crated_" + "HONEYCOMB".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEYCOMB_4.get()));
+    public static final RegistryObject<BlockItem> HONEYCOMB_5 = CRATE_ITEMS.register("sextuple_crated_" + "HONEYCOMB".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEYCOMB_5.get()));
+    public static final RegistryObject<BlockItem> HONEYCOMB_6 = CRATE_ITEMS.register("septuple_crated_" + "HONEYCOMB".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEYCOMB_6.get()));
+    public static final RegistryObject<BlockItem> HONEYCOMB_7 = CRATE_ITEMS.register("octuple_crated_" + "HONEYCOMB".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEYCOMB_7.get()));
+    public static final RegistryObject<BlockItem> HONEYCOMB_8 = CRATE_ITEMS.register("mega_crated_" + "HONEYCOMB".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEYCOMB_8.get()));
+    public static final RegistryObject<BlockItem> HONEYCOMB_9 = CRATE_ITEMS.register("giga_crated_" + "HONEYCOMB".toLowerCase(), () -> new CrateItem(CrateBlocks.HONEYCOMB_9.get()));
+    public static final RegistryObject<BlockItem> INK_SAC_0 = CRATE_ITEMS.register("crated_" + "INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.INK_SAC_0.get()));
+    public static final RegistryObject<BlockItem> INK_SAC_1 = CRATE_ITEMS.register("double_crated_" + "INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.INK_SAC_1.get()));
+    public static final RegistryObject<BlockItem> INK_SAC_2 = CRATE_ITEMS.register("triple_crated_" + "INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.INK_SAC_2.get()));
+    public static final RegistryObject<BlockItem> INK_SAC_3 = CRATE_ITEMS.register("quadruple_crated_" + "INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.INK_SAC_3.get()));
+    public static final RegistryObject<BlockItem> INK_SAC_4 = CRATE_ITEMS.register("quintuple_crated_" + "INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.INK_SAC_4.get()));
+    public static final RegistryObject<BlockItem> INK_SAC_5 = CRATE_ITEMS.register("sextuple_crated_" + "INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.INK_SAC_5.get()));
+    public static final RegistryObject<BlockItem> INK_SAC_6 = CRATE_ITEMS.register("septuple_crated_" + "INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.INK_SAC_6.get()));
+    public static final RegistryObject<BlockItem> INK_SAC_7 = CRATE_ITEMS.register("octuple_crated_" + "INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.INK_SAC_7.get()));
+    public static final RegistryObject<BlockItem> INK_SAC_8 = CRATE_ITEMS.register("mega_crated_" + "INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.INK_SAC_8.get()));
+    public static final RegistryObject<BlockItem> INK_SAC_9 = CRATE_ITEMS.register("giga_crated_" + "INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.INK_SAC_9.get()));
+    public static final RegistryObject<BlockItem> GLOW_INK_SAC_0 = CRATE_ITEMS.register("crated_" + "GLOW_INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_INK_SAC_0.get()));
+    public static final RegistryObject<BlockItem> GLOW_INK_SAC_1 = CRATE_ITEMS.register("double_crated_" + "GLOW_INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_INK_SAC_1.get()));
+    public static final RegistryObject<BlockItem> GLOW_INK_SAC_2 = CRATE_ITEMS.register("triple_crated_" + "GLOW_INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_INK_SAC_2.get()));
+    public static final RegistryObject<BlockItem> GLOW_INK_SAC_3 = CRATE_ITEMS.register("quadruple_crated_" + "GLOW_INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_INK_SAC_3.get()));
+    public static final RegistryObject<BlockItem> GLOW_INK_SAC_4 = CRATE_ITEMS.register("quintuple_crated_" + "GLOW_INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_INK_SAC_4.get()));
+    public static final RegistryObject<BlockItem> GLOW_INK_SAC_5 = CRATE_ITEMS.register("sextuple_crated_" + "GLOW_INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_INK_SAC_5.get()));
+    public static final RegistryObject<BlockItem> GLOW_INK_SAC_6 = CRATE_ITEMS.register("septuple_crated_" + "GLOW_INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_INK_SAC_6.get()));
+    public static final RegistryObject<BlockItem> GLOW_INK_SAC_7 = CRATE_ITEMS.register("octuple_crated_" + "GLOW_INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_INK_SAC_7.get()));
+    public static final RegistryObject<BlockItem> GLOW_INK_SAC_8 = CRATE_ITEMS.register("mega_crated_" + "GLOW_INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_INK_SAC_8.get()));
+    public static final RegistryObject<BlockItem> GLOW_INK_SAC_9 = CRATE_ITEMS.register("giga_crated_" + "GLOW_INK_SAC".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_INK_SAC_9.get()));
+    public static final RegistryObject<BlockItem> SCUTE_0 = CRATE_ITEMS.register("crated_" + "SCUTE".toLowerCase(), () -> new CrateItem(CrateBlocks.SCUTE_0.get()));
+    public static final RegistryObject<BlockItem> SCUTE_1 = CRATE_ITEMS.register("double_crated_" + "SCUTE".toLowerCase(), () -> new CrateItem(CrateBlocks.SCUTE_1.get()));
+    public static final RegistryObject<BlockItem> SCUTE_2 = CRATE_ITEMS.register("triple_crated_" + "SCUTE".toLowerCase(), () -> new CrateItem(CrateBlocks.SCUTE_2.get()));
+    public static final RegistryObject<BlockItem> SCUTE_3 = CRATE_ITEMS.register("quadruple_crated_" + "SCUTE".toLowerCase(), () -> new CrateItem(CrateBlocks.SCUTE_3.get()));
+    public static final RegistryObject<BlockItem> SCUTE_4 = CRATE_ITEMS.register("quintuple_crated_" + "SCUTE".toLowerCase(), () -> new CrateItem(CrateBlocks.SCUTE_4.get()));
+    public static final RegistryObject<BlockItem> SCUTE_5 = CRATE_ITEMS.register("sextuple_crated_" + "SCUTE".toLowerCase(), () -> new CrateItem(CrateBlocks.SCUTE_5.get()));
+    public static final RegistryObject<BlockItem> SCUTE_6 = CRATE_ITEMS.register("septuple_crated_" + "SCUTE".toLowerCase(), () -> new CrateItem(CrateBlocks.SCUTE_6.get()));
+    public static final RegistryObject<BlockItem> SCUTE_7 = CRATE_ITEMS.register("octuple_crated_" + "SCUTE".toLowerCase(), () -> new CrateItem(CrateBlocks.SCUTE_7.get()));
+    public static final RegistryObject<BlockItem> SCUTE_8 = CRATE_ITEMS.register("mega_crated_" + "SCUTE".toLowerCase(), () -> new CrateItem(CrateBlocks.SCUTE_8.get()));
+    public static final RegistryObject<BlockItem> SCUTE_9 = CRATE_ITEMS.register("giga_crated_" + "SCUTE".toLowerCase(), () -> new CrateItem(CrateBlocks.SCUTE_9.get()));
+    public static final RegistryObject<BlockItem> CLAY_BALL_0 = CRATE_ITEMS.register("crated_" + "CLAY_BALL".toLowerCase(), () -> new CrateItem(CrateBlocks.CLAY_BALL_0.get()));
+    public static final RegistryObject<BlockItem> CLAY_BALL_1 = CRATE_ITEMS.register("double_crated_" + "CLAY_BALL".toLowerCase(), () -> new CrateItem(CrateBlocks.CLAY_BALL_1.get()));
+    public static final RegistryObject<BlockItem> CLAY_BALL_2 = CRATE_ITEMS.register("triple_crated_" + "CLAY_BALL".toLowerCase(), () -> new CrateItem(CrateBlocks.CLAY_BALL_2.get()));
+    public static final RegistryObject<BlockItem> CLAY_BALL_3 = CRATE_ITEMS.register("quadruple_crated_" + "CLAY_BALL".toLowerCase(), () -> new CrateItem(CrateBlocks.CLAY_BALL_3.get()));
+    public static final RegistryObject<BlockItem> CLAY_BALL_4 = CRATE_ITEMS.register("quintuple_crated_" + "CLAY_BALL".toLowerCase(), () -> new CrateItem(CrateBlocks.CLAY_BALL_4.get()));
+    public static final RegistryObject<BlockItem> CLAY_BALL_5 = CRATE_ITEMS.register("sextuple_crated_" + "CLAY_BALL".toLowerCase(), () -> new CrateItem(CrateBlocks.CLAY_BALL_5.get()));
+    public static final RegistryObject<BlockItem> CLAY_BALL_6 = CRATE_ITEMS.register("septuple_crated_" + "CLAY_BALL".toLowerCase(), () -> new CrateItem(CrateBlocks.CLAY_BALL_6.get()));
+    public static final RegistryObject<BlockItem> CLAY_BALL_7 = CRATE_ITEMS.register("octuple_crated_" + "CLAY_BALL".toLowerCase(), () -> new CrateItem(CrateBlocks.CLAY_BALL_7.get()));
+    public static final RegistryObject<BlockItem> CLAY_BALL_8 = CRATE_ITEMS.register("mega_crated_" + "CLAY_BALL".toLowerCase(), () -> new CrateItem(CrateBlocks.CLAY_BALL_8.get()));
+    public static final RegistryObject<BlockItem> CLAY_BALL_9 = CRATE_ITEMS.register("giga_crated_" + "CLAY_BALL".toLowerCase(), () -> new CrateItem(CrateBlocks.CLAY_BALL_9.get()));
+    public static final RegistryObject<BlockItem> NAUTILUS_SHELL_0 = CRATE_ITEMS.register("crated_" + "NAUTILUS_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.NAUTILUS_SHELL_0.get()));
+    public static final RegistryObject<BlockItem> NAUTILUS_SHELL_1 = CRATE_ITEMS.register("double_crated_" + "NAUTILUS_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.NAUTILUS_SHELL_1.get()));
+    public static final RegistryObject<BlockItem> NAUTILUS_SHELL_2 = CRATE_ITEMS.register("triple_crated_" + "NAUTILUS_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.NAUTILUS_SHELL_2.get()));
+    public static final RegistryObject<BlockItem> NAUTILUS_SHELL_3 = CRATE_ITEMS.register("quadruple_crated_" + "NAUTILUS_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.NAUTILUS_SHELL_3.get()));
+    public static final RegistryObject<BlockItem> NAUTILUS_SHELL_4 = CRATE_ITEMS.register("quintuple_crated_" + "NAUTILUS_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.NAUTILUS_SHELL_4.get()));
+    public static final RegistryObject<BlockItem> NAUTILUS_SHELL_5 = CRATE_ITEMS.register("sextuple_crated_" + "NAUTILUS_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.NAUTILUS_SHELL_5.get()));
+    public static final RegistryObject<BlockItem> NAUTILUS_SHELL_6 = CRATE_ITEMS.register("septuple_crated_" + "NAUTILUS_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.NAUTILUS_SHELL_6.get()));
+    public static final RegistryObject<BlockItem> NAUTILUS_SHELL_7 = CRATE_ITEMS.register("octuple_crated_" + "NAUTILUS_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.NAUTILUS_SHELL_7.get()));
+    public static final RegistryObject<BlockItem> NAUTILUS_SHELL_8 = CRATE_ITEMS.register("mega_crated_" + "NAUTILUS_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.NAUTILUS_SHELL_8.get()));
+    public static final RegistryObject<BlockItem> NAUTILUS_SHELL_9 = CRATE_ITEMS.register("giga_crated_" + "NAUTILUS_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.NAUTILUS_SHELL_9.get()));
+    public static final RegistryObject<BlockItem> FIRE_CHARGE_0 = CRATE_ITEMS.register("crated_" + "FIRE_CHARGE".toLowerCase(), () -> new CrateItem(CrateBlocks.FIRE_CHARGE_0.get()));
+    public static final RegistryObject<BlockItem> FIRE_CHARGE_1 = CRATE_ITEMS.register("double_crated_" + "FIRE_CHARGE".toLowerCase(), () -> new CrateItem(CrateBlocks.FIRE_CHARGE_1.get()));
+    public static final RegistryObject<BlockItem> FIRE_CHARGE_2 = CRATE_ITEMS.register("triple_crated_" + "FIRE_CHARGE".toLowerCase(), () -> new CrateItem(CrateBlocks.FIRE_CHARGE_2.get()));
+    public static final RegistryObject<BlockItem> FIRE_CHARGE_3 = CRATE_ITEMS.register("quadruple_crated_" + "FIRE_CHARGE".toLowerCase(), () -> new CrateItem(CrateBlocks.FIRE_CHARGE_3.get()));
+    public static final RegistryObject<BlockItem> FIRE_CHARGE_4 = CRATE_ITEMS.register("quintuple_crated_" + "FIRE_CHARGE".toLowerCase(), () -> new CrateItem(CrateBlocks.FIRE_CHARGE_4.get()));
+    public static final RegistryObject<BlockItem> FIRE_CHARGE_5 = CRATE_ITEMS.register("sextuple_crated_" + "FIRE_CHARGE".toLowerCase(), () -> new CrateItem(CrateBlocks.FIRE_CHARGE_5.get()));
+    public static final RegistryObject<BlockItem> FIRE_CHARGE_6 = CRATE_ITEMS.register("septuple_crated_" + "FIRE_CHARGE".toLowerCase(), () -> new CrateItem(CrateBlocks.FIRE_CHARGE_6.get()));
+    public static final RegistryObject<BlockItem> FIRE_CHARGE_7 = CRATE_ITEMS.register("octuple_crated_" + "FIRE_CHARGE".toLowerCase(), () -> new CrateItem(CrateBlocks.FIRE_CHARGE_7.get()));
+    public static final RegistryObject<BlockItem> FIRE_CHARGE_8 = CRATE_ITEMS.register("mega_crated_" + "FIRE_CHARGE".toLowerCase(), () -> new CrateItem(CrateBlocks.FIRE_CHARGE_8.get()));
+    public static final RegistryObject<BlockItem> FIRE_CHARGE_9 = CRATE_ITEMS.register("giga_crated_" + "FIRE_CHARGE".toLowerCase(), () -> new CrateItem(CrateBlocks.FIRE_CHARGE_9.get()));
+    public static final RegistryObject<BlockItem> BLAZE_ROD_0 = CRATE_ITEMS.register("crated_" + "BLAZE_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_ROD_0.get()));
+    public static final RegistryObject<BlockItem> BLAZE_ROD_1 = CRATE_ITEMS.register("double_crated_" + "BLAZE_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_ROD_1.get()));
+    public static final RegistryObject<BlockItem> BLAZE_ROD_2 = CRATE_ITEMS.register("triple_crated_" + "BLAZE_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_ROD_2.get()));
+    public static final RegistryObject<BlockItem> BLAZE_ROD_3 = CRATE_ITEMS.register("quadruple_crated_" + "BLAZE_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_ROD_3.get()));
+    public static final RegistryObject<BlockItem> BLAZE_ROD_4 = CRATE_ITEMS.register("quintuple_crated_" + "BLAZE_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_ROD_4.get()));
+    public static final RegistryObject<BlockItem> BLAZE_ROD_5 = CRATE_ITEMS.register("sextuple_crated_" + "BLAZE_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_ROD_5.get()));
+    public static final RegistryObject<BlockItem> BLAZE_ROD_6 = CRATE_ITEMS.register("septuple_crated_" + "BLAZE_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_ROD_6.get()));
+    public static final RegistryObject<BlockItem> BLAZE_ROD_7 = CRATE_ITEMS.register("octuple_crated_" + "BLAZE_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_ROD_7.get()));
+    public static final RegistryObject<BlockItem> BLAZE_ROD_8 = CRATE_ITEMS.register("mega_crated_" + "BLAZE_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_ROD_8.get()));
+    public static final RegistryObject<BlockItem> BLAZE_ROD_9 = CRATE_ITEMS.register("giga_crated_" + "BLAZE_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_ROD_9.get()));
+    public static final RegistryObject<BlockItem> NETHER_STAR_0 = CRATE_ITEMS.register("crated_" + "NETHER_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.NETHER_STAR_0.get()));
+    public static final RegistryObject<BlockItem> NETHER_STAR_1 = CRATE_ITEMS.register("double_crated_" + "NETHER_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.NETHER_STAR_1.get()));
+    public static final RegistryObject<BlockItem> NETHER_STAR_2 = CRATE_ITEMS.register("triple_crated_" + "NETHER_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.NETHER_STAR_2.get()));
+    public static final RegistryObject<BlockItem> NETHER_STAR_3 = CRATE_ITEMS.register("quadruple_crated_" + "NETHER_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.NETHER_STAR_3.get()));
+    public static final RegistryObject<BlockItem> NETHER_STAR_4 = CRATE_ITEMS.register("quintuple_crated_" + "NETHER_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.NETHER_STAR_4.get()));
+    public static final RegistryObject<BlockItem> NETHER_STAR_5 = CRATE_ITEMS.register("sextuple_crated_" + "NETHER_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.NETHER_STAR_5.get()));
+    public static final RegistryObject<BlockItem> NETHER_STAR_6 = CRATE_ITEMS.register("septuple_crated_" + "NETHER_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.NETHER_STAR_6.get()));
+    public static final RegistryObject<BlockItem> NETHER_STAR_7 = CRATE_ITEMS.register("octuple_crated_" + "NETHER_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.NETHER_STAR_7.get()));
+    public static final RegistryObject<BlockItem> NETHER_STAR_8 = CRATE_ITEMS.register("mega_crated_" + "NETHER_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.NETHER_STAR_8.get()));
+    public static final RegistryObject<BlockItem> NETHER_STAR_9 = CRATE_ITEMS.register("giga_crated_" + "NETHER_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.NETHER_STAR_9.get()));
+    public static final RegistryObject<BlockItem> ENDER_PEARL_0 = CRATE_ITEMS.register("crated_" + "ENDER_PEARL".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_PEARL_0.get()));
+    public static final RegistryObject<BlockItem> ENDER_PEARL_1 = CRATE_ITEMS.register("double_crated_" + "ENDER_PEARL".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_PEARL_1.get()));
+    public static final RegistryObject<BlockItem> ENDER_PEARL_2 = CRATE_ITEMS.register("triple_crated_" + "ENDER_PEARL".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_PEARL_2.get()));
+    public static final RegistryObject<BlockItem> ENDER_PEARL_3 = CRATE_ITEMS.register("quadruple_crated_" + "ENDER_PEARL".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_PEARL_3.get()));
+    public static final RegistryObject<BlockItem> ENDER_PEARL_4 = CRATE_ITEMS.register("quintuple_crated_" + "ENDER_PEARL".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_PEARL_4.get()));
+    public static final RegistryObject<BlockItem> ENDER_PEARL_5 = CRATE_ITEMS.register("sextuple_crated_" + "ENDER_PEARL".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_PEARL_5.get()));
+    public static final RegistryObject<BlockItem> ENDER_PEARL_6 = CRATE_ITEMS.register("septuple_crated_" + "ENDER_PEARL".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_PEARL_6.get()));
+    public static final RegistryObject<BlockItem> ENDER_PEARL_7 = CRATE_ITEMS.register("octuple_crated_" + "ENDER_PEARL".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_PEARL_7.get()));
+    public static final RegistryObject<BlockItem> ENDER_PEARL_8 = CRATE_ITEMS.register("mega_crated_" + "ENDER_PEARL".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_PEARL_8.get()));
+    public static final RegistryObject<BlockItem> ENDER_PEARL_9 = CRATE_ITEMS.register("giga_crated_" + "ENDER_PEARL".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_PEARL_9.get()));
+    public static final RegistryObject<BlockItem> ENDER_EYE_0 = CRATE_ITEMS.register("crated_" + "ENDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_EYE_0.get()));
+    public static final RegistryObject<BlockItem> ENDER_EYE_1 = CRATE_ITEMS.register("double_crated_" + "ENDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_EYE_1.get()));
+    public static final RegistryObject<BlockItem> ENDER_EYE_2 = CRATE_ITEMS.register("triple_crated_" + "ENDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_EYE_2.get()));
+    public static final RegistryObject<BlockItem> ENDER_EYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "ENDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_EYE_3.get()));
+    public static final RegistryObject<BlockItem> ENDER_EYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "ENDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_EYE_4.get()));
+    public static final RegistryObject<BlockItem> ENDER_EYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "ENDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_EYE_5.get()));
+    public static final RegistryObject<BlockItem> ENDER_EYE_6 = CRATE_ITEMS.register("septuple_crated_" + "ENDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_EYE_6.get()));
+    public static final RegistryObject<BlockItem> ENDER_EYE_7 = CRATE_ITEMS.register("octuple_crated_" + "ENDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_EYE_7.get()));
+    public static final RegistryObject<BlockItem> ENDER_EYE_8 = CRATE_ITEMS.register("mega_crated_" + "ENDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_EYE_8.get()));
+    public static final RegistryObject<BlockItem> ENDER_EYE_9 = CRATE_ITEMS.register("giga_crated_" + "ENDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ENDER_EYE_9.get()));
+    public static final RegistryObject<BlockItem> SHULKER_SHELL_0 = CRATE_ITEMS.register("crated_" + "SHULKER_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.SHULKER_SHELL_0.get()));
+    public static final RegistryObject<BlockItem> SHULKER_SHELL_1 = CRATE_ITEMS.register("double_crated_" + "SHULKER_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.SHULKER_SHELL_1.get()));
+    public static final RegistryObject<BlockItem> SHULKER_SHELL_2 = CRATE_ITEMS.register("triple_crated_" + "SHULKER_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.SHULKER_SHELL_2.get()));
+    public static final RegistryObject<BlockItem> SHULKER_SHELL_3 = CRATE_ITEMS.register("quadruple_crated_" + "SHULKER_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.SHULKER_SHELL_3.get()));
+    public static final RegistryObject<BlockItem> SHULKER_SHELL_4 = CRATE_ITEMS.register("quintuple_crated_" + "SHULKER_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.SHULKER_SHELL_4.get()));
+    public static final RegistryObject<BlockItem> SHULKER_SHELL_5 = CRATE_ITEMS.register("sextuple_crated_" + "SHULKER_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.SHULKER_SHELL_5.get()));
+    public static final RegistryObject<BlockItem> SHULKER_SHELL_6 = CRATE_ITEMS.register("septuple_crated_" + "SHULKER_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.SHULKER_SHELL_6.get()));
+    public static final RegistryObject<BlockItem> SHULKER_SHELL_7 = CRATE_ITEMS.register("octuple_crated_" + "SHULKER_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.SHULKER_SHELL_7.get()));
+    public static final RegistryObject<BlockItem> SHULKER_SHELL_8 = CRATE_ITEMS.register("mega_crated_" + "SHULKER_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.SHULKER_SHELL_8.get()));
+    public static final RegistryObject<BlockItem> SHULKER_SHELL_9 = CRATE_ITEMS.register("giga_crated_" + "SHULKER_SHELL".toLowerCase(), () -> new CrateItem(CrateBlocks.SHULKER_SHELL_9.get()));
+    public static final RegistryObject<BlockItem> WHITE_DYE_0 = CRATE_ITEMS.register("crated_" + "WHITE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_DYE_0.get()));
+    public static final RegistryObject<BlockItem> WHITE_DYE_1 = CRATE_ITEMS.register("double_crated_" + "WHITE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_DYE_1.get()));
+    public static final RegistryObject<BlockItem> WHITE_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "WHITE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_DYE_2.get()));
+    public static final RegistryObject<BlockItem> WHITE_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "WHITE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_DYE_3.get()));
+    public static final RegistryObject<BlockItem> WHITE_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "WHITE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_DYE_4.get()));
+    public static final RegistryObject<BlockItem> WHITE_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "WHITE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_DYE_5.get()));
+    public static final RegistryObject<BlockItem> WHITE_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "WHITE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_DYE_6.get()));
+    public static final RegistryObject<BlockItem> WHITE_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "WHITE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_DYE_7.get()));
+    public static final RegistryObject<BlockItem> WHITE_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "WHITE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_DYE_8.get()));
+    public static final RegistryObject<BlockItem> WHITE_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "WHITE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_DYE_9.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_DYE_0 = CRATE_ITEMS.register("crated_" + "LIGHT_GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_DYE_0.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_DYE_1 = CRATE_ITEMS.register("double_crated_" + "LIGHT_GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_DYE_1.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "LIGHT_GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_DYE_2.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "LIGHT_GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_DYE_3.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "LIGHT_GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_DYE_4.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "LIGHT_GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_DYE_5.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "LIGHT_GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_DYE_6.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "LIGHT_GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_DYE_7.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "LIGHT_GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_DYE_8.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "LIGHT_GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_DYE_9.get()));
+    public static final RegistryObject<BlockItem> GRAY_DYE_0 = CRATE_ITEMS.register("crated_" + "GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_DYE_0.get()));
+    public static final RegistryObject<BlockItem> GRAY_DYE_1 = CRATE_ITEMS.register("double_crated_" + "GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_DYE_1.get()));
+    public static final RegistryObject<BlockItem> GRAY_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_DYE_2.get()));
+    public static final RegistryObject<BlockItem> GRAY_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_DYE_3.get()));
+    public static final RegistryObject<BlockItem> GRAY_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_DYE_4.get()));
+    public static final RegistryObject<BlockItem> GRAY_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_DYE_5.get()));
+    public static final RegistryObject<BlockItem> GRAY_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_DYE_6.get()));
+    public static final RegistryObject<BlockItem> GRAY_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_DYE_7.get()));
+    public static final RegistryObject<BlockItem> GRAY_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_DYE_8.get()));
+    public static final RegistryObject<BlockItem> GRAY_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "GRAY_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_DYE_9.get()));
+    public static final RegistryObject<BlockItem> BLACK_DYE_0 = CRATE_ITEMS.register("crated_" + "BLACK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_DYE_0.get()));
+    public static final RegistryObject<BlockItem> BLACK_DYE_1 = CRATE_ITEMS.register("double_crated_" + "BLACK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_DYE_1.get()));
+    public static final RegistryObject<BlockItem> BLACK_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "BLACK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_DYE_2.get()));
+    public static final RegistryObject<BlockItem> BLACK_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "BLACK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_DYE_3.get()));
+    public static final RegistryObject<BlockItem> BLACK_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "BLACK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_DYE_4.get()));
+    public static final RegistryObject<BlockItem> BLACK_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "BLACK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_DYE_5.get()));
+    public static final RegistryObject<BlockItem> BLACK_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "BLACK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_DYE_6.get()));
+    public static final RegistryObject<BlockItem> BLACK_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "BLACK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_DYE_7.get()));
+    public static final RegistryObject<BlockItem> BLACK_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "BLACK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_DYE_8.get()));
+    public static final RegistryObject<BlockItem> BLACK_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "BLACK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_DYE_9.get()));
+    public static final RegistryObject<BlockItem> BROWN_DYE_0 = CRATE_ITEMS.register("crated_" + "BROWN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_DYE_0.get()));
+    public static final RegistryObject<BlockItem> BROWN_DYE_1 = CRATE_ITEMS.register("double_crated_" + "BROWN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_DYE_1.get()));
+    public static final RegistryObject<BlockItem> BROWN_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "BROWN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_DYE_2.get()));
+    public static final RegistryObject<BlockItem> BROWN_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "BROWN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_DYE_3.get()));
+    public static final RegistryObject<BlockItem> BROWN_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "BROWN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_DYE_4.get()));
+    public static final RegistryObject<BlockItem> BROWN_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "BROWN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_DYE_5.get()));
+    public static final RegistryObject<BlockItem> BROWN_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "BROWN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_DYE_6.get()));
+    public static final RegistryObject<BlockItem> BROWN_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "BROWN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_DYE_7.get()));
+    public static final RegistryObject<BlockItem> BROWN_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "BROWN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_DYE_8.get()));
+    public static final RegistryObject<BlockItem> BROWN_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "BROWN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_DYE_9.get()));
+    public static final RegistryObject<BlockItem> RED_DYE_0 = CRATE_ITEMS.register("crated_" + "RED_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_DYE_0.get()));
+    public static final RegistryObject<BlockItem> RED_DYE_1 = CRATE_ITEMS.register("double_crated_" + "RED_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_DYE_1.get()));
+    public static final RegistryObject<BlockItem> RED_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "RED_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_DYE_2.get()));
+    public static final RegistryObject<BlockItem> RED_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "RED_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_DYE_3.get()));
+    public static final RegistryObject<BlockItem> RED_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "RED_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_DYE_4.get()));
+    public static final RegistryObject<BlockItem> RED_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "RED_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_DYE_5.get()));
+    public static final RegistryObject<BlockItem> RED_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "RED_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_DYE_6.get()));
+    public static final RegistryObject<BlockItem> RED_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "RED_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_DYE_7.get()));
+    public static final RegistryObject<BlockItem> RED_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "RED_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_DYE_8.get()));
+    public static final RegistryObject<BlockItem> RED_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "RED_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_DYE_9.get()));
+    public static final RegistryObject<BlockItem> ORANGE_DYE_0 = CRATE_ITEMS.register("crated_" + "ORANGE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_DYE_0.get()));
+    public static final RegistryObject<BlockItem> ORANGE_DYE_1 = CRATE_ITEMS.register("double_crated_" + "ORANGE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_DYE_1.get()));
+    public static final RegistryObject<BlockItem> ORANGE_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "ORANGE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_DYE_2.get()));
+    public static final RegistryObject<BlockItem> ORANGE_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "ORANGE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_DYE_3.get()));
+    public static final RegistryObject<BlockItem> ORANGE_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "ORANGE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_DYE_4.get()));
+    public static final RegistryObject<BlockItem> ORANGE_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "ORANGE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_DYE_5.get()));
+    public static final RegistryObject<BlockItem> ORANGE_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "ORANGE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_DYE_6.get()));
+    public static final RegistryObject<BlockItem> ORANGE_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "ORANGE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_DYE_7.get()));
+    public static final RegistryObject<BlockItem> ORANGE_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "ORANGE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_DYE_8.get()));
+    public static final RegistryObject<BlockItem> ORANGE_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "ORANGE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_DYE_9.get()));
+    public static final RegistryObject<BlockItem> YELLOW_DYE_0 = CRATE_ITEMS.register("crated_" + "YELLOW_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_DYE_0.get()));
+    public static final RegistryObject<BlockItem> YELLOW_DYE_1 = CRATE_ITEMS.register("double_crated_" + "YELLOW_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_DYE_1.get()));
+    public static final RegistryObject<BlockItem> YELLOW_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "YELLOW_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_DYE_2.get()));
+    public static final RegistryObject<BlockItem> YELLOW_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "YELLOW_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_DYE_3.get()));
+    public static final RegistryObject<BlockItem> YELLOW_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "YELLOW_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_DYE_4.get()));
+    public static final RegistryObject<BlockItem> YELLOW_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "YELLOW_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_DYE_5.get()));
+    public static final RegistryObject<BlockItem> YELLOW_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "YELLOW_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_DYE_6.get()));
+    public static final RegistryObject<BlockItem> YELLOW_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "YELLOW_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_DYE_7.get()));
+    public static final RegistryObject<BlockItem> YELLOW_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "YELLOW_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_DYE_8.get()));
+    public static final RegistryObject<BlockItem> YELLOW_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "YELLOW_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_DYE_9.get()));
+    public static final RegistryObject<BlockItem> LIME_DYE_0 = CRATE_ITEMS.register("crated_" + "LIME_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_DYE_0.get()));
+    public static final RegistryObject<BlockItem> LIME_DYE_1 = CRATE_ITEMS.register("double_crated_" + "LIME_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_DYE_1.get()));
+    public static final RegistryObject<BlockItem> LIME_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "LIME_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_DYE_2.get()));
+    public static final RegistryObject<BlockItem> LIME_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "LIME_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_DYE_3.get()));
+    public static final RegistryObject<BlockItem> LIME_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "LIME_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_DYE_4.get()));
+    public static final RegistryObject<BlockItem> LIME_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "LIME_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_DYE_5.get()));
+    public static final RegistryObject<BlockItem> LIME_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "LIME_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_DYE_6.get()));
+    public static final RegistryObject<BlockItem> LIME_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "LIME_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_DYE_7.get()));
+    public static final RegistryObject<BlockItem> LIME_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "LIME_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_DYE_8.get()));
+    public static final RegistryObject<BlockItem> LIME_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "LIME_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_DYE_9.get()));
+    public static final RegistryObject<BlockItem> GREEN_DYE_0 = CRATE_ITEMS.register("crated_" + "GREEN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_DYE_0.get()));
+    public static final RegistryObject<BlockItem> GREEN_DYE_1 = CRATE_ITEMS.register("double_crated_" + "GREEN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_DYE_1.get()));
+    public static final RegistryObject<BlockItem> GREEN_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "GREEN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_DYE_2.get()));
+    public static final RegistryObject<BlockItem> GREEN_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "GREEN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_DYE_3.get()));
+    public static final RegistryObject<BlockItem> GREEN_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "GREEN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_DYE_4.get()));
+    public static final RegistryObject<BlockItem> GREEN_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "GREEN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_DYE_5.get()));
+    public static final RegistryObject<BlockItem> GREEN_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "GREEN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_DYE_6.get()));
+    public static final RegistryObject<BlockItem> GREEN_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "GREEN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_DYE_7.get()));
+    public static final RegistryObject<BlockItem> GREEN_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "GREEN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_DYE_8.get()));
+    public static final RegistryObject<BlockItem> GREEN_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "GREEN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_DYE_9.get()));
+    public static final RegistryObject<BlockItem> CYAN_DYE_0 = CRATE_ITEMS.register("crated_" + "CYAN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_DYE_0.get()));
+    public static final RegistryObject<BlockItem> CYAN_DYE_1 = CRATE_ITEMS.register("double_crated_" + "CYAN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_DYE_1.get()));
+    public static final RegistryObject<BlockItem> CYAN_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "CYAN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_DYE_2.get()));
+    public static final RegistryObject<BlockItem> CYAN_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "CYAN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_DYE_3.get()));
+    public static final RegistryObject<BlockItem> CYAN_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "CYAN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_DYE_4.get()));
+    public static final RegistryObject<BlockItem> CYAN_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "CYAN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_DYE_5.get()));
+    public static final RegistryObject<BlockItem> CYAN_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "CYAN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_DYE_6.get()));
+    public static final RegistryObject<BlockItem> CYAN_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "CYAN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_DYE_7.get()));
+    public static final RegistryObject<BlockItem> CYAN_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "CYAN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_DYE_8.get()));
+    public static final RegistryObject<BlockItem> CYAN_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "CYAN_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_DYE_9.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_DYE_0 = CRATE_ITEMS.register("crated_" + "LIGHT_BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_DYE_0.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_DYE_1 = CRATE_ITEMS.register("double_crated_" + "LIGHT_BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_DYE_1.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "LIGHT_BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_DYE_2.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "LIGHT_BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_DYE_3.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "LIGHT_BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_DYE_4.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "LIGHT_BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_DYE_5.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "LIGHT_BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_DYE_6.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "LIGHT_BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_DYE_7.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "LIGHT_BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_DYE_8.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "LIGHT_BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_DYE_9.get()));
+    public static final RegistryObject<BlockItem> BLUE_DYE_0 = CRATE_ITEMS.register("crated_" + "BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_DYE_0.get()));
+    public static final RegistryObject<BlockItem> BLUE_DYE_1 = CRATE_ITEMS.register("double_crated_" + "BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_DYE_1.get()));
+    public static final RegistryObject<BlockItem> BLUE_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_DYE_2.get()));
+    public static final RegistryObject<BlockItem> BLUE_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_DYE_3.get()));
+    public static final RegistryObject<BlockItem> BLUE_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_DYE_4.get()));
+    public static final RegistryObject<BlockItem> BLUE_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_DYE_5.get()));
+    public static final RegistryObject<BlockItem> BLUE_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_DYE_6.get()));
+    public static final RegistryObject<BlockItem> BLUE_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_DYE_7.get()));
+    public static final RegistryObject<BlockItem> BLUE_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_DYE_8.get()));
+    public static final RegistryObject<BlockItem> BLUE_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "BLUE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_DYE_9.get()));
+    public static final RegistryObject<BlockItem> PURPLE_DYE_0 = CRATE_ITEMS.register("crated_" + "PURPLE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_DYE_0.get()));
+    public static final RegistryObject<BlockItem> PURPLE_DYE_1 = CRATE_ITEMS.register("double_crated_" + "PURPLE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_DYE_1.get()));
+    public static final RegistryObject<BlockItem> PURPLE_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "PURPLE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_DYE_2.get()));
+    public static final RegistryObject<BlockItem> PURPLE_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "PURPLE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_DYE_3.get()));
+    public static final RegistryObject<BlockItem> PURPLE_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "PURPLE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_DYE_4.get()));
+    public static final RegistryObject<BlockItem> PURPLE_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "PURPLE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_DYE_5.get()));
+    public static final RegistryObject<BlockItem> PURPLE_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "PURPLE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_DYE_6.get()));
+    public static final RegistryObject<BlockItem> PURPLE_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "PURPLE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_DYE_7.get()));
+    public static final RegistryObject<BlockItem> PURPLE_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "PURPLE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_DYE_8.get()));
+    public static final RegistryObject<BlockItem> PURPLE_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "PURPLE_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_DYE_9.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_DYE_0 = CRATE_ITEMS.register("crated_" + "MAGENTA_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_DYE_0.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_DYE_1 = CRATE_ITEMS.register("double_crated_" + "MAGENTA_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_DYE_1.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "MAGENTA_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_DYE_2.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "MAGENTA_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_DYE_3.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "MAGENTA_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_DYE_4.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "MAGENTA_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_DYE_5.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "MAGENTA_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_DYE_6.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "MAGENTA_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_DYE_7.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "MAGENTA_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_DYE_8.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "MAGENTA_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_DYE_9.get()));
+    public static final RegistryObject<BlockItem> PINK_DYE_0 = CRATE_ITEMS.register("crated_" + "PINK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_DYE_0.get()));
+    public static final RegistryObject<BlockItem> PINK_DYE_1 = CRATE_ITEMS.register("double_crated_" + "PINK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_DYE_1.get()));
+    public static final RegistryObject<BlockItem> PINK_DYE_2 = CRATE_ITEMS.register("triple_crated_" + "PINK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_DYE_2.get()));
+    public static final RegistryObject<BlockItem> PINK_DYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "PINK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_DYE_3.get()));
+    public static final RegistryObject<BlockItem> PINK_DYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "PINK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_DYE_4.get()));
+    public static final RegistryObject<BlockItem> PINK_DYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "PINK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_DYE_5.get()));
+    public static final RegistryObject<BlockItem> PINK_DYE_6 = CRATE_ITEMS.register("septuple_crated_" + "PINK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_DYE_6.get()));
+    public static final RegistryObject<BlockItem> PINK_DYE_7 = CRATE_ITEMS.register("octuple_crated_" + "PINK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_DYE_7.get()));
+    public static final RegistryObject<BlockItem> PINK_DYE_8 = CRATE_ITEMS.register("mega_crated_" + "PINK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_DYE_8.get()));
+    public static final RegistryObject<BlockItem> PINK_DYE_9 = CRATE_ITEMS.register("giga_crated_" + "PINK_DYE".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_DYE_9.get()));
+    public static final RegistryObject<BlockItem> PAPER_0 = CRATE_ITEMS.register("crated_" + "PAPER".toLowerCase(), () -> new CrateItem(CrateBlocks.PAPER_0.get()));
+    public static final RegistryObject<BlockItem> PAPER_1 = CRATE_ITEMS.register("double_crated_" + "PAPER".toLowerCase(), () -> new CrateItem(CrateBlocks.PAPER_1.get()));
+    public static final RegistryObject<BlockItem> PAPER_2 = CRATE_ITEMS.register("triple_crated_" + "PAPER".toLowerCase(), () -> new CrateItem(CrateBlocks.PAPER_2.get()));
+    public static final RegistryObject<BlockItem> PAPER_3 = CRATE_ITEMS.register("quadruple_crated_" + "PAPER".toLowerCase(), () -> new CrateItem(CrateBlocks.PAPER_3.get()));
+    public static final RegistryObject<BlockItem> PAPER_4 = CRATE_ITEMS.register("quintuple_crated_" + "PAPER".toLowerCase(), () -> new CrateItem(CrateBlocks.PAPER_4.get()));
+    public static final RegistryObject<BlockItem> PAPER_5 = CRATE_ITEMS.register("sextuple_crated_" + "PAPER".toLowerCase(), () -> new CrateItem(CrateBlocks.PAPER_5.get()));
+    public static final RegistryObject<BlockItem> PAPER_6 = CRATE_ITEMS.register("septuple_crated_" + "PAPER".toLowerCase(), () -> new CrateItem(CrateBlocks.PAPER_6.get()));
+    public static final RegistryObject<BlockItem> PAPER_7 = CRATE_ITEMS.register("octuple_crated_" + "PAPER".toLowerCase(), () -> new CrateItem(CrateBlocks.PAPER_7.get()));
+    public static final RegistryObject<BlockItem> PAPER_8 = CRATE_ITEMS.register("mega_crated_" + "PAPER".toLowerCase(), () -> new CrateItem(CrateBlocks.PAPER_8.get()));
+    public static final RegistryObject<BlockItem> PAPER_9 = CRATE_ITEMS.register("giga_crated_" + "PAPER".toLowerCase(), () -> new CrateItem(CrateBlocks.PAPER_9.get()));
+    public static final RegistryObject<BlockItem> BOOK_0 = CRATE_ITEMS.register("crated_" + "BOOK".toLowerCase(), () -> new CrateItem(CrateBlocks.BOOK_0.get()));
+    public static final RegistryObject<BlockItem> BOOK_1 = CRATE_ITEMS.register("double_crated_" + "BOOK".toLowerCase(), () -> new CrateItem(CrateBlocks.BOOK_1.get()));
+    public static final RegistryObject<BlockItem> BOOK_2 = CRATE_ITEMS.register("triple_crated_" + "BOOK".toLowerCase(), () -> new CrateItem(CrateBlocks.BOOK_2.get()));
+    public static final RegistryObject<BlockItem> BOOK_3 = CRATE_ITEMS.register("quadruple_crated_" + "BOOK".toLowerCase(), () -> new CrateItem(CrateBlocks.BOOK_3.get()));
+    public static final RegistryObject<BlockItem> BOOK_4 = CRATE_ITEMS.register("quintuple_crated_" + "BOOK".toLowerCase(), () -> new CrateItem(CrateBlocks.BOOK_4.get()));
+    public static final RegistryObject<BlockItem> BOOK_5 = CRATE_ITEMS.register("sextuple_crated_" + "BOOK".toLowerCase(), () -> new CrateItem(CrateBlocks.BOOK_5.get()));
+    public static final RegistryObject<BlockItem> BOOK_6 = CRATE_ITEMS.register("septuple_crated_" + "BOOK".toLowerCase(), () -> new CrateItem(CrateBlocks.BOOK_6.get()));
+    public static final RegistryObject<BlockItem> BOOK_7 = CRATE_ITEMS.register("octuple_crated_" + "BOOK".toLowerCase(), () -> new CrateItem(CrateBlocks.BOOK_7.get()));
+    public static final RegistryObject<BlockItem> BOOK_8 = CRATE_ITEMS.register("mega_crated_" + "BOOK".toLowerCase(), () -> new CrateItem(CrateBlocks.BOOK_8.get()));
+    public static final RegistryObject<BlockItem> BOOK_9 = CRATE_ITEMS.register("giga_crated_" + "BOOK".toLowerCase(), () -> new CrateItem(CrateBlocks.BOOK_9.get()));
+    public static final RegistryObject<BlockItem> FIREWORK_STAR_0 = CRATE_ITEMS.register("crated_" + "FIREWORK_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.FIREWORK_STAR_0.get()));
+    public static final RegistryObject<BlockItem> FIREWORK_STAR_1 = CRATE_ITEMS.register("double_crated_" + "FIREWORK_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.FIREWORK_STAR_1.get()));
+    public static final RegistryObject<BlockItem> FIREWORK_STAR_2 = CRATE_ITEMS.register("triple_crated_" + "FIREWORK_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.FIREWORK_STAR_2.get()));
+    public static final RegistryObject<BlockItem> FIREWORK_STAR_3 = CRATE_ITEMS.register("quadruple_crated_" + "FIREWORK_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.FIREWORK_STAR_3.get()));
+    public static final RegistryObject<BlockItem> FIREWORK_STAR_4 = CRATE_ITEMS.register("quintuple_crated_" + "FIREWORK_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.FIREWORK_STAR_4.get()));
+    public static final RegistryObject<BlockItem> FIREWORK_STAR_5 = CRATE_ITEMS.register("sextuple_crated_" + "FIREWORK_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.FIREWORK_STAR_5.get()));
+    public static final RegistryObject<BlockItem> FIREWORK_STAR_6 = CRATE_ITEMS.register("septuple_crated_" + "FIREWORK_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.FIREWORK_STAR_6.get()));
+    public static final RegistryObject<BlockItem> FIREWORK_STAR_7 = CRATE_ITEMS.register("octuple_crated_" + "FIREWORK_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.FIREWORK_STAR_7.get()));
+    public static final RegistryObject<BlockItem> FIREWORK_STAR_8 = CRATE_ITEMS.register("mega_crated_" + "FIREWORK_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.FIREWORK_STAR_8.get()));
+    public static final RegistryObject<BlockItem> FIREWORK_STAR_9 = CRATE_ITEMS.register("giga_crated_" + "FIREWORK_STAR".toLowerCase(), () -> new CrateItem(CrateBlocks.FIREWORK_STAR_9.get()));
+    public static final RegistryObject<BlockItem> GLASS_BOTTLE_0 = CRATE_ITEMS.register("crated_" + "GLASS_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLASS_BOTTLE_0.get()));
+    public static final RegistryObject<BlockItem> GLASS_BOTTLE_1 = CRATE_ITEMS.register("double_crated_" + "GLASS_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLASS_BOTTLE_1.get()));
+    public static final RegistryObject<BlockItem> GLASS_BOTTLE_2 = CRATE_ITEMS.register("triple_crated_" + "GLASS_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLASS_BOTTLE_2.get()));
+    public static final RegistryObject<BlockItem> GLASS_BOTTLE_3 = CRATE_ITEMS.register("quadruple_crated_" + "GLASS_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLASS_BOTTLE_3.get()));
+    public static final RegistryObject<BlockItem> GLASS_BOTTLE_4 = CRATE_ITEMS.register("quintuple_crated_" + "GLASS_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLASS_BOTTLE_4.get()));
+    public static final RegistryObject<BlockItem> GLASS_BOTTLE_5 = CRATE_ITEMS.register("sextuple_crated_" + "GLASS_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLASS_BOTTLE_5.get()));
+    public static final RegistryObject<BlockItem> GLASS_BOTTLE_6 = CRATE_ITEMS.register("septuple_crated_" + "GLASS_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLASS_BOTTLE_6.get()));
+    public static final RegistryObject<BlockItem> GLASS_BOTTLE_7 = CRATE_ITEMS.register("octuple_crated_" + "GLASS_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLASS_BOTTLE_7.get()));
+    public static final RegistryObject<BlockItem> GLASS_BOTTLE_8 = CRATE_ITEMS.register("mega_crated_" + "GLASS_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLASS_BOTTLE_8.get()));
+    public static final RegistryObject<BlockItem> GLASS_BOTTLE_9 = CRATE_ITEMS.register("giga_crated_" + "GLASS_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLASS_BOTTLE_9.get()));
+    public static final RegistryObject<BlockItem> GLOWSTONE_DUST_0 = CRATE_ITEMS.register("crated_" + "GLOWSTONE_DUST".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOWSTONE_DUST_0.get()));
+    public static final RegistryObject<BlockItem> GLOWSTONE_DUST_1 = CRATE_ITEMS.register("double_crated_" + "GLOWSTONE_DUST".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOWSTONE_DUST_1.get()));
+    public static final RegistryObject<BlockItem> GLOWSTONE_DUST_2 = CRATE_ITEMS.register("triple_crated_" + "GLOWSTONE_DUST".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOWSTONE_DUST_2.get()));
+    public static final RegistryObject<BlockItem> GLOWSTONE_DUST_3 = CRATE_ITEMS.register("quadruple_crated_" + "GLOWSTONE_DUST".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOWSTONE_DUST_3.get()));
+    public static final RegistryObject<BlockItem> GLOWSTONE_DUST_4 = CRATE_ITEMS.register("quintuple_crated_" + "GLOWSTONE_DUST".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOWSTONE_DUST_4.get()));
+    public static final RegistryObject<BlockItem> GLOWSTONE_DUST_5 = CRATE_ITEMS.register("sextuple_crated_" + "GLOWSTONE_DUST".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOWSTONE_DUST_5.get()));
+    public static final RegistryObject<BlockItem> GLOWSTONE_DUST_6 = CRATE_ITEMS.register("septuple_crated_" + "GLOWSTONE_DUST".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOWSTONE_DUST_6.get()));
+    public static final RegistryObject<BlockItem> GLOWSTONE_DUST_7 = CRATE_ITEMS.register("octuple_crated_" + "GLOWSTONE_DUST".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOWSTONE_DUST_7.get()));
+    public static final RegistryObject<BlockItem> GLOWSTONE_DUST_8 = CRATE_ITEMS.register("mega_crated_" + "GLOWSTONE_DUST".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOWSTONE_DUST_8.get()));
+    public static final RegistryObject<BlockItem> GLOWSTONE_DUST_9 = CRATE_ITEMS.register("giga_crated_" + "GLOWSTONE_DUST".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOWSTONE_DUST_9.get()));
+    public static final RegistryObject<BlockItem> GUNPOWDER_0 = CRATE_ITEMS.register("crated_" + "GUNPOWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.GUNPOWDER_0.get()));
+    public static final RegistryObject<BlockItem> GUNPOWDER_1 = CRATE_ITEMS.register("double_crated_" + "GUNPOWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.GUNPOWDER_1.get()));
+    public static final RegistryObject<BlockItem> GUNPOWDER_2 = CRATE_ITEMS.register("triple_crated_" + "GUNPOWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.GUNPOWDER_2.get()));
+    public static final RegistryObject<BlockItem> GUNPOWDER_3 = CRATE_ITEMS.register("quadruple_crated_" + "GUNPOWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.GUNPOWDER_3.get()));
+    public static final RegistryObject<BlockItem> GUNPOWDER_4 = CRATE_ITEMS.register("quintuple_crated_" + "GUNPOWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.GUNPOWDER_4.get()));
+    public static final RegistryObject<BlockItem> GUNPOWDER_5 = CRATE_ITEMS.register("sextuple_crated_" + "GUNPOWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.GUNPOWDER_5.get()));
+    public static final RegistryObject<BlockItem> GUNPOWDER_6 = CRATE_ITEMS.register("septuple_crated_" + "GUNPOWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.GUNPOWDER_6.get()));
+    public static final RegistryObject<BlockItem> GUNPOWDER_7 = CRATE_ITEMS.register("octuple_crated_" + "GUNPOWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.GUNPOWDER_7.get()));
+    public static final RegistryObject<BlockItem> GUNPOWDER_8 = CRATE_ITEMS.register("mega_crated_" + "GUNPOWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.GUNPOWDER_8.get()));
+    public static final RegistryObject<BlockItem> GUNPOWDER_9 = CRATE_ITEMS.register("giga_crated_" + "GUNPOWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.GUNPOWDER_9.get()));
+    public static final RegistryObject<BlockItem> DRAGON_BREATH_0 = CRATE_ITEMS.register("crated_" + "DRAGON_BREATH".toLowerCase(), () -> new CrateItem(CrateBlocks.DRAGON_BREATH_0.get()));
+    public static final RegistryObject<BlockItem> DRAGON_BREATH_1 = CRATE_ITEMS.register("double_crated_" + "DRAGON_BREATH".toLowerCase(), () -> new CrateItem(CrateBlocks.DRAGON_BREATH_1.get()));
+    public static final RegistryObject<BlockItem> DRAGON_BREATH_2 = CRATE_ITEMS.register("triple_crated_" + "DRAGON_BREATH".toLowerCase(), () -> new CrateItem(CrateBlocks.DRAGON_BREATH_2.get()));
+    public static final RegistryObject<BlockItem> DRAGON_BREATH_3 = CRATE_ITEMS.register("quadruple_crated_" + "DRAGON_BREATH".toLowerCase(), () -> new CrateItem(CrateBlocks.DRAGON_BREATH_3.get()));
+    public static final RegistryObject<BlockItem> DRAGON_BREATH_4 = CRATE_ITEMS.register("quintuple_crated_" + "DRAGON_BREATH".toLowerCase(), () -> new CrateItem(CrateBlocks.DRAGON_BREATH_4.get()));
+    public static final RegistryObject<BlockItem> DRAGON_BREATH_5 = CRATE_ITEMS.register("sextuple_crated_" + "DRAGON_BREATH".toLowerCase(), () -> new CrateItem(CrateBlocks.DRAGON_BREATH_5.get()));
+    public static final RegistryObject<BlockItem> DRAGON_BREATH_6 = CRATE_ITEMS.register("septuple_crated_" + "DRAGON_BREATH".toLowerCase(), () -> new CrateItem(CrateBlocks.DRAGON_BREATH_6.get()));
+    public static final RegistryObject<BlockItem> DRAGON_BREATH_7 = CRATE_ITEMS.register("octuple_crated_" + "DRAGON_BREATH".toLowerCase(), () -> new CrateItem(CrateBlocks.DRAGON_BREATH_7.get()));
+    public static final RegistryObject<BlockItem> DRAGON_BREATH_8 = CRATE_ITEMS.register("mega_crated_" + "DRAGON_BREATH".toLowerCase(), () -> new CrateItem(CrateBlocks.DRAGON_BREATH_8.get()));
+    public static final RegistryObject<BlockItem> DRAGON_BREATH_9 = CRATE_ITEMS.register("giga_crated_" + "DRAGON_BREATH".toLowerCase(), () -> new CrateItem(CrateBlocks.DRAGON_BREATH_9.get()));
+    public static final RegistryObject<BlockItem> FERMENTED_SPIDER_EYE_0 = CRATE_ITEMS.register("crated_" + "FERMENTED_SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.FERMENTED_SPIDER_EYE_0.get()));
+    public static final RegistryObject<BlockItem> FERMENTED_SPIDER_EYE_1 = CRATE_ITEMS.register("double_crated_" + "FERMENTED_SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.FERMENTED_SPIDER_EYE_1.get()));
+    public static final RegistryObject<BlockItem> FERMENTED_SPIDER_EYE_2 = CRATE_ITEMS.register("triple_crated_" + "FERMENTED_SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.FERMENTED_SPIDER_EYE_2.get()));
+    public static final RegistryObject<BlockItem> FERMENTED_SPIDER_EYE_3 = CRATE_ITEMS.register("quadruple_crated_" + "FERMENTED_SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.FERMENTED_SPIDER_EYE_3.get()));
+    public static final RegistryObject<BlockItem> FERMENTED_SPIDER_EYE_4 = CRATE_ITEMS.register("quintuple_crated_" + "FERMENTED_SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.FERMENTED_SPIDER_EYE_4.get()));
+    public static final RegistryObject<BlockItem> FERMENTED_SPIDER_EYE_5 = CRATE_ITEMS.register("sextuple_crated_" + "FERMENTED_SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.FERMENTED_SPIDER_EYE_5.get()));
+    public static final RegistryObject<BlockItem> FERMENTED_SPIDER_EYE_6 = CRATE_ITEMS.register("septuple_crated_" + "FERMENTED_SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.FERMENTED_SPIDER_EYE_6.get()));
+    public static final RegistryObject<BlockItem> FERMENTED_SPIDER_EYE_7 = CRATE_ITEMS.register("octuple_crated_" + "FERMENTED_SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.FERMENTED_SPIDER_EYE_7.get()));
+    public static final RegistryObject<BlockItem> FERMENTED_SPIDER_EYE_8 = CRATE_ITEMS.register("mega_crated_" + "FERMENTED_SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.FERMENTED_SPIDER_EYE_8.get()));
+    public static final RegistryObject<BlockItem> FERMENTED_SPIDER_EYE_9 = CRATE_ITEMS.register("giga_crated_" + "FERMENTED_SPIDER_EYE".toLowerCase(), () -> new CrateItem(CrateBlocks.FERMENTED_SPIDER_EYE_9.get()));
+    public static final RegistryObject<BlockItem> BLAZE_POWDER_0 = CRATE_ITEMS.register("crated_" + "BLAZE_POWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_POWDER_0.get()));
+    public static final RegistryObject<BlockItem> BLAZE_POWDER_1 = CRATE_ITEMS.register("double_crated_" + "BLAZE_POWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_POWDER_1.get()));
+    public static final RegistryObject<BlockItem> BLAZE_POWDER_2 = CRATE_ITEMS.register("triple_crated_" + "BLAZE_POWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_POWDER_2.get()));
+    public static final RegistryObject<BlockItem> BLAZE_POWDER_3 = CRATE_ITEMS.register("quadruple_crated_" + "BLAZE_POWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_POWDER_3.get()));
+    public static final RegistryObject<BlockItem> BLAZE_POWDER_4 = CRATE_ITEMS.register("quintuple_crated_" + "BLAZE_POWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_POWDER_4.get()));
+    public static final RegistryObject<BlockItem> BLAZE_POWDER_5 = CRATE_ITEMS.register("sextuple_crated_" + "BLAZE_POWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_POWDER_5.get()));
+    public static final RegistryObject<BlockItem> BLAZE_POWDER_6 = CRATE_ITEMS.register("septuple_crated_" + "BLAZE_POWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_POWDER_6.get()));
+    public static final RegistryObject<BlockItem> BLAZE_POWDER_7 = CRATE_ITEMS.register("octuple_crated_" + "BLAZE_POWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_POWDER_7.get()));
+    public static final RegistryObject<BlockItem> BLAZE_POWDER_8 = CRATE_ITEMS.register("mega_crated_" + "BLAZE_POWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_POWDER_8.get()));
+    public static final RegistryObject<BlockItem> BLAZE_POWDER_9 = CRATE_ITEMS.register("giga_crated_" + "BLAZE_POWDER".toLowerCase(), () -> new CrateItem(CrateBlocks.BLAZE_POWDER_9.get()));
+    public static final RegistryObject<BlockItem> SUGAR_0 = CRATE_ITEMS.register("crated_" + "SUGAR".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_0.get()));
+    public static final RegistryObject<BlockItem> SUGAR_1 = CRATE_ITEMS.register("double_crated_" + "SUGAR".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_1.get()));
+    public static final RegistryObject<BlockItem> SUGAR_2 = CRATE_ITEMS.register("triple_crated_" + "SUGAR".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_2.get()));
+    public static final RegistryObject<BlockItem> SUGAR_3 = CRATE_ITEMS.register("quadruple_crated_" + "SUGAR".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_3.get()));
+    public static final RegistryObject<BlockItem> SUGAR_4 = CRATE_ITEMS.register("quintuple_crated_" + "SUGAR".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_4.get()));
+    public static final RegistryObject<BlockItem> SUGAR_5 = CRATE_ITEMS.register("sextuple_crated_" + "SUGAR".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_5.get()));
+    public static final RegistryObject<BlockItem> SUGAR_6 = CRATE_ITEMS.register("septuple_crated_" + "SUGAR".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_6.get()));
+    public static final RegistryObject<BlockItem> SUGAR_7 = CRATE_ITEMS.register("octuple_crated_" + "SUGAR".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_7.get()));
+    public static final RegistryObject<BlockItem> SUGAR_8 = CRATE_ITEMS.register("mega_crated_" + "SUGAR".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_8.get()));
+    public static final RegistryObject<BlockItem> SUGAR_9 = CRATE_ITEMS.register("giga_crated_" + "SUGAR".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_9.get()));
+    public static final RegistryObject<BlockItem> RABBIT_FOOT_0 = CRATE_ITEMS.register("crated_" + "RABBIT_FOOT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_FOOT_0.get()));
+    public static final RegistryObject<BlockItem> RABBIT_FOOT_1 = CRATE_ITEMS.register("double_crated_" + "RABBIT_FOOT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_FOOT_1.get()));
+    public static final RegistryObject<BlockItem> RABBIT_FOOT_2 = CRATE_ITEMS.register("triple_crated_" + "RABBIT_FOOT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_FOOT_2.get()));
+    public static final RegistryObject<BlockItem> RABBIT_FOOT_3 = CRATE_ITEMS.register("quadruple_crated_" + "RABBIT_FOOT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_FOOT_3.get()));
+    public static final RegistryObject<BlockItem> RABBIT_FOOT_4 = CRATE_ITEMS.register("quintuple_crated_" + "RABBIT_FOOT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_FOOT_4.get()));
+    public static final RegistryObject<BlockItem> RABBIT_FOOT_5 = CRATE_ITEMS.register("sextuple_crated_" + "RABBIT_FOOT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_FOOT_5.get()));
+    public static final RegistryObject<BlockItem> RABBIT_FOOT_6 = CRATE_ITEMS.register("septuple_crated_" + "RABBIT_FOOT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_FOOT_6.get()));
+    public static final RegistryObject<BlockItem> RABBIT_FOOT_7 = CRATE_ITEMS.register("octuple_crated_" + "RABBIT_FOOT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_FOOT_7.get()));
+    public static final RegistryObject<BlockItem> RABBIT_FOOT_8 = CRATE_ITEMS.register("mega_crated_" + "RABBIT_FOOT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_FOOT_8.get()));
+    public static final RegistryObject<BlockItem> RABBIT_FOOT_9 = CRATE_ITEMS.register("giga_crated_" + "RABBIT_FOOT".toLowerCase(), () -> new CrateItem(CrateBlocks.RABBIT_FOOT_9.get()));
+    public static final RegistryObject<BlockItem> GLISTERING_MELON_SLICE_0 = CRATE_ITEMS.register("crated_" + "GLISTERING_MELON_SLICE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLISTERING_MELON_SLICE_0.get()));
+    public static final RegistryObject<BlockItem> GLISTERING_MELON_SLICE_1 = CRATE_ITEMS.register("double_crated_" + "GLISTERING_MELON_SLICE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLISTERING_MELON_SLICE_1.get()));
+    public static final RegistryObject<BlockItem> GLISTERING_MELON_SLICE_2 = CRATE_ITEMS.register("triple_crated_" + "GLISTERING_MELON_SLICE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLISTERING_MELON_SLICE_2.get()));
+    public static final RegistryObject<BlockItem> GLISTERING_MELON_SLICE_3 = CRATE_ITEMS.register("quadruple_crated_" + "GLISTERING_MELON_SLICE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLISTERING_MELON_SLICE_3.get()));
+    public static final RegistryObject<BlockItem> GLISTERING_MELON_SLICE_4 = CRATE_ITEMS.register("quintuple_crated_" + "GLISTERING_MELON_SLICE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLISTERING_MELON_SLICE_4.get()));
+    public static final RegistryObject<BlockItem> GLISTERING_MELON_SLICE_5 = CRATE_ITEMS.register("sextuple_crated_" + "GLISTERING_MELON_SLICE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLISTERING_MELON_SLICE_5.get()));
+    public static final RegistryObject<BlockItem> GLISTERING_MELON_SLICE_6 = CRATE_ITEMS.register("septuple_crated_" + "GLISTERING_MELON_SLICE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLISTERING_MELON_SLICE_6.get()));
+    public static final RegistryObject<BlockItem> GLISTERING_MELON_SLICE_7 = CRATE_ITEMS.register("octuple_crated_" + "GLISTERING_MELON_SLICE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLISTERING_MELON_SLICE_7.get()));
+    public static final RegistryObject<BlockItem> GLISTERING_MELON_SLICE_8 = CRATE_ITEMS.register("mega_crated_" + "GLISTERING_MELON_SLICE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLISTERING_MELON_SLICE_8.get()));
+    public static final RegistryObject<BlockItem> GLISTERING_MELON_SLICE_9 = CRATE_ITEMS.register("giga_crated_" + "GLISTERING_MELON_SLICE".toLowerCase(), () -> new CrateItem(CrateBlocks.GLISTERING_MELON_SLICE_9.get()));
+    public static final RegistryObject<BlockItem> MAGMA_CREAM_0 = CRATE_ITEMS.register("crated_" + "MAGMA_CREAM".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGMA_CREAM_0.get()));
+    public static final RegistryObject<BlockItem> MAGMA_CREAM_1 = CRATE_ITEMS.register("double_crated_" + "MAGMA_CREAM".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGMA_CREAM_1.get()));
+    public static final RegistryObject<BlockItem> MAGMA_CREAM_2 = CRATE_ITEMS.register("triple_crated_" + "MAGMA_CREAM".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGMA_CREAM_2.get()));
+    public static final RegistryObject<BlockItem> MAGMA_CREAM_3 = CRATE_ITEMS.register("quadruple_crated_" + "MAGMA_CREAM".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGMA_CREAM_3.get()));
+    public static final RegistryObject<BlockItem> MAGMA_CREAM_4 = CRATE_ITEMS.register("quintuple_crated_" + "MAGMA_CREAM".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGMA_CREAM_4.get()));
+    public static final RegistryObject<BlockItem> MAGMA_CREAM_5 = CRATE_ITEMS.register("sextuple_crated_" + "MAGMA_CREAM".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGMA_CREAM_5.get()));
+    public static final RegistryObject<BlockItem> MAGMA_CREAM_6 = CRATE_ITEMS.register("septuple_crated_" + "MAGMA_CREAM".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGMA_CREAM_6.get()));
+    public static final RegistryObject<BlockItem> MAGMA_CREAM_7 = CRATE_ITEMS.register("octuple_crated_" + "MAGMA_CREAM".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGMA_CREAM_7.get()));
+    public static final RegistryObject<BlockItem> MAGMA_CREAM_8 = CRATE_ITEMS.register("mega_crated_" + "MAGMA_CREAM".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGMA_CREAM_8.get()));
+    public static final RegistryObject<BlockItem> MAGMA_CREAM_9 = CRATE_ITEMS.register("giga_crated_" + "MAGMA_CREAM".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGMA_CREAM_9.get()));
+    public static final RegistryObject<BlockItem> GHAST_TEAR_0 = CRATE_ITEMS.register("crated_" + "GHAST_TEAR".toLowerCase(), () -> new CrateItem(CrateBlocks.GHAST_TEAR_0.get()));
+    public static final RegistryObject<BlockItem> GHAST_TEAR_1 = CRATE_ITEMS.register("double_crated_" + "GHAST_TEAR".toLowerCase(), () -> new CrateItem(CrateBlocks.GHAST_TEAR_1.get()));
+    public static final RegistryObject<BlockItem> GHAST_TEAR_2 = CRATE_ITEMS.register("triple_crated_" + "GHAST_TEAR".toLowerCase(), () -> new CrateItem(CrateBlocks.GHAST_TEAR_2.get()));
+    public static final RegistryObject<BlockItem> GHAST_TEAR_3 = CRATE_ITEMS.register("quadruple_crated_" + "GHAST_TEAR".toLowerCase(), () -> new CrateItem(CrateBlocks.GHAST_TEAR_3.get()));
+    public static final RegistryObject<BlockItem> GHAST_TEAR_4 = CRATE_ITEMS.register("quintuple_crated_" + "GHAST_TEAR".toLowerCase(), () -> new CrateItem(CrateBlocks.GHAST_TEAR_4.get()));
+    public static final RegistryObject<BlockItem> GHAST_TEAR_5 = CRATE_ITEMS.register("sextuple_crated_" + "GHAST_TEAR".toLowerCase(), () -> new CrateItem(CrateBlocks.GHAST_TEAR_5.get()));
+    public static final RegistryObject<BlockItem> GHAST_TEAR_6 = CRATE_ITEMS.register("septuple_crated_" + "GHAST_TEAR".toLowerCase(), () -> new CrateItem(CrateBlocks.GHAST_TEAR_6.get()));
+    public static final RegistryObject<BlockItem> GHAST_TEAR_7 = CRATE_ITEMS.register("octuple_crated_" + "GHAST_TEAR".toLowerCase(), () -> new CrateItem(CrateBlocks.GHAST_TEAR_7.get()));
+    public static final RegistryObject<BlockItem> GHAST_TEAR_8 = CRATE_ITEMS.register("mega_crated_" + "GHAST_TEAR".toLowerCase(), () -> new CrateItem(CrateBlocks.GHAST_TEAR_8.get()));
+    public static final RegistryObject<BlockItem> GHAST_TEAR_9 = CRATE_ITEMS.register("giga_crated_" + "GHAST_TEAR".toLowerCase(), () -> new CrateItem(CrateBlocks.GHAST_TEAR_9.get()));
+    public static final RegistryObject<BlockItem> PHANTOM_MEMBRANE_0 = CRATE_ITEMS.register("crated_" + "PHANTOM_MEMBRANE".toLowerCase(), () -> new CrateItem(CrateBlocks.PHANTOM_MEMBRANE_0.get()));
+    public static final RegistryObject<BlockItem> PHANTOM_MEMBRANE_1 = CRATE_ITEMS.register("double_crated_" + "PHANTOM_MEMBRANE".toLowerCase(), () -> new CrateItem(CrateBlocks.PHANTOM_MEMBRANE_1.get()));
+    public static final RegistryObject<BlockItem> PHANTOM_MEMBRANE_2 = CRATE_ITEMS.register("triple_crated_" + "PHANTOM_MEMBRANE".toLowerCase(), () -> new CrateItem(CrateBlocks.PHANTOM_MEMBRANE_2.get()));
+    public static final RegistryObject<BlockItem> PHANTOM_MEMBRANE_3 = CRATE_ITEMS.register("quadruple_crated_" + "PHANTOM_MEMBRANE".toLowerCase(), () -> new CrateItem(CrateBlocks.PHANTOM_MEMBRANE_3.get()));
+    public static final RegistryObject<BlockItem> PHANTOM_MEMBRANE_4 = CRATE_ITEMS.register("quintuple_crated_" + "PHANTOM_MEMBRANE".toLowerCase(), () -> new CrateItem(CrateBlocks.PHANTOM_MEMBRANE_4.get()));
+    public static final RegistryObject<BlockItem> PHANTOM_MEMBRANE_5 = CRATE_ITEMS.register("sextuple_crated_" + "PHANTOM_MEMBRANE".toLowerCase(), () -> new CrateItem(CrateBlocks.PHANTOM_MEMBRANE_5.get()));
+    public static final RegistryObject<BlockItem> PHANTOM_MEMBRANE_6 = CRATE_ITEMS.register("septuple_crated_" + "PHANTOM_MEMBRANE".toLowerCase(), () -> new CrateItem(CrateBlocks.PHANTOM_MEMBRANE_6.get()));
+    public static final RegistryObject<BlockItem> PHANTOM_MEMBRANE_7 = CRATE_ITEMS.register("octuple_crated_" + "PHANTOM_MEMBRANE".toLowerCase(), () -> new CrateItem(CrateBlocks.PHANTOM_MEMBRANE_7.get()));
+    public static final RegistryObject<BlockItem> PHANTOM_MEMBRANE_8 = CRATE_ITEMS.register("mega_crated_" + "PHANTOM_MEMBRANE".toLowerCase(), () -> new CrateItem(CrateBlocks.PHANTOM_MEMBRANE_8.get()));
+    public static final RegistryObject<BlockItem> PHANTOM_MEMBRANE_9 = CRATE_ITEMS.register("giga_crated_" + "PHANTOM_MEMBRANE".toLowerCase(), () -> new CrateItem(CrateBlocks.PHANTOM_MEMBRANE_9.get()));
+    public static final RegistryObject<BlockItem> EXPERIENCE_BOTTLE_0 = CRATE_ITEMS.register("crated_" + "EXPERIENCE_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.EXPERIENCE_BOTTLE_0.get()));
+    public static final RegistryObject<BlockItem> EXPERIENCE_BOTTLE_1 = CRATE_ITEMS.register("double_crated_" + "EXPERIENCE_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.EXPERIENCE_BOTTLE_1.get()));
+    public static final RegistryObject<BlockItem> EXPERIENCE_BOTTLE_2 = CRATE_ITEMS.register("triple_crated_" + "EXPERIENCE_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.EXPERIENCE_BOTTLE_2.get()));
+    public static final RegistryObject<BlockItem> EXPERIENCE_BOTTLE_3 = CRATE_ITEMS.register("quadruple_crated_" + "EXPERIENCE_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.EXPERIENCE_BOTTLE_3.get()));
+    public static final RegistryObject<BlockItem> EXPERIENCE_BOTTLE_4 = CRATE_ITEMS.register("quintuple_crated_" + "EXPERIENCE_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.EXPERIENCE_BOTTLE_4.get()));
+    public static final RegistryObject<BlockItem> EXPERIENCE_BOTTLE_5 = CRATE_ITEMS.register("sextuple_crated_" + "EXPERIENCE_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.EXPERIENCE_BOTTLE_5.get()));
+    public static final RegistryObject<BlockItem> EXPERIENCE_BOTTLE_6 = CRATE_ITEMS.register("septuple_crated_" + "EXPERIENCE_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.EXPERIENCE_BOTTLE_6.get()));
+    public static final RegistryObject<BlockItem> EXPERIENCE_BOTTLE_7 = CRATE_ITEMS.register("octuple_crated_" + "EXPERIENCE_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.EXPERIENCE_BOTTLE_7.get()));
+    public static final RegistryObject<BlockItem> EXPERIENCE_BOTTLE_8 = CRATE_ITEMS.register("mega_crated_" + "EXPERIENCE_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.EXPERIENCE_BOTTLE_8.get()));
+    public static final RegistryObject<BlockItem> EXPERIENCE_BOTTLE_9 = CRATE_ITEMS.register("giga_crated_" + "EXPERIENCE_BOTTLE".toLowerCase(), () -> new CrateItem(CrateBlocks.EXPERIENCE_BOTTLE_9.get()));
+    public static final RegistryObject<BlockItem> TOTEM_OF_UNDYING_0 = CRATE_ITEMS.register("crated_" + "TOTEM_OF_UNDYING".toLowerCase(), () -> new CrateItem(CrateBlocks.TOTEM_OF_UNDYING_0.get()));
+    public static final RegistryObject<BlockItem> TOTEM_OF_UNDYING_1 = CRATE_ITEMS.register("double_crated_" + "TOTEM_OF_UNDYING".toLowerCase(), () -> new CrateItem(CrateBlocks.TOTEM_OF_UNDYING_1.get()));
+    public static final RegistryObject<BlockItem> TOTEM_OF_UNDYING_2 = CRATE_ITEMS.register("triple_crated_" + "TOTEM_OF_UNDYING".toLowerCase(), () -> new CrateItem(CrateBlocks.TOTEM_OF_UNDYING_2.get()));
+    public static final RegistryObject<BlockItem> TOTEM_OF_UNDYING_3 = CRATE_ITEMS.register("quadruple_crated_" + "TOTEM_OF_UNDYING".toLowerCase(), () -> new CrateItem(CrateBlocks.TOTEM_OF_UNDYING_3.get()));
+    public static final RegistryObject<BlockItem> TOTEM_OF_UNDYING_4 = CRATE_ITEMS.register("quintuple_crated_" + "TOTEM_OF_UNDYING".toLowerCase(), () -> new CrateItem(CrateBlocks.TOTEM_OF_UNDYING_4.get()));
+    public static final RegistryObject<BlockItem> TOTEM_OF_UNDYING_5 = CRATE_ITEMS.register("sextuple_crated_" + "TOTEM_OF_UNDYING".toLowerCase(), () -> new CrateItem(CrateBlocks.TOTEM_OF_UNDYING_5.get()));
+    public static final RegistryObject<BlockItem> TOTEM_OF_UNDYING_6 = CRATE_ITEMS.register("septuple_crated_" + "TOTEM_OF_UNDYING".toLowerCase(), () -> new CrateItem(CrateBlocks.TOTEM_OF_UNDYING_6.get()));
+    public static final RegistryObject<BlockItem> TOTEM_OF_UNDYING_7 = CRATE_ITEMS.register("octuple_crated_" + "TOTEM_OF_UNDYING".toLowerCase(), () -> new CrateItem(CrateBlocks.TOTEM_OF_UNDYING_7.get()));
+    public static final RegistryObject<BlockItem> TOTEM_OF_UNDYING_8 = CRATE_ITEMS.register("mega_crated_" + "TOTEM_OF_UNDYING".toLowerCase(), () -> new CrateItem(CrateBlocks.TOTEM_OF_UNDYING_8.get()));
+    public static final RegistryObject<BlockItem> TOTEM_OF_UNDYING_9 = CRATE_ITEMS.register("giga_crated_" + "TOTEM_OF_UNDYING".toLowerCase(), () -> new CrateItem(CrateBlocks.TOTEM_OF_UNDYING_9.get()));
+    public static final RegistryObject<BlockItem> END_CRYSTAL_0 = CRATE_ITEMS.register("crated_" + "END_CRYSTAL".toLowerCase(), () -> new CrateItem(CrateBlocks.END_CRYSTAL_0.get()));
+    public static final RegistryObject<BlockItem> END_CRYSTAL_1 = CRATE_ITEMS.register("double_crated_" + "END_CRYSTAL".toLowerCase(), () -> new CrateItem(CrateBlocks.END_CRYSTAL_1.get()));
+    public static final RegistryObject<BlockItem> END_CRYSTAL_2 = CRATE_ITEMS.register("triple_crated_" + "END_CRYSTAL".toLowerCase(), () -> new CrateItem(CrateBlocks.END_CRYSTAL_2.get()));
+    public static final RegistryObject<BlockItem> END_CRYSTAL_3 = CRATE_ITEMS.register("quadruple_crated_" + "END_CRYSTAL".toLowerCase(), () -> new CrateItem(CrateBlocks.END_CRYSTAL_3.get()));
+    public static final RegistryObject<BlockItem> END_CRYSTAL_4 = CRATE_ITEMS.register("quintuple_crated_" + "END_CRYSTAL".toLowerCase(), () -> new CrateItem(CrateBlocks.END_CRYSTAL_4.get()));
+    public static final RegistryObject<BlockItem> END_CRYSTAL_5 = CRATE_ITEMS.register("sextuple_crated_" + "END_CRYSTAL".toLowerCase(), () -> new CrateItem(CrateBlocks.END_CRYSTAL_5.get()));
+    public static final RegistryObject<BlockItem> END_CRYSTAL_6 = CRATE_ITEMS.register("septuple_crated_" + "END_CRYSTAL".toLowerCase(), () -> new CrateItem(CrateBlocks.END_CRYSTAL_6.get()));
+    public static final RegistryObject<BlockItem> END_CRYSTAL_7 = CRATE_ITEMS.register("octuple_crated_" + "END_CRYSTAL".toLowerCase(), () -> new CrateItem(CrateBlocks.END_CRYSTAL_7.get()));
+    public static final RegistryObject<BlockItem> END_CRYSTAL_8 = CRATE_ITEMS.register("mega_crated_" + "END_CRYSTAL".toLowerCase(), () -> new CrateItem(CrateBlocks.END_CRYSTAL_8.get()));
+    public static final RegistryObject<BlockItem> END_CRYSTAL_9 = CRATE_ITEMS.register("giga_crated_" + "END_CRYSTAL".toLowerCase(), () -> new CrateItem(CrateBlocks.END_CRYSTAL_9.get()));
+    public static final RegistryObject<BlockItem> ARROW_0 = CRATE_ITEMS.register("crated_" + "ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.ARROW_0.get()));
+    public static final RegistryObject<BlockItem> ARROW_1 = CRATE_ITEMS.register("double_crated_" + "ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.ARROW_1.get()));
+    public static final RegistryObject<BlockItem> ARROW_2 = CRATE_ITEMS.register("triple_crated_" + "ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.ARROW_2.get()));
+    public static final RegistryObject<BlockItem> ARROW_3 = CRATE_ITEMS.register("quadruple_crated_" + "ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.ARROW_3.get()));
+    public static final RegistryObject<BlockItem> ARROW_4 = CRATE_ITEMS.register("quintuple_crated_" + "ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.ARROW_4.get()));
+    public static final RegistryObject<BlockItem> ARROW_5 = CRATE_ITEMS.register("sextuple_crated_" + "ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.ARROW_5.get()));
+    public static final RegistryObject<BlockItem> ARROW_6 = CRATE_ITEMS.register("septuple_crated_" + "ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.ARROW_6.get()));
+    public static final RegistryObject<BlockItem> ARROW_7 = CRATE_ITEMS.register("octuple_crated_" + "ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.ARROW_7.get()));
+    public static final RegistryObject<BlockItem> ARROW_8 = CRATE_ITEMS.register("mega_crated_" + "ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.ARROW_8.get()));
+    public static final RegistryObject<BlockItem> ARROW_9 = CRATE_ITEMS.register("giga_crated_" + "ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.ARROW_9.get()));
+    public static final RegistryObject<BlockItem> SPECTRAL_ARROW_0 = CRATE_ITEMS.register("crated_" + "SPECTRAL_ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.SPECTRAL_ARROW_0.get()));
+    public static final RegistryObject<BlockItem> SPECTRAL_ARROW_1 = CRATE_ITEMS.register("double_crated_" + "SPECTRAL_ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.SPECTRAL_ARROW_1.get()));
+    public static final RegistryObject<BlockItem> SPECTRAL_ARROW_2 = CRATE_ITEMS.register("triple_crated_" + "SPECTRAL_ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.SPECTRAL_ARROW_2.get()));
+    public static final RegistryObject<BlockItem> SPECTRAL_ARROW_3 = CRATE_ITEMS.register("quadruple_crated_" + "SPECTRAL_ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.SPECTRAL_ARROW_3.get()));
+    public static final RegistryObject<BlockItem> SPECTRAL_ARROW_4 = CRATE_ITEMS.register("quintuple_crated_" + "SPECTRAL_ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.SPECTRAL_ARROW_4.get()));
+    public static final RegistryObject<BlockItem> SPECTRAL_ARROW_5 = CRATE_ITEMS.register("sextuple_crated_" + "SPECTRAL_ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.SPECTRAL_ARROW_5.get()));
+    public static final RegistryObject<BlockItem> SPECTRAL_ARROW_6 = CRATE_ITEMS.register("septuple_crated_" + "SPECTRAL_ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.SPECTRAL_ARROW_6.get()));
+    public static final RegistryObject<BlockItem> SPECTRAL_ARROW_7 = CRATE_ITEMS.register("octuple_crated_" + "SPECTRAL_ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.SPECTRAL_ARROW_7.get()));
+    public static final RegistryObject<BlockItem> SPECTRAL_ARROW_8 = CRATE_ITEMS.register("mega_crated_" + "SPECTRAL_ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.SPECTRAL_ARROW_8.get()));
+    public static final RegistryObject<BlockItem> SPECTRAL_ARROW_9 = CRATE_ITEMS.register("giga_crated_" + "SPECTRAL_ARROW".toLowerCase(), () -> new CrateItem(CrateBlocks.SPECTRAL_ARROW_9.get()));
+    public static final RegistryObject<BlockItem> NAME_TAG_0 = CRATE_ITEMS.register("crated_" + "NAME_TAG".toLowerCase(), () -> new CrateItem(CrateBlocks.NAME_TAG_0.get()));
+    public static final RegistryObject<BlockItem> NAME_TAG_1 = CRATE_ITEMS.register("double_crated_" + "NAME_TAG".toLowerCase(), () -> new CrateItem(CrateBlocks.NAME_TAG_1.get()));
+    public static final RegistryObject<BlockItem> NAME_TAG_2 = CRATE_ITEMS.register("triple_crated_" + "NAME_TAG".toLowerCase(), () -> new CrateItem(CrateBlocks.NAME_TAG_2.get()));
+    public static final RegistryObject<BlockItem> NAME_TAG_3 = CRATE_ITEMS.register("quadruple_crated_" + "NAME_TAG".toLowerCase(), () -> new CrateItem(CrateBlocks.NAME_TAG_3.get()));
+    public static final RegistryObject<BlockItem> NAME_TAG_4 = CRATE_ITEMS.register("quintuple_crated_" + "NAME_TAG".toLowerCase(), () -> new CrateItem(CrateBlocks.NAME_TAG_4.get()));
+    public static final RegistryObject<BlockItem> NAME_TAG_5 = CRATE_ITEMS.register("sextuple_crated_" + "NAME_TAG".toLowerCase(), () -> new CrateItem(CrateBlocks.NAME_TAG_5.get()));
+    public static final RegistryObject<BlockItem> NAME_TAG_6 = CRATE_ITEMS.register("septuple_crated_" + "NAME_TAG".toLowerCase(), () -> new CrateItem(CrateBlocks.NAME_TAG_6.get()));
+    public static final RegistryObject<BlockItem> NAME_TAG_7 = CRATE_ITEMS.register("octuple_crated_" + "NAME_TAG".toLowerCase(), () -> new CrateItem(CrateBlocks.NAME_TAG_7.get()));
+    public static final RegistryObject<BlockItem> NAME_TAG_8 = CRATE_ITEMS.register("mega_crated_" + "NAME_TAG".toLowerCase(), () -> new CrateItem(CrateBlocks.NAME_TAG_8.get()));
+    public static final RegistryObject<BlockItem> NAME_TAG_9 = CRATE_ITEMS.register("giga_crated_" + "NAME_TAG".toLowerCase(), () -> new CrateItem(CrateBlocks.NAME_TAG_9.get()));
+    public static final RegistryObject<BlockItem> LEAD_0 = CRATE_ITEMS.register("crated_" + "LEAD".toLowerCase(), () -> new CrateItem(CrateBlocks.LEAD_0.get()));
+    public static final RegistryObject<BlockItem> LEAD_1 = CRATE_ITEMS.register("double_crated_" + "LEAD".toLowerCase(), () -> new CrateItem(CrateBlocks.LEAD_1.get()));
+    public static final RegistryObject<BlockItem> LEAD_2 = CRATE_ITEMS.register("triple_crated_" + "LEAD".toLowerCase(), () -> new CrateItem(CrateBlocks.LEAD_2.get()));
+    public static final RegistryObject<BlockItem> LEAD_3 = CRATE_ITEMS.register("quadruple_crated_" + "LEAD".toLowerCase(), () -> new CrateItem(CrateBlocks.LEAD_3.get()));
+    public static final RegistryObject<BlockItem> LEAD_4 = CRATE_ITEMS.register("quintuple_crated_" + "LEAD".toLowerCase(), () -> new CrateItem(CrateBlocks.LEAD_4.get()));
+    public static final RegistryObject<BlockItem> LEAD_5 = CRATE_ITEMS.register("sextuple_crated_" + "LEAD".toLowerCase(), () -> new CrateItem(CrateBlocks.LEAD_5.get()));
+    public static final RegistryObject<BlockItem> LEAD_6 = CRATE_ITEMS.register("septuple_crated_" + "LEAD".toLowerCase(), () -> new CrateItem(CrateBlocks.LEAD_6.get()));
+    public static final RegistryObject<BlockItem> LEAD_7 = CRATE_ITEMS.register("octuple_crated_" + "LEAD".toLowerCase(), () -> new CrateItem(CrateBlocks.LEAD_7.get()));
+    public static final RegistryObject<BlockItem> LEAD_8 = CRATE_ITEMS.register("mega_crated_" + "LEAD".toLowerCase(), () -> new CrateItem(CrateBlocks.LEAD_8.get()));
+    public static final RegistryObject<BlockItem> LEAD_9 = CRATE_ITEMS.register("giga_crated_" + "LEAD".toLowerCase(), () -> new CrateItem(CrateBlocks.LEAD_9.get()));
+    public static final RegistryObject<BlockItem> EMPTY_MAP_0 = CRATE_ITEMS.register("crated_" + "MAP".toLowerCase(), () -> new CrateItem(CrateBlocks.EMPTY_MAP_0.get()));
+    public static final RegistryObject<BlockItem> EMPTY_MAP_1 = CRATE_ITEMS.register("double_crated_" + "MAP".toLowerCase(), () -> new CrateItem(CrateBlocks.EMPTY_MAP_1.get()));
+    public static final RegistryObject<BlockItem> EMPTY_MAP_2 = CRATE_ITEMS.register("triple_crated_" + "MAP".toLowerCase(), () -> new CrateItem(CrateBlocks.EMPTY_MAP_2.get()));
+    public static final RegistryObject<BlockItem> EMPTY_MAP_3 = CRATE_ITEMS.register("quadruple_crated_" + "MAP".toLowerCase(), () -> new CrateItem(CrateBlocks.EMPTY_MAP_3.get()));
+    public static final RegistryObject<BlockItem> EMPTY_MAP_4 = CRATE_ITEMS.register("quintuple_crated_" + "MAP".toLowerCase(), () -> new CrateItem(CrateBlocks.EMPTY_MAP_4.get()));
+    public static final RegistryObject<BlockItem> EMPTY_MAP_5 = CRATE_ITEMS.register("sextuple_crated_" + "MAP".toLowerCase(), () -> new CrateItem(CrateBlocks.EMPTY_MAP_5.get()));
+    public static final RegistryObject<BlockItem> EMPTY_MAP_6 = CRATE_ITEMS.register("septuple_crated_" + "MAP".toLowerCase(), () -> new CrateItem(CrateBlocks.EMPTY_MAP_6.get()));
+    public static final RegistryObject<BlockItem> EMPTY_MAP_7 = CRATE_ITEMS.register("octuple_crated_" + "MAP".toLowerCase(), () -> new CrateItem(CrateBlocks.EMPTY_MAP_7.get()));
+    public static final RegistryObject<BlockItem> EMPTY_MAP_8 = CRATE_ITEMS.register("mega_crated_" + "MAP".toLowerCase(), () -> new CrateItem(CrateBlocks.EMPTY_MAP_8.get()));
+    public static final RegistryObject<BlockItem> EMPTY_MAP_9 = CRATE_ITEMS.register("giga_crated_" + "MAP".toLowerCase(), () -> new CrateItem(CrateBlocks.EMPTY_MAP_9.get()));
+    public static final RegistryObject<BlockItem> SADDLE_0 = CRATE_ITEMS.register("crated_" + "SADDLE".toLowerCase(), () -> new CrateItem(CrateBlocks.SADDLE_0.get()));
+    public static final RegistryObject<BlockItem> SADDLE_1 = CRATE_ITEMS.register("double_crated_" + "SADDLE".toLowerCase(), () -> new CrateItem(CrateBlocks.SADDLE_1.get()));
+    public static final RegistryObject<BlockItem> SADDLE_2 = CRATE_ITEMS.register("triple_crated_" + "SADDLE".toLowerCase(), () -> new CrateItem(CrateBlocks.SADDLE_2.get()));
+    public static final RegistryObject<BlockItem> SADDLE_3 = CRATE_ITEMS.register("quadruple_crated_" + "SADDLE".toLowerCase(), () -> new CrateItem(CrateBlocks.SADDLE_3.get()));
+    public static final RegistryObject<BlockItem> SADDLE_4 = CRATE_ITEMS.register("quintuple_crated_" + "SADDLE".toLowerCase(), () -> new CrateItem(CrateBlocks.SADDLE_4.get()));
+    public static final RegistryObject<BlockItem> SADDLE_5 = CRATE_ITEMS.register("sextuple_crated_" + "SADDLE".toLowerCase(), () -> new CrateItem(CrateBlocks.SADDLE_5.get()));
+    public static final RegistryObject<BlockItem> SADDLE_6 = CRATE_ITEMS.register("septuple_crated_" + "SADDLE".toLowerCase(), () -> new CrateItem(CrateBlocks.SADDLE_6.get()));
+    public static final RegistryObject<BlockItem> SADDLE_7 = CRATE_ITEMS.register("octuple_crated_" + "SADDLE".toLowerCase(), () -> new CrateItem(CrateBlocks.SADDLE_7.get()));
+    public static final RegistryObject<BlockItem> SADDLE_8 = CRATE_ITEMS.register("mega_crated_" + "SADDLE".toLowerCase(), () -> new CrateItem(CrateBlocks.SADDLE_8.get()));
+    public static final RegistryObject<BlockItem> SADDLE_9 = CRATE_ITEMS.register("giga_crated_" + "SADDLE".toLowerCase(), () -> new CrateItem(CrateBlocks.SADDLE_9.get()));
+    public static final RegistryObject<BlockItem> RAIL_0 = CRATE_ITEMS.register("crated_" + "RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.RAIL_0.get()));
+    public static final RegistryObject<BlockItem> RAIL_1 = CRATE_ITEMS.register("double_crated_" + "RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.RAIL_1.get()));
+    public static final RegistryObject<BlockItem> RAIL_2 = CRATE_ITEMS.register("triple_crated_" + "RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.RAIL_2.get()));
+    public static final RegistryObject<BlockItem> RAIL_3 = CRATE_ITEMS.register("quadruple_crated_" + "RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.RAIL_3.get()));
+    public static final RegistryObject<BlockItem> RAIL_4 = CRATE_ITEMS.register("quintuple_crated_" + "RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.RAIL_4.get()));
+    public static final RegistryObject<BlockItem> RAIL_5 = CRATE_ITEMS.register("sextuple_crated_" + "RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.RAIL_5.get()));
+    public static final RegistryObject<BlockItem> RAIL_6 = CRATE_ITEMS.register("septuple_crated_" + "RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.RAIL_6.get()));
+    public static final RegistryObject<BlockItem> RAIL_7 = CRATE_ITEMS.register("octuple_crated_" + "RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.RAIL_7.get()));
+    public static final RegistryObject<BlockItem> RAIL_8 = CRATE_ITEMS.register("mega_crated_" + "RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.RAIL_8.get()));
+    public static final RegistryObject<BlockItem> RAIL_9 = CRATE_ITEMS.register("giga_crated_" + "RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.RAIL_9.get()));
+    public static final RegistryObject<BlockItem> POWERED_RAIL_0 = CRATE_ITEMS.register("crated_" + "POWERED_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.POWERED_RAIL_0.get()));
+    public static final RegistryObject<BlockItem> POWERED_RAIL_1 = CRATE_ITEMS.register("double_crated_" + "POWERED_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.POWERED_RAIL_1.get()));
+    public static final RegistryObject<BlockItem> POWERED_RAIL_2 = CRATE_ITEMS.register("triple_crated_" + "POWERED_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.POWERED_RAIL_2.get()));
+    public static final RegistryObject<BlockItem> POWERED_RAIL_3 = CRATE_ITEMS.register("quadruple_crated_" + "POWERED_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.POWERED_RAIL_3.get()));
+    public static final RegistryObject<BlockItem> POWERED_RAIL_4 = CRATE_ITEMS.register("quintuple_crated_" + "POWERED_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.POWERED_RAIL_4.get()));
+    public static final RegistryObject<BlockItem> POWERED_RAIL_5 = CRATE_ITEMS.register("sextuple_crated_" + "POWERED_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.POWERED_RAIL_5.get()));
+    public static final RegistryObject<BlockItem> POWERED_RAIL_6 = CRATE_ITEMS.register("septuple_crated_" + "POWERED_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.POWERED_RAIL_6.get()));
+    public static final RegistryObject<BlockItem> POWERED_RAIL_7 = CRATE_ITEMS.register("octuple_crated_" + "POWERED_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.POWERED_RAIL_7.get()));
+    public static final RegistryObject<BlockItem> POWERED_RAIL_8 = CRATE_ITEMS.register("mega_crated_" + "POWERED_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.POWERED_RAIL_8.get()));
+    public static final RegistryObject<BlockItem> POWERED_RAIL_9 = CRATE_ITEMS.register("giga_crated_" + "POWERED_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.POWERED_RAIL_9.get()));
+    public static final RegistryObject<BlockItem> DETECTOR_RAIL_0 = CRATE_ITEMS.register("crated_" + "DETECTOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.DETECTOR_RAIL_0.get()));
+    public static final RegistryObject<BlockItem> DETECTOR_RAIL_1 = CRATE_ITEMS.register("double_crated_" + "DETECTOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.DETECTOR_RAIL_1.get()));
+    public static final RegistryObject<BlockItem> DETECTOR_RAIL_2 = CRATE_ITEMS.register("triple_crated_" + "DETECTOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.DETECTOR_RAIL_2.get()));
+    public static final RegistryObject<BlockItem> DETECTOR_RAIL_3 = CRATE_ITEMS.register("quadruple_crated_" + "DETECTOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.DETECTOR_RAIL_3.get()));
+    public static final RegistryObject<BlockItem> DETECTOR_RAIL_4 = CRATE_ITEMS.register("quintuple_crated_" + "DETECTOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.DETECTOR_RAIL_4.get()));
+    public static final RegistryObject<BlockItem> DETECTOR_RAIL_5 = CRATE_ITEMS.register("sextuple_crated_" + "DETECTOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.DETECTOR_RAIL_5.get()));
+    public static final RegistryObject<BlockItem> DETECTOR_RAIL_6 = CRATE_ITEMS.register("septuple_crated_" + "DETECTOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.DETECTOR_RAIL_6.get()));
+    public static final RegistryObject<BlockItem> DETECTOR_RAIL_7 = CRATE_ITEMS.register("octuple_crated_" + "DETECTOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.DETECTOR_RAIL_7.get()));
+    public static final RegistryObject<BlockItem> DETECTOR_RAIL_8 = CRATE_ITEMS.register("mega_crated_" + "DETECTOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.DETECTOR_RAIL_8.get()));
+    public static final RegistryObject<BlockItem> DETECTOR_RAIL_9 = CRATE_ITEMS.register("giga_crated_" + "DETECTOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.DETECTOR_RAIL_9.get()));
+    public static final RegistryObject<BlockItem> ACTIVATOR_RAIL_0 = CRATE_ITEMS.register("crated_" + "ACTIVATOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ACTIVATOR_RAIL_0.get()));
+    public static final RegistryObject<BlockItem> ACTIVATOR_RAIL_1 = CRATE_ITEMS.register("double_crated_" + "ACTIVATOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ACTIVATOR_RAIL_1.get()));
+    public static final RegistryObject<BlockItem> ACTIVATOR_RAIL_2 = CRATE_ITEMS.register("triple_crated_" + "ACTIVATOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ACTIVATOR_RAIL_2.get()));
+    public static final RegistryObject<BlockItem> ACTIVATOR_RAIL_3 = CRATE_ITEMS.register("quadruple_crated_" + "ACTIVATOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ACTIVATOR_RAIL_3.get()));
+    public static final RegistryObject<BlockItem> ACTIVATOR_RAIL_4 = CRATE_ITEMS.register("quintuple_crated_" + "ACTIVATOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ACTIVATOR_RAIL_4.get()));
+    public static final RegistryObject<BlockItem> ACTIVATOR_RAIL_5 = CRATE_ITEMS.register("sextuple_crated_" + "ACTIVATOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ACTIVATOR_RAIL_5.get()));
+    public static final RegistryObject<BlockItem> ACTIVATOR_RAIL_6 = CRATE_ITEMS.register("septuple_crated_" + "ACTIVATOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ACTIVATOR_RAIL_6.get()));
+    public static final RegistryObject<BlockItem> ACTIVATOR_RAIL_7 = CRATE_ITEMS.register("octuple_crated_" + "ACTIVATOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ACTIVATOR_RAIL_7.get()));
+    public static final RegistryObject<BlockItem> ACTIVATOR_RAIL_8 = CRATE_ITEMS.register("mega_crated_" + "ACTIVATOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ACTIVATOR_RAIL_8.get()));
+    public static final RegistryObject<BlockItem> ACTIVATOR_RAIL_9 = CRATE_ITEMS.register("giga_crated_" + "ACTIVATOR_RAIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ACTIVATOR_RAIL_9.get()));
+    public static final RegistryObject<BlockItem> MINECART_0 = CRATE_ITEMS.register("crated_" + "MINECART".toLowerCase(), () -> new CrateItem(CrateBlocks.MINECART_0.get()));
+    public static final RegistryObject<BlockItem> MINECART_1 = CRATE_ITEMS.register("double_crated_" + "MINECART".toLowerCase(), () -> new CrateItem(CrateBlocks.MINECART_1.get()));
+    public static final RegistryObject<BlockItem> MINECART_2 = CRATE_ITEMS.register("triple_crated_" + "MINECART".toLowerCase(), () -> new CrateItem(CrateBlocks.MINECART_2.get()));
+    public static final RegistryObject<BlockItem> MINECART_3 = CRATE_ITEMS.register("quadruple_crated_" + "MINECART".toLowerCase(), () -> new CrateItem(CrateBlocks.MINECART_3.get()));
+    public static final RegistryObject<BlockItem> MINECART_4 = CRATE_ITEMS.register("quintuple_crated_" + "MINECART".toLowerCase(), () -> new CrateItem(CrateBlocks.MINECART_4.get()));
+    public static final RegistryObject<BlockItem> MINECART_5 = CRATE_ITEMS.register("sextuple_crated_" + "MINECART".toLowerCase(), () -> new CrateItem(CrateBlocks.MINECART_5.get()));
+    public static final RegistryObject<BlockItem> MINECART_6 = CRATE_ITEMS.register("septuple_crated_" + "MINECART".toLowerCase(), () -> new CrateItem(CrateBlocks.MINECART_6.get()));
+    public static final RegistryObject<BlockItem> MINECART_7 = CRATE_ITEMS.register("octuple_crated_" + "MINECART".toLowerCase(), () -> new CrateItem(CrateBlocks.MINECART_7.get()));
+    public static final RegistryObject<BlockItem> MINECART_8 = CRATE_ITEMS.register("mega_crated_" + "MINECART".toLowerCase(), () -> new CrateItem(CrateBlocks.MINECART_8.get()));
+    public static final RegistryObject<BlockItem> MINECART_9 = CRATE_ITEMS.register("giga_crated_" + "MINECART".toLowerCase(), () -> new CrateItem(CrateBlocks.MINECART_9.get()));
+    public static final RegistryObject<BlockItem> REDSTONE_TORCH_0 = CRATE_ITEMS.register("crated_" + "REDSTONE_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.REDSTONE_TORCH_0.get()));
+    public static final RegistryObject<BlockItem> REDSTONE_TORCH_1 = CRATE_ITEMS.register("double_crated_" + "REDSTONE_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.REDSTONE_TORCH_1.get()));
+    public static final RegistryObject<BlockItem> REDSTONE_TORCH_2 = CRATE_ITEMS.register("triple_crated_" + "REDSTONE_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.REDSTONE_TORCH_2.get()));
+    public static final RegistryObject<BlockItem> REDSTONE_TORCH_3 = CRATE_ITEMS.register("quadruple_crated_" + "REDSTONE_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.REDSTONE_TORCH_3.get()));
+    public static final RegistryObject<BlockItem> REDSTONE_TORCH_4 = CRATE_ITEMS.register("quintuple_crated_" + "REDSTONE_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.REDSTONE_TORCH_4.get()));
+    public static final RegistryObject<BlockItem> REDSTONE_TORCH_5 = CRATE_ITEMS.register("sextuple_crated_" + "REDSTONE_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.REDSTONE_TORCH_5.get()));
+    public static final RegistryObject<BlockItem> REDSTONE_TORCH_6 = CRATE_ITEMS.register("septuple_crated_" + "REDSTONE_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.REDSTONE_TORCH_6.get()));
+    public static final RegistryObject<BlockItem> REDSTONE_TORCH_7 = CRATE_ITEMS.register("octuple_crated_" + "REDSTONE_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.REDSTONE_TORCH_7.get()));
+    public static final RegistryObject<BlockItem> REDSTONE_TORCH_8 = CRATE_ITEMS.register("mega_crated_" + "REDSTONE_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.REDSTONE_TORCH_8.get()));
+    public static final RegistryObject<BlockItem> REDSTONE_TORCH_9 = CRATE_ITEMS.register("giga_crated_" + "REDSTONE_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.REDSTONE_TORCH_9.get()));
+    public static final RegistryObject<BlockItem> REPEATER_0 = CRATE_ITEMS.register("crated_" + "REPEATER".toLowerCase(), () -> new CrateItem(CrateBlocks.REPEATER_0.get()));
+    public static final RegistryObject<BlockItem> REPEATER_1 = CRATE_ITEMS.register("double_crated_" + "REPEATER".toLowerCase(), () -> new CrateItem(CrateBlocks.REPEATER_1.get()));
+    public static final RegistryObject<BlockItem> REPEATER_2 = CRATE_ITEMS.register("triple_crated_" + "REPEATER".toLowerCase(), () -> new CrateItem(CrateBlocks.REPEATER_2.get()));
+    public static final RegistryObject<BlockItem> REPEATER_3 = CRATE_ITEMS.register("quadruple_crated_" + "REPEATER".toLowerCase(), () -> new CrateItem(CrateBlocks.REPEATER_3.get()));
+    public static final RegistryObject<BlockItem> REPEATER_4 = CRATE_ITEMS.register("quintuple_crated_" + "REPEATER".toLowerCase(), () -> new CrateItem(CrateBlocks.REPEATER_4.get()));
+    public static final RegistryObject<BlockItem> REPEATER_5 = CRATE_ITEMS.register("sextuple_crated_" + "REPEATER".toLowerCase(), () -> new CrateItem(CrateBlocks.REPEATER_5.get()));
+    public static final RegistryObject<BlockItem> REPEATER_6 = CRATE_ITEMS.register("septuple_crated_" + "REPEATER".toLowerCase(), () -> new CrateItem(CrateBlocks.REPEATER_6.get()));
+    public static final RegistryObject<BlockItem> REPEATER_7 = CRATE_ITEMS.register("octuple_crated_" + "REPEATER".toLowerCase(), () -> new CrateItem(CrateBlocks.REPEATER_7.get()));
+    public static final RegistryObject<BlockItem> REPEATER_8 = CRATE_ITEMS.register("mega_crated_" + "REPEATER".toLowerCase(), () -> new CrateItem(CrateBlocks.REPEATER_8.get()));
+    public static final RegistryObject<BlockItem> REPEATER_9 = CRATE_ITEMS.register("giga_crated_" + "REPEATER".toLowerCase(), () -> new CrateItem(CrateBlocks.REPEATER_9.get()));
+    public static final RegistryObject<BlockItem> COMPARATOR_0 = CRATE_ITEMS.register("crated_" + "COMPARATOR".toLowerCase(), () -> new CrateItem(CrateBlocks.COMPARATOR_0.get()));
+    public static final RegistryObject<BlockItem> COMPARATOR_1 = CRATE_ITEMS.register("double_crated_" + "COMPARATOR".toLowerCase(), () -> new CrateItem(CrateBlocks.COMPARATOR_1.get()));
+    public static final RegistryObject<BlockItem> COMPARATOR_2 = CRATE_ITEMS.register("triple_crated_" + "COMPARATOR".toLowerCase(), () -> new CrateItem(CrateBlocks.COMPARATOR_2.get()));
+    public static final RegistryObject<BlockItem> COMPARATOR_3 = CRATE_ITEMS.register("quadruple_crated_" + "COMPARATOR".toLowerCase(), () -> new CrateItem(CrateBlocks.COMPARATOR_3.get()));
+    public static final RegistryObject<BlockItem> COMPARATOR_4 = CRATE_ITEMS.register("quintuple_crated_" + "COMPARATOR".toLowerCase(), () -> new CrateItem(CrateBlocks.COMPARATOR_4.get()));
+    public static final RegistryObject<BlockItem> COMPARATOR_5 = CRATE_ITEMS.register("sextuple_crated_" + "COMPARATOR".toLowerCase(), () -> new CrateItem(CrateBlocks.COMPARATOR_5.get()));
+    public static final RegistryObject<BlockItem> COMPARATOR_6 = CRATE_ITEMS.register("septuple_crated_" + "COMPARATOR".toLowerCase(), () -> new CrateItem(CrateBlocks.COMPARATOR_6.get()));
+    public static final RegistryObject<BlockItem> COMPARATOR_7 = CRATE_ITEMS.register("octuple_crated_" + "COMPARATOR".toLowerCase(), () -> new CrateItem(CrateBlocks.COMPARATOR_7.get()));
+    public static final RegistryObject<BlockItem> COMPARATOR_8 = CRATE_ITEMS.register("mega_crated_" + "COMPARATOR".toLowerCase(), () -> new CrateItem(CrateBlocks.COMPARATOR_8.get()));
+    public static final RegistryObject<BlockItem> COMPARATOR_9 = CRATE_ITEMS.register("giga_crated_" + "COMPARATOR".toLowerCase(), () -> new CrateItem(CrateBlocks.COMPARATOR_9.get()));
+    public static final RegistryObject<BlockItem> LIGHTNING_ROD_0 = CRATE_ITEMS.register("crated_" + "LIGHTNING_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHTNING_ROD_0.get()));
+    public static final RegistryObject<BlockItem> LIGHTNING_ROD_1 = CRATE_ITEMS.register("double_crated_" + "LIGHTNING_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHTNING_ROD_1.get()));
+    public static final RegistryObject<BlockItem> LIGHTNING_ROD_2 = CRATE_ITEMS.register("triple_crated_" + "LIGHTNING_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHTNING_ROD_2.get()));
+    public static final RegistryObject<BlockItem> LIGHTNING_ROD_3 = CRATE_ITEMS.register("quadruple_crated_" + "LIGHTNING_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHTNING_ROD_3.get()));
+    public static final RegistryObject<BlockItem> LIGHTNING_ROD_4 = CRATE_ITEMS.register("quintuple_crated_" + "LIGHTNING_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHTNING_ROD_4.get()));
+    public static final RegistryObject<BlockItem> LIGHTNING_ROD_5 = CRATE_ITEMS.register("sextuple_crated_" + "LIGHTNING_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHTNING_ROD_5.get()));
+    public static final RegistryObject<BlockItem> LIGHTNING_ROD_6 = CRATE_ITEMS.register("septuple_crated_" + "LIGHTNING_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHTNING_ROD_6.get()));
+    public static final RegistryObject<BlockItem> LIGHTNING_ROD_7 = CRATE_ITEMS.register("octuple_crated_" + "LIGHTNING_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHTNING_ROD_7.get()));
+    public static final RegistryObject<BlockItem> LIGHTNING_ROD_8 = CRATE_ITEMS.register("mega_crated_" + "LIGHTNING_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHTNING_ROD_8.get()));
+    public static final RegistryObject<BlockItem> LIGHTNING_ROD_9 = CRATE_ITEMS.register("giga_crated_" + "LIGHTNING_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHTNING_ROD_9.get()));
+    public static final RegistryObject<BlockItem> TORCH_0 = CRATE_ITEMS.register("crated_" + "TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.TORCH_0.get()));
+    public static final RegistryObject<BlockItem> TORCH_1 = CRATE_ITEMS.register("double_crated_" + "TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.TORCH_1.get()));
+    public static final RegistryObject<BlockItem> TORCH_2 = CRATE_ITEMS.register("triple_crated_" + "TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.TORCH_2.get()));
+    public static final RegistryObject<BlockItem> TORCH_3 = CRATE_ITEMS.register("quadruple_crated_" + "TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.TORCH_3.get()));
+    public static final RegistryObject<BlockItem> TORCH_4 = CRATE_ITEMS.register("quintuple_crated_" + "TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.TORCH_4.get()));
+    public static final RegistryObject<BlockItem> TORCH_5 = CRATE_ITEMS.register("sextuple_crated_" + "TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.TORCH_5.get()));
+    public static final RegistryObject<BlockItem> TORCH_6 = CRATE_ITEMS.register("septuple_crated_" + "TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.TORCH_6.get()));
+    public static final RegistryObject<BlockItem> TORCH_7 = CRATE_ITEMS.register("octuple_crated_" + "TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.TORCH_7.get()));
+    public static final RegistryObject<BlockItem> TORCH_8 = CRATE_ITEMS.register("mega_crated_" + "TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.TORCH_8.get()));
+    public static final RegistryObject<BlockItem> TORCH_9 = CRATE_ITEMS.register("giga_crated_" + "TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.TORCH_9.get()));
+    public static final RegistryObject<BlockItem> SOUL_TORCH_0 = CRATE_ITEMS.register("crated_" + "SOUL_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_TORCH_0.get()));
+    public static final RegistryObject<BlockItem> SOUL_TORCH_1 = CRATE_ITEMS.register("double_crated_" + "SOUL_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_TORCH_1.get()));
+    public static final RegistryObject<BlockItem> SOUL_TORCH_2 = CRATE_ITEMS.register("triple_crated_" + "SOUL_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_TORCH_2.get()));
+    public static final RegistryObject<BlockItem> SOUL_TORCH_3 = CRATE_ITEMS.register("quadruple_crated_" + "SOUL_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_TORCH_3.get()));
+    public static final RegistryObject<BlockItem> SOUL_TORCH_4 = CRATE_ITEMS.register("quintuple_crated_" + "SOUL_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_TORCH_4.get()));
+    public static final RegistryObject<BlockItem> SOUL_TORCH_5 = CRATE_ITEMS.register("sextuple_crated_" + "SOUL_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_TORCH_5.get()));
+    public static final RegistryObject<BlockItem> SOUL_TORCH_6 = CRATE_ITEMS.register("septuple_crated_" + "SOUL_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_TORCH_6.get()));
+    public static final RegistryObject<BlockItem> SOUL_TORCH_7 = CRATE_ITEMS.register("octuple_crated_" + "SOUL_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_TORCH_7.get()));
+    public static final RegistryObject<BlockItem> SOUL_TORCH_8 = CRATE_ITEMS.register("mega_crated_" + "SOUL_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_TORCH_8.get()));
+    public static final RegistryObject<BlockItem> SOUL_TORCH_9 = CRATE_ITEMS.register("giga_crated_" + "SOUL_TORCH".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_TORCH_9.get()));
+    public static final RegistryObject<BlockItem> LANTERN_0 = CRATE_ITEMS.register("crated_" + "LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.LANTERN_0.get()));
+    public static final RegistryObject<BlockItem> LANTERN_1 = CRATE_ITEMS.register("double_crated_" + "LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.LANTERN_1.get()));
+    public static final RegistryObject<BlockItem> LANTERN_2 = CRATE_ITEMS.register("triple_crated_" + "LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.LANTERN_2.get()));
+    public static final RegistryObject<BlockItem> LANTERN_3 = CRATE_ITEMS.register("quadruple_crated_" + "LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.LANTERN_3.get()));
+    public static final RegistryObject<BlockItem> LANTERN_4 = CRATE_ITEMS.register("quintuple_crated_" + "LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.LANTERN_4.get()));
+    public static final RegistryObject<BlockItem> LANTERN_5 = CRATE_ITEMS.register("sextuple_crated_" + "LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.LANTERN_5.get()));
+    public static final RegistryObject<BlockItem> LANTERN_6 = CRATE_ITEMS.register("septuple_crated_" + "LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.LANTERN_6.get()));
+    public static final RegistryObject<BlockItem> LANTERN_7 = CRATE_ITEMS.register("octuple_crated_" + "LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.LANTERN_7.get()));
+    public static final RegistryObject<BlockItem> LANTERN_8 = CRATE_ITEMS.register("mega_crated_" + "LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.LANTERN_8.get()));
+    public static final RegistryObject<BlockItem> LANTERN_9 = CRATE_ITEMS.register("giga_crated_" + "LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.LANTERN_9.get()));
+    public static final RegistryObject<BlockItem> SOUL_LANTERN_0 = CRATE_ITEMS.register("crated_" + "SOUL_LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_LANTERN_0.get()));
+    public static final RegistryObject<BlockItem> SOUL_LANTERN_1 = CRATE_ITEMS.register("double_crated_" + "SOUL_LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_LANTERN_1.get()));
+    public static final RegistryObject<BlockItem> SOUL_LANTERN_2 = CRATE_ITEMS.register("triple_crated_" + "SOUL_LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_LANTERN_2.get()));
+    public static final RegistryObject<BlockItem> SOUL_LANTERN_3 = CRATE_ITEMS.register("quadruple_crated_" + "SOUL_LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_LANTERN_3.get()));
+    public static final RegistryObject<BlockItem> SOUL_LANTERN_4 = CRATE_ITEMS.register("quintuple_crated_" + "SOUL_LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_LANTERN_4.get()));
+    public static final RegistryObject<BlockItem> SOUL_LANTERN_5 = CRATE_ITEMS.register("sextuple_crated_" + "SOUL_LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_LANTERN_5.get()));
+    public static final RegistryObject<BlockItem> SOUL_LANTERN_6 = CRATE_ITEMS.register("septuple_crated_" + "SOUL_LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_LANTERN_6.get()));
+    public static final RegistryObject<BlockItem> SOUL_LANTERN_7 = CRATE_ITEMS.register("octuple_crated_" + "SOUL_LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_LANTERN_7.get()));
+    public static final RegistryObject<BlockItem> SOUL_LANTERN_8 = CRATE_ITEMS.register("mega_crated_" + "SOUL_LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_LANTERN_8.get()));
+    public static final RegistryObject<BlockItem> SOUL_LANTERN_9 = CRATE_ITEMS.register("giga_crated_" + "SOUL_LANTERN".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_LANTERN_9.get()));
+    public static final RegistryObject<BlockItem> CHAIN_0 = CRATE_ITEMS.register("crated_" + "CHAIN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHAIN_0.get()));
+    public static final RegistryObject<BlockItem> CHAIN_1 = CRATE_ITEMS.register("double_crated_" + "CHAIN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHAIN_1.get()));
+    public static final RegistryObject<BlockItem> CHAIN_2 = CRATE_ITEMS.register("triple_crated_" + "CHAIN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHAIN_2.get()));
+    public static final RegistryObject<BlockItem> CHAIN_3 = CRATE_ITEMS.register("quadruple_crated_" + "CHAIN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHAIN_3.get()));
+    public static final RegistryObject<BlockItem> CHAIN_4 = CRATE_ITEMS.register("quintuple_crated_" + "CHAIN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHAIN_4.get()));
+    public static final RegistryObject<BlockItem> CHAIN_5 = CRATE_ITEMS.register("sextuple_crated_" + "CHAIN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHAIN_5.get()));
+    public static final RegistryObject<BlockItem> CHAIN_6 = CRATE_ITEMS.register("septuple_crated_" + "CHAIN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHAIN_6.get()));
+    public static final RegistryObject<BlockItem> CHAIN_7 = CRATE_ITEMS.register("octuple_crated_" + "CHAIN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHAIN_7.get()));
+    public static final RegistryObject<BlockItem> CHAIN_8 = CRATE_ITEMS.register("mega_crated_" + "CHAIN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHAIN_8.get()));
+    public static final RegistryObject<BlockItem> CHAIN_9 = CRATE_ITEMS.register("giga_crated_" + "CHAIN".toLowerCase(), () -> new CrateItem(CrateBlocks.CHAIN_9.get()));
+    public static final RegistryObject<BlockItem> END_ROD_0 = CRATE_ITEMS.register("crated_" + "END_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.END_ROD_0.get()));
+    public static final RegistryObject<BlockItem> END_ROD_1 = CRATE_ITEMS.register("double_crated_" + "END_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.END_ROD_1.get()));
+    public static final RegistryObject<BlockItem> END_ROD_2 = CRATE_ITEMS.register("triple_crated_" + "END_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.END_ROD_2.get()));
+    public static final RegistryObject<BlockItem> END_ROD_3 = CRATE_ITEMS.register("quadruple_crated_" + "END_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.END_ROD_3.get()));
+    public static final RegistryObject<BlockItem> END_ROD_4 = CRATE_ITEMS.register("quintuple_crated_" + "END_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.END_ROD_4.get()));
+    public static final RegistryObject<BlockItem> END_ROD_5 = CRATE_ITEMS.register("sextuple_crated_" + "END_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.END_ROD_5.get()));
+    public static final RegistryObject<BlockItem> END_ROD_6 = CRATE_ITEMS.register("septuple_crated_" + "END_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.END_ROD_6.get()));
+    public static final RegistryObject<BlockItem> END_ROD_7 = CRATE_ITEMS.register("octuple_crated_" + "END_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.END_ROD_7.get()));
+    public static final RegistryObject<BlockItem> END_ROD_8 = CRATE_ITEMS.register("mega_crated_" + "END_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.END_ROD_8.get()));
+    public static final RegistryObject<BlockItem> END_ROD_9 = CRATE_ITEMS.register("giga_crated_" + "END_ROD".toLowerCase(), () -> new CrateItem(CrateBlocks.END_ROD_9.get()));
+    public static final RegistryObject<BlockItem> ANVIL_0 = CRATE_ITEMS.register("crated_" + "ANVIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ANVIL_0.get()));
+    public static final RegistryObject<BlockItem> ANVIL_1 = CRATE_ITEMS.register("double_crated_" + "ANVIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ANVIL_1.get()));
+    public static final RegistryObject<BlockItem> ANVIL_2 = CRATE_ITEMS.register("triple_crated_" + "ANVIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ANVIL_2.get()));
+    public static final RegistryObject<BlockItem> ANVIL_3 = CRATE_ITEMS.register("quadruple_crated_" + "ANVIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ANVIL_3.get()));
+    public static final RegistryObject<BlockItem> ANVIL_4 = CRATE_ITEMS.register("quintuple_crated_" + "ANVIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ANVIL_4.get()));
+    public static final RegistryObject<BlockItem> ANVIL_5 = CRATE_ITEMS.register("sextuple_crated_" + "ANVIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ANVIL_5.get()));
+    public static final RegistryObject<BlockItem> ANVIL_6 = CRATE_ITEMS.register("septuple_crated_" + "ANVIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ANVIL_6.get()));
+    public static final RegistryObject<BlockItem> ANVIL_7 = CRATE_ITEMS.register("octuple_crated_" + "ANVIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ANVIL_7.get()));
+    public static final RegistryObject<BlockItem> ANVIL_8 = CRATE_ITEMS.register("mega_crated_" + "ANVIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ANVIL_8.get()));
+    public static final RegistryObject<BlockItem> ANVIL_9 = CRATE_ITEMS.register("giga_crated_" + "ANVIL".toLowerCase(), () -> new CrateItem(CrateBlocks.ANVIL_9.get()));
+    public static final RegistryObject<BlockItem> CAMPFIRE_0 = CRATE_ITEMS.register("crated_" + "CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.CAMPFIRE_0.get()));
+    public static final RegistryObject<BlockItem> CAMPFIRE_1 = CRATE_ITEMS.register("double_crated_" + "CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.CAMPFIRE_1.get()));
+    public static final RegistryObject<BlockItem> CAMPFIRE_2 = CRATE_ITEMS.register("triple_crated_" + "CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.CAMPFIRE_2.get()));
+    public static final RegistryObject<BlockItem> CAMPFIRE_3 = CRATE_ITEMS.register("quadruple_crated_" + "CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.CAMPFIRE_3.get()));
+    public static final RegistryObject<BlockItem> CAMPFIRE_4 = CRATE_ITEMS.register("quintuple_crated_" + "CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.CAMPFIRE_4.get()));
+    public static final RegistryObject<BlockItem> CAMPFIRE_5 = CRATE_ITEMS.register("sextuple_crated_" + "CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.CAMPFIRE_5.get()));
+    public static final RegistryObject<BlockItem> CAMPFIRE_6 = CRATE_ITEMS.register("septuple_crated_" + "CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.CAMPFIRE_6.get()));
+    public static final RegistryObject<BlockItem> CAMPFIRE_7 = CRATE_ITEMS.register("octuple_crated_" + "CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.CAMPFIRE_7.get()));
+    public static final RegistryObject<BlockItem> CAMPFIRE_8 = CRATE_ITEMS.register("mega_crated_" + "CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.CAMPFIRE_8.get()));
+    public static final RegistryObject<BlockItem> CAMPFIRE_9 = CRATE_ITEMS.register("giga_crated_" + "CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.CAMPFIRE_9.get()));
+    public static final RegistryObject<BlockItem> SOUL_CAMPFIRE_0 = CRATE_ITEMS.register("crated_" + "SOUL_CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_CAMPFIRE_0.get()));
+    public static final RegistryObject<BlockItem> SOUL_CAMPFIRE_1 = CRATE_ITEMS.register("double_crated_" + "SOUL_CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_CAMPFIRE_1.get()));
+    public static final RegistryObject<BlockItem> SOUL_CAMPFIRE_2 = CRATE_ITEMS.register("triple_crated_" + "SOUL_CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_CAMPFIRE_2.get()));
+    public static final RegistryObject<BlockItem> SOUL_CAMPFIRE_3 = CRATE_ITEMS.register("quadruple_crated_" + "SOUL_CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_CAMPFIRE_3.get()));
+    public static final RegistryObject<BlockItem> SOUL_CAMPFIRE_4 = CRATE_ITEMS.register("quintuple_crated_" + "SOUL_CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_CAMPFIRE_4.get()));
+    public static final RegistryObject<BlockItem> SOUL_CAMPFIRE_5 = CRATE_ITEMS.register("sextuple_crated_" + "SOUL_CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_CAMPFIRE_5.get()));
+    public static final RegistryObject<BlockItem> SOUL_CAMPFIRE_6 = CRATE_ITEMS.register("septuple_crated_" + "SOUL_CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_CAMPFIRE_6.get()));
+    public static final RegistryObject<BlockItem> SOUL_CAMPFIRE_7 = CRATE_ITEMS.register("octuple_crated_" + "SOUL_CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_CAMPFIRE_7.get()));
+    public static final RegistryObject<BlockItem> SOUL_CAMPFIRE_8 = CRATE_ITEMS.register("mega_crated_" + "SOUL_CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_CAMPFIRE_8.get()));
+    public static final RegistryObject<BlockItem> SOUL_CAMPFIRE_9 = CRATE_ITEMS.register("giga_crated_" + "SOUL_CAMPFIRE".toLowerCase(), () -> new CrateItem(CrateBlocks.SOUL_CAMPFIRE_9.get()));
+    public static final RegistryObject<BlockItem> ITEM_FRAME_0 = CRATE_ITEMS.register("crated_" + "ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.ITEM_FRAME_0.get()));
+    public static final RegistryObject<BlockItem> ITEM_FRAME_1 = CRATE_ITEMS.register("double_crated_" + "ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.ITEM_FRAME_1.get()));
+    public static final RegistryObject<BlockItem> ITEM_FRAME_2 = CRATE_ITEMS.register("triple_crated_" + "ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.ITEM_FRAME_2.get()));
+    public static final RegistryObject<BlockItem> ITEM_FRAME_3 = CRATE_ITEMS.register("quadruple_crated_" + "ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.ITEM_FRAME_3.get()));
+    public static final RegistryObject<BlockItem> ITEM_FRAME_4 = CRATE_ITEMS.register("quintuple_crated_" + "ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.ITEM_FRAME_4.get()));
+    public static final RegistryObject<BlockItem> ITEM_FRAME_5 = CRATE_ITEMS.register("sextuple_crated_" + "ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.ITEM_FRAME_5.get()));
+    public static final RegistryObject<BlockItem> ITEM_FRAME_6 = CRATE_ITEMS.register("septuple_crated_" + "ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.ITEM_FRAME_6.get()));
+    public static final RegistryObject<BlockItem> ITEM_FRAME_7 = CRATE_ITEMS.register("octuple_crated_" + "ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.ITEM_FRAME_7.get()));
+    public static final RegistryObject<BlockItem> ITEM_FRAME_8 = CRATE_ITEMS.register("mega_crated_" + "ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.ITEM_FRAME_8.get()));
+    public static final RegistryObject<BlockItem> ITEM_FRAME_9 = CRATE_ITEMS.register("giga_crated_" + "ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.ITEM_FRAME_9.get()));
+    public static final RegistryObject<BlockItem> GLOW_ITEM_FRAME_0 = CRATE_ITEMS.register("crated_" + "GLOW_ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_ITEM_FRAME_0.get()));
+    public static final RegistryObject<BlockItem> GLOW_ITEM_FRAME_1 = CRATE_ITEMS.register("double_crated_" + "GLOW_ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_ITEM_FRAME_1.get()));
+    public static final RegistryObject<BlockItem> GLOW_ITEM_FRAME_2 = CRATE_ITEMS.register("triple_crated_" + "GLOW_ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_ITEM_FRAME_2.get()));
+    public static final RegistryObject<BlockItem> GLOW_ITEM_FRAME_3 = CRATE_ITEMS.register("quadruple_crated_" + "GLOW_ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_ITEM_FRAME_3.get()));
+    public static final RegistryObject<BlockItem> GLOW_ITEM_FRAME_4 = CRATE_ITEMS.register("quintuple_crated_" + "GLOW_ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_ITEM_FRAME_4.get()));
+    public static final RegistryObject<BlockItem> GLOW_ITEM_FRAME_5 = CRATE_ITEMS.register("sextuple_crated_" + "GLOW_ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_ITEM_FRAME_5.get()));
+    public static final RegistryObject<BlockItem> GLOW_ITEM_FRAME_6 = CRATE_ITEMS.register("septuple_crated_" + "GLOW_ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_ITEM_FRAME_6.get()));
+    public static final RegistryObject<BlockItem> GLOW_ITEM_FRAME_7 = CRATE_ITEMS.register("octuple_crated_" + "GLOW_ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_ITEM_FRAME_7.get()));
+    public static final RegistryObject<BlockItem> GLOW_ITEM_FRAME_8 = CRATE_ITEMS.register("mega_crated_" + "GLOW_ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_ITEM_FRAME_8.get()));
+    public static final RegistryObject<BlockItem> GLOW_ITEM_FRAME_9 = CRATE_ITEMS.register("giga_crated_" + "GLOW_ITEM_FRAME".toLowerCase(), () -> new CrateItem(CrateBlocks.GLOW_ITEM_FRAME_9.get()));
+    public static final RegistryObject<BlockItem> PAINTING_0 = CRATE_ITEMS.register("crated_" + "PAINTING".toLowerCase(), () -> new CrateItem(CrateBlocks.PAINTING_0.get()));
+    public static final RegistryObject<BlockItem> PAINTING_1 = CRATE_ITEMS.register("double_crated_" + "PAINTING".toLowerCase(), () -> new CrateItem(CrateBlocks.PAINTING_1.get()));
+    public static final RegistryObject<BlockItem> PAINTING_2 = CRATE_ITEMS.register("triple_crated_" + "PAINTING".toLowerCase(), () -> new CrateItem(CrateBlocks.PAINTING_2.get()));
+    public static final RegistryObject<BlockItem> PAINTING_3 = CRATE_ITEMS.register("quadruple_crated_" + "PAINTING".toLowerCase(), () -> new CrateItem(CrateBlocks.PAINTING_3.get()));
+    public static final RegistryObject<BlockItem> PAINTING_4 = CRATE_ITEMS.register("quintuple_crated_" + "PAINTING".toLowerCase(), () -> new CrateItem(CrateBlocks.PAINTING_4.get()));
+    public static final RegistryObject<BlockItem> PAINTING_5 = CRATE_ITEMS.register("sextuple_crated_" + "PAINTING".toLowerCase(), () -> new CrateItem(CrateBlocks.PAINTING_5.get()));
+    public static final RegistryObject<BlockItem> PAINTING_6 = CRATE_ITEMS.register("septuple_crated_" + "PAINTING".toLowerCase(), () -> new CrateItem(CrateBlocks.PAINTING_6.get()));
+    public static final RegistryObject<BlockItem> PAINTING_7 = CRATE_ITEMS.register("octuple_crated_" + "PAINTING".toLowerCase(), () -> new CrateItem(CrateBlocks.PAINTING_7.get()));
+    public static final RegistryObject<BlockItem> PAINTING_8 = CRATE_ITEMS.register("mega_crated_" + "PAINTING".toLowerCase(), () -> new CrateItem(CrateBlocks.PAINTING_8.get()));
+    public static final RegistryObject<BlockItem> PAINTING_9 = CRATE_ITEMS.register("giga_crated_" + "PAINTING".toLowerCase(), () -> new CrateItem(CrateBlocks.PAINTING_9.get()));
+    public static final RegistryObject<BlockItem> POINTED_DRIPSTONE_0 = CRATE_ITEMS.register("crated_" + "POINTED_DRIPSTONE".toLowerCase(), () -> new CrateItem(CrateBlocks.POINTED_DRIPSTONE_0.get()));
+    public static final RegistryObject<BlockItem> POINTED_DRIPSTONE_1 = CRATE_ITEMS.register("double_crated_" + "POINTED_DRIPSTONE".toLowerCase(), () -> new CrateItem(CrateBlocks.POINTED_DRIPSTONE_1.get()));
+    public static final RegistryObject<BlockItem> POINTED_DRIPSTONE_2 = CRATE_ITEMS.register("triple_crated_" + "POINTED_DRIPSTONE".toLowerCase(), () -> new CrateItem(CrateBlocks.POINTED_DRIPSTONE_2.get()));
+    public static final RegistryObject<BlockItem> POINTED_DRIPSTONE_3 = CRATE_ITEMS.register("quadruple_crated_" + "POINTED_DRIPSTONE".toLowerCase(), () -> new CrateItem(CrateBlocks.POINTED_DRIPSTONE_3.get()));
+    public static final RegistryObject<BlockItem> POINTED_DRIPSTONE_4 = CRATE_ITEMS.register("quintuple_crated_" + "POINTED_DRIPSTONE".toLowerCase(), () -> new CrateItem(CrateBlocks.POINTED_DRIPSTONE_4.get()));
+    public static final RegistryObject<BlockItem> POINTED_DRIPSTONE_5 = CRATE_ITEMS.register("sextuple_crated_" + "POINTED_DRIPSTONE".toLowerCase(), () -> new CrateItem(CrateBlocks.POINTED_DRIPSTONE_5.get()));
+    public static final RegistryObject<BlockItem> POINTED_DRIPSTONE_6 = CRATE_ITEMS.register("septuple_crated_" + "POINTED_DRIPSTONE".toLowerCase(), () -> new CrateItem(CrateBlocks.POINTED_DRIPSTONE_6.get()));
+    public static final RegistryObject<BlockItem> POINTED_DRIPSTONE_7 = CRATE_ITEMS.register("octuple_crated_" + "POINTED_DRIPSTONE".toLowerCase(), () -> new CrateItem(CrateBlocks.POINTED_DRIPSTONE_7.get()));
+    public static final RegistryObject<BlockItem> POINTED_DRIPSTONE_8 = CRATE_ITEMS.register("mega_crated_" + "POINTED_DRIPSTONE".toLowerCase(), () -> new CrateItem(CrateBlocks.POINTED_DRIPSTONE_8.get()));
+    public static final RegistryObject<BlockItem> POINTED_DRIPSTONE_9 = CRATE_ITEMS.register("giga_crated_" + "POINTED_DRIPSTONE".toLowerCase(), () -> new CrateItem(CrateBlocks.POINTED_DRIPSTONE_9.get()));
+    public static final RegistryObject<BlockItem> OAK_SAPLING_0 = CRATE_ITEMS.register("crated_" + "OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.OAK_SAPLING_0.get()));
+    public static final RegistryObject<BlockItem> OAK_SAPLING_1 = CRATE_ITEMS.register("double_crated_" + "OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.OAK_SAPLING_1.get()));
+    public static final RegistryObject<BlockItem> OAK_SAPLING_2 = CRATE_ITEMS.register("triple_crated_" + "OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.OAK_SAPLING_2.get()));
+    public static final RegistryObject<BlockItem> OAK_SAPLING_3 = CRATE_ITEMS.register("quadruple_crated_" + "OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.OAK_SAPLING_3.get()));
+    public static final RegistryObject<BlockItem> OAK_SAPLING_4 = CRATE_ITEMS.register("quintuple_crated_" + "OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.OAK_SAPLING_4.get()));
+    public static final RegistryObject<BlockItem> OAK_SAPLING_5 = CRATE_ITEMS.register("sextuple_crated_" + "OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.OAK_SAPLING_5.get()));
+    public static final RegistryObject<BlockItem> OAK_SAPLING_6 = CRATE_ITEMS.register("septuple_crated_" + "OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.OAK_SAPLING_6.get()));
+    public static final RegistryObject<BlockItem> OAK_SAPLING_7 = CRATE_ITEMS.register("octuple_crated_" + "OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.OAK_SAPLING_7.get()));
+    public static final RegistryObject<BlockItem> OAK_SAPLING_8 = CRATE_ITEMS.register("mega_crated_" + "OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.OAK_SAPLING_8.get()));
+    public static final RegistryObject<BlockItem> OAK_SAPLING_9 = CRATE_ITEMS.register("giga_crated_" + "OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.OAK_SAPLING_9.get()));
+    public static final RegistryObject<BlockItem> SPRUCE_SAPLING_0 = CRATE_ITEMS.register("crated_" + "SPRUCE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.SPRUCE_SAPLING_0.get()));
+    public static final RegistryObject<BlockItem> SPRUCE_SAPLING_1 = CRATE_ITEMS.register("double_crated_" + "SPRUCE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.SPRUCE_SAPLING_1.get()));
+    public static final RegistryObject<BlockItem> SPRUCE_SAPLING_2 = CRATE_ITEMS.register("triple_crated_" + "SPRUCE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.SPRUCE_SAPLING_2.get()));
+    public static final RegistryObject<BlockItem> SPRUCE_SAPLING_3 = CRATE_ITEMS.register("quadruple_crated_" + "SPRUCE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.SPRUCE_SAPLING_3.get()));
+    public static final RegistryObject<BlockItem> SPRUCE_SAPLING_4 = CRATE_ITEMS.register("quintuple_crated_" + "SPRUCE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.SPRUCE_SAPLING_4.get()));
+    public static final RegistryObject<BlockItem> SPRUCE_SAPLING_5 = CRATE_ITEMS.register("sextuple_crated_" + "SPRUCE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.SPRUCE_SAPLING_5.get()));
+    public static final RegistryObject<BlockItem> SPRUCE_SAPLING_6 = CRATE_ITEMS.register("septuple_crated_" + "SPRUCE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.SPRUCE_SAPLING_6.get()));
+    public static final RegistryObject<BlockItem> SPRUCE_SAPLING_7 = CRATE_ITEMS.register("octuple_crated_" + "SPRUCE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.SPRUCE_SAPLING_7.get()));
+    public static final RegistryObject<BlockItem> SPRUCE_SAPLING_8 = CRATE_ITEMS.register("mega_crated_" + "SPRUCE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.SPRUCE_SAPLING_8.get()));
+    public static final RegistryObject<BlockItem> SPRUCE_SAPLING_9 = CRATE_ITEMS.register("giga_crated_" + "SPRUCE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.SPRUCE_SAPLING_9.get()));
+    public static final RegistryObject<BlockItem> BIRCH_SAPLING_0 = CRATE_ITEMS.register("crated_" + "BIRCH_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.BIRCH_SAPLING_0.get()));
+    public static final RegistryObject<BlockItem> BIRCH_SAPLING_1 = CRATE_ITEMS.register("double_crated_" + "BIRCH_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.BIRCH_SAPLING_1.get()));
+    public static final RegistryObject<BlockItem> BIRCH_SAPLING_2 = CRATE_ITEMS.register("triple_crated_" + "BIRCH_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.BIRCH_SAPLING_2.get()));
+    public static final RegistryObject<BlockItem> BIRCH_SAPLING_3 = CRATE_ITEMS.register("quadruple_crated_" + "BIRCH_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.BIRCH_SAPLING_3.get()));
+    public static final RegistryObject<BlockItem> BIRCH_SAPLING_4 = CRATE_ITEMS.register("quintuple_crated_" + "BIRCH_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.BIRCH_SAPLING_4.get()));
+    public static final RegistryObject<BlockItem> BIRCH_SAPLING_5 = CRATE_ITEMS.register("sextuple_crated_" + "BIRCH_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.BIRCH_SAPLING_5.get()));
+    public static final RegistryObject<BlockItem> BIRCH_SAPLING_6 = CRATE_ITEMS.register("septuple_crated_" + "BIRCH_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.BIRCH_SAPLING_6.get()));
+    public static final RegistryObject<BlockItem> BIRCH_SAPLING_7 = CRATE_ITEMS.register("octuple_crated_" + "BIRCH_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.BIRCH_SAPLING_7.get()));
+    public static final RegistryObject<BlockItem> BIRCH_SAPLING_8 = CRATE_ITEMS.register("mega_crated_" + "BIRCH_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.BIRCH_SAPLING_8.get()));
+    public static final RegistryObject<BlockItem> BIRCH_SAPLING_9 = CRATE_ITEMS.register("giga_crated_" + "BIRCH_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.BIRCH_SAPLING_9.get()));
+    public static final RegistryObject<BlockItem> JUNGLE_SAPLING_0 = CRATE_ITEMS.register("crated_" + "JUNGLE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.JUNGLE_SAPLING_0.get()));
+    public static final RegistryObject<BlockItem> JUNGLE_SAPLING_1 = CRATE_ITEMS.register("double_crated_" + "JUNGLE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.JUNGLE_SAPLING_1.get()));
+    public static final RegistryObject<BlockItem> JUNGLE_SAPLING_2 = CRATE_ITEMS.register("triple_crated_" + "JUNGLE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.JUNGLE_SAPLING_2.get()));
+    public static final RegistryObject<BlockItem> JUNGLE_SAPLING_3 = CRATE_ITEMS.register("quadruple_crated_" + "JUNGLE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.JUNGLE_SAPLING_3.get()));
+    public static final RegistryObject<BlockItem> JUNGLE_SAPLING_4 = CRATE_ITEMS.register("quintuple_crated_" + "JUNGLE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.JUNGLE_SAPLING_4.get()));
+    public static final RegistryObject<BlockItem> JUNGLE_SAPLING_5 = CRATE_ITEMS.register("sextuple_crated_" + "JUNGLE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.JUNGLE_SAPLING_5.get()));
+    public static final RegistryObject<BlockItem> JUNGLE_SAPLING_6 = CRATE_ITEMS.register("septuple_crated_" + "JUNGLE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.JUNGLE_SAPLING_6.get()));
+    public static final RegistryObject<BlockItem> JUNGLE_SAPLING_7 = CRATE_ITEMS.register("octuple_crated_" + "JUNGLE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.JUNGLE_SAPLING_7.get()));
+    public static final RegistryObject<BlockItem> JUNGLE_SAPLING_8 = CRATE_ITEMS.register("mega_crated_" + "JUNGLE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.JUNGLE_SAPLING_8.get()));
+    public static final RegistryObject<BlockItem> JUNGLE_SAPLING_9 = CRATE_ITEMS.register("giga_crated_" + "JUNGLE_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.JUNGLE_SAPLING_9.get()));
+    public static final RegistryObject<BlockItem> ACACIA_SAPLING_0 = CRATE_ITEMS.register("crated_" + "ACACIA_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.ACACIA_SAPLING_0.get()));
+    public static final RegistryObject<BlockItem> ACACIA_SAPLING_1 = CRATE_ITEMS.register("double_crated_" + "ACACIA_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.ACACIA_SAPLING_1.get()));
+    public static final RegistryObject<BlockItem> ACACIA_SAPLING_2 = CRATE_ITEMS.register("triple_crated_" + "ACACIA_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.ACACIA_SAPLING_2.get()));
+    public static final RegistryObject<BlockItem> ACACIA_SAPLING_3 = CRATE_ITEMS.register("quadruple_crated_" + "ACACIA_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.ACACIA_SAPLING_3.get()));
+    public static final RegistryObject<BlockItem> ACACIA_SAPLING_4 = CRATE_ITEMS.register("quintuple_crated_" + "ACACIA_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.ACACIA_SAPLING_4.get()));
+    public static final RegistryObject<BlockItem> ACACIA_SAPLING_5 = CRATE_ITEMS.register("sextuple_crated_" + "ACACIA_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.ACACIA_SAPLING_5.get()));
+    public static final RegistryObject<BlockItem> ACACIA_SAPLING_6 = CRATE_ITEMS.register("septuple_crated_" + "ACACIA_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.ACACIA_SAPLING_6.get()));
+    public static final RegistryObject<BlockItem> ACACIA_SAPLING_7 = CRATE_ITEMS.register("octuple_crated_" + "ACACIA_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.ACACIA_SAPLING_7.get()));
+    public static final RegistryObject<BlockItem> ACACIA_SAPLING_8 = CRATE_ITEMS.register("mega_crated_" + "ACACIA_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.ACACIA_SAPLING_8.get()));
+    public static final RegistryObject<BlockItem> ACACIA_SAPLING_9 = CRATE_ITEMS.register("giga_crated_" + "ACACIA_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.ACACIA_SAPLING_9.get()));
+    public static final RegistryObject<BlockItem> DARK_OAK_SAPLING_0 = CRATE_ITEMS.register("crated_" + "DARK_OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.DARK_OAK_SAPLING_0.get()));
+    public static final RegistryObject<BlockItem> DARK_OAK_SAPLING_1 = CRATE_ITEMS.register("double_crated_" + "DARK_OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.DARK_OAK_SAPLING_1.get()));
+    public static final RegistryObject<BlockItem> DARK_OAK_SAPLING_2 = CRATE_ITEMS.register("triple_crated_" + "DARK_OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.DARK_OAK_SAPLING_2.get()));
+    public static final RegistryObject<BlockItem> DARK_OAK_SAPLING_3 = CRATE_ITEMS.register("quadruple_crated_" + "DARK_OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.DARK_OAK_SAPLING_3.get()));
+    public static final RegistryObject<BlockItem> DARK_OAK_SAPLING_4 = CRATE_ITEMS.register("quintuple_crated_" + "DARK_OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.DARK_OAK_SAPLING_4.get()));
+    public static final RegistryObject<BlockItem> DARK_OAK_SAPLING_5 = CRATE_ITEMS.register("sextuple_crated_" + "DARK_OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.DARK_OAK_SAPLING_5.get()));
+    public static final RegistryObject<BlockItem> DARK_OAK_SAPLING_6 = CRATE_ITEMS.register("septuple_crated_" + "DARK_OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.DARK_OAK_SAPLING_6.get()));
+    public static final RegistryObject<BlockItem> DARK_OAK_SAPLING_7 = CRATE_ITEMS.register("octuple_crated_" + "DARK_OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.DARK_OAK_SAPLING_7.get()));
+    public static final RegistryObject<BlockItem> DARK_OAK_SAPLING_8 = CRATE_ITEMS.register("mega_crated_" + "DARK_OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.DARK_OAK_SAPLING_8.get()));
+    public static final RegistryObject<BlockItem> DARK_OAK_SAPLING_9 = CRATE_ITEMS.register("giga_crated_" + "DARK_OAK_SAPLING".toLowerCase(), () -> new CrateItem(CrateBlocks.DARK_OAK_SAPLING_9.get()));
+    public static final RegistryObject<BlockItem> MANGROVE_PROPAGULE_0 = CRATE_ITEMS.register("crated_" + "MANGROVE_PROPAGULE".toLowerCase(), () -> new CrateItem(CrateBlocks.MANGROVE_PROPAGULE_0.get()));
+    public static final RegistryObject<BlockItem> MANGROVE_PROPAGULE_1 = CRATE_ITEMS.register("double_crated_" + "MANGROVE_PROPAGULE".toLowerCase(), () -> new CrateItem(CrateBlocks.MANGROVE_PROPAGULE_1.get()));
+    public static final RegistryObject<BlockItem> MANGROVE_PROPAGULE_2 = CRATE_ITEMS.register("triple_crated_" + "MANGROVE_PROPAGULE".toLowerCase(), () -> new CrateItem(CrateBlocks.MANGROVE_PROPAGULE_2.get()));
+    public static final RegistryObject<BlockItem> MANGROVE_PROPAGULE_3 = CRATE_ITEMS.register("quadruple_crated_" + "MANGROVE_PROPAGULE".toLowerCase(), () -> new CrateItem(CrateBlocks.MANGROVE_PROPAGULE_3.get()));
+    public static final RegistryObject<BlockItem> MANGROVE_PROPAGULE_4 = CRATE_ITEMS.register("quintuple_crated_" + "MANGROVE_PROPAGULE".toLowerCase(), () -> new CrateItem(CrateBlocks.MANGROVE_PROPAGULE_4.get()));
+    public static final RegistryObject<BlockItem> MANGROVE_PROPAGULE_5 = CRATE_ITEMS.register("sextuple_crated_" + "MANGROVE_PROPAGULE".toLowerCase(), () -> new CrateItem(CrateBlocks.MANGROVE_PROPAGULE_5.get()));
+    public static final RegistryObject<BlockItem> MANGROVE_PROPAGULE_6 = CRATE_ITEMS.register("septuple_crated_" + "MANGROVE_PROPAGULE".toLowerCase(), () -> new CrateItem(CrateBlocks.MANGROVE_PROPAGULE_6.get()));
+    public static final RegistryObject<BlockItem> MANGROVE_PROPAGULE_7 = CRATE_ITEMS.register("octuple_crated_" + "MANGROVE_PROPAGULE".toLowerCase(), () -> new CrateItem(CrateBlocks.MANGROVE_PROPAGULE_7.get()));
+    public static final RegistryObject<BlockItem> MANGROVE_PROPAGULE_8 = CRATE_ITEMS.register("mega_crated_" + "MANGROVE_PROPAGULE".toLowerCase(), () -> new CrateItem(CrateBlocks.MANGROVE_PROPAGULE_8.get()));
+    public static final RegistryObject<BlockItem> MANGROVE_PROPAGULE_9 = CRATE_ITEMS.register("giga_crated_" + "MANGROVE_PROPAGULE".toLowerCase(), () -> new CrateItem(CrateBlocks.MANGROVE_PROPAGULE_9.get()));
+    public static final RegistryObject<BlockItem> BROWN_MUSHROOM_0 = CRATE_ITEMS.register("crated_" + "BROWN_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_MUSHROOM_0.get()));
+    public static final RegistryObject<BlockItem> BROWN_MUSHROOM_1 = CRATE_ITEMS.register("double_crated_" + "BROWN_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_MUSHROOM_1.get()));
+    public static final RegistryObject<BlockItem> BROWN_MUSHROOM_2 = CRATE_ITEMS.register("triple_crated_" + "BROWN_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_MUSHROOM_2.get()));
+    public static final RegistryObject<BlockItem> BROWN_MUSHROOM_3 = CRATE_ITEMS.register("quadruple_crated_" + "BROWN_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_MUSHROOM_3.get()));
+    public static final RegistryObject<BlockItem> BROWN_MUSHROOM_4 = CRATE_ITEMS.register("quintuple_crated_" + "BROWN_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_MUSHROOM_4.get()));
+    public static final RegistryObject<BlockItem> BROWN_MUSHROOM_5 = CRATE_ITEMS.register("sextuple_crated_" + "BROWN_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_MUSHROOM_5.get()));
+    public static final RegistryObject<BlockItem> BROWN_MUSHROOM_6 = CRATE_ITEMS.register("septuple_crated_" + "BROWN_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_MUSHROOM_6.get()));
+    public static final RegistryObject<BlockItem> BROWN_MUSHROOM_7 = CRATE_ITEMS.register("octuple_crated_" + "BROWN_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_MUSHROOM_7.get()));
+    public static final RegistryObject<BlockItem> BROWN_MUSHROOM_8 = CRATE_ITEMS.register("mega_crated_" + "BROWN_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_MUSHROOM_8.get()));
+    public static final RegistryObject<BlockItem> BROWN_MUSHROOM_9 = CRATE_ITEMS.register("giga_crated_" + "BROWN_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_MUSHROOM_9.get()));
+    public static final RegistryObject<BlockItem> RED_MUSHROOM_0 = CRATE_ITEMS.register("crated_" + "RED_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_MUSHROOM_0.get()));
+    public static final RegistryObject<BlockItem> RED_MUSHROOM_1 = CRATE_ITEMS.register("double_crated_" + "RED_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_MUSHROOM_1.get()));
+    public static final RegistryObject<BlockItem> RED_MUSHROOM_2 = CRATE_ITEMS.register("triple_crated_" + "RED_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_MUSHROOM_2.get()));
+    public static final RegistryObject<BlockItem> RED_MUSHROOM_3 = CRATE_ITEMS.register("quadruple_crated_" + "RED_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_MUSHROOM_3.get()));
+    public static final RegistryObject<BlockItem> RED_MUSHROOM_4 = CRATE_ITEMS.register("quintuple_crated_" + "RED_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_MUSHROOM_4.get()));
+    public static final RegistryObject<BlockItem> RED_MUSHROOM_5 = CRATE_ITEMS.register("sextuple_crated_" + "RED_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_MUSHROOM_5.get()));
+    public static final RegistryObject<BlockItem> RED_MUSHROOM_6 = CRATE_ITEMS.register("septuple_crated_" + "RED_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_MUSHROOM_6.get()));
+    public static final RegistryObject<BlockItem> RED_MUSHROOM_7 = CRATE_ITEMS.register("octuple_crated_" + "RED_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_MUSHROOM_7.get()));
+    public static final RegistryObject<BlockItem> RED_MUSHROOM_8 = CRATE_ITEMS.register("mega_crated_" + "RED_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_MUSHROOM_8.get()));
+    public static final RegistryObject<BlockItem> RED_MUSHROOM_9 = CRATE_ITEMS.register("giga_crated_" + "RED_MUSHROOM".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_MUSHROOM_9.get()));
+    public static final RegistryObject<BlockItem> CRIMSON_FUNGUS_0 = CRATE_ITEMS.register("crated_" + "CRIMSON_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.CRIMSON_FUNGUS_0.get()));
+    public static final RegistryObject<BlockItem> CRIMSON_FUNGUS_1 = CRATE_ITEMS.register("double_crated_" + "CRIMSON_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.CRIMSON_FUNGUS_1.get()));
+    public static final RegistryObject<BlockItem> CRIMSON_FUNGUS_2 = CRATE_ITEMS.register("triple_crated_" + "CRIMSON_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.CRIMSON_FUNGUS_2.get()));
+    public static final RegistryObject<BlockItem> CRIMSON_FUNGUS_3 = CRATE_ITEMS.register("quadruple_crated_" + "CRIMSON_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.CRIMSON_FUNGUS_3.get()));
+    public static final RegistryObject<BlockItem> CRIMSON_FUNGUS_4 = CRATE_ITEMS.register("quintuple_crated_" + "CRIMSON_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.CRIMSON_FUNGUS_4.get()));
+    public static final RegistryObject<BlockItem> CRIMSON_FUNGUS_5 = CRATE_ITEMS.register("sextuple_crated_" + "CRIMSON_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.CRIMSON_FUNGUS_5.get()));
+    public static final RegistryObject<BlockItem> CRIMSON_FUNGUS_6 = CRATE_ITEMS.register("septuple_crated_" + "CRIMSON_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.CRIMSON_FUNGUS_6.get()));
+    public static final RegistryObject<BlockItem> CRIMSON_FUNGUS_7 = CRATE_ITEMS.register("octuple_crated_" + "CRIMSON_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.CRIMSON_FUNGUS_7.get()));
+    public static final RegistryObject<BlockItem> CRIMSON_FUNGUS_8 = CRATE_ITEMS.register("mega_crated_" + "CRIMSON_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.CRIMSON_FUNGUS_8.get()));
+    public static final RegistryObject<BlockItem> CRIMSON_FUNGUS_9 = CRATE_ITEMS.register("giga_crated_" + "CRIMSON_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.CRIMSON_FUNGUS_9.get()));
+    public static final RegistryObject<BlockItem> WARPED_FUNGUS_0 = CRATE_ITEMS.register("crated_" + "WARPED_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.WARPED_FUNGUS_0.get()));
+    public static final RegistryObject<BlockItem> WARPED_FUNGUS_1 = CRATE_ITEMS.register("double_crated_" + "WARPED_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.WARPED_FUNGUS_1.get()));
+    public static final RegistryObject<BlockItem> WARPED_FUNGUS_2 = CRATE_ITEMS.register("triple_crated_" + "WARPED_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.WARPED_FUNGUS_2.get()));
+    public static final RegistryObject<BlockItem> WARPED_FUNGUS_3 = CRATE_ITEMS.register("quadruple_crated_" + "WARPED_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.WARPED_FUNGUS_3.get()));
+    public static final RegistryObject<BlockItem> WARPED_FUNGUS_4 = CRATE_ITEMS.register("quintuple_crated_" + "WARPED_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.WARPED_FUNGUS_4.get()));
+    public static final RegistryObject<BlockItem> WARPED_FUNGUS_5 = CRATE_ITEMS.register("sextuple_crated_" + "WARPED_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.WARPED_FUNGUS_5.get()));
+    public static final RegistryObject<BlockItem> WARPED_FUNGUS_6 = CRATE_ITEMS.register("septuple_crated_" + "WARPED_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.WARPED_FUNGUS_6.get()));
+    public static final RegistryObject<BlockItem> WARPED_FUNGUS_7 = CRATE_ITEMS.register("octuple_crated_" + "WARPED_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.WARPED_FUNGUS_7.get()));
+    public static final RegistryObject<BlockItem> WARPED_FUNGUS_8 = CRATE_ITEMS.register("mega_crated_" + "WARPED_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.WARPED_FUNGUS_8.get()));
+    public static final RegistryObject<BlockItem> WARPED_FUNGUS_9 = CRATE_ITEMS.register("giga_crated_" + "WARPED_FUNGUS".toLowerCase(), () -> new CrateItem(CrateBlocks.WARPED_FUNGUS_9.get()));
+    public static final RegistryObject<BlockItem> DANDELION_0 = CRATE_ITEMS.register("crated_" + "DANDELION".toLowerCase(), () -> new CrateItem(CrateBlocks.DANDELION_0.get()));
+    public static final RegistryObject<BlockItem> DANDELION_1 = CRATE_ITEMS.register("double_crated_" + "DANDELION".toLowerCase(), () -> new CrateItem(CrateBlocks.DANDELION_1.get()));
+    public static final RegistryObject<BlockItem> DANDELION_2 = CRATE_ITEMS.register("triple_crated_" + "DANDELION".toLowerCase(), () -> new CrateItem(CrateBlocks.DANDELION_2.get()));
+    public static final RegistryObject<BlockItem> DANDELION_3 = CRATE_ITEMS.register("quadruple_crated_" + "DANDELION".toLowerCase(), () -> new CrateItem(CrateBlocks.DANDELION_3.get()));
+    public static final RegistryObject<BlockItem> DANDELION_4 = CRATE_ITEMS.register("quintuple_crated_" + "DANDELION".toLowerCase(), () -> new CrateItem(CrateBlocks.DANDELION_4.get()));
+    public static final RegistryObject<BlockItem> DANDELION_5 = CRATE_ITEMS.register("sextuple_crated_" + "DANDELION".toLowerCase(), () -> new CrateItem(CrateBlocks.DANDELION_5.get()));
+    public static final RegistryObject<BlockItem> DANDELION_6 = CRATE_ITEMS.register("septuple_crated_" + "DANDELION".toLowerCase(), () -> new CrateItem(CrateBlocks.DANDELION_6.get()));
+    public static final RegistryObject<BlockItem> DANDELION_7 = CRATE_ITEMS.register("octuple_crated_" + "DANDELION".toLowerCase(), () -> new CrateItem(CrateBlocks.DANDELION_7.get()));
+    public static final RegistryObject<BlockItem> DANDELION_8 = CRATE_ITEMS.register("mega_crated_" + "DANDELION".toLowerCase(), () -> new CrateItem(CrateBlocks.DANDELION_8.get()));
+    public static final RegistryObject<BlockItem> DANDELION_9 = CRATE_ITEMS.register("giga_crated_" + "DANDELION".toLowerCase(), () -> new CrateItem(CrateBlocks.DANDELION_9.get()));
+    public static final RegistryObject<BlockItem> POPPY_0 = CRATE_ITEMS.register("crated_" + "POPPY".toLowerCase(), () -> new CrateItem(CrateBlocks.POPPY_0.get()));
+    public static final RegistryObject<BlockItem> POPPY_1 = CRATE_ITEMS.register("double_crated_" + "POPPY".toLowerCase(), () -> new CrateItem(CrateBlocks.POPPY_1.get()));
+    public static final RegistryObject<BlockItem> POPPY_2 = CRATE_ITEMS.register("triple_crated_" + "POPPY".toLowerCase(), () -> new CrateItem(CrateBlocks.POPPY_2.get()));
+    public static final RegistryObject<BlockItem> POPPY_3 = CRATE_ITEMS.register("quadruple_crated_" + "POPPY".toLowerCase(), () -> new CrateItem(CrateBlocks.POPPY_3.get()));
+    public static final RegistryObject<BlockItem> POPPY_4 = CRATE_ITEMS.register("quintuple_crated_" + "POPPY".toLowerCase(), () -> new CrateItem(CrateBlocks.POPPY_4.get()));
+    public static final RegistryObject<BlockItem> POPPY_5 = CRATE_ITEMS.register("sextuple_crated_" + "POPPY".toLowerCase(), () -> new CrateItem(CrateBlocks.POPPY_5.get()));
+    public static final RegistryObject<BlockItem> POPPY_6 = CRATE_ITEMS.register("septuple_crated_" + "POPPY".toLowerCase(), () -> new CrateItem(CrateBlocks.POPPY_6.get()));
+    public static final RegistryObject<BlockItem> POPPY_7 = CRATE_ITEMS.register("octuple_crated_" + "POPPY".toLowerCase(), () -> new CrateItem(CrateBlocks.POPPY_7.get()));
+    public static final RegistryObject<BlockItem> POPPY_8 = CRATE_ITEMS.register("mega_crated_" + "POPPY".toLowerCase(), () -> new CrateItem(CrateBlocks.POPPY_8.get()));
+    public static final RegistryObject<BlockItem> POPPY_9 = CRATE_ITEMS.register("giga_crated_" + "POPPY".toLowerCase(), () -> new CrateItem(CrateBlocks.POPPY_9.get()));
+    public static final RegistryObject<BlockItem> BLUE_ORCHID_0 = CRATE_ITEMS.register("crated_" + "BLUE_ORCHID".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_ORCHID_0.get()));
+    public static final RegistryObject<BlockItem> BLUE_ORCHID_1 = CRATE_ITEMS.register("double_crated_" + "BLUE_ORCHID".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_ORCHID_1.get()));
+    public static final RegistryObject<BlockItem> BLUE_ORCHID_2 = CRATE_ITEMS.register("triple_crated_" + "BLUE_ORCHID".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_ORCHID_2.get()));
+    public static final RegistryObject<BlockItem> BLUE_ORCHID_3 = CRATE_ITEMS.register("quadruple_crated_" + "BLUE_ORCHID".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_ORCHID_3.get()));
+    public static final RegistryObject<BlockItem> BLUE_ORCHID_4 = CRATE_ITEMS.register("quintuple_crated_" + "BLUE_ORCHID".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_ORCHID_4.get()));
+    public static final RegistryObject<BlockItem> BLUE_ORCHID_5 = CRATE_ITEMS.register("sextuple_crated_" + "BLUE_ORCHID".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_ORCHID_5.get()));
+    public static final RegistryObject<BlockItem> BLUE_ORCHID_6 = CRATE_ITEMS.register("septuple_crated_" + "BLUE_ORCHID".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_ORCHID_6.get()));
+    public static final RegistryObject<BlockItem> BLUE_ORCHID_7 = CRATE_ITEMS.register("octuple_crated_" + "BLUE_ORCHID".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_ORCHID_7.get()));
+    public static final RegistryObject<BlockItem> BLUE_ORCHID_8 = CRATE_ITEMS.register("mega_crated_" + "BLUE_ORCHID".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_ORCHID_8.get()));
+    public static final RegistryObject<BlockItem> BLUE_ORCHID_9 = CRATE_ITEMS.register("giga_crated_" + "BLUE_ORCHID".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_ORCHID_9.get()));
+    public static final RegistryObject<BlockItem> ALLIUM_0 = CRATE_ITEMS.register("crated_" + "ALLIUM".toLowerCase(), () -> new CrateItem(CrateBlocks.ALLIUM_0.get()));
+    public static final RegistryObject<BlockItem> ALLIUM_1 = CRATE_ITEMS.register("double_crated_" + "ALLIUM".toLowerCase(), () -> new CrateItem(CrateBlocks.ALLIUM_1.get()));
+    public static final RegistryObject<BlockItem> ALLIUM_2 = CRATE_ITEMS.register("triple_crated_" + "ALLIUM".toLowerCase(), () -> new CrateItem(CrateBlocks.ALLIUM_2.get()));
+    public static final RegistryObject<BlockItem> ALLIUM_3 = CRATE_ITEMS.register("quadruple_crated_" + "ALLIUM".toLowerCase(), () -> new CrateItem(CrateBlocks.ALLIUM_3.get()));
+    public static final RegistryObject<BlockItem> ALLIUM_4 = CRATE_ITEMS.register("quintuple_crated_" + "ALLIUM".toLowerCase(), () -> new CrateItem(CrateBlocks.ALLIUM_4.get()));
+    public static final RegistryObject<BlockItem> ALLIUM_5 = CRATE_ITEMS.register("sextuple_crated_" + "ALLIUM".toLowerCase(), () -> new CrateItem(CrateBlocks.ALLIUM_5.get()));
+    public static final RegistryObject<BlockItem> ALLIUM_6 = CRATE_ITEMS.register("septuple_crated_" + "ALLIUM".toLowerCase(), () -> new CrateItem(CrateBlocks.ALLIUM_6.get()));
+    public static final RegistryObject<BlockItem> ALLIUM_7 = CRATE_ITEMS.register("octuple_crated_" + "ALLIUM".toLowerCase(), () -> new CrateItem(CrateBlocks.ALLIUM_7.get()));
+    public static final RegistryObject<BlockItem> ALLIUM_8 = CRATE_ITEMS.register("mega_crated_" + "ALLIUM".toLowerCase(), () -> new CrateItem(CrateBlocks.ALLIUM_8.get()));
+    public static final RegistryObject<BlockItem> ALLIUM_9 = CRATE_ITEMS.register("giga_crated_" + "ALLIUM".toLowerCase(), () -> new CrateItem(CrateBlocks.ALLIUM_9.get()));
+    public static final RegistryObject<BlockItem> AZURE_BLUET_0 = CRATE_ITEMS.register("crated_" + "AZURE_BLUET".toLowerCase(), () -> new CrateItem(CrateBlocks.AZURE_BLUET_0.get()));
+    public static final RegistryObject<BlockItem> AZURE_BLUET_1 = CRATE_ITEMS.register("double_crated_" + "AZURE_BLUET".toLowerCase(), () -> new CrateItem(CrateBlocks.AZURE_BLUET_1.get()));
+    public static final RegistryObject<BlockItem> AZURE_BLUET_2 = CRATE_ITEMS.register("triple_crated_" + "AZURE_BLUET".toLowerCase(), () -> new CrateItem(CrateBlocks.AZURE_BLUET_2.get()));
+    public static final RegistryObject<BlockItem> AZURE_BLUET_3 = CRATE_ITEMS.register("quadruple_crated_" + "AZURE_BLUET".toLowerCase(), () -> new CrateItem(CrateBlocks.AZURE_BLUET_3.get()));
+    public static final RegistryObject<BlockItem> AZURE_BLUET_4 = CRATE_ITEMS.register("quintuple_crated_" + "AZURE_BLUET".toLowerCase(), () -> new CrateItem(CrateBlocks.AZURE_BLUET_4.get()));
+    public static final RegistryObject<BlockItem> AZURE_BLUET_5 = CRATE_ITEMS.register("sextuple_crated_" + "AZURE_BLUET".toLowerCase(), () -> new CrateItem(CrateBlocks.AZURE_BLUET_5.get()));
+    public static final RegistryObject<BlockItem> AZURE_BLUET_6 = CRATE_ITEMS.register("septuple_crated_" + "AZURE_BLUET".toLowerCase(), () -> new CrateItem(CrateBlocks.AZURE_BLUET_6.get()));
+    public static final RegistryObject<BlockItem> AZURE_BLUET_7 = CRATE_ITEMS.register("octuple_crated_" + "AZURE_BLUET".toLowerCase(), () -> new CrateItem(CrateBlocks.AZURE_BLUET_7.get()));
+    public static final RegistryObject<BlockItem> AZURE_BLUET_8 = CRATE_ITEMS.register("mega_crated_" + "AZURE_BLUET".toLowerCase(), () -> new CrateItem(CrateBlocks.AZURE_BLUET_8.get()));
+    public static final RegistryObject<BlockItem> AZURE_BLUET_9 = CRATE_ITEMS.register("giga_crated_" + "AZURE_BLUET".toLowerCase(), () -> new CrateItem(CrateBlocks.AZURE_BLUET_9.get()));
+    public static final RegistryObject<BlockItem> RED_TULIP_0 = CRATE_ITEMS.register("crated_" + "RED_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_TULIP_0.get()));
+    public static final RegistryObject<BlockItem> RED_TULIP_1 = CRATE_ITEMS.register("double_crated_" + "RED_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_TULIP_1.get()));
+    public static final RegistryObject<BlockItem> RED_TULIP_2 = CRATE_ITEMS.register("triple_crated_" + "RED_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_TULIP_2.get()));
+    public static final RegistryObject<BlockItem> RED_TULIP_3 = CRATE_ITEMS.register("quadruple_crated_" + "RED_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_TULIP_3.get()));
+    public static final RegistryObject<BlockItem> RED_TULIP_4 = CRATE_ITEMS.register("quintuple_crated_" + "RED_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_TULIP_4.get()));
+    public static final RegistryObject<BlockItem> RED_TULIP_5 = CRATE_ITEMS.register("sextuple_crated_" + "RED_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_TULIP_5.get()));
+    public static final RegistryObject<BlockItem> RED_TULIP_6 = CRATE_ITEMS.register("septuple_crated_" + "RED_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_TULIP_6.get()));
+    public static final RegistryObject<BlockItem> RED_TULIP_7 = CRATE_ITEMS.register("octuple_crated_" + "RED_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_TULIP_7.get()));
+    public static final RegistryObject<BlockItem> RED_TULIP_8 = CRATE_ITEMS.register("mega_crated_" + "RED_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_TULIP_8.get()));
+    public static final RegistryObject<BlockItem> RED_TULIP_9 = CRATE_ITEMS.register("giga_crated_" + "RED_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_TULIP_9.get()));
+    public static final RegistryObject<BlockItem> ORANGE_TULIP_0 = CRATE_ITEMS.register("crated_" + "ORANGE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_TULIP_0.get()));
+    public static final RegistryObject<BlockItem> ORANGE_TULIP_1 = CRATE_ITEMS.register("double_crated_" + "ORANGE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_TULIP_1.get()));
+    public static final RegistryObject<BlockItem> ORANGE_TULIP_2 = CRATE_ITEMS.register("triple_crated_" + "ORANGE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_TULIP_2.get()));
+    public static final RegistryObject<BlockItem> ORANGE_TULIP_3 = CRATE_ITEMS.register("quadruple_crated_" + "ORANGE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_TULIP_3.get()));
+    public static final RegistryObject<BlockItem> ORANGE_TULIP_4 = CRATE_ITEMS.register("quintuple_crated_" + "ORANGE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_TULIP_4.get()));
+    public static final RegistryObject<BlockItem> ORANGE_TULIP_5 = CRATE_ITEMS.register("sextuple_crated_" + "ORANGE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_TULIP_5.get()));
+    public static final RegistryObject<BlockItem> ORANGE_TULIP_6 = CRATE_ITEMS.register("septuple_crated_" + "ORANGE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_TULIP_6.get()));
+    public static final RegistryObject<BlockItem> ORANGE_TULIP_7 = CRATE_ITEMS.register("octuple_crated_" + "ORANGE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_TULIP_7.get()));
+    public static final RegistryObject<BlockItem> ORANGE_TULIP_8 = CRATE_ITEMS.register("mega_crated_" + "ORANGE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_TULIP_8.get()));
+    public static final RegistryObject<BlockItem> ORANGE_TULIP_9 = CRATE_ITEMS.register("giga_crated_" + "ORANGE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_TULIP_9.get()));
+    public static final RegistryObject<BlockItem> WHITE_TULIP_0 = CRATE_ITEMS.register("crated_" + "WHITE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_TULIP_0.get()));
+    public static final RegistryObject<BlockItem> WHITE_TULIP_1 = CRATE_ITEMS.register("double_crated_" + "WHITE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_TULIP_1.get()));
+    public static final RegistryObject<BlockItem> WHITE_TULIP_2 = CRATE_ITEMS.register("triple_crated_" + "WHITE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_TULIP_2.get()));
+    public static final RegistryObject<BlockItem> WHITE_TULIP_3 = CRATE_ITEMS.register("quadruple_crated_" + "WHITE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_TULIP_3.get()));
+    public static final RegistryObject<BlockItem> WHITE_TULIP_4 = CRATE_ITEMS.register("quintuple_crated_" + "WHITE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_TULIP_4.get()));
+    public static final RegistryObject<BlockItem> WHITE_TULIP_5 = CRATE_ITEMS.register("sextuple_crated_" + "WHITE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_TULIP_5.get()));
+    public static final RegistryObject<BlockItem> WHITE_TULIP_6 = CRATE_ITEMS.register("septuple_crated_" + "WHITE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_TULIP_6.get()));
+    public static final RegistryObject<BlockItem> WHITE_TULIP_7 = CRATE_ITEMS.register("octuple_crated_" + "WHITE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_TULIP_7.get()));
+    public static final RegistryObject<BlockItem> WHITE_TULIP_8 = CRATE_ITEMS.register("mega_crated_" + "WHITE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_TULIP_8.get()));
+    public static final RegistryObject<BlockItem> WHITE_TULIP_9 = CRATE_ITEMS.register("giga_crated_" + "WHITE_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_TULIP_9.get()));
+    public static final RegistryObject<BlockItem> PINK_TULIP_0 = CRATE_ITEMS.register("crated_" + "PINK_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_TULIP_0.get()));
+    public static final RegistryObject<BlockItem> PINK_TULIP_1 = CRATE_ITEMS.register("double_crated_" + "PINK_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_TULIP_1.get()));
+    public static final RegistryObject<BlockItem> PINK_TULIP_2 = CRATE_ITEMS.register("triple_crated_" + "PINK_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_TULIP_2.get()));
+    public static final RegistryObject<BlockItem> PINK_TULIP_3 = CRATE_ITEMS.register("quadruple_crated_" + "PINK_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_TULIP_3.get()));
+    public static final RegistryObject<BlockItem> PINK_TULIP_4 = CRATE_ITEMS.register("quintuple_crated_" + "PINK_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_TULIP_4.get()));
+    public static final RegistryObject<BlockItem> PINK_TULIP_5 = CRATE_ITEMS.register("sextuple_crated_" + "PINK_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_TULIP_5.get()));
+    public static final RegistryObject<BlockItem> PINK_TULIP_6 = CRATE_ITEMS.register("septuple_crated_" + "PINK_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_TULIP_6.get()));
+    public static final RegistryObject<BlockItem> PINK_TULIP_7 = CRATE_ITEMS.register("octuple_crated_" + "PINK_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_TULIP_7.get()));
+    public static final RegistryObject<BlockItem> PINK_TULIP_8 = CRATE_ITEMS.register("mega_crated_" + "PINK_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_TULIP_8.get()));
+    public static final RegistryObject<BlockItem> PINK_TULIP_9 = CRATE_ITEMS.register("giga_crated_" + "PINK_TULIP".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_TULIP_9.get()));
+    public static final RegistryObject<BlockItem> OXEYE_DAISY_0 = CRATE_ITEMS.register("crated_" + "OXEYE_DAISY".toLowerCase(), () -> new CrateItem(CrateBlocks.OXEYE_DAISY_0.get()));
+    public static final RegistryObject<BlockItem> OXEYE_DAISY_1 = CRATE_ITEMS.register("double_crated_" + "OXEYE_DAISY".toLowerCase(), () -> new CrateItem(CrateBlocks.OXEYE_DAISY_1.get()));
+    public static final RegistryObject<BlockItem> OXEYE_DAISY_2 = CRATE_ITEMS.register("triple_crated_" + "OXEYE_DAISY".toLowerCase(), () -> new CrateItem(CrateBlocks.OXEYE_DAISY_2.get()));
+    public static final RegistryObject<BlockItem> OXEYE_DAISY_3 = CRATE_ITEMS.register("quadruple_crated_" + "OXEYE_DAISY".toLowerCase(), () -> new CrateItem(CrateBlocks.OXEYE_DAISY_3.get()));
+    public static final RegistryObject<BlockItem> OXEYE_DAISY_4 = CRATE_ITEMS.register("quintuple_crated_" + "OXEYE_DAISY".toLowerCase(), () -> new CrateItem(CrateBlocks.OXEYE_DAISY_4.get()));
+    public static final RegistryObject<BlockItem> OXEYE_DAISY_5 = CRATE_ITEMS.register("sextuple_crated_" + "OXEYE_DAISY".toLowerCase(), () -> new CrateItem(CrateBlocks.OXEYE_DAISY_5.get()));
+    public static final RegistryObject<BlockItem> OXEYE_DAISY_6 = CRATE_ITEMS.register("septuple_crated_" + "OXEYE_DAISY".toLowerCase(), () -> new CrateItem(CrateBlocks.OXEYE_DAISY_6.get()));
+    public static final RegistryObject<BlockItem> OXEYE_DAISY_7 = CRATE_ITEMS.register("octuple_crated_" + "OXEYE_DAISY".toLowerCase(), () -> new CrateItem(CrateBlocks.OXEYE_DAISY_7.get()));
+    public static final RegistryObject<BlockItem> OXEYE_DAISY_8 = CRATE_ITEMS.register("mega_crated_" + "OXEYE_DAISY".toLowerCase(), () -> new CrateItem(CrateBlocks.OXEYE_DAISY_8.get()));
+    public static final RegistryObject<BlockItem> OXEYE_DAISY_9 = CRATE_ITEMS.register("giga_crated_" + "OXEYE_DAISY".toLowerCase(), () -> new CrateItem(CrateBlocks.OXEYE_DAISY_9.get()));
+    public static final RegistryObject<BlockItem> CORNFLOWER_0 = CRATE_ITEMS.register("crated_" + "CORNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.CORNFLOWER_0.get()));
+    public static final RegistryObject<BlockItem> CORNFLOWER_1 = CRATE_ITEMS.register("double_crated_" + "CORNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.CORNFLOWER_1.get()));
+    public static final RegistryObject<BlockItem> CORNFLOWER_2 = CRATE_ITEMS.register("triple_crated_" + "CORNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.CORNFLOWER_2.get()));
+    public static final RegistryObject<BlockItem> CORNFLOWER_3 = CRATE_ITEMS.register("quadruple_crated_" + "CORNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.CORNFLOWER_3.get()));
+    public static final RegistryObject<BlockItem> CORNFLOWER_4 = CRATE_ITEMS.register("quintuple_crated_" + "CORNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.CORNFLOWER_4.get()));
+    public static final RegistryObject<BlockItem> CORNFLOWER_5 = CRATE_ITEMS.register("sextuple_crated_" + "CORNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.CORNFLOWER_5.get()));
+    public static final RegistryObject<BlockItem> CORNFLOWER_6 = CRATE_ITEMS.register("septuple_crated_" + "CORNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.CORNFLOWER_6.get()));
+    public static final RegistryObject<BlockItem> CORNFLOWER_7 = CRATE_ITEMS.register("octuple_crated_" + "CORNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.CORNFLOWER_7.get()));
+    public static final RegistryObject<BlockItem> CORNFLOWER_8 = CRATE_ITEMS.register("mega_crated_" + "CORNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.CORNFLOWER_8.get()));
+    public static final RegistryObject<BlockItem> CORNFLOWER_9 = CRATE_ITEMS.register("giga_crated_" + "CORNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.CORNFLOWER_9.get()));
+    public static final RegistryObject<BlockItem> LILY_OF_THE_VALLEY_0 = CRATE_ITEMS.register("crated_" + "LILY_OF_THE_VALLEY".toLowerCase(), () -> new CrateItem(CrateBlocks.LILY_OF_THE_VALLEY_0.get()));
+    public static final RegistryObject<BlockItem> LILY_OF_THE_VALLEY_1 = CRATE_ITEMS.register("double_crated_" + "LILY_OF_THE_VALLEY".toLowerCase(), () -> new CrateItem(CrateBlocks.LILY_OF_THE_VALLEY_1.get()));
+    public static final RegistryObject<BlockItem> LILY_OF_THE_VALLEY_2 = CRATE_ITEMS.register("triple_crated_" + "LILY_OF_THE_VALLEY".toLowerCase(), () -> new CrateItem(CrateBlocks.LILY_OF_THE_VALLEY_2.get()));
+    public static final RegistryObject<BlockItem> LILY_OF_THE_VALLEY_3 = CRATE_ITEMS.register("quadruple_crated_" + "LILY_OF_THE_VALLEY".toLowerCase(), () -> new CrateItem(CrateBlocks.LILY_OF_THE_VALLEY_3.get()));
+    public static final RegistryObject<BlockItem> LILY_OF_THE_VALLEY_4 = CRATE_ITEMS.register("quintuple_crated_" + "LILY_OF_THE_VALLEY".toLowerCase(), () -> new CrateItem(CrateBlocks.LILY_OF_THE_VALLEY_4.get()));
+    public static final RegistryObject<BlockItem> LILY_OF_THE_VALLEY_5 = CRATE_ITEMS.register("sextuple_crated_" + "LILY_OF_THE_VALLEY".toLowerCase(), () -> new CrateItem(CrateBlocks.LILY_OF_THE_VALLEY_5.get()));
+    public static final RegistryObject<BlockItem> LILY_OF_THE_VALLEY_6 = CRATE_ITEMS.register("septuple_crated_" + "LILY_OF_THE_VALLEY".toLowerCase(), () -> new CrateItem(CrateBlocks.LILY_OF_THE_VALLEY_6.get()));
+    public static final RegistryObject<BlockItem> LILY_OF_THE_VALLEY_7 = CRATE_ITEMS.register("octuple_crated_" + "LILY_OF_THE_VALLEY".toLowerCase(), () -> new CrateItem(CrateBlocks.LILY_OF_THE_VALLEY_7.get()));
+    public static final RegistryObject<BlockItem> LILY_OF_THE_VALLEY_8 = CRATE_ITEMS.register("mega_crated_" + "LILY_OF_THE_VALLEY".toLowerCase(), () -> new CrateItem(CrateBlocks.LILY_OF_THE_VALLEY_8.get()));
+    public static final RegistryObject<BlockItem> LILY_OF_THE_VALLEY_9 = CRATE_ITEMS.register("giga_crated_" + "LILY_OF_THE_VALLEY".toLowerCase(), () -> new CrateItem(CrateBlocks.LILY_OF_THE_VALLEY_9.get()));
+    public static final RegistryObject<BlockItem> BAMBOO_0 = CRATE_ITEMS.register("crated_" + "BAMBOO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAMBOO_0.get()));
+    public static final RegistryObject<BlockItem> BAMBOO_1 = CRATE_ITEMS.register("double_crated_" + "BAMBOO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAMBOO_1.get()));
+    public static final RegistryObject<BlockItem> BAMBOO_2 = CRATE_ITEMS.register("triple_crated_" + "BAMBOO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAMBOO_2.get()));
+    public static final RegistryObject<BlockItem> BAMBOO_3 = CRATE_ITEMS.register("quadruple_crated_" + "BAMBOO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAMBOO_3.get()));
+    public static final RegistryObject<BlockItem> BAMBOO_4 = CRATE_ITEMS.register("quintuple_crated_" + "BAMBOO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAMBOO_4.get()));
+    public static final RegistryObject<BlockItem> BAMBOO_5 = CRATE_ITEMS.register("sextuple_crated_" + "BAMBOO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAMBOO_5.get()));
+    public static final RegistryObject<BlockItem> BAMBOO_6 = CRATE_ITEMS.register("septuple_crated_" + "BAMBOO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAMBOO_6.get()));
+    public static final RegistryObject<BlockItem> BAMBOO_7 = CRATE_ITEMS.register("octuple_crated_" + "BAMBOO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAMBOO_7.get()));
+    public static final RegistryObject<BlockItem> BAMBOO_8 = CRATE_ITEMS.register("mega_crated_" + "BAMBOO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAMBOO_8.get()));
+    public static final RegistryObject<BlockItem> BAMBOO_9 = CRATE_ITEMS.register("giga_crated_" + "BAMBOO".toLowerCase(), () -> new CrateItem(CrateBlocks.BAMBOO_9.get()));
+    public static final RegistryObject<BlockItem> SUGAR_CANE_0 = CRATE_ITEMS.register("crated_" + "SUGAR_CANE".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_CANE_0.get()));
+    public static final RegistryObject<BlockItem> SUGAR_CANE_1 = CRATE_ITEMS.register("double_crated_" + "SUGAR_CANE".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_CANE_1.get()));
+    public static final RegistryObject<BlockItem> SUGAR_CANE_2 = CRATE_ITEMS.register("triple_crated_" + "SUGAR_CANE".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_CANE_2.get()));
+    public static final RegistryObject<BlockItem> SUGAR_CANE_3 = CRATE_ITEMS.register("quadruple_crated_" + "SUGAR_CANE".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_CANE_3.get()));
+    public static final RegistryObject<BlockItem> SUGAR_CANE_4 = CRATE_ITEMS.register("quintuple_crated_" + "SUGAR_CANE".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_CANE_4.get()));
+    public static final RegistryObject<BlockItem> SUGAR_CANE_5 = CRATE_ITEMS.register("sextuple_crated_" + "SUGAR_CANE".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_CANE_5.get()));
+    public static final RegistryObject<BlockItem> SUGAR_CANE_6 = CRATE_ITEMS.register("septuple_crated_" + "SUGAR_CANE".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_CANE_6.get()));
+    public static final RegistryObject<BlockItem> SUGAR_CANE_7 = CRATE_ITEMS.register("octuple_crated_" + "SUGAR_CANE".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_CANE_7.get()));
+    public static final RegistryObject<BlockItem> SUGAR_CANE_8 = CRATE_ITEMS.register("mega_crated_" + "SUGAR_CANE".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_CANE_8.get()));
+    public static final RegistryObject<BlockItem> SUGAR_CANE_9 = CRATE_ITEMS.register("giga_crated_" + "SUGAR_CANE".toLowerCase(), () -> new CrateItem(CrateBlocks.SUGAR_CANE_9.get()));
+    public static final RegistryObject<BlockItem> WITHER_ROSE_0 = CRATE_ITEMS.register("crated_" + "WITHER_ROSE".toLowerCase(), () -> new CrateItem(CrateBlocks.WITHER_ROSE_0.get()));
+    public static final RegistryObject<BlockItem> WITHER_ROSE_1 = CRATE_ITEMS.register("double_crated_" + "WITHER_ROSE".toLowerCase(), () -> new CrateItem(CrateBlocks.WITHER_ROSE_1.get()));
+    public static final RegistryObject<BlockItem> WITHER_ROSE_2 = CRATE_ITEMS.register("triple_crated_" + "WITHER_ROSE".toLowerCase(), () -> new CrateItem(CrateBlocks.WITHER_ROSE_2.get()));
+    public static final RegistryObject<BlockItem> WITHER_ROSE_3 = CRATE_ITEMS.register("quadruple_crated_" + "WITHER_ROSE".toLowerCase(), () -> new CrateItem(CrateBlocks.WITHER_ROSE_3.get()));
+    public static final RegistryObject<BlockItem> WITHER_ROSE_4 = CRATE_ITEMS.register("quintuple_crated_" + "WITHER_ROSE".toLowerCase(), () -> new CrateItem(CrateBlocks.WITHER_ROSE_4.get()));
+    public static final RegistryObject<BlockItem> WITHER_ROSE_5 = CRATE_ITEMS.register("sextuple_crated_" + "WITHER_ROSE".toLowerCase(), () -> new CrateItem(CrateBlocks.WITHER_ROSE_5.get()));
+    public static final RegistryObject<BlockItem> WITHER_ROSE_6 = CRATE_ITEMS.register("septuple_crated_" + "WITHER_ROSE".toLowerCase(), () -> new CrateItem(CrateBlocks.WITHER_ROSE_6.get()));
+    public static final RegistryObject<BlockItem> WITHER_ROSE_7 = CRATE_ITEMS.register("octuple_crated_" + "WITHER_ROSE".toLowerCase(), () -> new CrateItem(CrateBlocks.WITHER_ROSE_7.get()));
+    public static final RegistryObject<BlockItem> WITHER_ROSE_8 = CRATE_ITEMS.register("mega_crated_" + "WITHER_ROSE".toLowerCase(), () -> new CrateItem(CrateBlocks.WITHER_ROSE_8.get()));
+    public static final RegistryObject<BlockItem> WITHER_ROSE_9 = CRATE_ITEMS.register("giga_crated_" + "WITHER_ROSE".toLowerCase(), () -> new CrateItem(CrateBlocks.WITHER_ROSE_9.get()));
+    public static final RegistryObject<BlockItem> SUNFLOWER_0 = CRATE_ITEMS.register("crated_" + "SUNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.SUNFLOWER_0.get()));
+    public static final RegistryObject<BlockItem> SUNFLOWER_1 = CRATE_ITEMS.register("double_crated_" + "SUNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.SUNFLOWER_1.get()));
+    public static final RegistryObject<BlockItem> SUNFLOWER_2 = CRATE_ITEMS.register("triple_crated_" + "SUNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.SUNFLOWER_2.get()));
+    public static final RegistryObject<BlockItem> SUNFLOWER_3 = CRATE_ITEMS.register("quadruple_crated_" + "SUNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.SUNFLOWER_3.get()));
+    public static final RegistryObject<BlockItem> SUNFLOWER_4 = CRATE_ITEMS.register("quintuple_crated_" + "SUNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.SUNFLOWER_4.get()));
+    public static final RegistryObject<BlockItem> SUNFLOWER_5 = CRATE_ITEMS.register("sextuple_crated_" + "SUNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.SUNFLOWER_5.get()));
+    public static final RegistryObject<BlockItem> SUNFLOWER_6 = CRATE_ITEMS.register("septuple_crated_" + "SUNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.SUNFLOWER_6.get()));
+    public static final RegistryObject<BlockItem> SUNFLOWER_7 = CRATE_ITEMS.register("octuple_crated_" + "SUNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.SUNFLOWER_7.get()));
+    public static final RegistryObject<BlockItem> SUNFLOWER_8 = CRATE_ITEMS.register("mega_crated_" + "SUNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.SUNFLOWER_8.get()));
+    public static final RegistryObject<BlockItem> SUNFLOWER_9 = CRATE_ITEMS.register("giga_crated_" + "SUNFLOWER".toLowerCase(), () -> new CrateItem(CrateBlocks.SUNFLOWER_9.get()));
+    public static final RegistryObject<BlockItem> LILAC_0 = CRATE_ITEMS.register("crated_" + "LILAC".toLowerCase(), () -> new CrateItem(CrateBlocks.LILAC_0.get()));
+    public static final RegistryObject<BlockItem> LILAC_1 = CRATE_ITEMS.register("double_crated_" + "LILAC".toLowerCase(), () -> new CrateItem(CrateBlocks.LILAC_1.get()));
+    public static final RegistryObject<BlockItem> LILAC_2 = CRATE_ITEMS.register("triple_crated_" + "LILAC".toLowerCase(), () -> new CrateItem(CrateBlocks.LILAC_2.get()));
+    public static final RegistryObject<BlockItem> LILAC_3 = CRATE_ITEMS.register("quadruple_crated_" + "LILAC".toLowerCase(), () -> new CrateItem(CrateBlocks.LILAC_3.get()));
+    public static final RegistryObject<BlockItem> LILAC_4 = CRATE_ITEMS.register("quintuple_crated_" + "LILAC".toLowerCase(), () -> new CrateItem(CrateBlocks.LILAC_4.get()));
+    public static final RegistryObject<BlockItem> LILAC_5 = CRATE_ITEMS.register("sextuple_crated_" + "LILAC".toLowerCase(), () -> new CrateItem(CrateBlocks.LILAC_5.get()));
+    public static final RegistryObject<BlockItem> LILAC_6 = CRATE_ITEMS.register("septuple_crated_" + "LILAC".toLowerCase(), () -> new CrateItem(CrateBlocks.LILAC_6.get()));
+    public static final RegistryObject<BlockItem> LILAC_7 = CRATE_ITEMS.register("octuple_crated_" + "LILAC".toLowerCase(), () -> new CrateItem(CrateBlocks.LILAC_7.get()));
+    public static final RegistryObject<BlockItem> LILAC_8 = CRATE_ITEMS.register("mega_crated_" + "LILAC".toLowerCase(), () -> new CrateItem(CrateBlocks.LILAC_8.get()));
+    public static final RegistryObject<BlockItem> LILAC_9 = CRATE_ITEMS.register("giga_crated_" + "LILAC".toLowerCase(), () -> new CrateItem(CrateBlocks.LILAC_9.get()));
+    public static final RegistryObject<BlockItem> ROSE_BUSH_0 = CRATE_ITEMS.register("crated_" + "ROSE_BUSH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROSE_BUSH_0.get()));
+    public static final RegistryObject<BlockItem> ROSE_BUSH_1 = CRATE_ITEMS.register("double_crated_" + "ROSE_BUSH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROSE_BUSH_1.get()));
+    public static final RegistryObject<BlockItem> ROSE_BUSH_2 = CRATE_ITEMS.register("triple_crated_" + "ROSE_BUSH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROSE_BUSH_2.get()));
+    public static final RegistryObject<BlockItem> ROSE_BUSH_3 = CRATE_ITEMS.register("quadruple_crated_" + "ROSE_BUSH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROSE_BUSH_3.get()));
+    public static final RegistryObject<BlockItem> ROSE_BUSH_4 = CRATE_ITEMS.register("quintuple_crated_" + "ROSE_BUSH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROSE_BUSH_4.get()));
+    public static final RegistryObject<BlockItem> ROSE_BUSH_5 = CRATE_ITEMS.register("sextuple_crated_" + "ROSE_BUSH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROSE_BUSH_5.get()));
+    public static final RegistryObject<BlockItem> ROSE_BUSH_6 = CRATE_ITEMS.register("septuple_crated_" + "ROSE_BUSH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROSE_BUSH_6.get()));
+    public static final RegistryObject<BlockItem> ROSE_BUSH_7 = CRATE_ITEMS.register("octuple_crated_" + "ROSE_BUSH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROSE_BUSH_7.get()));
+    public static final RegistryObject<BlockItem> ROSE_BUSH_8 = CRATE_ITEMS.register("mega_crated_" + "ROSE_BUSH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROSE_BUSH_8.get()));
+    public static final RegistryObject<BlockItem> ROSE_BUSH_9 = CRATE_ITEMS.register("giga_crated_" + "ROSE_BUSH".toLowerCase(), () -> new CrateItem(CrateBlocks.ROSE_BUSH_9.get()));
+    public static final RegistryObject<BlockItem> PEONY_0 = CRATE_ITEMS.register("crated_" + "PEONY".toLowerCase(), () -> new CrateItem(CrateBlocks.PEONY_0.get()));
+    public static final RegistryObject<BlockItem> PEONY_1 = CRATE_ITEMS.register("double_crated_" + "PEONY".toLowerCase(), () -> new CrateItem(CrateBlocks.PEONY_1.get()));
+    public static final RegistryObject<BlockItem> PEONY_2 = CRATE_ITEMS.register("triple_crated_" + "PEONY".toLowerCase(), () -> new CrateItem(CrateBlocks.PEONY_2.get()));
+    public static final RegistryObject<BlockItem> PEONY_3 = CRATE_ITEMS.register("quadruple_crated_" + "PEONY".toLowerCase(), () -> new CrateItem(CrateBlocks.PEONY_3.get()));
+    public static final RegistryObject<BlockItem> PEONY_4 = CRATE_ITEMS.register("quintuple_crated_" + "PEONY".toLowerCase(), () -> new CrateItem(CrateBlocks.PEONY_4.get()));
+    public static final RegistryObject<BlockItem> PEONY_5 = CRATE_ITEMS.register("sextuple_crated_" + "PEONY".toLowerCase(), () -> new CrateItem(CrateBlocks.PEONY_5.get()));
+    public static final RegistryObject<BlockItem> PEONY_6 = CRATE_ITEMS.register("septuple_crated_" + "PEONY".toLowerCase(), () -> new CrateItem(CrateBlocks.PEONY_6.get()));
+    public static final RegistryObject<BlockItem> PEONY_7 = CRATE_ITEMS.register("octuple_crated_" + "PEONY".toLowerCase(), () -> new CrateItem(CrateBlocks.PEONY_7.get()));
+    public static final RegistryObject<BlockItem> PEONY_8 = CRATE_ITEMS.register("mega_crated_" + "PEONY".toLowerCase(), () -> new CrateItem(CrateBlocks.PEONY_8.get()));
+    public static final RegistryObject<BlockItem> PEONY_9 = CRATE_ITEMS.register("giga_crated_" + "PEONY".toLowerCase(), () -> new CrateItem(CrateBlocks.PEONY_9.get()));
+    public static final RegistryObject<BlockItem> TURTLE_EGG_0 = CRATE_ITEMS.register("crated_" + "TURTLE_EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.TURTLE_EGG_0.get()));
+    public static final RegistryObject<BlockItem> TURTLE_EGG_1 = CRATE_ITEMS.register("double_crated_" + "TURTLE_EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.TURTLE_EGG_1.get()));
+    public static final RegistryObject<BlockItem> TURTLE_EGG_2 = CRATE_ITEMS.register("triple_crated_" + "TURTLE_EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.TURTLE_EGG_2.get()));
+    public static final RegistryObject<BlockItem> TURTLE_EGG_3 = CRATE_ITEMS.register("quadruple_crated_" + "TURTLE_EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.TURTLE_EGG_3.get()));
+    public static final RegistryObject<BlockItem> TURTLE_EGG_4 = CRATE_ITEMS.register("quintuple_crated_" + "TURTLE_EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.TURTLE_EGG_4.get()));
+    public static final RegistryObject<BlockItem> TURTLE_EGG_5 = CRATE_ITEMS.register("sextuple_crated_" + "TURTLE_EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.TURTLE_EGG_5.get()));
+    public static final RegistryObject<BlockItem> TURTLE_EGG_6 = CRATE_ITEMS.register("septuple_crated_" + "TURTLE_EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.TURTLE_EGG_6.get()));
+    public static final RegistryObject<BlockItem> TURTLE_EGG_7 = CRATE_ITEMS.register("octuple_crated_" + "TURTLE_EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.TURTLE_EGG_7.get()));
+    public static final RegistryObject<BlockItem> TURTLE_EGG_8 = CRATE_ITEMS.register("mega_crated_" + "TURTLE_EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.TURTLE_EGG_8.get()));
+    public static final RegistryObject<BlockItem> TURTLE_EGG_9 = CRATE_ITEMS.register("giga_crated_" + "TURTLE_EGG".toLowerCase(), () -> new CrateItem(CrateBlocks.TURTLE_EGG_9.get()));
+    public static final RegistryObject<BlockItem> WHEAT_SEEDS_0 = CRATE_ITEMS.register("crated_" + "WHEAT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.WHEAT_SEEDS_0.get()));
+    public static final RegistryObject<BlockItem> WHEAT_SEEDS_1 = CRATE_ITEMS.register("double_crated_" + "WHEAT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.WHEAT_SEEDS_1.get()));
+    public static final RegistryObject<BlockItem> WHEAT_SEEDS_2 = CRATE_ITEMS.register("triple_crated_" + "WHEAT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.WHEAT_SEEDS_2.get()));
+    public static final RegistryObject<BlockItem> WHEAT_SEEDS_3 = CRATE_ITEMS.register("quadruple_crated_" + "WHEAT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.WHEAT_SEEDS_3.get()));
+    public static final RegistryObject<BlockItem> WHEAT_SEEDS_4 = CRATE_ITEMS.register("quintuple_crated_" + "WHEAT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.WHEAT_SEEDS_4.get()));
+    public static final RegistryObject<BlockItem> WHEAT_SEEDS_5 = CRATE_ITEMS.register("sextuple_crated_" + "WHEAT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.WHEAT_SEEDS_5.get()));
+    public static final RegistryObject<BlockItem> WHEAT_SEEDS_6 = CRATE_ITEMS.register("septuple_crated_" + "WHEAT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.WHEAT_SEEDS_6.get()));
+    public static final RegistryObject<BlockItem> WHEAT_SEEDS_7 = CRATE_ITEMS.register("octuple_crated_" + "WHEAT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.WHEAT_SEEDS_7.get()));
+    public static final RegistryObject<BlockItem> WHEAT_SEEDS_8 = CRATE_ITEMS.register("mega_crated_" + "WHEAT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.WHEAT_SEEDS_8.get()));
+    public static final RegistryObject<BlockItem> WHEAT_SEEDS_9 = CRATE_ITEMS.register("giga_crated_" + "WHEAT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.WHEAT_SEEDS_9.get()));
+    public static final RegistryObject<BlockItem> COCOA_BEANS_0 = CRATE_ITEMS.register("crated_" + "COCOA_BEANS".toLowerCase(), () -> new CrateItem(CrateBlocks.COCOA_BEANS_0.get()));
+    public static final RegistryObject<BlockItem> COCOA_BEANS_1 = CRATE_ITEMS.register("double_crated_" + "COCOA_BEANS".toLowerCase(), () -> new CrateItem(CrateBlocks.COCOA_BEANS_1.get()));
+    public static final RegistryObject<BlockItem> COCOA_BEANS_2 = CRATE_ITEMS.register("triple_crated_" + "COCOA_BEANS".toLowerCase(), () -> new CrateItem(CrateBlocks.COCOA_BEANS_2.get()));
+    public static final RegistryObject<BlockItem> COCOA_BEANS_3 = CRATE_ITEMS.register("quadruple_crated_" + "COCOA_BEANS".toLowerCase(), () -> new CrateItem(CrateBlocks.COCOA_BEANS_3.get()));
+    public static final RegistryObject<BlockItem> COCOA_BEANS_4 = CRATE_ITEMS.register("quintuple_crated_" + "COCOA_BEANS".toLowerCase(), () -> new CrateItem(CrateBlocks.COCOA_BEANS_4.get()));
+    public static final RegistryObject<BlockItem> COCOA_BEANS_5 = CRATE_ITEMS.register("sextuple_crated_" + "COCOA_BEANS".toLowerCase(), () -> new CrateItem(CrateBlocks.COCOA_BEANS_5.get()));
+    public static final RegistryObject<BlockItem> COCOA_BEANS_6 = CRATE_ITEMS.register("septuple_crated_" + "COCOA_BEANS".toLowerCase(), () -> new CrateItem(CrateBlocks.COCOA_BEANS_6.get()));
+    public static final RegistryObject<BlockItem> COCOA_BEANS_7 = CRATE_ITEMS.register("octuple_crated_" + "COCOA_BEANS".toLowerCase(), () -> new CrateItem(CrateBlocks.COCOA_BEANS_7.get()));
+    public static final RegistryObject<BlockItem> COCOA_BEANS_8 = CRATE_ITEMS.register("mega_crated_" + "COCOA_BEANS".toLowerCase(), () -> new CrateItem(CrateBlocks.COCOA_BEANS_8.get()));
+    public static final RegistryObject<BlockItem> COCOA_BEANS_9 = CRATE_ITEMS.register("giga_crated_" + "COCOA_BEANS".toLowerCase(), () -> new CrateItem(CrateBlocks.COCOA_BEANS_9.get()));
+    public static final RegistryObject<BlockItem> PUMPKIN_SEEDS_0 = CRATE_ITEMS.register("crated_" + "PUMPKIN_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.PUMPKIN_SEEDS_0.get()));
+    public static final RegistryObject<BlockItem> PUMPKIN_SEEDS_1 = CRATE_ITEMS.register("double_crated_" + "PUMPKIN_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.PUMPKIN_SEEDS_1.get()));
+    public static final RegistryObject<BlockItem> PUMPKIN_SEEDS_2 = CRATE_ITEMS.register("triple_crated_" + "PUMPKIN_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.PUMPKIN_SEEDS_2.get()));
+    public static final RegistryObject<BlockItem> PUMPKIN_SEEDS_3 = CRATE_ITEMS.register("quadruple_crated_" + "PUMPKIN_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.PUMPKIN_SEEDS_3.get()));
+    public static final RegistryObject<BlockItem> PUMPKIN_SEEDS_4 = CRATE_ITEMS.register("quintuple_crated_" + "PUMPKIN_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.PUMPKIN_SEEDS_4.get()));
+    public static final RegistryObject<BlockItem> PUMPKIN_SEEDS_5 = CRATE_ITEMS.register("sextuple_crated_" + "PUMPKIN_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.PUMPKIN_SEEDS_5.get()));
+    public static final RegistryObject<BlockItem> PUMPKIN_SEEDS_6 = CRATE_ITEMS.register("septuple_crated_" + "PUMPKIN_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.PUMPKIN_SEEDS_6.get()));
+    public static final RegistryObject<BlockItem> PUMPKIN_SEEDS_7 = CRATE_ITEMS.register("octuple_crated_" + "PUMPKIN_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.PUMPKIN_SEEDS_7.get()));
+    public static final RegistryObject<BlockItem> PUMPKIN_SEEDS_8 = CRATE_ITEMS.register("mega_crated_" + "PUMPKIN_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.PUMPKIN_SEEDS_8.get()));
+    public static final RegistryObject<BlockItem> PUMPKIN_SEEDS_9 = CRATE_ITEMS.register("giga_crated_" + "PUMPKIN_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.PUMPKIN_SEEDS_9.get()));
+    public static final RegistryObject<BlockItem> MELON_SEEDS_0 = CRATE_ITEMS.register("crated_" + "MELON_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.MELON_SEEDS_0.get()));
+    public static final RegistryObject<BlockItem> MELON_SEEDS_1 = CRATE_ITEMS.register("double_crated_" + "MELON_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.MELON_SEEDS_1.get()));
+    public static final RegistryObject<BlockItem> MELON_SEEDS_2 = CRATE_ITEMS.register("triple_crated_" + "MELON_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.MELON_SEEDS_2.get()));
+    public static final RegistryObject<BlockItem> MELON_SEEDS_3 = CRATE_ITEMS.register("quadruple_crated_" + "MELON_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.MELON_SEEDS_3.get()));
+    public static final RegistryObject<BlockItem> MELON_SEEDS_4 = CRATE_ITEMS.register("quintuple_crated_" + "MELON_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.MELON_SEEDS_4.get()));
+    public static final RegistryObject<BlockItem> MELON_SEEDS_5 = CRATE_ITEMS.register("sextuple_crated_" + "MELON_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.MELON_SEEDS_5.get()));
+    public static final RegistryObject<BlockItem> MELON_SEEDS_6 = CRATE_ITEMS.register("septuple_crated_" + "MELON_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.MELON_SEEDS_6.get()));
+    public static final RegistryObject<BlockItem> MELON_SEEDS_7 = CRATE_ITEMS.register("octuple_crated_" + "MELON_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.MELON_SEEDS_7.get()));
+    public static final RegistryObject<BlockItem> MELON_SEEDS_8 = CRATE_ITEMS.register("mega_crated_" + "MELON_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.MELON_SEEDS_8.get()));
+    public static final RegistryObject<BlockItem> MELON_SEEDS_9 = CRATE_ITEMS.register("giga_crated_" + "MELON_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.MELON_SEEDS_9.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_SEEDS_0 = CRATE_ITEMS.register("crated_" + "BEETROOT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_SEEDS_0.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_SEEDS_1 = CRATE_ITEMS.register("double_crated_" + "BEETROOT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_SEEDS_1.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_SEEDS_2 = CRATE_ITEMS.register("triple_crated_" + "BEETROOT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_SEEDS_2.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_SEEDS_3 = CRATE_ITEMS.register("quadruple_crated_" + "BEETROOT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_SEEDS_3.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_SEEDS_4 = CRATE_ITEMS.register("quintuple_crated_" + "BEETROOT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_SEEDS_4.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_SEEDS_5 = CRATE_ITEMS.register("sextuple_crated_" + "BEETROOT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_SEEDS_5.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_SEEDS_6 = CRATE_ITEMS.register("septuple_crated_" + "BEETROOT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_SEEDS_6.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_SEEDS_7 = CRATE_ITEMS.register("octuple_crated_" + "BEETROOT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_SEEDS_7.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_SEEDS_8 = CRATE_ITEMS.register("mega_crated_" + "BEETROOT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_SEEDS_8.get()));
+    public static final RegistryObject<BlockItem> BEETROOT_SEEDS_9 = CRATE_ITEMS.register("giga_crated_" + "BEETROOT_SEEDS".toLowerCase(), () -> new CrateItem(CrateBlocks.BEETROOT_SEEDS_9.get()));
+    public static final RegistryObject<BlockItem> SEAGRASS_0 = CRATE_ITEMS.register("crated_" + "SEAGRASS".toLowerCase(), () -> new CrateItem(CrateBlocks.SEAGRASS_0.get()));
+    public static final RegistryObject<BlockItem> SEAGRASS_1 = CRATE_ITEMS.register("double_crated_" + "SEAGRASS".toLowerCase(), () -> new CrateItem(CrateBlocks.SEAGRASS_1.get()));
+    public static final RegistryObject<BlockItem> SEAGRASS_2 = CRATE_ITEMS.register("triple_crated_" + "SEAGRASS".toLowerCase(), () -> new CrateItem(CrateBlocks.SEAGRASS_2.get()));
+    public static final RegistryObject<BlockItem> SEAGRASS_3 = CRATE_ITEMS.register("quadruple_crated_" + "SEAGRASS".toLowerCase(), () -> new CrateItem(CrateBlocks.SEAGRASS_3.get()));
+    public static final RegistryObject<BlockItem> SEAGRASS_4 = CRATE_ITEMS.register("quintuple_crated_" + "SEAGRASS".toLowerCase(), () -> new CrateItem(CrateBlocks.SEAGRASS_4.get()));
+    public static final RegistryObject<BlockItem> SEAGRASS_5 = CRATE_ITEMS.register("sextuple_crated_" + "SEAGRASS".toLowerCase(), () -> new CrateItem(CrateBlocks.SEAGRASS_5.get()));
+    public static final RegistryObject<BlockItem> SEAGRASS_6 = CRATE_ITEMS.register("septuple_crated_" + "SEAGRASS".toLowerCase(), () -> new CrateItem(CrateBlocks.SEAGRASS_6.get()));
+    public static final RegistryObject<BlockItem> SEAGRASS_7 = CRATE_ITEMS.register("octuple_crated_" + "SEAGRASS".toLowerCase(), () -> new CrateItem(CrateBlocks.SEAGRASS_7.get()));
+    public static final RegistryObject<BlockItem> SEAGRASS_8 = CRATE_ITEMS.register("mega_crated_" + "SEAGRASS".toLowerCase(), () -> new CrateItem(CrateBlocks.SEAGRASS_8.get()));
+    public static final RegistryObject<BlockItem> SEAGRASS_9 = CRATE_ITEMS.register("giga_crated_" + "SEAGRASS".toLowerCase(), () -> new CrateItem(CrateBlocks.SEAGRASS_9.get()));
+    public static final RegistryObject<BlockItem> KELP_0 = CRATE_ITEMS.register("crated_" + "KELP".toLowerCase(), () -> new CrateItem(CrateBlocks.KELP_0.get()));
+    public static final RegistryObject<BlockItem> KELP_1 = CRATE_ITEMS.register("double_crated_" + "KELP".toLowerCase(), () -> new CrateItem(CrateBlocks.KELP_1.get()));
+    public static final RegistryObject<BlockItem> KELP_2 = CRATE_ITEMS.register("triple_crated_" + "KELP".toLowerCase(), () -> new CrateItem(CrateBlocks.KELP_2.get()));
+    public static final RegistryObject<BlockItem> KELP_3 = CRATE_ITEMS.register("quadruple_crated_" + "KELP".toLowerCase(), () -> new CrateItem(CrateBlocks.KELP_3.get()));
+    public static final RegistryObject<BlockItem> KELP_4 = CRATE_ITEMS.register("quintuple_crated_" + "KELP".toLowerCase(), () -> new CrateItem(CrateBlocks.KELP_4.get()));
+    public static final RegistryObject<BlockItem> KELP_5 = CRATE_ITEMS.register("sextuple_crated_" + "KELP".toLowerCase(), () -> new CrateItem(CrateBlocks.KELP_5.get()));
+    public static final RegistryObject<BlockItem> KELP_6 = CRATE_ITEMS.register("septuple_crated_" + "KELP".toLowerCase(), () -> new CrateItem(CrateBlocks.KELP_6.get()));
+    public static final RegistryObject<BlockItem> KELP_7 = CRATE_ITEMS.register("octuple_crated_" + "KELP".toLowerCase(), () -> new CrateItem(CrateBlocks.KELP_7.get()));
+    public static final RegistryObject<BlockItem> KELP_8 = CRATE_ITEMS.register("mega_crated_" + "KELP".toLowerCase(), () -> new CrateItem(CrateBlocks.KELP_8.get()));
+    public static final RegistryObject<BlockItem> KELP_9 = CRATE_ITEMS.register("giga_crated_" + "KELP".toLowerCase(), () -> new CrateItem(CrateBlocks.KELP_9.get()));
+    public static final RegistryObject<BlockItem> COBWEB_0 = CRATE_ITEMS.register("crated_" + "COBWEB".toLowerCase(), () -> new CrateItem(CrateBlocks.COBWEB_0.get()));
+    public static final RegistryObject<BlockItem> COBWEB_1 = CRATE_ITEMS.register("double_crated_" + "COBWEB".toLowerCase(), () -> new CrateItem(CrateBlocks.COBWEB_1.get()));
+    public static final RegistryObject<BlockItem> COBWEB_2 = CRATE_ITEMS.register("triple_crated_" + "COBWEB".toLowerCase(), () -> new CrateItem(CrateBlocks.COBWEB_2.get()));
+    public static final RegistryObject<BlockItem> COBWEB_3 = CRATE_ITEMS.register("quadruple_crated_" + "COBWEB".toLowerCase(), () -> new CrateItem(CrateBlocks.COBWEB_3.get()));
+    public static final RegistryObject<BlockItem> COBWEB_4 = CRATE_ITEMS.register("quintuple_crated_" + "COBWEB".toLowerCase(), () -> new CrateItem(CrateBlocks.COBWEB_4.get()));
+    public static final RegistryObject<BlockItem> COBWEB_5 = CRATE_ITEMS.register("sextuple_crated_" + "COBWEB".toLowerCase(), () -> new CrateItem(CrateBlocks.COBWEB_5.get()));
+    public static final RegistryObject<BlockItem> COBWEB_6 = CRATE_ITEMS.register("septuple_crated_" + "COBWEB".toLowerCase(), () -> new CrateItem(CrateBlocks.COBWEB_6.get()));
+    public static final RegistryObject<BlockItem> COBWEB_7 = CRATE_ITEMS.register("octuple_crated_" + "COBWEB".toLowerCase(), () -> new CrateItem(CrateBlocks.COBWEB_7.get()));
+    public static final RegistryObject<BlockItem> COBWEB_8 = CRATE_ITEMS.register("mega_crated_" + "COBWEB".toLowerCase(), () -> new CrateItem(CrateBlocks.COBWEB_8.get()));
+    public static final RegistryObject<BlockItem> COBWEB_9 = CRATE_ITEMS.register("giga_crated_" + "COBWEB".toLowerCase(), () -> new CrateItem(CrateBlocks.COBWEB_9.get()));
+    public static final RegistryObject<BlockItem> WHITE_CARPET_0 = CRATE_ITEMS.register("crated_" + "WHITE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> WHITE_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "WHITE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> WHITE_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "WHITE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> WHITE_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "WHITE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> WHITE_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "WHITE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> WHITE_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "WHITE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> WHITE_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "WHITE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> WHITE_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "WHITE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> WHITE_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "WHITE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> WHITE_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "WHITE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.WHITE_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_CARPET_0 = CRATE_ITEMS.register("crated_" + "LIGHT_GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "LIGHT_GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "LIGHT_GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "LIGHT_GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "LIGHT_GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "LIGHT_GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "LIGHT_GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "LIGHT_GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "LIGHT_GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> LIGHT_GRAY_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "LIGHT_GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_GRAY_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> GRAY_CARPET_0 = CRATE_ITEMS.register("crated_" + "GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> GRAY_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> GRAY_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> GRAY_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> GRAY_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> GRAY_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> GRAY_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> GRAY_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> GRAY_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> GRAY_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "GRAY_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GRAY_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> BLACK_CARPET_0 = CRATE_ITEMS.register("crated_" + "BLACK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> BLACK_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "BLACK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> BLACK_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "BLACK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> BLACK_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "BLACK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> BLACK_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "BLACK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> BLACK_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "BLACK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> BLACK_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "BLACK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> BLACK_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "BLACK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> BLACK_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "BLACK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> BLACK_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "BLACK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLACK_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> BROWN_CARPET_0 = CRATE_ITEMS.register("crated_" + "BROWN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> BROWN_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "BROWN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> BROWN_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "BROWN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> BROWN_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "BROWN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> BROWN_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "BROWN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> BROWN_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "BROWN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> BROWN_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "BROWN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> BROWN_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "BROWN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> BROWN_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "BROWN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> BROWN_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "BROWN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BROWN_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> RED_CARPET_0 = CRATE_ITEMS.register("crated_" + "RED_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> RED_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "RED_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> RED_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "RED_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> RED_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "RED_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> RED_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "RED_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> RED_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "RED_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> RED_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "RED_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> RED_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "RED_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> RED_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "RED_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> RED_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "RED_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.RED_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> ORANGE_CARPET_0 = CRATE_ITEMS.register("crated_" + "ORANGE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> ORANGE_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "ORANGE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> ORANGE_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "ORANGE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> ORANGE_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "ORANGE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> ORANGE_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "ORANGE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> ORANGE_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "ORANGE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> ORANGE_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "ORANGE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> ORANGE_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "ORANGE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> ORANGE_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "ORANGE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> ORANGE_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "ORANGE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.ORANGE_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> YELLOW_CARPET_0 = CRATE_ITEMS.register("crated_" + "YELLOW_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> YELLOW_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "YELLOW_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> YELLOW_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "YELLOW_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> YELLOW_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "YELLOW_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> YELLOW_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "YELLOW_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> YELLOW_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "YELLOW_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> YELLOW_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "YELLOW_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> YELLOW_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "YELLOW_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> YELLOW_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "YELLOW_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> YELLOW_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "YELLOW_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.YELLOW_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> LIME_CARPET_0 = CRATE_ITEMS.register("crated_" + "LIME_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> LIME_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "LIME_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> LIME_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "LIME_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> LIME_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "LIME_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> LIME_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "LIME_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> LIME_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "LIME_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> LIME_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "LIME_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> LIME_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "LIME_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> LIME_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "LIME_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> LIME_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "LIME_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIME_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> GREEN_CARPET_0 = CRATE_ITEMS.register("crated_" + "GREEN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> GREEN_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "GREEN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> GREEN_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "GREEN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> GREEN_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "GREEN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> GREEN_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "GREEN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> GREEN_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "GREEN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> GREEN_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "GREEN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> GREEN_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "GREEN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> GREEN_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "GREEN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> GREEN_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "GREEN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.GREEN_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> CYAN_CARPET_0 = CRATE_ITEMS.register("crated_" + "CYAN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> CYAN_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "CYAN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> CYAN_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "CYAN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> CYAN_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "CYAN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> CYAN_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "CYAN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> CYAN_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "CYAN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> CYAN_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "CYAN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> CYAN_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "CYAN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> CYAN_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "CYAN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> CYAN_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "CYAN_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.CYAN_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_CARPET_0 = CRATE_ITEMS.register("crated_" + "LIGHT_BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "LIGHT_BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "LIGHT_BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "LIGHT_BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "LIGHT_BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "LIGHT_BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "LIGHT_BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "LIGHT_BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "LIGHT_BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> LIGHT_BLUE_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "LIGHT_BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.LIGHT_BLUE_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> BLUE_CARPET_0 = CRATE_ITEMS.register("crated_" + "BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> BLUE_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> BLUE_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> BLUE_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> BLUE_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> BLUE_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> BLUE_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> BLUE_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> BLUE_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> BLUE_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "BLUE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.BLUE_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> PURPLE_CARPET_0 = CRATE_ITEMS.register("crated_" + "PURPLE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> PURPLE_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "PURPLE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> PURPLE_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "PURPLE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> PURPLE_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "PURPLE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> PURPLE_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "PURPLE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> PURPLE_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "PURPLE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> PURPLE_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "PURPLE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> PURPLE_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "PURPLE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> PURPLE_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "PURPLE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> PURPLE_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "PURPLE_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PURPLE_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_CARPET_0 = CRATE_ITEMS.register("crated_" + "MAGENTA_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "MAGENTA_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "MAGENTA_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "MAGENTA_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "MAGENTA_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "MAGENTA_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "MAGENTA_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "MAGENTA_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "MAGENTA_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> MAGENTA_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "MAGENTA_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.MAGENTA_CARPET_9.get()));
+    public static final RegistryObject<BlockItem> PINK_CARPET_0 = CRATE_ITEMS.register("crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_CARPET_0.get()));
+    public static final RegistryObject<BlockItem> PINK_CARPET_1 = CRATE_ITEMS.register("double_crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_CARPET_1.get()));
+    public static final RegistryObject<BlockItem> PINK_CARPET_2 = CRATE_ITEMS.register("triple_crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_CARPET_2.get()));
+    public static final RegistryObject<BlockItem> PINK_CARPET_3 = CRATE_ITEMS.register("quadruple_crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_CARPET_3.get()));
+    public static final RegistryObject<BlockItem> PINK_CARPET_4 = CRATE_ITEMS.register("quintuple_crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_CARPET_4.get()));
+    public static final RegistryObject<BlockItem> PINK_CARPET_5 = CRATE_ITEMS.register("sextuple_crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_CARPET_5.get()));
+    public static final RegistryObject<BlockItem> PINK_CARPET_6 = CRATE_ITEMS.register("septuple_crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_CARPET_6.get()));
+    public static final RegistryObject<BlockItem> PINK_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_CARPET_7.get()));
+    public static final RegistryObject<BlockItem> PINK_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_CARPET_8.get()));
+    public static final RegistryObject<BlockItem> PINK_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CrateBlocks.PINK_CARPET_9.get()));
+    public static RegistryObject<BlockItem> APPLE_0 = CRATE_ITEMS.register("crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_0.get()));
+    public static RegistryObject<BlockItem> APPLE_1 = CRATE_ITEMS.register("double_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_1.get()));
+    public static RegistryObject<BlockItem> APPLE_2 = CRATE_ITEMS.register("triple_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_2.get()));
+    public static RegistryObject<BlockItem> APPLE_3 = CRATE_ITEMS.register("quadruple_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_3.get()));
+    public static RegistryObject<BlockItem> APPLE_4 = CRATE_ITEMS.register("quintuple_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_4.get()));
+    public static RegistryObject<BlockItem> APPLE_5 = CRATE_ITEMS.register("sextuple_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_5.get()));
+    public static RegistryObject<BlockItem> APPLE_6 = CRATE_ITEMS.register("septuple_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_6.get()));
+    public static RegistryObject<BlockItem> APPLE_7 = CRATE_ITEMS.register("octuple_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_7.get()));
+    public static RegistryObject<BlockItem> APPLE_8 = CRATE_ITEMS.register("mega_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_8.get()));
+    public static RegistryObject<BlockItem> APPLE_9 = CRATE_ITEMS.register("giga_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CrateBlocks.APPLE_9.get()));
 }

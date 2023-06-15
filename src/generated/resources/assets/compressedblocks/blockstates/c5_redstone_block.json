@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c5_redstone_block"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c5_redstone_block"}}}

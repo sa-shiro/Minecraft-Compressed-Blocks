@@ -1,8 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "compressedblocks:item/crate",
-    "layer1": "compressedblocks:item/soul_torch",
-    "layer2": "compressedblocks:item/1"
-  }
-}
+{"parent":"compressedblocks:block/crated_soul_torch"}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c2_raw_copper_block"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c2_raw_copper_block"}}}

@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"#":{"item":"minecraft:anvil"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:crated_anvil"},"show_notification":true}

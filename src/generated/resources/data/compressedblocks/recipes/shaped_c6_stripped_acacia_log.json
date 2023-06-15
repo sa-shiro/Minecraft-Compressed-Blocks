@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "key": {
-    "#": {
-      "item": "compressedblocks:c5_stripped_acacia_log"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:c6_stripped_acacia_log"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"building","key":{"#":{"item":"compressedblocks:c5_stripped_acacia_log"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:c6_stripped_acacia_log"},"show_notification":true}

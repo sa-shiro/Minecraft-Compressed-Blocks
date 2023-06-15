@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "compressedblocks:crated_pink_tulip"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "minecraft:pink_tulip"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"misc","ingredients":[{"item":"compressedblocks:crated_pink_tulip"}],"result":{"count":9,"item":"minecraft:pink_tulip"}}

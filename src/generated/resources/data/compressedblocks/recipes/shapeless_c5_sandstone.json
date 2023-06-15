@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients": [
-    {
-      "item": "compressedblocks:c5_sandstone"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:c4_sandstone"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"building","ingredients":[{"item":"compressedblocks:c5_sandstone"}],"result":{"count":9,"item":"compressedblocks:c4_sandstone"}}

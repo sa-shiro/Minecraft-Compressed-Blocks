@@ -6,11 +6,11 @@ import net.minecraft.network.chat.Style;
 public class Compression {
     protected String blockCount;
     protected Style style;
-
+    
     public Compression() {
         style = Style.EMPTY;
     }
-
+    
     /**
      * @param compressionLevel Level of compression. <br>Min: 0<br> Max: 9
      */
@@ -60,7 +60,7 @@ public class Compression {
             }
         }
     }
-
+    
     /**
      * Function to get the current Block Count
      *
@@ -69,7 +69,7 @@ public class Compression {
     public String getBlockCount() {
         return this.blockCount;
     }
-
+    
     /**
      * Function to get the current Style
      *

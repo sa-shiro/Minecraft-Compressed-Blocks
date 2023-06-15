@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c8_gravel"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c8_gravel"}}}

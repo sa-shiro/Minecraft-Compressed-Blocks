@@ -1,8 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "compressedblocks:item/crate",
-    "layer1": "compressedblocks:item/crimson_fungus",
-    "layer2": "compressedblocks:item/9"
-  }
-}
+{"parent":"compressedblocks:block/mega_crated_crimson_fungus"}

@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "#": {
-      "item": "compressedblocks:quintuple_crated_string"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:sextuple_crated_string"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"#":{"item":"compressedblocks:quintuple_crated_string"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:sextuple_crated_string"},"show_notification":true}

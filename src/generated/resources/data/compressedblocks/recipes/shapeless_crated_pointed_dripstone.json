@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "compressedblocks:crated_pointed_dripstone"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "minecraft:pointed_dripstone"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"misc","ingredients":[{"item":"compressedblocks:crated_pointed_dripstone"}],"result":{"count":9,"item":"minecraft:pointed_dripstone"}}

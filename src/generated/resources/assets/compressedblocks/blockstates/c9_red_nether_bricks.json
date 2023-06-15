@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c9_red_nether_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c9_red_nether_bricks"}}}

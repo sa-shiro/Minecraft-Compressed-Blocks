@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c0_stone_bricks"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c0_stone_bricks"}}}

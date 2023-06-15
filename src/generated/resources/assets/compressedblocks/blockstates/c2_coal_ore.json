@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c2_coal_ore"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c2_coal_ore"}}}

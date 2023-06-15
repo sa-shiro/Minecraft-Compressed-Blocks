@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "compressedblocks:crated_cornflower"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "minecraft:cornflower"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"misc","ingredients":[{"item":"compressedblocks:crated_cornflower"}],"result":{"count":9,"item":"minecraft:cornflower"}}

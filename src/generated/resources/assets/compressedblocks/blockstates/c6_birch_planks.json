@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c6_birch_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c6_birch_planks"}}}

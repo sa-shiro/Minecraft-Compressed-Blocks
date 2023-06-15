@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c1_andesite"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c1_andesite"}}}

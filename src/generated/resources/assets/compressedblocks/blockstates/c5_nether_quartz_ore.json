@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c5_nether_quartz_ore"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c5_nether_quartz_ore"}}}

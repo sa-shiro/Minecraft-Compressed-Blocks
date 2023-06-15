@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c5_obsidian"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c5_obsidian"}}}

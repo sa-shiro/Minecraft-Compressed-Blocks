@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c5_jungle_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c5_jungle_planks"}}}

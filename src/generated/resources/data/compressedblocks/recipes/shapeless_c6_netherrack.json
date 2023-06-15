@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients": [
-    {
-      "item": "compressedblocks:c6_netherrack"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:c5_netherrack"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"building","ingredients":[{"item":"compressedblocks:c6_netherrack"}],"result":{"count":9,"item":"compressedblocks:c5_netherrack"}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c9_gold_block"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c9_gold_block"}}}

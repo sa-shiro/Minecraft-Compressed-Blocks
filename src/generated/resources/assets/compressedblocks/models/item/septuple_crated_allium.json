@@ -1,8 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "compressedblocks:item/crate",
-    "layer1": "compressedblocks:item/allium",
-    "layer2": "compressedblocks:item/7"
-  }
-}
+{"parent":"compressedblocks:block/septuple_crated_allium"}

@@ -1,7 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "compressedblocks:item/crate",
-    "layer1": "compressedblocks:item/crate"
-  }
-}
+{"parent":"compressedblocks:block/giga_crated_repeater"}

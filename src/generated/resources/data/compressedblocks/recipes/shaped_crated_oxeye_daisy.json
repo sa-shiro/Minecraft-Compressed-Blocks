@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "#": {
-      "item": "minecraft:oxeye_daisy"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:crated_oxeye_daisy"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"#":{"item":"minecraft:oxeye_daisy"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:crated_oxeye_daisy"},"show_notification":true}

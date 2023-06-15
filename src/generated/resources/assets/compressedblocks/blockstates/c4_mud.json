@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c4_mud"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c4_mud"}}}

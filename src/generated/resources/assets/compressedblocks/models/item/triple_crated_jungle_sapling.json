@@ -1,8 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "compressedblocks:item/crate",
-    "layer1": "compressedblocks:item/jungle_sapling",
-    "layer2": "compressedblocks:item/3"
-  }
-}
+{"parent":"compressedblocks:block/triple_crated_jungle_sapling"}

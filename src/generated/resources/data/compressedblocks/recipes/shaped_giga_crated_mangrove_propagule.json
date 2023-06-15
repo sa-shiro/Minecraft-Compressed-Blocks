@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "#": {
-      "item": "compressedblocks:mega_crated_mangrove_propagule"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:giga_crated_mangrove_propagule"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"#":{"item":"compressedblocks:mega_crated_mangrove_propagule"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:giga_crated_mangrove_propagule"},"show_notification":true}

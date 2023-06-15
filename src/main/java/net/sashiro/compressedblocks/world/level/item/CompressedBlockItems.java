@@ -13,7 +13,7 @@ import static net.sashiro.compressedblocks.world.level.block.CompressedBlocks.*;
 @SuppressWarnings({"unused", "CanBeFinal"})
 @Mod.EventBusSubscriber(modid = CompressedBlocks.MOD_ID)
 public class CompressedBlockItems {
-
+    
     //------------------------------------------------------------------------------------------------------------------
     //region Dirt
     //------------------------------------------------------------------------------------------------------------------

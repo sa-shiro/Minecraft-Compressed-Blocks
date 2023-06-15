@@ -1,8 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "compressedblocks:item/crate",
-    "layer1": "compressedblocks:item/sweet_berries",
-    "layer2": "compressedblocks:item/2"
-  }
-}
+{"parent":"compressedblocks:block/double_crated_sweet_berries"}

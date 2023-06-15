@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "#": {
-      "item": "compressedblocks:sextuple_crated_ghast_tear"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:septuple_crated_ghast_tear"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"#":{"item":"compressedblocks:sextuple_crated_ghast_tear"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:septuple_crated_ghast_tear"},"show_notification":true}

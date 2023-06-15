@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c4_crimson_nylium"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c4_crimson_nylium"}}}

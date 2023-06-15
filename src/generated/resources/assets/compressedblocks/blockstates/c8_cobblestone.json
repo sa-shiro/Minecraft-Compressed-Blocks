@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c8_cobblestone"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c8_cobblestone"}}}

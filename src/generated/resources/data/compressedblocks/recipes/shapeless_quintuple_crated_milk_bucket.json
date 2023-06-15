@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "compressedblocks:quintuple_crated_milk_bucket"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:quadruple_crated_milk_bucket"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"misc","ingredients":[{"item":"compressedblocks:quintuple_crated_milk_bucket"}],"result":{"count":9,"item":"compressedblocks:quadruple_crated_milk_bucket"}}

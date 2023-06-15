@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients": [
-    {
-      "item": "compressedblocks:c5_gravel"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:c4_gravel"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"building","ingredients":[{"item":"compressedblocks:c5_gravel"}],"result":{"count":9,"item":"compressedblocks:c4_gravel"}}

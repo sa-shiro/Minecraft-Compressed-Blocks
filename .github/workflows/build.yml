@@ -75,8 +75,8 @@ jobs:
 
           files: build/libs/*.jar
 
-          name: Version 1.2.2 (1.19.3 - 1.19.4)
-          version: 1.2.2 # this does not work for Modrinth: ${{ env.VERSION }}
+          name: Version 1.2.3 (1.19.3 - 1.19.4)
+          version: 1.2.3 # this does not work for Modrinth: ${{ env.VERSION }}
           version-type: release
           changelog-file: changelog.md
 

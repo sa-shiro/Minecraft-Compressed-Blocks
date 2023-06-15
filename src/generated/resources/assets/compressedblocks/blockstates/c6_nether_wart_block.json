@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c6_nether_wart_block"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c6_nether_wart_block"}}}

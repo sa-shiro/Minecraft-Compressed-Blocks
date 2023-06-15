@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "compressedblocks:double_crated_cooked_mutton"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:crated_cooked_mutton"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"misc","ingredients":[{"item":"compressedblocks:double_crated_cooked_mutton"}],"result":{"count":9,"item":"compressedblocks:crated_cooked_mutton"}}

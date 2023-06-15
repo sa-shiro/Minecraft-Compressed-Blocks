@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c4_blackstone"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c4_blackstone"}}}

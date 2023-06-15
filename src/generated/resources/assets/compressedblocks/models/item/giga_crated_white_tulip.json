@@ -1,8 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "compressedblocks:item/crate",
-    "layer1": "compressedblocks:item/white_tulip",
-    "layer2": "compressedblocks:item/10"
-  }
-}
+{"parent":"compressedblocks:block/giga_crated_white_tulip"}

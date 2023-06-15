@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients": [
-    {
-      "item": "compressedblocks:c4_coal_block"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:c3_coal_block"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"building","ingredients":[{"item":"compressedblocks:c4_coal_block"}],"result":{"count":9,"item":"compressedblocks:c3_coal_block"}}

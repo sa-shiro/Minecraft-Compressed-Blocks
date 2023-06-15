@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c7_lapis_block"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c7_lapis_block"}}}

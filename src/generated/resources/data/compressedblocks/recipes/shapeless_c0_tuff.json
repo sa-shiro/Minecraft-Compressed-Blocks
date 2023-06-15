@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients": [
-    {
-      "item": "compressedblocks:c0_tuff"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "minecraft:tuff"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"building","ingredients":[{"item":"compressedblocks:c0_tuff"}],"result":{"count":9,"item":"minecraft:tuff"}}

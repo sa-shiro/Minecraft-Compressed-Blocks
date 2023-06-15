@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c3_mangrove_planks"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c3_mangrove_planks"}}}

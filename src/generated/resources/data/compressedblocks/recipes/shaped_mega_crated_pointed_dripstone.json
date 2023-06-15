@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "#": {
-      "item": "compressedblocks:octuple_crated_pointed_dripstone"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:mega_crated_pointed_dripstone"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"#":{"item":"compressedblocks:octuple_crated_pointed_dripstone"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:mega_crated_pointed_dripstone"},"show_notification":true}

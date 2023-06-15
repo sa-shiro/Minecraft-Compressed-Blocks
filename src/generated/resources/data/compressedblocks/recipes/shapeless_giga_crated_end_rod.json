@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "compressedblocks:giga_crated_end_rod"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:mega_crated_end_rod"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"misc","ingredients":[{"item":"compressedblocks:giga_crated_end_rod"}],"result":{"count":9,"item":"compressedblocks:mega_crated_end_rod"}}

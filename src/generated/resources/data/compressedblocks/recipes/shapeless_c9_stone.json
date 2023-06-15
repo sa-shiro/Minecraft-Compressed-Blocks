@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients": [
-    {
-      "item": "compressedblocks:c9_stone"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:c8_stone"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"building","ingredients":[{"item":"compressedblocks:c9_stone"}],"result":{"count":9,"item":"compressedblocks:c8_stone"}}

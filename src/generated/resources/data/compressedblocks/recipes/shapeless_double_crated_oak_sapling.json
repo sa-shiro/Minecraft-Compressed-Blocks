@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "compressedblocks:double_crated_oak_sapling"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:crated_oak_sapling"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"misc","ingredients":[{"item":"compressedblocks:double_crated_oak_sapling"}],"result":{"count":9,"item":"compressedblocks:crated_oak_sapling"}}

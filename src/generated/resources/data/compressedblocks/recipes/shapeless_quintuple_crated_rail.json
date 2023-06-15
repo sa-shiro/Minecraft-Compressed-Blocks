@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "compressedblocks:quintuple_crated_rail"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:quadruple_crated_rail"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"misc","ingredients":[{"item":"compressedblocks:quintuple_crated_rail"}],"result":{"count":9,"item":"compressedblocks:quadruple_crated_rail"}}

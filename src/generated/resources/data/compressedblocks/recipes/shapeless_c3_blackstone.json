@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients": [
-    {
-      "item": "compressedblocks:c3_blackstone"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:c2_blackstone"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"building","ingredients":[{"item":"compressedblocks:c3_blackstone"}],"result":{"count":9,"item":"compressedblocks:c2_blackstone"}}

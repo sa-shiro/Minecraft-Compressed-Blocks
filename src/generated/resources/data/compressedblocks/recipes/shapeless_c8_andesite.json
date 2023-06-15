@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients": [
-    {
-      "item": "compressedblocks:c8_andesite"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:c7_andesite"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"building","ingredients":[{"item":"compressedblocks:c8_andesite"}],"result":{"count":9,"item":"compressedblocks:c7_andesite"}}

@@ -1,7 +1,1 @@
-{
-  "variants": {
-    "": {
-      "model": "compressedblocks:block/c1_warped_nylium"
-    }
-  }
-}
+{"variants":{"":{"model":"compressedblocks:block/c1_warped_nylium"}}}

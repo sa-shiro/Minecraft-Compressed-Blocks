@@ -1,16 +1,1 @@
-{
-  "variants": {
-    "axis=x": {
-      "model": "compressedblocks:block/c4_stripped_birch_log_horizontal",
-      "x": 90,
-      "y": 90
-    },
-    "axis=y": {
-      "model": "compressedblocks:block/c4_stripped_birch_log"
-    },
-    "axis=z": {
-      "model": "compressedblocks:block/c4_stripped_birch_log_horizontal",
-      "x": 90
-    }
-  }
-}
+{"variants":{"axis=x":{"model":"compressedblocks:block/c4_stripped_birch_log_horizontal","x":90,"y":90},"axis=y":{"model":"compressedblocks:block/c4_stripped_birch_log"},"axis=z":{"model":"compressedblocks:block/c4_stripped_birch_log_horizontal","x":90}}}

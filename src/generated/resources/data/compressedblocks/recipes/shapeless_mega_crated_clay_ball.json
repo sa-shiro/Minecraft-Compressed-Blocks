@@ -1,13 +1,1 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "compressedblocks:mega_crated_clay_ball"
-    }
-  ],
-  "result": {
-    "count": 9,
-    "item": "compressedblocks:octuple_crated_clay_ball"
-  }
-}
+{"type":"minecraft:crafting_shapeless","category":"misc","ingredients":[{"item":"compressedblocks:mega_crated_clay_ball"}],"result":{"count":9,"item":"compressedblocks:octuple_crated_clay_ball"}}

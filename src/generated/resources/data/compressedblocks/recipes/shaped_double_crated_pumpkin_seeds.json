@@ -1,18 +1,1 @@
-{
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "#": {
-      "item": "compressedblocks:crated_pumpkin_seeds"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
-  ],
-  "result": {
-    "item": "compressedblocks:double_crated_pumpkin_seeds"
-  },
-  "show_notification": true
-}
+{"type":"minecraft:crafting_shaped","category":"misc","key":{"#":{"item":"compressedblocks:crated_pumpkin_seeds"}},"pattern":["###","###","###"],"result":{"item":"compressedblocks:double_crated_pumpkin_seeds"},"show_notification":true}
