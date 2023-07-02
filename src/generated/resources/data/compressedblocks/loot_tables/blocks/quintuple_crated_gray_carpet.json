@@ -1,1 +1,21 @@
-{"type":"minecraft:block","pools":[{"bonus_rolls":0.0,"conditions":[{"condition":"minecraft:survives_explosion"}],"entries":[{"type":"minecraft:item","name":"compressedblocks:quintuple_crated_gray_carpet"}],"rolls":1.0}]}
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "compressedblocks:quintuple_crated_gray_carpet"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "compressedblocks:blocks/quintuple_crated_gray_carpet"
+}

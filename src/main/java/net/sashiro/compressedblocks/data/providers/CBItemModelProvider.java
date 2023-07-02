@@ -19,7 +19,8 @@ public class CBItemModelProvider extends ItemModelProvider {
         ModelFile.ExistingModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
         
         for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
-            if (block.get().getDescriptionId().contains("honey_block") || block.get().getDescriptionId().contains("basalt")) continue;
+            if (block.get().getDescriptionId().contains("honey_block") || block.get().getDescriptionId().contains("basalt"))
+                continue;
             String name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
             withExistingParent(name, modLoc("block/" + name));
         }

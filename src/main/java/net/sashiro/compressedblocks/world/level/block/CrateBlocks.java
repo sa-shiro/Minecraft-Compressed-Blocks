@@ -4,7 +4,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.CompressedBlocks;
@@ -14,7 +14,7 @@ import static net.sashiro.compressedblocks.event.CBRegistryEvent.CRATE_BLOCKS;
 @SuppressWarnings({"unused", "CanBeFinal"})
 @Mod.EventBusSubscriber(modid = CompressedBlocks.MOD_ID)
 public class CrateBlocks {
-    private static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(10, 40.0F);
+    private static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(10, 40.0F).mapColor(MapColor.COLOR_BROWN);
     
     public static final RegistryObject<Block> APPLE_0 = CRATE_BLOCKS.register("crated_" + "APPLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
     public static final RegistryObject<Block> APPLE_1 = CRATE_BLOCKS.register("double_crated_" + "APPLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
@@ -346,17 +346,6 @@ public class CrateBlocks {
     public static final RegistryObject<Block> HONEY_BOTTLE_7 = CRATE_BLOCKS.register("octuple_crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
     public static final RegistryObject<Block> HONEY_BOTTLE_8 = CRATE_BLOCKS.register("mega_crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
     public static final RegistryObject<Block> HONEY_BOTTLE_9 = CRATE_BLOCKS.register("giga_crated_" + "HONEY_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
-    // FIXME: POTION
-    // public static final RegistryObject<Block> WATER_BOTTLE_0 = CRATE_BLOCKS.register("crated_" + "WATER_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
-    // public static final RegistryObject<Block> WATER_BOTTLE_1 = CRATE_BLOCKS.register("double_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
-    // public static final RegistryObject<Block> WATER_BOTTLE_2 = CRATE_BLOCKS.register("triple_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
-    // public static final RegistryObject<Block> WATER_BOTTLE_3 = CRATE_BLOCKS.register("quadruple_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
-    // public static final RegistryObject<Block> WATER_BOTTLE_4 = CRATE_BLOCKS.register("quintuple_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
-    // public static final RegistryObject<Block> WATER_BOTTLE_5 = CRATE_BLOCKS.register("sextuple_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
-    // public static final RegistryObject<Block> WATER_BOTTLE_6 = CRATE_BLOCKS.register("septuple_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
-    // public static final RegistryObject<Block> WATER_BOTTLE_7 = CRATE_BLOCKS.register("octuple_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
-    // public static final RegistryObject<Block> WATER_BOTTLE_8 = CRATE_BLOCKS.register("mega_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
-    // public static final RegistryObject<Block> WATER_BOTTLE_9 = CRATE_BLOCKS.register("giga_crated_" + "WATER_BOTTLE".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
     public static final RegistryObject<Block> CHARCOAL_0 = CRATE_BLOCKS.register("crated_" + "CHARCOAL".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
     public static final RegistryObject<Block> CHARCOAL_1 = CRATE_BLOCKS.register("double_crated_" + "CHARCOAL".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));
     public static final RegistryObject<Block> CHARCOAL_2 = CRATE_BLOCKS.register("triple_crated_" + "CHARCOAL".toLowerCase(), () -> new RotatedPillarBlock(PROPERTIES));

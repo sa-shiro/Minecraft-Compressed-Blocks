@@ -1,1 +1,35 @@
-{"parent":"minecraft:recipes/root","criteria":{"has_item":{"conditions":{"items":[{"items":["compressedblocks:quadruple_crated_melon_seeds"]}]},"trigger":"minecraft:inventory_changed"},"has_the_recipe":{"conditions":{"recipe":"compressedblocks:shaped_quintuple_crated_melon_seeds"},"trigger":"minecraft:recipe_unlocked"}},"requirements":[["has_item","has_the_recipe"]],"rewards":{"recipes":["compressedblocks:shaped_quintuple_crated_melon_seeds"]}}
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:quadruple_crated_melon_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "compressedblocks:shaped_quintuple_crated_melon_seeds"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_item",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "compressedblocks:shaped_quintuple_crated_melon_seeds"
+    ]
+  },
+  "sends_telemetry_event": false
+}

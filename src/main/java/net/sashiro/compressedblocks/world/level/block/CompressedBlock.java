@@ -7,10 +7,10 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -177,8 +177,8 @@ public class CompressedBlock {
             compressor.setCompressionLevel(compressionLevel);
         }
         
-        public CustomRotatedPillarBlock(MaterialColor innerColor, MaterialColor outerColor, float hardness, float resistance, int compressionLevel) {
-            super(Properties.of(Material.WOOD, (color) -> {
+        public CustomRotatedPillarBlock(MapColor innerColor, MapColor outerColor, float hardness, float resistance, int compressionLevel) {
+            super(BlockBehaviour.Properties.of().mapColor((color) -> {
                 return color.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? innerColor : outerColor;
             }).sound(SoundType.WOOD).strength(hardness, resistance));
             compressor.setCompressionLevel(compressionLevel);
