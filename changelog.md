@@ -1,12 +1,5 @@
-# Version 1.2.3 [ 1.19.3 - 1.19.4 ]  
+# Version 1.3.0 [ 1.20.1 ]  
 
-* updated translations
-* updated crate texture
-* Item Crates are now Blocks
+* update to 1.20.1
 
 ---
-
-### This version is only compatible with:
-
-- 1.19.3
-- 1.19.4

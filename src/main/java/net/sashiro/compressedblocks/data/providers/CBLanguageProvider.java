@@ -35,7 +35,6 @@ public class CBLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         add("itemGroup.compressed_blocks", "Compressed Blocks");
         add("itemGroup.compressed_items", "Item Crates");
-        add("item.compressedblocks.empty_crate", "Empty Crate");
         
         for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
             assert false;

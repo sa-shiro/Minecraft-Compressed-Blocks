@@ -26,7 +26,8 @@ public class CBBlockStateProvider extends BlockStateProvider {
         ModelFile.UncheckedModelFile cubeColumnHorizontal = new ModelFile.UncheckedModelFile("block/cube_column_horizontal");
         
         for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
-            if (block.get().getDescriptionId().contains("honey_block") || block.get().getDescriptionId().contains("basalt")) continue;
+            if (block.get().getDescriptionId().contains("honey_block") || block.get().getDescriptionId().contains("basalt"))
+                continue;
             if (block.get().getDescriptionId().contains("_log")) {
                 RotatedPillarBlock block1 = (RotatedPillarBlock) block.get();
                 axisBlock(
