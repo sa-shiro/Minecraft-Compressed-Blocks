@@ -13,6 +13,10 @@ env:
   VERSION_TYPE: alpha
   CURSEFORGE_ID: 361354
   MODRINTH_ID: "IQRVlbit"
+  MINECRAFT_VERSIONS_FABRIC: |
+    >=1.20.1
+  MINECRAFT_VERSIONS_FORGE: |
+    [1.20,1.21)
 
 jobs:
   build:
@@ -66,10 +70,14 @@ jobs:
 
           files: fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
 
-          name: "${{env.RELEASE_NAME}}"
+          name: "${{env.RELEASE_NAME}} FABRIC"
           version: "${{env.VERSION}}"
           version-type: "${{env.VERSION_TYPE}}"
           changelog-file: changelog.md
+
+          loaders: |
+            fabric
+          game-versions: ${{env.MINECRAFT_VERSIONS_FABRIC}}
 
           java: ${{ matrix.java }}
 
@@ -92,10 +100,14 @@ jobs:
 
           files: forge/build/libs/!(*-@(dev|sources|javadoc)).jar
 
-          name: "${{env.RELEASE_NAME}}"
+          name: "${{env.RELEASE_NAME}} FORGE"
           version: "${{env.VERSION}}"
           version-type: "${{env.VERSION_TYPE}}"
           changelog-file: changelog.md
+
+          loaders: |
+            forge
+          game-versions: ${{env.MINECRAFT_VERSIONS_FORGE}}
 
           java: ${{ matrix.java }}
 
