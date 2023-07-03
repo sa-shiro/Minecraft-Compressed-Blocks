@@ -11,6 +11,7 @@ import static net.sashiro.compressedblocks.Constants.MOD_ID;
 import static net.sashiro.compressedblocks.block.CBBlocks.DIRT_9;
 import static net.sashiro.compressedblocks.event.CBRegistryEvent.*;
 
+@SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ItemGroups {
     

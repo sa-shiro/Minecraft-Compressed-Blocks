@@ -17,7 +17,6 @@ public class CBItemModelProvider extends ItemModelProvider {
     
     @Override
     protected void registerModels() {
-        ModelFile.ExistingModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
         
         for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
             if (block.get().getDescriptionId().contains("honey_block") || block.get().getDescriptionId().contains("basalt"))

@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import static net.sashiro.compressedblocks.Constants.HARDNESS;
 import static net.sashiro.compressedblocks.Constants.RESISTANCE;
 
+@SuppressWarnings("unused")
 public class CBBlocks {
     
     // DIRT
