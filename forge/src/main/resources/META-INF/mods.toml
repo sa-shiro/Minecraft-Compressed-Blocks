@@ -24,5 +24,3 @@ versionRange = "${forge_mc_version_range}"
 ordering = "NONE"
 side = "BOTH"
 # GitHub Workflow stuff
-[mc-publish]
-loaders = ["forge"]
