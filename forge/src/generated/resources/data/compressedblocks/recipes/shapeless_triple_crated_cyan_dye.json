@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "compressedblocks:triple_crated_cyan_dye"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:double_crated_cyan_dye"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c1_soul_sand"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:c0_soul_sand"
+  }
+}

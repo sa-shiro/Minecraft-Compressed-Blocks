@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_item_frame"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:item_frame"
+  }
+}

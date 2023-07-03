@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c6_end_stone"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:c5_end_stone"
+  }
+}

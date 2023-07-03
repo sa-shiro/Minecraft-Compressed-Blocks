@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "compressedblocks:sextuple_crated_light_gray_dye"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:quintuple_crated_light_gray_dye"
+  }
+}
