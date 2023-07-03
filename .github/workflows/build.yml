@@ -51,7 +51,7 @@ jobs:
       # PUBLISH FABRIC TASK
       - name: publish FABRIC
         if: ${{ runner.os != 'Linux' }}
-        uses: Kir-Antipov/mc-publish@vv3.3
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           modrinth-featured: true
@@ -75,7 +75,7 @@ jobs:
       # PUBLISH FORGE TASK
       - name: publish FORGE
         if: ${{ runner.os != 'Linux' }}
-        uses: Kir-Antipov/mc-publish@vv3.3
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           modrinth-featured: true
