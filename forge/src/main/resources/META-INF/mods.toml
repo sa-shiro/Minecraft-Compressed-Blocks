@@ -25,6 +25,4 @@ ordering = "NONE"
 side = "BOTH"
 # GitHub Workflow stuff
 [mc-publish]
-modrinth = "${modrinth_id}"
-curseforge = "${curseforge_id}"
 loaders = ["forge"]

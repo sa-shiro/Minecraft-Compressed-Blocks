@@ -1,3 +1,4 @@
+#file: noinspection SpellCheckingInspection
 # Automatically build the project and run any configured tests for every push
 # and submitted pull request. This can help catch issues that only occur on
 # certain platforms or Java versions, and provides a first line of defence
@@ -10,6 +11,8 @@ env:
   RELEASE_NAME: v1.3.1 (1.20)
   JAVA_VERSION: 17
   VERSION_TYPE: alpha
+  CURSEFORGE_ID: 361354
+  MODRINTH_ID: "IQRVlbit"
 
 jobs:
   build:
@@ -53,10 +56,12 @@ jobs:
         if: ${{ runner.os != 'Linux' }}
         uses: Kir-Antipov/mc-publish@v3.3
         with:
+          modrinth-id: ${{env.MODRINTH_ID}}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           modrinth-featured: true
           modrinth-unfeature-mode: intersection
 
+          curseforge-id: ${{env.CURSEFORGE_ID}}
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           files: fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
@@ -77,10 +82,12 @@ jobs:
         if: ${{ runner.os != 'Linux' }}
         uses: Kir-Antipov/mc-publish@v3.3
         with:
+          modrinth-id: ${{env.MODRINTH_ID}}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           modrinth-featured: true
           modrinth-unfeature-mode: intersection
 
+          curseforge-id: ${{env.CURSEFORGE_ID}}
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           files: forge/build/libs/!(*-@(dev|sources|javadoc)).jar

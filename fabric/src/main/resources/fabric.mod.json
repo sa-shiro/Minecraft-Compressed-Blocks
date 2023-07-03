@@ -42,8 +42,6 @@
   "suggests": {},
   "custom": {
     "mc-publish": {
-      "modrinth": "${modrinth_id}",
-      "curseforge": 361354,
       "loaders": [
         "fabric"
       ]
