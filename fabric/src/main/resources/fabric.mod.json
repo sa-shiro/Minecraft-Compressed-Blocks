@@ -43,9 +43,9 @@
   "custom": {
     "mc-publish": {
       "modrinth": "${modrinth_id}",
-      "curseforge": "${curseforge_id}",
+      "curseforge": ${curseforge_id},
+
       "loaders": [ "fabric" ]
     }
-  }
 }
   
