@@ -7,7 +7,7 @@ name: build
 on: [ pull_request, push ]
 
 env:
-  RELEASE_NAME: v1.3.1 (1.20.1)
+  RELEASE_NAME: v1.3.1 (1.20)
   JAVA_VERSION: 17
   VERSION_TYPE: alpha
 
@@ -39,7 +39,7 @@ jobs:
       - name: build
         run: ./gradlew build
 
-      - name: capture build artifacts FORGE
+      - name: capture build artifacts
         if: ${{ runner.os == 'Linux' && matrix.java == '17' }} # Only upload artifacts built from the latest java on one OS
         uses: actions/upload-artifact@v3
         with:
@@ -66,7 +66,7 @@ jobs:
           version-type: "${{env.VERSION_TYPE}}"
           changelog-file: changelog.md
 
-          java: "${{env.JAVA_VERSION}}"
+          java: ${{ matrix.java }}
 
           retry-attempts: 2
           retry-delay: 10000
@@ -90,7 +90,7 @@ jobs:
           version-type: "${{env.VERSION_TYPE}}"
           changelog-file: changelog.md
 
-          java: "${{env.JAVA_VERSION}}"
+          java: ${{ matrix.java }}
 
           retry-attempts: 2
           retry-delay: 10000
