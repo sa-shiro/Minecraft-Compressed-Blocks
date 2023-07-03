@@ -179,9 +179,7 @@ public class CompressedBlock {
         }
         
         public CustomRotatedPillarBlock(MapColor innerColor, MapColor outerColor, float hardness, float resistance, int compressionLevel) {
-            super(Properties.of().mapColor((color) -> {
-                return color.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? innerColor : outerColor;
-            }).sound(SoundType.WOOD).strength(hardness, resistance));
+            super(Properties.of().mapColor((color) -> color.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? innerColor : outerColor).sound(SoundType.WOOD).strength(hardness, resistance));
             compressor.setCompressionLevel(compressionLevel);
         }
         

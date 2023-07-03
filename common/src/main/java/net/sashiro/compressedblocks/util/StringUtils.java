@@ -1,6 +1,13 @@
 package net.sashiro.compressedblocks.util;
 
 public class StringUtils {
+    
+    /**
+     * Utility function to replace underscores<br>
+     * with spaces and format the {@link String}  in uppercase.
+     * @param formatString the {@link String} to format
+     * @return the formatted {@link String}
+     */
     public static String stringFormat(String formatString) {
         formatString = formatString.replace("_", " ");
         String[] words = formatString.split("\\s");

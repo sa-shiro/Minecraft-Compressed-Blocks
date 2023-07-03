@@ -77,12 +77,8 @@ public class CompressedBlocksClient implements ClientModInitializer {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "compressed_blocks"), COMPRESSED_BLOCKS);
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "compressed_items"), CRATE_ITEMS);
         
-        ItemGroupEvents.modifyEntriesEvent(COMPRESSED_BLOCKS_KEY).register(content -> {
-            content.acceptAll(CBBlocksRegister.BLOCKS);
-        });
+        ItemGroupEvents.modifyEntriesEvent(COMPRESSED_BLOCKS_KEY).register(content -> content.acceptAll(CBBlocksRegister.BLOCKS));
         
-        ItemGroupEvents.modifyEntriesEvent(CRATE_ITEMS_KEY).register(content -> {
-            content.acceptAll(CBCratesRegister.CRATES);
-        });
+        ItemGroupEvents.modifyEntriesEvent(CRATE_ITEMS_KEY).register(content -> content.acceptAll(CBCratesRegister.CRATES));
     }
 }
