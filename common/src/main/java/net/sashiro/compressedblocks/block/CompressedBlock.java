@@ -24,7 +24,7 @@ public class CompressedBlock {
         private final Compression compressor = new Compression();
         
         public CustomDefaultBlock(Properties properties, int compressionLevel) {
-            super(properties.noOcclusion());
+            super(properties);
             compressor.setCompressionLevel(compressionLevel);
         }
         
@@ -39,7 +39,7 @@ public class CompressedBlock {
         private final Compression compressor = new Compression();
         
         public CustomMudBlock(Properties properties, int compressionLevel) {
-            super(properties.noOcclusion());
+            super(properties);
             compressor.setCompressionLevel(compressionLevel);
         }
         
@@ -54,7 +54,7 @@ public class CompressedBlock {
         private final Compression compressor = new Compression();
         
         public CustomNyliumBlock(Properties properties, int compressionLevel) {
-            super(properties.noOcclusion());
+            super(properties);
             compressor.setCompressionLevel(compressionLevel);
         }
         
@@ -84,7 +84,7 @@ public class CompressedBlock {
         private final Compression compressor = new Compression();
         
         public CustomGravelBlock(Properties properties, int compressionLevel) {
-            super(properties.noOcclusion());
+            super(properties);
             compressor.setCompressionLevel(compressionLevel);
         }
         
@@ -99,7 +99,7 @@ public class CompressedBlock {
         private final Compression compressor = new Compression();
         
         public CustomDropExperienceBlock(Properties properties, int compressionLevel) {
-            super(properties.noOcclusion());
+            super(properties);
             compressor.setCompressionLevel(compressionLevel);
         }
         
@@ -114,7 +114,7 @@ public class CompressedBlock {
         private final Compression compressor = new Compression();
         
         public CustomRedstoneOreBlock(Properties properties, int compressionLevel) {
-            super(properties.noOcclusion());
+            super(properties);
             compressor.setCompressionLevel(compressionLevel);
         }
         
@@ -129,7 +129,7 @@ public class CompressedBlock {
         private final Compression compressor = new Compression();
         
         public CustomRedstoneTorchBlock(Properties properties, int compressionLevel) {
-            super(properties.noOcclusion());
+            super(properties);
             compressor.setCompressionLevel(compressionLevel);
         }
         
@@ -144,7 +144,7 @@ public class CompressedBlock {
         private final Compression compressor = new Compression();
         
         public CustomSlimeBlock(Properties properties, int compressionLevel) {
-            super(properties.noOcclusion());
+            super(properties);
             compressor.setCompressionLevel(compressionLevel);
         }
         
@@ -159,7 +159,7 @@ public class CompressedBlock {
         private final Compression compressor = new Compression();
         
         public CustomSoulSandBlock(Properties properties, int compressionLevel) {
-            super(properties.noOcclusion());
+            super(properties);
             compressor.setCompressionLevel(compressionLevel);
         }
         
@@ -174,7 +174,7 @@ public class CompressedBlock {
         private final Compression compressor = new Compression();
         
         public CustomRotatedPillarBlock(Properties properties, int compressionLevel) {
-            super(properties.noOcclusion());
+            super(properties);
             compressor.setCompressionLevel(compressionLevel);
         }
         

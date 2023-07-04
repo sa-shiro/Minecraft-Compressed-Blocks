@@ -5,12 +5,22 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.block.CBCrateBlocks;
 
-import static net.sashiro.compressedblocks.Constants.MOD_ID;
+import static net.sashiro.compressedblocks.Constants.*;
 import static net.sashiro.compressedblocks.event.CBRegistryEvent.CRATE_ITEMS;
 
 @SuppressWarnings({"unused", "CanBeFinal"})
 @Mod.EventBusSubscriber(modid = MOD_ID)
 public class CBCrateItems {
+    public static final RegistryObject<BlockItem> APPLE_0 = CRATE_ITEMS.register(c0 + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_0.get()));
+    public static final RegistryObject<BlockItem> APPLE_1 = CRATE_ITEMS.register(c1 + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_1.get()));
+    public static final RegistryObject<BlockItem> APPLE_2 = CRATE_ITEMS.register(c2 + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_2.get()));
+    public static final RegistryObject<BlockItem> APPLE_3 = CRATE_ITEMS.register(c3 + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_3.get()));
+    public static final RegistryObject<BlockItem> APPLE_4 = CRATE_ITEMS.register(c4 + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_4.get()));
+    public static final RegistryObject<BlockItem> APPLE_5 = CRATE_ITEMS.register(c5 + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_5.get()));
+    public static final RegistryObject<BlockItem> APPLE_6 = CRATE_ITEMS.register(c6 + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_6.get()));
+    public static final RegistryObject<BlockItem> APPLE_7 = CRATE_ITEMS.register(c7 + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_7.get()));
+    public static final RegistryObject<BlockItem> APPLE_8 = CRATE_ITEMS.register(c8 + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_8.get()));
+    public static final RegistryObject<BlockItem> APPLE_9 = CRATE_ITEMS.register(c9 + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_9.get()));
     public static final RegistryObject<BlockItem> GOLDEN_APPLE_0 = CRATE_ITEMS.register("crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.GOLDEN_APPLE_0.get()));
     public static final RegistryObject<BlockItem> GOLDEN_APPLE_1 = CRATE_ITEMS.register("double_crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.GOLDEN_APPLE_1.get()));
     public static final RegistryObject<BlockItem> GOLDEN_APPLE_2 = CRATE_ITEMS.register("triple_crated_" + "GOLDEN_APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.GOLDEN_APPLE_2.get()));
@@ -1752,14 +1762,4 @@ public class CBCrateItems {
     public static final RegistryObject<BlockItem> PINK_CARPET_7 = CRATE_ITEMS.register("octuple_crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CBCrateBlocks.PINK_CARPET_7.get()));
     public static final RegistryObject<BlockItem> PINK_CARPET_8 = CRATE_ITEMS.register("mega_crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CBCrateBlocks.PINK_CARPET_8.get()));
     public static final RegistryObject<BlockItem> PINK_CARPET_9 = CRATE_ITEMS.register("giga_crated_" + "PINK_CARPET".toLowerCase(), () -> new CrateItem(CBCrateBlocks.PINK_CARPET_9.get()));
-    public static RegistryObject<BlockItem> APPLE_0 = CRATE_ITEMS.register("crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_0.get()));
-    public static RegistryObject<BlockItem> APPLE_1 = CRATE_ITEMS.register("double_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_1.get()));
-    public static RegistryObject<BlockItem> APPLE_2 = CRATE_ITEMS.register("triple_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_2.get()));
-    public static RegistryObject<BlockItem> APPLE_3 = CRATE_ITEMS.register("quadruple_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_3.get()));
-    public static RegistryObject<BlockItem> APPLE_4 = CRATE_ITEMS.register("quintuple_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_4.get()));
-    public static RegistryObject<BlockItem> APPLE_5 = CRATE_ITEMS.register("sextuple_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_5.get()));
-    public static RegistryObject<BlockItem> APPLE_6 = CRATE_ITEMS.register("septuple_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_6.get()));
-    public static RegistryObject<BlockItem> APPLE_7 = CRATE_ITEMS.register("octuple_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_7.get()));
-    public static RegistryObject<BlockItem> APPLE_8 = CRATE_ITEMS.register("mega_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_8.get()));
-    public static RegistryObject<BlockItem> APPLE_9 = CRATE_ITEMS.register("giga_crated_" + "APPLE".toLowerCase(), () -> new CrateItem(CBCrateBlocks.APPLE_9.get()));
 }
