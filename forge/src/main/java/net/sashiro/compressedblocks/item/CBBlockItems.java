@@ -14,9 +14,7 @@ import static net.sashiro.compressedblocks.event.CBRegistryEvent.PROPERTIES;
 @Mod.EventBusSubscriber(modid = MOD_ID)
 public class CBBlockItems {
     
-    //------------------------------------------------------------------------------------------------------------------
-    //region Dirt
-    //------------------------------------------------------------------------------------------------------------------
+    // Dirt
     public static final RegistryObject<Item> DIRT_0_ITEM = ITEMS.register("c0_dirt", () -> new BlockItem(DIRT_0.get(), PROPERTIES));
     public static final RegistryObject<Item> DIRT_1_ITEM = ITEMS.register("c1_dirt", () -> new BlockItem(DIRT_1.get(), PROPERTIES));
     public static final RegistryObject<Item> DIRT_2_ITEM = ITEMS.register("c2_dirt", () -> new BlockItem(DIRT_2.get(), PROPERTIES));
@@ -27,11 +25,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> DIRT_7_ITEM = ITEMS.register("c7_dirt", () -> new BlockItem(DIRT_7.get(), PROPERTIES));
     public static final RegistryObject<Item> DIRT_8_ITEM = ITEMS.register("c8_dirt", () -> new BlockItem(DIRT_8.get(), PROPERTIES));
     public static final RegistryObject<Item> DIRT_9_ITEM = ITEMS.register("c9_dirt", () -> new BlockItem(DIRT_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Gravel
-    //------------------------------------------------------------------------------------------------------------------
+    // Gravel
     public static final RegistryObject<Item> GRAVEL_0_ITEM = ITEMS.register("c0_gravel", () -> new BlockItem(GRAVEL_0.get(), PROPERTIES));
     public static final RegistryObject<Item> GRAVEL_1_ITEM = ITEMS.register("c1_gravel", () -> new BlockItem(GRAVEL_1.get(), PROPERTIES));
     public static final RegistryObject<Item> GRAVEL_2_ITEM = ITEMS.register("c2_gravel", () -> new BlockItem(GRAVEL_2.get(), PROPERTIES));
@@ -42,11 +36,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> GRAVEL_7_ITEM = ITEMS.register("c7_gravel", () -> new BlockItem(GRAVEL_7.get(), PROPERTIES));
     public static final RegistryObject<Item> GRAVEL_8_ITEM = ITEMS.register("c8_gravel", () -> new BlockItem(GRAVEL_8.get(), PROPERTIES));
     public static final RegistryObject<Item> GRAVEL_9_ITEM = ITEMS.register("c9_gravel", () -> new BlockItem(GRAVEL_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cobblestone
-    //------------------------------------------------------------------------------------------------------------------
+    // Cobblestone
     public static final RegistryObject<Item> COBBLESTONE_0_ITEM = ITEMS.register("c0_cobblestone", () -> new BlockItem(COBBLESTONE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> COBBLESTONE_1_ITEM = ITEMS.register("c1_cobblestone", () -> new BlockItem(COBBLESTONE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> COBBLESTONE_2_ITEM = ITEMS.register("c2_cobblestone", () -> new BlockItem(COBBLESTONE_2.get(), PROPERTIES));
@@ -57,11 +47,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> COBBLESTONE_7_ITEM = ITEMS.register("c7_cobblestone", () -> new BlockItem(COBBLESTONE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> COBBLESTONE_8_ITEM = ITEMS.register("c8_cobblestone", () -> new BlockItem(COBBLESTONE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> COBBLESTONE_9_ITEM = ITEMS.register("c9_cobblestone", () -> new BlockItem(COBBLESTONE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Stone
-    //------------------------------------------------------------------------------------------------------------------
+    // Stone
     public static final RegistryObject<Item> STONE_0_ITEM = ITEMS.register("c0_stone", () -> new BlockItem(STONE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> STONE_1_ITEM = ITEMS.register("c1_stone", () -> new BlockItem(STONE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> STONE_2_ITEM = ITEMS.register("c2_stone", () -> new BlockItem(STONE_2.get(), PROPERTIES));
@@ -72,11 +58,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> STONE_7_ITEM = ITEMS.register("c7_stone", () -> new BlockItem(STONE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> STONE_8_ITEM = ITEMS.register("c8_stone", () -> new BlockItem(STONE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> STONE_9_ITEM = ITEMS.register("c9_stone", () -> new BlockItem(STONE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Granite
-    //------------------------------------------------------------------------------------------------------------------
+    // Granite
     public static final RegistryObject<Item> GRANITE_0_ITEM = ITEMS.register("c0_granite", () -> new BlockItem(GRANITE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> GRANITE_1_ITEM = ITEMS.register("c1_granite", () -> new BlockItem(GRANITE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> GRANITE_2_ITEM = ITEMS.register("c2_granite", () -> new BlockItem(GRANITE_2.get(), PROPERTIES));
@@ -87,11 +69,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> GRANITE_7_ITEM = ITEMS.register("c7_granite", () -> new BlockItem(GRANITE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> GRANITE_8_ITEM = ITEMS.register("c8_granite", () -> new BlockItem(GRANITE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> GRANITE_9_ITEM = ITEMS.register("c9_granite", () -> new BlockItem(GRANITE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Diorite
-    //------------------------------------------------------------------------------------------------------------------
+    // Diorite
     public static final RegistryObject<Item> DIORITE_0_ITEM = ITEMS.register("c0_diorite", () -> new BlockItem(DIORITE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> DIORITE_1_ITEM = ITEMS.register("c1_diorite", () -> new BlockItem(DIORITE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> DIORITE_2_ITEM = ITEMS.register("c2_diorite", () -> new BlockItem(DIORITE_2.get(), PROPERTIES));
@@ -102,11 +80,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> DIORITE_7_ITEM = ITEMS.register("c7_diorite", () -> new BlockItem(DIORITE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> DIORITE_8_ITEM = ITEMS.register("c8_diorite", () -> new BlockItem(DIORITE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> DIORITE_9_ITEM = ITEMS.register("c9_diorite", () -> new BlockItem(DIORITE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Andesite
-    //------------------------------------------------------------------------------------------------------------------
+    // Andesite
     public static final RegistryObject<Item> ANDESITE_0_ITEM = ITEMS.register("c0_andesite", () -> new BlockItem(ANDESITE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> ANDESITE_1_ITEM = ITEMS.register("c1_andesite", () -> new BlockItem(ANDESITE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> ANDESITE_2_ITEM = ITEMS.register("c2_andesite", () -> new BlockItem(ANDESITE_2.get(), PROPERTIES));
@@ -117,11 +91,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> ANDESITE_7_ITEM = ITEMS.register("c7_andesite", () -> new BlockItem(ANDESITE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> ANDESITE_8_ITEM = ITEMS.register("c8_andesite", () -> new BlockItem(ANDESITE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> ANDESITE_9_ITEM = ITEMS.register("c9_andesite", () -> new BlockItem(ANDESITE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Crimson Nylium
-    //------------------------------------------------------------------------------------------------------------------
+    // Crimson Nylium
     public static final RegistryObject<Item> CRIMSON_NYLIUM_0_ITEM = ITEMS.register("c0_crimson_nylium", () -> new BlockItem(CRIMSON_NYLIUM_0.get(), PROPERTIES));
     public static final RegistryObject<Item> CRIMSON_NYLIUM_1_ITEM = ITEMS.register("c1_crimson_nylium", () -> new BlockItem(CRIMSON_NYLIUM_1.get(), PROPERTIES));
     public static final RegistryObject<Item> CRIMSON_NYLIUM_2_ITEM = ITEMS.register("c2_crimson_nylium", () -> new BlockItem(CRIMSON_NYLIUM_2.get(), PROPERTIES));
@@ -132,11 +102,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> CRIMSON_NYLIUM_7_ITEM = ITEMS.register("c7_crimson_nylium", () -> new BlockItem(CRIMSON_NYLIUM_7.get(), PROPERTIES));
     public static final RegistryObject<Item> CRIMSON_NYLIUM_8_ITEM = ITEMS.register("c8_crimson_nylium", () -> new BlockItem(CRIMSON_NYLIUM_8.get(), PROPERTIES));
     public static final RegistryObject<Item> CRIMSON_NYLIUM_9_ITEM = ITEMS.register("c9_crimson_nylium", () -> new BlockItem(CRIMSON_NYLIUM_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Warped Nylium
-    //------------------------------------------------------------------------------------------------------------------
+    // Warped Nylium
     public static final RegistryObject<Item> WARPED_NYLIUM_0_ITEM = ITEMS.register("c0_warped_nylium", () -> new BlockItem(WARPED_NYLIUM_0.get(), PROPERTIES));
     public static final RegistryObject<Item> WARPED_NYLIUM_1_ITEM = ITEMS.register("c1_warped_nylium", () -> new BlockItem(WARPED_NYLIUM_1.get(), PROPERTIES));
     public static final RegistryObject<Item> WARPED_NYLIUM_2_ITEM = ITEMS.register("c2_warped_nylium", () -> new BlockItem(WARPED_NYLIUM_2.get(), PROPERTIES));
@@ -147,11 +113,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> WARPED_NYLIUM_7_ITEM = ITEMS.register("c7_warped_nylium", () -> new BlockItem(WARPED_NYLIUM_7.get(), PROPERTIES));
     public static final RegistryObject<Item> WARPED_NYLIUM_8_ITEM = ITEMS.register("c8_warped_nylium", () -> new BlockItem(WARPED_NYLIUM_8.get(), PROPERTIES));
     public static final RegistryObject<Item> WARPED_NYLIUM_9_ITEM = ITEMS.register("c9_warped_nylium", () -> new BlockItem(WARPED_NYLIUM_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Clay
-    //------------------------------------------------------------------------------------------------------------------
+    // Clay
     public static final RegistryObject<Item> CLAY_0_ITEM = ITEMS.register("c0_clay", () -> new BlockItem(CLAY_0.get(), PROPERTIES));
     public static final RegistryObject<Item> CLAY_1_ITEM = ITEMS.register("c1_clay", () -> new BlockItem(CLAY_1.get(), PROPERTIES));
     public static final RegistryObject<Item> CLAY_2_ITEM = ITEMS.register("c2_clay", () -> new BlockItem(CLAY_2.get(), PROPERTIES));
@@ -162,11 +124,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> CLAY_7_ITEM = ITEMS.register("c7_clay", () -> new BlockItem(CLAY_7.get(), PROPERTIES));
     public static final RegistryObject<Item> CLAY_8_ITEM = ITEMS.register("c8_clay", () -> new BlockItem(CLAY_8.get(), PROPERTIES));
     public static final RegistryObject<Item> CLAY_9_ITEM = ITEMS.register("c9_clay", () -> new BlockItem(CLAY_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Sand
-    //------------------------------------------------------------------------------------------------------------------
+    // Sand
     public static final RegistryObject<Item> SAND_0_ITEM = ITEMS.register("c0_sand", () -> new BlockItem(SAND_0.get(), PROPERTIES));
     public static final RegistryObject<Item> SAND_2_ITEM = ITEMS.register("c2_sand", () -> new BlockItem(SAND_2.get(), PROPERTIES));
     public static final RegistryObject<Item> SAND_1_ITEM = ITEMS.register("c1_sand", () -> new BlockItem(SAND_1.get(), PROPERTIES));
@@ -177,11 +135,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> SAND_7_ITEM = ITEMS.register("c7_sand", () -> new BlockItem(SAND_7.get(), PROPERTIES));
     public static final RegistryObject<Item> SAND_8_ITEM = ITEMS.register("c8_sand", () -> new BlockItem(SAND_8.get(), PROPERTIES));
     public static final RegistryObject<Item> SAND_9_ITEM = ITEMS.register("c9_sand", () -> new BlockItem(SAND_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Red Sand
-    //------------------------------------------------------------------------------------------------------------------
+    // Red Sand
     public static final RegistryObject<Item> RED_SAND_0_ITEM = ITEMS.register("c0_red_sand", () -> new BlockItem(RED_SAND_0.get(), PROPERTIES));
     public static final RegistryObject<Item> RED_SAND_1_ITEM = ITEMS.register("c1_red_sand", () -> new BlockItem(RED_SAND_1.get(), PROPERTIES));
     public static final RegistryObject<Item> RED_SAND_2_ITEM = ITEMS.register("c2_red_sand", () -> new BlockItem(RED_SAND_2.get(), PROPERTIES));
@@ -192,11 +146,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> RED_SAND_7_ITEM = ITEMS.register("c7_red_sand", () -> new BlockItem(RED_SAND_7.get(), PROPERTIES));
     public static final RegistryObject<Item> RED_SAND_8_ITEM = ITEMS.register("c8_red_sand", () -> new BlockItem(RED_SAND_8.get(), PROPERTIES));
     public static final RegistryObject<Item> RED_SAND_9_ITEM = ITEMS.register("c9_red_sand", () -> new BlockItem(RED_SAND_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Sandstone
-    //------------------------------------------------------------------------------------------------------------------
+    // Sandstone
     public static final RegistryObject<Item> SANDSTONE_0_ITEM = ITEMS.register("c0_sandstone", () -> new BlockItem(SANDSTONE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> SANDSTONE_1_ITEM = ITEMS.register("c1_sandstone", () -> new BlockItem(SANDSTONE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> SANDSTONE_2_ITEM = ITEMS.register("c2_sandstone", () -> new BlockItem(SANDSTONE_2.get(), PROPERTIES));
@@ -207,11 +157,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> SANDSTONE_7_ITEM = ITEMS.register("c7_sandstone", () -> new BlockItem(SANDSTONE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> SANDSTONE_8_ITEM = ITEMS.register("c8_sandstone", () -> new BlockItem(SANDSTONE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> SANDSTONE_9_ITEM = ITEMS.register("c9_sandstone", () -> new BlockItem(SANDSTONE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Red Sandstone
-    //------------------------------------------------------------------------------------------------------------------
+    // Red Sandstone
     public static final RegistryObject<Item> RED_SANDSTONE_0_ITEM = ITEMS.register("c0_red_sandstone", () -> new BlockItem(RED_SANDSTONE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> RED_SANDSTONE_1_ITEM = ITEMS.register("c1_red_sandstone", () -> new BlockItem(RED_SANDSTONE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> RED_SANDSTONE_2_ITEM = ITEMS.register("c2_red_sandstone", () -> new BlockItem(RED_SANDSTONE_2.get(), PROPERTIES));
@@ -222,11 +168,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> RED_SANDSTONE_7_ITEM = ITEMS.register("c7_red_sandstone", () -> new BlockItem(RED_SANDSTONE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> RED_SANDSTONE_8_ITEM = ITEMS.register("c8_red_sandstone", () -> new BlockItem(RED_SANDSTONE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> RED_SANDSTONE_9_ITEM = ITEMS.register("c9_red_sandstone", () -> new BlockItem(RED_SANDSTONE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Coal Ore
-    //------------------------------------------------------------------------------------------------------------------
+    // Coal Ore
     public static final RegistryObject<Item> COAL_ORE_0_ITEM = ITEMS.register("c0_coal_ore", () -> new BlockItem(COAL_ORE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> COAL_ORE_1_ITEM = ITEMS.register("c1_coal_ore", () -> new BlockItem(COAL_ORE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> COAL_ORE_2_ITEM = ITEMS.register("c2_coal_ore", () -> new BlockItem(COAL_ORE_2.get(), PROPERTIES));
@@ -237,11 +179,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> COAL_ORE_7_ITEM = ITEMS.register("c7_coal_ore", () -> new BlockItem(COAL_ORE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> COAL_ORE_8_ITEM = ITEMS.register("c8_coal_ore", () -> new BlockItem(COAL_ORE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> COAL_ORE_9_ITEM = ITEMS.register("c9_coal_ore", () -> new BlockItem(COAL_ORE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Iron Ore
-    //------------------------------------------------------------------------------------------------------------------
+    // Iron Ore
     public static final RegistryObject<Item> IRON_ORE_0_ITEM = ITEMS.register("c0_iron_ore", () -> new BlockItem(IRON_ORE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> IRON_ORE_1_ITEM = ITEMS.register("c1_iron_ore", () -> new BlockItem(IRON_ORE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> IRON_ORE_2_ITEM = ITEMS.register("c2_iron_ore", () -> new BlockItem(IRON_ORE_2.get(), PROPERTIES));
@@ -252,11 +190,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> IRON_ORE_7_ITEM = ITEMS.register("c7_iron_ore", () -> new BlockItem(IRON_ORE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> IRON_ORE_8_ITEM = ITEMS.register("c8_iron_ore", () -> new BlockItem(IRON_ORE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> IRON_ORE_9_ITEM = ITEMS.register("c9_iron_ore", () -> new BlockItem(IRON_ORE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Gold Ore
-    //------------------------------------------------------------------------------------------------------------------
+    // Gold Ore
     public static final RegistryObject<Item> GOLD_ORE_0_ITEM = ITEMS.register("c0_gold_ore", () -> new BlockItem(GOLD_ORE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> GOLD_ORE_1_ITEM = ITEMS.register("c1_gold_ore", () -> new BlockItem(GOLD_ORE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> GOLD_ORE_2_ITEM = ITEMS.register("c2_gold_ore", () -> new BlockItem(GOLD_ORE_2.get(), PROPERTIES));
@@ -267,11 +201,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> GOLD_ORE_7_ITEM = ITEMS.register("c7_gold_ore", () -> new BlockItem(GOLD_ORE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> GOLD_ORE_8_ITEM = ITEMS.register("c8_gold_ore", () -> new BlockItem(GOLD_ORE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> GOLD_ORE_9_ITEM = ITEMS.register("c9_gold_ore", () -> new BlockItem(GOLD_ORE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Nether Gold Ore
-    //------------------------------------------------------------------------------------------------------------------
+    // Nether Gold Ore
     public static final RegistryObject<Item> NETHER_GOLD_ORE_0_ITEM = ITEMS.register("c0_nether_gold_ore", () -> new BlockItem(NETHER_GOLD_ORE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_GOLD_ORE_1_ITEM = ITEMS.register("c1_nether_gold_ore", () -> new BlockItem(NETHER_GOLD_ORE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_GOLD_ORE_2_ITEM = ITEMS.register("c2_nether_gold_ore", () -> new BlockItem(NETHER_GOLD_ORE_2.get(), PROPERTIES));
@@ -282,11 +212,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> NETHER_GOLD_ORE_7_ITEM = ITEMS.register("c7_nether_gold_ore", () -> new BlockItem(NETHER_GOLD_ORE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_GOLD_ORE_8_ITEM = ITEMS.register("c8_nether_gold_ore", () -> new BlockItem(NETHER_GOLD_ORE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_GOLD_ORE_9_ITEM = ITEMS.register("c9_nether_gold_ore", () -> new BlockItem(NETHER_GOLD_ORE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Nether Quartz Ore
-    //------------------------------------------------------------------------------------------------------------------
+    // Nether Quartz Ore
     public static final RegistryObject<Item> NETHER_QUARTZ_ORE_0_ITEM = ITEMS.register("c0_nether_quartz_ore", () -> new BlockItem(NETHER_QUARTZ_ORE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_QUARTZ_ORE_1_ITEM = ITEMS.register("c1_nether_quartz_ore", () -> new BlockItem(NETHER_QUARTZ_ORE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_QUARTZ_ORE_2_ITEM = ITEMS.register("c2_nether_quartz_ore", () -> new BlockItem(NETHER_QUARTZ_ORE_2.get(), PROPERTIES));
@@ -297,11 +223,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> NETHER_QUARTZ_ORE_7_ITEM = ITEMS.register("c7_nether_quartz_ore", () -> new BlockItem(NETHER_QUARTZ_ORE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_QUARTZ_ORE_8_ITEM = ITEMS.register("c8_nether_quartz_ore", () -> new BlockItem(NETHER_QUARTZ_ORE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_QUARTZ_ORE_9_ITEM = ITEMS.register("c9_nether_quartz_ore", () -> new BlockItem(NETHER_QUARTZ_ORE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Lapis Ore
-    //------------------------------------------------------------------------------------------------------------------
+    // Lapis Ore
     public static final RegistryObject<Item> LAPIS_ORE_0_ITEM = ITEMS.register("c0_lapis_ore", () -> new BlockItem(LAPIS_ORE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> LAPIS_ORE_1_ITEM = ITEMS.register("c1_lapis_ore", () -> new BlockItem(LAPIS_ORE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> LAPIS_ORE_2_ITEM = ITEMS.register("c2_lapis_ore", () -> new BlockItem(LAPIS_ORE_2.get(), PROPERTIES));
@@ -312,11 +234,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> LAPIS_ORE_7_ITEM = ITEMS.register("c7_lapis_ore", () -> new BlockItem(LAPIS_ORE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> LAPIS_ORE_8_ITEM = ITEMS.register("c8_lapis_ore", () -> new BlockItem(LAPIS_ORE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> LAPIS_ORE_9_ITEM = ITEMS.register("c9_lapis_ore", () -> new BlockItem(LAPIS_ORE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Redstone Ore
-    //------------------------------------------------------------------------------------------------------------------
+    // Redstone Ore
     public static final RegistryObject<Item> REDSTONE_ORE_0_ITEM = ITEMS.register("c0_redstone_ore", () -> new BlockItem(REDSTONE_ORE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> REDSTONE_ORE_1_ITEM = ITEMS.register("c1_redstone_ore", () -> new BlockItem(REDSTONE_ORE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> REDSTONE_ORE_2_ITEM = ITEMS.register("c2_redstone_ore", () -> new BlockItem(REDSTONE_ORE_2.get(), PROPERTIES));
@@ -327,11 +245,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> REDSTONE_ORE_7_ITEM = ITEMS.register("c7_redstone_ore", () -> new BlockItem(REDSTONE_ORE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> REDSTONE_ORE_8_ITEM = ITEMS.register("c8_redstone_ore", () -> new BlockItem(REDSTONE_ORE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> REDSTONE_ORE_9_ITEM = ITEMS.register("c9_redstone_ore", () -> new BlockItem(REDSTONE_ORE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Iron Block
-    //------------------------------------------------------------------------------------------------------------------
+    // Iron Block
     public static final RegistryObject<Item> IRON_BLOCK_0_ITEM = ITEMS.register("c0_iron_block", () -> new BlockItem(IRON_BLOCK_0.get(), PROPERTIES));
     public static final RegistryObject<Item> IRON_BLOCK_1_ITEM = ITEMS.register("c1_iron_block", () -> new BlockItem(IRON_BLOCK_1.get(), PROPERTIES));
     public static final RegistryObject<Item> IRON_BLOCK_2_ITEM = ITEMS.register("c2_iron_block", () -> new BlockItem(IRON_BLOCK_2.get(), PROPERTIES));
@@ -342,11 +256,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> IRON_BLOCK_7_ITEM = ITEMS.register("c7_iron_block", () -> new BlockItem(IRON_BLOCK_7.get(), PROPERTIES));
     public static final RegistryObject<Item> IRON_BLOCK_8_ITEM = ITEMS.register("c8_iron_block", () -> new BlockItem(IRON_BLOCK_8.get(), PROPERTIES));
     public static final RegistryObject<Item> IRON_BLOCK_9_ITEM = ITEMS.register("c9_iron_block", () -> new BlockItem(IRON_BLOCK_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Gold Block
-    //------------------------------------------------------------------------------------------------------------------
+    // Gold Block
     public static final RegistryObject<Item> GOLD_BLOCK_0_ITEM = ITEMS.register("c0_gold_block", () -> new BlockItem(GOLD_BLOCK_0.get(), PROPERTIES));
     public static final RegistryObject<Item> GOLD_BLOCK_1_ITEM = ITEMS.register("c1_gold_block", () -> new BlockItem(GOLD_BLOCK_1.get(), PROPERTIES));
     public static final RegistryObject<Item> GOLD_BLOCK_2_ITEM = ITEMS.register("c2_gold_block", () -> new BlockItem(GOLD_BLOCK_2.get(), PROPERTIES));
@@ -357,11 +267,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> GOLD_BLOCK_7_ITEM = ITEMS.register("c7_gold_block", () -> new BlockItem(GOLD_BLOCK_7.get(), PROPERTIES));
     public static final RegistryObject<Item> GOLD_BLOCK_8_ITEM = ITEMS.register("c8_gold_block", () -> new BlockItem(GOLD_BLOCK_8.get(), PROPERTIES));
     public static final RegistryObject<Item> GOLD_BLOCK_9_ITEM = ITEMS.register("c9_gold_block", () -> new BlockItem(GOLD_BLOCK_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Lapis Block
-    //------------------------------------------------------------------------------------------------------------------
+    // Lapis Block
     public static final RegistryObject<Item> LAPIS_BLOCK_0_ITEM = ITEMS.register("c0_lapis_block", () -> new BlockItem(LAPIS_BLOCK_0.get(), PROPERTIES));
     public static final RegistryObject<Item> LAPIS_BLOCK_1_ITEM = ITEMS.register("c1_lapis_block", () -> new BlockItem(LAPIS_BLOCK_1.get(), PROPERTIES));
     public static final RegistryObject<Item> LAPIS_BLOCK_2_ITEM = ITEMS.register("c2_lapis_block", () -> new BlockItem(LAPIS_BLOCK_2.get(), PROPERTIES));
@@ -372,11 +278,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> LAPIS_BLOCK_7_ITEM = ITEMS.register("c7_lapis_block", () -> new BlockItem(LAPIS_BLOCK_7.get(), PROPERTIES));
     public static final RegistryObject<Item> LAPIS_BLOCK_8_ITEM = ITEMS.register("c8_lapis_block", () -> new BlockItem(LAPIS_BLOCK_8.get(), PROPERTIES));
     public static final RegistryObject<Item> LAPIS_BLOCK_9_ITEM = ITEMS.register("c9_lapis_block", () -> new BlockItem(LAPIS_BLOCK_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Redstone Block
-    //------------------------------------------------------------------------------------------------------------------
+    // Redstone Block
     public static final RegistryObject<Item> REDSTONE_BLOCK_0_ITEM = ITEMS.register("c0_redstone_block", () -> new BlockItem(REDSTONE_BLOCK_0.get(), PROPERTIES));
     public static final RegistryObject<Item> REDSTONE_BLOCK_1_ITEM = ITEMS.register("c1_redstone_block", () -> new BlockItem(REDSTONE_BLOCK_1.get(), PROPERTIES));
     public static final RegistryObject<Item> REDSTONE_BLOCK_2_ITEM = ITEMS.register("c2_redstone_block", () -> new BlockItem(REDSTONE_BLOCK_2.get(), PROPERTIES));
@@ -387,11 +289,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> REDSTONE_BLOCK_7_ITEM = ITEMS.register("c7_redstone_block", () -> new BlockItem(REDSTONE_BLOCK_7.get(), PROPERTIES));
     public static final RegistryObject<Item> REDSTONE_BLOCK_8_ITEM = ITEMS.register("c8_redstone_block", () -> new BlockItem(REDSTONE_BLOCK_8.get(), PROPERTIES));
     public static final RegistryObject<Item> REDSTONE_BLOCK_9_ITEM = ITEMS.register("c9_redstone_block", () -> new BlockItem(REDSTONE_BLOCK_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Coal Block
-    //------------------------------------------------------------------------------------------------------------------
+    // Coal Block
     public static final RegistryObject<Item> COAL_BLOCK_0_ITEM = ITEMS.register("c0_coal_block", () -> new BlockItem(COAL_BLOCK_0.get(), PROPERTIES));
     public static final RegistryObject<Item> COAL_BLOCK_1_ITEM = ITEMS.register("c1_coal_block", () -> new BlockItem(COAL_BLOCK_1.get(), PROPERTIES));
     public static final RegistryObject<Item> COAL_BLOCK_2_ITEM = ITEMS.register("c2_coal_block", () -> new BlockItem(COAL_BLOCK_2.get(), PROPERTIES));
@@ -402,11 +300,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> COAL_BLOCK_7_ITEM = ITEMS.register("c7_coal_block", () -> new BlockItem(COAL_BLOCK_7.get(), PROPERTIES));
     public static final RegistryObject<Item> COAL_BLOCK_8_ITEM = ITEMS.register("c8_coal_block", () -> new BlockItem(COAL_BLOCK_8.get(), PROPERTIES));
     public static final RegistryObject<Item> COAL_BLOCK_9_ITEM = ITEMS.register("c9_coal_block", () -> new BlockItem(COAL_BLOCK_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Slime Block
-    //------------------------------------------------------------------------------------------------------------------
+    // Slime Block
     public static final RegistryObject<Item> SLIME_BLOCK_0_ITEM = ITEMS.register("c0_slime_block", () -> new BlockItem(SLIME_BLOCK_0.get(), PROPERTIES));
     public static final RegistryObject<Item> SLIME_BLOCK_1_ITEM = ITEMS.register("c1_slime_block", () -> new BlockItem(SLIME_BLOCK_1.get(), PROPERTIES));
     public static final RegistryObject<Item> SLIME_BLOCK_2_ITEM = ITEMS.register("c2_slime_block", () -> new BlockItem(SLIME_BLOCK_2.get(), PROPERTIES));
@@ -417,11 +311,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> SLIME_BLOCK_7_ITEM = ITEMS.register("c7_slime_block", () -> new BlockItem(SLIME_BLOCK_7.get(), PROPERTIES));
     public static final RegistryObject<Item> SLIME_BLOCK_8_ITEM = ITEMS.register("c8_slime_block", () -> new BlockItem(SLIME_BLOCK_8.get(), PROPERTIES));
     public static final RegistryObject<Item> SLIME_BLOCK_9_ITEM = ITEMS.register("c9_slime_block", () -> new BlockItem(SLIME_BLOCK_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Honey Block
-    //------------------------------------------------------------------------------------------------------------------
+    // Honey Block
     public static final RegistryObject<Item> HONEY_BLOCK_0_ITEM = ITEMS.register("c0_honey_block", () -> new BlockItem(HONEY_BLOCK_0.get(), PROPERTIES));
     public static final RegistryObject<Item> HONEY_BLOCK_1_ITEM = ITEMS.register("c1_honey_block", () -> new BlockItem(HONEY_BLOCK_1.get(), PROPERTIES));
     public static final RegistryObject<Item> HONEY_BLOCK_2_ITEM = ITEMS.register("c2_honey_block", () -> new BlockItem(HONEY_BLOCK_2.get(), PROPERTIES));
@@ -432,11 +322,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> HONEY_BLOCK_7_ITEM = ITEMS.register("c7_honey_block", () -> new BlockItem(HONEY_BLOCK_7.get(), PROPERTIES));
     public static final RegistryObject<Item> HONEY_BLOCK_8_ITEM = ITEMS.register("c8_honey_block", () -> new BlockItem(HONEY_BLOCK_8.get(), PROPERTIES));
     public static final RegistryObject<Item> HONEY_BLOCK_9_ITEM = ITEMS.register("c9_honey_block", () -> new BlockItem(HONEY_BLOCK_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Bricks
-    //------------------------------------------------------------------------------------------------------------------
+    // Bricks
     public static final RegistryObject<Item> BRICKS_0_ITEM = ITEMS.register("c0_bricks", () -> new BlockItem(BRICKS_0.get(), PROPERTIES));
     public static final RegistryObject<Item> BRICKS_1_ITEM = ITEMS.register("c1_bricks", () -> new BlockItem(BRICKS_1.get(), PROPERTIES));
     public static final RegistryObject<Item> BRICKS_2_ITEM = ITEMS.register("c2_bricks", () -> new BlockItem(BRICKS_2.get(), PROPERTIES));
@@ -447,11 +333,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> BRICKS_7_ITEM = ITEMS.register("c7_bricks", () -> new BlockItem(BRICKS_7.get(), PROPERTIES));
     public static final RegistryObject<Item> BRICKS_8_ITEM = ITEMS.register("c8_bricks", () -> new BlockItem(BRICKS_8.get(), PROPERTIES));
     public static final RegistryObject<Item> BRICKS_9_ITEM = ITEMS.register("c9_bricks", () -> new BlockItem(BRICKS_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Stone Bricks
-    //------------------------------------------------------------------------------------------------------------------
+    // Stone Bricks
     public static final RegistryObject<Item> STONE_BRICKS_0_ITEM = ITEMS.register("c0_stone_bricks", () -> new BlockItem(STONE_BRICKS_0.get(), PROPERTIES));
     public static final RegistryObject<Item> STONE_BRICKS_1_ITEM = ITEMS.register("c1_stone_bricks", () -> new BlockItem(STONE_BRICKS_1.get(), PROPERTIES));
     public static final RegistryObject<Item> STONE_BRICKS_2_ITEM = ITEMS.register("c2_stone_bricks", () -> new BlockItem(STONE_BRICKS_2.get(), PROPERTIES));
@@ -462,11 +344,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> STONE_BRICKS_7_ITEM = ITEMS.register("c7_stone_bricks", () -> new BlockItem(STONE_BRICKS_7.get(), PROPERTIES));
     public static final RegistryObject<Item> STONE_BRICKS_8_ITEM = ITEMS.register("c8_stone_bricks", () -> new BlockItem(STONE_BRICKS_8.get(), PROPERTIES));
     public static final RegistryObject<Item> STONE_BRICKS_9_ITEM = ITEMS.register("c9_stone_bricks", () -> new BlockItem(STONE_BRICKS_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Netherrack
-    //------------------------------------------------------------------------------------------------------------------
+    // Netherrack
     public static final RegistryObject<Item> NETHERRACK_0_ITEM = ITEMS.register("c0_netherrack", () -> new BlockItem(NETHERRACK_0.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHERRACK_1_ITEM = ITEMS.register("c1_netherrack", () -> new BlockItem(NETHERRACK_1.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHERRACK_2_ITEM = ITEMS.register("c2_netherrack", () -> new BlockItem(NETHERRACK_2.get(), PROPERTIES));
@@ -477,11 +355,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> NETHERRACK_7_ITEM = ITEMS.register("c7_netherrack", () -> new BlockItem(NETHERRACK_7.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHERRACK_8_ITEM = ITEMS.register("c8_netherrack", () -> new BlockItem(NETHERRACK_8.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHERRACK_9_ITEM = ITEMS.register("c9_netherrack", () -> new BlockItem(NETHERRACK_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Nether Bricks
-    //------------------------------------------------------------------------------------------------------------------
+    // Nether Bricks
     public static final RegistryObject<Item> NETHER_BRICKS_0_ITEM = ITEMS.register("c0_nether_bricks", () -> new BlockItem(NETHER_BRICKS_0.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_BRICKS_1_ITEM = ITEMS.register("c1_nether_bricks", () -> new BlockItem(NETHER_BRICKS_1.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_BRICKS_2_ITEM = ITEMS.register("c2_nether_bricks", () -> new BlockItem(NETHER_BRICKS_2.get(), PROPERTIES));
@@ -492,11 +366,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> NETHER_BRICKS_7_ITEM = ITEMS.register("c7_nether_bricks", () -> new BlockItem(NETHER_BRICKS_7.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_BRICKS_8_ITEM = ITEMS.register("c8_nether_bricks", () -> new BlockItem(NETHER_BRICKS_8.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_BRICKS_9_ITEM = ITEMS.register("c9_nether_bricks", () -> new BlockItem(NETHER_BRICKS_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Red Nether Bricks
-    //------------------------------------------------------------------------------------------------------------------
+    // Red Nether Bricks
     public static final RegistryObject<Item> RED_NETHER_BRICKS_0_ITEM = ITEMS.register("c0_red_nether_bricks", () -> new BlockItem(RED_NETHER_BRICKS_0.get(), PROPERTIES));
     public static final RegistryObject<Item> RED_NETHER_BRICKS_1_ITEM = ITEMS.register("c1_red_nether_bricks", () -> new BlockItem(RED_NETHER_BRICKS_1.get(), PROPERTIES));
     public static final RegistryObject<Item> RED_NETHER_BRICKS_2_ITEM = ITEMS.register("c2_red_nether_bricks", () -> new BlockItem(RED_NETHER_BRICKS_2.get(), PROPERTIES));
@@ -507,11 +377,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> RED_NETHER_BRICKS_7_ITEM = ITEMS.register("c7_red_nether_bricks", () -> new BlockItem(RED_NETHER_BRICKS_7.get(), PROPERTIES));
     public static final RegistryObject<Item> RED_NETHER_BRICKS_8_ITEM = ITEMS.register("c8_red_nether_bricks", () -> new BlockItem(RED_NETHER_BRICKS_8.get(), PROPERTIES));
     public static final RegistryObject<Item> RED_NETHER_BRICKS_9_ITEM = ITEMS.register("c9_red_nether_bricks", () -> new BlockItem(RED_NETHER_BRICKS_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Nether Wart Block
-    //------------------------------------------------------------------------------------------------------------------
+    // Nether Wart Block
     public static final RegistryObject<Item> NETHER_WART_BLOCK_0_ITEM = ITEMS.register("c0_nether_wart_block", () -> new BlockItem(NETHER_WART_BLOCK_0.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_WART_BLOCK_1_ITEM = ITEMS.register("c1_nether_wart_block", () -> new BlockItem(NETHER_WART_BLOCK_1.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_WART_BLOCK_2_ITEM = ITEMS.register("c2_nether_wart_block", () -> new BlockItem(NETHER_WART_BLOCK_2.get(), PROPERTIES));
@@ -522,11 +388,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> NETHER_WART_BLOCK_7_ITEM = ITEMS.register("c7_nether_wart_block", () -> new BlockItem(NETHER_WART_BLOCK_7.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_WART_BLOCK_8_ITEM = ITEMS.register("c8_nether_wart_block", () -> new BlockItem(NETHER_WART_BLOCK_8.get(), PROPERTIES));
     public static final RegistryObject<Item> NETHER_WART_BLOCK_9_ITEM = ITEMS.register("c9_nether_wart_block", () -> new BlockItem(NETHER_WART_BLOCK_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Soul Sand
-    //------------------------------------------------------------------------------------------------------------------
+    // Soul Sand
     public static final RegistryObject<Item> SOUL_SAND_0_ITEM = ITEMS.register("c0_soul_sand", () -> new BlockItem(SOUL_SAND_0.get(), PROPERTIES));
     public static final RegistryObject<Item> SOUL_SAND_1_ITEM = ITEMS.register("c1_soul_sand", () -> new BlockItem(SOUL_SAND_1.get(), PROPERTIES));
     public static final RegistryObject<Item> SOUL_SAND_2_ITEM = ITEMS.register("c2_soul_sand", () -> new BlockItem(SOUL_SAND_2.get(), PROPERTIES));
@@ -537,11 +399,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> SOUL_SAND_7_ITEM = ITEMS.register("c7_soul_sand", () -> new BlockItem(SOUL_SAND_7.get(), PROPERTIES));
     public static final RegistryObject<Item> SOUL_SAND_8_ITEM = ITEMS.register("c8_soul_sand", () -> new BlockItem(SOUL_SAND_8.get(), PROPERTIES));
     public static final RegistryObject<Item> SOUL_SAND_9_ITEM = ITEMS.register("c9_soul_sand", () -> new BlockItem(SOUL_SAND_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Soul Soil
-    //------------------------------------------------------------------------------------------------------------------
+    // Soul Soil
     public static final RegistryObject<Item> SOUL_SOIL_0_ITEM = ITEMS.register("c0_soul_soil", () -> new BlockItem(SOUL_SOIL_0.get(), PROPERTIES));
     public static final RegistryObject<Item> SOUL_SOIL_1_ITEM = ITEMS.register("c1_soul_soil", () -> new BlockItem(SOUL_SOIL_1.get(), PROPERTIES));
     public static final RegistryObject<Item> SOUL_SOIL_2_ITEM = ITEMS.register("c2_soul_soil", () -> new BlockItem(SOUL_SOIL_2.get(), PROPERTIES));
@@ -552,11 +410,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> SOUL_SOIL_7_ITEM = ITEMS.register("c7_soul_soil", () -> new BlockItem(SOUL_SOIL_7.get(), PROPERTIES));
     public static final RegistryObject<Item> SOUL_SOIL_8_ITEM = ITEMS.register("c8_soul_soil", () -> new BlockItem(SOUL_SOIL_8.get(), PROPERTIES));
     public static final RegistryObject<Item> SOUL_SOIL_9_ITEM = ITEMS.register("c9_soul_soil", () -> new BlockItem(SOUL_SOIL_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region End Stone
-    //------------------------------------------------------------------------------------------------------------------
+    // End Stone
     public static final RegistryObject<Item> END_STONE_0_ITEM = ITEMS.register("c0_end_stone", () -> new BlockItem(END_STONE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> END_STONE_1_ITEM = ITEMS.register("c1_end_stone", () -> new BlockItem(END_STONE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> END_STONE_2_ITEM = ITEMS.register("c2_end_stone", () -> new BlockItem(END_STONE_2.get(), PROPERTIES));
@@ -567,11 +421,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> END_STONE_7_ITEM = ITEMS.register("c7_end_stone", () -> new BlockItem(END_STONE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> END_STONE_8_ITEM = ITEMS.register("c8_end_stone", () -> new BlockItem(END_STONE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> END_STONE_9_ITEM = ITEMS.register("c9_end_stone", () -> new BlockItem(END_STONE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region End Stine Bricks
-    //------------------------------------------------------------------------------------------------------------------
+    // End Stine Bricks
     public static final RegistryObject<Item> END_STONE_BRICKS_0_ITEM = ITEMS.register("c0_end_stone_bricks", () -> new BlockItem(END_STONE_BRICKS_0.get(), PROPERTIES));
     public static final RegistryObject<Item> END_STONE_BRICKS_1_ITEM = ITEMS.register("c1_end_stone_bricks", () -> new BlockItem(END_STONE_BRICKS_1.get(), PROPERTIES));
     public static final RegistryObject<Item> END_STONE_BRICKS_2_ITEM = ITEMS.register("c2_end_stone_bricks", () -> new BlockItem(END_STONE_BRICKS_2.get(), PROPERTIES));
@@ -582,11 +432,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> END_STONE_BRICKS_7_ITEM = ITEMS.register("c7_end_stone_bricks", () -> new BlockItem(END_STONE_BRICKS_7.get(), PROPERTIES));
     public static final RegistryObject<Item> END_STONE_BRICKS_8_ITEM = ITEMS.register("c8_end_stone_bricks", () -> new BlockItem(END_STONE_BRICKS_8.get(), PROPERTIES));
     public static final RegistryObject<Item> END_STONE_BRICKS_9_ITEM = ITEMS.register("c9_end_stone_bricks", () -> new BlockItem(END_STONE_BRICKS_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Blackstone
-    //------------------------------------------------------------------------------------------------------------------
+    // Blackstone
     public static final RegistryObject<Item> BLACKSTONE_0_ITEM = ITEMS.register("c0_blackstone", () -> new BlockItem(BLACKSTONE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> BLACKSTONE_1_ITEM = ITEMS.register("c1_blackstone", () -> new BlockItem(BLACKSTONE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> BLACKSTONE_2_ITEM = ITEMS.register("c2_blackstone", () -> new BlockItem(BLACKSTONE_2.get(), PROPERTIES));
@@ -597,11 +443,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> BLACKSTONE_7_ITEM = ITEMS.register("c7_blackstone", () -> new BlockItem(BLACKSTONE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> BLACKSTONE_8_ITEM = ITEMS.register("c8_blackstone", () -> new BlockItem(BLACKSTONE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> BLACKSTONE_9_ITEM = ITEMS.register("c9_blackstone", () -> new BlockItem(BLACKSTONE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Deepslate
-    //------------------------------------------------------------------------------------------------------------------
+    // Deepslate
     public static final RegistryObject<Item> DEEPSLATE_0_ITEM = ITEMS.register("c0_deepslate", () -> new BlockItem(DEEPSLATE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> DEEPSLATE_1_ITEM = ITEMS.register("c1_deepslate", () -> new BlockItem(DEEPSLATE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> DEEPSLATE_2_ITEM = ITEMS.register("c2_deepslate", () -> new BlockItem(DEEPSLATE_2.get(), PROPERTIES));
@@ -612,11 +454,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> DEEPSLATE_7_ITEM = ITEMS.register("c7_deepslate", () -> new BlockItem(DEEPSLATE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> DEEPSLATE_8_ITEM = ITEMS.register("c8_deepslate", () -> new BlockItem(DEEPSLATE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> DEEPSLATE_9_ITEM = ITEMS.register("c9_deepslate", () -> new BlockItem(DEEPSLATE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Cobbled Deepslate
-    //------------------------------------------------------------------------------------------------------------------
+    // Cobbled Deepslate
     public static final RegistryObject<Item> COBBLED_DEEPSLATE_0_ITEM = ITEMS.register("c0_cobbled_deepslate", () -> new BlockItem(COBBLED_DEEPSLATE_0.get(), PROPERTIES));
     public static final RegistryObject<Item> COBBLED_DEEPSLATE_1_ITEM = ITEMS.register("c1_cobbled_deepslate", () -> new BlockItem(COBBLED_DEEPSLATE_1.get(), PROPERTIES));
     public static final RegistryObject<Item> COBBLED_DEEPSLATE_2_ITEM = ITEMS.register("c2_cobbled_deepslate", () -> new BlockItem(COBBLED_DEEPSLATE_2.get(), PROPERTIES));
@@ -627,11 +465,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> COBBLED_DEEPSLATE_7_ITEM = ITEMS.register("c7_cobbled_deepslate", () -> new BlockItem(COBBLED_DEEPSLATE_7.get(), PROPERTIES));
     public static final RegistryObject<Item> COBBLED_DEEPSLATE_8_ITEM = ITEMS.register("c8_cobbled_deepslate", () -> new BlockItem(COBBLED_DEEPSLATE_8.get(), PROPERTIES));
     public static final RegistryObject<Item> COBBLED_DEEPSLATE_9_ITEM = ITEMS.register("c9_cobbled_deepslate", () -> new BlockItem(COBBLED_DEEPSLATE_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Tuff
-    //------------------------------------------------------------------------------------------------------------------
+    // Tuff
     public static final RegistryObject<Item> TUFF_0_ITEM = ITEMS.register("c0_tuff", () -> new BlockItem(TUFF_0.get(), PROPERTIES));
     public static final RegistryObject<Item> TUFF_1_ITEM = ITEMS.register("c1_tuff", () -> new BlockItem(TUFF_1.get(), PROPERTIES));
     public static final RegistryObject<Item> TUFF_2_ITEM = ITEMS.register("c2_tuff", () -> new BlockItem(TUFF_2.get(), PROPERTIES));
@@ -642,11 +476,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> TUFF_7_ITEM = ITEMS.register("c7_tuff", () -> new BlockItem(TUFF_7.get(), PROPERTIES));
     public static final RegistryObject<Item> TUFF_8_ITEM = ITEMS.register("c8_tuff", () -> new BlockItem(TUFF_8.get(), PROPERTIES));
     public static final RegistryObject<Item> TUFF_9_ITEM = ITEMS.register("c9_tuff", () -> new BlockItem(TUFF_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Basalt
-    //------------------------------------------------------------------------------------------------------------------
+    // Basalt
     public static final RegistryObject<Item> BASALT_0_ITEM = ITEMS.register("c0_basalt", () -> new BlockItem(BASALT_0.get(), PROPERTIES));
     public static final RegistryObject<Item> BASALT_1_ITEM = ITEMS.register("c1_basalt", () -> new BlockItem(BASALT_1.get(), PROPERTIES));
     public static final RegistryObject<Item> BASALT_2_ITEM = ITEMS.register("c2_basalt", () -> new BlockItem(BASALT_2.get(), PROPERTIES));
@@ -657,11 +487,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> BASALT_7_ITEM = ITEMS.register("c7_basalt", () -> new BlockItem(BASALT_7.get(), PROPERTIES));
     public static final RegistryObject<Item> BASALT_8_ITEM = ITEMS.register("c8_basalt", () -> new BlockItem(BASALT_8.get(), PROPERTIES));
     public static final RegistryObject<Item> BASALT_9_ITEM = ITEMS.register("c9_basalt", () -> new BlockItem(BASALT_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region Obsidian
-    //------------------------------------------------------------------------------------------------------------------
+    // Obsidian
     public static final RegistryObject<Item> OBSIDIAN_0_ITEM = ITEMS.register("c0_obsidian", () -> new BlockItem(OBSIDIAN_0.get(), PROPERTIES));
     public static final RegistryObject<Item> OBSIDIAN_1_ITEM = ITEMS.register("c1_obsidian", () -> new BlockItem(OBSIDIAN_1.get(), PROPERTIES));
     public static final RegistryObject<Item> OBSIDIAN_2_ITEM = ITEMS.register("c2_obsidian", () -> new BlockItem(OBSIDIAN_2.get(), PROPERTIES));
@@ -672,11 +498,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> OBSIDIAN_7_ITEM = ITEMS.register("c7_obsidian", () -> new BlockItem(OBSIDIAN_7.get(), PROPERTIES));
     public static final RegistryObject<Item> OBSIDIAN_8_ITEM = ITEMS.register("c8_obsidian", () -> new BlockItem(OBSIDIAN_8.get(), PROPERTIES));
     public static final RegistryObject<Item> OBSIDIAN_9_ITEM = ITEMS.register("c9_obsidian", () -> new BlockItem(OBSIDIAN_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region RAW_IRON_BLOCK
-    //------------------------------------------------------------------------------------------------------------------
+    // RAW_IRON_BLOCK
     public static final RegistryObject<Item> RAW_IRON_BLOCK_0_ITEM = ITEMS.register("c0_RAW_IRON_BLOCK".toLowerCase(), () -> new BlockItem(RAW_IRON_BLOCK_0.get(), PROPERTIES));
     public static final RegistryObject<Item> RAW_IRON_BLOCK_1_ITEM = ITEMS.register("c1_RAW_IRON_BLOCK".toLowerCase(), () -> new BlockItem(RAW_IRON_BLOCK_1.get(), PROPERTIES));
     public static final RegistryObject<Item> RAW_IRON_BLOCK_2_ITEM = ITEMS.register("c2_RAW_IRON_BLOCK".toLowerCase(), () -> new BlockItem(RAW_IRON_BLOCK_2.get(), PROPERTIES));
@@ -687,11 +509,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> RAW_IRON_BLOCK_7_ITEM = ITEMS.register("c7_RAW_IRON_BLOCK".toLowerCase(), () -> new BlockItem(RAW_IRON_BLOCK_7.get(), PROPERTIES));
     public static final RegistryObject<Item> RAW_IRON_BLOCK_8_ITEM = ITEMS.register("c8_RAW_IRON_BLOCK".toLowerCase(), () -> new BlockItem(RAW_IRON_BLOCK_8.get(), PROPERTIES));
     public static final RegistryObject<Item> RAW_IRON_BLOCK_9_ITEM = ITEMS.register("c9_RAW_IRON_BLOCK".toLowerCase(), () -> new BlockItem(RAW_IRON_BLOCK_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region RAW_COPPER_BLOCK
-    //------------------------------------------------------------------------------------------------------------------
+    // RAW_COPPER_BLOCK
     public static final RegistryObject<Item> RAW_COPPER_BLOCK_0_ITEM = ITEMS.register("c0_RAW_COPPER_BLOCK".toLowerCase(), () -> new BlockItem(RAW_COPPER_BLOCK_0.get(), PROPERTIES));
     public static final RegistryObject<Item> RAW_COPPER_BLOCK_1_ITEM = ITEMS.register("c1_RAW_COPPER_BLOCK".toLowerCase(), () -> new BlockItem(RAW_COPPER_BLOCK_1.get(), PROPERTIES));
     public static final RegistryObject<Item> RAW_COPPER_BLOCK_2_ITEM = ITEMS.register("c2_RAW_COPPER_BLOCK".toLowerCase(), () -> new BlockItem(RAW_COPPER_BLOCK_2.get(), PROPERTIES));
@@ -702,11 +520,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> RAW_COPPER_BLOCK_7_ITEM = ITEMS.register("c7_RAW_COPPER_BLOCK".toLowerCase(), () -> new BlockItem(RAW_COPPER_BLOCK_7.get(), PROPERTIES));
     public static final RegistryObject<Item> RAW_COPPER_BLOCK_8_ITEM = ITEMS.register("c8_RAW_COPPER_BLOCK".toLowerCase(), () -> new BlockItem(RAW_COPPER_BLOCK_8.get(), PROPERTIES));
     public static final RegistryObject<Item> RAW_COPPER_BLOCK_9_ITEM = ITEMS.register("c9_RAW_COPPER_BLOCK".toLowerCase(), () -> new BlockItem(RAW_COPPER_BLOCK_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region RAW_GOLD_BLOCK
-    //------------------------------------------------------------------------------------------------------------------
+    // RAW_GOLD_BLOCK
     public static final RegistryObject<Item> RAW_GOLD_BLOCK_0_ITEM = ITEMS.register("c0_RAW_GOLD_BLOCK".toLowerCase(), () -> new BlockItem(RAW_GOLD_BLOCK_0.get(), PROPERTIES));
     public static final RegistryObject<Item> RAW_GOLD_BLOCK_1_ITEM = ITEMS.register("c1_RAW_GOLD_BLOCK".toLowerCase(), () -> new BlockItem(RAW_GOLD_BLOCK_1.get(), PROPERTIES));
     public static final RegistryObject<Item> RAW_GOLD_BLOCK_2_ITEM = ITEMS.register("c2_RAW_GOLD_BLOCK".toLowerCase(), () -> new BlockItem(RAW_GOLD_BLOCK_2.get(), PROPERTIES));
@@ -717,11 +531,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> RAW_GOLD_BLOCK_7_ITEM = ITEMS.register("c7_RAW_GOLD_BLOCK".toLowerCase(), () -> new BlockItem(RAW_GOLD_BLOCK_7.get(), PROPERTIES));
     public static final RegistryObject<Item> RAW_GOLD_BLOCK_8_ITEM = ITEMS.register("c8_RAW_GOLD_BLOCK".toLowerCase(), () -> new BlockItem(RAW_GOLD_BLOCK_8.get(), PROPERTIES));
     public static final RegistryObject<Item> RAW_GOLD_BLOCK_9_ITEM = ITEMS.register("c9_RAW_GOLD_BLOCK".toLowerCase(), () -> new BlockItem(RAW_GOLD_BLOCK_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region MUD
-    //------------------------------------------------------------------------------------------------------------------
+    // MUD
     public static final RegistryObject<Item> MUD_0_ITEM = ITEMS.register("c0_MUD".toLowerCase(), () -> new BlockItem(MUD_0.get(), PROPERTIES));
     public static final RegistryObject<Item> MUD_1_ITEM = ITEMS.register("c1_MUD".toLowerCase(), () -> new BlockItem(MUD_1.get(), PROPERTIES));
     public static final RegistryObject<Item> MUD_2_ITEM = ITEMS.register("c2_MUD".toLowerCase(), () -> new BlockItem(MUD_2.get(), PROPERTIES));
@@ -732,11 +542,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> MUD_7_ITEM = ITEMS.register("c7_MUD".toLowerCase(), () -> new BlockItem(MUD_7.get(), PROPERTIES));
     public static final RegistryObject<Item> MUD_8_ITEM = ITEMS.register("c8_MUD".toLowerCase(), () -> new BlockItem(MUD_8.get(), PROPERTIES));
     public static final RegistryObject<Item> MUD_9_ITEM = ITEMS.register("c9_MUD".toLowerCase(), () -> new BlockItem(MUD_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region OAK_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // OAK_LOG
     public static final RegistryObject<Item> OAK_LOG_0_ITEM = ITEMS.register("c0_OAK_LOG".toLowerCase(), () -> new BlockItem(OAK_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> OAK_LOG_1_ITEM = ITEMS.register("c1_OAK_LOG".toLowerCase(), () -> new BlockItem(OAK_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> OAK_LOG_2_ITEM = ITEMS.register("c2_OAK_LOG".toLowerCase(), () -> new BlockItem(OAK_LOG_2.get(), PROPERTIES));
@@ -747,11 +553,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> OAK_LOG_7_ITEM = ITEMS.register("c7_OAK_LOG".toLowerCase(), () -> new BlockItem(OAK_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> OAK_LOG_8_ITEM = ITEMS.register("c8_OAK_LOG".toLowerCase(), () -> new BlockItem(OAK_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> OAK_LOG_9_ITEM = ITEMS.register("c9_OAK_LOG".toLowerCase(), () -> new BlockItem(OAK_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region SPRUCE_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // SPRUCE_LOG
     public static final RegistryObject<Item> SPRUCE_LOG_0_ITEM = ITEMS.register("c0_SPRUCE_LOG".toLowerCase(), () -> new BlockItem(SPRUCE_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> SPRUCE_LOG_1_ITEM = ITEMS.register("c1_SPRUCE_LOG".toLowerCase(), () -> new BlockItem(SPRUCE_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> SPRUCE_LOG_2_ITEM = ITEMS.register("c2_SPRUCE_LOG".toLowerCase(), () -> new BlockItem(SPRUCE_LOG_2.get(), PROPERTIES));
@@ -762,11 +564,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> SPRUCE_LOG_7_ITEM = ITEMS.register("c7_SPRUCE_LOG".toLowerCase(), () -> new BlockItem(SPRUCE_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> SPRUCE_LOG_8_ITEM = ITEMS.register("c8_SPRUCE_LOG".toLowerCase(), () -> new BlockItem(SPRUCE_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> SPRUCE_LOG_9_ITEM = ITEMS.register("c9_SPRUCE_LOG".toLowerCase(), () -> new BlockItem(SPRUCE_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region BIRCH_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // BIRCH_LOG
     public static final RegistryObject<Item> BIRCH_LOG_0_ITEM = ITEMS.register("c0_BIRCH_LOG".toLowerCase(), () -> new BlockItem(BIRCH_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> BIRCH_LOG_1_ITEM = ITEMS.register("c1_BIRCH_LOG".toLowerCase(), () -> new BlockItem(BIRCH_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> BIRCH_LOG_2_ITEM = ITEMS.register("c2_BIRCH_LOG".toLowerCase(), () -> new BlockItem(BIRCH_LOG_2.get(), PROPERTIES));
@@ -777,11 +575,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> BIRCH_LOG_7_ITEM = ITEMS.register("c7_BIRCH_LOG".toLowerCase(), () -> new BlockItem(BIRCH_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> BIRCH_LOG_8_ITEM = ITEMS.register("c8_BIRCH_LOG".toLowerCase(), () -> new BlockItem(BIRCH_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> BIRCH_LOG_9_ITEM = ITEMS.register("c9_BIRCH_LOG".toLowerCase(), () -> new BlockItem(BIRCH_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region JUNGLE_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // JUNGLE_LOG
     public static final RegistryObject<Item> JUNGLE_LOG_0_ITEM = ITEMS.register("c0_JUNGLE_LOG".toLowerCase(), () -> new BlockItem(JUNGLE_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> JUNGLE_LOG_1_ITEM = ITEMS.register("c1_JUNGLE_LOG".toLowerCase(), () -> new BlockItem(JUNGLE_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> JUNGLE_LOG_2_ITEM = ITEMS.register("c2_JUNGLE_LOG".toLowerCase(), () -> new BlockItem(JUNGLE_LOG_2.get(), PROPERTIES));
@@ -792,11 +586,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> JUNGLE_LOG_7_ITEM = ITEMS.register("c7_JUNGLE_LOG".toLowerCase(), () -> new BlockItem(JUNGLE_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> JUNGLE_LOG_8_ITEM = ITEMS.register("c8_JUNGLE_LOG".toLowerCase(), () -> new BlockItem(JUNGLE_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> JUNGLE_LOG_9_ITEM = ITEMS.register("c9_JUNGLE_LOG".toLowerCase(), () -> new BlockItem(JUNGLE_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region ACACIA_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // ACACIA_LOG
     public static final RegistryObject<Item> ACACIA_LOG_0_ITEM = ITEMS.register("c0_ACACIA_LOG".toLowerCase(), () -> new BlockItem(ACACIA_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> ACACIA_LOG_1_ITEM = ITEMS.register("c1_ACACIA_LOG".toLowerCase(), () -> new BlockItem(ACACIA_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> ACACIA_LOG_2_ITEM = ITEMS.register("c2_ACACIA_LOG".toLowerCase(), () -> new BlockItem(ACACIA_LOG_2.get(), PROPERTIES));
@@ -807,11 +597,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> ACACIA_LOG_7_ITEM = ITEMS.register("c7_ACACIA_LOG".toLowerCase(), () -> new BlockItem(ACACIA_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> ACACIA_LOG_8_ITEM = ITEMS.register("c8_ACACIA_LOG".toLowerCase(), () -> new BlockItem(ACACIA_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> ACACIA_LOG_9_ITEM = ITEMS.register("c9_ACACIA_LOG".toLowerCase(), () -> new BlockItem(ACACIA_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region DARK_OAK_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // DARK_OAK_LOG
     public static final RegistryObject<Item> DARK_OAK_LOG_0_ITEM = ITEMS.register("c0_DARK_OAK_LOG".toLowerCase(), () -> new BlockItem(DARK_OAK_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> DARK_OAK_LOG_1_ITEM = ITEMS.register("c1_DARK_OAK_LOG".toLowerCase(), () -> new BlockItem(DARK_OAK_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> DARK_OAK_LOG_2_ITEM = ITEMS.register("c2_DARK_OAK_LOG".toLowerCase(), () -> new BlockItem(DARK_OAK_LOG_2.get(), PROPERTIES));
@@ -822,11 +608,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> DARK_OAK_LOG_7_ITEM = ITEMS.register("c7_DARK_OAK_LOG".toLowerCase(), () -> new BlockItem(DARK_OAK_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> DARK_OAK_LOG_8_ITEM = ITEMS.register("c8_DARK_OAK_LOG".toLowerCase(), () -> new BlockItem(DARK_OAK_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> DARK_OAK_LOG_9_ITEM = ITEMS.register("c9_DARK_OAK_LOG".toLowerCase(), () -> new BlockItem(DARK_OAK_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region MANGROVE_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // MANGROVE_LOG
     public static final RegistryObject<Item> MANGROVE_LOG_0_ITEM = ITEMS.register("c0_MANGROVE_LOG".toLowerCase(), () -> new BlockItem(MANGROVE_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> MANGROVE_LOG_1_ITEM = ITEMS.register("c1_MANGROVE_LOG".toLowerCase(), () -> new BlockItem(MANGROVE_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> MANGROVE_LOG_2_ITEM = ITEMS.register("c2_MANGROVE_LOG".toLowerCase(), () -> new BlockItem(MANGROVE_LOG_2.get(), PROPERTIES));
@@ -837,11 +619,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> MANGROVE_LOG_7_ITEM = ITEMS.register("c7_MANGROVE_LOG".toLowerCase(), () -> new BlockItem(MANGROVE_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> MANGROVE_LOG_8_ITEM = ITEMS.register("c8_MANGROVE_LOG".toLowerCase(), () -> new BlockItem(MANGROVE_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> MANGROVE_LOG_9_ITEM = ITEMS.register("c9_MANGROVE_LOG".toLowerCase(), () -> new BlockItem(MANGROVE_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region STRIPPED_OAK_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // STRIPPED_OAK_LOG
     public static final RegistryObject<Item> STRIPPED_OAK_LOG_0_ITEM = ITEMS.register("c0_" + "STRIPPED_OAK_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_OAK_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_OAK_LOG_1_ITEM = ITEMS.register("c1_" + "STRIPPED_OAK_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_OAK_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_OAK_LOG_2_ITEM = ITEMS.register("c2_" + "STRIPPED_OAK_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_OAK_LOG_2.get(), PROPERTIES));
@@ -852,11 +630,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> STRIPPED_OAK_LOG_7_ITEM = ITEMS.register("c7_" + "STRIPPED_OAK_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_OAK_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_OAK_LOG_8_ITEM = ITEMS.register("c8_" + "STRIPPED_OAK_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_OAK_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_OAK_LOG_9_ITEM = ITEMS.register("c9_" + "STRIPPED_OAK_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_OAK_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region STRIPPED_SPRUCE_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // STRIPPED_SPRUCE_LOG
     public static final RegistryObject<Item> STRIPPED_SPRUCE_LOG_0_ITEM = ITEMS.register("c0_" + "STRIPPED_SPRUCE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_SPRUCE_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_SPRUCE_LOG_1_ITEM = ITEMS.register("c1_" + "STRIPPED_SPRUCE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_SPRUCE_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_SPRUCE_LOG_2_ITEM = ITEMS.register("c2_" + "STRIPPED_SPRUCE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_SPRUCE_LOG_2.get(), PROPERTIES));
@@ -867,11 +641,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> STRIPPED_SPRUCE_LOG_7_ITEM = ITEMS.register("c7_" + "STRIPPED_SPRUCE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_SPRUCE_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_SPRUCE_LOG_8_ITEM = ITEMS.register("c8_" + "STRIPPED_SPRUCE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_SPRUCE_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_SPRUCE_LOG_9_ITEM = ITEMS.register("c9_" + "STRIPPED_SPRUCE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_SPRUCE_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region STRIPPED_BIRCH_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // STRIPPED_BIRCH_LOG
     public static final RegistryObject<Item> STRIPPED_BIRCH_LOG_0_ITEM = ITEMS.register("c0_" + "STRIPPED_BIRCH_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_BIRCH_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_BIRCH_LOG_1_ITEM = ITEMS.register("c1_" + "STRIPPED_BIRCH_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_BIRCH_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_BIRCH_LOG_2_ITEM = ITEMS.register("c2_" + "STRIPPED_BIRCH_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_BIRCH_LOG_2.get(), PROPERTIES));
@@ -882,11 +652,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> STRIPPED_BIRCH_LOG_7_ITEM = ITEMS.register("c7_" + "STRIPPED_BIRCH_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_BIRCH_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_BIRCH_LOG_8_ITEM = ITEMS.register("c8_" + "STRIPPED_BIRCH_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_BIRCH_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_BIRCH_LOG_9_ITEM = ITEMS.register("c9_" + "STRIPPED_BIRCH_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_BIRCH_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region STRIPPED_JUNGLE_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // STRIPPED_JUNGLE_LOG
     public static final RegistryObject<Item> STRIPPED_JUNGLE_LOG_0_ITEM = ITEMS.register("c0_" + "STRIPPED_JUNGLE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_JUNGLE_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_JUNGLE_LOG_1_ITEM = ITEMS.register("c1_" + "STRIPPED_JUNGLE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_JUNGLE_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_JUNGLE_LOG_2_ITEM = ITEMS.register("c2_" + "STRIPPED_JUNGLE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_JUNGLE_LOG_2.get(), PROPERTIES));
@@ -897,11 +663,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> STRIPPED_JUNGLE_LOG_7_ITEM = ITEMS.register("c7_" + "STRIPPED_JUNGLE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_JUNGLE_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_JUNGLE_LOG_8_ITEM = ITEMS.register("c8_" + "STRIPPED_JUNGLE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_JUNGLE_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_JUNGLE_LOG_9_ITEM = ITEMS.register("c9_" + "STRIPPED_JUNGLE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_JUNGLE_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region STRIPPED_ACACIA_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // STRIPPED_ACACIA_LOG
     public static final RegistryObject<Item> STRIPPED_ACACIA_LOG_0_ITEM = ITEMS.register("c0_" + "STRIPPED_ACACIA_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_ACACIA_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_ACACIA_LOG_1_ITEM = ITEMS.register("c1_" + "STRIPPED_ACACIA_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_ACACIA_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_ACACIA_LOG_2_ITEM = ITEMS.register("c2_" + "STRIPPED_ACACIA_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_ACACIA_LOG_2.get(), PROPERTIES));
@@ -912,11 +674,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> STRIPPED_ACACIA_LOG_7_ITEM = ITEMS.register("c7_" + "STRIPPED_ACACIA_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_ACACIA_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_ACACIA_LOG_8_ITEM = ITEMS.register("c8_" + "STRIPPED_ACACIA_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_ACACIA_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_ACACIA_LOG_9_ITEM = ITEMS.register("c9_" + "STRIPPED_ACACIA_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_ACACIA_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region STRIPPED_DARK_OAK_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // STRIPPED_DARK_OAK_LOG
     public static final RegistryObject<Item> STRIPPED_DARK_OAK_LOG_0_ITEM = ITEMS.register("c0_" + "STRIPPED_DARK_OAK_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_DARK_OAK_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_DARK_OAK_LOG_1_ITEM = ITEMS.register("c1_" + "STRIPPED_DARK_OAK_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_DARK_OAK_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_DARK_OAK_LOG_2_ITEM = ITEMS.register("c2_" + "STRIPPED_DARK_OAK_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_DARK_OAK_LOG_2.get(), PROPERTIES));
@@ -927,11 +685,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> STRIPPED_DARK_OAK_LOG_7_ITEM = ITEMS.register("c7_" + "STRIPPED_DARK_OAK_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_DARK_OAK_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_DARK_OAK_LOG_8_ITEM = ITEMS.register("c8_" + "STRIPPED_DARK_OAK_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_DARK_OAK_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_DARK_OAK_LOG_9_ITEM = ITEMS.register("c9_" + "STRIPPED_DARK_OAK_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_DARK_OAK_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region STRIPPED_MANGROVE_LOG
-    //------------------------------------------------------------------------------------------------------------------
+    // STRIPPED_MANGROVE_LOG
     public static final RegistryObject<Item> STRIPPED_MANGROVE_LOG_0_ITEM = ITEMS.register("c0_" + "STRIPPED_MANGROVE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_MANGROVE_LOG_0.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_MANGROVE_LOG_1_ITEM = ITEMS.register("c1_" + "STRIPPED_MANGROVE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_MANGROVE_LOG_1.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_MANGROVE_LOG_2_ITEM = ITEMS.register("c2_" + "STRIPPED_MANGROVE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_MANGROVE_LOG_2.get(), PROPERTIES));
@@ -942,11 +696,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> STRIPPED_MANGROVE_LOG_7_ITEM = ITEMS.register("c7_" + "STRIPPED_MANGROVE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_MANGROVE_LOG_7.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_MANGROVE_LOG_8_ITEM = ITEMS.register("c8_" + "STRIPPED_MANGROVE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_MANGROVE_LOG_8.get(), PROPERTIES));
     public static final RegistryObject<Item> STRIPPED_MANGROVE_LOG_9_ITEM = ITEMS.register("c9_" + "STRIPPED_MANGROVE_LOG".toLowerCase(), () -> new BlockItem(STRIPPED_MANGROVE_LOG_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region OAK_PLANKS
-    //------------------------------------------------------------------------------------------------------------------
+    // OAK_PLANKS
     public static final RegistryObject<Item> OAK_PLANKS_0_ITEM = ITEMS.register("c0_" + "OAK_PLANKS".toLowerCase(), () -> new BlockItem(OAK_PLANKS_0.get(), PROPERTIES));
     public static final RegistryObject<Item> OAK_PLANKS_1_ITEM = ITEMS.register("c1_" + "OAK_PLANKS".toLowerCase(), () -> new BlockItem(OAK_PLANKS_1.get(), PROPERTIES));
     public static final RegistryObject<Item> OAK_PLANKS_2_ITEM = ITEMS.register("c2_" + "OAK_PLANKS".toLowerCase(), () -> new BlockItem(OAK_PLANKS_2.get(), PROPERTIES));
@@ -957,11 +707,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> OAK_PLANKS_7_ITEM = ITEMS.register("c7_" + "OAK_PLANKS".toLowerCase(), () -> new BlockItem(OAK_PLANKS_7.get(), PROPERTIES));
     public static final RegistryObject<Item> OAK_PLANKS_8_ITEM = ITEMS.register("c8_" + "OAK_PLANKS".toLowerCase(), () -> new BlockItem(OAK_PLANKS_8.get(), PROPERTIES));
     public static final RegistryObject<Item> OAK_PLANKS_9_ITEM = ITEMS.register("c9_" + "OAK_PLANKS".toLowerCase(), () -> new BlockItem(OAK_PLANKS_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region SPRUCE_PLANKS
-    //------------------------------------------------------------------------------------------------------------------
+    // SPRUCE_PLANKS
     public static final RegistryObject<Item> SPRUCE_PLANKS_0_ITEM = ITEMS.register("c0_" + "SPRUCE_PLANKS".toLowerCase(), () -> new BlockItem(SPRUCE_PLANKS_0.get(), PROPERTIES));
     public static final RegistryObject<Item> SPRUCE_PLANKS_1_ITEM = ITEMS.register("c1_" + "SPRUCE_PLANKS".toLowerCase(), () -> new BlockItem(SPRUCE_PLANKS_1.get(), PROPERTIES));
     public static final RegistryObject<Item> SPRUCE_PLANKS_2_ITEM = ITEMS.register("c2_" + "SPRUCE_PLANKS".toLowerCase(), () -> new BlockItem(SPRUCE_PLANKS_2.get(), PROPERTIES));
@@ -972,11 +718,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> SPRUCE_PLANKS_7_ITEM = ITEMS.register("c7_" + "SPRUCE_PLANKS".toLowerCase(), () -> new BlockItem(SPRUCE_PLANKS_7.get(), PROPERTIES));
     public static final RegistryObject<Item> SPRUCE_PLANKS_8_ITEM = ITEMS.register("c8_" + "SPRUCE_PLANKS".toLowerCase(), () -> new BlockItem(SPRUCE_PLANKS_8.get(), PROPERTIES));
     public static final RegistryObject<Item> SPRUCE_PLANKS_9_ITEM = ITEMS.register("c9_" + "SPRUCE_PLANKS".toLowerCase(), () -> new BlockItem(SPRUCE_PLANKS_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region BIRCH_PLANKS
-    //------------------------------------------------------------------------------------------------------------------
+    // BIRCH_PLANKS
     public static final RegistryObject<Item> BIRCH_PLANKS_0_ITEM = ITEMS.register("c0_" + "BIRCH_PLANKS".toLowerCase(), () -> new BlockItem(BIRCH_PLANKS_0.get(), PROPERTIES));
     public static final RegistryObject<Item> BIRCH_PLANKS_1_ITEM = ITEMS.register("c1_" + "BIRCH_PLANKS".toLowerCase(), () -> new BlockItem(BIRCH_PLANKS_1.get(), PROPERTIES));
     public static final RegistryObject<Item> BIRCH_PLANKS_2_ITEM = ITEMS.register("c2_" + "BIRCH_PLANKS".toLowerCase(), () -> new BlockItem(BIRCH_PLANKS_2.get(), PROPERTIES));
@@ -987,11 +729,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> BIRCH_PLANKS_7_ITEM = ITEMS.register("c7_" + "BIRCH_PLANKS".toLowerCase(), () -> new BlockItem(BIRCH_PLANKS_7.get(), PROPERTIES));
     public static final RegistryObject<Item> BIRCH_PLANKS_8_ITEM = ITEMS.register("c8_" + "BIRCH_PLANKS".toLowerCase(), () -> new BlockItem(BIRCH_PLANKS_8.get(), PROPERTIES));
     public static final RegistryObject<Item> BIRCH_PLANKS_9_ITEM = ITEMS.register("c9_" + "BIRCH_PLANKS".toLowerCase(), () -> new BlockItem(BIRCH_PLANKS_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region JUNGLE_PLANKS
-    //------------------------------------------------------------------------------------------------------------------
+    // JUNGLE_PLANKS
     public static final RegistryObject<Item> JUNGLE_PLANKS_0_ITEM = ITEMS.register("c0_" + "JUNGLE_PLANKS".toLowerCase(), () -> new BlockItem(JUNGLE_PLANKS_0.get(), PROPERTIES));
     public static final RegistryObject<Item> JUNGLE_PLANKS_1_ITEM = ITEMS.register("c1_" + "JUNGLE_PLANKS".toLowerCase(), () -> new BlockItem(JUNGLE_PLANKS_1.get(), PROPERTIES));
     public static final RegistryObject<Item> JUNGLE_PLANKS_2_ITEM = ITEMS.register("c2_" + "JUNGLE_PLANKS".toLowerCase(), () -> new BlockItem(JUNGLE_PLANKS_2.get(), PROPERTIES));
@@ -1002,11 +740,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> JUNGLE_PLANKS_7_ITEM = ITEMS.register("c7_" + "JUNGLE_PLANKS".toLowerCase(), () -> new BlockItem(JUNGLE_PLANKS_7.get(), PROPERTIES));
     public static final RegistryObject<Item> JUNGLE_PLANKS_8_ITEM = ITEMS.register("c8_" + "JUNGLE_PLANKS".toLowerCase(), () -> new BlockItem(JUNGLE_PLANKS_8.get(), PROPERTIES));
     public static final RegistryObject<Item> JUNGLE_PLANKS_9_ITEM = ITEMS.register("c9_" + "JUNGLE_PLANKS".toLowerCase(), () -> new BlockItem(JUNGLE_PLANKS_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region ACACIA_PLANKS
-    //------------------------------------------------------------------------------------------------------------------
+    // ACACIA_PLANKS
     public static final RegistryObject<Item> ACACIA_PLANKS_0_ITEM = ITEMS.register("c0_" + "ACACIA_PLANKS".toLowerCase(), () -> new BlockItem(ACACIA_PLANKS_0.get(), PROPERTIES));
     public static final RegistryObject<Item> ACACIA_PLANKS_1_ITEM = ITEMS.register("c1_" + "ACACIA_PLANKS".toLowerCase(), () -> new BlockItem(ACACIA_PLANKS_1.get(), PROPERTIES));
     public static final RegistryObject<Item> ACACIA_PLANKS_2_ITEM = ITEMS.register("c2_" + "ACACIA_PLANKS".toLowerCase(), () -> new BlockItem(ACACIA_PLANKS_2.get(), PROPERTIES));
@@ -1017,11 +751,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> ACACIA_PLANKS_7_ITEM = ITEMS.register("c7_" + "ACACIA_PLANKS".toLowerCase(), () -> new BlockItem(ACACIA_PLANKS_7.get(), PROPERTIES));
     public static final RegistryObject<Item> ACACIA_PLANKS_8_ITEM = ITEMS.register("c8_" + "ACACIA_PLANKS".toLowerCase(), () -> new BlockItem(ACACIA_PLANKS_8.get(), PROPERTIES));
     public static final RegistryObject<Item> ACACIA_PLANKS_9_ITEM = ITEMS.register("c9_" + "ACACIA_PLANKS".toLowerCase(), () -> new BlockItem(ACACIA_PLANKS_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region DARK_OAK_PLANKS
-    //------------------------------------------------------------------------------------------------------------------
+    // DARK_OAK_PLANKS
     public static final RegistryObject<Item> DARK_OAK_PLANKS_0_ITEM = ITEMS.register("c0_" + "DARK_OAK_PLANKS".toLowerCase(), () -> new BlockItem(DARK_OAK_PLANKS_0.get(), PROPERTIES));
     public static final RegistryObject<Item> DARK_OAK_PLANKS_1_ITEM = ITEMS.register("c1_" + "DARK_OAK_PLANKS".toLowerCase(), () -> new BlockItem(DARK_OAK_PLANKS_1.get(), PROPERTIES));
     public static final RegistryObject<Item> DARK_OAK_PLANKS_2_ITEM = ITEMS.register("c2_" + "DARK_OAK_PLANKS".toLowerCase(), () -> new BlockItem(DARK_OAK_PLANKS_2.get(), PROPERTIES));
@@ -1032,11 +762,7 @@ public class CBBlockItems {
     public static final RegistryObject<Item> DARK_OAK_PLANKS_7_ITEM = ITEMS.register("c7_" + "DARK_OAK_PLANKS".toLowerCase(), () -> new BlockItem(DARK_OAK_PLANKS_7.get(), PROPERTIES));
     public static final RegistryObject<Item> DARK_OAK_PLANKS_8_ITEM = ITEMS.register("c8_" + "DARK_OAK_PLANKS".toLowerCase(), () -> new BlockItem(DARK_OAK_PLANKS_8.get(), PROPERTIES));
     public static final RegistryObject<Item> DARK_OAK_PLANKS_9_ITEM = ITEMS.register("c9_" + "DARK_OAK_PLANKS".toLowerCase(), () -> new BlockItem(DARK_OAK_PLANKS_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
-    //region MANGROVE_PLANKS
-    //------------------------------------------------------------------------------------------------------------------
+    // MANGROVE_PLANKS
     public static final RegistryObject<Item> MANGROVE_PLANKS_0_ITEM = ITEMS.register("c0_" + "MANGROVE_PLANKS".toLowerCase(), () -> new BlockItem(MANGROVE_PLANKS_0.get(), PROPERTIES));
     public static final RegistryObject<Item> MANGROVE_PLANKS_1_ITEM = ITEMS.register("c1_" + "MANGROVE_PLANKS".toLowerCase(), () -> new BlockItem(MANGROVE_PLANKS_1.get(), PROPERTIES));
     public static final RegistryObject<Item> MANGROVE_PLANKS_2_ITEM = ITEMS.register("c2_" + "MANGROVE_PLANKS".toLowerCase(), () -> new BlockItem(MANGROVE_PLANKS_2.get(), PROPERTIES));
@@ -1047,7 +773,5 @@ public class CBBlockItems {
     public static final RegistryObject<Item> MANGROVE_PLANKS_7_ITEM = ITEMS.register("c7_" + "MANGROVE_PLANKS".toLowerCase(), () -> new BlockItem(MANGROVE_PLANKS_7.get(), PROPERTIES));
     public static final RegistryObject<Item> MANGROVE_PLANKS_8_ITEM = ITEMS.register("c8_" + "MANGROVE_PLANKS".toLowerCase(), () -> new BlockItem(MANGROVE_PLANKS_8.get(), PROPERTIES));
     public static final RegistryObject<Item> MANGROVE_PLANKS_9_ITEM = ITEMS.register("c9_" + "MANGROVE_PLANKS".toLowerCase(), () -> new BlockItem(MANGROVE_PLANKS_9.get(), PROPERTIES));
-    //------------------------------------------------------------------------------------------------------------------
-    //endregion
-    //------------------------------------------------------------------------------------------------------------------
+    //end
 }
