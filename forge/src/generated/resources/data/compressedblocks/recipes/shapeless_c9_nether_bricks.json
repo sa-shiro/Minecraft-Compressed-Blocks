@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c9_nether_bricks"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:c8_nether_bricks"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c7_stripped_cherry_log"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:c6_stripped_cherry_log"
+  }
+}

@@ -1,10 +1,20 @@
+#file: noinspection SpellCheckingInspection
 # Automatically build the project and run any configured tests for every push
 # and submitted pull request. This can help catch issues that only occur on
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
 name: build
-on: [ pull_request, push ]
+on: [ push ]
+
+env:
+  VERSION: 1.3.4
+  MC_VERSION: "1.20"
+  MC_VERSION_RANGE: |
+    >=1.20
+  VERSION_TYPE: release
+  CURSEFORGE_ID: 361354
+  MODRINTH_ID: "IQRVlbit"
 
 jobs:
   build:
@@ -31,63 +41,73 @@ jobs:
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
 
-      #- name: prepare datagen
-      #  run: ./gradlew prepareRunData
-
-      #- name: run datagen
-      #  run: ./gradlew runData
-
       - name: build
         run: ./gradlew build
 
       - name: capture build artifacts
         if: ${{ runner.os == 'Linux' && matrix.java == '17' }} # Only upload artifacts built from the latest java on one OS
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Artifacts
-          path: build/libs/
+          path: |
+            forge/build/libs/
+            fabric/build/libs/
 
-      #- name: Retrieve Version
-      #  run: |
-      #    echo "::set-output name=VERSION::$(${{github.workspace}}/gradlew -q printVersion)"
-      #  id: version
-
-      #- name: Get version
-      #  run: |
-      #    echo "VERSION=${{steps.version.outputs.VERSION}}" >> $GITHUB_ENV
-
-      # publishing with data generation fails, uploaded generated resources to make this work
-      - name: publish
+      # PUBLISH FABRIC TASK
+      - name: publish FABRIC
         if: ${{ runner.os != 'Linux' }}
-        uses: Kir-Antipov/mc-publish@v3.2
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
-          modrinth-id: IQRVlbit
+          modrinth-id: ${{env.MODRINTH_ID}}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           modrinth-featured: true
-          modrinth-unfeature-mode: subset
+          modrinth-unfeature-mode: intersection
 
-          curseforge-id: 361354
+          curseforge-id: ${{env.CURSEFORGE_ID}}
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
-          # for whatever reason this fails
-          #github-tag: 1.0.0.20220123
-          #github-token: ${{ secrets.GITHUB_TOKEN }}
+          files: fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
 
-          files: build/libs/*.jar
+          name: "v${{env.VERSION}} (${{env.MC_VERSION}}) FABRIC"
+          version: "${{env.VERSION}}"
+          version-type: "${{env.VERSION_TYPE}}"
+          changelog-file: changelog.md
 
-          name: v1.3.0 (1.20.1)
-          version: 1.3.0 # this does not work for Modrinth: ${{ env.VERSION }}
-          version-type: release
+          loaders: |
+            fabric
+          game-versions: ${{env.MC_VERSION_RANGE}}
+
+          java: ${{ matrix.java }}
+
+          retry-attempts: 2
+          retry-delay: 10000
+          fail-mode: warn
+
+      # PUBLISH FORGE TASK
+      - name: publish FORGE
+        if: ${{ runner.os != 'Linux' }}
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: ${{env.MODRINTH_ID}}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          modrinth-featured: true
+          modrinth-unfeature-mode: intersection
+
+          curseforge-id: ${{env.CURSEFORGE_ID}}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          files: forge/build/libs/!(*-@(dev|sources|javadoc)).jar
+
+          name: "v${{env.VERSION}} (${{env.MC_VERSION}}) FORGE"
+          version: "${{env.VERSION}}"
+          version-type: "${{env.VERSION_TYPE}}"
           changelog-file: changelog.md
 
           loaders: |
             forge
-          game-versions: |
-            1.20.1
-          java: |
-            17
-            18
-            19
+          game-versions: ${{env.MC_VERSION_RANGE}}
+
+          java: ${{ matrix.java }}
 
           retry-attempts: 2
           retry-delay: 10000
