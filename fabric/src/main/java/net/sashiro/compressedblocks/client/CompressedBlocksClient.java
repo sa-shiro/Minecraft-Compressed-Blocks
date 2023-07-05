@@ -22,7 +22,8 @@ import net.sashiro.compressedblocks.registry.CBCratesRegister;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static net.sashiro.compressedblocks.Constants.*;
+import static net.sashiro.compressedblocks.Constants.LOG;
+import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 public class CompressedBlocksClient implements ClientModInitializer {
     

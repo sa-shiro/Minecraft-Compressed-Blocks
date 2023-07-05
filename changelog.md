@@ -1,6 +1,5 @@
-# Version 1.3.1 [ 1.20.1 ]  
+# Version 1.3.3 [ 1.20 FABRIC ]
 
-* added Fabric support
-* migrated to a Forge & Fabric project layout
-
+* add all Crates to Fabric
+* reimplemented Forge registration
 ---
