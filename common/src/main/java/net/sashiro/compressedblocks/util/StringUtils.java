@@ -5,6 +5,7 @@ public class StringUtils {
     /**
      * Utility function to replace underscores<br>
      * with spaces and format the {@link String}  in uppercase.
+     *
      * @param formatString the {@link String} to format
      * @return the formatted {@link String}
      */

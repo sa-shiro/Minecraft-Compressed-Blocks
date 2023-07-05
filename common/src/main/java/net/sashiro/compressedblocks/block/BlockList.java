@@ -1,11 +1,7 @@
 package net.sashiro.compressedblocks.block;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.sashiro.compressedblocks.block.CompressedBlock.*;
 
 import static net.sashiro.compressedblocks.Constants.HARDNESS;
@@ -477,16 +473,16 @@ public class BlockList {
     public static final CustomDefaultBlock TUFF_8 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.TUFF).strength(HARDNESS[6], RESISTANCE[4]), 8);
     public static final CustomDefaultBlock TUFF_9 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.TUFF).strength(HARDNESS[6], RESISTANCE[4]), 9);
     // BASALT
-    public static final CustomDefaultBlock BASALT_0 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[2], RESISTANCE[0]), 0);
-    public static final CustomDefaultBlock BASALT_1 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[2], RESISTANCE[0]), 1);
-    public static final CustomDefaultBlock BASALT_2 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[3], RESISTANCE[1]), 2);
-    public static final CustomDefaultBlock BASALT_3 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[3], RESISTANCE[1]), 3);
-    public static final CustomDefaultBlock BASALT_4 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[4], RESISTANCE[2]), 4);
-    public static final CustomDefaultBlock BASALT_5 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[4], RESISTANCE[2]), 5);
-    public static final CustomDefaultBlock BASALT_6 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[5], RESISTANCE[3]), 6);
-    public static final CustomDefaultBlock BASALT_7 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[5], RESISTANCE[3]), 7);
-    public static final CustomDefaultBlock BASALT_8 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[6], RESISTANCE[4]), 8);
-    public static final CustomDefaultBlock BASALT_9 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[6], RESISTANCE[4]), 9);
+    public static final CustomRotatedPillarBlock BASALT_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[2], RESISTANCE[0]), 0);
+    public static final CustomRotatedPillarBlock BASALT_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[2], RESISTANCE[0]), 1);
+    public static final CustomRotatedPillarBlock BASALT_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[3], RESISTANCE[1]), 2);
+    public static final CustomRotatedPillarBlock BASALT_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[3], RESISTANCE[1]), 3);
+    public static final CustomRotatedPillarBlock BASALT_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[4], RESISTANCE[2]), 4);
+    public static final CustomRotatedPillarBlock BASALT_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[4], RESISTANCE[2]), 5);
+    public static final CustomRotatedPillarBlock BASALT_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[5], RESISTANCE[3]), 6);
+    public static final CustomRotatedPillarBlock BASALT_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[5], RESISTANCE[3]), 7);
+    public static final CustomRotatedPillarBlock BASALT_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[6], RESISTANCE[4]), 8);
+    public static final CustomRotatedPillarBlock BASALT_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[6], RESISTANCE[4]), 9);
     // OBSIDIAN
     public static final CustomDefaultBlock OBSIDIAN_0 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).strength(75, 1300), 0);
     public static final CustomDefaultBlock OBSIDIAN_1 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).strength(100, 1400), 1);
@@ -828,12 +824,4 @@ public class BlockList {
     public static final CustomRotatedPillarBlock BAMBOO_MOSAIC_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO_MOSAIC).strength(HARDNESS[5], RESISTANCE[3]), 7);
     public static final CustomRotatedPillarBlock BAMBOO_MOSAIC_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO_MOSAIC).strength(HARDNESS[6], RESISTANCE[4]), 8);
     public static final CustomRotatedPillarBlock BAMBOO_MOSAIC_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO_MOSAIC).strength(HARDNESS[6], RESISTANCE[4]), 9);
-    
-    private static boolean isTrue(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, EntityType<?> entityType) {
-        return true;
-    }
-    
-    private static boolean isTrue(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
-        return true;
-    }
 }
