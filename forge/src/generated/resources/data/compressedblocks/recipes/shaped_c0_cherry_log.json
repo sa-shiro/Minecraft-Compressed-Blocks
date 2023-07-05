@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "minecraft:air"
+    "item": "compressedblocks:c0_cherry_log"
   },
   "show_notification": true
 }

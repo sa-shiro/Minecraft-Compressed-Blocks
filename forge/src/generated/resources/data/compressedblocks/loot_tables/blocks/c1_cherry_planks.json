@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "compressedblocks:c1_cherry_planks"
         }
       ],
       "rolls": 1.0

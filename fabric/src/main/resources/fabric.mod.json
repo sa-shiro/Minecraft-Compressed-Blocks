@@ -25,9 +25,6 @@
     ],
     "client": [
       "${entrypoint_client}"
-    ],
-    "server": [
-      "${entrypoint_server}"
     ]
   },
   "mixins": [

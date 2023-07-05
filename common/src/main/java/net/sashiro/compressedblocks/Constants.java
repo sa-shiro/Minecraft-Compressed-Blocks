@@ -1,7 +1,11 @@
 package net.sashiro.compressedblocks;
 
+import net.minecraft.world.level.block.Block;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class Constants {
     
@@ -20,4 +24,6 @@ public class Constants {
     public static final String c7 = "octuple_crated_";
     public static final String c8 = "mega_crated_";
     public static final String c9 = "giga_crated_";
+    public static Collection<Block> BLOCKS = new ArrayList<>();
+    public static Collection<Block> CRATES = new ArrayList<>();
 }

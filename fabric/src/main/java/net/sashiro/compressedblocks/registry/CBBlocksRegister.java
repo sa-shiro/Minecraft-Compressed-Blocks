@@ -7,14 +7,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
+import static net.sashiro.compressedblocks.Constants.BLOCKS;
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 import static net.sashiro.compressedblocks.block.BlockList.*;
 
 public class CBBlocksRegister {
-    public static Collection<Block> BLOCKS = new ArrayList<>();
     
     private static void registerBlock(String name, Block block) {
         FabricItemSettings fis = new FabricItemSettings();

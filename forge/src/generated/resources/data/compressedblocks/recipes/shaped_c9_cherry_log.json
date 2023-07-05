@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": []
+    "#": {
+      "item": "compressedblocks:c8_cherry_log"
+    }
   },
   "pattern": [
     "###",
@@ -10,7 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "minecraft:air"
+    "item": "compressedblocks:c9_cherry_log"
   },
   "show_notification": true
 }

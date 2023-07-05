@@ -5,18 +5,20 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.RegisterEvent;
+import net.sashiro.compressedblocks.Constants;
 
 import static net.sashiro.compressedblocks.block.BlockList.*;
 import static net.sashiro.compressedblocks.event.CBRegistryEvent.*;
 
 /**
- * Forge doesnt let us use Vanilla Registries which results duplicate code.
+ * Forge doesn't let us use Vanilla Registries which results in duplicate code.
  */
 public class CBBlockRegister {
     
     private static void registerBlock(String name, Block block) {
         BLOCKS.register(name.toLowerCase(), () -> block);
         ITEMS.register(name.toLowerCase(), () -> new BlockItem(block, PROPERTIES));
+        Constants.BLOCKS.add(block);
     }
     
     @SubscribeEvent(priority = EventPriority.HIGH)

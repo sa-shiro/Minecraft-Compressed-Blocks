@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": []
+    "#": {
+      "item": "compressedblocks:c7_cherry_planks"
+    }
   },
   "pattern": [
     "###",
@@ -10,7 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "minecraft:air"
+    "item": "compressedblocks:c8_cherry_planks"
   },
   "show_notification": true
 }

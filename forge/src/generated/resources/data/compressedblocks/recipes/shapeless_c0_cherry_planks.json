@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    []
+    {
+      "item": "compressedblocks:c0_cherry_planks"
+    }
   ],
   "result": {
     "count": 9,

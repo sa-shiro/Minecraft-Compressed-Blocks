@@ -4,6 +4,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.RegisterEvent;
+import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.item.CrateItem;
 
 import static net.sashiro.compressedblocks.Constants.*;
@@ -12,13 +13,14 @@ import static net.sashiro.compressedblocks.event.CBRegistryEvent.CRATE_BLOCKS;
 import static net.sashiro.compressedblocks.event.CBRegistryEvent.CRATE_ITEMS;
 
 /**
- * Forge doesnt let us use Vanilla Registries which results duplicate code.
+ * Forge doesn't let us use Vanilla Registries which results in duplicate code.
  */
 public class CBCratesRegister {
     
     private static void registerCrate(String name, Block block) {
         CRATE_BLOCKS.register(name.toLowerCase(), () -> block);
         CRATE_ITEMS.register(name.toLowerCase(), () -> new CrateItem(block));
+        Constants.CRATES.add(block);
     }
     
     @SubscribeEvent(priority = EventPriority.HIGH)

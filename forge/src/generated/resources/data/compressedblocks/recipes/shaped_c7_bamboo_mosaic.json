@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": []
+    "#": {
+      "item": "compressedblocks:c6_bamboo_mosaic"
+    }
   },
   "pattern": [
     "###",
@@ -10,7 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "minecraft:air"
+    "item": "compressedblocks:c7_bamboo_mosaic"
   },
   "show_notification": true
 }

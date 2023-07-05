@@ -14,10 +14,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
+import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.block.BlockList;
 import net.sashiro.compressedblocks.block.CrateList;
-import net.sashiro.compressedblocks.registry.CBBlocksRegister;
-import net.sashiro.compressedblocks.registry.CBCratesRegister;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -45,12 +44,12 @@ public class CompressedBlocksClient implements ClientModInitializer {
         Collection<ItemStack> itemStackBlocks = new ArrayList<>();
         Collection<ItemStack> itemStackCrates = new ArrayList<>();
         
-        for (Block block : CBBlocksRegister.BLOCKS) {
+        for (Block block : Constants.BLOCKS) {
             BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.translucent());
             itemStackBlocks.add(new ItemStack(block));
         }
         
-        for (Block block : CBCratesRegister.CRATES) {
+        for (Block block : Constants.CRATES) {
             BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutout());
             itemStackCrates.add(new ItemStack(block));
         }

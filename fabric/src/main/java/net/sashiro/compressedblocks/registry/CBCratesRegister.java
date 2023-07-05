@@ -6,14 +6,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.item.CrateItem;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import static net.sashiro.compressedblocks.Constants.*;
 import static net.sashiro.compressedblocks.block.CrateList.*;
 
 public class CBCratesRegister {
-    public static Collection<Block> CRATES = new ArrayList<>();
     
     private static void registerCrate(String name, Block crateBlock) {
         Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(MOD_ID, name.toLowerCase()), crateBlock);

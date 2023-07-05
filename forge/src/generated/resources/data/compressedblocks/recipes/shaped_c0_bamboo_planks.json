@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "minecraft:air"
+    "item": "compressedblocks:c0_bamboo_planks"
   },
   "show_notification": true
 }

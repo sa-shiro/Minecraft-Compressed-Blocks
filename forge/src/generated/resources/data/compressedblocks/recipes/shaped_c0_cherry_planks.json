@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "minecraft:air"
+    "item": "compressedblocks:c0_cherry_planks"
   },
   "show_notification": true
 }

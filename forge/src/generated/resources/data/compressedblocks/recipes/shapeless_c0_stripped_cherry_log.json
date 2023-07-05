@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    []
+    {
+      "item": "compressedblocks:c0_stripped_cherry_log"
+    }
   ],
   "result": {
     "count": 9,

@@ -55,6 +55,7 @@
     "compressedblocks:c7_acacia_log",
     "compressedblocks:c7_dark_oak_log",
     "compressedblocks:c7_mangrove_log",
+    "compressedblocks:c7_cherry_log",
     "compressedblocks:c7_stripped_oak_log",
     "compressedblocks:c7_stripped_spruce_log",
     "compressedblocks:c7_stripped_birch_log",
@@ -62,12 +63,16 @@
     "compressedblocks:c7_stripped_acacia_log",
     "compressedblocks:c7_stripped_dark_oak_log",
     "compressedblocks:c7_stripped_mangrove_log",
+    "compressedblocks:c7_stripped_cherry_log",
     "compressedblocks:c7_oak_planks",
     "compressedblocks:c7_spruce_planks",
     "compressedblocks:c7_birch_planks",
     "compressedblocks:c7_jungle_planks",
     "compressedblocks:c7_acacia_planks",
     "compressedblocks:c7_dark_oak_planks",
-    "compressedblocks:c7_mangrove_planks"
+    "compressedblocks:c7_mangrove_planks",
+    "compressedblocks:c7_cherry_planks",
+    "compressedblocks:c7_bamboo_planks",
+    "compressedblocks:c7_bamboo_mosaic"
   ]
 }
