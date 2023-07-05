@@ -1,5 +1,12 @@
-# Version 1.3.3 [ 1.20 FABRIC ]
+# v1.3.4 [ 1.20 ]
 
-* add all Crates to Fabric
+
+## Fabric
+* added support for Fabric >= 1.20
+---
+
+## Forge
+* added missing blocks
+* changed render type for crates (fixes missing break animation)
 * reimplemented Forge registration
 ---
