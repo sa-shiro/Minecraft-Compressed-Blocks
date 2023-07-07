@@ -15,7 +15,7 @@ env:
   MODRINTH_ID: "IQRVlbit"
 
 
-name: v${{env.VERSION}} (${{env.MC_VERSION}})"
+name: "v${{env.VERSION}} (${{env.MC_VERSION}})"
 on: workflow_dispatch
 
 
