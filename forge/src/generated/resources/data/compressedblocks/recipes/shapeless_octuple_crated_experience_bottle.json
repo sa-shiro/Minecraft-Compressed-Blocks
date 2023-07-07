@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:octuple_crated_experience_bottle"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:septuple_crated_experience_bottle",
+    "count": 9
+  }
+}

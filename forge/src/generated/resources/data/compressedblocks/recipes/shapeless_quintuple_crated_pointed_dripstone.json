@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quintuple_crated_pointed_dripstone"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:quadruple_crated_pointed_dripstone",
+    "count": 9
+  }
+}

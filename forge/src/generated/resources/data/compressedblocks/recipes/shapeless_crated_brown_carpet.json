@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_brown_carpet"
+    }
+  ],
+  "result": {
+    "item": "minecraft:brown_carpet",
+    "count": 9
+  }
+}

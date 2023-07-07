@@ -1,4 +1,4 @@
-## [1.18.2 - 1.0.2.20220926 ]
+# v1.3.4 [ 1.18.2 ]
 
-Added (almost) all missing items. Please tell me if there are still some (crate) items missing! ; Update to 1.19 will
-follow soon!"
+* rebase master onto 1.18
+* add Fabric support for 1.18.2

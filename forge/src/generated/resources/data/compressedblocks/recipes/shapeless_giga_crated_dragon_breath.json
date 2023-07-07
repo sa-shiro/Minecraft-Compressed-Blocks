@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:giga_crated_dragon_breath"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:mega_crated_dragon_breath",
+    "count": 9
+  }
+}

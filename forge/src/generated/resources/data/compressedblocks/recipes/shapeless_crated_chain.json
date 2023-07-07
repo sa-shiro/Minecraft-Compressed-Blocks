@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_chain"
+    }
+  ],
+  "result": {
+    "item": "minecraft:chain",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:double_crated_gunpowder"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:crated_gunpowder",
+    "count": 9
+  }
+}

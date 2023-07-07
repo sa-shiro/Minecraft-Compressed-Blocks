@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quintuple_crated_lightning_rod"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:quadruple_crated_lightning_rod",
+    "count": 9
+  }
+}

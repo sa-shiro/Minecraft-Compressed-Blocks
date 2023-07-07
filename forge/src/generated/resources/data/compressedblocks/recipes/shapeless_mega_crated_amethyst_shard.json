@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:mega_crated_amethyst_shard"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:octuple_crated_amethyst_shard",
+    "count": 9
+  }
+}

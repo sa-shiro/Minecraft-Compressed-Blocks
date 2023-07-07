@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:crated_totem_of_undying"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:double_crated_totem_of_undying"
+  }
+}

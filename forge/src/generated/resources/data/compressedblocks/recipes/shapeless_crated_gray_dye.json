@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_gray_dye"
+    }
+  ],
+  "result": {
+    "item": "minecraft:gray_dye",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_white_tulip"
+    }
+  ],
+  "result": {
+    "item": "minecraft:white_tulip",
+    "count": 9
+  }
+}

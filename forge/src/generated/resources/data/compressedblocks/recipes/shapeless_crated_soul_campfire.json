@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_soul_campfire"
+    }
+  ],
+  "result": {
+    "item": "minecraft:soul_campfire",
+    "count": 9
+  }
+}

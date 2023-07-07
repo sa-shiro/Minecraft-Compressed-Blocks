@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_blue_orchid"
+    }
+  ],
+  "result": {
+    "item": "minecraft:blue_orchid",
+    "count": 9
+  }
+}

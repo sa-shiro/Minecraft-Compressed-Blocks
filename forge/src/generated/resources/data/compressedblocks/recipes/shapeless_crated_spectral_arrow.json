@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_spectral_arrow"
+    }
+  ],
+  "result": {
+    "item": "minecraft:spectral_arrow",
+    "count": 9
+  }
+}

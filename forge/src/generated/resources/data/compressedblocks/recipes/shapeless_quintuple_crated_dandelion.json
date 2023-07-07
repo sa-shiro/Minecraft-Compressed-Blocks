@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quintuple_crated_dandelion"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:quadruple_crated_dandelion",
+    "count": 9
+  }
+}

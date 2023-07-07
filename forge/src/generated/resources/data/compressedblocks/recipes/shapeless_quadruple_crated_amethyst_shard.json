@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quadruple_crated_amethyst_shard"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:triple_crated_amethyst_shard",
+    "count": 9
+  }
+}

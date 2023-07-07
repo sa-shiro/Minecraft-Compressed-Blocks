@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:giga_crated_scute"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:mega_crated_scute",
+    "count": 9
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:lightning_rod"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:crated_lightning_rod"
+  }
+}

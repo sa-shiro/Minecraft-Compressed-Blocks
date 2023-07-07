@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_phantom_membrane"
+    }
+  ],
+  "result": {
+    "item": "minecraft:phantom_membrane",
+    "count": 9
+  }
+}

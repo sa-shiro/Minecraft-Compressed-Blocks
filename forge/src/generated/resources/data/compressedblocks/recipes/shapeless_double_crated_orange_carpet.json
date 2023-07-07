@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:double_crated_orange_carpet"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:crated_orange_carpet",
+    "count": 9
+  }
+}

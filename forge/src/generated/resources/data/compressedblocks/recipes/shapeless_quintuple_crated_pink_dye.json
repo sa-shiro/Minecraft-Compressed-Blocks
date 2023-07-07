@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quintuple_crated_pink_dye"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:quadruple_crated_pink_dye",
+    "count": 9
+  }
+}

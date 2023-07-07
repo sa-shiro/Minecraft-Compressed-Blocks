@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_lilac"
+    }
+  ],
+  "result": {
+    "item": "minecraft:lilac",
+    "count": 9
+  }
+}
