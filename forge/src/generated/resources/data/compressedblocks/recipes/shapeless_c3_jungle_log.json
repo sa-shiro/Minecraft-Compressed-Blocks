@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c3_jungle_log"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:c2_jungle_log"
+  }
+}

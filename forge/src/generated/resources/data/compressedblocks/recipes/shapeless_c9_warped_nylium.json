@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c9_warped_nylium"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:c8_warped_nylium"
+  }
+}

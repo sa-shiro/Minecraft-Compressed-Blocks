@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c3_iron_ore"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:c2_iron_ore"
+  }
+}

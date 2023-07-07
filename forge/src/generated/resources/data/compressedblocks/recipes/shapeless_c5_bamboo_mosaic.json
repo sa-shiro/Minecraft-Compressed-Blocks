@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c5_bamboo_mosaic"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:c4_bamboo_mosaic"
+  }
+}

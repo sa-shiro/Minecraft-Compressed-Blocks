@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "compressedblocks:septuple_crated_totem_of_undying"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "compressedblocks:sextuple_crated_totem_of_undying"
+  }
+}

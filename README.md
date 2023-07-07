@@ -1,8 +1,9 @@
-<div style="text-align: center;">
+# <div align="center"> CB: Compressed Blocks </div>
 
-# CB: Compressed Blocks
+<hr /> 
+<div align="center">
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)&nbsp;&nbsp;&nbsp;
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPLv3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)&nbsp;&nbsp;&nbsp;
 [![curseforge]](https://curseforge.com/minecraft/mc-mods/cb-compressed-blocks)&nbsp;&nbsp;&nbsp;
 [![modrinth]](https://modrinth.com/mod/cb-compressed-blocks)&nbsp;&nbsp;&nbsp;
 [![github]](https://github.com/sa-shiro/Minecraft-Compressed-Blocks)&nbsp;&nbsp;&nbsp;
@@ -10,10 +11,9 @@
 [![discord]](https://discord.gg/EKyjXRH9xN)&nbsp;&nbsp;&nbsp;
 [![paypal]](https://www.paypal.com/donate/?cmd=_donations&business=social.sashiro@outlook.com&lc=US&item_name=Donation&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
 
-
-<hr /> 
-
 </div>
+
+<hr />
 
 [curseforge]: https://img.shields.io/badge/Download-CurseForge-orange
 [modrinth]: https://img.shields.io/badge/Download-Modrinth-a0ff00
