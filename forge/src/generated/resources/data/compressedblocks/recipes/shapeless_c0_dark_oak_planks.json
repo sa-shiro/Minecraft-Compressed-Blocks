@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c0_dark_oak_planks"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:dark_oak_planks"
+  }
+}
