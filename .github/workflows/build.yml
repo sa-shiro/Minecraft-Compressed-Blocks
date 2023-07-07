@@ -5,10 +5,7 @@
 # against bad commits.
 
 name: build
-on:
-  push:
-    tags:
-      - 'v*'
+on: workflow_dispatch
 
 env:
   VERSION: 1.3.4
