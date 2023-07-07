@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:c0_nether_wart_block"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:c1_nether_wart_block"
+  }
+}

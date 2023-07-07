@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quadruple_crated_ink_sac"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:triple_crated_ink_sac",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c4_stripped_jungle_log"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c3_stripped_jungle_log",
+    "count": 9
+  }
+}

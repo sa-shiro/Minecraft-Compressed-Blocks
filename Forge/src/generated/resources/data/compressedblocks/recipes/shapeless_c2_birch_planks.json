@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c2_birch_planks"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c1_birch_planks",
+    "count": 9
+  }
+}

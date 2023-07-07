@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_book"
+    }
+  ],
+  "result": {
+    "item": "minecraft:book",
+    "count": 9
+  }
+}

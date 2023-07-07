@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:mega_crated_orange_tulip"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:octuple_crated_orange_tulip",
+    "count": 9
+  }
+}

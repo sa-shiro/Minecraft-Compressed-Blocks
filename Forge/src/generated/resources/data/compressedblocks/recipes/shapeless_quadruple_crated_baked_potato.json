@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quadruple_crated_baked_potato"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:triple_crated_baked_potato",
+    "count": 9
+  }
+}

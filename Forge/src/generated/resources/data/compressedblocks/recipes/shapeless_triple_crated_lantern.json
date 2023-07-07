@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:triple_crated_lantern"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:double_crated_lantern",
+    "count": 9
+  }
+}

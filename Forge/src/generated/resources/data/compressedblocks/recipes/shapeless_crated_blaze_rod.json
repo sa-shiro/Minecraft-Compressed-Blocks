@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_blaze_rod"
+    }
+  ],
+  "result": {
+    "item": "minecraft:blaze_rod",
+    "count": 9
+  }
+}

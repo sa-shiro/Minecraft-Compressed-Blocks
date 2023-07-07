@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_spruce_sapling"
+    }
+  ],
+  "result": {
+    "item": "minecraft:spruce_sapling",
+    "count": 9
+  }
+}

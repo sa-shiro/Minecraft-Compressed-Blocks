@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:octuple_crated_paper"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:septuple_crated_paper",
+    "count": 9
+  }
+}

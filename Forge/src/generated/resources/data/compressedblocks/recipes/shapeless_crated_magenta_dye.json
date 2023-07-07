@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_magenta_dye"
+    }
+  ],
+  "result": {
+    "item": "minecraft:magenta_dye",
+    "count": 9
+  }
+}

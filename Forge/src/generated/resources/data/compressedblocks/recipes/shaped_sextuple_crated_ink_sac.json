@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:quintuple_crated_ink_sac"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:sextuple_crated_ink_sac"
+  }
+}

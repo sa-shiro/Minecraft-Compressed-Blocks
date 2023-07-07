@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_honey_bottle"
+    }
+  ],
+  "result": {
+    "item": "minecraft:honey_bottle",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:septuple_crated_dragon_breath"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:sextuple_crated_dragon_breath",
+    "count": 9
+  }
+}

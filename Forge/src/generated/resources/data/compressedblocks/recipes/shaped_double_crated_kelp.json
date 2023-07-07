@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:crated_kelp"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:double_crated_kelp"
+  }
+}

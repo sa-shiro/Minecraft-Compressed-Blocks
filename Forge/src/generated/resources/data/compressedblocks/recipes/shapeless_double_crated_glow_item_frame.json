@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:double_crated_glow_item_frame"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:crated_glow_item_frame",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:mega_crated_firework_star"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:octuple_crated_firework_star",
+    "count": 9
+  }
+}
