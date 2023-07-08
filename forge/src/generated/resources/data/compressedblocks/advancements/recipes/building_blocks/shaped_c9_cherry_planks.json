@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c9_cherry_planks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

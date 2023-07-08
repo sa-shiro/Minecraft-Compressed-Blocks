@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_sextuple_crated_cornflower"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

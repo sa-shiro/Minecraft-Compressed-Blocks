@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_quadruple_crated_honey_bottle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

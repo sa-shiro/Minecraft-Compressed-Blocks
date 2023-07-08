@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_double_crated_yellow_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_c4_nether_wart_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -615,6 +615,17 @@ public class BlockList {
     public static final CustomRotatedPillarBlock MANGROVE_LOG_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_LOG).strength(HARDNESS[5], RESISTANCE[3]), 7);
     public static final CustomRotatedPillarBlock MANGROVE_LOG_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_LOG).strength(HARDNESS[6], RESISTANCE[4]), 8);
     public static final CustomRotatedPillarBlock MANGROVE_LOG_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_LOG).strength(HARDNESS[6], RESISTANCE[4]), 9);
+    // CHERRY_LOG
+    public static final CustomRotatedPillarBlock CHERRY_LOG_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LOG).strength(HARDNESS[2], RESISTANCE[0]), 0);
+    public static final CustomRotatedPillarBlock CHERRY_LOG_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LOG).strength(HARDNESS[2], RESISTANCE[0]), 1);
+    public static final CustomRotatedPillarBlock CHERRY_LOG_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LOG).strength(HARDNESS[3], RESISTANCE[1]), 2);
+    public static final CustomRotatedPillarBlock CHERRY_LOG_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LOG).strength(HARDNESS[3], RESISTANCE[1]), 3);
+    public static final CustomRotatedPillarBlock CHERRY_LOG_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LOG).strength(HARDNESS[4], RESISTANCE[2]), 4);
+    public static final CustomRotatedPillarBlock CHERRY_LOG_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LOG).strength(HARDNESS[4], RESISTANCE[2]), 5);
+    public static final CustomRotatedPillarBlock CHERRY_LOG_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LOG).strength(HARDNESS[5], RESISTANCE[3]), 6);
+    public static final CustomRotatedPillarBlock CHERRY_LOG_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LOG).strength(HARDNESS[5], RESISTANCE[3]), 7);
+    public static final CustomRotatedPillarBlock CHERRY_LOG_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LOG).strength(HARDNESS[6], RESISTANCE[4]), 8);
+    public static final CustomRotatedPillarBlock CHERRY_LOG_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_LOG).strength(HARDNESS[6], RESISTANCE[4]), 9);
     // STRIPPED_OAK_LOG
     public static final CustomRotatedPillarBlock STRIPPED_OAK_LOG_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(HARDNESS[2], RESISTANCE[0]), 0);
     public static final CustomRotatedPillarBlock STRIPPED_OAK_LOG_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(HARDNESS[2], RESISTANCE[0]), 1);
@@ -692,6 +703,17 @@ public class BlockList {
     public static final CustomRotatedPillarBlock STRIPPED_MANGROVE_LOG_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_MANGROVE_LOG).strength(HARDNESS[5], RESISTANCE[3]), 7);
     public static final CustomRotatedPillarBlock STRIPPED_MANGROVE_LOG_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_MANGROVE_LOG).strength(HARDNESS[6], RESISTANCE[4]), 8);
     public static final CustomRotatedPillarBlock STRIPPED_MANGROVE_LOG_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_MANGROVE_LOG).strength(HARDNESS[6], RESISTANCE[4]), 9);
+    // STRIPPED_CHERRY_LOG
+    public static final CustomRotatedPillarBlock STRIPPED_CHERRY_LOG_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_CHERRY_LOG).strength(HARDNESS[2], RESISTANCE[0]), 0);
+    public static final CustomRotatedPillarBlock STRIPPED_CHERRY_LOG_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_CHERRY_LOG).strength(HARDNESS[2], RESISTANCE[0]), 1);
+    public static final CustomRotatedPillarBlock STRIPPED_CHERRY_LOG_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_CHERRY_LOG).strength(HARDNESS[3], RESISTANCE[1]), 2);
+    public static final CustomRotatedPillarBlock STRIPPED_CHERRY_LOG_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_CHERRY_LOG).strength(HARDNESS[3], RESISTANCE[1]), 3);
+    public static final CustomRotatedPillarBlock STRIPPED_CHERRY_LOG_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_CHERRY_LOG).strength(HARDNESS[4], RESISTANCE[2]), 4);
+    public static final CustomRotatedPillarBlock STRIPPED_CHERRY_LOG_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_CHERRY_LOG).strength(HARDNESS[4], RESISTANCE[2]), 5);
+    public static final CustomRotatedPillarBlock STRIPPED_CHERRY_LOG_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_CHERRY_LOG).strength(HARDNESS[5], RESISTANCE[3]), 6);
+    public static final CustomRotatedPillarBlock STRIPPED_CHERRY_LOG_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_CHERRY_LOG).strength(HARDNESS[5], RESISTANCE[3]), 7);
+    public static final CustomRotatedPillarBlock STRIPPED_CHERRY_LOG_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_CHERRY_LOG).strength(HARDNESS[6], RESISTANCE[4]), 8);
+    public static final CustomRotatedPillarBlock STRIPPED_CHERRY_LOG_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_CHERRY_LOG).strength(HARDNESS[6], RESISTANCE[4]), 9);
     // OAK_PLANKS
     public static final CustomRotatedPillarBlock OAK_PLANKS_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(HARDNESS[2], RESISTANCE[0]), 0);
     public static final CustomRotatedPillarBlock OAK_PLANKS_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(HARDNESS[2], RESISTANCE[0]), 1);
@@ -769,6 +791,17 @@ public class BlockList {
     public static final CustomRotatedPillarBlock MANGROVE_PLANKS_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS).strength(HARDNESS[5], RESISTANCE[3]), 7);
     public static final CustomRotatedPillarBlock MANGROVE_PLANKS_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS).strength(HARDNESS[6], RESISTANCE[4]), 8);
     public static final CustomRotatedPillarBlock MANGROVE_PLANKS_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS).strength(HARDNESS[6], RESISTANCE[4]), 9);
+    // CHERRY_PLANKS
+    public static final CustomRotatedPillarBlock CHERRY_PLANKS_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS).strength(HARDNESS[2], RESISTANCE[0]), 0);
+    public static final CustomRotatedPillarBlock CHERRY_PLANKS_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS).strength(HARDNESS[2], RESISTANCE[0]), 1);
+    public static final CustomRotatedPillarBlock CHERRY_PLANKS_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS).strength(HARDNESS[3], RESISTANCE[1]), 2);
+    public static final CustomRotatedPillarBlock CHERRY_PLANKS_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS).strength(HARDNESS[3], RESISTANCE[1]), 3);
+    public static final CustomRotatedPillarBlock CHERRY_PLANKS_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS).strength(HARDNESS[4], RESISTANCE[2]), 4);
+    public static final CustomRotatedPillarBlock CHERRY_PLANKS_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS).strength(HARDNESS[4], RESISTANCE[2]), 5);
+    public static final CustomRotatedPillarBlock CHERRY_PLANKS_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS).strength(HARDNESS[5], RESISTANCE[3]), 6);
+    public static final CustomRotatedPillarBlock CHERRY_PLANKS_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS).strength(HARDNESS[5], RESISTANCE[3]), 7);
+    public static final CustomRotatedPillarBlock CHERRY_PLANKS_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS).strength(HARDNESS[6], RESISTANCE[4]), 8);
+    public static final CustomRotatedPillarBlock CHERRY_PLANKS_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHERRY_PLANKS).strength(HARDNESS[6], RESISTANCE[4]), 9);
     // BAMBOO_PLANKS
     public static final CustomRotatedPillarBlock BAMBOO_PLANKS_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO_PLANKS).strength(HARDNESS[2], RESISTANCE[0]), 0);
     public static final CustomRotatedPillarBlock BAMBOO_PLANKS_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO_PLANKS).strength(HARDNESS[2], RESISTANCE[0]), 1);

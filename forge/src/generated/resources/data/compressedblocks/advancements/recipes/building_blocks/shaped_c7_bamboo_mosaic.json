@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c7_bamboo_mosaic"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

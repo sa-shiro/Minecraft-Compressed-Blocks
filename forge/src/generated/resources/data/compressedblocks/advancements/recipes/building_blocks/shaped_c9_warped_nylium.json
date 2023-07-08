@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c9_warped_nylium"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

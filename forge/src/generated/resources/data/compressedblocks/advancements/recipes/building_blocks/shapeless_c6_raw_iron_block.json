@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_c6_raw_iron_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

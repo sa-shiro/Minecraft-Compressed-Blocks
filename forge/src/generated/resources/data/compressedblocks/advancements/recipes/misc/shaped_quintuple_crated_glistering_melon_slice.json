@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_quintuple_crated_glistering_melon_slice"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

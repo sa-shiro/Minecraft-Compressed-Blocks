@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_mega_crated_detector_rail"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

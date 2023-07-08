@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c1_stripped_birch_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_giga_crated_clay_ball"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -2489,6 +2489,6 @@
   "item.compressedblocks.sextuple_crated_totem_of_undying": "§6Sextuple Crate of Totem Of Undying",
   "item.compressedblocks.triple_crated_dragon_breath": "§6Triple Crate of Dragon Breath",
   "item.compressedblocks.triple_crated_totem_of_undying": "§6Triple Crate of Totem Of Undying",
-  "itemGroup.compressed_blocks": "Compressed Blocks",
-  "itemGroup.compressed_items": "Item Crates"
+  "itemGroup.compressedblocks.compressed_blocks": "Compressed Blocks",
+  "itemGroup.compressedblocks.compressed_items": "Item Crates"
 }

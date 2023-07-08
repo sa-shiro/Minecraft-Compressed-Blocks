@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c7_mud"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

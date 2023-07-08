@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_septuple_crated_lime_dye"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

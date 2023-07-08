@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_double_crated_cherry_sapling"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

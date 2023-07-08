@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c7_coal_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

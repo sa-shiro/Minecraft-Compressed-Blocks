@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c9_raw_copper_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

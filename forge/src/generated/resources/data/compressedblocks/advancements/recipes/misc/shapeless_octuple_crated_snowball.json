@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_octuple_crated_snowball"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

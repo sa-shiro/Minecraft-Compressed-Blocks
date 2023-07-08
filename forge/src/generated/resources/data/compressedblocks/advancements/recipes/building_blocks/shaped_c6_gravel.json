@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c6_gravel"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

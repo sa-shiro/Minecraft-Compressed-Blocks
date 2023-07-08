@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_quadruple_crated_rotten_flesh"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

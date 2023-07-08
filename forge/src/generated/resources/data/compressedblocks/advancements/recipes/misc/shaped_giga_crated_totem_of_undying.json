@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_giga_crated_totem_of_undying"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

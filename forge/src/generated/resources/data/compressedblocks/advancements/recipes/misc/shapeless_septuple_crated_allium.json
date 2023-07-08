@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_septuple_crated_allium"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

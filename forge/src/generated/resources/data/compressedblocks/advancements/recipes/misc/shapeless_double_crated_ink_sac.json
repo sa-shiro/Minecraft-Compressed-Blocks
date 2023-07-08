@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_double_crated_ink_sac"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

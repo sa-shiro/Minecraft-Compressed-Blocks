@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c1_lapis_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

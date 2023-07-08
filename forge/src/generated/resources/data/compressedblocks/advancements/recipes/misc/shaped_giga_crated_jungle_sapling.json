@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_giga_crated_jungle_sapling"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

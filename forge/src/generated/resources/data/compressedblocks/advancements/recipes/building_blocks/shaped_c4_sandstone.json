@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c4_sandstone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

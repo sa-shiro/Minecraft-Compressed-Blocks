@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_quadruple_crated_red_tulip"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

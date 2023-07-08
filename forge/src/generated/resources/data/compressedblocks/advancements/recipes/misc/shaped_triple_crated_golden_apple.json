@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_triple_crated_golden_apple"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_quadruple_crated_sweet_berries"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

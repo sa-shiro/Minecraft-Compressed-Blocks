@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_c7_blackstone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

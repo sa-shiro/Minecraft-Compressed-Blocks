@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_c4_raw_copper_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

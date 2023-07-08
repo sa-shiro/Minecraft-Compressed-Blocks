@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_c0_jungle_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

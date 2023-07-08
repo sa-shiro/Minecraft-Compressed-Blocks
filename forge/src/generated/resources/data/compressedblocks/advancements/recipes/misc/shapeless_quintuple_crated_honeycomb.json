@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_quintuple_crated_honeycomb"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

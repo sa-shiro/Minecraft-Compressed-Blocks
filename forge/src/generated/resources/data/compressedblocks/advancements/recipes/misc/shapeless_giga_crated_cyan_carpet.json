@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_giga_crated_cyan_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

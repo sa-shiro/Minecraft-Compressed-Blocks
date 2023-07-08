@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_triple_crated_lightning_rod"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

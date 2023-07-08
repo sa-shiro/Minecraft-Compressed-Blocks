@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_octuple_crated_repeater"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

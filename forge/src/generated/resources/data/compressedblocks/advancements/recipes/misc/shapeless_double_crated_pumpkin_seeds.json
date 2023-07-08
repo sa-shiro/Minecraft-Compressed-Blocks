@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_double_crated_pumpkin_seeds"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

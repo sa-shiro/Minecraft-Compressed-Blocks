@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_c9_stripped_spruce_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

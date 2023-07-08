@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_crated_cod"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

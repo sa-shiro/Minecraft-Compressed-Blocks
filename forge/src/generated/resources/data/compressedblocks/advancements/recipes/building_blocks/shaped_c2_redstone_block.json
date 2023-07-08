@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c2_redstone_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

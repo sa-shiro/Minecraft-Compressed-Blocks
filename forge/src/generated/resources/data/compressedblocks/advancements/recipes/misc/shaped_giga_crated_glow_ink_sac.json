@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_giga_crated_glow_ink_sac"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

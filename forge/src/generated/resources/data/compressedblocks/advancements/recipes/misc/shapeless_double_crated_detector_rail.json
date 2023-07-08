@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_double_crated_detector_rail"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

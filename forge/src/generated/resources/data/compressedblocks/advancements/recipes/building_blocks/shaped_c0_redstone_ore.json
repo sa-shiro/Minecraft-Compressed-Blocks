@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c0_redstone_ore"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

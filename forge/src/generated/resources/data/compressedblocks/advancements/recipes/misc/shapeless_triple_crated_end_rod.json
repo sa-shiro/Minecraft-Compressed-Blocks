@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_triple_crated_end_rod"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

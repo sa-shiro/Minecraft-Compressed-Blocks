@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_quadruple_crated_dark_oak_sapling"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

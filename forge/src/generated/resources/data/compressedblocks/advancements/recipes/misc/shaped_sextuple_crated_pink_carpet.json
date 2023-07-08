@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_sextuple_crated_pink_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

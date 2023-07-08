@@ -1271,6 +1271,16 @@ public class CrateList {
     public static final RotatedPillarBlock DARK_OAK_SAPLING_7 = new RotatedPillarBlock(p7);
     public static final RotatedPillarBlock DARK_OAK_SAPLING_8 = new RotatedPillarBlock(p8);
     public static final RotatedPillarBlock DARK_OAK_SAPLING_9 = new RotatedPillarBlock(p9);
+    public static final RotatedPillarBlock CHERRY_SAPLING_0 = new RotatedPillarBlock(p0);
+    public static final RotatedPillarBlock CHERRY_SAPLING_1 = new RotatedPillarBlock(p1);
+    public static final RotatedPillarBlock CHERRY_SAPLING_2 = new RotatedPillarBlock(p2);
+    public static final RotatedPillarBlock CHERRY_SAPLING_3 = new RotatedPillarBlock(p3);
+    public static final RotatedPillarBlock CHERRY_SAPLING_4 = new RotatedPillarBlock(p4);
+    public static final RotatedPillarBlock CHERRY_SAPLING_5 = new RotatedPillarBlock(p5);
+    public static final RotatedPillarBlock CHERRY_SAPLING_6 = new RotatedPillarBlock(p6);
+    public static final RotatedPillarBlock CHERRY_SAPLING_7 = new RotatedPillarBlock(p7);
+    public static final RotatedPillarBlock CHERRY_SAPLING_8 = new RotatedPillarBlock(p8);
+    public static final RotatedPillarBlock CHERRY_SAPLING_9 = new RotatedPillarBlock(p9);
     public static final RotatedPillarBlock MANGROVE_PROPAGULE_0 = new RotatedPillarBlock(p0);
     public static final RotatedPillarBlock MANGROVE_PROPAGULE_1 = new RotatedPillarBlock(p1);
     public static final RotatedPillarBlock MANGROVE_PROPAGULE_2 = new RotatedPillarBlock(p2);

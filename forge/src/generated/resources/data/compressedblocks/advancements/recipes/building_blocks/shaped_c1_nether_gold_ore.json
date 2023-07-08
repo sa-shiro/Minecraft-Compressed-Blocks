@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c1_nether_gold_ore"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

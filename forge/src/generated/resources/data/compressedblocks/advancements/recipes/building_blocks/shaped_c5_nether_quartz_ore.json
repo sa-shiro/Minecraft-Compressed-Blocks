@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c5_nether_quartz_ore"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

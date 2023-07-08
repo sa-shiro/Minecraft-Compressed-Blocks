@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_giga_crated_white_tulip"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

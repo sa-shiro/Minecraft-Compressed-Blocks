@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_quadruple_crated_peony"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

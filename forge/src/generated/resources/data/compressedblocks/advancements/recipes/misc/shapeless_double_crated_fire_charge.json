@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_double_crated_fire_charge"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

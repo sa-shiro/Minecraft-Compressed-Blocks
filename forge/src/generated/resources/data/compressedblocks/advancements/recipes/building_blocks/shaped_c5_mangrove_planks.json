@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c5_mangrove_planks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

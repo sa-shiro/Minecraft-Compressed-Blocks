@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_giga_crated_powered_rail"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

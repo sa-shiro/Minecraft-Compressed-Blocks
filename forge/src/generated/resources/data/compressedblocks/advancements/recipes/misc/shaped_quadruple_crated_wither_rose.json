@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_quadruple_crated_wither_rose"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

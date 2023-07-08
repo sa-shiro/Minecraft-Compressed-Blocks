@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_quadruple_crated_wheat_seeds"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

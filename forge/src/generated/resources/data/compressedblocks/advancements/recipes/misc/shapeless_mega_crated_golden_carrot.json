@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_mega_crated_golden_carrot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

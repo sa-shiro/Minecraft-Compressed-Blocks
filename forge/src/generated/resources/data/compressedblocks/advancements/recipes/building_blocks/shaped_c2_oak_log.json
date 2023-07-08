@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c2_oak_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

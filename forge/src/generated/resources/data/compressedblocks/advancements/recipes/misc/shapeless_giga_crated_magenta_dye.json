@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_giga_crated_magenta_dye"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

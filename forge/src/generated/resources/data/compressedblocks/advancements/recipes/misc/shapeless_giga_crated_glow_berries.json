@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_giga_crated_glow_berries"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

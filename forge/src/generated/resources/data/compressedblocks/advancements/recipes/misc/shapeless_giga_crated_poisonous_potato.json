@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_giga_crated_poisonous_potato"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

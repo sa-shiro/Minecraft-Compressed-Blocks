@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_c1_cobblestone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_c3_stripped_mangrove_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

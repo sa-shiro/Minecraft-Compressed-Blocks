@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_quintuple_crated_crimson_fungus"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c9_dark_oak_planks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

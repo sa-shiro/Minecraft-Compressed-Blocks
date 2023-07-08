@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c0_clay"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

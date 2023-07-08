@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c7_gold_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

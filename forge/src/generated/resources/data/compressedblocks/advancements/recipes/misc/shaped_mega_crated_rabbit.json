@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_mega_crated_rabbit"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

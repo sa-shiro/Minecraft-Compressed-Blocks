@@ -1268,6 +1268,16 @@ public class CBCratesRegister {
         registerCrate(c7 + "DARK_OAK_SAPLING".toLowerCase(), DARK_OAK_SAPLING_7);
         registerCrate(c8 + "DARK_OAK_SAPLING".toLowerCase(), DARK_OAK_SAPLING_8);
         registerCrate(c9 + "DARK_OAK_SAPLING".toLowerCase(), DARK_OAK_SAPLING_9);
+        registerCrate(c0 + "CHERRY_SAPLING".toLowerCase(), CHERRY_SAPLING_0);
+        registerCrate(c1 + "CHERRY_SAPLING".toLowerCase(), CHERRY_SAPLING_1);
+        registerCrate(c2 + "CHERRY_SAPLING".toLowerCase(), CHERRY_SAPLING_2);
+        registerCrate(c3 + "CHERRY_SAPLING".toLowerCase(), CHERRY_SAPLING_3);
+        registerCrate(c4 + "CHERRY_SAPLING".toLowerCase(), CHERRY_SAPLING_4);
+        registerCrate(c5 + "CHERRY_SAPLING".toLowerCase(), CHERRY_SAPLING_5);
+        registerCrate(c6 + "CHERRY_SAPLING".toLowerCase(), CHERRY_SAPLING_6);
+        registerCrate(c7 + "CHERRY_SAPLING".toLowerCase(), CHERRY_SAPLING_7);
+        registerCrate(c8 + "CHERRY_SAPLING".toLowerCase(), CHERRY_SAPLING_8);
+        registerCrate(c9 + "CHERRY_SAPLING".toLowerCase(), CHERRY_SAPLING_9);
         registerCrate(c0 + "MANGROVE_PROPAGULE".toLowerCase(), MANGROVE_PROPAGULE_0);
         registerCrate(c1 + "MANGROVE_PROPAGULE".toLowerCase(), MANGROVE_PROPAGULE_1);
         registerCrate(c2 + "MANGROVE_PROPAGULE".toLowerCase(), MANGROVE_PROPAGULE_2);

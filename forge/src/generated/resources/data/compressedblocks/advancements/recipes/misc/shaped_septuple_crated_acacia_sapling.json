@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_septuple_crated_acacia_sapling"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

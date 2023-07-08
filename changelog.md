@@ -1,4 +1,4 @@
-# v1.3.4 [ 1.19.3, 1.19.4 ]
+# v1.3.5 [ 1.19.4 ]
 
-* rebase master onto 1.19.4
-* add Fabric support for 1.19.3/4
+- addresses #36
+- upgraded Forge/Fabric to 1.19.4 (as its unlikely that 1.19.3 is being used)

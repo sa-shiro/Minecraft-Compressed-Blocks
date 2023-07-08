@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_triple_crated_turtle_egg"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

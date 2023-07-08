@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_c5_diorite"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

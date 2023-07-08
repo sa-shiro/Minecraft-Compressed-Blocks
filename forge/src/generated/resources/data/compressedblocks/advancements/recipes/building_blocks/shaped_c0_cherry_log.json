@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c0_cherry_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_double_crated_glowstone_dust"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

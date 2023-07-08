@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_septuple_crated_rabbit_foot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

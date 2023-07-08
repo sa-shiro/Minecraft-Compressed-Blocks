@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_giga_crated_sugar"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

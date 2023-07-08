@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_c8_stone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

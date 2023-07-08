@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_crated_pointed_dripstone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

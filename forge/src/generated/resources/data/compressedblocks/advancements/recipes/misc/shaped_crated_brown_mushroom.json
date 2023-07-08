@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_crated_brown_mushroom"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

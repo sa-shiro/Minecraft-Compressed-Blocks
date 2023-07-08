@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c7_andesite"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

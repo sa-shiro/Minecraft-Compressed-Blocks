@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c2_red_sand"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

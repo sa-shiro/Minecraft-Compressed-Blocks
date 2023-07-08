@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_giga_crated_milk_bucket"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

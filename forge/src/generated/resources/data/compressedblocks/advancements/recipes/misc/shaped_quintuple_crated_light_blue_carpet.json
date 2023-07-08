@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_quintuple_crated_light_blue_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

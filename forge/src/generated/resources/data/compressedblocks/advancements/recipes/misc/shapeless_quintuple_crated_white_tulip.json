@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_quintuple_crated_white_tulip"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

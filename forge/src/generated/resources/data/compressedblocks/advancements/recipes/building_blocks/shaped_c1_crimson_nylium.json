@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c1_crimson_nylium"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

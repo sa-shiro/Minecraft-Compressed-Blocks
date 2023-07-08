@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_quintuple_crated_poisonous_potato"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

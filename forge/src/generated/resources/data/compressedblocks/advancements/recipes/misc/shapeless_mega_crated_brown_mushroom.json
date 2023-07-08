@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_mega_crated_brown_mushroom"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

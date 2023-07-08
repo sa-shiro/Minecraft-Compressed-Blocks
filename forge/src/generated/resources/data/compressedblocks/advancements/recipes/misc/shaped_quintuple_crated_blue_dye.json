@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_quintuple_crated_blue_dye"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

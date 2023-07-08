@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_quadruple_crated_gray_dye"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

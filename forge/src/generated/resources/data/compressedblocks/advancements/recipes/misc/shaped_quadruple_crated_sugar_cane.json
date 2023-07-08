@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_quadruple_crated_sugar_cane"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

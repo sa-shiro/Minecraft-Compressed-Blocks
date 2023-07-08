@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_c1_gravel"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

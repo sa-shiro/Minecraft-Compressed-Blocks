@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c8_soul_sand"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

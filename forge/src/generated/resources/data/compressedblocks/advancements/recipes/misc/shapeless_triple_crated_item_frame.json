@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_triple_crated_item_frame"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_double_crated_red_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

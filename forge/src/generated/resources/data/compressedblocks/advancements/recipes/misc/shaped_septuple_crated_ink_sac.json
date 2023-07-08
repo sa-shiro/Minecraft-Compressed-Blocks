@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_septuple_crated_ink_sac"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

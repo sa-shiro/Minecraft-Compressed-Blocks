@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_septuple_crated_activator_rail"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

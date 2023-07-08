@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_crated_light_gray_dye"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

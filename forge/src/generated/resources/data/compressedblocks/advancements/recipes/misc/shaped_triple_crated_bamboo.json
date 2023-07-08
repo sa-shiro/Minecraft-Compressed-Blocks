@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_triple_crated_bamboo"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

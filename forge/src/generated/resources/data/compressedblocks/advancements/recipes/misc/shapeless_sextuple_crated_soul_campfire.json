@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_sextuple_crated_soul_campfire"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

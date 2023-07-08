@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_giga_crated_bone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

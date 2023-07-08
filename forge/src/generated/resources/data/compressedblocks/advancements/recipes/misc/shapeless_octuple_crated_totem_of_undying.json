@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_octuple_crated_totem_of_undying"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_octuple_crated_pink_tulip"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c0_coal_ore"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -626,6 +626,17 @@ public class CBBlocksRegister {
         registerBlock("c7_" + "MANGROVE_LOG", MANGROVE_LOG_7);
         registerBlock("c8_" + "MANGROVE_LOG", MANGROVE_LOG_8);
         registerBlock("c9_" + "MANGROVE_LOG", MANGROVE_LOG_9);
+        // CHERRY_LOG
+        registerBlock("c0_" + "CHERRY_LOG", CHERRY_LOG_0);
+        registerBlock("c1_" + "CHERRY_LOG", CHERRY_LOG_1);
+        registerBlock("c2_" + "CHERRY_LOG", CHERRY_LOG_2);
+        registerBlock("c3_" + "CHERRY_LOG", CHERRY_LOG_3);
+        registerBlock("c4_" + "CHERRY_LOG", CHERRY_LOG_4);
+        registerBlock("c5_" + "CHERRY_LOG", CHERRY_LOG_5);
+        registerBlock("c6_" + "CHERRY_LOG", CHERRY_LOG_6);
+        registerBlock("c7_" + "CHERRY_LOG", CHERRY_LOG_7);
+        registerBlock("c8_" + "CHERRY_LOG", CHERRY_LOG_8);
+        registerBlock("c9_" + "CHERRY_LOG", CHERRY_LOG_9);
         // STRIPPED_OAK_LOG
         registerBlock("c0_" + "STRIPPED_OAK_LOG", STRIPPED_OAK_LOG_0);
         registerBlock("c1_" + "STRIPPED_OAK_LOG", STRIPPED_OAK_LOG_1);
@@ -703,6 +714,17 @@ public class CBBlocksRegister {
         registerBlock("c7_" + "STRIPPED_MANGROVE_LOG", STRIPPED_MANGROVE_LOG_7);
         registerBlock("c8_" + "STRIPPED_MANGROVE_LOG", STRIPPED_MANGROVE_LOG_8);
         registerBlock("c9_" + "STRIPPED_MANGROVE_LOG", STRIPPED_MANGROVE_LOG_9);
+        // STRIPPED_CHERRY_LOG
+        registerBlock("c0_" + "STRIPPED_CHERRY_LOG", STRIPPED_CHERRY_LOG_0);
+        registerBlock("c1_" + "STRIPPED_CHERRY_LOG", STRIPPED_CHERRY_LOG_1);
+        registerBlock("c2_" + "STRIPPED_CHERRY_LOG", STRIPPED_CHERRY_LOG_2);
+        registerBlock("c3_" + "STRIPPED_CHERRY_LOG", STRIPPED_CHERRY_LOG_3);
+        registerBlock("c4_" + "STRIPPED_CHERRY_LOG", STRIPPED_CHERRY_LOG_4);
+        registerBlock("c5_" + "STRIPPED_CHERRY_LOG", STRIPPED_CHERRY_LOG_5);
+        registerBlock("c6_" + "STRIPPED_CHERRY_LOG", STRIPPED_CHERRY_LOG_6);
+        registerBlock("c7_" + "STRIPPED_CHERRY_LOG", STRIPPED_CHERRY_LOG_7);
+        registerBlock("c8_" + "STRIPPED_CHERRY_LOG", STRIPPED_CHERRY_LOG_8);
+        registerBlock("c9_" + "STRIPPED_CHERRY_LOG", STRIPPED_CHERRY_LOG_9);
         // OAK_PLANKS
         registerBlock("c0_" + "OAK_PLANKS", OAK_PLANKS_0);
         registerBlock("c1_" + "OAK_PLANKS", OAK_PLANKS_1);
@@ -780,6 +802,17 @@ public class CBBlocksRegister {
         registerBlock("c7_" + "MANGROVE_PLANKS", MANGROVE_PLANKS_7);
         registerBlock("c8_" + "MANGROVE_PLANKS", MANGROVE_PLANKS_8);
         registerBlock("c9_" + "MANGROVE_PLANKS", MANGROVE_PLANKS_9);
+        // MANGROVE_PLANKS
+        registerBlock("c0_" + "CHERRY_PLANKS", CHERRY_PLANKS_0);
+        registerBlock("c1_" + "CHERRY_PLANKS", CHERRY_PLANKS_1);
+        registerBlock("c2_" + "CHERRY_PLANKS", CHERRY_PLANKS_2);
+        registerBlock("c3_" + "CHERRY_PLANKS", CHERRY_PLANKS_3);
+        registerBlock("c4_" + "CHERRY_PLANKS", CHERRY_PLANKS_4);
+        registerBlock("c5_" + "CHERRY_PLANKS", CHERRY_PLANKS_5);
+        registerBlock("c6_" + "CHERRY_PLANKS", CHERRY_PLANKS_6);
+        registerBlock("c7_" + "CHERRY_PLANKS", CHERRY_PLANKS_7);
+        registerBlock("c8_" + "CHERRY_PLANKS", CHERRY_PLANKS_8);
+        registerBlock("c9_" + "CHERRY_PLANKS", CHERRY_PLANKS_9);
         // BAMBOO_PLANKS
         registerBlock("c0_" + "BAMBOO_PLANKS", BAMBOO_PLANKS_0);
         registerBlock("c1_" + "BAMBOO_PLANKS", BAMBOO_PLANKS_1);

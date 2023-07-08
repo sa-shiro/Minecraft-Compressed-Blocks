@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_c1_deepslate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

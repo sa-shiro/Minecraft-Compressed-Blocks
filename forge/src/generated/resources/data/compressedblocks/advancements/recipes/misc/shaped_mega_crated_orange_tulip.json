@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shaped_mega_crated_orange_tulip"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

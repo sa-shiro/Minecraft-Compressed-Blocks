@@ -1,7 +1,5 @@
 package net.sashiro.compressedblocks.event;
 
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.event.CreativeModeTabEvent;

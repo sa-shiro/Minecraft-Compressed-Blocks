@@ -30,6 +30,5 @@
     "recipes": [
       "compressedblocks:shapeless_c4_mud"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
