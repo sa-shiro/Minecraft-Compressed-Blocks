@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": {
       "item": "compressedblocks:mega_crated_orange_tulip"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:giga_crated_orange_tulip"
-  },
-  "show_notification": true
+  }
 }

@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c4_lapis_block"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c5_lapis_block"
-  },
-  "show_notification": true
+  }
 }

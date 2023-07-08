@@ -10,7 +10,8 @@ import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.item.ItemGroups;
 
 import static net.sashiro.compressedblocks.block.BlockList.*;
-import static net.sashiro.compressedblocks.event.CBRegistryEvent.*;
+import static net.sashiro.compressedblocks.event.CBRegistryEvent.BLOCKS;
+import static net.sashiro.compressedblocks.event.CBRegistryEvent.ITEMS;
 
 /**
  * Forge doesn't let us use Vanilla Registries which results in duplicate code.

@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c8_spruce_planks"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c9_spruce_planks"
-  },
-  "show_notification": true
+  }
 }

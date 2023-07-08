@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c0_granite"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c1_granite"
-  },
-  "show_notification": true
+  }
 }

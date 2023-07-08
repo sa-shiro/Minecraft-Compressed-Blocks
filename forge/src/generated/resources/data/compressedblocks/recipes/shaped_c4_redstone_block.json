@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c3_redstone_block"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c4_redstone_block"
-  },
-  "show_notification": true
+  }
 }

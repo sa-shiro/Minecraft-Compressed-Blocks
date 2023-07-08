@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:rose_bush"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:crated_rose_bush"
-  },
-  "show_notification": true
+  }
 }

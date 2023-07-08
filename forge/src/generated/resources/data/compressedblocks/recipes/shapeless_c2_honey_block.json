@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "building",
   "ingredients": [
     {
       "item": "compressedblocks:c2_honey_block"

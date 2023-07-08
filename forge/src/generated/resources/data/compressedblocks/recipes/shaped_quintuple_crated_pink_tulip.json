@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": {
       "item": "compressedblocks:quadruple_crated_pink_tulip"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:quintuple_crated_pink_tulip"
-  },
-  "show_notification": true
+  }
 }

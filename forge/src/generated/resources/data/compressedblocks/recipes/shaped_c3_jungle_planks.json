@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c2_jungle_planks"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c3_jungle_planks"
-  },
-  "show_notification": true
+  }
 }

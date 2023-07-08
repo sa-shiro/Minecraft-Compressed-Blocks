@@ -13,7 +13,7 @@ import static net.sashiro.compressedblocks.block.CrateList.APPLE_0;
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ItemGroups {
     @MethodsReturnNonnullByDefault
-    public static final CreativeModeTab compressedBlockGroup = new CreativeModeTab("compressed_blocks") {
+    public static final CreativeModeTab compressedBlockGroup = new CreativeModeTab("compressedblocks.compressed_blocks") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(STONE_0);
@@ -26,7 +26,7 @@ public class ItemGroups {
     };
     
     @MethodsReturnNonnullByDefault
-    public static final CreativeModeTab compressedItemGroup = new CreativeModeTab("compressed_items") {
+    public static final CreativeModeTab compressedItemGroup = new CreativeModeTab("compressedblocks.compressed_items") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(APPLE_0);

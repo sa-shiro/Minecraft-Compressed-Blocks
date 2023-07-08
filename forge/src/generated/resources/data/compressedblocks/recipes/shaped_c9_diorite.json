@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c8_diorite"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c9_diorite"
-  },
-  "show_notification": true
+  }
 }

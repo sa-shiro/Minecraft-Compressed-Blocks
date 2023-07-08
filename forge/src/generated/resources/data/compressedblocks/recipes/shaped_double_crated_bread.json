@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": {
       "item": "compressedblocks:crated_bread"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:double_crated_bread"
-  },
-  "show_notification": true
+  }
 }

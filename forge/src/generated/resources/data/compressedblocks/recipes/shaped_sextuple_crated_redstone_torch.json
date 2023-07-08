@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": {
       "item": "compressedblocks:quintuple_crated_redstone_torch"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:sextuple_crated_redstone_torch"
-  },
-  "show_notification": true
+  }
 }

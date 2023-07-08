@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": {
       "item": "compressedblocks:quadruple_crated_totem_of_undying"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:quintuple_crated_totem_of_undying"
-  },
-  "show_notification": true
+  }
 }

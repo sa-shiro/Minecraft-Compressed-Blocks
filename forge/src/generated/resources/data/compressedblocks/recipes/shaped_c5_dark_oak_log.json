@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c4_dark_oak_log"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c5_dark_oak_log"
-  },
-  "show_notification": true
+  }
 }

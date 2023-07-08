@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "building",
   "ingredients": [
     {
       "item": "compressedblocks:c4_jungle_planks"

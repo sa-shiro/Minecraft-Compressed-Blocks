@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:stripped_birch_log"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c0_stripped_birch_log"
-  },
-  "show_notification": true
+  }
 }

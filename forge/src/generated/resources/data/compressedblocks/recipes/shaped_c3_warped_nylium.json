@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c2_warped_nylium"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c3_warped_nylium"
-  },
-  "show_notification": true
+  }
 }

@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": {
       "item": "compressedblocks:sextuple_crated_nether_star"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:septuple_crated_nether_star"
-  },
-  "show_notification": true
+  }
 }

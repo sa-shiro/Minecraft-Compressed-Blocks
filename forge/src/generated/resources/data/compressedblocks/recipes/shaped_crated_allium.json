@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:allium"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:crated_allium"
-  },
-  "show_notification": true
+  }
 }

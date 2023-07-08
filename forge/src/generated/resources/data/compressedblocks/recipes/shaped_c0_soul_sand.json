@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:soul_sand"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c0_soul_sand"
-  },
-  "show_notification": true
+  }
 }

@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c7_stripped_acacia_log"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c8_stripped_acacia_log"
-  },
-  "show_notification": true
+  }
 }

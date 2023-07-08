@@ -92,7 +92,7 @@ processResources {
     from project(":common").sourceSets.main.resources
 
     // Doing this here instead of the parent build.gradle fixes `mods.toml` not getting processed properly, for some reason
-    filesMatching(['META-INF/mods.toml']) {
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
         expand project.properties
     }
 }

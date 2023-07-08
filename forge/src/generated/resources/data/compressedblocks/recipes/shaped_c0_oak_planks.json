@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:oak_planks"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c0_oak_planks"
-  },
-  "show_notification": true
+  }
 }

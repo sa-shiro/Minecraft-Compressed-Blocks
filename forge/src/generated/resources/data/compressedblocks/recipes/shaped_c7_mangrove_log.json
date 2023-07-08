@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
   "key": {
     "#": {
       "item": "compressedblocks:c6_mangrove_log"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "compressedblocks:c7_mangrove_log"
-  },
-  "show_notification": true
+  }
 }
