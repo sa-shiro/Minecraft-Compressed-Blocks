@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_powered_rail"
+    }
+  ],
+  "result": {
+    "item": "minecraft:powered_rail",
+    "count": 9
+  }
+}

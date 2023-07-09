@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c9_oak_planks"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:c8_oak_planks",
+    "count": 9
+  }
+}

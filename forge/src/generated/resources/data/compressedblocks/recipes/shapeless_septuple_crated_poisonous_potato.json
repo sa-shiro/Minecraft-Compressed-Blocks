@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:septuple_crated_poisonous_potato"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:sextuple_crated_poisonous_potato",
+    "count": 9
+  }
+}

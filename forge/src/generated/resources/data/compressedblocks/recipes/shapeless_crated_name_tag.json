@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_name_tag"
+    }
+  ],
+  "result": {
+    "item": "minecraft:name_tag",
+    "count": 9
+  }
+}

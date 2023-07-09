@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_yellow_dye"
+    }
+  ],
+  "result": {
+    "item": "minecraft:yellow_dye",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quintuple_crated_fire_charge"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:quadruple_crated_fire_charge",
+    "count": 9
+  }
+}

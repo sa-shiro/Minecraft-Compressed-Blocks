@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:triple_crated_milk_bucket"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:double_crated_milk_bucket",
+    "count": 9
+  }
+}

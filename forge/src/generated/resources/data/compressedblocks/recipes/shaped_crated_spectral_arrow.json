@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:spectral_arrow"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:crated_spectral_arrow"
+  }
+}

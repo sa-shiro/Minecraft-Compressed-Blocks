@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_turtle_egg"
+    }
+  ],
+  "result": {
+    "item": "minecraft:turtle_egg",
+    "count": 9
+  }
+}

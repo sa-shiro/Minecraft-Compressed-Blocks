@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:mega_crated_chorus_fruit"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:giga_crated_chorus_fruit"
+  }
+}

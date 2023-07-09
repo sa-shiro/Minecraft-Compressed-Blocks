@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quintuple_crated_shulker_shell"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:quadruple_crated_shulker_shell",
+    "count": 9
+  }
+}

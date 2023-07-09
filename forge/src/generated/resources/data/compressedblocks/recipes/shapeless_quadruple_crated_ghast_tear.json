@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quadruple_crated_ghast_tear"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:triple_crated_ghast_tear",
+    "count": 9
+  }
+}

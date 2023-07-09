@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compressedblocks:crated_blue_orchid"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:double_crated_blue_orchid"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:quadruple_crated_tropical_fish"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:triple_crated_tropical_fish",
+    "count": 9
+  }
+}

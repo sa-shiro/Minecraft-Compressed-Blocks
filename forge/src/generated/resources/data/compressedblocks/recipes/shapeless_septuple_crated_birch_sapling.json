@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:septuple_crated_birch_sapling"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:sextuple_crated_birch_sapling",
+    "count": 9
+  }
+}

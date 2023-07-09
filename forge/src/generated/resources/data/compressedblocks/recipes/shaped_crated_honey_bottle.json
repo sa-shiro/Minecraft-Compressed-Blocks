@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:honey_bottle"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:crated_honey_bottle"
+  }
+}

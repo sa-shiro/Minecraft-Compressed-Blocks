@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:double_crated_redstone_torch"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:crated_redstone_torch",
+    "count": 9
+  }
+}

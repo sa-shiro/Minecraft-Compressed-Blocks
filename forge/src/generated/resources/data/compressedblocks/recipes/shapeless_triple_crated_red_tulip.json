@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:triple_crated_red_tulip"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:double_crated_red_tulip",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:triple_crated_glowstone_dust"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:double_crated_glowstone_dust",
+    "count": 9
+  }
+}

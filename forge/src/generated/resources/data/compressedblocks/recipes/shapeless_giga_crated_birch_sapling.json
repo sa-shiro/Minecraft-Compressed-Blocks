@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:giga_crated_birch_sapling"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:mega_crated_birch_sapling",
+    "count": 9
+  }
+}

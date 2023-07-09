@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_lead"
+    }
+  ],
+  "result": {
+    "item": "minecraft:lead",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:double_crated_azure_bluet"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:crated_azure_bluet",
+    "count": 9
+  }
+}

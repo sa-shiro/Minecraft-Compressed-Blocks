@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_anvil"
+    }
+  ],
+  "result": {
+    "item": "minecraft:anvil",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:giga_crated_yellow_carpet"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:mega_crated_yellow_carpet",
+    "count": 9
+  }
+}
