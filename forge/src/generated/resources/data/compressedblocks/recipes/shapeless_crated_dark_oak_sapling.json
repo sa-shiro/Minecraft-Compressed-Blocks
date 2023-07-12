@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_dark_oak_sapling"
+    }
+  ],
+  "result": {
+    "item": "minecraft:dark_oak_sapling",
+    "count": 9
+  }
+}

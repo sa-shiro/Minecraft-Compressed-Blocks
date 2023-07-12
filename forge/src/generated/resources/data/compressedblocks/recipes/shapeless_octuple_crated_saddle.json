@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:octuple_crated_saddle"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:septuple_crated_saddle",
+    "count": 9
+  }
+}

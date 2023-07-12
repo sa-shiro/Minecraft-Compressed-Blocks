@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_soul_torch"
+    }
+  ],
+  "result": {
+    "item": "minecraft:soul_torch",
+    "count": 9
+  }
+}

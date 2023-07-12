@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:magenta_dye"
+    }
+  },
+  "result": {
+    "item": "compressedblocks:crated_magenta_dye"
+  }
+}

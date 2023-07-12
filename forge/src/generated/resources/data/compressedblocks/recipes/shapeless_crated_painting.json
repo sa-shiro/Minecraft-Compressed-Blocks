@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_painting"
+    }
+  ],
+  "result": {
+    "item": "minecraft:painting",
+    "count": 9
+  }
+}

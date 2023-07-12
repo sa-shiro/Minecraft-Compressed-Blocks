@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:giga_crated_detector_rail"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:mega_crated_detector_rail",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:double_crated_poppy"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:crated_poppy",
+    "count": 9
+  }
+}

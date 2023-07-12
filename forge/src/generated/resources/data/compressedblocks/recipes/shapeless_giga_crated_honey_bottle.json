@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:giga_crated_honey_bottle"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:mega_crated_honey_bottle",
+    "count": 9
+  }
+}

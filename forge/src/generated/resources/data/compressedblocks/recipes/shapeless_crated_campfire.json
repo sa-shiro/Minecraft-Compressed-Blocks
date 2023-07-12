@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_campfire"
+    }
+  ],
+  "result": {
+    "item": "minecraft:campfire",
+    "count": 9
+  }
+}

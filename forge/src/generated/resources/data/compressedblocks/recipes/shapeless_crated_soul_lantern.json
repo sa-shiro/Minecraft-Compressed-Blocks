@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_soul_lantern"
+    }
+  ],
+  "result": {
+    "item": "minecraft:soul_lantern",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:giga_crated_book"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:mega_crated_book",
+    "count": 9
+  }
+}

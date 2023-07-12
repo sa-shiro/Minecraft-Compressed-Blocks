@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:octuple_crated_pufferfish"
+    }
+  ],
+  "result": {
+    "item": "compressedblocks:septuple_crated_pufferfish",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_peony"
+    }
+  ],
+  "result": {
+    "item": "minecraft:peony",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "compressedblocks:crated_pink_carpet"
+    }
+  ],
+  "result": {
+    "item": "minecraft:pink_carpet",
+    "count": 9
+  }
+}
