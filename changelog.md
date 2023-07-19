@@ -1,12 +1,15 @@
-# v1.3.4 [ 1.20 ]
+# v1.3.6 [ 1.20 ]
 
+## General
+
+temporarily removed crated bamboo due to recipe conflict
+
+---
 
 ## Fabric
-* added support for Fabric >= 1.20
+
 ---
 
 ## Forge
-* added missing blocks
-* changed render type for crates (fixes missing break animation)
-* reimplemented Forge registration
+
 ---
