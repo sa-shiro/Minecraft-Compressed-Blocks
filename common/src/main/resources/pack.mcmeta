@@ -3,6 +3,6 @@
         "description": {
             "text": "${mod_name} resources"
         },
-        "pack_format": ${pack_version}
+        "pack_format": 15
     }
 }
