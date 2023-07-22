@@ -4,10 +4,10 @@
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
-run-name: "v1.3.6 - 1.20"
+run-name: "v1.3.7 - 1.20.1"
 
 name: build
-on: push
+on: [ push, pull_request ]
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
       matrix:
         # Use these Java versions
         java: [ 17 ] # Current Java LTS & minimum supported by Minecraft
-        os: [ ubuntu-latest, windows-latest ]  # and run on both Linux and Windows
+        os: [ windows-latest ]  # and run on both Linux and Windows
     runs-on: ${{ matrix.os }}
     steps:
       - name: checkout repository

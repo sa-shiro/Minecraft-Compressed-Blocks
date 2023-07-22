@@ -1,8 +1,6 @@
-# v1.3.6 [ 1.20 ]
+# v1.3.7 [ 1.20.1 ]
 
 ## General
-
-temporarily removed crated bamboo due to recipe conflict
 
 ---
 
@@ -11,5 +9,8 @@ temporarily removed crated bamboo due to recipe conflict
 ---
 
 ## Forge
+
+- add client side resource generation
+- todo: add configurable registration for blocks and items
 
 ---
