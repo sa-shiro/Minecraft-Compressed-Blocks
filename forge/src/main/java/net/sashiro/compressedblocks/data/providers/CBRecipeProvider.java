@@ -7,6 +7,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.sashiro.compressedblocks.Constants;
+import net.sashiro.compressedblocks.config.CBConfig;
+import net.sashiro.compressedblocks.registry.CBBlockRegister;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
@@ -29,8 +31,10 @@ public class CBRecipeProvider extends RecipeProvider {
             String blockName = blocks.get(i).getDescriptionId().replace("block.compressedblocks.", "");
             if (blockName.contains("c0_")) {
                 String cbBlockName = blockName.replace("c0_", "");
+                
                 for (Block mcBlock : ForgeRegistries.BLOCKS) {
-                    String mcBlockName = mcBlock.getDescriptionId().replace("block.minecraft.", "");
+                    String mcBlockName = mcBlock.toString().replace("Block", "").replace("{", "").replace("}", "");
+                    mcBlockName = CBBlockRegister.resolve(mcBlockName).getPath();
                     if (cbBlockName.equals(mcBlockName)) {
                         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, blocks.get(i)) // result
                                 .define('#', mcBlock) // ingredient

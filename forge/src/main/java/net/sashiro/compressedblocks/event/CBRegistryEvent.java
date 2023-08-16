@@ -77,7 +77,6 @@ public class CBRegistryEvent {
     private static void registerResources(AddPackFindersEvent event) {
         if (!FINISHED) {
             Path assets = Path.of(FMLPaths.GAMEDIR.get().toString(), ".cache", "compressedblocks");
-            CachedOutput cache = CachedOutput.NO_CACHE;
             
             try {
                 Files.createDirectories(assets);

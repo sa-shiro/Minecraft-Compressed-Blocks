@@ -1,12 +1,19 @@
 package net.sashiro.compressedblocks.registry;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.RegisterEvent;
 import net.sashiro.compressedblocks.Constants;
+import net.sashiro.compressedblocks.block.CompressedBlock;
+import net.sashiro.compressedblocks.config.CBConfig;
 
+import static net.sashiro.compressedblocks.Constants.HARDNESS;
+import static net.sashiro.compressedblocks.Constants.RESISTANCE;
 import static net.sashiro.compressedblocks.block.BlockList.*;
 import static net.sashiro.compressedblocks.event.CBRegistryEvent.*;
 
@@ -21,9 +28,39 @@ public class CBBlockRegister {
         Constants.BLOCKS.add(block);
     }
     
+    public static ResourceLocation resolve(String blockName) {
+        String[] resLoc = blockName.split(":");
+        return new ResourceLocation(resLoc[0], resLoc[1]);
+    }
+    
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void register(RegisterEvent event) {
         if (event.getRegistryKey() == BLOCKS.getRegistryKey()) {
+            for (String name : CBConfig.DEFAULT_BLOCKS) {
+                CompressedBlock.CustomDefaultBlock B0 = new CompressedBlock.CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(HARDNESS[0], RESISTANCE[0]), 0);
+                CompressedBlock.CustomDefaultBlock B1 = new CompressedBlock.CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(HARDNESS[1], RESISTANCE[1]), 1);
+                CompressedBlock.CustomDefaultBlock B2 = new CompressedBlock.CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(HARDNESS[2], RESISTANCE[2]), 2);
+                CompressedBlock.CustomDefaultBlock B3 = new CompressedBlock.CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(HARDNESS[3], RESISTANCE[3]), 3);
+                CompressedBlock.CustomDefaultBlock B4 = new CompressedBlock.CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(HARDNESS[4], RESISTANCE[4]), 4);
+                CompressedBlock.CustomDefaultBlock B5 = new CompressedBlock.CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(HARDNESS[5], RESISTANCE[5]), 5);
+                CompressedBlock.CustomDefaultBlock B6 = new CompressedBlock.CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(HARDNESS[6], RESISTANCE[6]), 6);
+                CompressedBlock.CustomDefaultBlock B7 = new CompressedBlock.CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(HARDNESS[7], RESISTANCE[7]), 7);
+                CompressedBlock.CustomDefaultBlock B8 = new CompressedBlock.CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(HARDNESS[8], RESISTANCE[8]), 8);
+                CompressedBlock.CustomDefaultBlock B9 = new CompressedBlock.CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(HARDNESS[9], RESISTANCE[9]), 9);
+                
+                registerBlock("c0_" + resolve(name).getPath(), B0);
+                registerBlock("c1_" + resolve(name).getPath(), B1);
+                registerBlock("c2_" + resolve(name).getPath(), B2);
+                registerBlock("c3_" + resolve(name).getPath(), B3);
+                registerBlock("c4_" + resolve(name).getPath(), B4);
+                registerBlock("c5_" + resolve(name).getPath(), B5);
+                registerBlock("c6_" + resolve(name).getPath(), B6);
+                registerBlock("c7_" + resolve(name).getPath(), B7);
+                registerBlock("c8_" + resolve(name).getPath(), B8);
+                registerBlock("c9_" + resolve(name).getPath(), B9);
+            }
+            
+            /*
             // Dirt
             registerBlock("c0_" + "DIRT", DIRT_0);
             registerBlock("c1_" + "DIRT", DIRT_1);
@@ -838,6 +875,7 @@ public class CBBlockRegister {
             registerBlock("c7_" + "BAMBOO_MOSAIC", BAMBOO_MOSAIC_7);
             registerBlock("c8_" + "BAMBOO_MOSAIC", BAMBOO_MOSAIC_8);
             registerBlock("c9_" + "BAMBOO_MOSAIC", BAMBOO_MOSAIC_9);
+             */
         }
     }
 }

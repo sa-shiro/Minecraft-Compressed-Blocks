@@ -9,7 +9,9 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
+import net.sashiro.compressedblocks.config.CBConfig;
 import net.sashiro.compressedblocks.event.CBRegistryEvent;
+import net.sashiro.compressedblocks.registry.CBBlockRegister;
 
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
@@ -19,107 +21,61 @@ public class CBBlockStateProvider extends BlockStateProvider {
         super(packOutput, MOD_ID, exFileHelper);
     }
     
+    private void makeBlock(RegistryObject<Block> block, ResourceLocation texture) {
+        ModelFile.UncheckedModelFile blockBlock = new ModelFile.UncheckedModelFile("block/block");
+        simpleBlock(
+                block.get(), models().cubeAll(
+                                block.get().getDescriptionId().replace("block.compressedblocks.", ""),
+                                texture
+                        )
+                        .texture("particle", texture)
+                        .texture("overlay", getCompressionOverlay(block.get().getDescriptionId()))
+                        .parent(blockBlock)
+                        .renderType("translucent")
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).texture("#all").end()
+                        .face(Direction.UP).texture("#all").end()
+                        .face(Direction.NORTH).texture("#all").end()
+                        .face(Direction.SOUTH).texture("#all").end()
+                        .face(Direction.EAST).texture("#all").end()
+                        .face(Direction.WEST).texture("#all").end()
+                        .end()
+                        .element()
+                        .from(0, 0, 0)
+                        .to(16, 16, 16)
+                        .face(Direction.DOWN).texture("#overlay").end()
+                        .face(Direction.UP).texture("#overlay").end()
+                        .face(Direction.NORTH).texture("#overlay").end()
+                        .face(Direction.SOUTH).texture("#overlay").end()
+                        .face(Direction.EAST).texture("#overlay").end()
+                        .face(Direction.WEST).texture("#overlay").end()
+                        .end()
+        );
+    }
+    
     @Override
     protected void registerStatesAndModels() {
         ModelFile.UncheckedModelFile blockBlock = new ModelFile.UncheckedModelFile("block/block");
         ModelFile.UncheckedModelFile cubeColumn = new ModelFile.UncheckedModelFile("block/cube_column");
         ModelFile.UncheckedModelFile cubeColumnHorizontal = new ModelFile.UncheckedModelFile("block/cube_column_horizontal");
         
+        
         for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
-            if (block.get().getDescriptionId().contains("honey_block") || block.get().getDescriptionId().contains("basalt"))
-                continue;
-            if (block.get().getDescriptionId().contains("_log")) {
-                RotatedPillarBlock block1 = (RotatedPillarBlock) block.get();
-                
-                axisBlock(
-                        block1, models().cubeColumn(
-                                        block.get().getDescriptionId().replace("block.compressedblocks.", ""),
-                                        getActualResourceLocation(block.get().getDescriptionId()), new ResourceLocation("minecraft", getCleanName(block.get().getDescriptionId()) + "_top")
-                                )
-                                .texture("particle", getActualResourceLocation(block.get().getDescriptionId()))
-                                .texture("overlay", getCompressionOverlay(block.get().getDescriptionId()))
-                                .parent(cubeColumn)
-                                .renderType("translucent")
-                                .element()
-                                .from(0, 0, 0)
-                                .to(16, 16, 16)
-                                .face(Direction.DOWN).texture("#end").end()
-                                .face(Direction.UP).texture("#end").end()
-                                .face(Direction.NORTH).texture("#side").end()
-                                .face(Direction.SOUTH).texture("#side").end()
-                                .face(Direction.EAST).texture("#side").end()
-                                .face(Direction.WEST).texture("#side").end()
-                                .end()
-                                .element()
-                                .from(0, 0, 0)
-                                .to(16, 16, 16)
-                                .face(Direction.DOWN).texture("#overlay").end()
-                                .face(Direction.UP).texture("#overlay").end()
-                                .face(Direction.NORTH).texture("#overlay").end()
-                                .face(Direction.SOUTH).texture("#overlay").end()
-                                .face(Direction.EAST).texture("#overlay").end()
-                                .face(Direction.WEST).texture("#overlay").end()
-                                .end()
-                        , models().cubeColumnHorizontal(
-                                        block.get().getDescriptionId().replace("block.compressedblocks.", "") + "_horizontal",
-                                        getActualResourceLocation(block.get().getDescriptionId()), new ResourceLocation("minecraft", getCleanName(block.get().getDescriptionId()) + "_top")
-                                )
-                                .texture("particle", getActualResourceLocation(block.get().getDescriptionId()))
-                                .texture("overlay", getCompressionOverlay(block.get().getDescriptionId()))
-                                .parent(cubeColumnHorizontal)
-                                .renderType("translucent")
-                                .element()
-                                .from(0, 0, 0)
-                                .to(16, 16, 16)
-                                .face(Direction.DOWN).texture("#end").end()
-                                .face(Direction.UP).texture("#end").end()
-                                .face(Direction.NORTH).texture("#side").end()
-                                .face(Direction.SOUTH).texture("#side").end()
-                                .face(Direction.EAST).texture("#side").end()
-                                .face(Direction.WEST).texture("#side").end()
-                                .end()
-                                .element()
-                                .from(0, 0, 0)
-                                .to(16, 16, 16)
-                                .face(Direction.DOWN).texture("#overlay").end()
-                                .face(Direction.UP).texture("#overlay").end()
-                                .face(Direction.NORTH).texture("#overlay").end()
-                                .face(Direction.SOUTH).texture("#overlay").end()
-                                .face(Direction.EAST).texture("#overlay").end()
-                                .face(Direction.WEST).texture("#overlay").end()
-                                .end()
-                );
-            } else {
-                simpleBlock(
-                        block.get(), models().cubeAll(
-                                        block.get().getDescriptionId().replace("block.compressedblocks.", ""),
-                                        getActualResourceLocation(block.get().getDescriptionId())
-                                )
-                                .texture("particle", getActualResourceLocation(block.get().getDescriptionId()))
-                                .texture("overlay", getCompressionOverlay(block.get().getDescriptionId()))
-                                .parent(blockBlock)
-                                .renderType("translucent")
-                                .element()
-                                .from(0, 0, 0)
-                                .to(16, 16, 16)
-                                .face(Direction.DOWN).texture("#all").end()
-                                .face(Direction.UP).texture("#all").end()
-                                .face(Direction.NORTH).texture("#all").end()
-                                .face(Direction.SOUTH).texture("#all").end()
-                                .face(Direction.EAST).texture("#all").end()
-                                .face(Direction.WEST).texture("#all").end()
-                                .end()
-                                .element()
-                                .from(0, 0, 0)
-                                .to(16, 16, 16)
-                                .face(Direction.DOWN).texture("#overlay").end()
-                                .face(Direction.UP).texture("#overlay").end()
-                                .face(Direction.NORTH).texture("#overlay").end()
-                                .face(Direction.SOUTH).texture("#overlay").end()
-                                .face(Direction.EAST).texture("#overlay").end()
-                                .face(Direction.WEST).texture("#overlay").end()
-                                .end()
-                );
+            ResourceLocation texture = null;
+            for (String name : CBConfig.DEFAULT_BLOCKS) {
+                if (block.get().getDescriptionId().replace("block.compressedblocks", "").contains(CBBlockRegister.resolve(name).getPath())) {
+                    if (block.get().getDescriptionId().contains("honey_block") || block.get().getDescriptionId().contains("basalt"))
+                        continue;
+                    if (CBBlockRegister.resolve(name).getNamespace().equals("minecraft")) {
+                        texture = getActualResourceLocation(block.get().getDescriptionId());
+                        makeBlock(block, texture);
+                    } else {
+                        texture = new ResourceLocation(CBBlockRegister.resolve(name).getNamespace(), CBBlockRegister.resolve(name).getPath());
+                        makeBlock(block, texture);
+                    }
+                }
             }
         }
         
