@@ -4,41 +4,50 @@
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
-run-name: "v1.3.6 - 1.20"
+run-name: "v1.3.7 - 1.20.2"
 
 name: build
-on: push
+on: [ push, pull_request, workflow_dispatch ]
 
 jobs:
   build:
     strategy:
       matrix:
-        # Use these Java versions
         java: [ 17 ] # Current Java LTS & minimum supported by Minecraft
-        os: [ ubuntu-latest, windows-latest ]  # and run on both Linux and Windows
+        os: [ ubuntu-latest, windows-latest ]
     runs-on: ${{ matrix.os }}
     steps:
+      # Chekout Repo
       - name: checkout repository
         uses: actions/checkout@v3
 
+      # Validate gradle wrapper
       - name: validate gradle wrapper
         uses: gradle/wrapper-validation-action@v1
 
+        # Setup JDKs
       - name: setup jdk ${{ matrix.java }}
         uses: actions/setup-java@v3
         with:
           java-version: ${{ matrix.java }}
           distribution: 'temurin'
 
+      # Make gradle wrapper executable (linux)
       - name: make gradle wrapper executable
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
 
+      # Run DataGenerator (forge)
+      - name: "Run gradle task: (forge) -> datagen"
+        run: ./gradlew :forge:Data
+
+      # Build Project (common, forge, fabric)
       - name: build
         run: ./gradlew build
 
+      # Capture bould artifacts
       - name: capture build artifacts
-        if: ${{ runner.os == 'Linux' && matrix.java == '17' }} # Only upload artifacts built from the latest java on one OS
+        if: ${{ runner.os == 'Linux' && matrix.java == '17' }}
         uses: actions/upload-artifact@v3
         with:
           name: Artifacts
