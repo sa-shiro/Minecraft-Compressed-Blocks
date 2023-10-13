@@ -14,11 +14,11 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 public class CrateItem extends BlockItem {
-    
+
     private final Block block;
     private final String itemCount;
     private final Compression comp = new Compression();
-    
+
     public CrateItem(Block block) {
         super(block, new Properties()
                 .stacksTo(64)
@@ -27,7 +27,7 @@ public class CrateItem extends BlockItem {
         comp.setCompressionLevel(getLevel());
         this.itemCount = comp.getBlockCount();
     }
-    
+
     private int getLevel() {
         String name = block.getDescriptionId().replace("block.compressedblocks.", "").replace("item.compressedblocks.", "");
         if (name.startsWith("crated_")) return 0;
@@ -42,7 +42,7 @@ public class CrateItem extends BlockItem {
         if (name.startsWith("giga_")) return 9;
         else return 0;
     }
-    
+
     @Override
     @ParametersAreNonnullByDefault
     public void appendHoverText(ItemStack s, @Nullable Level l, List<Component> c, TooltipFlag t) {

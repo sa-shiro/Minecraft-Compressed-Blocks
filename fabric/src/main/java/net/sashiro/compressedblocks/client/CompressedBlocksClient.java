@@ -25,41 +25,41 @@ import static net.sashiro.compressedblocks.Constants.LOG;
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 public class CompressedBlocksClient implements ClientModInitializer {
-    
+
     public static final ResourceKey<CreativeModeTab> COMPRESSED_BLOCKS_KEY = ResourceKey.create(Registries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "compressed_blocks"));
     public static final ResourceKey<CreativeModeTab> CRATE_ITEMS_KEY = ResourceKey.create(Registries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "compressed_items"));
-    
+
     private static final CreativeModeTab COMPRESSED_BLOCKS = FabricItemGroup.builder()
             .icon(() -> new ItemStack(BlockList.STONE_6.asItem()))
             .title(Component.translatable("itemGroup.compressed_blocks"))
             .build();
-    
+
     private static final CreativeModeTab CRATE_ITEMS = FabricItemGroup.builder()
             .icon(() -> new ItemStack(CrateList.APPLE_0.asItem()))
             .title(Component.translatable("itemGroup.compressed_items"))
             .build();
-    
+
     @Override
     public void onInitializeClient() {
         Collection<ItemStack> itemStackBlocks = new ArrayList<>();
         Collection<ItemStack> itemStackCrates = new ArrayList<>();
-        
+
         for (Block block : Constants.BLOCKS) {
             BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.translucent());
             itemStackBlocks.add(new ItemStack(block));
         }
-        
+
         for (Block block : Constants.CRATES) {
             BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutout());
             itemStackCrates.add(new ItemStack(block));
         }
-        
+
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, COMPRESSED_BLOCKS_KEY.location().getPath()), COMPRESSED_BLOCKS);
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, CRATE_ITEMS_KEY.location().getPath()), CRATE_ITEMS);
-        
+
         ItemGroupEvents.modifyEntriesEvent(COMPRESSED_BLOCKS_KEY).register(content -> content.acceptAll(itemStackBlocks));
         ItemGroupEvents.modifyEntriesEvent(CRATE_ITEMS_KEY).register(content -> content.acceptAll(itemStackCrates));
-        
+
         LOG.info(String.format("Successfully registered: %d Blocks and %d Crates!", itemStackBlocks.size(), itemStackCrates.size()));
     }
 }

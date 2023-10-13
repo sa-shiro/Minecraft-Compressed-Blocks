@@ -18,19 +18,19 @@ public class CBBlockStateProvider extends BlockStateProvider {
     public CBBlockStateProvider(PackOutput packOutput, ExistingFileHelper exFileHelper) {
         super(packOutput, MOD_ID, exFileHelper);
     }
-    
+
     @Override
     protected void registerStatesAndModels() {
         ModelFile.UncheckedModelFile blockBlock = new ModelFile.UncheckedModelFile("block/block");
         ModelFile.UncheckedModelFile cubeColumn = new ModelFile.UncheckedModelFile("block/cube_column");
         ModelFile.UncheckedModelFile cubeColumnHorizontal = new ModelFile.UncheckedModelFile("block/cube_column_horizontal");
-        
+
         for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
             if (block.get().getDescriptionId().contains("honey_block") || block.get().getDescriptionId().contains("basalt"))
                 continue;
             if (block.get().getDescriptionId().contains("_log")) {
                 RotatedPillarBlock block1 = (RotatedPillarBlock) block.get();
-                
+
                 axisBlock(
                         block1, models().cubeColumn(
                                         block.get().getDescriptionId().replace("block.compressedblocks.", ""),
@@ -122,12 +122,12 @@ public class CBBlockStateProvider extends BlockStateProvider {
                 );
             }
         }
-        
+
         for (RegistryObject<Block> block : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
             String crate_name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
             String mc_name = getMCName(crate_name);
             ResourceLocation location = new ResourceLocation("item/" + mc_name);
-            
+
             if (mc_name.contains("rail")
                     || mc_name.contains("torch")
                     || mc_name.contains("lightning_rod")
@@ -156,7 +156,7 @@ public class CBBlockStateProvider extends BlockStateProvider {
             if (mc_name.contains("peony")) location = new ResourceLocation("block/peony_top");
             if (mc_name.contains("carpet"))
                 location = new ResourceLocation("block/" + mc_name.replace("carpet", "wool"));
-            
+
             simpleBlock(
                     block.get(), models().cubeAll(
                                     crate_name,
@@ -186,7 +186,7 @@ public class CBBlockStateProvider extends BlockStateProvider {
             );
         }
     }
-    
+
     private String getMCName(String crateName) {
         crateName = crateName.replace("item.compressedblocks.", "");
         if (crateName.startsWith("crated_")) crateName = crateName.replace("crated_", "");
@@ -199,19 +199,24 @@ public class CBBlockStateProvider extends BlockStateProvider {
         else if (crateName.startsWith("octuple_crated_")) crateName = crateName.replace("octuple_crated_", "");
         else if (crateName.startsWith("mega_crated_")) crateName = crateName.replace("mega_crated_", "");
         else if (crateName.startsWith("giga_crated_")) crateName = crateName.replace("giga_crated_", "");
-        
+
         return crateName;
     }
-    
+
     private ResourceLocation getActualResourceLocation(String resourceLocation) {
         String blockName = resourceLocation.replace("block.compressedblocks.", "");
         for (int i = 0; i < 10; i++) {
             if (blockName.contains("c" + i))
                 blockName = blockName.replace("c" + i + "_", "");
         }
+        if (resourceLocation.contains("exposed")) blockName = "exposed_copper";
+        if (resourceLocation.contains("copper_block")) blockName = "copper_block";
+        if (resourceLocation.contains("cut_copper")) blockName = "cut_copper";
+        if (resourceLocation.contains("oxidized_copper")) blockName = "oxidized_copper";
+        if (resourceLocation.contains("weathered_copper")) blockName = "weathered_copper";
         return new ResourceLocation("minecraft", "block/" + blockName);
     }
-    
+
     private String getCleanName(String resourceLocation) {
         String blockName = resourceLocation.replace("block.compressedblocks.", "");
         for (int i = 0; i < 10; i++) {
@@ -220,7 +225,7 @@ public class CBBlockStateProvider extends BlockStateProvider {
         }
         return "block/" + blockName;
     }
-    
+
     private ResourceLocation getCompressionOverlay(String blockName) {
         String overlay;
         if (blockName.contains("c0")) overlay = "compression_level_0";
@@ -236,7 +241,7 @@ public class CBBlockStateProvider extends BlockStateProvider {
         else overlay = "compression_level_0";
         return new ResourceLocation("compressedblocks", "block/" + overlay);
     }
-    
+
     private ResourceLocation getCrateLevel(String blockName) {
         String overlay;
         blockName = blockName.replace("block.compressedblocks.", "");

@@ -18,7 +18,7 @@ public class CBItemTagsProvider extends ItemTagsProvider {
     public CBItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> provider, CompletableFuture<TagLookup<Block>> tagLookup, String modId, @Nullable ExistingFileHelper existingFileHelper) {
         super(packOutput, provider, tagLookup, modId, existingFileHelper);
     }
-    
+
     @Override
     protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
         for (RegistryObject<Item> registryObject : CBRegistryEvent.CRATE_ITEMS.getEntries()) {

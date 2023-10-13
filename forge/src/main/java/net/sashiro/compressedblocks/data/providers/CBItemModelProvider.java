@@ -13,17 +13,17 @@ public class CBItemModelProvider extends ItemModelProvider {
     public CBItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
         super(packOutput, MOD_ID, existingFileHelper);
     }
-    
+
     @Override
     protected void registerModels() {
-        
+
         for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
             if (block.get().getDescriptionId().contains("honey_block") || block.get().getDescriptionId().contains("basalt"))
                 continue;
             String name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
             withExistingParent(name, modLoc("block/" + name));
         }
-        
+
         for (RegistryObject<Block> block : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
             String name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
             withExistingParent(name, modLoc("block/" + name));
