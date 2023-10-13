@@ -21,4 +21,4 @@ build
 # other
 eclipse
 run
-/forge/src/generated/resources/.cache/
+/forge/src/generated/
