@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class Constants {
-    
+
     public static final String MOD_ID = "compressedblocks";
     public static final String MOD_NAME = "Compressed Blocks";
     public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);

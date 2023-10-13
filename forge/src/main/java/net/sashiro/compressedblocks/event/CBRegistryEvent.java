@@ -22,7 +22,7 @@ public class CBRegistryEvent {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
     public static final Item.Properties PROPERTIES = new Item.Properties();
     public static final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-    
+
     public static void register() {
         eventBus.addListener(CBCratesRegister::register);
         eventBus.addListener(CBBlockRegister::register);
@@ -31,7 +31,7 @@ public class CBRegistryEvent {
         CRATE_BLOCKS.register(eventBus);
         CRATE_ITEMS.register(eventBus);
         CREATIVE_MODE_TABS.register(eventBus);
-        
+
         LOG.info("Successfully registered all Blocks and Crates!");
     }
 }

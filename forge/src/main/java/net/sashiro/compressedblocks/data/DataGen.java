@@ -23,7 +23,7 @@ public class DataGen {
         PackOutput packOutput = gen.getPackOutput();
         ExistingFileHelper existingFileHelper = e.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = e.getLookupProvider();
-        
+
         gen.addProvider(true, new CBBlockStateProvider(packOutput, existingFileHelper));
         gen.addProvider(true, new CBItemModelProvider(packOutput, existingFileHelper));
         gen.addProvider(true, new CBLanguageProvider(packOutput, "en_us"));

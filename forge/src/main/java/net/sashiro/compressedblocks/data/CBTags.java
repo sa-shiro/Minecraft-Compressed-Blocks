@@ -32,8 +32,8 @@ public class CBTags {
     public static final TagKey<Item> OCTUPLE_ITEM = ItemTags.create(new ResourceLocation(MOD_ID, "octuple"));
     public static final TagKey<Item> MEGA_ITEM = ItemTags.create(new ResourceLocation(MOD_ID, "mega"));
     public static final TagKey<Item> GIGA_ITEM = ItemTags.create(new ResourceLocation(MOD_ID, "giga"));
-    
-    
+
+
     public static final TagKey<Item> SINGLE_CRATE = ItemTags.create(new ResourceLocation(MOD_ID, "single_crate"));
     public static final TagKey<Item> DOUBLE_CRATE = ItemTags.create(new ResourceLocation(MOD_ID, "double_crate"));
     public static final TagKey<Item> TRIPLE_CRATE = ItemTags.create(new ResourceLocation(MOD_ID, "triple_crate"));
@@ -44,7 +44,7 @@ public class CBTags {
     public static final TagKey<Item> OCTUPLE_CRATE = ItemTags.create(new ResourceLocation(MOD_ID, "octuple_crate"));
     public static final TagKey<Item> MEGA_CRATE = ItemTags.create(new ResourceLocation(MOD_ID, "mega_crate"));
     public static final TagKey<Item> GIGA_CRATE = ItemTags.create(new ResourceLocation(MOD_ID, "giga_crate"));
-    
+
     public static final TagKey<Block> C0 = BlockTags.create(new ResourceLocation(MOD_ID, "c0"));
     public static final TagKey<Block> C1 = BlockTags.create(new ResourceLocation(MOD_ID, "c1"));
     public static final TagKey<Block> C2 = BlockTags.create(new ResourceLocation(MOD_ID, "c2"));

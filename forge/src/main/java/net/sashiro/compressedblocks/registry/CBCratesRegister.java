@@ -16,13 +16,13 @@ import static net.sashiro.compressedblocks.event.CBRegistryEvent.CRATE_ITEMS;
  * Forge doesn't let us use Vanilla Registries which results in duplicate code.
  */
 public class CBCratesRegister {
-    
+
     private static void registerCrate(String name, Block block) {
         CRATE_BLOCKS.register(name.toLowerCase(), () -> block);
         CRATE_ITEMS.register(name.toLowerCase(), () -> new CrateItem(block));
         Constants.CRATES.add(block);
     }
-    
+
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void register(RegisterEvent event) {
         if (event.getRegistryKey() == CRATE_BLOCKS.getRegistryKey()) {

@@ -14,13 +14,13 @@ import static net.sashiro.compressedblocks.event.CBRegistryEvent.*;
  * Forge doesn't let us use Vanilla Registries which results in duplicate code.
  */
 public class CBBlockRegister {
-    
+
     private static void registerBlock(String name, Block block) {
         BLOCKS.register(name.toLowerCase(), () -> block);
         ITEMS.register(name.toLowerCase(), () -> new BlockItem(block, PROPERTIES));
         Constants.BLOCKS.add(block);
     }
-    
+
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void register(RegisterEvent event) {
         if (event.getRegistryKey() == BLOCKS.getRegistryKey()) {
@@ -838,6 +838,185 @@ public class CBBlockRegister {
             registerBlock("c7_" + "BAMBOO_MOSAIC", BAMBOO_MOSAIC_7);
             registerBlock("c8_" + "BAMBOO_MOSAIC", BAMBOO_MOSAIC_8);
             registerBlock("c9_" + "BAMBOO_MOSAIC", BAMBOO_MOSAIC_9);
+            // ==================================================
+            // Version: 1.3.8
+            // ==================================================
+            // COPPER_BLOCK
+            registerBlock("c0_" + "COPPER_BLOCK", COPPER_BLOCK_0);
+            registerBlock("c1_" + "COPPER_BLOCK", COPPER_BLOCK_1);
+            registerBlock("c2_" + "COPPER_BLOCK", COPPER_BLOCK_2);
+            registerBlock("c3_" + "COPPER_BLOCK", COPPER_BLOCK_3);
+            registerBlock("c4_" + "COPPER_BLOCK", COPPER_BLOCK_4);
+            registerBlock("c5_" + "COPPER_BLOCK", COPPER_BLOCK_5);
+            registerBlock("c6_" + "COPPER_BLOCK", COPPER_BLOCK_6);
+            registerBlock("c7_" + "COPPER_BLOCK", COPPER_BLOCK_7);
+            registerBlock("c8_" + "COPPER_BLOCK", COPPER_BLOCK_8);
+            registerBlock("c9_" + "COPPER_BLOCK", COPPER_BLOCK_9);
+            // CUT_COPPER
+            registerBlock("c0_" + "CUT_COPPER", CUT_COPPER_0);
+            registerBlock("c1_" + "CUT_COPPER", CUT_COPPER_1);
+            registerBlock("c2_" + "CUT_COPPER", CUT_COPPER_2);
+            registerBlock("c3_" + "CUT_COPPER", CUT_COPPER_3);
+            registerBlock("c4_" + "CUT_COPPER", CUT_COPPER_4);
+            registerBlock("c5_" + "CUT_COPPER", CUT_COPPER_5);
+            registerBlock("c6_" + "CUT_COPPER", CUT_COPPER_6);
+            registerBlock("c7_" + "CUT_COPPER", CUT_COPPER_7);
+            registerBlock("c8_" + "CUT_COPPER", CUT_COPPER_8);
+            registerBlock("c9_" + "CUT_COPPER", CUT_COPPER_9);
+            // EXPOSED_COPPER
+            registerBlock("c0_" + "EXPOSED_COPPER", EXPOSED_COPPER_0);
+            registerBlock("c1_" + "EXPOSED_COPPER", EXPOSED_COPPER_1);
+            registerBlock("c2_" + "EXPOSED_COPPER", EXPOSED_COPPER_2);
+            registerBlock("c3_" + "EXPOSED_COPPER", EXPOSED_COPPER_3);
+            registerBlock("c4_" + "EXPOSED_COPPER", EXPOSED_COPPER_4);
+            registerBlock("c5_" + "EXPOSED_COPPER", EXPOSED_COPPER_5);
+            registerBlock("c6_" + "EXPOSED_COPPER", EXPOSED_COPPER_6);
+            registerBlock("c7_" + "EXPOSED_COPPER", EXPOSED_COPPER_7);
+            registerBlock("c8_" + "EXPOSED_COPPER", EXPOSED_COPPER_8);
+            registerBlock("c9_" + "EXPOSED_COPPER", EXPOSED_COPPER_9);
+            // EXPOSED_CUT_COPPER
+            registerBlock("c0_" + "EXPOSED_CUT_COPPER", EXPOSED_CUT_COPPER_0);
+            registerBlock("c1_" + "EXPOSED_CUT_COPPER", EXPOSED_CUT_COPPER_1);
+            registerBlock("c2_" + "EXPOSED_CUT_COPPER", EXPOSED_CUT_COPPER_2);
+            registerBlock("c3_" + "EXPOSED_CUT_COPPER", EXPOSED_CUT_COPPER_3);
+            registerBlock("c4_" + "EXPOSED_CUT_COPPER", EXPOSED_CUT_COPPER_4);
+            registerBlock("c5_" + "EXPOSED_CUT_COPPER", EXPOSED_CUT_COPPER_5);
+            registerBlock("c6_" + "EXPOSED_CUT_COPPER", EXPOSED_CUT_COPPER_6);
+            registerBlock("c7_" + "EXPOSED_CUT_COPPER", EXPOSED_CUT_COPPER_7);
+            registerBlock("c8_" + "EXPOSED_CUT_COPPER", EXPOSED_CUT_COPPER_8);
+            registerBlock("c9_" + "EXPOSED_CUT_COPPER", EXPOSED_CUT_COPPER_9);
+            // WEATHERED_COPPER
+            registerBlock("c0_" + "WEATHERED_COPPER", WEATHERED_COPPER_0);
+            registerBlock("c1_" + "WEATHERED_COPPER", WEATHERED_COPPER_1);
+            registerBlock("c2_" + "WEATHERED_COPPER", WEATHERED_COPPER_2);
+            registerBlock("c3_" + "WEATHERED_COPPER", WEATHERED_COPPER_3);
+            registerBlock("c4_" + "WEATHERED_COPPER", WEATHERED_COPPER_4);
+            registerBlock("c5_" + "WEATHERED_COPPER", WEATHERED_COPPER_5);
+            registerBlock("c6_" + "WEATHERED_COPPER", WEATHERED_COPPER_6);
+            registerBlock("c7_" + "WEATHERED_COPPER", WEATHERED_COPPER_7);
+            registerBlock("c8_" + "WEATHERED_COPPER", WEATHERED_COPPER_8);
+            registerBlock("c9_" + "WEATHERED_COPPER", WEATHERED_COPPER_9);
+            // WEATHERED_CUT_COPPER
+            registerBlock("c0_" + "WEATHERED_CUT_COPPER", WEATHERED_CUT_COPPER_0);
+            registerBlock("c1_" + "WEATHERED_CUT_COPPER", WEATHERED_CUT_COPPER_1);
+            registerBlock("c2_" + "WEATHERED_CUT_COPPER", WEATHERED_CUT_COPPER_2);
+            registerBlock("c3_" + "WEATHERED_CUT_COPPER", WEATHERED_CUT_COPPER_3);
+            registerBlock("c4_" + "WEATHERED_CUT_COPPER", WEATHERED_CUT_COPPER_4);
+            registerBlock("c5_" + "WEATHERED_CUT_COPPER", WEATHERED_CUT_COPPER_5);
+            registerBlock("c6_" + "WEATHERED_CUT_COPPER", WEATHERED_CUT_COPPER_6);
+            registerBlock("c7_" + "WEATHERED_CUT_COPPER", WEATHERED_CUT_COPPER_7);
+            registerBlock("c8_" + "WEATHERED_CUT_COPPER", WEATHERED_CUT_COPPER_8);
+            registerBlock("c9_" + "WEATHERED_CUT_COPPER", WEATHERED_CUT_COPPER_9);
+            // OXIDIZED_COPPER
+            registerBlock("c0_" + "OXIDIZED_COPPER", OXIDIZED_COPPER_0);
+            registerBlock("c1_" + "OXIDIZED_COPPER", OXIDIZED_COPPER_1);
+            registerBlock("c2_" + "OXIDIZED_COPPER", OXIDIZED_COPPER_2);
+            registerBlock("c3_" + "OXIDIZED_COPPER", OXIDIZED_COPPER_3);
+            registerBlock("c4_" + "OXIDIZED_COPPER", OXIDIZED_COPPER_4);
+            registerBlock("c5_" + "OXIDIZED_COPPER", OXIDIZED_COPPER_5);
+            registerBlock("c6_" + "OXIDIZED_COPPER", OXIDIZED_COPPER_6);
+            registerBlock("c7_" + "OXIDIZED_COPPER", OXIDIZED_COPPER_7);
+            registerBlock("c8_" + "OXIDIZED_COPPER", OXIDIZED_COPPER_8);
+            registerBlock("c9_" + "OXIDIZED_COPPER", OXIDIZED_COPPER_9);
+            // OXIDIZED_CUT_COPPER
+            registerBlock("c0_" + "OXIDIZED_CUT_COPPER", OXIDIZED_CUT_COPPER_0);
+            registerBlock("c1_" + "OXIDIZED_CUT_COPPER", OXIDIZED_CUT_COPPER_1);
+            registerBlock("c2_" + "OXIDIZED_CUT_COPPER", OXIDIZED_CUT_COPPER_2);
+            registerBlock("c3_" + "OXIDIZED_CUT_COPPER", OXIDIZED_CUT_COPPER_3);
+            registerBlock("c4_" + "OXIDIZED_CUT_COPPER", OXIDIZED_CUT_COPPER_4);
+            registerBlock("c5_" + "OXIDIZED_CUT_COPPER", OXIDIZED_CUT_COPPER_5);
+            registerBlock("c6_" + "OXIDIZED_CUT_COPPER", OXIDIZED_CUT_COPPER_6);
+            registerBlock("c7_" + "OXIDIZED_CUT_COPPER", OXIDIZED_CUT_COPPER_7);
+            registerBlock("c8_" + "OXIDIZED_CUT_COPPER", OXIDIZED_CUT_COPPER_8);
+            registerBlock("c9_" + "OXIDIZED_CUT_COPPER", OXIDIZED_CUT_COPPER_9);
+            // WAXED_COPPER_BLOCK
+            registerBlock("c0_" + "WAXED_COPPER_BLOCK", WAXED_COPPER_BLOCK_0);
+            registerBlock("c1_" + "WAXED_COPPER_BLOCK", WAXED_COPPER_BLOCK_1);
+            registerBlock("c2_" + "WAXED_COPPER_BLOCK", WAXED_COPPER_BLOCK_2);
+            registerBlock("c3_" + "WAXED_COPPER_BLOCK", WAXED_COPPER_BLOCK_3);
+            registerBlock("c4_" + "WAXED_COPPER_BLOCK", WAXED_COPPER_BLOCK_4);
+            registerBlock("c5_" + "WAXED_COPPER_BLOCK", WAXED_COPPER_BLOCK_5);
+            registerBlock("c6_" + "WAXED_COPPER_BLOCK", WAXED_COPPER_BLOCK_6);
+            registerBlock("c7_" + "WAXED_COPPER_BLOCK", WAXED_COPPER_BLOCK_7);
+            registerBlock("c8_" + "WAXED_COPPER_BLOCK", WAXED_COPPER_BLOCK_8);
+            registerBlock("c9_" + "WAXED_COPPER_BLOCK", WAXED_COPPER_BLOCK_9);
+            // WAXED_CUT_COPPER
+            registerBlock("c0_" + "WAXED_CUT_COPPER", WAXED_CUT_COPPER_0);
+            registerBlock("c1_" + "WAXED_CUT_COPPER", WAXED_CUT_COPPER_1);
+            registerBlock("c2_" + "WAXED_CUT_COPPER", WAXED_CUT_COPPER_2);
+            registerBlock("c3_" + "WAXED_CUT_COPPER", WAXED_CUT_COPPER_3);
+            registerBlock("c4_" + "WAXED_CUT_COPPER", WAXED_CUT_COPPER_4);
+            registerBlock("c5_" + "WAXED_CUT_COPPER", WAXED_CUT_COPPER_5);
+            registerBlock("c6_" + "WAXED_CUT_COPPER", WAXED_CUT_COPPER_6);
+            registerBlock("c7_" + "WAXED_CUT_COPPER", WAXED_CUT_COPPER_7);
+            registerBlock("c8_" + "WAXED_CUT_COPPER", WAXED_CUT_COPPER_8);
+            registerBlock("c9_" + "WAXED_CUT_COPPER", WAXED_CUT_COPPER_9);
+            // WAXED_EXPOSED_COPPER
+            registerBlock("c0_" + "WAXED_EXPOSED_COPPER", WAXED_EXPOSED_COPPER_0);
+            registerBlock("c1_" + "WAXED_EXPOSED_COPPER", WAXED_EXPOSED_COPPER_1);
+            registerBlock("c2_" + "WAXED_EXPOSED_COPPER", WAXED_EXPOSED_COPPER_2);
+            registerBlock("c3_" + "WAXED_EXPOSED_COPPER", WAXED_EXPOSED_COPPER_3);
+            registerBlock("c4_" + "WAXED_EXPOSED_COPPER", WAXED_EXPOSED_COPPER_4);
+            registerBlock("c5_" + "WAXED_EXPOSED_COPPER", WAXED_EXPOSED_COPPER_5);
+            registerBlock("c6_" + "WAXED_EXPOSED_COPPER", WAXED_EXPOSED_COPPER_6);
+            registerBlock("c7_" + "WAXED_EXPOSED_COPPER", WAXED_EXPOSED_COPPER_7);
+            registerBlock("c8_" + "WAXED_EXPOSED_COPPER", WAXED_EXPOSED_COPPER_8);
+            registerBlock("c9_" + "WAXED_EXPOSED_COPPER", WAXED_EXPOSED_COPPER_9);
+            // WAXED_EXPOSED_CUT_COPPER
+            registerBlock("c0_" + "WAXED_EXPOSED_CUT_COPPER", WAXED_EXPOSED_CUT_COPPER_0);
+            registerBlock("c1_" + "WAXED_EXPOSED_CUT_COPPER", WAXED_EXPOSED_CUT_COPPER_1);
+            registerBlock("c2_" + "WAXED_EXPOSED_CUT_COPPER", WAXED_EXPOSED_CUT_COPPER_2);
+            registerBlock("c3_" + "WAXED_EXPOSED_CUT_COPPER", WAXED_EXPOSED_CUT_COPPER_3);
+            registerBlock("c4_" + "WAXED_EXPOSED_CUT_COPPER", WAXED_EXPOSED_CUT_COPPER_4);
+            registerBlock("c5_" + "WAXED_EXPOSED_CUT_COPPER", WAXED_EXPOSED_CUT_COPPER_5);
+            registerBlock("c6_" + "WAXED_EXPOSED_CUT_COPPER", WAXED_EXPOSED_CUT_COPPER_6);
+            registerBlock("c7_" + "WAXED_EXPOSED_CUT_COPPER", WAXED_EXPOSED_CUT_COPPER_7);
+            registerBlock("c8_" + "WAXED_EXPOSED_CUT_COPPER", WAXED_EXPOSED_CUT_COPPER_8);
+            registerBlock("c9_" + "WAXED_EXPOSED_CUT_COPPER", WAXED_EXPOSED_CUT_COPPER_9);
+            // WAXED_WEATHERED_COPPER
+            registerBlock("c0_" + "WAXED_WEATHERED_COPPER", WAXED_WEATHERED_COPPER_0);
+            registerBlock("c1_" + "WAXED_WEATHERED_COPPER", WAXED_WEATHERED_COPPER_1);
+            registerBlock("c2_" + "WAXED_WEATHERED_COPPER", WAXED_WEATHERED_COPPER_2);
+            registerBlock("c3_" + "WAXED_WEATHERED_COPPER", WAXED_WEATHERED_COPPER_3);
+            registerBlock("c4_" + "WAXED_WEATHERED_COPPER", WAXED_WEATHERED_COPPER_4);
+            registerBlock("c5_" + "WAXED_WEATHERED_COPPER", WAXED_WEATHERED_COPPER_5);
+            registerBlock("c6_" + "WAXED_WEATHERED_COPPER", WAXED_WEATHERED_COPPER_6);
+            registerBlock("c7_" + "WAXED_WEATHERED_COPPER", WAXED_WEATHERED_COPPER_7);
+            registerBlock("c8_" + "WAXED_WEATHERED_COPPER", WAXED_WEATHERED_COPPER_8);
+            registerBlock("c9_" + "WAXED_WEATHERED_COPPER", WAXED_WEATHERED_COPPER_9);
+            // WAXED_WEATHERED_CUT_COPPER
+            registerBlock("c0_" + "WAXED_WEATHERED_CUT_COPPER", WAXED_WEATHERED_CUT_COPPER_0);
+            registerBlock("c1_" + "WAXED_WEATHERED_CUT_COPPER", WAXED_WEATHERED_CUT_COPPER_1);
+            registerBlock("c2_" + "WAXED_WEATHERED_CUT_COPPER", WAXED_WEATHERED_CUT_COPPER_2);
+            registerBlock("c3_" + "WAXED_WEATHERED_CUT_COPPER", WAXED_WEATHERED_CUT_COPPER_3);
+            registerBlock("c4_" + "WAXED_WEATHERED_CUT_COPPER", WAXED_WEATHERED_CUT_COPPER_4);
+            registerBlock("c5_" + "WAXED_WEATHERED_CUT_COPPER", WAXED_WEATHERED_CUT_COPPER_5);
+            registerBlock("c6_" + "WAXED_WEATHERED_CUT_COPPER", WAXED_WEATHERED_CUT_COPPER_6);
+            registerBlock("c7_" + "WAXED_WEATHERED_CUT_COPPER", WAXED_WEATHERED_CUT_COPPER_7);
+            registerBlock("c8_" + "WAXED_WEATHERED_CUT_COPPER", WAXED_WEATHERED_CUT_COPPER_8);
+            registerBlock("c9_" + "WAXED_WEATHERED_CUT_COPPER", WAXED_WEATHERED_CUT_COPPER_9);
+            // WAXED_OXIDIZED_COPPER
+            registerBlock("c0_" + "WAXED_OXIDIZED_COPPER", WAXED_OXIDIZED_COPPER_0);
+            registerBlock("c1_" + "WAXED_OXIDIZED_COPPER", WAXED_OXIDIZED_COPPER_1);
+            registerBlock("c2_" + "WAXED_OXIDIZED_COPPER", WAXED_OXIDIZED_COPPER_2);
+            registerBlock("c3_" + "WAXED_OXIDIZED_COPPER", WAXED_OXIDIZED_COPPER_3);
+            registerBlock("c4_" + "WAXED_OXIDIZED_COPPER", WAXED_OXIDIZED_COPPER_4);
+            registerBlock("c5_" + "WAXED_OXIDIZED_COPPER", WAXED_OXIDIZED_COPPER_5);
+            registerBlock("c6_" + "WAXED_OXIDIZED_COPPER", WAXED_OXIDIZED_COPPER_6);
+            registerBlock("c7_" + "WAXED_OXIDIZED_COPPER", WAXED_OXIDIZED_COPPER_7);
+            registerBlock("c8_" + "WAXED_OXIDIZED_COPPER", WAXED_OXIDIZED_COPPER_8);
+            registerBlock("c9_" + "WAXED_OXIDIZED_COPPER", WAXED_OXIDIZED_COPPER_9);
+            // WAXED_OXIDIZED_CUT_COPPER
+            registerBlock("c0_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_0);
+            registerBlock("c1_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_1);
+            registerBlock("c2_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_2);
+            registerBlock("c3_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_3);
+            registerBlock("c4_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_4);
+            registerBlock("c5_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_5);
+            registerBlock("c6_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_6);
+            registerBlock("c7_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_7);
+            registerBlock("c8_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_8);
+            registerBlock("c9_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_9);
         }
     }
 }

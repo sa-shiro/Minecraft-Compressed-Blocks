@@ -1,7 +1,7 @@
 package net.sashiro.compressedblocks.util;
 
 public class StringUtils {
-    
+
     /**
      * Utility function to replace underscores<br>
      * with spaces and format the {@link String}  in uppercase.

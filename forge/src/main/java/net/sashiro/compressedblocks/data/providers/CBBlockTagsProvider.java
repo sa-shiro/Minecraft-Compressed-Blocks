@@ -16,11 +16,11 @@ import java.util.concurrent.CompletableFuture;
 
 
 public class CBBlockTagsProvider extends BlockTagsProvider {
-    
+
     public CBBlockTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
         super(packOutput, lookupProvider, modId, existingFileHelper);
     }
-    
+
     @Override
     protected void addTags(HolderLookup.@NotNull Provider holder) {
         for (RegistryObject<Block> registryObject : CBRegistryEvent.BLOCKS.getEntries()) {
@@ -66,7 +66,7 @@ public class CBBlockTagsProvider extends BlockTagsProvider {
                 tag(CBTags.GIGA).add(block);
                 tag(CBTags.C9).add(block);
             }
-            
+
             //noinspection StatementWithEmptyBody
             if (name.contains("slime") || name.equals("honey")) /* do nothing */
                 ;

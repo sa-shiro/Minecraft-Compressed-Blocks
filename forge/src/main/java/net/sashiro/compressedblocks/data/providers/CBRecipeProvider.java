@@ -21,9 +21,9 @@ public class CBRecipeProvider extends RecipeProvider {
     @Override
     @ParametersAreNonnullByDefault
     protected void buildRecipes(RecipeOutput consumer) {
-        
+
         ArrayList<Block> blocks = (ArrayList<Block>) Constants.BLOCKS;
-        
+
         for (int i = 0; i < blocks.size(); i++) {
             String blockName = blocks.get(i).getDescriptionId().replace("block.compressedblocks.", "");
             if (blockName.contains("c0_")) {
@@ -56,15 +56,15 @@ public class CBRecipeProvider extends RecipeProvider {
                         .requires(blocks.get(i))
                         .unlockedBy("has_item", has(blocks.get(i).asItem()))
                         .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + blockName));
-                
+
             }
         }
-        
+
         ArrayList<Block> crate_items = (ArrayList<Block>) Constants.CRATES;
-        
+
         for (int i = 0; i < crate_items.size(); i++) {
             String crate_itemName = crate_items.get(i).getDescriptionId().replace("block.compressedblocks.", "");
-            
+
             if (crate_itemName.startsWith("crated")) {
                 String crate_itemName_clean = crate_itemName.replace("crated_", "");
                 for (Item vanillaItem : ForgeRegistries.ITEMS) {
@@ -96,7 +96,7 @@ public class CBRecipeProvider extends RecipeProvider {
                         .requires(crate_items.get(i))
                         .unlockedBy("has_item", has(crate_items.get(i).asItem()))
                         .save(consumer, new ResourceLocation("compressedblocks", "shapeless_" + crate_itemName));
-                
+
             }
         }
     }

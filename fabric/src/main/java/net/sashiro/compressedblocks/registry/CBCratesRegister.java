@@ -10,13 +10,13 @@ import static net.sashiro.compressedblocks.Constants.*;
 import static net.sashiro.compressedblocks.block.CrateList.*;
 
 public class CBCratesRegister {
-    
+
     private static void registerCrate(String name, Block crateBlock) {
         Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(MOD_ID, name.toLowerCase()), crateBlock);
         Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MOD_ID, name.toLowerCase()), new CrateItem(crateBlock));
         CRATES.add(crateBlock);
     }
-    
+
     public static void register() {
         registerCrate(c0 + "APPLE".toLowerCase(), APPLE_0);
         registerCrate(c1 + "APPLE".toLowerCase(), APPLE_1);

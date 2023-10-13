@@ -15,7 +15,7 @@ import static net.sashiro.compressedblocks.event.CBRegistryEvent.*;
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ItemGroups {
-    
+
     public static final RegistryObject<CreativeModeTab> COMPRESSED_BLOCKS_TAB = CREATIVE_MODE_TABS.register("compressed_blocks", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .title(Component.literal("Compressed Blocks"))
@@ -25,7 +25,7 @@ public class ItemGroups {
                     output.accept(item.get());
                 }
             }).build());
-    
+
     public static final RegistryObject<CreativeModeTab> CRATES_TAB = CREATIVE_MODE_TABS.register("compressed_items", () -> CreativeModeTab.builder()
             .withTabsBefore(COMPRESSED_BLOCKS_TAB.getKey())
             .title(Component.literal("Crates"))

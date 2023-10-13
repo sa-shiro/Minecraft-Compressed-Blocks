@@ -19,7 +19,7 @@ public class CrateList {
     private static final BlockBehaviour.Properties p7 = BlockBehaviour.Properties.of().strength(HARDNESS[7], RESISTANCE[7]).mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD);
     private static final BlockBehaviour.Properties p8 = BlockBehaviour.Properties.of().strength(HARDNESS[8], RESISTANCE[8]).mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD);
     private static final BlockBehaviour.Properties p9 = BlockBehaviour.Properties.of().strength(HARDNESS[9], RESISTANCE[9]).mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD);
-    
+
     public static final RotatedPillarBlock APPLE_0 = new RotatedPillarBlock(p0);
     public static final RotatedPillarBlock APPLE_1 = new RotatedPillarBlock(p1);
     public static final RotatedPillarBlock APPLE_2 = new RotatedPillarBlock(p2);

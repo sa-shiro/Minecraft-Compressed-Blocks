@@ -14,7 +14,7 @@ public class CBLanguageProvider extends LanguageProvider {
     public CBLanguageProvider(PackOutput packOutput, String locale) {
         super(packOutput, MOD_ID, locale);
     }
-    
+
     private String compressionLevel(String registryName) {
         String str = registryName.substring(0, 2);
         return switch (str) {
@@ -31,12 +31,12 @@ public class CBLanguageProvider extends LanguageProvider {
             default -> "";
         };
     }
-    
+
     @Override
     protected void addTranslations() {
         add("itemGroup.compressed_blocks", "Compressed Blocks");
         add("itemGroup.compressed_items", "Item Crates");
-        
+
         for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
             assert false;
             String name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
@@ -47,12 +47,12 @@ public class CBLanguageProvider extends LanguageProvider {
             }
             add("block.compressedblocks." + name, compressionLevel(name) + StringUtils.stringFormat(name2.replace("_", " ")));
         }
-        
+
         for (RegistryObject<Item> item : CBRegistryEvent.CRATE_ITEMS.getEntries()) {
             assert false;
             String name = item.get().getDescriptionId().replace("block.compressedblocks.", "");
             String translation = StringUtils.stringFormat(name.replace("_", " "));
-            
+
             if ((translation.endsWith("a")
                     || translation.endsWith("b")
                     || translation.endsWith("c")
@@ -106,7 +106,7 @@ public class CBLanguageProvider extends LanguageProvider {
             } else if (translation.contains("leaf")) {
                 translation = translation.replace("leaf", "leaves");
             }
-            
+
             if (name.contains("totem") || name.contains("dragon"))
                 add("item.compressedblocks." + name, "§6" + translation.replace("Crated", "Crate of"));
             else if (name.startsWith("item.")) return;

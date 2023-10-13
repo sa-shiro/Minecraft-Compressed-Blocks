@@ -15,17 +15,17 @@ import java.util.List;
 import java.util.Set;
 
 public class CBLootTableProvider {
-    
+
     public static LootTableProvider create(PackOutput output) {
         return new LootTableProvider(output, Set.of(),
                 List.of(new LootTableProvider.SubProviderEntry(CompressedBlocksLootTable::new, LootContextParamSets.BLOCK)));
     }
-    
+
     public static class CompressedBlocksLootTable extends BlockLootSubProvider {
         protected CompressedBlocksLootTable() {
             super(Set.of(), FeatureFlags.REGISTRY.allFlags());
         }
-        
+
         @Override
         protected void generate() {
             for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
@@ -35,13 +35,13 @@ public class CBLootTableProvider {
                 dropSelf(block.get());
             }
         }
-        
+
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks() {
             List<Block> block = new ArrayList<>();
             block.addAll(CBRegistryEvent.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
             block.addAll(CBRegistryEvent.CRATE_BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
-            
+
             return block;
         }
     }
