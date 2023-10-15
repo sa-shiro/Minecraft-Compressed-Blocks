@@ -1,8 +1,9 @@
-# v1.3.8 [ 1.20.2 ]
+# v1.3.9 [ 1.20.2 ]
 
 ## General
 
-- Added the forgotten Copper Blocks
+- Fix Copper Blocks textures (fixes #38)
+- Add Bone Block
 - Compatible with: `[ 1.20, 1.20.1, 1.20.2 ]`
 
 ---

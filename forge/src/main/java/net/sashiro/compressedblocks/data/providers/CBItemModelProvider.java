@@ -10,6 +10,8 @@ import net.sashiro.compressedblocks.event.CBRegistryEvent;
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 public class CBItemModelProvider extends ItemModelProvider {
+    private final GenUtils utils = new GenUtils();
+
     public CBItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
         super(packOutput, MOD_ID, existingFileHelper);
     }
@@ -18,8 +20,8 @@ public class CBItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
 
         for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
-            if (block.get().getDescriptionId().contains("honey_block") || block.get().getDescriptionId().contains("basalt"))
-                continue;
+            // exclude manually added resources
+            if (utils.isBlock(block)) continue;
             String name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
             withExistingParent(name, modLoc("block/" + name));
         }

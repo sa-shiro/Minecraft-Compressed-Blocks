@@ -204,19 +204,4 @@ public class CompressedBlock {
             lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
         }
     }
-
-    public static class CustomWeatheringCopperBlock extends WeatheringCopperFullBlock {
-        private final Compression compressor = new Compression();
-
-        public CustomWeatheringCopperBlock(WeatherState weatherState, Properties properties, int compressionLevel) {
-            super(weatherState, properties);
-            compressor.setCompressionLevel(compressionLevel);
-        }
-
-        @Override
-        public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
-            super.appendHoverText(is, bg, lC, ttf);
-            lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
-        }
-    }
 }
