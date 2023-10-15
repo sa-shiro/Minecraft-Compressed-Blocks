@@ -22,7 +22,7 @@ public class StringUtils {
     }
 
     /**
-     * Utility function to remove the index of compressed Items & Blocks
+     * Utility function to remove the index of compressed Items and Blocks
      * @param name of the Item / Block.
      * @return actual Block name.
      */
