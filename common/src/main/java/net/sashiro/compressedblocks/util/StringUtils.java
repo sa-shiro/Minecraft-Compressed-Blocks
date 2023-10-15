@@ -20,4 +20,17 @@ public class StringUtils {
         }
         return stringFormat.toString().trim();
     }
+
+    /**
+     * Utility function to remove the index of compressed Items & Blocks
+     * @param name of the Item / Block.
+     * @return actual Block name.
+     */
+    public static String removeCompressionName(String name) {
+        for (int i = 0; i < 10; i++) {
+            if (name.contains("c" + i))
+                name = name.replace("c" + i + "_", "");
+        }
+        return name;
+    }
 }

@@ -1017,6 +1017,20 @@ public class CBBlockRegister {
             registerBlock("c7_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_7);
             registerBlock("c8_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_8);
             registerBlock("c9_" + "WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER_9);
+            // ==================================================
+            // Version: 1.3.9
+            // ==================================================
+            // BONE_BLOCK
+            registerBlock("c0_" + "BONE_BLOCK", BONE_BLOCK_0);
+            registerBlock("c1_" + "BONE_BLOCK", BONE_BLOCK_1);
+            registerBlock("c2_" + "BONE_BLOCK", BONE_BLOCK_2);
+            registerBlock("c3_" + "BONE_BLOCK", BONE_BLOCK_3);
+            registerBlock("c4_" + "BONE_BLOCK", BONE_BLOCK_4);
+            registerBlock("c5_" + "BONE_BLOCK", BONE_BLOCK_5);
+            registerBlock("c6_" + "BONE_BLOCK", BONE_BLOCK_6);
+            registerBlock("c7_" + "BONE_BLOCK", BONE_BLOCK_7);
+            registerBlock("c8_" + "BONE_BLOCK", BONE_BLOCK_8);
+            registerBlock("c9_" + "BONE_BLOCK", BONE_BLOCK_9);
         }
     }
 }

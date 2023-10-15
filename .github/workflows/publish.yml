@@ -4,13 +4,13 @@
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
-run-name: "release: v1.3.8 - 1.20.2"
+run-name: "release: v1.3.9 - 1.20.2"
 
 name: publish
 on: workflow_dispatch
 
 env:
-  VERSION: 1.3.8
+  VERSION: 1.3.9
   MC_VERSION: "1.20.2"
   MC_VERSION_RANGE: |
     1.20
