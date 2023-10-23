@@ -41,7 +41,7 @@ public class CBBlockStateProvider extends BlockStateProvider {
                                 .texture("particle", utils.getActualResourceLocation(block.get().getDescriptionId()))
                                 .texture("overlay", utils.getCompressionOverlay(block.get().getDescriptionId()))
                                 .parent(cubeColumn)
-                                .renderType("translucent")
+                                .renderType("cutout")
                                 .element()
                                 .from(0, 0, 0)
                                 .to(16, 16, 16)
@@ -69,7 +69,7 @@ public class CBBlockStateProvider extends BlockStateProvider {
                                 .texture("particle", utils.getActualResourceLocation(block.get().getDescriptionId()))
                                 .texture("overlay", utils.getCompressionOverlay(block.get().getDescriptionId()))
                                 .parent(cubeColumnHorizontal)
-                                .renderType("translucent")
+                                .renderType("cutout")
                                 .element()
                                 .from(0, 0, 0)
                                 .to(16, 16, 16)
@@ -100,7 +100,7 @@ public class CBBlockStateProvider extends BlockStateProvider {
                                 .texture("particle", utils.getActualResourceLocation(block.get().getDescriptionId()))
                                 .texture("overlay", utils.getCompressionOverlay(block.get().getDescriptionId()))
                                 .parent(blockBlock)
-                                .renderType("translucent")
+                                .renderType("cutout")
                                 .element()
                                 .from(0, 0, 0)
                                 .to(16, 16, 16)
@@ -125,19 +125,20 @@ public class CBBlockStateProvider extends BlockStateProvider {
             }
         }
 
-        for (RegistryObject<Block> block : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
-            String crate_name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
+        for (RegistryObject<Block> crateBlock : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
+            String crate_name = crateBlock.get().getDescriptionId().replace("block.compressedblocks.", "");
             String mc_name = utils.getMCName(crate_name);
             ResourceLocation location = utils.getResourceLocation(mc_name);
+            RotatedPillarBlock rotatedPillarBlock = (RotatedPillarBlock) crateBlock.get();
 
             simpleBlock(
-                    block.get(), models().cubeAll(
+                    crateBlock.get(), models().cubeAll(
                                     crate_name,
                                     new ResourceLocation(MOD_ID, "block/crate")
                             )
                             .texture("particle", new ResourceLocation(MOD_ID, "block/crate"))
                             .texture("item", location)
-                            .texture("number", utils.getCrateLevel(block.get().getDescriptionId()))
+                            .texture("number", utils.getCrateOverlay(crateBlock.get().getDescriptionId()))
                             .parent(blockBlock)
                             .renderType("cutout")
                             .element()
@@ -157,6 +158,51 @@ public class CBBlockStateProvider extends BlockStateProvider {
                             .face(Direction.EAST).texture("#number").end()
                             .end()
             );
+
+            //axisBlock(
+            //        rotatedPillarBlock, models().cubeColumn(
+            //                        crate_name,
+            //                        // texture keys: side, end
+            //                        new ResourceLocation(MOD_ID, "block/crate"), utils.getCrateOverlay(crateBlock.get().getDescriptionId())
+            //                )
+            //                .texture("particle", new ResourceLocation(MOD_ID, "block/crate"))
+            //                .texture("item", location)
+            //                .parent(cubeColumn)
+            //                .renderType("cutout")
+            //                .element()
+            //                .face(Direction.DOWN).texture("#side").end()
+            //                .face(Direction.UP).texture("#side").end()
+            //                .face(Direction.NORTH).texture("#side").end()
+            //                .face(Direction.SOUTH).texture("#side").end()
+            //                .face(Direction.EAST).texture("#side").end()
+            //                .face(Direction.WEST).texture("#side").end()
+            //                .end()
+            //                .element()
+            //                .face(Direction.SOUTH).texture("#item").end()
+            //                .face(Direction.WEST).texture("#end").end()
+            //                .end()
+            //        , models().cubeColumnHorizontal(
+            //                        crate_name + "_horizontal",
+            //                        // texture keys: side, end
+            //                        new ResourceLocation(MOD_ID, "block/crate"), utils.getCrateOverlay(crateBlock.get().getDescriptionId())
+            //                )
+            //                .texture("particle", new ResourceLocation(MOD_ID, "block/crate"))
+            //                .texture("item", location)
+            //                .parent(cubeColumnHorizontal)
+            //                .renderType("cutout")
+            //                .element()
+            //                .face(Direction.DOWN).texture("#side").end()
+            //                .face(Direction.UP).texture("#side").end()
+            //                .face(Direction.NORTH).texture("#side").end()
+            //                .face(Direction.SOUTH).texture("#side").end()
+            //                .face(Direction.EAST).texture("#side").end()
+            //                .face(Direction.WEST).texture("#side").end()
+            //                .end()
+            //                .element()
+            //                .face(Direction.NORTH).texture("#item").end()
+            //                .face(Direction.EAST).texture("#end").end()
+            //                .end()
+            //);
         }
     }
 }

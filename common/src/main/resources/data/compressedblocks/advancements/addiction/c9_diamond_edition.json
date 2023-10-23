@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "compressedblocks:c9_diamond_block"
+    },
+    "title": "I have no life???",
+    "description": "§4Reach the final compression level with: §2Diamond Block§4!",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c8_diamond_edition",
+  "criteria": {
+    "get_c9_diamond_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c9_diamond_block"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c9_diamond_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 25000
+  },
+  "sends_telemetry_event": true
+}

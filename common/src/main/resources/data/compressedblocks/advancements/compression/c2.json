@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "compressedblocks:c2_stone"
+    },
+    "title": "The Third Step",
+    "description": "Continue the compression algorithm.",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:compression/c1",
+  "criteria": {
+    "get_c2": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "compressedblocks:c2"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c2"
+    ]
+  ],
+  "rewards": {
+    "experience": 750
+  },
+  "sends_telemetry_event": true
+}

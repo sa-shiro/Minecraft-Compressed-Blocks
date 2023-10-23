@@ -21,40 +21,51 @@ public class CBItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
-        for (RegistryObject<Item> registryObject : CBRegistryEvent.CRATE_ITEMS.getEntries()) {
-            Item item = registryObject.get();
-            String name = item.getDescriptionId().replace("item.compressedblocks.", "");
+        for (RegistryObject<Block> registryObject : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
+            Item item = registryObject.get().asItem();
+            String name = item.getDescriptionId().replace("block.compressedblocks.", "");
             if (name.startsWith("crated_")) {
-                tag(CBTags.SINGLE_CRATE).add(item);
+                tag(CBTags.SINGLE_ITEM).add(item);
+                tag(CBTags.SINGLE_CRATE_ITEM).add(item);
             }
             if (name.startsWith("double_crated_")) {
-                tag(CBTags.DOUBLE_CRATE).add(item);
+                tag(CBTags.DOUBLE_ITEM).add(item);
+                tag(CBTags.DOUBLE_CRATE_ITEM).add(item);
             }
             if (name.startsWith("triple_crated_")) {
-                tag(CBTags.TRIPLE_CRATE).add(item);
+                tag(CBTags.TRIPLE_ITEM).add(item);
+                tag(CBTags.TRIPLE_CRATE_ITEM).add(item);
             }
             if (name.startsWith("quadruple_crated_")) {
-                tag(CBTags.QUADRUPLE_CRATE).add(item);
+                tag(CBTags.QUADRUPLE_ITEM).add(item);
+                tag(CBTags.QUADRUPLE_CRATE_ITEM).add(item);
             }
             if (name.startsWith("quintuple_crated_")) {
-                tag(CBTags.QUINTUPLE_CRATE).add(item);
+                tag(CBTags.QUINTUPLE_ITEM).add(item);
+                tag(CBTags.QUINTUPLE_CRATE_ITEM).add(item);
             }
             if (name.startsWith("sextuple_crated_")) {
-                tag(CBTags.SEXTUPLE_CRATE).add(item);
+                tag(CBTags.SEXTUPLE_ITEM).add(item);
+                tag(CBTags.SEXTUPLE_CRATE_ITEM).add(item);
             }
             if (name.startsWith("septuple_crated_")) {
-                tag(CBTags.SEPTUPLE_CRATE).add(item);
+                tag(CBTags.SEPTUPLE_ITEM).add(item);
+                tag(CBTags.SEPTUPLE_CRATE_ITEM).add(item);
             }
             if (name.startsWith("octuple_crated_")) {
-                tag(CBTags.OCTUPLE_CRATE).add(item);
+                tag(CBTags.OCTUPLE_ITEM).add(item);
+                tag(CBTags.OCTUPLE_CRATE_ITEM).add(item);
             }
             if (name.startsWith("mega_crated_")) {
-                tag(CBTags.MEGA_CRATE).add(item);
+                tag(CBTags.MEGA_ITEM).add(item);
+                tag(CBTags.MEGA_CRATE_ITEM).add(item);
             }
             if (name.startsWith("giga_crated_")) {
-                tag(CBTags.GIGA_CRATE).add(item);
+                tag(CBTags.GIGA_ITEM).add(item);
+                tag(CBTags.GIGA_CRATE_ITEM).add(item);
             }
         }
+
         for (RegistryObject<Block> registryObject : CBRegistryEvent.BLOCKS.getEntries()) {
             Item item = registryObject.get().asItem();
             String name = item.getDescriptionId().replace("block.compressedblocks.", "");

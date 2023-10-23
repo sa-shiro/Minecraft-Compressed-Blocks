@@ -12,6 +12,7 @@ public class Constants {
     public static final String MOD_ID = "compressedblocks";
     public static final String MOD_NAME = "Compressed Blocks";
     public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);
+    // todo: fix hardness and resistance
     public static final float[] HARDNESS = {5.0F, 6.5F, 8.5F, 12.5F, 15.0F, 20.5F, 25.5F, 30.5F, 40.0F, 50.0F};
     public static final float[] RESISTANCE = {35.5F, 75.0F, 150.0F, 300.0F, 600.0F, 800.0F, 1250.0F, 2000.0F, 5000.0F, 7500.0F};
     public static final String c0 = "crated_";
