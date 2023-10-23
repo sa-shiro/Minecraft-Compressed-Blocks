@@ -175,6 +175,7 @@ public class CompressedBlock {
 
         public CustomRotatedPillarBlock(Properties properties, int compressionLevel) {
             super(properties);
+            this.registerDefaultState(this.defaultBlockState().setValue(AXIS, Direction.Axis.Z));
             compressor.setCompressionLevel(compressionLevel);
         }
 

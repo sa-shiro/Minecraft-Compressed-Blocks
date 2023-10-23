@@ -1017,4 +1017,106 @@ public class BlockList {
     public static final CustomRotatedPillarBlock BONE_BLOCK_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).strength(HARDNESS[5], RESISTANCE[3]), 7);
     public static final CustomRotatedPillarBlock BONE_BLOCK_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).strength(HARDNESS[6], RESISTANCE[4]), 8);
     public static final CustomRotatedPillarBlock BONE_BLOCK_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).strength(HARDNESS[6], RESISTANCE[4]), 9);
+    // ==================================================
+    // Version: 1.4.0
+    // ==================================================
+    // SCULK
+    public static final CustomRotatedPillarBlock SCULK_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(HARDNESS[2], RESISTANCE[0]), 0);
+    public static final CustomRotatedPillarBlock SCULK_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(HARDNESS[2], RESISTANCE[0]), 1);
+    public static final CustomRotatedPillarBlock SCULK_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(HARDNESS[3], RESISTANCE[1]), 2);
+    public static final CustomRotatedPillarBlock SCULK_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(HARDNESS[3], RESISTANCE[1]), 3);
+    public static final CustomRotatedPillarBlock SCULK_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(HARDNESS[4], RESISTANCE[2]), 4);
+    public static final CustomRotatedPillarBlock SCULK_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(HARDNESS[4], RESISTANCE[2]), 5);
+    public static final CustomRotatedPillarBlock SCULK_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(HARDNESS[5], RESISTANCE[3]), 6);
+    public static final CustomRotatedPillarBlock SCULK_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(HARDNESS[5], RESISTANCE[3]), 7);
+    public static final CustomRotatedPillarBlock SCULK_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(HARDNESS[6], RESISTANCE[4]), 8);
+    public static final CustomRotatedPillarBlock SCULK_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(HARDNESS[6], RESISTANCE[4]), 9);
+    // SMOOTH_SANDSTONE
+    public static final CustomRotatedPillarBlock SMOOTH_SANDSTONE_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE).strength(HARDNESS[2], RESISTANCE[0]), 0);
+    public static final CustomRotatedPillarBlock SMOOTH_SANDSTONE_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE).strength(HARDNESS[2], RESISTANCE[0]), 1);
+    public static final CustomRotatedPillarBlock SMOOTH_SANDSTONE_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE).strength(HARDNESS[3], RESISTANCE[1]), 2);
+    public static final CustomRotatedPillarBlock SMOOTH_SANDSTONE_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE).strength(HARDNESS[3], RESISTANCE[1]), 3);
+    public static final CustomRotatedPillarBlock SMOOTH_SANDSTONE_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE).strength(HARDNESS[4], RESISTANCE[2]), 4);
+    public static final CustomRotatedPillarBlock SMOOTH_SANDSTONE_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE).strength(HARDNESS[4], RESISTANCE[2]), 5);
+    public static final CustomRotatedPillarBlock SMOOTH_SANDSTONE_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE).strength(HARDNESS[5], RESISTANCE[3]), 6);
+    public static final CustomRotatedPillarBlock SMOOTH_SANDSTONE_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE).strength(HARDNESS[5], RESISTANCE[3]), 7);
+    public static final CustomRotatedPillarBlock SMOOTH_SANDSTONE_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE).strength(HARDNESS[6], RESISTANCE[4]), 8);
+    public static final CustomRotatedPillarBlock SMOOTH_SANDSTONE_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE).strength(HARDNESS[6], RESISTANCE[4]), 9);
+    // CUT_SANDSTONE
+    public static final CustomRotatedPillarBlock CUT_SANDSTONE_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE).strength(HARDNESS[2], RESISTANCE[0]), 0);
+    public static final CustomRotatedPillarBlock CUT_SANDSTONE_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE).strength(HARDNESS[2], RESISTANCE[0]), 1);
+    public static final CustomRotatedPillarBlock CUT_SANDSTONE_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE).strength(HARDNESS[3], RESISTANCE[1]), 2);
+    public static final CustomRotatedPillarBlock CUT_SANDSTONE_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE).strength(HARDNESS[3], RESISTANCE[1]), 3);
+    public static final CustomRotatedPillarBlock CUT_SANDSTONE_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE).strength(HARDNESS[4], RESISTANCE[2]), 4);
+    public static final CustomRotatedPillarBlock CUT_SANDSTONE_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE).strength(HARDNESS[4], RESISTANCE[2]), 5);
+    public static final CustomRotatedPillarBlock CUT_SANDSTONE_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE).strength(HARDNESS[5], RESISTANCE[3]), 6);
+    public static final CustomRotatedPillarBlock CUT_SANDSTONE_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE).strength(HARDNESS[5], RESISTANCE[3]), 7);
+    public static final CustomRotatedPillarBlock CUT_SANDSTONE_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE).strength(HARDNESS[6], RESISTANCE[4]), 8);
+    public static final CustomRotatedPillarBlock CUT_SANDSTONE_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE).strength(HARDNESS[6], RESISTANCE[4]), 9);
+    // CHISELED_SANDSTONE
+    public static final CustomRotatedPillarBlock CHISELED_SANDSTONE_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_SANDSTONE).strength(HARDNESS[2], RESISTANCE[0]), 0);
+    public static final CustomRotatedPillarBlock CHISELED_SANDSTONE_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_SANDSTONE).strength(HARDNESS[2], RESISTANCE[0]), 1);
+    public static final CustomRotatedPillarBlock CHISELED_SANDSTONE_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_SANDSTONE).strength(HARDNESS[3], RESISTANCE[1]), 2);
+    public static final CustomRotatedPillarBlock CHISELED_SANDSTONE_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_SANDSTONE).strength(HARDNESS[3], RESISTANCE[1]), 3);
+    public static final CustomRotatedPillarBlock CHISELED_SANDSTONE_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_SANDSTONE).strength(HARDNESS[4], RESISTANCE[2]), 4);
+    public static final CustomRotatedPillarBlock CHISELED_SANDSTONE_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_SANDSTONE).strength(HARDNESS[4], RESISTANCE[2]), 5);
+    public static final CustomRotatedPillarBlock CHISELED_SANDSTONE_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_SANDSTONE).strength(HARDNESS[5], RESISTANCE[3]), 6);
+    public static final CustomRotatedPillarBlock CHISELED_SANDSTONE_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_SANDSTONE).strength(HARDNESS[5], RESISTANCE[3]), 7);
+    public static final CustomRotatedPillarBlock CHISELED_SANDSTONE_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_SANDSTONE).strength(HARDNESS[6], RESISTANCE[4]), 8);
+    public static final CustomRotatedPillarBlock CHISELED_SANDSTONE_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_SANDSTONE).strength(HARDNESS[6], RESISTANCE[4]), 9);
+    // SMOOTH_RED_SANDSTONE
+    public static final CustomRotatedPillarBlock SMOOTH_RED_SANDSTONE_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE).strength(HARDNESS[2], RESISTANCE[0]), 0);
+    public static final CustomRotatedPillarBlock SMOOTH_RED_SANDSTONE_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE).strength(HARDNESS[2], RESISTANCE[0]), 1);
+    public static final CustomRotatedPillarBlock SMOOTH_RED_SANDSTONE_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE).strength(HARDNESS[3], RESISTANCE[1]), 2);
+    public static final CustomRotatedPillarBlock SMOOTH_RED_SANDSTONE_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE).strength(HARDNESS[3], RESISTANCE[1]), 3);
+    public static final CustomRotatedPillarBlock SMOOTH_RED_SANDSTONE_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE).strength(HARDNESS[4], RESISTANCE[2]), 4);
+    public static final CustomRotatedPillarBlock SMOOTH_RED_SANDSTONE_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE).strength(HARDNESS[4], RESISTANCE[2]), 5);
+    public static final CustomRotatedPillarBlock SMOOTH_RED_SANDSTONE_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE).strength(HARDNESS[5], RESISTANCE[3]), 6);
+    public static final CustomRotatedPillarBlock SMOOTH_RED_SANDSTONE_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE).strength(HARDNESS[5], RESISTANCE[3]), 7);
+    public static final CustomRotatedPillarBlock SMOOTH_RED_SANDSTONE_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE).strength(HARDNESS[6], RESISTANCE[4]), 8);
+    public static final CustomRotatedPillarBlock SMOOTH_RED_SANDSTONE_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE).strength(HARDNESS[6], RESISTANCE[4]), 9);
+    // CUT_RED_SANDSTONE
+    public static final CustomRotatedPillarBlock CUT_RED_SANDSTONE_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_RED_SANDSTONE).strength(HARDNESS[2], RESISTANCE[0]), 0);
+    public static final CustomRotatedPillarBlock CUT_RED_SANDSTONE_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_RED_SANDSTONE).strength(HARDNESS[2], RESISTANCE[0]), 1);
+    public static final CustomRotatedPillarBlock CUT_RED_SANDSTONE_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_RED_SANDSTONE).strength(HARDNESS[3], RESISTANCE[1]), 2);
+    public static final CustomRotatedPillarBlock CUT_RED_SANDSTONE_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_RED_SANDSTONE).strength(HARDNESS[3], RESISTANCE[1]), 3);
+    public static final CustomRotatedPillarBlock CUT_RED_SANDSTONE_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_RED_SANDSTONE).strength(HARDNESS[4], RESISTANCE[2]), 4);
+    public static final CustomRotatedPillarBlock CUT_RED_SANDSTONE_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_RED_SANDSTONE).strength(HARDNESS[4], RESISTANCE[2]), 5);
+    public static final CustomRotatedPillarBlock CUT_RED_SANDSTONE_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_RED_SANDSTONE).strength(HARDNESS[5], RESISTANCE[3]), 6);
+    public static final CustomRotatedPillarBlock CUT_RED_SANDSTONE_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_RED_SANDSTONE).strength(HARDNESS[5], RESISTANCE[3]), 7);
+    public static final CustomRotatedPillarBlock CUT_RED_SANDSTONE_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_RED_SANDSTONE).strength(HARDNESS[6], RESISTANCE[4]), 8);
+    public static final CustomRotatedPillarBlock CUT_RED_SANDSTONE_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CUT_RED_SANDSTONE).strength(HARDNESS[6], RESISTANCE[4]), 9);
+    // CHISELED_RED_SANDSTONE
+    public static final CustomRotatedPillarBlock CHISELED_RED_SANDSTONE_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_RED_SANDSTONE).strength(HARDNESS[2], RESISTANCE[0]), 0);
+    public static final CustomRotatedPillarBlock CHISELED_RED_SANDSTONE_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_RED_SANDSTONE).strength(HARDNESS[2], RESISTANCE[0]), 1);
+    public static final CustomRotatedPillarBlock CHISELED_RED_SANDSTONE_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_RED_SANDSTONE).strength(HARDNESS[3], RESISTANCE[1]), 2);
+    public static final CustomRotatedPillarBlock CHISELED_RED_SANDSTONE_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_RED_SANDSTONE).strength(HARDNESS[3], RESISTANCE[1]), 3);
+    public static final CustomRotatedPillarBlock CHISELED_RED_SANDSTONE_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_RED_SANDSTONE).strength(HARDNESS[4], RESISTANCE[2]), 4);
+    public static final CustomRotatedPillarBlock CHISELED_RED_SANDSTONE_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_RED_SANDSTONE).strength(HARDNESS[4], RESISTANCE[2]), 5);
+    public static final CustomRotatedPillarBlock CHISELED_RED_SANDSTONE_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_RED_SANDSTONE).strength(HARDNESS[5], RESISTANCE[3]), 6);
+    public static final CustomRotatedPillarBlock CHISELED_RED_SANDSTONE_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_RED_SANDSTONE).strength(HARDNESS[5], RESISTANCE[3]), 7);
+    public static final CustomRotatedPillarBlock CHISELED_RED_SANDSTONE_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_RED_SANDSTONE).strength(HARDNESS[6], RESISTANCE[4]), 8);
+    public static final CustomRotatedPillarBlock CHISELED_RED_SANDSTONE_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_RED_SANDSTONE).strength(HARDNESS[6], RESISTANCE[4]), 9);
+    // DIAMOND_BLOCK
+    public static final CustomRotatedPillarBlock DIAMOND_BLOCK_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).strength(HARDNESS[3], RESISTANCE[2]), 0);
+    public static final CustomRotatedPillarBlock DIAMOND_BLOCK_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).strength(HARDNESS[3], RESISTANCE[2]), 1);
+    public static final CustomRotatedPillarBlock DIAMOND_BLOCK_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).strength(HARDNESS[4], RESISTANCE[3]), 2);
+    public static final CustomRotatedPillarBlock DIAMOND_BLOCK_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).strength(HARDNESS[4], RESISTANCE[3]), 3);
+    public static final CustomRotatedPillarBlock DIAMOND_BLOCK_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).strength(HARDNESS[5], RESISTANCE[4]), 4);
+    public static final CustomRotatedPillarBlock DIAMOND_BLOCK_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).strength(HARDNESS[5], RESISTANCE[4]), 5);
+    public static final CustomRotatedPillarBlock DIAMOND_BLOCK_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).strength(HARDNESS[6], RESISTANCE[5]), 6);
+    public static final CustomRotatedPillarBlock DIAMOND_BLOCK_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).strength(HARDNESS[6], RESISTANCE[5]), 7);
+    public static final CustomRotatedPillarBlock DIAMOND_BLOCK_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).strength(HARDNESS[7], RESISTANCE[6]), 8);
+    public static final CustomRotatedPillarBlock DIAMOND_BLOCK_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).strength(HARDNESS[7], RESISTANCE[6]), 9);
+    // NETHERITE_BLOCK
+    public static final CustomRotatedPillarBlock NETHERITE_BLOCK_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[5], RESISTANCE[5]), 0);
+    public static final CustomRotatedPillarBlock NETHERITE_BLOCK_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[5], RESISTANCE[5]), 1);
+    public static final CustomRotatedPillarBlock NETHERITE_BLOCK_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[6], RESISTANCE[6]), 2);
+    public static final CustomRotatedPillarBlock NETHERITE_BLOCK_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[6], RESISTANCE[6]), 3);
+    public static final CustomRotatedPillarBlock NETHERITE_BLOCK_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[7], RESISTANCE[7]), 4);
+    public static final CustomRotatedPillarBlock NETHERITE_BLOCK_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[7], RESISTANCE[7]), 5);
+    public static final CustomRotatedPillarBlock NETHERITE_BLOCK_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[8], RESISTANCE[8]), 6);
+    public static final CustomRotatedPillarBlock NETHERITE_BLOCK_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[8], RESISTANCE[8]), 7);
+    public static final CustomRotatedPillarBlock NETHERITE_BLOCK_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[9], RESISTANCE[9]), 8);
+    public static final CustomRotatedPillarBlock NETHERITE_BLOCK_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[9], RESISTANCE[9]), 9);
 }

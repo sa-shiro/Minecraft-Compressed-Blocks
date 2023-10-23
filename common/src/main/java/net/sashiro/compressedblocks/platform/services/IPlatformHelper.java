@@ -1,5 +1,7 @@
 package net.sashiro.compressedblocks.platform.services;
 
+import net.minecraft.world.level.block.Block;
+
 public interface IPlatformHelper {
 
     /**
@@ -33,4 +35,20 @@ public interface IPlatformHelper {
 
         return isDevelopmentEnvironment() ? "development" : "production";
     }
+
+    /**
+     * Function for platform-dependent registration of Blocks
+     *
+     * @param name  the registry name of the Block
+     * @param block the Block to be registered
+     */
+    void registerBlock(String name, Block block);
+
+    /**
+     * Function for platform-dependent registration of Crates
+     *
+     * @param name       the registry name of the Block
+     * @param crateBlock the Crate Block to be registered
+     */
+    void registerCrate(String name, Block crateBlock);
 }

@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "compressedblocks:double_crated_apple"
+    },
+    "title": "MOAR Crates!!!",
+    "description": "Crate any crated item",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:compression/crate",
+  "criteria": {
+    "get_double_crate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "compressedblocks:double_crate"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_double_crate"
+    ]
+  ],
+  "rewards": {
+    "experience": 500
+  },
+  "sends_telemetry_event": true
+}

@@ -7,7 +7,7 @@ import net.sashiro.compressedblocks.event.CBRegistryEvent;
 public class CompressedBlocksForge {
 
     public CompressedBlocksForge() {
-        CommonClass.init();
+        CompressedBlocksCommon.init();
 
         CBRegistryEvent.register();
     }

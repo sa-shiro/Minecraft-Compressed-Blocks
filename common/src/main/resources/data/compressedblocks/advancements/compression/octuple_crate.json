@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "compressedblocks:octuple_crated_apple"
+    },
+    "title": "Crate Dealer",
+    "description": "Continue the crating algorithm.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:compression/septuple_crate",
+  "criteria": {
+    "get_octuple_crate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "compressedblocks:octuple_crate"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_octuple_crate"
+    ]
+  ],
+  "rewards": {
+    "experience": 5000
+  },
+  "sends_telemetry_event": true
+}

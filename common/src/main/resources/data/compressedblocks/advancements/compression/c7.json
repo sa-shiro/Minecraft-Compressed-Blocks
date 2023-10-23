@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "compressedblocks:c7_stone"
+    },
+    "title": "The Eight Step",
+    "description": "Continue the compression algorithm.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:compression/c6",
+  "criteria": {
+    "get_c7": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "compressedblocks:c7"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c7"
+    ]
+  ],
+  "rewards": {
+    "experience": 5000
+  },
+  "sends_telemetry_event": true
+}

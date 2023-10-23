@@ -1770,4 +1770,62 @@ public class CrateList {
     public static final RotatedPillarBlock PINK_CARPET_7 = new RotatedPillarBlock(p7);
     public static final RotatedPillarBlock PINK_CARPET_8 = new RotatedPillarBlock(p8);
     public static final RotatedPillarBlock PINK_CARPET_9 = new RotatedPillarBlock(p9);
+    // ==================================================
+    // Version: 1.4.0
+    // ==================================================
+    // VINE
+    public static final RotatedPillarBlock VINE_0 = new RotatedPillarBlock(p0);
+    public static final RotatedPillarBlock VINE_1 = new RotatedPillarBlock(p1);
+    public static final RotatedPillarBlock VINE_2 = new RotatedPillarBlock(p2);
+    public static final RotatedPillarBlock VINE_3 = new RotatedPillarBlock(p3);
+    public static final RotatedPillarBlock VINE_4 = new RotatedPillarBlock(p4);
+    public static final RotatedPillarBlock VINE_5 = new RotatedPillarBlock(p5);
+    public static final RotatedPillarBlock VINE_6 = new RotatedPillarBlock(p6);
+    public static final RotatedPillarBlock VINE_7 = new RotatedPillarBlock(p7);
+    public static final RotatedPillarBlock VINE_8 = new RotatedPillarBlock(p8);
+    public static final RotatedPillarBlock VINE_9 = new RotatedPillarBlock(p9);
+    // TWISTING_VINE
+    public static final RotatedPillarBlock TWISTING_VINES_0 = new RotatedPillarBlock(p0);
+    public static final RotatedPillarBlock TWISTING_VINES_1 = new RotatedPillarBlock(p1);
+    public static final RotatedPillarBlock TWISTING_VINES_2 = new RotatedPillarBlock(p2);
+    public static final RotatedPillarBlock TWISTING_VINES_3 = new RotatedPillarBlock(p3);
+    public static final RotatedPillarBlock TWISTING_VINES_4 = new RotatedPillarBlock(p4);
+    public static final RotatedPillarBlock TWISTING_VINES_5 = new RotatedPillarBlock(p5);
+    public static final RotatedPillarBlock TWISTING_VINES_6 = new RotatedPillarBlock(p6);
+    public static final RotatedPillarBlock TWISTING_VINES_7 = new RotatedPillarBlock(p7);
+    public static final RotatedPillarBlock TWISTING_VINES_8 = new RotatedPillarBlock(p8);
+    public static final RotatedPillarBlock TWISTING_VINES_9 = new RotatedPillarBlock(p9);
+    // WEEPING_VINE
+    public static final RotatedPillarBlock WEEPING_VINES_0 = new RotatedPillarBlock(p0);
+    public static final RotatedPillarBlock WEEPING_VINES_1 = new RotatedPillarBlock(p1);
+    public static final RotatedPillarBlock WEEPING_VINES_2 = new RotatedPillarBlock(p2);
+    public static final RotatedPillarBlock WEEPING_VINES_3 = new RotatedPillarBlock(p3);
+    public static final RotatedPillarBlock WEEPING_VINES_4 = new RotatedPillarBlock(p4);
+    public static final RotatedPillarBlock WEEPING_VINES_5 = new RotatedPillarBlock(p5);
+    public static final RotatedPillarBlock WEEPING_VINES_6 = new RotatedPillarBlock(p6);
+    public static final RotatedPillarBlock WEEPING_VINES_7 = new RotatedPillarBlock(p7);
+    public static final RotatedPillarBlock WEEPING_VINES_8 = new RotatedPillarBlock(p8);
+    public static final RotatedPillarBlock WEEPING_VINES_9 = new RotatedPillarBlock(p9);
+    // GLOW_LICHEN
+    public static final RotatedPillarBlock GLOW_LICHEN_0 = new RotatedPillarBlock(p0);
+    public static final RotatedPillarBlock GLOW_LICHEN_1 = new RotatedPillarBlock(p1);
+    public static final RotatedPillarBlock GLOW_LICHEN_2 = new RotatedPillarBlock(p2);
+    public static final RotatedPillarBlock GLOW_LICHEN_3 = new RotatedPillarBlock(p3);
+    public static final RotatedPillarBlock GLOW_LICHEN_4 = new RotatedPillarBlock(p4);
+    public static final RotatedPillarBlock GLOW_LICHEN_5 = new RotatedPillarBlock(p5);
+    public static final RotatedPillarBlock GLOW_LICHEN_6 = new RotatedPillarBlock(p6);
+    public static final RotatedPillarBlock GLOW_LICHEN_7 = new RotatedPillarBlock(p7);
+    public static final RotatedPillarBlock GLOW_LICHEN_8 = new RotatedPillarBlock(p8);
+    public static final RotatedPillarBlock GLOW_LICHEN_9 = new RotatedPillarBlock(p9);
+    // SCULK_VEIN
+    public static final RotatedPillarBlock SCULK_VEIN_0 = new RotatedPillarBlock(p0);
+    public static final RotatedPillarBlock SCULK_VEIN_1 = new RotatedPillarBlock(p1);
+    public static final RotatedPillarBlock SCULK_VEIN_2 = new RotatedPillarBlock(p2);
+    public static final RotatedPillarBlock SCULK_VEIN_3 = new RotatedPillarBlock(p3);
+    public static final RotatedPillarBlock SCULK_VEIN_4 = new RotatedPillarBlock(p4);
+    public static final RotatedPillarBlock SCULK_VEIN_5 = new RotatedPillarBlock(p5);
+    public static final RotatedPillarBlock SCULK_VEIN_6 = new RotatedPillarBlock(p6);
+    public static final RotatedPillarBlock SCULK_VEIN_7 = new RotatedPillarBlock(p7);
+    public static final RotatedPillarBlock SCULK_VEIN_8 = new RotatedPillarBlock(p8);
+    public static final RotatedPillarBlock SCULK_VEIN_9 = new RotatedPillarBlock(p9);
 }

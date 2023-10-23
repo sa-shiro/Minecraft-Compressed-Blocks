@@ -6,6 +6,8 @@ import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.util.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
+
 /**
  * Utilities for Data Generation
  */
@@ -14,13 +16,14 @@ public class GenUtils {
     protected boolean isBlock(RegistryObject<Block> block) {
         String blockName = block.get().getDescriptionId();
 
-        if (blockName.contains("honey_block")) return true;
-        if (blockName.contains("basalt")) return true;
-        if (blockName.contains("bone_block")) return true;
+        for (String s : Arrays.asList("honey_block", "basalt", "bone_block", "sandstone")) {
+            if (blockName.contains(s)) return true;
+        }
+
         return false;
     }
 
-    protected ResourceLocation getCrateLevel(String blockName) {
+    protected ResourceLocation getCrateOverlay(String blockName) {
         String overlay;
         blockName = blockName.replace("block.compressedblocks.", "");
         if (blockName.startsWith("crated_")) overlay = "level_0";
@@ -118,6 +121,9 @@ public class GenUtils {
                 || mc_name.contains("rose")
                 || mc_name.contains("turtle")
                 || mc_name.contains("cobweb")
+                || mc_name.contains("vein")
+                || mc_name.contains("vine")
+                || mc_name.contains("lichen")
         )
             location = new ResourceLocation("block/" + mc_name);
         if (mc_name.contains("sunflower")) location = new ResourceLocation("block/sunflower_front");

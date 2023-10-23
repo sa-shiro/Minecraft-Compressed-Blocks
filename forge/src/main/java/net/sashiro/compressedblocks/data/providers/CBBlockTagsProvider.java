@@ -23,6 +23,50 @@ public class CBBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider holder) {
+        for (RegistryObject<Block> registryObject : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
+            Block block = registryObject.get();
+            String name = block.getDescriptionId().replace("block.compressedblocks.", "");
+            if (name.startsWith("crated_")) {
+                tag(CBTags.SINGLE).add(block);
+                tag(CBTags.SINGLE_CRATE).add(block);
+            }
+            if (name.startsWith("double_crated_")) {
+                tag(CBTags.DOUBLE).add(block);
+                tag(CBTags.DOUBLE_CRATE).add(block);
+            }
+            if (name.startsWith("triple_crated_")) {
+                tag(CBTags.TRIPLE).add(block);
+                tag(CBTags.TRIPLE_CRATE).add(block);
+            }
+            if (name.startsWith("quadruple_crated_")) {
+                tag(CBTags.QUADRUPLE).add(block);
+                tag(CBTags.QUADRUPLE_CRATE).add(block);
+            }
+            if (name.startsWith("quintuple_crated_")) {
+                tag(CBTags.QUINTUPLE).add(block);
+                tag(CBTags.QUINTUPLE_CRATE).add(block);
+            }
+            if (name.startsWith("sextuple_crated_")) {
+                tag(CBTags.SEXTUPLE).add(block);
+                tag(CBTags.SEXTUPLE_CRATE).add(block);
+            }
+            if (name.startsWith("septuple_crated_")) {
+                tag(CBTags.SEPTUPLE).add(block);
+                tag(CBTags.SEPTUPLE_CRATE).add(block);
+            }
+            if (name.startsWith("octuple_crated_")) {
+                tag(CBTags.OCTUPLE).add(block);
+                tag(CBTags.OCTUPLE_CRATE).add(block);
+            }
+            if (name.startsWith("mega_crated_")) {
+                tag(CBTags.MEGA).add(block);
+                tag(CBTags.MEGA_CRATE).add(block);
+            }
+            if (name.startsWith("giga_crated_")) {
+                tag(CBTags.GIGA).add(block);
+                tag(CBTags.GIGA_CRATE).add(block);
+            }
+        }
         for (RegistryObject<Block> registryObject : CBRegistryEvent.BLOCKS.getEntries()) {
             Block block = registryObject.get();
             String name = block.getDescriptionId().replace("block.compressedblocks.", "");

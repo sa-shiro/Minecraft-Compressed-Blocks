@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "compressedblocks:c9_stone"
+    },
+    "title": "The Final Step",
+    "description": "§4Reach the final compression level!",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:compression/c8",
+  "criteria": {
+    "get_c9": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "compressedblocks:c9"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c9"
+    ]
+  ],
+  "rewards": {
+    "experience": 10000
+  },
+  "sends_telemetry_event": true
+}
