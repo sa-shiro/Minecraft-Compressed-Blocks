@@ -68,8 +68,8 @@
   ],
   "render_type": "minecraft:translucent",
   "textures": {
-    "end": "minecraft:block/sandstone_top",
-    "side": "minecraft:block/chiseled_sandstone",
+    "end": "minecraft:block/red_sandstone_top",
+    "side": "minecraft:block/chiseled_red_sandstone",
     "overlay": "compressedblocks:block/compression_level_2",
     "particle": "minecraft:block/chiseled_red_sandstone"
   }

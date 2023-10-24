@@ -11,7 +11,6 @@ import java.util.Arrays;
 /**
  * Utilities for Data Generation
  */
-@SuppressWarnings("RedundantIfStatement")
 public class GenUtils {
     protected boolean isBlock(RegistryObject<Block> block) {
         String blockName = block.get().getDescriptionId();

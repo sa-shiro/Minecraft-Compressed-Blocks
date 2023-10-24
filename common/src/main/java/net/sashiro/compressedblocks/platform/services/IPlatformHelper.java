@@ -2,6 +2,7 @@ package net.sashiro.compressedblocks.platform.services;
 
 import net.minecraft.world.level.block.Block;
 
+@SuppressWarnings("unused")
 public interface IPlatformHelper {
 
     /**
