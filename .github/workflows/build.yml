@@ -4,7 +4,7 @@
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
-run-name: "v1.4.1 - 1.20.2"
+run-name: "v1.4.2 - 1.20.2"
 
 name: build
 on: [ push, pull_request, workflow_dispatch ]
