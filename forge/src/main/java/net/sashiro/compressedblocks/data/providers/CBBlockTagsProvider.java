@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
 
 
 public class CBBlockTagsProvider extends BlockTagsProvider {
@@ -112,7 +113,7 @@ public class CBBlockTagsProvider extends BlockTagsProvider {
             }
 
             //noinspection StatementWithEmptyBody
-            if (name.contains("slime") || name.equals("honey")) /* do nothing */
+            if (Stream.of("slime", "honey", "vine", "vein", "lichen").anyMatch(name::contains)) /* do nothing */
                 ;
             else if (name.contains("dirt")
                     || (name.contains("sand")
@@ -121,13 +122,10 @@ public class CBBlockTagsProvider extends BlockTagsProvider {
                     || name.contains("clay")
             ) {
                 tag(BlockTags.MINEABLE_WITH_SHOVEL).add(block);
-            } else if (name.contains("hay")
-                    || name.contains("wart")
-                    || name.contains("kelp")
-                    || name.contains("moss")
-                    || name.contains("sculk")
-            ) {
+            } else if (Stream.of("hay", "wart", "kelp", "moss", "sculk").anyMatch(name::contains)) {
                 tag(BlockTags.MINEABLE_WITH_HOE).add(block);
+            } else if (Stream.of("wood", "plank", "log").anyMatch(name::contains)) {
+                tag(BlockTags.MINEABLE_WITH_AXE).add(block);
             } else {
                 tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }

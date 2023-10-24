@@ -23,7 +23,7 @@ public class CBItemTagsProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
         for (RegistryObject<Block> registryObject : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
             Item item = registryObject.get().asItem();
-            String name = item.getDescriptionId().replace("block.compressedblocks.", "");
+            String name = item.getDescriptionId().replace("block.", "").replace("item.", "").replace("compressedblocks.", "");
             if (name.startsWith("crated_")) {
                 tag(CBTags.SINGLE_ITEM).add(item);
                 tag(CBTags.SINGLE_CRATE_ITEM).add(item);
@@ -68,7 +68,7 @@ public class CBItemTagsProvider extends ItemTagsProvider {
 
         for (RegistryObject<Block> registryObject : CBRegistryEvent.BLOCKS.getEntries()) {
             Item item = registryObject.get().asItem();
-            String name = item.getDescriptionId().replace("block.compressedblocks.", "");
+            String name = item.getDescriptionId().replace("block.", "").replace("item.", "").replace("compressedblocks.", "");
             if (name.startsWith("c0")) {
                 tag(CBTags.SINGLE_ITEM).add(item);
                 tag(CBTags.C0_ITEM).add(item);
