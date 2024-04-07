@@ -27,10 +27,6 @@
       "${entrypoint_client}"
     ]
   },
-  "mixins": [
-    "mixins.json",
-    "fabric.mixins.json"
-  ],
   "depends": {
     "fabricloader": "${fabric_version_range}",
     "minecraft": "${fabric_mc_version_range}",

@@ -484,7 +484,7 @@ public class BlockList {
     public static final CustomRotatedPillarBlock BASALT_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[8], RESISTANCE[8]), 8);
     public static final CustomRotatedPillarBlock BASALT_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.BASALT).strength(HARDNESS[9], RESISTANCE[9]), 9);
     // OBSIDIAN
-    public static final CustomDefaultBlock OBSIDIAN_0 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).strength(HARDNESS[0] + 1.0F, RESISTANCE[0] + 250),  0);
+    public static final CustomDefaultBlock OBSIDIAN_0 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).strength(HARDNESS[0] + 1.0F, RESISTANCE[0] + 250), 0);
     public static final CustomDefaultBlock OBSIDIAN_1 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).strength(HARDNESS[1] + 1.5F, RESISTANCE[1] + 500), 1);
     public static final CustomDefaultBlock OBSIDIAN_2 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).strength(HARDNESS[2] + 2.0F, RESISTANCE[2] + 750), 2);
     public static final CustomDefaultBlock OBSIDIAN_3 = new CustomDefaultBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).strength(HARDNESS[3] + 2.5F, RESISTANCE[3] + 1000), 3);
@@ -1119,4 +1119,41 @@ public class BlockList {
     public static final CustomRotatedPillarBlock NETHERITE_BLOCK_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[7] + 4.5F, RESISTANCE[7] + 2000), 7);
     public static final CustomRotatedPillarBlock NETHERITE_BLOCK_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[8] + 5.0F, RESISTANCE[8] + 2250), 8);
     public static final CustomRotatedPillarBlock NETHERITE_BLOCK_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).strength(HARDNESS[9] + 5.5F, RESISTANCE[9] + 2500), 9);
+    // ==================================================
+    // Version: 1.4.3
+    // ==================================================
+    // CRIMSON_STEM
+    public static final CustomRotatedPillarBlock CRIMSON_STEM_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM).strength(HARDNESS[0] + 1.0F, RESISTANCE[0] + 250), 0);
+    public static final CustomRotatedPillarBlock CRIMSON_STEM_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM).strength(HARDNESS[1] + 1.5F, RESISTANCE[1] + 500), 1);
+    public static final CustomRotatedPillarBlock CRIMSON_STEM_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM).strength(HARDNESS[2] + 2.0F, RESISTANCE[2] + 750), 2);
+    public static final CustomRotatedPillarBlock CRIMSON_STEM_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM).strength(HARDNESS[3] + 2.5F, RESISTANCE[3] + 1000), 3);
+    public static final CustomRotatedPillarBlock CRIMSON_STEM_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM).strength(HARDNESS[4] + 3.0F, RESISTANCE[4] + 1250), 4);
+    public static final CustomRotatedPillarBlock CRIMSON_STEM_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM).strength(HARDNESS[5] + 3.5F, RESISTANCE[5] + 1500), 5);
+    public static final CustomRotatedPillarBlock CRIMSON_STEM_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM).strength(HARDNESS[6] + 4.0F, RESISTANCE[6] + 1750), 6);
+    public static final CustomRotatedPillarBlock CRIMSON_STEM_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM).strength(HARDNESS[7] + 4.5F, RESISTANCE[7] + 2000), 7);
+    public static final CustomRotatedPillarBlock CRIMSON_STEM_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM).strength(HARDNESS[8] + 5.0F, RESISTANCE[8] + 2250), 8);
+    public static final CustomRotatedPillarBlock CRIMSON_STEM_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM).strength(HARDNESS[9] + 5.5F, RESISTANCE[9] + 2500), 9);
+    // WARPED_STEM
+    public static final CustomRotatedPillarBlock WARPED_STEM_0 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM).strength(HARDNESS[0], RESISTANCE[0]), 0);
+    public static final CustomRotatedPillarBlock WARPED_STEM_1 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM).strength(HARDNESS[1], RESISTANCE[1]), 1);
+    public static final CustomRotatedPillarBlock WARPED_STEM_2 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM).strength(HARDNESS[2], RESISTANCE[2]), 2);
+    public static final CustomRotatedPillarBlock WARPED_STEM_3 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM).strength(HARDNESS[3], RESISTANCE[3]), 3);
+    public static final CustomRotatedPillarBlock WARPED_STEM_4 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM).strength(HARDNESS[4], RESISTANCE[4]), 4);
+    public static final CustomRotatedPillarBlock WARPED_STEM_5 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM).strength(HARDNESS[5], RESISTANCE[5]), 5);
+    public static final CustomRotatedPillarBlock WARPED_STEM_6 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM).strength(HARDNESS[6], RESISTANCE[6]), 6);
+    public static final CustomRotatedPillarBlock WARPED_STEM_7 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM).strength(HARDNESS[7], RESISTANCE[7]), 7);
+    public static final CustomRotatedPillarBlock WARPED_STEM_8 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM).strength(HARDNESS[8], RESISTANCE[8]), 8);
+    public static final CustomRotatedPillarBlock WARPED_STEM_9 = new CustomRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_STEM).strength(HARDNESS[9], RESISTANCE[9]), 9);
+    // TNT
+    public static final CustomTNTBlock TNT_0 = new CustomTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT), 0);
+    public static final CustomTNTBlock TNT_1 = new CustomTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT), 1);
+    public static final CustomTNTBlock TNT_2 = new CustomTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT), 2);
+    public static final CustomTNTBlock TNT_3 = new CustomTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT), 3);
+    public static final CustomTNTBlock TNT_4 = new CustomTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT), 4);
+    public static final CustomTNTBlock TNT_5 = new CustomTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT), 5);
+    public static final CustomTNTBlock TNT_6 = new CustomTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT), 6);
+    public static final CustomTNTBlock TNT_7 = new CustomTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT), 7);
+    public static final CustomTNTBlock TNT_8 = new CustomTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT), 8);
+    public static final CustomTNTBlock TNT_9 = new CustomTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT), 9);
+
 }

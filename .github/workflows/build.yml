@@ -4,7 +4,7 @@
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
-run-name: "v1.4.2 - 1.20.2"
+run-name: "v1.4.3 - 1.20.2"
 
 name: build
 on: [ push, pull_request, workflow_dispatch ]
@@ -41,7 +41,7 @@ jobs:
       - name: "Run gradle task: (forge) -> datagen"
         run: ./gradlew :forge:Data
 
-      # Build Project (common, forge, fabric)
+      # Build Project (common, forge, neoforge, fabric)
       - name: build
         run: ./gradlew build
 
@@ -53,4 +53,5 @@ jobs:
           name: Artifacts
           path: |
             forge/build/libs/
+            neoforge/build/libs/
             fabric/build/libs/

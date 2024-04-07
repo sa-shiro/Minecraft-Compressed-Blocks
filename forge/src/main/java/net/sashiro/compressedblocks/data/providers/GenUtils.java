@@ -15,7 +15,7 @@ public class GenUtils {
     protected boolean isBlock(RegistryObject<Block> block) {
         String blockName = block.get().getDescriptionId();
 
-        for (String s : Arrays.asList("honey_block", "basalt", "bone_block", "sandstone")) {
+        for (String s : Arrays.asList("honey_block", "basalt", "bone_block", "sandstone", "tnt")) {
             if (blockName.contains(s)) return true;
         }
 
