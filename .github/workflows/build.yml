@@ -39,7 +39,7 @@ jobs:
 
       # Run DataGenerator (forge)
       - name: "Run gradle task: (forge) -> datagen"
-        run: ./gradlew :forge:Data
+        run: ./gradlew :neoforge:Data
 
       # Build Project (common, forge, neoforge, fabric)
       - name: build
