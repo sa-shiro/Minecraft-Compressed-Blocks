@@ -44,8 +44,8 @@ jobs:
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
 
-      - name: "Run gradle task: (forge) -> datagen"
-        run: ./gradlew :neoforge:Data
+      - name: "Run gradle task: (neoforge) -> datagen"
+        run: ./gradlew :neoforge:runData
 
       - name: build
         run: ./gradlew build
