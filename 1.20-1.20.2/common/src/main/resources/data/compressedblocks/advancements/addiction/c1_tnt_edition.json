@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "compressedblocks:c1_tnt"
+    },
+    "title": "TNT Addiction: II",
+    "description": "§fCompress 9x Compressed §2TNT§f into Double Compressed §2TNT",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c0_tnt_edition",
+  "criteria": {
+    "get_c1_tnt_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c1_tnt"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c1_tnt_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 500
+  },
+  "sends_telemetry_event": true
+}

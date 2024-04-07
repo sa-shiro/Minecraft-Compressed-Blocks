@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "compressedblocks:c5_cobblestone"
+    },
+    "title": "Cobblestone Addiction: VI",
+    "description": "§5Compress 9x Quintuple Compressed §2Cobblestone§5 into Sextuple Compressed §2Cobblestone",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c4_cobblestone_edition",
+  "criteria": {
+    "get_c5_cobblestone_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c5_cobblestone"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c5_cobblestone_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 3000
+  },
+  "sends_telemetry_event": true
+}

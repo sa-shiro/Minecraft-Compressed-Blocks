@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "compressedblocks",
+  "version": "${version}",
+  "name": "Compressed Blocks",
+  "description": "CB: Compressed Blocks\\nA Block Compression and Crate mod to organize your storage.",
+  "authors": [
+    "sashiro"
+  ],
+  "contact": {
+    "sources": "https://github.com/sa-shiro/Minecraft-Compressed-Blocks",
+    "issues": "https://github.com/sa-shiro/Minecraft-Compressed-Blocks/issues",
+    "discord": "https://discord.gg/EKyjXRH9xN",
+    "curseforge": "https://www.curseforge.com/minecraft/mc-mods/cb-compressed-blocks",
+    "modrinth": "https://modrinth.com/mod/cb-compressed-blocks",
+    "homepage": "https://sashiro.net",
+    "email": "contact@sashiro.net"
+  },
+  "license": "LGPLv3",
+  "icon": "assets/compressedblocks/pack.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.sashiro.compressedblocks.CompressedBlocksFabric"
+    ],
+    "client": [
+      "net.sashiro.compressedblocks.client.CompressedBlocksClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  }
+}
+  

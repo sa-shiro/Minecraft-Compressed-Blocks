@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "compressedblocks:c8_gravel"
+    },
+    "title": "Gravel Addiction: IX",
+    "description": "§5Compress 9x Octuple Compressed §2Gravel§5 into Mega Compressed §2Gravel",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c7_gravel_edition",
+  "criteria": {
+    "get_c8_gravel_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c8_gravel"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c8_gravel_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 6000
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "compressedblocks:septuple_crated_apple"
+    },
+    "title": "Those Crates are unstoppable!",
+    "description": "Continue the crating algorithm.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:compression/sextuple_crate",
+  "criteria": {
+    "get_septuple_crate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "compressedblocks:septuple_crate"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_septuple_crate"
+    ]
+  ],
+  "rewards": {
+    "experience": 4000
+  },
+  "sends_telemetry_event": true
+}

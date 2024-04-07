@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "compressedblocks:c8_tnt"
+    },
+    "title": "TNT Addiction: IX",
+    "description": "§5Compress 9x Octuple Compressed §2TNT§5 into Mega Compressed §2TNT",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c7_tnt_edition",
+  "criteria": {
+    "get_c8_tnt_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c8_tnt"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c8_tnt_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 6000
+  },
+  "sends_telemetry_event": true
+}

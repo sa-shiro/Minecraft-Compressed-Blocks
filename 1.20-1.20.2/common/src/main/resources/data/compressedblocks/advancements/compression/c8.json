@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "compressedblocks:c8_stone"
+    },
+    "title": "The Ninth Step",
+    "description": "Continue the compression algorithm.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:compression/c7",
+  "criteria": {
+    "get_c8": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "compressedblocks:c8"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c8"
+    ]
+  ],
+  "rewards": {
+    "experience": 6000
+  },
+  "sends_telemetry_event": true
+}
