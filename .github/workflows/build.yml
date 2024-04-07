@@ -38,8 +38,8 @@ jobs:
         run: chmod +x ./gradlew
 
       # Run DataGenerator (forge)
-      - name: "Run gradle task: (forge) -> datagen"
-        run: ./gradlew :neoforge:Data
+      - name: "Run gradle task: (neoforge) -> datagen"
+        run: ./gradlew :neoforge:runData
 
       # Build Project (common, forge, neoforge, fabric)
       - name: build

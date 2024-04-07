@@ -80,13 +80,11 @@ tasks.named("sourcesJar", Jar) {
     from(project(":common").sourceSets.main.allSource)
 }
 
+def generatedResources = file("../neoforge/src/generated/resources")
+
 processResources {
     from project(":common").sourceSets.main.resources
-
-    // Doing this here instead of the parent build.gradle fixes `mods.toml` not getting processed properly for some reason
-    //filesMatching(['META-INF/mods.toml']) {
-    //    expand project.properties
-    //}
+    from generatedResources
 }
 
 jar.finalizedBy('reobfJar')
