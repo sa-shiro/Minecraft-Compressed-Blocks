@@ -45,7 +45,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: "Run gradle task: (forge) -> datagen"
-        run: ./gradlew :forge:Data
+        run: ./gradlew :neoforge:Data
 
       - name: build
         run: ./gradlew build

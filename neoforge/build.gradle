@@ -25,6 +25,9 @@ runs {
         systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         programArgument '--nogui'
     }
+    data {
+        programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath(), '--existing', file('../common/src/main/resources/').getAbsolutePath()
+    }
 }
 
 sourceSets.main.resources { srcDirs 'src/generated/resources', '../forge/src/generated/resources' }
