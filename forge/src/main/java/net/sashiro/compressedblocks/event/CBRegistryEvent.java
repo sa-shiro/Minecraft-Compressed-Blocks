@@ -39,8 +39,7 @@ public class CBRegistryEvent {
     }
 
     /**
-     * Required because Forge doesn't let us use Vanilla Registries and<br>
-     * if using DeferredRegister the registration will be frozen before the Block and Item registration is fired.
+     * Required because the registration will be frozen before {@link CBBlockRegistry} is fired.
      *
      * @param event RegisterEvent
      */

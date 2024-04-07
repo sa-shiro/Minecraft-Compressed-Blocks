@@ -1115,5 +1115,41 @@ public class CBBlockRegistry {
         Services.PLATFORM.registerBlock("c7_" + "NETHERITE_BLOCK", NETHERITE_BLOCK_7);
         Services.PLATFORM.registerBlock("c8_" + "NETHERITE_BLOCK", NETHERITE_BLOCK_8);
         Services.PLATFORM.registerBlock("c9_" + "NETHERITE_BLOCK", NETHERITE_BLOCK_9);
+        // ==================================================
+        // Version: 1.4.3
+        // ==================================================
+        // CRIMSON_STEM
+        Services.PLATFORM.registerBlock("c0_" + "CRIMSON_STEM", CRIMSON_STEM_0);
+        Services.PLATFORM.registerBlock("c1_" + "CRIMSON_STEM", CRIMSON_STEM_1);
+        Services.PLATFORM.registerBlock("c2_" + "CRIMSON_STEM", CRIMSON_STEM_2);
+        Services.PLATFORM.registerBlock("c3_" + "CRIMSON_STEM", CRIMSON_STEM_3);
+        Services.PLATFORM.registerBlock("c4_" + "CRIMSON_STEM", CRIMSON_STEM_4);
+        Services.PLATFORM.registerBlock("c5_" + "CRIMSON_STEM", CRIMSON_STEM_5);
+        Services.PLATFORM.registerBlock("c6_" + "CRIMSON_STEM", CRIMSON_STEM_6);
+        Services.PLATFORM.registerBlock("c7_" + "CRIMSON_STEM", CRIMSON_STEM_7);
+        Services.PLATFORM.registerBlock("c8_" + "CRIMSON_STEM", CRIMSON_STEM_8);
+        Services.PLATFORM.registerBlock("c9_" + "CRIMSON_STEM", CRIMSON_STEM_9);
+        // WARPED_STEM
+        Services.PLATFORM.registerBlock("c0_" + "WARPED_STEM", WARPED_STEM_0);
+        Services.PLATFORM.registerBlock("c1_" + "WARPED_STEM", WARPED_STEM_1);
+        Services.PLATFORM.registerBlock("c2_" + "WARPED_STEM", WARPED_STEM_2);
+        Services.PLATFORM.registerBlock("c3_" + "WARPED_STEM", WARPED_STEM_3);
+        Services.PLATFORM.registerBlock("c4_" + "WARPED_STEM", WARPED_STEM_4);
+        Services.PLATFORM.registerBlock("c5_" + "WARPED_STEM", WARPED_STEM_5);
+        Services.PLATFORM.registerBlock("c6_" + "WARPED_STEM", WARPED_STEM_6);
+        Services.PLATFORM.registerBlock("c7_" + "WARPED_STEM", WARPED_STEM_7);
+        Services.PLATFORM.registerBlock("c8_" + "WARPED_STEM", WARPED_STEM_8);
+        Services.PLATFORM.registerBlock("c9_" + "WARPED_STEM", WARPED_STEM_9);
+        // TNT
+        Services.PLATFORM.registerBlock("c0_" + "TNT", TNT_0);
+        Services.PLATFORM.registerBlock("c1_" + "TNT", TNT_1);
+        Services.PLATFORM.registerBlock("c2_" + "TNT", TNT_2);
+        Services.PLATFORM.registerBlock("c3_" + "TNT", TNT_3);
+        Services.PLATFORM.registerBlock("c4_" + "TNT", TNT_4);
+        Services.PLATFORM.registerBlock("c5_" + "TNT", TNT_5);
+        Services.PLATFORM.registerBlock("c6_" + "TNT", TNT_6);
+        Services.PLATFORM.registerBlock("c7_" + "TNT", TNT_7);
+        Services.PLATFORM.registerBlock("c8_" + "TNT", TNT_8);
+        Services.PLATFORM.registerBlock("c9_" + "TNT", TNT_9);
     }
 }

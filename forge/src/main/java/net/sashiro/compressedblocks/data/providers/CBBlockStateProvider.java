@@ -30,7 +30,7 @@ public class CBBlockStateProvider extends BlockStateProvider {
         for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
             // exclude manually added resources
             if (utils.isBlock(block)) continue;
-            if (block.get().getDescriptionId().contains("_log")) {
+            if (block.get().getDescriptionId().contains("_log") || block.get().getDescriptionId().contains("_stem")) {
                 RotatedPillarBlock block1 = (RotatedPillarBlock) block.get();
 
                 axisBlock(

@@ -21,4 +21,6 @@ build
 # other
 eclipse
 run
-/forge/src/generated/
+runs
+forge/src/generated/
+neoforge/src/generated/

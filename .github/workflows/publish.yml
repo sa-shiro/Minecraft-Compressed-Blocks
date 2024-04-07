@@ -4,13 +4,13 @@
 # certain platforms or Java versions, and provides a first line of defence
 # against bad commits.
 
-run-name: "release: v1.4.2 - 1.20.2"
+run-name: "release: v1.4.3 - 1.20.2"
 
 name: publish
 on: workflow_dispatch
 
 env:
-  VERSION: 1.4.2
+  VERSION: 1.4.3
   MC_VERSION: "1.20.2"
   MC_VERSION_RANGE: |
     1.20
@@ -57,6 +57,7 @@ jobs:
           name: Artifacts
           path: |
             forge/build/libs/
+            neoforge/build/libs/
             fabric/build/libs/
 
       # PUBLISH FABRIC TASK
@@ -111,6 +112,36 @@ jobs:
 
           loaders: |
             forge
+          game-versions: ${{env.MC_VERSION_RANGE}}
+
+          java: ${{ matrix.java }}
+
+          retry-attempts: 2
+          retry-delay: 10000
+          fail-mode: warn
+
+      # PUBLISH NEOFORGE TASK
+      - name: publish NEOFORGE
+        if: ${{ runner.os != 'Linux' }}
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: ${{env.MODRINTH_ID}}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          modrinth-featured: true
+          modrinth-unfeature-mode: intersection
+
+          curseforge-id: ${{env.CURSEFORGE_ID}}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          files: neoforge/build/libs/!(*-@(dev|sources|javadoc)).jar
+
+          name: "v${{env.VERSION}} (${{env.MC_VERSION}}) NEOFORGE"
+          version: "${{env.VERSION}}"
+          version-type: "${{env.VERSION_TYPE}}"
+          changelog-file: changelog.md
+
+          loaders: |
+            neoforge
           game-versions: ${{env.MC_VERSION_RANGE}}
 
           java: ${{ matrix.java }}
