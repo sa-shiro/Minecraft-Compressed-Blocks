@@ -62,7 +62,6 @@ subprojects {
                 "forge_version_range": forge_version_range,
                 "loader_version_range": loader_version_range,
                 "forge_mc_version_range": forge_mc_version_range,
-                "java_version_range": java_version_range,
                 "fabric_version": fabric_version,
                 "fabric_loader_version": fabric_loader_version,
                 "fabric_version_range": fabric_version_range,
@@ -82,8 +81,7 @@ subprojects {
                 "modrinth_page": modrinth_page,
                 "source": project.source,
                 "update_url": update_url,
-                "homepage": homepage,
-                "discord": discord
+                "homepage": homepage
         ]
 
         filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', '*.mixins.json']) {

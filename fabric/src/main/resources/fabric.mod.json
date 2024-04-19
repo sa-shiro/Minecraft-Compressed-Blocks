@@ -10,7 +10,6 @@
   "contact": {
     "sources": "${source}",
     "issues": "${source}/issues",
-    "discord": "${discord}",
     "curseforge": "${curseforge_page}",
     "modrinth": "${modrinth_page}",
     "homepage": "${homepage}",
@@ -29,8 +28,7 @@
   },
   "depends": {
     "fabricloader": "${fabric_version_range}",
-    "minecraft": "${fabric_mc_version_range}",
-    "java": "${java_version_range}"
+    "minecraft": "${fabric_mc_version_range}"
   },
   "suggests": {}
 }

@@ -66,7 +66,7 @@ public class CBItemTagsProvider extends ItemTagsProvider {
             }
         }
 
-        for (DeferredHolder<Block, ? extends Block>registryObject : CBRegistryEvent.BLOCKS.getEntries()) {
+        for (DeferredHolder<Block, ? extends Block> registryObject : CBRegistryEvent.BLOCKS.getEntries()) {
             Item item = registryObject.get().asItem();
             String name = item.getDescriptionId().replace("block.", "").replace("item.", "").replace("compressedblocks.", "");
             if (name.startsWith("c0")) {
