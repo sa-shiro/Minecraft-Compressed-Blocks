@@ -1,10 +1,8 @@
-# v1.4.3 [ 1.20.2 ]
+# v1.4.4 [ 1.20.2 ]
 
 ## General
 
-- Added NeoForge Support
-- Added Blocks: `Crimson Stem`, `Warped Stem` `TNT (Warning!!! ignitable but explosion radius like regular TNT)`
-- Added Achievement: `TNT Addiction`
+- fixed `TNT Addiction` advancement title name
 
 
 - Compatible with: `[ 1.20, 1.20.1, 1.20.2 ]`
