@@ -7,7 +7,7 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.registries.RegistryObject;
-import net.sashiro.compressedblocks.event.CBRegistryEvent;
+import net.sashiro.compressedblocks.CompressedBlocksForge;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -28,10 +28,10 @@ public class CBLootTableProvider {
 
         @Override
         protected void generate() {
-            for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
+            for (RegistryObject<Block> block : CompressedBlocksForge.BLOCKS.getEntries()) {
                 dropSelf(block.get());
             }
-            for (RegistryObject<Block> block : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
+            for (RegistryObject<Block> block : CompressedBlocksForge.CRATE_BLOCKS.getEntries()) {
                 dropSelf(block.get());
             }
         }
@@ -39,8 +39,8 @@ public class CBLootTableProvider {
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks() {
             List<Block> block = new ArrayList<>();
-            block.addAll(CBRegistryEvent.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
-            block.addAll(CBRegistryEvent.CRATE_BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
+            block.addAll(CompressedBlocksForge.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
+            block.addAll(CompressedBlocksForge.CRATE_BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
 
             return block;
         }

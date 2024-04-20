@@ -9,7 +9,7 @@ import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.sashiro.compressedblocks.event.CBRegistryEvent;
+import net.sashiro.compressedblocks.CompressedBlocksNeoForge;
 
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
@@ -27,7 +27,7 @@ public class CBBlockStateProvider extends BlockStateProvider {
         ModelFile.UncheckedModelFile cubeColumn = new ModelFile.UncheckedModelFile("block/cube_column");
         ModelFile.UncheckedModelFile cubeColumnHorizontal = new ModelFile.UncheckedModelFile("block/cube_column_horizontal");
 
-        for (DeferredHolder<Block, ? extends Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
+        for (DeferredHolder<Block, ? extends Block> block : CompressedBlocksNeoForge.BLOCKS.getEntries()) {
             // exclude manually added resources
             if (utils.isBlock(block)) continue;
             if (block.get().getDescriptionId().contains("_log") || block.get().getDescriptionId().contains("_stem")) {
@@ -125,7 +125,7 @@ public class CBBlockStateProvider extends BlockStateProvider {
             }
         }
 
-        for (DeferredHolder<Block, ? extends Block> crateBlock : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
+        for (DeferredHolder<Block, ? extends Block> crateBlock : CompressedBlocksNeoForge.CRATE_BLOCKS.getEntries()) {
             String crate_name = crateBlock.get().getDescriptionId().replace("block.compressedblocks.", "");
             String mc_name = utils.getMCName(crate_name);
             ResourceLocation location = utils.getResourceLocation(mc_name);

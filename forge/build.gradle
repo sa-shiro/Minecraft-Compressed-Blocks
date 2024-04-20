@@ -1,7 +1,7 @@
 plugins {
     id 'idea'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
 }
 base {
     archivesName = "${mod_name}-forge-${minecraft_version}"
@@ -20,41 +20,34 @@ minecraft {
     }
 
     runs {
-        client {
+        configureEach {
             workingDirectory project.file('run')
             ideaModule "${rootProject.name}.${project.name}.main"
-            taskName 'Client'
+
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             mods {
-                modClientRun {
+                modRun {
                     source sourceSets.main
                     source project(":common").sourceSets.main
                 }
             }
+        }
+        client {
+            taskName 'Client'
         }
 
         server {
-            workingDirectory project.file('run')
-            ideaModule "${rootProject.name}.${project.name}.main"
             taskName 'Server'
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            mods {
-                modServerRun {
-                    source sourceSets.main
-                    source project(":common").sourceSets.main
-                }
-            }
         }
 
         data {
-            workingDirectory project.file('run')
-            ideaModule "${rootProject.name}.${project.name}.main"
-            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing', file('../common/src/main/resources/')
             taskName 'Data'
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+            workingDirectory project.file('run-data')
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing', file('../common/src/main/resources/')
             mods {
                 modDataRun {
                     source sourceSets.main
@@ -102,4 +95,10 @@ publishing {
             url "file://" + System.getenv("local_maven")
         }
     }
+}
+
+sourceSets.each {
+    def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
+    it.output.resourcesDir = dir
+    it.java.destinationDirectory = dir
 }

@@ -7,8 +7,8 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import net.sashiro.compressedblocks.CompressedBlocksNeoForge;
 import net.sashiro.compressedblocks.data.CBTags;
-import net.sashiro.compressedblocks.event.CBRegistryEvent;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -24,7 +24,7 @@ public class CBBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider holder) {
-        for (DeferredHolder<Block, ? extends Block> registryObject : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
+        for (DeferredHolder<Block, ? extends Block> registryObject : CompressedBlocksNeoForge.CRATE_BLOCKS.getEntries()) {
             Block block = registryObject.get();
             String name = block.getDescriptionId().replace("block.compressedblocks.", "");
             if (name.startsWith("crated_")) {
@@ -68,7 +68,7 @@ public class CBBlockTagsProvider extends BlockTagsProvider {
                 tag(CBTags.GIGA_CRATE).add(block);
             }
         }
-        for (DeferredHolder<Block, ? extends Block> registryObject : CBRegistryEvent.BLOCKS.getEntries()) {
+        for (DeferredHolder<Block, ? extends Block> registryObject : CompressedBlocksNeoForge.BLOCKS.getEntries()) {
             Block block = registryObject.get();
             String name = block.getDescriptionId().replace("block.compressedblocks.", "");
             if (name.startsWith("c0")) {

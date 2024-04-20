@@ -1,11 +1,11 @@
-# v1.4.4 [ 1.20.2 ]
+# v1.4.5 [ 1.20.4 ]
 
 ## General
 
-- fixed `TNT Addiction` advancement title name
+- Update to `1.20.4`
 
 
-- Compatible with: `[ 1.20, 1.20.1, 1.20.2 ]`
-- ***NOT*** compatible with `1.20.3, 1.20.4`
+- Compatible with: `[ 1.20.4 ]`
+- ***NOT*** compatible with `[ 1.20, 1.20.1, 1.20.2, 1.20.3 ]`
 
 ---

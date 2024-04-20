@@ -5,7 +5,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.sashiro.compressedblocks.event.CBRegistryEvent;
+import net.sashiro.compressedblocks.CompressedBlocksNeoForge;
 import net.sashiro.compressedblocks.util.StringUtils;
 
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
@@ -37,7 +37,7 @@ public class CBLanguageProvider extends LanguageProvider {
         add("itemGroup.compressed_blocks", "Compressed Blocks");
         add("itemGroup.compressed_items", "Item Crates");
 
-        for (DeferredHolder<Block, ? extends Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
+        for (DeferredHolder<Block, ? extends Block> block : CompressedBlocksNeoForge.BLOCKS.getEntries()) {
             assert false;
             String name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
             String name2 = "";
@@ -48,7 +48,7 @@ public class CBLanguageProvider extends LanguageProvider {
             add("block.compressedblocks." + name, compressionLevel(name) + StringUtils.stringFormat(name2.replace("_", " ")));
         }
 
-        for (DeferredHolder<Item, ? extends Item> item : CBRegistryEvent.CRATE_ITEMS.getEntries()) {
+        for (DeferredHolder<Item, ? extends Item> item : CompressedBlocksNeoForge.CRATE_ITEMS.getEntries()) {
             assert false;
             String name = item.get().getDescriptionId().replace("block.compressedblocks.", "");
             String translation = StringUtils.stringFormat(name.replace("_", " "));

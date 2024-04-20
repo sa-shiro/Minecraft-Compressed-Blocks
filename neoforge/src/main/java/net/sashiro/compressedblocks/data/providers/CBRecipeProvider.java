@@ -1,6 +1,5 @@
 package net.sashiro.compressedblocks.data.providers;
 
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -11,12 +10,11 @@ import net.sashiro.compressedblocks.Constants;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
-import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("DuplicatedCode")
 public class CBRecipeProvider extends RecipeProvider {
-    public CBRecipeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> provider) {
-        super(packOutput, provider);
+    public CBRecipeProvider(PackOutput packOutput) {
+        super(packOutput);
     }
 
 
