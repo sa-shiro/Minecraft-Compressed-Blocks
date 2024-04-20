@@ -7,8 +7,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
+import net.sashiro.compressedblocks.CompressedBlocksForge;
 import net.sashiro.compressedblocks.data.CBTags;
-import net.sashiro.compressedblocks.event.CBRegistryEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,7 +21,7 @@ public class CBItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
-        for (RegistryObject<Block> registryObject : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
+        for (RegistryObject<Block> registryObject : CompressedBlocksForge.CRATE_BLOCKS.getEntries()) {
             Item item = registryObject.get().asItem();
             String name = item.getDescriptionId().replace("block.", "").replace("item.", "").replace("compressedblocks.", "");
             if (name.startsWith("crated_")) {
@@ -66,7 +66,7 @@ public class CBItemTagsProvider extends ItemTagsProvider {
             }
         }
 
-        for (RegistryObject<Block> registryObject : CBRegistryEvent.BLOCKS.getEntries()) {
+        for (RegistryObject<Block> registryObject : CompressedBlocksForge.BLOCKS.getEntries()) {
             Item item = registryObject.get().asItem();
             String name = item.getDescriptionId().replace("block.", "").replace("item.", "").replace("compressedblocks.", "");
             if (name.startsWith("c0")) {

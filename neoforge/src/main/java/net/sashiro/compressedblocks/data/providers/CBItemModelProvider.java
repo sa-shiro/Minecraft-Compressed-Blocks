@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.sashiro.compressedblocks.event.CBRegistryEvent;
+import net.sashiro.compressedblocks.CompressedBlocksNeoForge;
 
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
@@ -19,14 +19,14 @@ public class CBItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
-        for (DeferredHolder<Block, ? extends Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
+        for (DeferredHolder<Block, ? extends Block> block : CompressedBlocksNeoForge.BLOCKS.getEntries()) {
             // exclude manually added resources
             if (utils.isBlock(block)) continue;
             String name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
             withExistingParent(name, modLoc("block/" + name));
         }
 
-        for (DeferredHolder<Block, ? extends Block> block : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
+        for (DeferredHolder<Block, ? extends Block> block : CompressedBlocksNeoForge.CRATE_BLOCKS.getEntries()) {
             String name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
             withExistingParent(name, modLoc("block/" + name));
         }

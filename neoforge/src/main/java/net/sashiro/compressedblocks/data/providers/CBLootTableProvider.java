@@ -7,7 +7,7 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.sashiro.compressedblocks.event.CBRegistryEvent;
+import net.sashiro.compressedblocks.CompressedBlocksNeoForge;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -28,10 +28,10 @@ public class CBLootTableProvider {
 
         @Override
         protected void generate() {
-            for (DeferredHolder<Block, ? extends Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
+            for (DeferredHolder<Block, ? extends Block> block : CompressedBlocksNeoForge.BLOCKS.getEntries()) {
                 dropSelf(block.get());
             }
-            for (DeferredHolder<Block, ? extends Block> block : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
+            for (DeferredHolder<Block, ? extends Block> block : CompressedBlocksNeoForge.CRATE_BLOCKS.getEntries()) {
                 dropSelf(block.get());
             }
         }
@@ -39,8 +39,8 @@ public class CBLootTableProvider {
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks() {
             List<Block> block = new ArrayList<>();
-            block.addAll(CBRegistryEvent.BLOCKS.getEntries().stream().map(DeferredHolder::get).toList());
-            block.addAll(CBRegistryEvent.CRATE_BLOCKS.getEntries().stream().map(DeferredHolder::get).toList());
+            block.addAll(CompressedBlocksNeoForge.BLOCKS.getEntries().stream().map(DeferredHolder::get).toList());
+            block.addAll(CompressedBlocksNeoForge.CRATE_BLOCKS.getEntries().stream().map(DeferredHolder::get).toList());
 
             return block;
         }

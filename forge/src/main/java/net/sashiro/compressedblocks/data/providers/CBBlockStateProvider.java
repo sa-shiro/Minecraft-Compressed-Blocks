@@ -9,7 +9,7 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
-import net.sashiro.compressedblocks.event.CBRegistryEvent;
+import net.sashiro.compressedblocks.CompressedBlocksForge;
 
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
@@ -27,7 +27,7 @@ public class CBBlockStateProvider extends BlockStateProvider {
         ModelFile.UncheckedModelFile cubeColumn = new ModelFile.UncheckedModelFile("block/cube_column");
         ModelFile.UncheckedModelFile cubeColumnHorizontal = new ModelFile.UncheckedModelFile("block/cube_column_horizontal");
 
-        for (RegistryObject<Block> block : CBRegistryEvent.BLOCKS.getEntries()) {
+        for (RegistryObject<Block> block : CompressedBlocksForge.BLOCKS.getEntries()) {
             // exclude manually added resources
             if (utils.isBlock(block)) continue;
             if (block.get().getDescriptionId().contains("_log") || block.get().getDescriptionId().contains("_stem")) {
@@ -125,7 +125,7 @@ public class CBBlockStateProvider extends BlockStateProvider {
             }
         }
 
-        for (RegistryObject<Block> crateBlock : CBRegistryEvent.CRATE_BLOCKS.getEntries()) {
+        for (RegistryObject<Block> crateBlock : CompressedBlocksForge.CRATE_BLOCKS.getEntries()) {
             String crate_name = crateBlock.get().getDescriptionId().replace("block.compressedblocks.", "");
             String mc_name = utils.getMCName(crate_name);
             ResourceLocation location = utils.getResourceLocation(mc_name);

@@ -10,9 +10,8 @@ subprojects {
     java.withSourcesJar()
         
     jar {
-        from(rootProject.file("LICENSE")) {
-            rename { "${it}_${mod_name}" }
-        }
+        from(rootProject.file("LICENSE.md"))
+
         manifest {
             attributes([
                 'Specification-Title'     : mod_name,
@@ -30,9 +29,7 @@ subprojects {
     }
 
     sourcesJar {
-        from(rootProject.file("LICENSE")) {
-            rename { "${it}_${mod_name}" }
-        }
+        from(rootProject.file("LICENSE.md"))
     }
 
     repositories {
@@ -70,6 +67,7 @@ subprojects {
                 "entrypoint_client": entrypoint_client,
                 "entrypoint_server": entrypoint_server,
                 "neoforge_version": neoforge_version,
+                "neoforge_version_range": neoforge_version_range,
                 "neoforge_loader_version_range": neoforge_loader_version_range,
                 "mod_name": mod_name,
                 "mod_author": mod_author,

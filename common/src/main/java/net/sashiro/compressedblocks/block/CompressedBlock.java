@@ -3,6 +3,7 @@ package net.sashiro.compressedblocks.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.util.ColorRGBA;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -73,41 +74,11 @@ public class CompressedBlock {
         }
     }
 
-    public static class CustomSandBlock extends SandBlock {
+    public static class CustomColoredFallingBlock extends ColoredFallingBlock {
         private final Compression compressor = new Compression();
 
-        public CustomSandBlock(int dustColor, Properties properties, int compressionLevel) {
-            super(dustColor, properties);
-            compressor.setCompressionLevel(compressionLevel);
-        }
-
-        @Override
-        public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
-            super.appendHoverText(is, bg, lC, ttf);
-            lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
-        }
-    }
-
-    public static class CustomGravelBlock extends GravelBlock {
-        private final Compression compressor = new Compression();
-
-        public CustomGravelBlock(Properties properties, int compressionLevel) {
-            super(properties);
-            compressor.setCompressionLevel(compressionLevel);
-        }
-
-        @Override
-        public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
-            super.appendHoverText(is, bg, lC, ttf);
-            lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
-        }
-    }
-
-    public static class CustomDropExperienceBlock extends DropExperienceBlock {
-        private final Compression compressor = new Compression();
-
-        public CustomDropExperienceBlock(Properties properties, int compressionLevel) {
-            super(properties);
+        public CustomColoredFallingBlock(ColorRGBA color, Properties properties, int compressionLevel) {
+            super(color, properties);
             compressor.setCompressionLevel(compressionLevel);
         }
 
@@ -213,6 +184,7 @@ public class CompressedBlock {
         }
     }
 
+    @SuppressWarnings("NullableProblems")
     public static class CustomTNTBlock extends TntBlock {
         private final Compression compressor = new Compression();
 
@@ -233,8 +205,8 @@ public class CompressedBlock {
         }
 
         @Override
-        public void playerWillDestroy(Level $$0, BlockPos $$1, BlockState $$2, Player $$3) {
-            super.playerWillDestroy($$0, $$1, $$2, $$3);
+        public BlockState playerWillDestroy(Level $$0, BlockPos $$1, BlockState $$2, Player $$3) {
+            return super.playerWillDestroy($$0, $$1, $$2, $$3);
         }
 
         @Override
