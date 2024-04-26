@@ -1,22 +1,6 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: [ "master" ]
-    tags-ignore:
-      - 'v*'
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.txt'
-      - '**/update.json'
-  pull_request:
-    branches: [ "master" ]
-    tags-ignore:
-      - 'v*'
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.txt'
-      - '**/update.json'
   schedule:
     - cron: '0 10 * * 1'
 
