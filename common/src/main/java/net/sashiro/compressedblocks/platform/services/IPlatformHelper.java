@@ -33,23 +33,22 @@ public interface IPlatformHelper {
      * @return The name of the environment type.
      */
     default String getEnvironmentName() {
-
         return isDevelopmentEnvironment() ? "development" : "production";
     }
 
     /**
      * Function for platform-dependent registration of Blocks
      *
-     * @param name  the registry name of the Block
-     * @param block the Block to be registered
+     * @param name   the registry name of the Block
+     * @param blocks the Blocks to be registered
      */
-    void registerBlock(String name, Block block);
+    void registerBlock(String name, Block... blocks);
 
     /**
      * Function for platform-dependent registration of Crates
      *
-     * @param name       the registry name of the Block
-     * @param crateBlock the Crate Block to be registered
+     * @param name        the registry name of the Block
+     * @param crateBlocks the Crate Blocks to be registered
      */
-    void registerCrate(String name, Block crateBlock);
+    void registerCrate(String name, Block... crateBlocks);
 }

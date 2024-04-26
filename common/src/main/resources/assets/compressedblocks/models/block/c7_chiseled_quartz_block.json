@@ -1,0 +1,10 @@
+{
+  "parent": "compressedblocks:block/template/template_cube_column",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "end": "minecraft:block/chiseled_quartz_block_top",
+    "side": "minecraft:block/chiseled_quartz_block",
+    "overlay": "compressedblocks:block/compression_level_7",
+    "particle": "minecraft:block/quartz_block_bottom"
+  }
+}

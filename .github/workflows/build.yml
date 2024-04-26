@@ -1,49 +1,91 @@
 #file: noinspection SpellCheckingInspection
 
-name: build
+name: Build
+
 on:
-  push:
   pull_request:
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.txt'
+      - '**/update.json'
   workflow_dispatch:
+
+permissions:
+  pull-requests: write
+  issues: write
 
 jobs:
   build:
     strategy:
       matrix:
-        java: [ 17 ] # Current Java LTS & minimum supported by Minecraft
+        java: [ 17 ]
         os: [ ubuntu-latest, windows-latest ]
+        datagen: [ fabric, forge, neoforge ]
+    name: "${{ matrix.datagen }} (Java ${{ matrix.java }} on ${{ matrix.os }})"
     runs-on: ${{ matrix.os }}
     steps:
-      - name: checkout repository
+      - name: "Checkout repository"
         uses: actions/checkout@v4
 
-      - name: validate gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
+      - name: "Cache Gradle dependencies"
+        uses: actions/cache@v4
+        id: cache-gradle-dependencies
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: "${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}"
+          restore-keys: |
+            ${{ runner.os }}-gradle-
 
-      - name: setup jdk ${{ matrix.java }}
+      - name: "Validate gradle wrapper"
+        uses: gradle/wrapper-validation-action@v3
+
+      - name: "Setup jdk ${{ matrix.java }}"
         uses: actions/setup-java@v4
         with:
           java-version: ${{ matrix.java }}
           distribution: 'temurin'
 
-      - name: make gradle wrapper executable
+      - name: "Make gradle wrapper executable"
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
 
-      #- name: "Run gradle task: (forge) -> datagen"
-      #  run: ./gradlew :forge:runData
+      - name: "Run gradle task: (${{ matrix.datagen }}) -> datagen (Linux)"
+        if: ${{ runner.os != 'Windows' }}
+        continue-on-error: true
+        run: |
+          if [[ "${{ matrix.datagen }}" == "forge" ]]; then
+            ./gradlew :${{ matrix.datagen }}:Data
+          elif [[ "${{ matrix.datagen }}" == "fabric" ]]; then
+            ./gradlew :${{ matrix.datagen }}:runDatagen
+          else
+            ./gradlew :${{ matrix.datagen }}:runData
+          fi
 
-      - name: "Run gradle task: (neoforge) -> datagen"
-        run: ./gradlew :neoforge:runData
+      - name: "Run gradle task: (${{ matrix.datagen }}) -> datagen (Windows)"
+        if: ${{ runner.os == 'Windows' }}
+        shell: pwsh
+        continue-on-error: true
+        run: |
+          if ("${{ matrix.datagen }}" -eq "forge") {
+            ./gradlew :${{ matrix.datagen }}:Data
+          }
+          elseif ("${{ matrix.datagen }}" -eq "fabric") {
+            ./gradlew :${{ matrix.datagen }}:runDatagen
+          }
+          else {
+            ./gradlew :${{ matrix.datagen }}:runData
+          }
 
-      - name: build
+      - name: "Build project"
         run: ./gradlew build
 
-      - name: capture build artifacts
-        if: ${{ runner.os == 'Linux' && matrix.java == '17' }}
+      - name: "Capture build artifacts"
+        if: ${{ runner.os == 'Windows' && matrix.java == '17' }}
         uses: actions/upload-artifact@v4
         with:
-          name: Artifacts
+          name: Artifacts-${{ runner.os }}-${{ matrix.datagen }}
           path: |
             forge/build/libs/
             neoforge/build/libs/

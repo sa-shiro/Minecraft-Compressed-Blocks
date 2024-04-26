@@ -16,29 +16,21 @@ jobs:
         os: [ windows-latest ]
     runs-on: ${{ matrix.os }}
     steps:
-      - name: checkout repository
+      - name: "Checkout repository"
         uses: actions/checkout@v4
 
-      - name: Read gradle.properties and set variables (Linux)
-        if: ${{ runner.os == 'Linux' }}
-        run: |
-          while IFS='=' read -r key value; do
-            # Skip comments and empty lines
-            if [[ $key == \#* ]] || [[ -z $key ]]; then
-              continue
-            fi
-            # Check if the value contains a pipe (is array)
-            if [[ $value == *"|"* ]]; then
-              value=$(echo "$value" | tr -d '[]' | tr -d ' ')
-              IFS='|' read -ra array <<< "$value"
-              value=$(IFS=$'\n'; echo "${array[*]}")
-            fi
-            echo "$key<<EOF" >> $GITHUB_ENV
-            echo "$value" >> $GITHUB_ENV
-            echo "EOF" >> $GITHUB_ENV
-          done < gradle.properties
+      - name: "Cache Gradle packages"
+        uses: actions/cache@v4
+        id: cache-gradle
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: "${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}"
+          restore-keys: |
+            ${{ runner.os }}-gradle-
 
-      - name: Read gradle.properties and set variables (Windows)
+      - name: "Read gradle.properties and set variables (Windows)"
         if: ${{ runner.os == 'Windows' }}
         shell: pwsh
         run: |
@@ -58,29 +50,32 @@ jobs:
             "EOF" >> $env:GITHUB_ENV
           }
 
-      - name: validate gradle wrapper
+      - name: "Validate gradle wrapper"
         uses: gradle/wrapper-validation-action@v1
 
-      - name: setup jdk ${{ matrix.java }}
+      - name: "Setup jdk ${{ matrix.java }}"
         uses: actions/setup-java@v4
         with:
           java-version: ${{ matrix.java }}
           distribution: 'temurin'
 
-      - name: make gradle wrapper executable
+      - name: "Make gradle wrapper executable"
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
 
-      #- name: "Run gradle task: (forge) -> datagen"
-      #  run: ./gradlew :forge:runData
+      - name: "Run gradle task: (fabric) -> datagen"
+        run: ./gradlew :fabric:runDatagen
+
+      - name: "Run gradle task: (forge) -> datagen"
+        run: ./gradlew :forge:runData
 
       - name: "Run gradle task: (neoforge) -> datagen"
         run: ./gradlew :neoforge:runData
 
-      - name: build
+      - name: "Build project"
         run: ./gradlew build
 
-      - name: capture build artifacts
+      - name: "Capture build artifacts"
         if: ${{ runner.os == 'Windows' && matrix.java == '17' }} # Only upload artifacts built from the latest java on one OS
         uses: actions/upload-artifact@v4
         with:
@@ -90,28 +85,30 @@ jobs:
             neoforge/build/libs/
             fabric/build/libs/
 
-      - name: publish FORGE
+      - name: "Publish FORGE"
         if: ${{ runner.os == 'Windows' }}
         uses: Kir-Antipov/mc-publish@v3.3
         with:
-          modrinth-id: ${{env.modrinth_id}}
+          modrinth-id: ${{ env.modrinth_id }}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           modrinth-featured: true
           modrinth-unfeature-mode: intersection
 
-          curseforge-id: ${{env.curseforge_id}}
+          curseforge-id: ${{ env.curseforge_id }}
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
-          files: forge/build/libs/!(*-@(dev|sources|javadoc)).jar
+          files: |
+            forge/build/libs/!(*-@(dev|sources|javadoc)).jar
+            forge/build/libs/*-@(dev|sources|javadoc).jar
 
-          name: "v${{env.version}} (${{env.minecraft_version}}) FORGE"
-          version: "${{env.version}}"
-          version-type: "${{env.version_type}}"
+          name: "v${{ env.version }} (${{ env.minecraft_version }}) FORGE"
+          version: "${{ env.version }}"
+          version-type: "${{ env.version_type }}"
           changelog-file: changelog.md
 
           loaders: |
             forge
-          game-versions: ${{env.minecraft_version_range}}
+          game-versions: ${{ env.minecraft_version_range }}
 
           java: ${{ matrix.java }}
 
@@ -119,28 +116,30 @@ jobs:
           retry-delay: 10000
           fail-mode: warn
 
-      - name: publish NEOFORGE
+      - name: "Publish NEOFORGE"
         if: ${{ runner.os == 'Windows' }}
         uses: Kir-Antipov/mc-publish@v3.3
         with:
-          modrinth-id: ${{env.modrinth_id}}
+          modrinth-id: ${{ env.modrinth_id }}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           modrinth-featured: true
           modrinth-unfeature-mode: intersection
 
-          curseforge-id: ${{env.curseforge_id}}
+          curseforge-id: ${{ env.curseforge_id }}
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
-          files: neoforge/build/libs/!(*-@(dev|sources|javadoc)).jar
+          files: |
+            neoforge/build/libs/!(*-@(dev|sources|javadoc)).jar
+            neoforge/build/libs/*-@(dev|sources|javadoc).jar
 
-          name: "v${{env.version}} (${{env.minecraft_version}}) NEOFORGE"
-          version: "${{env.version}}"
-          version-type: "${{env.version_type}}"
+          name: "v${{ env.version }} (${{ env.minecraft_version }}) NEOFORGE"
+          version: "${{ env.version }}"
+          version-type: "${{ env.version_type }}"
           changelog-file: changelog.md
 
           loaders: |
             neoforge
-          game-versions: ${{env.minecraft_version_range}}
+          game-versions: ${{ env.minecraft_version_range }}
 
           java: ${{ matrix.java }}
 
@@ -148,28 +147,30 @@ jobs:
           retry-delay: 10000
           fail-mode: warn
 
-      - name: publish FABRIC
+      - name: "Publish FABRIC"
         if: ${{ runner.os == 'Windows' }}
         uses: Kir-Antipov/mc-publish@v3.3
         with:
-          modrinth-id: ${{env.modrinth_id}}
+          modrinth-id: ${{ env.modrinth_id }}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           modrinth-featured: true
           modrinth-unfeature-mode: intersection
 
-          curseforge-id: ${{env.curseforge_id}}
+          curseforge-id: ${{ env.curseforge_id }}
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
-          files: fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
+          files: |
+            fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
+            fabric/build/libs/*-@(dev|sources|javadoc).jar
 
-          name: "v${{env.version}} (${{env.minecraft_version}}) FABRIC"
-          version: "${{env.version}}"
-          version-type: "${{env.version_type}}"
+          name: "v${{ env.version }} (${{ env.minecraft_version }}) FABRIC"
+          version: "${{ env.version }}"
+          version-type: "${{ env.version_type }}"
           changelog-file: changelog.md
 
           loaders: |
             fabric
-          game-versions: ${{env.minecraft_version_range}}
+          game-versions: ${{ env.minecraft_version_range }}
 
           java: ${{ matrix.java }}
 

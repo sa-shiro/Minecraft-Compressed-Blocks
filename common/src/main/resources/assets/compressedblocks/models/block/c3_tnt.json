@@ -50,7 +50,7 @@
       "to": [16, 16, 16]
     }
   ],
-  "render_type": "minecraft:translucent",
+  "render_type": "minecraft:cutout",
   "textures": {
     "overlay": "compressedblocks:block/compression_level_3",
     "particle": "minecraft:block/tnt_side",

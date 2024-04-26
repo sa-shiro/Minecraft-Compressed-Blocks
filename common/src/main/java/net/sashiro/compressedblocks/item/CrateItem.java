@@ -9,10 +9,9 @@ import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.util.Compression;
 import net.sashiro.compressedblocks.util.StringUtils;
 
-import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
+@SuppressWarnings("NullableProblems")
 public class CrateItem extends BlockItem {
 
     private final Block block;
@@ -44,8 +43,7 @@ public class CrateItem extends BlockItem {
     }
 
     @Override
-    @ParametersAreNonnullByDefault
-    public void appendHoverText(ItemStack s, @Nullable Level l, List<Component> c, TooltipFlag t) {
+    public void appendHoverText(ItemStack s, Level l, List<Component> c, TooltipFlag t) {
         super.appendHoverText(s, l, c, t);
         String itemName = StringUtils.stringFormat(this.getDescriptionId()
                 .replace("block.compressedblocks.", "")

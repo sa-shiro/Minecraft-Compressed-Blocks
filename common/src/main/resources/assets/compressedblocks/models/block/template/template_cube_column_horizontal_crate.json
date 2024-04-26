@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "#all",
+    "item": "#item",
+    "number": "#number",
+    "particle": "#all"
+  },
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#all"
+        },
+        "east": {
+          "texture": "#all"
+        },
+        "north": {
+          "texture": "#all"
+        },
+        "south": {
+          "texture": "#all"
+        },
+        "up": {
+          "texture": "#all"
+        },
+        "west": {
+          "texture": "#all"
+        }
+      },
+      "from": [0, 0, 0],
+      "to": [16, 16, 16]
+    },
+    {
+      "faces": {
+        "west": {
+          "texture": "#number"
+        },
+        "south": {
+          "texture": "#item"
+        }
+      },
+      "from": [0, 0, 0],
+      "to": [16, 16, 16]
+    }
+  ]
+}

@@ -66,7 +66,7 @@
       ]
     }
   ],
-  "render_type": "minecraft:translucent",
+  "render_type": "minecraft:cutout",
   "textures": {
     "bottom": "minecraft:block/sandstone_bottom",
     "side": "minecraft:block/sandstone",

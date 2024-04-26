@@ -104,7 +104,7 @@
       ]
     }
   ],
-  "render_type": "minecraft:translucent",
+  "render_type": "minecraft:cutout",
   "textures": {
     "bottom": "minecraft:block/honey_block_bottom",
     "overlay": "compressedblocks:block/compression_level_7",

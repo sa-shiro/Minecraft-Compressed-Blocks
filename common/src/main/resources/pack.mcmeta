@@ -3,6 +3,10 @@
     "description": {
       "text": "${mod_name} resources"
     },
-    "pack_format": 22
+    "pack_format": 22,
+    "supported_formats": {
+      "min_inclusive": 15,
+      "max_inclusive": 999
+    }
   }
 }

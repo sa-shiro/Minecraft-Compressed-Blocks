@@ -1,0 +1,9 @@
+{
+  "parent": "compressedblocks:block/template/template_block",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "minecraft:block/quartz_block_bottom",
+    "overlay": "compressedblocks:block/compression_level_1",
+    "particle": "minecraft:block/quartz_block_bottom"
+  }
+}

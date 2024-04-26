@@ -16,6 +16,5 @@ A clear and concise description of what the bug is.
 **How did it happen?**
 What did you do that the bug / error / crash happened?
 
-
 **Screenshots**
 If applicable, add screenshots to help explain your problem.

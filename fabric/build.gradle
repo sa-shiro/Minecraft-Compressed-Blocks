@@ -1,69 +1,40 @@
 plugins {
-    id 'java'
-    id 'idea'
-    id 'maven-publish'
+    id 'multiloader-loader'
     id 'fabric-loom' version '1.6-SNAPSHOT'
-}
-base {
-    archivesName = "${mod_name}-fabric-${minecraft_version}"
 }
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
     mappings loom.officialMojangMappings()
-    //mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+
+    // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
-    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
-    implementation project(":common")
 }
 
 loom {
-    if (project(":common").file("src/main/resources/${mod_id}.accesswidener").exists()) {
-        accessWidenerPath.set(project(":common").file("src/main/resources/${mod_id}.accesswidener"))
+    def aw = project(":common").file("src/main/resources/${mod_id}.accesswidener")
+    if (aw.exists()) {
+        accessWidenerPath.set(aw)
     }
-    mixin {
-        defaultRefmapName.set("${mod_id}.refmap.json")
-    }
+    //mixin {
+    //    defaultRefmapName.set("${mod_id}.refmap.json")
+    //}
     runs {
         client {
             client()
             setConfigName("Fabric Client")
             ideConfigGenerated(true)
-            runDir("run")
+            runDir("runs/client")
         }
         server {
             server()
             setConfigName("Fabric Server")
             ideConfigGenerated(true)
-            runDir("run")
+            runDir("runs/server")
         }
     }
 }
 
-tasks.withType(JavaCompile).configureEach {
-    source(project(":common").sourceSets.main.allSource)
-}
-tasks.named("sourcesJar", Jar) {
-    from(project(":common").sourceSets.main.allSource)
-}
-
-def generatedResources = file("../neoforge/src/generated/resources")
-
-processResources {
-    from project(":common").sourceSets.main.resources
-    from generatedResources
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifactId base.archivesName.get()
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            url "file://" + System.getenv("local_maven")
-        }
-    }
+fabricApi {
+    configureDataGeneration()
 }

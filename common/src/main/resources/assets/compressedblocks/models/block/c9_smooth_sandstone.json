@@ -66,7 +66,7 @@
       ]
     }
   ],
-  "render_type": "minecraft:translucent",
+  "render_type": "minecraft:cutout",
   "textures": {
     "all": "minecraft:block/sandstone_top",
     "overlay": "compressedblocks:block/compression_level_5",
