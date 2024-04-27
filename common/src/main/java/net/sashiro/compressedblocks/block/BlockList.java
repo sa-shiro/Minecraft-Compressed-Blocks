@@ -1,6 +1,7 @@
 package net.sashiro.compressedblocks.block;
 
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 
 import static net.sashiro.compressedblocks.Constants.HARDNESS;
 import static net.sashiro.compressedblocks.Constants.RESISTANCE;
@@ -278,7 +279,7 @@ public class BlockList {
         for (int i = 0; i < maxCompressionLevel; i++) {
             float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];
             float blockResistance = amplifier != null ? RESISTANCE[i] * amplifier : RESISTANCE[i];
-            result[i] = new CBBlock(BlockBehaviour.Properties.of().strength(blockHardness, blockResistance), i);
+            result[i] = new CBBlock(BlockBehaviour.Properties.of(Material.STONE).strength(blockHardness, blockResistance), i);
         }
         return result;
     }
@@ -289,7 +290,7 @@ public class BlockList {
         for (int i = 0; i < maxCompressionLevel; i++) {
             float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];
             float blockResistance = amplifier != null ? RESISTANCE[i] * amplifier : RESISTANCE[i];
-            result[i] = new CBRotationalBlock(BlockBehaviour.Properties.of().strength(blockHardness, blockResistance), i);
+            result[i] = new CBRotationalBlock(BlockBehaviour.Properties.of(Material.STONE).strength(blockHardness, blockResistance), i);
         }
         return result;
     }

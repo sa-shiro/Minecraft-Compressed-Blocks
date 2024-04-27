@@ -60,4 +60,3 @@ rootProject.name = 'Compressed-Blocks'
 include("common")
 include("fabric")
 include("forge")
-include("neoforge")

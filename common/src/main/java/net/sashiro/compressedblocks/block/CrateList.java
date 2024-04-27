@@ -2,7 +2,8 @@ package net.sashiro.compressedblocks.block;
 
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 
 import static net.sashiro.compressedblocks.Constants.HARDNESS;
 import static net.sashiro.compressedblocks.Constants.RESISTANCE;
@@ -193,7 +194,7 @@ public class CrateList {
         int maxCompressionLevel = 10;
         CrateBlock[] result = new CrateBlock[maxCompressionLevel];
         for (int i = 0; i < maxCompressionLevel; i++) {
-            result[i] = new CrateBlock(BlockBehaviour.Properties.of().strength(HARDNESS[i] - 0.5F, RESISTANCE[i] - 5.5F).mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD), i);
+            result[i] = new CrateBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(HARDNESS[i] - 0.5F, RESISTANCE[i] - 5.5F).sound(SoundType.WOOD), i);
         }
         return result;
     }

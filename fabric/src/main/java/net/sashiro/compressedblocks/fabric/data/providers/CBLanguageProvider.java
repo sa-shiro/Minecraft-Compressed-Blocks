@@ -15,8 +15,8 @@ public class CBLanguageProvider extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(TranslationBuilder builder) {
-        builder.add("itemGroup.compressed_blocks", "Compressed Blocks");
-        builder.add("itemGroup.compressed_items", "Item Crates");
+        builder.add("itemGroup.compressedblocks.compressed_blocks", "Compressed Blocks");
+        builder.add("itemGroup.compressedblocks.compressed_items", "Item Crates");
 
         for (Block block : Constants.BLOCKS) {
             assert false;
