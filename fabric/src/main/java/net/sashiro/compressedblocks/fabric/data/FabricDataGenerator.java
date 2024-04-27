@@ -7,13 +7,11 @@ public class FabricDataGenerator implements DataGeneratorEntrypoint {
 
     @Override
     public void onInitializeDataGenerator(net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator fabricDataGenerator) {
-        net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-
-        pack.addProvider(CBBlockTagsProvider::new);
-        pack.addProvider(CBItemTagsProvider::new);
-        pack.addProvider(CBLanguageProvider::new);
-        pack.addProvider(CBLootTableProvider::new);
-        pack.addProvider(CBModelProvider::new);
-        pack.addProvider(CBRecipeProvider::new);
+        fabricDataGenerator.addProvider(CBBlockTagsProvider::new);
+        fabricDataGenerator.addProvider(CBItemTagsProvider::new);
+        fabricDataGenerator.addProvider(CBLanguageProvider::new);
+        fabricDataGenerator.addProvider(CBLootTableProvider::new);
+        fabricDataGenerator.addProvider(CBModelProvider::new);
+        fabricDataGenerator.addProvider(CBRecipeProvider::new);
     }
 }

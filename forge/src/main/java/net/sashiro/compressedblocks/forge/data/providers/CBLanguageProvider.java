@@ -1,6 +1,6 @@
 package net.sashiro.compressedblocks.forge.data.providers;
 
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -11,8 +11,10 @@ import net.sashiro.compressedblocks.util.StringUtils;
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 public class CBLanguageProvider extends LanguageProvider {
-    public CBLanguageProvider(PackOutput packOutput, String locale) {
-        super(packOutput, MOD_ID, locale);
+
+
+    public CBLanguageProvider(DataGenerator gen, String locale) {
+        super(gen, MOD_ID, locale);
     }
 
     @Override

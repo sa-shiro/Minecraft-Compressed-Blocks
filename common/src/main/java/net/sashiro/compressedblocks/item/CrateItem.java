@@ -2,6 +2,7 @@ package net.sashiro.compressedblocks.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -18,10 +19,8 @@ public class CrateItem extends BlockItem {
     private final String itemCount;
     private final Compression comp = new Compression();
 
-    public CrateItem(Block block) {
-        super(block, new Properties()
-                .stacksTo(64)
-        );
+    public CrateItem(Block block, Item.Properties properties) {
+        super(block, properties.stacksTo(64));
         this.block = block;
         comp.setCompressionLevel(getLevel());
         this.itemCount = comp.getBlockCount();

@@ -69,9 +69,6 @@ jobs:
       - name: "Run gradle task: forge:datagen"
         run: ./gradlew :forge:Data
 
-      - name: "Run gradle task: neoforge:datagen"
-        run: ./gradlew :neoforge:runData
-
       - name: "Build project"
         run: ./gradlew build
 
@@ -82,7 +79,6 @@ jobs:
           name: Artifacts
           path: |
             forge/build/libs/
-            neoforge/build/libs/
             fabric/build/libs/
 
       - name: "Publish FORGE"
@@ -108,37 +104,6 @@ jobs:
 
           loaders: |
             forge
-          game-versions: ${{ env.minecraft_version_range }}
-
-          java: ${{ matrix.java }}
-
-          retry-attempts: 2
-          retry-delay: 10000
-          fail-mode: warn
-
-      - name: "Publish NEOFORGE"
-        if: ${{ runner.os == 'Windows' }}
-        uses: Kir-Antipov/mc-publish@v3.3
-        with:
-          modrinth-id: ${{ env.modrinth_id }}
-          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-          modrinth-featured: true
-          modrinth-unfeature-mode: intersection
-
-          curseforge-id: ${{ env.curseforge_id }}
-          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
-
-          files: |
-            neoforge/build/libs/!(*-@(dev|sources|javadoc)).jar
-            neoforge/build/libs/*-@(dev|sources|javadoc).jar
-
-          name: "v${{ env.version }} (${{ env.minecraft_version }}) NEOFORGE"
-          version: "${{ env.version }}"
-          version-type: "${{ env.version_type }}"
-          changelog-file: changelog.md
-
-          loaders: |
-            neoforge
           game-versions: ${{ env.minecraft_version_range }}
 
           java: ${{ matrix.java }}
