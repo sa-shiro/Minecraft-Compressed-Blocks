@@ -1,24 +1,22 @@
 package net.sashiro.compressedblocks.fabric.data.providers;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.fabric.data.CBTags;
 
-import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 public class CBBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 
-    public CBBlockTagsProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
-        super(output, registriesFuture);
+    public CBBlockTagsProvider(FabricDataGenerator dataGenerator) {
+        super(dataGenerator);
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider provider) {
+    protected void generateTags() {
         for (Block block : Constants.BLOCKS) {
             String name = block.getDescriptionId().replace("block.compressedblocks.", "");
             if (name.startsWith("c0")) {

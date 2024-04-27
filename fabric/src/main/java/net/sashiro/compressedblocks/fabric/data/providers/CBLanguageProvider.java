@@ -1,6 +1,6 @@
 package net.sashiro.compressedblocks.fabric.data.providers;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -8,15 +8,14 @@ import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.util.StringUtils;
 
 public class CBLanguageProvider extends FabricLanguageProvider {
-
-    public CBLanguageProvider(FabricDataOutput dataOutput) {
-        super(dataOutput);
+    public CBLanguageProvider(FabricDataGenerator dataGenerator) {
+        super(dataGenerator);
     }
 
     @Override
     public void generateTranslations(TranslationBuilder builder) {
-        builder.add("itemGroup.compressed_blocks", "Compressed Blocks");
-        builder.add("itemGroup.compressed_items", "Item Crates");
+        builder.add("itemGroup.compressedblocks.compressed_blocks", "Compressed Blocks");
+        builder.add("itemGroup.compressedblocks.compressed_items", "Item Crates");
 
         for (Block block : Constants.BLOCKS) {
             assert false;

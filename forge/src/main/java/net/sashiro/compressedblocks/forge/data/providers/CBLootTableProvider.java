@@ -1,37 +1,55 @@
 package net.sashiro.compressedblocks.forge.data.providers;
 
-import net.minecraft.data.PackOutput;
-import net.minecraft.data.loot.BlockLootSubProvider;
+import com.google.common.collect.ImmutableList;
+import com.mojang.datafixers.util.Pair;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.LootTables;
+import net.minecraft.world.level.storage.loot.ValidationContext;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.registries.RegistryObject;
-import net.sashiro.compressedblocks.forge.CompressedBlocksForge;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
-public class CBLootTableProvider {
+import static net.sashiro.compressedblocks.forge.CompressedBlocksForge.BLOCKS;
+import static net.sashiro.compressedblocks.forge.CompressedBlocksForge.CRATE_BLOCKS;
 
-    public static LootTableProvider create(PackOutput output) {
-        return new LootTableProvider(output, Set.of(),
-                List.of(new LootTableProvider.SubProviderEntry(CompressedBlocksLootTable::new, LootContextParamSets.BLOCK)));
+public class CBLootTableProvider extends LootTableProvider {
+    public CBLootTableProvider(DataGenerator dataGeneratorIn) {
+        super(dataGeneratorIn);
     }
 
-    public static class CompressedBlocksLootTable extends BlockLootSubProvider {
-        protected CompressedBlocksLootTable() {
-            super(Set.of(), FeatureFlags.REGISTRY.allFlags());
-        }
 
+    @Override
+    protected @NotNull List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
+        return ImmutableList.of(
+                Pair.of(CompressedLootTable::new, LootContextParamSets.BLOCK)
+        );
+    }
+
+    @Override
+    protected void validate(Map<ResourceLocation, LootTable> map, @NotNull ValidationContext validationContext) {
+        map.forEach((id, lootTable) -> LootTables.validate(validationContext, id, lootTable));
+    }
+
+    public static class CompressedLootTable extends BlockLoot {
         @Override
-        protected void generate() {
-            for (RegistryObject<Block> block : CompressedBlocksForge.BLOCKS.getEntries()) {
+        protected void addTables() {
+            for (RegistryObject<Block> block : BLOCKS.getEntries()) {
                 dropSelf(block.get());
             }
-            for (RegistryObject<Block> block : CompressedBlocksForge.CRATE_BLOCKS.getEntries()) {
+            for (RegistryObject<Block> block : CRATE_BLOCKS.getEntries()) {
                 dropSelf(block.get());
             }
         }
@@ -39,8 +57,8 @@ public class CBLootTableProvider {
         @Override
         protected @NotNull Iterable<Block> getKnownBlocks() {
             List<Block> block = new ArrayList<>();
-            block.addAll(CompressedBlocksForge.BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
-            block.addAll(CompressedBlocksForge.CRATE_BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
+            block.addAll(BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
+            block.addAll(CRATE_BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
 
             return block;
         }

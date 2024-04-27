@@ -1,4 +1,4 @@
-# CB: Compressed Blocks (1.19.4)
+# CB: Compressed Blocks (1.19.2)
 
 ---
 
@@ -26,7 +26,7 @@ This allows players to store vast quantities of blocks/items in a single block.
 The compressed block can be decompressed to retrieve the original blocks, making it a versatile tool for building and
 storage purposes.
 
-- **Minecraft Versions:** `1.19.3`, `1.19.4`
+- **Minecraft Versions:** `1.19`, `1.19.1`, `1.19.2`
 - **Mod Loader:** _Fabric_, _Forge_, _Neoforge_
 - **Author:** [Sashiro](https://github.com/sa-shiro)
 

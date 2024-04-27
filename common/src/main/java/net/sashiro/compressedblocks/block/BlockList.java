@@ -77,7 +77,6 @@ public class BlockList {
     public static final CBRotationalBlock[] ACACIA_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] DARK_OAK_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] MANGROVE_LOG = createRotationalBlocks(null);
-    public static final CBRotationalBlock[] CHERRY_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_OAK_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_SPRUCE_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_BIRCH_LOG = createRotationalBlocks(null);
@@ -85,7 +84,6 @@ public class BlockList {
     public static final CBRotationalBlock[] STRIPPED_ACACIA_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_DARK_OAK_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_MANGROVE_LOG = createRotationalBlocks(null);
-    public static final CBRotationalBlock[] STRIPPED_CHERRY_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] OAK_PLANKS = createRotationalBlocks(null);
     public static final CBRotationalBlock[] SPRUCE_PLANKS = createRotationalBlocks(null);
     public static final CBRotationalBlock[] BIRCH_PLANKS = createRotationalBlocks(null);
@@ -93,9 +91,6 @@ public class BlockList {
     public static final CBRotationalBlock[] ACACIA_PLANKS = createRotationalBlocks(null);
     public static final CBRotationalBlock[] DARK_OAK_PLANKS = createRotationalBlocks(null);
     public static final CBRotationalBlock[] MANGROVE_PLANKS = createRotationalBlocks(null);
-    public static final CBRotationalBlock[] CHERRY_PLANKS = createRotationalBlocks(null);
-    public static final CBRotationalBlock[] BAMBOO_PLANKS = createRotationalBlocks(null);
-    public static final CBRotationalBlock[] BAMBOO_MOSAIC = createRotationalBlocks(null);
     public static final CBBlock[] COPPER_BLOCK = createBlocks(1.5F);
     public static final CBBlock[] CUT_COPPER = createBlocks(1.75F);
     public static final CBBlock[] EXPOSED_COPPER = createBlocks(1.35F);
@@ -123,8 +118,6 @@ public class BlockList {
     public static final CBRotationalBlock[] CRIMSON_STEM = createRotationalBlocks(null);
     public static final CBRotationalBlock[] WARPED_STEM = createRotationalBlocks(null);
     public static final CBBlock[] TNT = createBlocks(0.25F);
-    public static final CBRotationalBlock[] BAMBOO_BLOCK = createRotationalBlocks(null);
-    public static final CBRotationalBlock[] STRIPPED_BAMBOO_BLOCK = createRotationalBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_CRIMSON_STEM = createRotationalBlocks(null);
     public static final CBBlock[] CRIMSON_PLANKS = createBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_WARPED_STEM = createRotationalBlocks(null);
@@ -234,24 +227,24 @@ public class BlockList {
     public static final CBBlock[] PURPLE_CONCRETE = createBlocks(null);
     public static final CBBlock[] MAGENTA_CONCRETE = createBlocks(null);
     public static final CBBlock[] PINK_CONCRETE = createBlocks(null);
-    public static final CBBlock[] GLASS = createBlocks(0.125F);
-    public static final CBBlock[] TINTED_GLASS = createBlocks(0.25F);
-    public static final CBBlock[] WHITE_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] LIGHT_GRAY_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] GRAY_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] BLACK_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] BROWN_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] RED_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] ORANGE_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] YELLOW_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] LIME_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] GREEN_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] CYAN_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] LIGHT_BLUE_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] BLUE_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] PURPLE_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] MAGENTA_STAINED_GLASS = createBlocks(0.125F);
-    public static final CBBlock[] PINK_STAINED_GLASS = createBlocks(0.125F);
+    public static final CBBlock[] GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] TINTED_GLASS = createGlassBlocks(0.25F);
+    public static final CBBlock[] WHITE_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] LIGHT_GRAY_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] GRAY_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] BLACK_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] BROWN_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] RED_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] ORANGE_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] YELLOW_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] LIME_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] GREEN_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] CYAN_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] LIGHT_BLUE_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] BLUE_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] PURPLE_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] MAGENTA_STAINED_GLASS = createGlassBlocks(0.125F);
+    public static final CBBlock[] PINK_STAINED_GLASS = createGlassBlocks(0.125F);
     public static final CBBlock[] ICE = createBlocks(0.75F);
     public static final CBBlock[] PACKED_ICE = createBlocks(0.75F);
     public static final CBBlock[] BLUE_ICE = createBlocks(0.75F);
@@ -280,6 +273,17 @@ public class BlockList {
             float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];
             float blockResistance = amplifier != null ? RESISTANCE[i] * amplifier : RESISTANCE[i];
             result[i] = new CBBlock(BlockBehaviour.Properties.of(Material.STONE).strength(blockHardness, blockResistance), i);
+        }
+        return result;
+    }
+
+    private static CBBlock[] createGlassBlocks(Float amplifier) {
+        int maxCompressionLevel = 10;
+        CBBlock[] result = new CBBlock[maxCompressionLevel];
+        for (int i = 0; i < maxCompressionLevel; i++) {
+            float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];
+            float blockResistance = amplifier != null ? RESISTANCE[i] * amplifier : RESISTANCE[i];
+            result[i] = new CBBlock(BlockBehaviour.Properties.of(Material.GLASS).noCollission().strength(blockHardness, blockResistance), i);
         }
         return result;
     }

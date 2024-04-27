@@ -1,30 +1,40 @@
 package net.sashiro.compressedblocks.forge.item;
 
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.CreativeModeTabEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.sashiro.compressedblocks.block.BlockList;
+import net.sashiro.compressedblocks.block.CrateList;
 
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
-import static net.sashiro.compressedblocks.block.BlockList.STONE;
-import static net.sashiro.compressedblocks.block.CrateList.APPLE;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ItemGroups {
+    @MethodsReturnNonnullByDefault
+    public static final CreativeModeTab compressedBlockGroup = new CreativeModeTab("compressedblocks.compressed_blocks") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(BlockList.STONE[9]);
+        }
 
-    public static CreativeModeTab BLOCKS_ITEM_GROUP;
-    public static CreativeModeTab CRATE_ITEM_GROUP;
+        @Override
+        public boolean canScroll() {
+            return true;
+        }
+    };
 
-    @SubscribeEvent
-    public static void registerCreativeTab(CreativeModeTabEvent.Register event) {
-        BLOCKS_ITEM_GROUP = event.registerCreativeModeTab(new ResourceLocation(MOD_ID, "compressedblocks.compressed_blocks"), builder -> builder.icon(
-                () -> new ItemStack(STONE[9])).title(Component.translatable("itemGroup.compressed_blocks")));
+    @MethodsReturnNonnullByDefault
+    public static final CreativeModeTab compressedItemGroup = new CreativeModeTab("compressedblocks.compressed_items") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(CrateList.APPLE[0]);
+        }
 
-        CRATE_ITEM_GROUP = event.registerCreativeModeTab(new ResourceLocation(MOD_ID, "compressedblocks.compressed_items"), builder -> builder.icon(
-                () -> new ItemStack(APPLE[0])).title(Component.translatable("itemGroup.compressed_items")));
-    }
+        @Override
+        public boolean canScroll() {
+            return true;
+        }
+    };
 }

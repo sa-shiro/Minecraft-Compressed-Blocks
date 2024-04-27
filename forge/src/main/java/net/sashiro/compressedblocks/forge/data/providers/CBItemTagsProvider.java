@@ -1,7 +1,7 @@
 package net.sashiro.compressedblocks.forge.data.providers;
 
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -9,18 +9,19 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.forge.CompressedBlocksForge;
 import net.sashiro.compressedblocks.forge.data.CBTags;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.concurrent.CompletableFuture;
+import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 public class CBItemTagsProvider extends ItemTagsProvider {
-    public CBItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> provider, CompletableFuture<TagLookup<Block>> tagLookup, String modId, @Nullable ExistingFileHelper existingFileHelper) {
-        super(packOutput, provider, tagLookup, modId, existingFileHelper);
+
+
+    public CBItemTagsProvider(DataGenerator generator, BlockTagsProvider tagsProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(generator, tagsProvider, MOD_ID, existingFileHelper);
     }
 
     @Override
-    protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
+    protected void addTags() {
         for (RegistryObject<Block> registryObject : CompressedBlocksForge.CRATE_BLOCKS.getEntries()) {
             Item item = registryObject.get().asItem();
             String name = item.getDescriptionId().replace("block.", "").replace("item.", "").replace("compressedblocks.", "");

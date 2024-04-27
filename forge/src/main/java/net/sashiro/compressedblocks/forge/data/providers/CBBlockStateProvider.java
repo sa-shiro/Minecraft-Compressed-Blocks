@@ -1,6 +1,6 @@
 package net.sashiro.compressedblocks.forge.data.providers;
 
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -17,8 +17,9 @@ import static net.sashiro.compressedblocks.Constants.MOD_ID;
 @SuppressWarnings("unused")
 public class CBBlockStateProvider extends BlockStateProvider {
 
-    public CBBlockStateProvider(PackOutput packOutput, ExistingFileHelper exFileHelper) {
-        super(packOutput, MOD_ID, exFileHelper);
+
+    public CBBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
+        super(gen, MOD_ID, exFileHelper);
     }
 
     @Override

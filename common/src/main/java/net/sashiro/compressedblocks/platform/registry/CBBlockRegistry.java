@@ -75,7 +75,6 @@ public class CBBlockRegistry {
         Services.PLATFORM.registerBlock("ACACIA_LOG", ACACIA_LOG);
         Services.PLATFORM.registerBlock("DARK_OAK_LOG", DARK_OAK_LOG);
         Services.PLATFORM.registerBlock("MANGROVE_LOG", MANGROVE_LOG);
-        Services.PLATFORM.registerBlock("CHERRY_LOG", CHERRY_LOG);
         Services.PLATFORM.registerBlock("STRIPPED_OAK_LOG", STRIPPED_OAK_LOG);
         Services.PLATFORM.registerBlock("STRIPPED_SPRUCE_LOG", STRIPPED_SPRUCE_LOG);
         Services.PLATFORM.registerBlock("STRIPPED_BIRCH_LOG", STRIPPED_BIRCH_LOG);
@@ -83,7 +82,6 @@ public class CBBlockRegistry {
         Services.PLATFORM.registerBlock("STRIPPED_ACACIA_LOG", STRIPPED_ACACIA_LOG);
         Services.PLATFORM.registerBlock("STRIPPED_DARK_OAK_LOG", STRIPPED_DARK_OAK_LOG);
         Services.PLATFORM.registerBlock("STRIPPED_MANGROVE_LOG", STRIPPED_MANGROVE_LOG);
-        Services.PLATFORM.registerBlock("STRIPPED_CHERRY_LOG", STRIPPED_CHERRY_LOG);
         Services.PLATFORM.registerBlock("OAK_PLANKS", OAK_PLANKS);
         Services.PLATFORM.registerBlock("SPRUCE_PLANKS", SPRUCE_PLANKS);
         Services.PLATFORM.registerBlock("BIRCH_PLANKS", BIRCH_PLANKS);
@@ -91,9 +89,6 @@ public class CBBlockRegistry {
         Services.PLATFORM.registerBlock("ACACIA_PLANKS", ACACIA_PLANKS);
         Services.PLATFORM.registerBlock("DARK_OAK_PLANKS", DARK_OAK_PLANKS);
         Services.PLATFORM.registerBlock("MANGROVE_PLANKS", MANGROVE_PLANKS);
-        Services.PLATFORM.registerBlock("CHERRY_PLANKS", CHERRY_PLANKS);
-        Services.PLATFORM.registerBlock("BAMBOO_PLANKS", BAMBOO_PLANKS);
-        Services.PLATFORM.registerBlock("BAMBOO_MOSAIC", BAMBOO_MOSAIC);
         Services.PLATFORM.registerBlock("COPPER_BLOCK", COPPER_BLOCK);
         Services.PLATFORM.registerBlock("CUT_COPPER", CUT_COPPER);
         Services.PLATFORM.registerBlock("EXPOSED_COPPER", EXPOSED_COPPER);
@@ -121,8 +116,6 @@ public class CBBlockRegistry {
         Services.PLATFORM.registerBlock("CRIMSON_STEM", CRIMSON_STEM);
         Services.PLATFORM.registerBlock("WARPED_STEM", WARPED_STEM);
         Services.PLATFORM.registerBlock("TNT", TNT);
-        Services.PLATFORM.registerBlock("BAMBOO_BLOCK", BAMBOO_BLOCK);
-        Services.PLATFORM.registerBlock("STRIPPED_BAMBOO_BLOCK", STRIPPED_BAMBOO_BLOCK);
         Services.PLATFORM.registerBlock("STRIPPED_CRIMSON_STEM", STRIPPED_CRIMSON_STEM);
         Services.PLATFORM.registerBlock("CRIMSON_PLANKS", CRIMSON_PLANKS);
         Services.PLATFORM.registerBlock("STRIPPED_WARPED_STEM", STRIPPED_WARPED_STEM);

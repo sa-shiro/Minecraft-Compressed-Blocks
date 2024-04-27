@@ -1,6 +1,6 @@
 package net.sashiro.compressedblocks.forge.data.providers;
 
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -12,8 +12,8 @@ import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 public class CBItemModelProvider extends ItemModelProvider {
 
-    public CBItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
-        super(packOutput, MOD_ID, existingFileHelper);
+    public CBItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+        super(generator, MOD_ID, existingFileHelper);
     }
 
     @Override

@@ -135,7 +135,6 @@ public class CrateList {
     public static final CrateBlock[] JUNGLE_SAPLING = createBlocks();
     public static final CrateBlock[] ACACIA_SAPLING = createBlocks();
     public static final CrateBlock[] DARK_OAK_SAPLING = createBlocks();
-    public static final CrateBlock[] CHERRY_SAPLING = createBlocks();
     public static final CrateBlock[] MANGROVE_PROPAGULE = createBlocks();
     public static final CrateBlock[] BROWN_MUSHROOM = createBlocks();
     public static final CrateBlock[] RED_MUSHROOM = createBlocks();

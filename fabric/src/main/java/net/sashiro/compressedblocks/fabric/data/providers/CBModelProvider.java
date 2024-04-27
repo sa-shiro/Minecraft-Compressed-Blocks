@@ -1,6 +1,6 @@
 package net.sashiro.compressedblocks.fabric.data.providers;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.core.Direction;
 import net.minecraft.data.models.BlockModelGenerators;
@@ -30,8 +30,8 @@ public class CBModelProvider extends FabricModelProvider {
     public static final ModelTemplate TEMPLATE_CUBE_COLUMN = new ModelTemplate(Optional.of(new ResourceLocation("compressedblocks", "block/template/template_cube_column")), Optional.empty(), TextureSlot.END, TextureSlot.SIDE, TextureSlot.PARTICLE, OVERLAY_SLOT);
     public static final ModelTemplate TEMPLATE_CUBE_COLUMN_HORIZONTAL = new ModelTemplate(Optional.of(new ResourceLocation("compressedblocks", "block/template/template_cube_column_horizontal")), Optional.empty(), TextureSlot.END, TextureSlot.SIDE, TextureSlot.PARTICLE, OVERLAY_SLOT);
 
-    public CBModelProvider(FabricDataOutput output) {
-        super(output);
+    public CBModelProvider(FabricDataGenerator dataGenerator) {
+        super(dataGenerator);
     }
 
     @Override

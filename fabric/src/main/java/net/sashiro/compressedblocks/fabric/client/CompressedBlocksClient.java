@@ -2,10 +2,8 @@ package net.sashiro.compressedblocks.fabric.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -22,15 +20,9 @@ import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 @SuppressWarnings("unused")
 public class CompressedBlocksClient implements ClientModInitializer {
-    private static final CreativeModeTab COMPRESSED_BLOCKS = FabricItemGroup.builder(new ResourceLocation(MOD_ID, "compressed_blocks"))
-            .icon(() -> new ItemStack(BlockList.STONE[9].asItem()))
-            .title(Component.translatable("itemGroup.compressed_blocks"))
-            .build();
 
-    private static final CreativeModeTab CRATE_ITEMS = FabricItemGroup.builder(new ResourceLocation(MOD_ID, "compressed_items"))
-            .icon(() -> new ItemStack(CrateList.APPLE[0].asItem()))
-            .title(Component.translatable("itemGroup.compressed_items"))
-            .build();
+    public static final CreativeModeTab COMPRESSED_BLOCKS = FabricItemGroupBuilder.build(new ResourceLocation(MOD_ID, "compressed_blocks"), () -> new ItemStack(BlockList.STONE[9]));
+    public static final CreativeModeTab CRATE_ITEMS = FabricItemGroupBuilder.build(new ResourceLocation(MOD_ID, "compressed_items"), () -> new ItemStack(CrateList.APPLE[0]));
 
     @Override
     public void onInitializeClient() {
@@ -38,7 +30,7 @@ public class CompressedBlocksClient implements ClientModInitializer {
         Collection<ItemStack> itemStackCrates = new ArrayList<>();
 
         for (Block block : Constants.BLOCKS) {
-            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutout());
+            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.translucent());
             itemStackBlocks.add(new ItemStack(block));
         }
 
@@ -46,9 +38,6 @@ public class CompressedBlocksClient implements ClientModInitializer {
             BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutout());
             itemStackCrates.add(new ItemStack(block));
         }
-
-        ItemGroupEvents.modifyEntriesEvent(COMPRESSED_BLOCKS).register(content -> content.acceptAll(itemStackBlocks));
-        ItemGroupEvents.modifyEntriesEvent(CRATE_ITEMS).register(content -> content.acceptAll(itemStackCrates));
 
         LOG.info(String.format("Successfully registered: %d Blocks and %d Crates!", itemStackBlocks.size(), itemStackCrates.size()));
     }
