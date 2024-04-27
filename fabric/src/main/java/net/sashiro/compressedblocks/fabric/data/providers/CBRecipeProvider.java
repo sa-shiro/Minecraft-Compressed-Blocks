@@ -3,8 +3,8 @@ package net.sashiro.compressedblocks.fabric.data.providers;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
 
 import java.util.ArrayList;
+import java.util.function.Consumer;
 
 public class CBRecipeProvider extends FabricRecipeProvider {
 
@@ -21,7 +22,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    public void buildRecipes(RecipeOutput exporter) {
+    public void buildRecipes(Consumer<FinishedRecipe> exporter) {
         ArrayList<Block> blocks = (ArrayList<Block>) Constants.BLOCKS;
 
         for (int i = 0; i < blocks.size(); i++) {

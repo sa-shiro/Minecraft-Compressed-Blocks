@@ -10,6 +10,7 @@ import net.sashiro.compressedblocks.Constants;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
+import java.util.function.Consumer;
 
 @SuppressWarnings("DuplicatedCode")
 public class CBRecipeProvider extends RecipeProvider {
@@ -20,7 +21,7 @@ public class CBRecipeProvider extends RecipeProvider {
 
     @Override
     @ParametersAreNonnullByDefault
-    protected void buildRecipes(RecipeOutput consumer) {
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
 
         ArrayList<Block> blocks = (ArrayList<Block>) Constants.BLOCKS;
 
