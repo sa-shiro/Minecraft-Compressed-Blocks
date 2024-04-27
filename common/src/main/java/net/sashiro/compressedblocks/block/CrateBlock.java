@@ -1,6 +1,5 @@
 package net.sashiro.compressedblocks.block;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
@@ -28,11 +27,6 @@ public class CrateBlock extends HorizontalDirectionalBlock {
         super(properties);
         compressor.setCompressionLevel(compressionLevel);
         this.registerDefaultState(super.stateDefinition.any().setValue(FACING, Direction.NORTH));
-    }
-
-    @Override
-    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
-        return null;
     }
 
     @Override
