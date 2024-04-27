@@ -15,7 +15,6 @@ import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 public class CBItemTagsProvider extends ItemTagsProvider {
 
-
     public CBItemTagsProvider(DataGenerator generator, BlockTagsProvider tagsProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(generator, tagsProvider, MOD_ID, existingFileHelper);
     }

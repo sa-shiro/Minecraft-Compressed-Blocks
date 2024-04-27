@@ -19,8 +19,8 @@ public class CBLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add("itemGroup.compressed_blocks", "Compressed Blocks");
-        add("itemGroup.compressed_items", "Item Crates");
+        add("itemGroup.compressedblocks.compressed_blocks", "Compressed Blocks");
+        add("itemGroup.compressedblocks.compressed_items", "Item Crates");
 
         for (RegistryObject<Block> block : CompressedBlocksForge.BLOCKS.getEntries()) {
             assert false;

@@ -1,6 +1,7 @@
 package net.sashiro.compressedblocks.item;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -58,6 +59,6 @@ public class CrateItem extends BlockItem {
                 .replace("mega_", "")
                 .replace("giga_", "")
         );
-        c.add(Component.literal(itemCount + "x " + itemName).withStyle(comp.getStyle()));
+        c.add(new TextComponent(itemCount + "x " + itemName).withStyle(comp.getStyle()));
     }
 }

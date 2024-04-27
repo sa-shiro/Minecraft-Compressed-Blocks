@@ -69,28 +69,24 @@ public class BlockList {
     public static final CBBlock[] TUFF = createBlocks(null);
     public static final CBRotationalBlock[] BASALT = createRotationalBlocks(null);
     public static final CBBlock[] OBSIDIAN = createBlocks(3.5F);
-    public static final CBBlock[] MUD = createBlocks(0.8F);
     public static final CBRotationalBlock[] OAK_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] SPRUCE_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] BIRCH_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] JUNGLE_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] ACACIA_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] DARK_OAK_LOG = createRotationalBlocks(null);
-    public static final CBRotationalBlock[] MANGROVE_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_OAK_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_SPRUCE_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_BIRCH_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_JUNGLE_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_ACACIA_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] STRIPPED_DARK_OAK_LOG = createRotationalBlocks(null);
-    public static final CBRotationalBlock[] STRIPPED_MANGROVE_LOG = createRotationalBlocks(null);
     public static final CBRotationalBlock[] OAK_PLANKS = createRotationalBlocks(null);
     public static final CBRotationalBlock[] SPRUCE_PLANKS = createRotationalBlocks(null);
     public static final CBRotationalBlock[] BIRCH_PLANKS = createRotationalBlocks(null);
     public static final CBRotationalBlock[] JUNGLE_PLANKS = createRotationalBlocks(null);
     public static final CBRotationalBlock[] ACACIA_PLANKS = createRotationalBlocks(null);
     public static final CBRotationalBlock[] DARK_OAK_PLANKS = createRotationalBlocks(null);
-    public static final CBRotationalBlock[] MANGROVE_PLANKS = createRotationalBlocks(null);
     public static final CBBlock[] COPPER_BLOCK = createBlocks(1.5F);
     public static final CBBlock[] CUT_COPPER = createBlocks(1.75F);
     public static final CBBlock[] EXPOSED_COPPER = createBlocks(1.35F);
@@ -108,7 +104,6 @@ public class BlockList {
     public static final CBBlock[] WAXED_OXIDIZED_COPPER = createBlocks(1.75F);
     public static final CBBlock[] WAXED_OXIDIZED_CUT_COPPER = createBlocks(1.75F);
     public static final CBRotationalBlock[] BONE_BLOCK = createRotationalBlocks(null);
-    public static final CBRotationalBlock[] SCULK = createRotationalBlocks(null);
     public static final CBBlock[] SMOOTH_SANDSTONE = createBlocks(null);
     public static final CBBlock[] CUT_SANDSTONE = createBlocks(null);
     public static final CBBlock[] CHISELED_SANDSTONE = createBlocks(null);
@@ -135,8 +130,6 @@ public class BlockList {
     public static final CBBlock[] CRACKED_DEEPSLATE_BRICKS = createBlocks(null);
     public static final CBBlock[] DEEPSLATE_TILES = createBlocks(null);
     public static final CBBlock[] CRACKED_DEEPSLATE_TILES = createBlocks(null);
-    public static final CBBlock[] PACKED_MUD = createBlocks(null);
-    public static final CBBlock[] MUD_BRICKS = createBlocks(null);
     public static final CBBlock[] PRISMARINE = createBlocks(null);
     public static final CBBlock[] PRISMARINE_BRICKS = createBlocks(null);
     public static final CBBlock[] DARK_PRISMARINE = createBlocks(null);
@@ -261,9 +254,6 @@ public class BlockList {
     public static final CBRotationalBlock[] MELON = createRotationalBlocks(null);
     public static final CBRotationalBlock[] PUMPKIN = createRotationalBlocks(null);
     public static final CBRotationalBlock[] HAY_BLOCK = createRotationalBlocks(0.5F);
-    public static final CBRotationalBlock[] OCHRE_FROGLIGHT = createRotationalBlocks(null);
-    public static final CBRotationalBlock[] VERDANT_FROGLIGHT = createRotationalBlocks(null);
-    public static final CBRotationalBlock[] PEARLESCENT_FROGLIGHT = createRotationalBlocks(null);
     public static final CBBlock[] SEA_LANTERN = createBlocks(null);
 
     private static CBBlock[] createBlocks(Float amplifier) {

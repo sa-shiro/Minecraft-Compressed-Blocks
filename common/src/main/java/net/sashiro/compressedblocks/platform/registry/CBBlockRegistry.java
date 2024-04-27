@@ -67,28 +67,24 @@ public class CBBlockRegistry {
         Services.PLATFORM.registerBlock("TUFF", TUFF);
         Services.PLATFORM.registerBlock("BASALT", BASALT);
         Services.PLATFORM.registerBlock("OBSIDIAN", OBSIDIAN);
-        Services.PLATFORM.registerBlock("MUD", MUD);
         Services.PLATFORM.registerBlock("OAK_LOG", OAK_LOG);
         Services.PLATFORM.registerBlock("SPRUCE_LOG", SPRUCE_LOG);
         Services.PLATFORM.registerBlock("BIRCH_LOG", BIRCH_LOG);
         Services.PLATFORM.registerBlock("JUNGLE_LOG", JUNGLE_LOG);
         Services.PLATFORM.registerBlock("ACACIA_LOG", ACACIA_LOG);
         Services.PLATFORM.registerBlock("DARK_OAK_LOG", DARK_OAK_LOG);
-        Services.PLATFORM.registerBlock("MANGROVE_LOG", MANGROVE_LOG);
         Services.PLATFORM.registerBlock("STRIPPED_OAK_LOG", STRIPPED_OAK_LOG);
         Services.PLATFORM.registerBlock("STRIPPED_SPRUCE_LOG", STRIPPED_SPRUCE_LOG);
         Services.PLATFORM.registerBlock("STRIPPED_BIRCH_LOG", STRIPPED_BIRCH_LOG);
         Services.PLATFORM.registerBlock("STRIPPED_JUNGLE_LOG", STRIPPED_JUNGLE_LOG);
         Services.PLATFORM.registerBlock("STRIPPED_ACACIA_LOG", STRIPPED_ACACIA_LOG);
         Services.PLATFORM.registerBlock("STRIPPED_DARK_OAK_LOG", STRIPPED_DARK_OAK_LOG);
-        Services.PLATFORM.registerBlock("STRIPPED_MANGROVE_LOG", STRIPPED_MANGROVE_LOG);
         Services.PLATFORM.registerBlock("OAK_PLANKS", OAK_PLANKS);
         Services.PLATFORM.registerBlock("SPRUCE_PLANKS", SPRUCE_PLANKS);
         Services.PLATFORM.registerBlock("BIRCH_PLANKS", BIRCH_PLANKS);
         Services.PLATFORM.registerBlock("JUNGLE_PLANKS", JUNGLE_PLANKS);
         Services.PLATFORM.registerBlock("ACACIA_PLANKS", ACACIA_PLANKS);
         Services.PLATFORM.registerBlock("DARK_OAK_PLANKS", DARK_OAK_PLANKS);
-        Services.PLATFORM.registerBlock("MANGROVE_PLANKS", MANGROVE_PLANKS);
         Services.PLATFORM.registerBlock("COPPER_BLOCK", COPPER_BLOCK);
         Services.PLATFORM.registerBlock("CUT_COPPER", CUT_COPPER);
         Services.PLATFORM.registerBlock("EXPOSED_COPPER", EXPOSED_COPPER);
@@ -106,7 +102,6 @@ public class CBBlockRegistry {
         Services.PLATFORM.registerBlock("WAXED_OXIDIZED_COPPER", WAXED_OXIDIZED_COPPER);
         Services.PLATFORM.registerBlock("WAXED_OXIDIZED_CUT_COPPER", WAXED_OXIDIZED_CUT_COPPER);
         Services.PLATFORM.registerBlock("BONE_BLOCK", BONE_BLOCK);
-        Services.PLATFORM.registerBlock("SCULK", SCULK);
         Services.PLATFORM.registerBlock("SMOOTH_SANDSTONE", SMOOTH_SANDSTONE);
         Services.PLATFORM.registerBlock("CUT_SANDSTONE", CUT_SANDSTONE);
         Services.PLATFORM.registerBlock("CHISELED_SANDSTONE", CHISELED_SANDSTONE);
@@ -133,8 +128,6 @@ public class CBBlockRegistry {
         Services.PLATFORM.registerBlock("CRACKED_DEEPSLATE_BRICKS", CRACKED_DEEPSLATE_BRICKS);
         Services.PLATFORM.registerBlock("DEEPSLATE_TILES", DEEPSLATE_TILES);
         Services.PLATFORM.registerBlock("CRACKED_DEEPSLATE_TILES", CRACKED_DEEPSLATE_TILES);
-        Services.PLATFORM.registerBlock("PACKED_MUD", PACKED_MUD);
-        Services.PLATFORM.registerBlock("MUD_BRICKS", MUD_BRICKS);
         Services.PLATFORM.registerBlock("PRISMARINE", PRISMARINE);
         Services.PLATFORM.registerBlock("PRISMARINE_BRICKS", PRISMARINE_BRICKS);
         Services.PLATFORM.registerBlock("DARK_PRISMARINE", DARK_PRISMARINE);
@@ -259,9 +252,6 @@ public class CBBlockRegistry {
         Services.PLATFORM.registerBlock("MELON", MELON);
         Services.PLATFORM.registerBlock("PUMPKIN", PUMPKIN);
         Services.PLATFORM.registerBlock("HAY_BLOCK", HAY_BLOCK);
-        Services.PLATFORM.registerBlock("OCHRE_FROGLIGHT", OCHRE_FROGLIGHT);
-        Services.PLATFORM.registerBlock("VERDANT_FROGLIGHT", VERDANT_FROGLIGHT);
-        Services.PLATFORM.registerBlock("PEARLESCENT_FROGLIGHT", PEARLESCENT_FROGLIGHT);
         Services.PLATFORM.registerBlock("SEA_LANTERN", SEA_LANTERN);
     }
 }

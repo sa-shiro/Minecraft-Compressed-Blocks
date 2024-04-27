@@ -2,12 +2,14 @@ package net.sashiro.compressedblocks.forge;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegisterEvent;
 import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.platform.registry.CBBlockRegistry;
@@ -17,6 +19,7 @@ import static net.sashiro.compressedblocks.Constants.LOG;
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 @Mod(Constants.MOD_ID)
+@Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CompressedBlocksForge {
 
     private static boolean finished = false;
@@ -35,7 +38,7 @@ public class CompressedBlocksForge {
         CRATE_BLOCKS.register(eventBus);
         CRATE_ITEMS.register(eventBus);
 
-        eventBus.addListener(this::reg);
+        eventBus.addGenericListener(Block.class, CompressedBlocksForge::reg);
 
         LOG.info("Successfully registered all Blocks and Crates!");
     }
@@ -45,7 +48,8 @@ public class CompressedBlocksForge {
      *
      * @param event RegisterEvent
      */
-    private void reg(RegisterEvent event) {
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void reg(RegistryEvent.Register<Block> event) {
         if (!finished) {
             CBBlockRegistry.registerBlocks();
             CBCrateRegistry.registerCrates();

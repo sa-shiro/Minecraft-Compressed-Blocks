@@ -131,7 +131,6 @@ public class CBCrateRegistry {
         Services.PLATFORM.registerCrate("JUNGLE_SAPLING", JUNGLE_SAPLING);
         Services.PLATFORM.registerCrate("ACACIA_SAPLING", ACACIA_SAPLING);
         Services.PLATFORM.registerCrate("DARK_OAK_SAPLING", DARK_OAK_SAPLING);
-        Services.PLATFORM.registerCrate("MANGROVE_PROPAGULE", MANGROVE_PROPAGULE);
         Services.PLATFORM.registerCrate("BROWN_MUSHROOM", BROWN_MUSHROOM);
         Services.PLATFORM.registerCrate("RED_MUSHROOM", RED_MUSHROOM);
         Services.PLATFORM.registerCrate("CRIMSON_FUNGUS", CRIMSON_FUNGUS);
@@ -183,6 +182,5 @@ public class CBCrateRegistry {
         Services.PLATFORM.registerCrate("TWISTING_VINES", TWISTING_VINES);
         Services.PLATFORM.registerCrate("WEEPING_VINES", WEEPING_VINES);
         Services.PLATFORM.registerCrate("GLOW_LICHEN", GLOW_LICHEN);
-        Services.PLATFORM.registerCrate("SCULK_VEIN", SCULK_VEIN);
     }
 }

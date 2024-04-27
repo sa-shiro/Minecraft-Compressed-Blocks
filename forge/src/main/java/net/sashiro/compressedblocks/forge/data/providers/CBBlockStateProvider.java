@@ -52,7 +52,6 @@ public class CBBlockStateProvider extends BlockStateProvider {
                                 .texture("particle", side)
                                 .texture("overlay", StringUtils.getOverlay(descriptionId))
                                 .parent(cubeColumn)
-                                .renderType("cutout")
                         , models().cubeColumnHorizontal(
                                         descriptionId.replace("block.compressedblocks.", "") + "_horizontal",
                                         side,
@@ -61,7 +60,6 @@ public class CBBlockStateProvider extends BlockStateProvider {
                                 .texture("particle", side)
                                 .texture("overlay", StringUtils.getOverlay(descriptionId))
                                 .parent(cubeColumnHorizontal)
-                                .renderType("cutout")
                 );
             }
             // Default Blocks
@@ -74,7 +72,6 @@ public class CBBlockStateProvider extends BlockStateProvider {
                                 .texture("particle", StringUtils.getActualResourceLocation(descriptionId))
                                 .texture("overlay", StringUtils.getOverlay(descriptionId))
                                 .parent(blockBlock)
-                                .renderType("cutout")
                 );
             }
         }
@@ -92,7 +89,6 @@ public class CBBlockStateProvider extends BlockStateProvider {
                             .texture("all", new ResourceLocation(MOD_ID, "block/crate"))
                             .texture("item", location)
                             .texture("number", StringUtils.getOverlay(descriptionId))
-                            .renderType("cutout")
             );
         }
     }
