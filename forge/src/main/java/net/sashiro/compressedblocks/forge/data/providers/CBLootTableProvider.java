@@ -12,8 +12,7 @@ import net.minecraft.world.level.storage.loot.LootTables;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
+import net.minecraftforge.fmllegacy.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,14 +31,14 @@ public class CBLootTableProvider extends LootTableProvider {
 
 
     @Override
-    protected @NotNull List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
+    protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
         return ImmutableList.of(
                 Pair.of(CompressedLootTable::new, LootContextParamSets.BLOCK)
         );
     }
 
     @Override
-    protected void validate(Map<ResourceLocation, LootTable> map, @NotNull ValidationContext validationContext) {
+    protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationContext) {
         map.forEach((id, lootTable) -> LootTables.validate(validationContext, id, lootTable));
     }
 
@@ -55,7 +54,7 @@ public class CBLootTableProvider extends LootTableProvider {
         }
 
         @Override
-        protected @NotNull Iterable<Block> getKnownBlocks() {
+        protected Iterable<Block> getKnownBlocks() {
             List<Block> block = new ArrayList<>();
             block.addAll(BLOCKS.getEntries().stream().map(RegistryObject::get).toList());
             block.addAll(CRATE_BLOCKS.getEntries().stream().map(RegistryObject::get).toList());

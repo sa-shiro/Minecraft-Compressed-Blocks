@@ -6,16 +6,15 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import net.sashiro.compressedblocks.forge.CompressedBlocksForge;
 import net.sashiro.compressedblocks.forge.data.CBTags;
-import org.jetbrains.annotations.Nullable;
 
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 public class CBItemTagsProvider extends ItemTagsProvider {
 
-    public CBItemTagsProvider(DataGenerator generator, BlockTagsProvider tagsProvider, @Nullable ExistingFileHelper existingFileHelper) {
+    public CBItemTagsProvider(DataGenerator generator, BlockTagsProvider tagsProvider, ExistingFileHelper existingFileHelper) {
         super(generator, tagsProvider, MOD_ID, existingFileHelper);
     }
 

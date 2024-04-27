@@ -24,16 +24,12 @@
     ],
     "client": [
       "${entrypoint_client}"
-    ],
-    "fabric-datagen": [
-      "net.sashiro.compressedblocks.fabric.data.FabricDataGenerator"
     ]
   },
   "depends": {
     "minecraft": "${fabric_mc_version_range}",
-    "java": ">=17",
-    "fabricloader": "${fabric_version_range}",
-    "fabric-api": "*"
+    "java": ">=16",
+    "fabricloader": "${fabric_version_range}"
   },
   "suggests": {}
 }

@@ -5,10 +5,9 @@ import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import net.sashiro.compressedblocks.forge.CompressedBlocksForge;
 import net.sashiro.compressedblocks.forge.data.CBTags;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.Stream;
 
@@ -17,7 +16,7 @@ import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 public class CBBlockTagsProvider extends BlockTagsProvider {
 
-    public CBBlockTagsProvider(DataGenerator generator, @Nullable ExistingFileHelper existingFileHelper) {
+    public CBBlockTagsProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
         super(generator, MOD_ID, existingFileHelper);
     }
 

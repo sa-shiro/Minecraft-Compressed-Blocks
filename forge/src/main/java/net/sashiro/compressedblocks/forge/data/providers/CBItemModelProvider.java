@@ -4,7 +4,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import net.sashiro.compressedblocks.forge.CompressedBlocksForge;
 import net.sashiro.compressedblocks.util.StringUtils;
 
@@ -18,7 +18,6 @@ public class CBItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-
         for (RegistryObject<Block> block : CompressedBlocksForge.BLOCKS.getEntries()) {
             // exclude manually added resources
             if (StringUtils.isBlock(block.get().getDescriptionId())) continue;

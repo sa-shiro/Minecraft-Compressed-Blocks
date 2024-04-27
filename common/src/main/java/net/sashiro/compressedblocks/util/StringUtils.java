@@ -1,7 +1,6 @@
 package net.sashiro.compressedblocks.util;
 
 import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 
@@ -106,7 +105,6 @@ public class StringUtils {
      * @param mc_name Name of the Item.
      * @return {@link ResourceLocation} of the Item.
      */
-    @NotNull
     public static ResourceLocation getResourceLocation(String mc_name) {
         ResourceLocation location = new ResourceLocation("item/" + mc_name);
 

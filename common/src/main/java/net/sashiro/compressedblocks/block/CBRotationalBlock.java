@@ -12,8 +12,6 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.sashiro.compressedblocks.util.Compression;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -26,22 +24,22 @@ public class CBRotationalBlock extends RotatedPillarBlock {
     }
 
     @Override
-    public @NotNull BlockState rotate(@NotNull BlockState blockState, @NotNull Rotation rotation) {
+    public BlockState rotate(BlockState blockState, Rotation rotation) {
         return super.rotate(blockState, rotation);
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> blockBlockStateBuilder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> blockBlockStateBuilder) {
         super.createBlockStateDefinition(blockBlockStateBuilder);
     }
 
     @Override
-    public BlockState getStateForPlacement(@NotNull BlockPlaceContext blockPlaceContext) {
+    public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
         return super.getStateForPlacement(blockPlaceContext);
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
+    public void appendHoverText(ItemStack is, BlockGetter bg, List<Component> lC, TooltipFlag ttf) {
         super.appendHoverText(is, bg, lC, ttf);
         lC.add(new TextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
     }

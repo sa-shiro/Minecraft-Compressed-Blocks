@@ -1,8 +1,8 @@
-# v1.5.0 [ 1.18.2 ]
+# v1.5.0 [ 1.17.1 ]
 
 ## General
 
-- Downgrade `1.5.0` to `Minecraft 1.18.2`
+- Downgrade `1.5.0` to `Minecraft 1.17.1`
 - Added **`161`** new compressed variants including missing ones
 - Removed functionality of blocks (such as TNT, Slime Block, etc.) as it's unnecessary
 
