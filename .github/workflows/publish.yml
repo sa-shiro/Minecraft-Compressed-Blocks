@@ -63,9 +63,6 @@ jobs:
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
 
-      - name: "Run gradle task: fabric:datagen"
-        run: ./gradlew :fabric:runDatagen
-
       - name: "Run gradle task: forge:datagen"
         run: ./gradlew :forge:Data
 
