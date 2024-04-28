@@ -68,7 +68,7 @@ jobs:
         if: ${{ runner.os == 'Windows' && matrix.java == '16' }}
         uses: actions/upload-artifact@v4
         with:
-          name: Artifacts-${{ runner.os }}-forge
+          name: Artifacts-${{ runner.os }}
           path: |
             forge/build/libs/
             fabric/build/libs/
