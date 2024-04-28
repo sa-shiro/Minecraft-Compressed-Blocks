@@ -28,7 +28,7 @@ public class DataGen {
         gen.addProvider(true, new CBBlockStateProvider(packOutput, existingFileHelper));
         gen.addProvider(true, new CBItemModelProvider(packOutput, existingFileHelper));
         gen.addProvider(true, new CBLanguageProvider(packOutput, "en_us"));
-        gen.addProvider(true, new CBRecipeProvider(packOutput));
+        gen.addProvider(true, new CBRecipeProvider(packOutput, lookupProvider));
         gen.addProvider(true, CBLootTableProvider.create(packOutput));
         TagsProvider<Block> tagsProvider = gen.addProvider(true, new CBBlockTagsProvider(packOutput, lookupProvider, MOD_ID, existingFileHelper));
         gen.addProvider(true, new CBItemTagsProvider(packOutput, lookupProvider, tagsProvider.contentsGetter(), MOD_ID, existingFileHelper));

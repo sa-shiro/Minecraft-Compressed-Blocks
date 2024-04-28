@@ -1,5 +1,6 @@
 package net.sashiro.compressedblocks.neoforge.data.providers;
 
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -10,18 +11,18 @@ import net.sashiro.compressedblocks.Constants;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("DuplicatedCode")
 public class CBRecipeProvider extends RecipeProvider {
-    public CBRecipeProvider(PackOutput packOutput) {
-        super(packOutput);
-    }
 
+    public CBRecipeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(packOutput, lookupProvider);
+    }
 
     @Override
     @ParametersAreNonnullByDefault
     protected void buildRecipes(RecipeOutput consumer) {
-
         ArrayList<Block> blocks = (ArrayList<Block>) Constants.BLOCKS;
 
         for (int i = 0; i < blocks.size(); i++) {
