@@ -26,17 +26,6 @@ jobs:
       - name: "Checkout repository"
         uses: actions/checkout@v4
 
-      - name: "Cache Gradle dependencies"
-        uses: actions/cache@v4
-        id: cache-gradle-dependencies
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: "${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}"
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-
       - name: "Validate gradle wrapper"
         uses: gradle/wrapper-validation-action@v3
 
