@@ -20,7 +20,7 @@ jobs:
       matrix:
         java: [ 17 ]
         os: [ ubuntu-latest, windows-latest ]
-        datagen: [ fabric, forge, neoforge ]
+        datagen: [ fabric, forge ]
     name: "${{ matrix.datagen }} (Java ${{ matrix.java }} on ${{ matrix.os }})"
     runs-on: ${{ matrix.os }}
     steps:
