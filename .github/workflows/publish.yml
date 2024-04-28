@@ -85,6 +85,7 @@ jobs:
             neoforge/build/libs/
             fabric/build/libs/
 
+      # Not using a matrix here because files should be uploaded in a specific order (forge -> neoforge -> fabric)
       - name: "Publish FORGE"
         if: ${{ runner.os == 'Windows' }}
         uses: Kir-Antipov/mc-publish@v3.3

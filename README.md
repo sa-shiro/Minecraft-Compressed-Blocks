@@ -549,4 +549,4 @@ For any questions, issues, or suggestions, feel free to join our Discord server.
 
 ## License
 
-This mod is licensed under the MIT. See the [LICENSE](LICENSE.md) file for more details.
+This mod is licensed under the MIT license. See the [LICENSE](LICENSE.md) file for more details.
