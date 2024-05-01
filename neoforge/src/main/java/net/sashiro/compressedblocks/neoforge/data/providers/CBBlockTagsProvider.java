@@ -15,7 +15,6 @@ import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
-
 public class CBBlockTagsProvider extends BlockTagsProvider {
 
     public CBBlockTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {

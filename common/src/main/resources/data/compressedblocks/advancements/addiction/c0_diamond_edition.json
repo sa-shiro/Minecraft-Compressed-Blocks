@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c0_diamond_block"
+      "id": "compressedblocks:c0_diamond_block"
     },
     "title": "Diamond Addiction: I",
     "description": "§fCompress 9x §2Diamond Block§f into Compressed §2Diamond Block",

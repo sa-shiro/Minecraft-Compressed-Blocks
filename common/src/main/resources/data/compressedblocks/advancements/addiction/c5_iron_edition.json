@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c5_iron_block"
+      "id": "compressedblocks:c5_iron_block"
     },
     "title": "Iron Addiction: VI",
     "description": "§5Compress 9x Quintuple Compressed §2Iron Block§5 into Sextuple Compressed §2Iron Block",

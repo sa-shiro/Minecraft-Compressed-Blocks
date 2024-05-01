@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c5_gold_block"
+      "id": "compressedblocks:c5_gold_block"
     },
     "title": "Gold Addiction: VI",
     "description": "§5Compress 9x Quintuple Compressed §2Gold Block§5 into Sextuple Compressed §2Gold Block",

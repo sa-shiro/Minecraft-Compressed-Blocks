@@ -2,19 +2,22 @@ package net.sashiro.compressedblocks.fabric.data.providers;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.util.StringUtils;
 
+import java.util.concurrent.CompletableFuture;
+
 public class CBLanguageProvider extends FabricLanguageProvider {
 
-    public CBLanguageProvider(FabricDataOutput dataOutput) {
-        super(dataOutput);
+    public CBLanguageProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+        super(dataOutput, registryLookup);
     }
 
     @Override
-    public void generateTranslations(TranslationBuilder builder) {
+    public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder builder) {
         builder.add("itemGroup.compressed_blocks", "Compressed Blocks");
         builder.add("itemGroup.compressed_items", "Item Crates");
 

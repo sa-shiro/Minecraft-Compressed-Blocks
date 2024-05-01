@@ -141,6 +141,7 @@ public class StringUtils {
         if (mc_name.contains("peony")) location = new ResourceLocation("block/peony_top");
         if (mc_name.contains("carpet"))
             location = new ResourceLocation("block/" + mc_name.replace("carpet", "wool"));
+        if (mc_name.contains("scute")) location = new ResourceLocation("item/" + mc_name);
         return location;
     }
 

@@ -2,12 +2,13 @@ package net.sashiro.compressedblocks.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.util.Compression;
 import net.sashiro.compressedblocks.util.StringUtils;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -43,8 +44,8 @@ public class CrateItem extends BlockItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack s, Level l, List<Component> c, TooltipFlag t) {
-        super.appendHoverText(s, l, c, t);
+    public void appendHoverText(ItemStack s, Item.@NotNull TooltipContext tc, List<Component> c, TooltipFlag t) {
+        super.appendHoverText(s, tc, c, t);
         String itemName = StringUtils.stringFormat(this.getDescriptionId()
                 .replace("block.compressedblocks.", "")
                 .replace("item.compressedblocks.", "")

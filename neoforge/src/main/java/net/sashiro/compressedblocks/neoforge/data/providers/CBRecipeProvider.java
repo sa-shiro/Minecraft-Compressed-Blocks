@@ -1,5 +1,6 @@
 package net.sashiro.compressedblocks.neoforge.data.providers;
 
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -10,11 +11,12 @@ import net.sashiro.compressedblocks.Constants;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("DuplicatedCode")
 public class CBRecipeProvider extends RecipeProvider {
-    public CBRecipeProvider(PackOutput packOutput) {
-        super(packOutput);
+    public CBRecipeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> completableFuture) {
+        super(packOutput, completableFuture);
     }
 
 
@@ -22,7 +24,7 @@ public class CBRecipeProvider extends RecipeProvider {
     @ParametersAreNonnullByDefault
     protected void buildRecipes(RecipeOutput consumer) {
 
-        ArrayList<Block> blocks = (ArrayList<Block>) Constants.BLOCKS;
+        ArrayList<Block> blocks = Constants.BLOCKS;
 
         for (int i = 0; i < blocks.size(); i++) {
             String blockName = blocks.get(i).getDescriptionId().replace("block.compressedblocks.", "");
@@ -60,7 +62,7 @@ public class CBRecipeProvider extends RecipeProvider {
             }
         }
 
-        ArrayList<Block> crate_items = (ArrayList<Block>) Constants.CRATES;
+        ArrayList<Block> crate_items = Constants.CRATES;
 
         for (int i = 0; i < crate_items.size(); i++) {
             String crate_itemName = crate_items.get(i).getDescriptionId().replace("block.compressedblocks.", "");

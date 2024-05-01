@@ -2,6 +2,7 @@ package net.sashiro.compressedblocks.fabric.data.providers;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -13,16 +14,17 @@ import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
 
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 
 public class CBRecipeProvider extends FabricRecipeProvider {
 
-    public CBRecipeProvider(FabricDataOutput output) {
-        super(output);
+    public CBRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+        super(output, registriesFuture);
     }
 
     @Override
     public void buildRecipes(RecipeOutput exporter) {
-        ArrayList<Block> blocks = (ArrayList<Block>) Constants.BLOCKS;
+        ArrayList<Block> blocks = Constants.BLOCKS;
 
         for (int i = 0; i < blocks.size(); i++) {
             String blockName = blocks.get(i).getDescriptionId().replace("block.compressedblocks.", "");
@@ -59,7 +61,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
             }
         }
 
-        ArrayList<Block> crate_items = (ArrayList<Block>) Constants.CRATES;
+        ArrayList<Block> crate_items = Constants.CRATES;
 
         for (int i = 0; i < crate_items.size(); i++) {
             String crate_itemName = crate_items.get(i).getDescriptionId().replace("block.compressedblocks.", "");

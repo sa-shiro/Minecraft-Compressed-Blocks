@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c9_gold_block"
+      "id": "compressedblocks:c9_gold_block"
     },
     "title": "Gold Addiction: X",
     "description": "§4Reach the final compression level with: §2Gold Block§4!",

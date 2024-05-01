@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c8_stone"
+      "id": "compressedblocks:c8_stone"
     },
     "title": "The Ninth Step",
     "description": "Continue the compression algorithm.",

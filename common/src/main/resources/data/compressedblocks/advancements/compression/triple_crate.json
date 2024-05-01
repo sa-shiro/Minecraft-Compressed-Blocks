@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:triple_crated_apple"
+      "id": "compressedblocks:triple_crated_apple"
     },
     "title": "Even MOAR Crates!!!",
     "description": "Continue the crating algorithm.",

@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c5_tnt"
+      "id": "compressedblocks:c5_tnt"
     },
     "title": "TNT Addiction: VI",
     "description": "§5Compress 9x Quintuple Compressed §2TNT§5 into Sextuple Compressed §2TNT",

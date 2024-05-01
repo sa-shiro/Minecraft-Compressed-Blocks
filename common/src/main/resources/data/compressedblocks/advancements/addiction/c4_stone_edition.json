@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c4_stone"
+      "id": "compressedblocks:c4_stone"
     },
     "title": "Stone Addiction: V",
     "description": "§5Compress 9x Quadruple Compressed §2Stone§5 into Quintuple Compressed §2Stone",

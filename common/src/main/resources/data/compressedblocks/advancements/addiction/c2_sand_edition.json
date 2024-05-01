@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c2_sand"
+      "id": "compressedblocks:c2_sand"
     },
     "title": "Sand Addiction: III",
     "description": "§fCompress 9x Double Compressed §2Sand§f into Triple Compressed §2Sand",

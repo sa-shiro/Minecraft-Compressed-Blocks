@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:octuple_crated_apple"
+      "id": "compressedblocks:octuple_crated_apple"
     },
     "title": "Crate Dealer",
     "description": "Continue the crating algorithm.",

@@ -77,6 +77,7 @@ tasks.withType(Javadoc).configureEach {
 
 processResources {
     def expandProps = [
+            "java_version": java_version,
             "version"                      : version,
             "group"                        : project.group, //Else we target the task's group.
             "minecraft_version"            : minecraft_version,

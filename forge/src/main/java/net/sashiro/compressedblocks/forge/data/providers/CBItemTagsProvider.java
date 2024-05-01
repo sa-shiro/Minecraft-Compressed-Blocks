@@ -15,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class CBItemTagsProvider extends ItemTagsProvider {
+
     public CBItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> provider, CompletableFuture<TagLookup<Block>> tagLookup, String modId, @Nullable ExistingFileHelper existingFileHelper) {
         super(packOutput, provider, tagLookup, modId, existingFileHelper);
     }

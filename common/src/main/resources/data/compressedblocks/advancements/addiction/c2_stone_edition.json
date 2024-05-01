@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c2_stone"
+      "id": "compressedblocks:c2_stone"
     },
     "title": "Stone Addiction: III",
     "description": "§fCompress 9x Double Compressed §2Stone§f into Triple Compressed §2Stone",

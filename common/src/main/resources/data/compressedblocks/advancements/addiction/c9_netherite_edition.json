@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c9_netherite_block"
+      "id": "compressedblocks:c9_netherite_block"
     },
     "title": "I have no life!!!",
     "description": "§4Reach the final compression level with: §2Netherite Block§4! (ps: good luck tehehe)",

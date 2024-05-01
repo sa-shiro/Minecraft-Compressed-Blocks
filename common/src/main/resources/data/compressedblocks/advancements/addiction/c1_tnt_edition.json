@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c1_tnt"
+      "id": "compressedblocks:c1_tnt"
     },
     "title": "TNT Addiction: II",
     "description": "§fCompress 9x Compressed §2TNT§f into Double Compressed §2TNT",

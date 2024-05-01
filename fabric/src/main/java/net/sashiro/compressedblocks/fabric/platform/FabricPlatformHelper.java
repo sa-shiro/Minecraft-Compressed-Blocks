@@ -1,11 +1,11 @@
 package net.sashiro.compressedblocks.fabric.platform;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.platform.services.IPlatformHelper;
@@ -32,11 +32,11 @@ public class FabricPlatformHelper implements IPlatformHelper {
 
     @Override
     public void registerBlock(String name, Block... blocks) {
-        FabricItemSettings fis = new FabricItemSettings();
+        Item.Properties properties = new Item.Properties();
         for (int i = 0; i < blocks.length; i++) {
             String prefixedName = "c" + i + "_" + name;
             Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(MOD_ID, prefixedName.toLowerCase()), blocks[i]);
-            Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MOD_ID, prefixedName.toLowerCase()), new BlockItem(blocks[i], fis));
+            Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MOD_ID, prefixedName.toLowerCase()), new BlockItem(blocks[i], properties));
             BLOCKS.add(blocks[i]);
         }
     }

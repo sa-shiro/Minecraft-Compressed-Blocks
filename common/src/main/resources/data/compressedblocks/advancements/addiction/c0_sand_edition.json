@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c0_sand"
+      "id": "compressedblocks:c0_sand"
     },
     "title": "Sand Addiction: I",
     "description": "§fCompress 9x §2Sand§f into Compressed §2Sand",

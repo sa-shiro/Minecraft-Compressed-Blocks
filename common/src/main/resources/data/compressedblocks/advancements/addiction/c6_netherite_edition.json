@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c6_netherite_block"
+      "id": "compressedblocks:c6_netherite_block"
     },
     "title": "Netherite Addiction: VII",
     "description": "§5Compress 9x Sextuple Compressed §2Netherite Block§5 into Septuple Compressed §2Netherite Block",

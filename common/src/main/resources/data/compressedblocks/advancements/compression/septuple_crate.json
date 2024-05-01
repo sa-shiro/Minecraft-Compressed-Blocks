@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:septuple_crated_apple"
+      "id": "compressedblocks:septuple_crated_apple"
     },
     "title": "Those Crates are unstoppable!",
     "description": "Continue the crating algorithm.",

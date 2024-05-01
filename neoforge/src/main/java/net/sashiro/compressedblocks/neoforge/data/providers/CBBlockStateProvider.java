@@ -14,7 +14,6 @@ import net.sashiro.compressedblocks.util.StringUtils;
 
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
-@SuppressWarnings("unused")
 public class CBBlockStateProvider extends BlockStateProvider {
 
     public CBBlockStateProvider(PackOutput packOutput, ExistingFileHelper exFileHelper) {
@@ -24,7 +23,6 @@ public class CBBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         ModelFile.UncheckedModelFile blockBlock = new ModelFile.UncheckedModelFile(new ResourceLocation("compressedblocks", "block/template/template_block"));
-        ModelFile.UncheckedModelFile blockCrate = new ModelFile.UncheckedModelFile(new ResourceLocation("compressedblocks", "block/template/template_crate"));
         ModelFile.UncheckedModelFile cubeColumn = new ModelFile.UncheckedModelFile(new ResourceLocation("compressedblocks", "block/template/template_cube_column"));
         ModelFile.UncheckedModelFile cubeColumnHorizontal = new ModelFile.UncheckedModelFile(new ResourceLocation("compressedblocks", "block/template/template_cube_column_horizontal"));
 

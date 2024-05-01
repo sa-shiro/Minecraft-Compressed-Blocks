@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c0_netherite_block"
+      "id": "compressedblocks:c0_netherite_block"
     },
     "title": "Netherite Addiction: I",
     "description": "§fCompress 9x §2Netherite Block§f into Compressed §2Netherite Block",

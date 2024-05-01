@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "compressedblocks:c8_cobblestone"
+      "id": "compressedblocks:c8_cobblestone"
     },
     "title": "Cobblestone Addiction: IX",
     "description": "§5Compress 9x Octuple Compressed §2Cobblestone§5 into Mega Compressed §2Cobblestone",
