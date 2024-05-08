@@ -1,20 +1,16 @@
+<div align="center">
+   
 # CB: Compressed Blocks
 
----
+[![CurseForge][CurseForge]](https://www.curseforge.com/minecraft/mc-mods/cb-compressed-blocks)
+[![Modrinth][Modrinth]](https://modrinth.com/mod/cb-compressed-blocks)
+[![Paypal][Paypal]](https://www.paypal.com/donate/?cmd=_donations&business=social.sashiro@outlook.com&lc=US&item_name=Donation&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
 
-<div align="center">
-
-[![Download on CurseForge](https://img.shields.io/badge/Download-CurseForge-orange)](https://curseforge.com/minecraft/mc-mods/cb-compressed-blocks)
-[![Download on Modrinth](https://img.shields.io/badge/Download-Modrinth-a0ff00)](https://modrinth.com/mod/cb-compressed-blocks)
-[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://mit-license.org/)
-[![Source on GitHub](https://img.shields.io/badge/Source-GitHub-blue)](https://github.com/sa-shiro/Minecraft-Compressed-Blocks)
-[![Build Status](https://github.com/sa-shiro/Minecraft-Compressed-Blocks/actions/workflows/publish.yml/badge.svg)](https://github.com/sa-shiro/Minecraft-Compressed-Blocks/actions/workflows/build.yml)
-[![Join Discord for Support](https://img.shields.io/badge/Support-Discord-0F0F0F)](https://discord.gg/EKyjXRH9xN)
-[![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-0F3FFF)](https://www.paypal.com/donate/?cmd=_donations&business=social.sashiro@outlook.com&lc=US&item_name=Donation&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
+[CurseForge]: https://img.shields.io/curseforge/dt/361354?style=for-the-badge&logo=curseforge&label=Curseforge&labelColor=212121&color=FF6D00
+[Modrinth]: https://img.shields.io/modrinth/dt/IQRVlbit?style=for-the-badge&logo=modrinth&label=Modrinth&labelColor=212121&color=008000
+[Paypal]: https://img.shields.io/badge/Donate-Paypal?style=for-the-badge&logo=paypal&label=Paypal&labelColor=212121&color=00457C
 
 </div>
-
----
 
 ## Overview
 
