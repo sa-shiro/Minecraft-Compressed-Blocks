@@ -53,15 +53,15 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: "Run gradle task: fabric:datagen"
-        if: ${{ env.fabric_publish == true }}
+        if: ${{ env.fabric_publish == 'true' }}
         run: ./gradlew :fabric:runDatagen
 
       - name: "Run gradle task: forge:datagen"
-        if: ${{ env.forge_publish == true }}
+        if: ${{ env.forge_publish == 'true' }}
         run: ./gradlew :forge:Data
 
       - name: "Run gradle task: neoforge:datagen"
-        if: ${{ env.neoforge_publish == true }}
+        if: ${{ env.neoforge_publish == 'true' }}
         run: ./gradlew :neoforge:runData
 
       - name: "Build project"
@@ -78,7 +78,7 @@ jobs:
             fabric/build/libs/
 
       - name: "Publish FORGE"
-        if: ${{ runner.os == 'Windows' &&  env.forge_publish == true }}
+        if: ${{ runner.os == 'Windows' &&  env.forge_publish == 'true' }}
         uses: Kir-Antipov/mc-publish@v3.3
         with:
           modrinth-id: ${{ env.modrinth_id }}
@@ -109,7 +109,7 @@ jobs:
           fail-mode: warn
 
       - name: "Publish NEOFORGE"
-        if: ${{ runner.os == 'Windows' &&  env.neoforge_publish == true }}
+        if: ${{ runner.os == 'Windows' &&  env.neoforge_publish == 'true' }}
         uses: Kir-Antipov/mc-publish@v3.3
         with:
           modrinth-id: ${{ env.modrinth_id }}
@@ -140,7 +140,7 @@ jobs:
           fail-mode: warn
 
       - name: "Publish FABRIC"
-        if: ${{ runner.os == 'Windows' &&  env.fabric_publish == true }}
+        if: ${{ runner.os == 'Windows' &&  env.fabric_publish == 'true' }}
         uses: Kir-Antipov/mc-publish@v3.3
         with:
           modrinth-id: ${{ env.modrinth_id }}
