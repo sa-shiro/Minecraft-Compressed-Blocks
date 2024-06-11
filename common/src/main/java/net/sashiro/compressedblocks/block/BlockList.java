@@ -238,9 +238,9 @@ public class BlockList {
     public static final CBBlock[] PURPLE_STAINED_GLASS = createGlassBlocks(0.125F);
     public static final CBBlock[] MAGENTA_STAINED_GLASS = createGlassBlocks(0.125F);
     public static final CBBlock[] PINK_STAINED_GLASS = createGlassBlocks(0.125F);
-    public static final CBBlock[] ICE = createBlocks(0.75F);
-    public static final CBBlock[] PACKED_ICE = createBlocks(0.75F);
-    public static final CBBlock[] BLUE_ICE = createBlocks(0.75F);
+    public static final CBBlock[] ICE = createBlocks(0.75F, true);
+    public static final CBBlock[] PACKED_ICE = createBlocks(0.75F, true);
+    public static final CBBlock[] BLUE_ICE = createBlocks(0.75F, true);
     public static final CBBlock[] SNOW_BLOCK = createBlocks(0.5F);
     public static final CBBlock[] MOSS_BLOCK = createBlocks(0.5F);
     public static final CBBlock[] CALCITE = createBlocks(null);
@@ -257,12 +257,24 @@ public class BlockList {
     public static final CBBlock[] SEA_LANTERN = createBlocks(null);
 
     private static CBBlock[] createBlocks(Float amplifier) {
+        return createBlocks(amplifier, false);
+    }
+
+    private static CBBlock[] createBlocks(Float amplifier, boolean isLesser) {
+        // todo: add configurable max compression level
         int maxCompressionLevel = 10;
         CBBlock[] result = new CBBlock[maxCompressionLevel];
+
         for (int i = 0; i < maxCompressionLevel; i++) {
-            float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];
-            float blockResistance = amplifier != null ? RESISTANCE[i] * amplifier : RESISTANCE[i];
-            result[i] = new CBBlock(BlockBehaviour.Properties.of(Material.STONE).strength(blockHardness, blockResistance), i);
+            float baseHardness = HARDNESS[i];
+            float baseResistance = RESISTANCE[i];
+
+            float factor = (amplifier == null ? 1 : amplifier) * (isLesser ? 0.5f : 1.0f);
+
+            float blockHardness = baseHardness * factor;
+            float blockResistance = baseResistance * factor;
+
+            result[i] = new CBBlock(BlockBehaviour.Properties.of(Material.STONE).strength(blockHardness, blockResistance), i, isLesser);
         }
         return result;
     }
@@ -273,7 +285,7 @@ public class BlockList {
         for (int i = 0; i < maxCompressionLevel; i++) {
             float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];
             float blockResistance = amplifier != null ? RESISTANCE[i] * amplifier : RESISTANCE[i];
-            result[i] = new CBBlock(BlockBehaviour.Properties.of(Material.GLASS).noCollission().strength(blockHardness, blockResistance), i);
+            result[i] = new CBBlock(BlockBehaviour.Properties.of(Material.GLASS).noCollission().strength(blockHardness, blockResistance), i, false);
         }
         return result;
     }

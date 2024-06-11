@@ -3,62 +3,33 @@ package net.sashiro.compressedblocks.util;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Style;
 
+@SuppressWarnings("unused")
 public class Compression {
-    protected String blockCount;
-    protected Style style;
+    private static final String[] BLOCK_COUNTS_LESSER = {"4", "16", "64", "256", "1.024", "4.096", "16.384", "65.536", "262.144", "1.048.576"};
+    private static final String[] BLOCK_COUNTS = {"9", "81", "729", "6.561", "59.049", "531.441", "4.782.969", "43.046.721", "387.420.489", "3.486.784.401"};
+    private static final ChatFormatting[] STYLES = {ChatFormatting.WHITE, ChatFormatting.GREEN, ChatFormatting.AQUA, ChatFormatting.BLUE, ChatFormatting.DARK_BLUE, ChatFormatting.YELLOW, ChatFormatting.GOLD, ChatFormatting.LIGHT_PURPLE, ChatFormatting.DARK_PURPLE, ChatFormatting.DARK_RED};
+    private String blockCount;
+    private Style style;
+    private boolean isLesser;
+    private int compressionLevel;
 
     public Compression() {
         style = Style.EMPTY;
     }
 
     /**
-     * @param compressionLevel Level of compression. <br>Min: 0<br> Max: 9
+     * Function to set the Block Count and Style based on the Compression Level
+     *
+     * @param compressionLevel Compression Level
      */
-    public void setCompressionLevel(int compressionLevel) {
+    public void setCompressionLevel(int compressionLevel, boolean isLesser) {
+        this.isLesser = isLesser;
+        this.compressionLevel = compressionLevel;
         if (compressionLevel < 0) compressionLevel = 0;
         if (compressionLevel > 9) compressionLevel = 9;
-        switch (compressionLevel) {
-            case 0 -> {
-                this.blockCount = "9";
-                this.style = style.applyFormat(ChatFormatting.WHITE);
-            }
-            case 1 -> {
-                this.blockCount = "81";
-                this.style = style.applyFormat(ChatFormatting.GREEN);
-            }
-            case 2 -> {
-                this.blockCount = "729";
-                this.style = style.applyFormat(ChatFormatting.AQUA);
-            }
-            case 3 -> {
-                this.blockCount = "6.561";
-                this.style = style.applyFormat(ChatFormatting.BLUE);
-            }
-            case 4 -> {
-                this.blockCount = "59.049";
-                this.style = style.applyFormat(ChatFormatting.DARK_BLUE);
-            }
-            case 5 -> {
-                this.blockCount = "531.441";
-                this.style = style.applyFormat(ChatFormatting.YELLOW);
-            }
-            case 6 -> {
-                this.blockCount = "4.782.969";
-                this.style = style.applyFormat(ChatFormatting.GOLD);
-            }
-            case 7 -> {
-                this.blockCount = "43.046.721";
-                this.style = style.applyFormat(ChatFormatting.LIGHT_PURPLE);
-            }
-            case 8 -> {
-                this.blockCount = "387.420.489";
-                this.style = style.applyFormat(ChatFormatting.DARK_PURPLE);
-            }
-            case 9 -> {
-                this.blockCount = "3.486.784.101";
-                this.style = style.applyFormat(ChatFormatting.DARK_RED);
-            }
-        }
+
+        this.blockCount = isLesser ? BLOCK_COUNTS_LESSER[compressionLevel] : BLOCK_COUNTS[compressionLevel];
+        this.style = style.applyFormat(STYLES[compressionLevel]);
     }
 
     /**
@@ -77,5 +48,32 @@ public class Compression {
      */
     public Style getStyle() {
         return this.style;
+    }
+
+    /**
+     * Function to check if the current block ist a lesser compressed block
+     *
+     * @return True if the block is a lesser compressed block, false otherwise
+     */
+    public boolean isLesser() {
+        return isLesser;
+    }
+
+    /**
+     * Function to get the current Compression Level
+     *
+     * @return Compression Level
+     */
+    public int getCompressionLevel() {
+        return compressionLevel;
+    }
+
+    /**
+     * Function to set the Block Count and Style based on the Compression Level
+     *
+     * @param compressionLevel Compression Level
+     */
+    public void setCompressionLevel(int compressionLevel) {
+        setCompressionLevel(compressionLevel, false);
     }
 }

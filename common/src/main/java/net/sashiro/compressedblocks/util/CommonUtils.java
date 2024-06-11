@@ -4,9 +4,9 @@ import net.minecraft.resources.ResourceLocation;
 
 import java.util.Arrays;
 
-public class StringUtils {
+public class CommonUtils {
 
-    private StringUtils() {
+    private CommonUtils() {
         throw new AssertionError("Cannot instantiate utility class");
     }
 
