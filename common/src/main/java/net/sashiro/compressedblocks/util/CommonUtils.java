@@ -5,9 +5,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 
-public class StringUtils {
+public class CommonUtils {
 
-    private StringUtils() {
+    private CommonUtils() {
         throw new AssertionError("Cannot instantiate utility class");
     }
 
@@ -229,8 +229,6 @@ public class StringUtils {
         blockName = removeCompressionName(blockName);
         return "block/" + blockName;
     }
-
-    // kelp
 
     /**
      * Utility function to check if the resources of a block has been added manually

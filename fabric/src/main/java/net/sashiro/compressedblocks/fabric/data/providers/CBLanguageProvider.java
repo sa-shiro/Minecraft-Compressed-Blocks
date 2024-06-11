@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
-import net.sashiro.compressedblocks.util.StringUtils;
+import net.sashiro.compressedblocks.util.CommonUtils;
 
 public class CBLanguageProvider extends FabricLanguageProvider {
     public CBLanguageProvider(FabricDataGenerator dataGenerator) {
@@ -25,14 +25,14 @@ public class CBLanguageProvider extends FabricLanguageProvider {
                 if (name.contains("c" + i))
                     name2 = name.replace("c" + i + "_", "");
             }
-            builder.add("block.compressedblocks." + name, StringUtils.compressionLevel(name) + StringUtils.stringFormat(name2.replace("_", " ")));
+            builder.add("block.compressedblocks." + name, CommonUtils.compressionLevel(name) + CommonUtils.stringFormat(name2.replace("_", " ")));
         }
 
         for (Block crate : Constants.CRATES) {
             Item item = crate.asItem();
             assert false;
             String name = item.getDescriptionId().replace("block.compressedblocks.", "");
-            String translation = StringUtils.stringFormat(name.replace("_", " "));
+            String translation = CommonUtils.stringFormat(name.replace("_", " "));
 
             if ((translation.endsWith("a")
                     || translation.endsWith("b")

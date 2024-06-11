@@ -15,14 +15,23 @@ import java.util.List;
 public class CBBlock extends Block {
     private final Compression compressor = new Compression();
 
-    public CBBlock(Properties properties, int compressionLevel) {
+    public CBBlock(Properties properties, int compressionLevel, boolean isLesser) {
         super(properties);
-        compressor.setCompressionLevel(compressionLevel);
+        compressor.setCompressionLevel(compressionLevel, isLesser);
     }
 
     @Override
     public void appendHoverText(@NotNull ItemStack is, @Nullable BlockGetter bg, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
         super.appendHoverText(is, bg, lC, ttf);
         lC.add(new TextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
+    }
+
+    /**
+     * Function to get the compressor of the block
+     *
+     * @return Compressor
+     */
+    public Compression getCompressor() {
+        return compressor;
     }
 }

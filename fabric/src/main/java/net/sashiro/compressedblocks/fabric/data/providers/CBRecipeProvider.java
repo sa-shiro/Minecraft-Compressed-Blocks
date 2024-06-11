@@ -8,8 +8,10 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
+import net.sashiro.compressedblocks.block.CBBlock;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;
@@ -21,42 +23,74 @@ public class CBRecipeProvider extends FabricRecipeProvider {
         super(dataGenerator);
     }
 
+    private static CBBlock getCbBlock(ItemLike result, ItemLike ingredient) {
+        CBBlock block = null;
+        if (ingredient instanceof CBBlock) {
+            block = (CBBlock) ingredient;
+        } else if (result instanceof CBBlock) {
+            block = (CBBlock) result;
+        }
+        return block;
+    }
+
+    private void makeShapedRecipe(Consumer<FinishedRecipe> exporter, ItemLike result, ItemLike ingredient, String fileName) {
+        CBBlock compressedBlock = getCbBlock(result, ingredient);
+
+        if (compressedBlock != null && compressedBlock.getCompressor().isLesser()) {
+            ShapedRecipeBuilder.shaped(result) // result
+                    .define('#', ingredient) // ingredient
+                    .pattern("##")
+                    .pattern("##")
+                    .unlockedBy("has_item", has(ingredient.asItem()))
+                    .save(exporter, new ResourceLocation("compressedblocks", "shaped_lesser_" + fileName));
+
+        } else {
+            ShapedRecipeBuilder.shaped(result) // result
+                    .define('#', ingredient) // ingredient
+                    .pattern("###")
+                    .pattern("###")
+                    .pattern("###")
+                    .unlockedBy("has_item", has(ingredient.asItem()))
+                    .save(exporter, new ResourceLocation("compressedblocks", "shaped_" + fileName));
+        }
+    }
+
+    private void makeShapelessRecipe(Consumer<FinishedRecipe> exporter, ItemLike result, ItemLike ingredient, String recipeName) {
+        CBBlock compressedBlock = getCbBlock(result, ingredient);
+
+        if (compressedBlock != null && compressedBlock.getCompressor().isLesser()) {
+            ShapelessRecipeBuilder.shapeless(result, 4)
+                    .requires(ingredient)
+                    .unlockedBy("has_item", has(ingredient.asItem()))
+                    .save(exporter, new ResourceLocation("compressedblocks", "shapeless_lesser_" + recipeName));
+
+        } else {
+            ShapelessRecipeBuilder.shapeless(result, 9)
+                    .requires(ingredient)
+                    .unlockedBy("has_item", has(ingredient.asItem()))
+                    .save(exporter, new ResourceLocation("compressedblocks", "shapeless_" + recipeName));
+        }
+    }
+
     @Override
     public void generateRecipes(Consumer<FinishedRecipe> exporter) {
         ArrayList<Block> blocks = (ArrayList<Block>) Constants.BLOCKS;
 
         for (int i = 0; i < blocks.size(); i++) {
             String blockName = blocks.get(i).getDescriptionId().replace("block.compressedblocks.", "");
+            // Check if this is the first compressed block
             if (blockName.contains("c0_")) {
                 String cbBlockName = blockName.replace("c0_", "");
                 for (Block mcBlock : Registry.BLOCK) {
                     String mcBlockName = mcBlock.getDescriptionId().replace("block.minecraft.", "");
                     if (cbBlockName.equals(mcBlockName)) {
-                        ShapedRecipeBuilder.shaped(blocks.get(i)) // result
-                                .define('#', mcBlock) // ingredient
-                                .pattern("###")
-                                .pattern("###")
-                                .pattern("###")
-                                .unlockedBy("has_item", has(mcBlock.asItem()))
-                                .save(exporter, new ResourceLocation("compressedblocks", "shaped_" + blockName));
-                        ShapelessRecipeBuilder.shapeless(mcBlock, 9)
-                                .requires(blocks.get(i))
-                                .unlockedBy("has_item", has(blocks.get(i).asItem()))
-                                .save(exporter, new ResourceLocation("compressedblocks", "shapeless_" + blockName));
+                        makeShapedRecipe(exporter, blocks.get(i), mcBlock, blockName);
+                        makeShapelessRecipe(exporter, mcBlock, blocks.get(i), blockName);
                     }
                 }
             } else {
-                ShapedRecipeBuilder.shaped(blocks.get(i)) // result
-                        .define('#', blocks.get(i - 1)) // ingredient
-                        .pattern("###")
-                        .pattern("###")
-                        .pattern("###")
-                        .unlockedBy("has_item", has(blocks.get(i - 1).asItem()))
-                        .save(exporter, new ResourceLocation("compressedblocks", "shaped_" + blockName));
-                ShapelessRecipeBuilder.shapeless(blocks.get(i - 1), 9)
-                        .requires(blocks.get(i))
-                        .unlockedBy("has_item", has(blocks.get(i).asItem()))
-                        .save(exporter, new ResourceLocation("compressedblocks", "shapeless_" + blockName));
+                makeShapedRecipe(exporter, blocks.get(i), blocks.get(i - 1), blockName);
+                makeShapelessRecipe(exporter, blocks.get(i - 1), blocks.get(i), blockName);
             }
         }
 
@@ -64,38 +98,19 @@ public class CBRecipeProvider extends FabricRecipeProvider {
 
         for (int i = 0; i < crate_items.size(); i++) {
             String crate_itemName = crate_items.get(i).getDescriptionId().replace("block.compressedblocks.", "");
-
+            // Check if this is the first crate
             if (crate_itemName.startsWith("crated")) {
                 String crate_itemName_clean = crate_itemName.replace("crated_", "");
                 for (Item vanillaItem : Registry.ITEM) {
                     String vanillaItemName = vanillaItem.getDescriptionId().replace("item.minecraft.", "").replace("block.minecraft.", "");
                     if (crate_itemName_clean.equals(vanillaItemName)) {
-                        ShapedRecipeBuilder.shaped(crate_items.get(i)) // result
-                                .define('#', vanillaItem) // ingredient 1
-                                .pattern("###")
-                                .pattern("###")
-                                .pattern("###")
-                                .unlockedBy("has_item", has(vanillaItem.asItem()))
-                                .save(exporter, new ResourceLocation("compressedblocks", "shaped_" + crate_itemName));
-                        ShapelessRecipeBuilder.shapeless(vanillaItem, 9)
-                                .requires(crate_items.get(i))
-                                .unlockedBy("has_item", has(crate_items.get(i).asItem()))
-                                .save(exporter, new ResourceLocation("compressedblocks", "shapeless_" + crate_itemName));
+                        makeShapedRecipe(exporter, crate_items.get(i), vanillaItem, crate_itemName);
+                        makeShapelessRecipe(exporter, vanillaItem, crate_items.get(i), crate_itemName);
                     }
                 }
             } else {
-                ShapedRecipeBuilder.shaped(crate_items.get(i)) // result
-                        .define('#', crate_items.get(i - 1)) // ingredient
-                        .pattern("###")
-                        .pattern("###")
-                        .pattern("###")
-                        .unlockedBy("has_item", has(crate_items.get(i - 1).asItem()))
-                        .save(exporter, new ResourceLocation("compressedblocks", "shaped_" + crate_itemName));
-                ShapelessRecipeBuilder.shapeless(crate_items.get(i - 1), 9)
-                        .requires(crate_items.get(i))
-                        .unlockedBy("has_item", has(crate_items.get(i).asItem()))
-                        .save(exporter, new ResourceLocation("compressedblocks", "shapeless_" + crate_itemName));
-
+                makeShapedRecipe(exporter, crate_items.get(i), crate_items.get(i - 1), crate_itemName);
+                makeShapelessRecipe(exporter, crate_items.get(i - 1), crate_items.get(i), crate_itemName);
             }
         }
     }
