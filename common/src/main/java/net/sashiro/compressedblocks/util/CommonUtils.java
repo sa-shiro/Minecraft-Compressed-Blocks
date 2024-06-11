@@ -1,13 +1,15 @@
 package net.sashiro.compressedblocks.util;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 
-public class StringUtils {
+public class CommonUtils {
 
-    private StringUtils() {
+    private CommonUtils() {
         throw new AssertionError("Cannot instantiate utility class");
     }
 
@@ -257,5 +259,22 @@ public class StringUtils {
             if (blockName.contains(s)) return true;
         }
         return false;
+    }
+
+    /**
+     * Utility function to set the Rarity of the Item
+     *
+     * @param properties Item Properties.
+     * @param i          Compression level of the Item.
+     * @return Item Properties with Rarity set.
+     */
+    public static Item.Properties setRarity(Item.Properties properties, int i) {
+        switch (i) {
+            case 4, 5 -> properties = properties.rarity(Rarity.UNCOMMON);
+            case 6, 7 -> properties = properties.rarity(Rarity.RARE);
+            case 8, 9 -> properties = properties.rarity(Rarity.EPIC);
+            default -> properties = properties.rarity(Rarity.COMMON);
+        }
+        return properties;
     }
 }

@@ -51,7 +51,6 @@ public class CompressedBlocksForge {
                     output.accept(item.get());
                 }
             }).build());
-    public static final Item.Properties PROPERTIES = new Item.Properties();
     public static final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
     public CompressedBlocksForge() {

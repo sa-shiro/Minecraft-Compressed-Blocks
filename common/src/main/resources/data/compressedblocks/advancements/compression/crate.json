@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "compressedblocks:single_crate"
+            "items": "#compressedblocks:single_crate"
           }
         ]
       }

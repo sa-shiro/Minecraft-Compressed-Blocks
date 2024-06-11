@@ -6,7 +6,7 @@ import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.sashiro.compressedblocks.neoforge.CompressedBlocksNeoForge;
-import net.sashiro.compressedblocks.util.StringUtils;
+import net.sashiro.compressedblocks.util.CommonUtils;
 
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
@@ -21,7 +21,7 @@ public class CBItemModelProvider extends ItemModelProvider {
 
         for (DeferredHolder<Block, ? extends Block> block : CompressedBlocksNeoForge.BLOCKS.getEntries()) {
             // exclude manually added resources
-            if (StringUtils.isBlock(block.get().getDescriptionId())) continue;
+            if (CommonUtils.isBlock(block.get().getDescriptionId())) continue;
             String name = block.get().getDescriptionId().replace("block.compressedblocks.", "");
             withExistingParent(name, modLoc("block/" + name));
         }

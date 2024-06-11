@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "compressedblocks:double_crate"
+            "items": "#compressedblocks:double_crate"
           }
         ]
       }

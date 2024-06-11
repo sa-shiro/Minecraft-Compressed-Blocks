@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "compressedblocks:quintuple_crate"
+            "items": "#compressedblocks:quintuple_crate"
           }
         ]
       }

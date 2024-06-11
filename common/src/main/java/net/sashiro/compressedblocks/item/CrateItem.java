@@ -6,8 +6,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Block;
+import net.sashiro.compressedblocks.util.CommonUtils;
 import net.sashiro.compressedblocks.util.Compression;
-import net.sashiro.compressedblocks.util.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -19,10 +19,8 @@ public class CrateItem extends BlockItem {
     private final String itemCount;
     private final Compression comp = new Compression();
 
-    public CrateItem(Block block) {
-        super(block, new Properties()
-                .stacksTo(64)
-        );
+    public CrateItem(Block block, Properties properties) {
+        super(block, properties.stacksTo(64));
         this.block = block;
         comp.setCompressionLevel(getLevel());
         this.itemCount = comp.getBlockCount();
@@ -45,8 +43,8 @@ public class CrateItem extends BlockItem {
 
     @Override
     public void appendHoverText(ItemStack s, Item.@NotNull TooltipContext tc, List<Component> c, TooltipFlag t) {
-        super.appendHoverText(s, tc, c, t);
-        String itemName = StringUtils.stringFormat(this.getDescriptionId()
+        //super.appendHoverText(s, tc, c, t);
+        String itemName = CommonUtils.stringFormat(this.getDescriptionId()
                 .replace("block.compressedblocks.", "")
                 .replace("item.compressedblocks.", "")
                 .replace("crated_", "")

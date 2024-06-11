@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "compressedblocks:octuple_crate"
+            "items": "#compressedblocks:octuple_crate"
           }
         ]
       }

@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "compressedblocks:c1"
+            "items": "#compressedblocks:c1"
           }
         ]
       }

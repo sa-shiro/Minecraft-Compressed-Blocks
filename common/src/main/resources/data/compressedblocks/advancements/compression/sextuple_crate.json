@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "compressedblocks:sextuple_crate"
+            "items": "#compressedblocks:sextuple_crate"
           }
         ]
       }
