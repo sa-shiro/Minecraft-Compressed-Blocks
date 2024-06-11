@@ -8,10 +8,9 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.util.Compression;
 
-import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
+@SuppressWarnings("NullableProblems")
 public class CBBlock extends Block {
     private final Compression compressor = new Compression();
 
@@ -21,8 +20,7 @@ public class CBBlock extends Block {
     }
 
     @Override
-    @ParametersAreNonnullByDefault
-    public void appendHoverText(ItemStack is, @Nullable BlockGetter bg, List<Component> lC, TooltipFlag ttf) {
+    public void appendHoverText(ItemStack is, BlockGetter bg, List<Component> lC, TooltipFlag ttf) {
         super.appendHoverText(is, bg, lC, ttf);
         lC.add(new TextComponent(compressor.getBlockCount() + " Blocks").setStyle(compressor.getStyle()));
     }
