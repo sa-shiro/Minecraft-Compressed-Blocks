@@ -9,7 +9,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.platform.services.IPlatformHelper;
-import net.sashiro.compressedblocks.util.StringUtils;
+import net.sashiro.compressedblocks.util.CommonUtils;
 
 import static net.sashiro.compressedblocks.Constants.*;
 
@@ -44,7 +44,7 @@ public class FabricPlatformHelper implements IPlatformHelper {
     @Override
     public void registerCrate(String name, Block... crateBlocks) {
         for (int i = 0; i < crateBlocks.length; i++) {
-            String prefixedName = StringUtils.getCratePrefix(i) + name;
+            String prefixedName = CommonUtils.getCratePrefix(i) + name;
             Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(MOD_ID, prefixedName.toLowerCase()), crateBlocks[i]);
             Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MOD_ID, prefixedName.toLowerCase()), new CrateItem(crateBlocks[i]));
             CRATES.add(crateBlocks[i]);

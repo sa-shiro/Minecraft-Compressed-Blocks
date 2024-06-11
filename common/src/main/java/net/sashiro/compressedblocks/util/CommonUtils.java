@@ -5,9 +5,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 
-public class StringUtils {
+public class CommonUtils {
 
-    private StringUtils() {
+    private CommonUtils() {
         throw new AssertionError("Cannot instantiate utility class");
     }
 

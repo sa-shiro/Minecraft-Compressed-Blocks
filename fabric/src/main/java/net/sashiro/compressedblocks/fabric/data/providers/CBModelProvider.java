@@ -16,7 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.sashiro.compressedblocks.Constants;
-import net.sashiro.compressedblocks.util.StringUtils;
+import net.sashiro.compressedblocks.util.CommonUtils;
 
 import java.util.Optional;
 
@@ -39,18 +39,18 @@ public class CBModelProvider extends FabricModelProvider {
         for (Block block : Constants.BLOCKS) {
             String descriptionId = block.getDescriptionId();
             String block_name = descriptionId.replace("block.compressedblocks.", "");
-            if (StringUtils.isBlock(descriptionId)) continue; // exclude manually added resources
+            if (CommonUtils.isBlock(descriptionId)) continue; // exclude manually added resources
 
-            if (StringUtils.isRotational(descriptionId)) {
-                ResourceLocation side = StringUtils.getActualResourceLocation(descriptionId);
+            if (CommonUtils.isRotational(descriptionId)) {
+                ResourceLocation side = CommonUtils.getActualResourceLocation(descriptionId);
                 ResourceLocation end = new ResourceLocation(side.getNamespace(), side.getPath() + "_top");
 
                 if (descriptionId.contains("froglight") || descriptionId.contains("hay") || descriptionId.contains("melon") || descriptionId.contains("pumpkin")) {
                     side = new ResourceLocation("minecraft", side.getPath() + "_side");
                 }
 
-                TextureMapping mapping = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, StringUtils.getOverlay(descriptionId));
-                TextureMapping mapping_horizontal = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, StringUtils.getOverlay(descriptionId));
+                TextureMapping mapping = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, CommonUtils.getOverlay(descriptionId));
+                TextureMapping mapping_horizontal = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, CommonUtils.getOverlay(descriptionId));
                 ResourceLocation location = TEMPLATE_CUBE_COLUMN.create(block, mapping, generator.modelOutput);
                 ResourceLocation location_horizontal = TEMPLATE_CUBE_COLUMN_HORIZONTAL.createWithSuffix(block, "_horizontal", mapping_horizontal, generator.modelOutput);
 
@@ -58,7 +58,7 @@ public class CBModelProvider extends FabricModelProvider {
                 generator.delegateItemModel(block, new ResourceLocation("compressedblocks", "block/" + block_name));
 
             } else {
-                TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, StringUtils.getActualResourceLocation(descriptionId)).put(OVERLAY_SLOT, StringUtils.getOverlay(descriptionId));
+                TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, CommonUtils.getActualResourceLocation(descriptionId)).put(OVERLAY_SLOT, CommonUtils.getOverlay(descriptionId));
 
                 generator.createTrivialBlock(block, mapping, TEMPLATE_BLOCK);
                 generator.delegateItemModel(block, new ResourceLocation("compressedblocks", "block/" + block_name));
@@ -66,9 +66,9 @@ public class CBModelProvider extends FabricModelProvider {
         }
         for (Block crate : Constants.CRATES) {
             String crate_name = crate.getDescriptionId().replace("block.compressedblocks.", "");
-            String mc_name = StringUtils.getMCName(crate_name);
-            TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, new ResourceLocation("compressedblocks", "block/crate")).put(ITEM_SLOT, StringUtils.getResourceLocation(mc_name)).put(NUMBER_SLOT, StringUtils.getOverlay(crate.getDescriptionId()));
-            ResourceLocation resourcelocation = TEMPLATE_CRATE.create(crate, mapping.copyAndUpdate(ITEM_SLOT, StringUtils.getResourceLocation(mc_name)), generator.modelOutput);
+            String mc_name = CommonUtils.getMCName(crate_name);
+            TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, new ResourceLocation("compressedblocks", "block/crate")).put(ITEM_SLOT, CommonUtils.getResourceLocation(mc_name)).put(NUMBER_SLOT, CommonUtils.getOverlay(crate.getDescriptionId()));
+            ResourceLocation resourcelocation = TEMPLATE_CRATE.create(crate, mapping.copyAndUpdate(ITEM_SLOT, CommonUtils.getResourceLocation(mc_name)), generator.modelOutput);
 
             generator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(crate, Variant.variant().with(VariantProperties.MODEL, resourcelocation)).with(createHorizontalFacingDispatch()));
             generator.delegateItemModel(crate, new ResourceLocation("compressedblocks", "block/" + crate_name));

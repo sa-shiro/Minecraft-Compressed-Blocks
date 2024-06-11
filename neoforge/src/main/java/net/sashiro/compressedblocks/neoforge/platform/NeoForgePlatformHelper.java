@@ -8,7 +8,7 @@ import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.neoforge.CompressedBlocksNeoForge;
 import net.sashiro.compressedblocks.platform.services.IPlatformHelper;
-import net.sashiro.compressedblocks.util.StringUtils;
+import net.sashiro.compressedblocks.util.CommonUtils;
 
 public class NeoForgePlatformHelper implements IPlatformHelper {
 
@@ -41,7 +41,7 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
     @Override
     public void registerCrate(String name, Block... crateBlocks) {
         for (int i = 0; i < crateBlocks.length; i++) {
-            String prefixedName = StringUtils.getCratePrefix(i) + name;
+            String prefixedName = CommonUtils.getCratePrefix(i) + name;
             int finalI = i;
             CompressedBlocksNeoForge.CRATE_BLOCKS.register(prefixedName.toLowerCase(), () -> crateBlocks[finalI]);
             CompressedBlocksNeoForge.CRATE_ITEMS.register(prefixedName.toLowerCase(), () -> new CrateItem(crateBlocks[finalI]));
