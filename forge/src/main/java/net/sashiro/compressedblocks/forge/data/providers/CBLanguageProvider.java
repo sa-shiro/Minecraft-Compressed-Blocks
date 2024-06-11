@@ -6,7 +6,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.forge.CompressedBlocksForge;
-import net.sashiro.compressedblocks.util.StringUtils;
+import net.sashiro.compressedblocks.util.CommonUtils;
 
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
@@ -28,13 +28,13 @@ public class CBLanguageProvider extends LanguageProvider {
                 if (name.contains("c" + i))
                     name2 = name.replace("c" + i + "_", "");
             }
-            add("block.compressedblocks." + name, StringUtils.compressionLevel(name) + StringUtils.stringFormat(name2.replace("_", " ")));
+            add("block.compressedblocks." + name, CommonUtils.compressionLevel(name) + CommonUtils.stringFormat(name2.replace("_", " ")));
         }
 
         for (RegistryObject<Item> item : CompressedBlocksForge.CRATE_ITEMS.getEntries()) {
             assert false;
             String name = item.get().getDescriptionId().replace("block.compressedblocks.", "");
-            String translation = StringUtils.stringFormat(name.replace("_", " "));
+            String translation = CommonUtils.stringFormat(name.replace("_", " "));
 
             if ((translation.endsWith("a")
                     || translation.endsWith("b")
