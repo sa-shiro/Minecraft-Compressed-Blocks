@@ -23,7 +23,7 @@ The compressed block can be decompressed to retrieve the original blocks, making
 storage purposes.  
 Currently, the mod offers **`264`** different types of compressed blocks and **`179`** types of crates.
 
-- **Minecraft Versions:** `1.14.4` `1.15.2`, `1.16.5`, `1.17.1`, `1.18.2`, `1.19.2`, `1.19.4`, `1.20.2`, `1.20.4`
+- **Minecraft Versions:** `1.14.4` `1.15.2`, `1.16.5`, `1.17.1`, `1.18.2`, `1.19.2`, `1.19.4`, `1.20.2`, `1.20.4`, `1.20.6`
 - **Mod Loader:** _Fabric_, _Forge_, _Neoforge_
 - **Author:** [Sashiro](https://github.com/sa-shiro)
 
@@ -49,17 +49,17 @@ Currently, the mod offers **`264`** different types of compressed blocks and **`
 <details>
   <summary>Image Showcase</summary>
 
-<img src="./.github/images/img1.png" width="400" alt="Image 1">
-<img src="./.github/images/img2.png" width="400" alt="Image 2">
+<img src="https://github.com/sa-shiro/Minecraft-Compressed-Blocks/blob/master/.github/images/img1.png?raw=true" width="400" alt="Image 1">
+<img src="https://github.com/sa-shiro/Minecraft-Compressed-Blocks/blob/master/.github/images/img5.png?raw=true" width="400" alt="Image 2">
 <br>
-<img src="./.github/images/img3.png" width="400" alt="Image 3">
-<img src="./.github/images/img4.png" width="400" alt="Image 4">
+<img src="https://github.com/sa-shiro/Minecraft-Compressed-Blocks/blob/master/.github/images/img3.png?raw=true" width="400" alt="Image 3">
+<img src="https://github.com/sa-shiro/Minecraft-Compressed-Blocks/blob/master/.github/images/img4.png?raw=true" width="400" alt="Image 4">
 <br>
-<img src="./.github/images/img5.png" width="400" alt="Image 5">
-<img src="./.github/images/img6.png" width="400" alt="Image 6">
+<img src="https://github.com/sa-shiro/Minecraft-Compressed-Blocks/blob/master/.github/images/img5.png?raw=true" width="400" alt="Image 5">
+<img src="https://github.com/sa-shiro/Minecraft-Compressed-Blocks/blob/master/.github/images/img6.png?raw=true" width="400" alt="Image 6">
 <br>
-<img src="./.github/images/img7.png" width="400" alt="Image 5">
-<img src="./.github/images/img8.png" width="400" alt="Image 6">
+<img src="https://github.com/sa-shiro/Minecraft-Compressed-Blocks/blob/master/.github/images/img7.png?raw=true" width="400" alt="Image 5">
+<img src="https://github.com/sa-shiro/Minecraft-Compressed-Blocks/blob/master/.github/images/img8png?raw=true" width="400" alt="Image 6">
 </details>
 
 ### List of Blocks
