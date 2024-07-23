@@ -24,8 +24,8 @@ public class CBLootTableProvider {
     }
 
     public static class CompressedBlocksLootTable extends BlockLootSubProvider {
-        protected CompressedBlocksLootTable() {
-            super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+        protected CompressedBlocksLootTable(HolderLookup.Provider provider) {
+            super(Set.of(), FeatureFlags.REGISTRY.allFlags(), provider);
         }
 
         @Override

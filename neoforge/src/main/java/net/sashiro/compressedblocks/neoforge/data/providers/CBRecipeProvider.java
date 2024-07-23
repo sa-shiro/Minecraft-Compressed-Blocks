@@ -40,7 +40,7 @@ public class CBRecipeProvider extends RecipeProvider {
                     .pattern("##")
                     .pattern("##")
                     .unlockedBy("has_item", has(ingredient.asItem()))
-                    .save(exporter, new ResourceLocation("compressedblocks", "shaped_lesser_" + fileName));
+                    .save(exporter, ResourceLocation.fromNamespaceAndPath("compressedblocks", "shaped_lesser_" + fileName));
 
         } else {
             ShapedRecipeBuilder.shaped(recipeCategory, result) // result
@@ -49,7 +49,7 @@ public class CBRecipeProvider extends RecipeProvider {
                     .pattern("###")
                     .pattern("###")
                     .unlockedBy("has_item", has(ingredient.asItem()))
-                    .save(exporter, new ResourceLocation("compressedblocks", "shaped_" + fileName));
+                    .save(exporter, ResourceLocation.fromNamespaceAndPath("compressedblocks", "shaped_" + fileName));
         }
     }
 
@@ -60,13 +60,13 @@ public class CBRecipeProvider extends RecipeProvider {
             ShapelessRecipeBuilder.shapeless(recipeCategory, result, 4)
                     .requires(ingredient)
                     .unlockedBy("has_item", has(ingredient.asItem()))
-                    .save(exporter, new ResourceLocation("compressedblocks", "shapeless_lesser_" + recipeName));
+                    .save(exporter, ResourceLocation.fromNamespaceAndPath("compressedblocks", "shapeless_lesser_" + recipeName));
 
         } else {
             ShapelessRecipeBuilder.shapeless(recipeCategory, result, 9)
                     .requires(ingredient)
                     .unlockedBy("has_item", has(ingredient.asItem()))
-                    .save(exporter, new ResourceLocation("compressedblocks", "shapeless_" + recipeName));
+                    .save(exporter, ResourceLocation.fromNamespaceAndPath("compressedblocks", "shapeless_" + recipeName));
         }
     }
 

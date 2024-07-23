@@ -23,7 +23,7 @@ The compressed block can be decompressed to retrieve the original blocks, making
 storage purposes.  
 Currently, the mod offers **`264`** different types of compressed blocks and **`179`** types of crates.
 
-- **Minecraft Versions:** `1.14.4` `1.15.2`, `1.16.5`, `1.17.1`, `1.18.2`, `1.19.2`, `1.19.4`, `1.20.2`, `1.20.4`
+- **Minecraft Versions:** `1.14.4` `1.15.2`, `1.16.5`, `1.17.1`, `1.18.2`, `1.19.2`, `1.19.4`, `1.20.2`, `1.20.4`, `1.20.6`, `1.21`
 - **Mod Loader:** _Fabric_, _Forge_, _Neoforge_
 - **Author:** [Sashiro](https://github.com/sa-shiro)
 

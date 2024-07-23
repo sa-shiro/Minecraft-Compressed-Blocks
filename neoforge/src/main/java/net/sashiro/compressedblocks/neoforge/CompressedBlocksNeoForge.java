@@ -38,7 +38,7 @@ public class CompressedBlocksNeoForge {
     public static final Item.Properties PROPERTIES = new Item.Properties();
 
     public static final Supplier<CreativeModeTab> CRATES_TAB = CREATIVE_MODE_TABS.register("compressed_items", () -> CreativeModeTab.builder()
-            .withTabsBefore(new ResourceLocation(MOD_ID, "compressed_blocks"))
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(MOD_ID, "compressed_blocks"))
             .title(Component.literal("Crates"))
             .icon(() -> APPLE[0].asItem().getDefaultInstance())
             .displayItems((parameters, output) -> {

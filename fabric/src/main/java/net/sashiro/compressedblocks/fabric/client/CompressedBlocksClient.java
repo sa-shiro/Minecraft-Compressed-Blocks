@@ -27,8 +27,8 @@ import static net.sashiro.compressedblocks.Constants.MOD_ID;
 @SuppressWarnings("unused")
 public class CompressedBlocksClient implements ClientModInitializer {
 
-    public static final ResourceKey<CreativeModeTab> COMPRESSED_BLOCKS_KEY = ResourceKey.create(Registries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "compressed_blocks"));
-    public static final ResourceKey<CreativeModeTab> CRATE_ITEMS_KEY = ResourceKey.create(Registries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "compressed_items"));
+    public static final ResourceKey<CreativeModeTab> COMPRESSED_BLOCKS_KEY = ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(MOD_ID, "compressed_blocks"));
+    public static final ResourceKey<CreativeModeTab> CRATE_ITEMS_KEY = ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(MOD_ID, "compressed_items"));
 
     private static final CreativeModeTab COMPRESSED_BLOCKS = FabricItemGroup.builder()
             .icon(() -> new ItemStack(BlockList.STONE[9].asItem()))
@@ -55,8 +55,8 @@ public class CompressedBlocksClient implements ClientModInitializer {
             itemStackCrates.add(new ItemStack(block));
         }
 
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, COMPRESSED_BLOCKS_KEY.location().getPath()), COMPRESSED_BLOCKS);
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, CRATE_ITEMS_KEY.location().getPath()), CRATE_ITEMS);
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(MOD_ID, COMPRESSED_BLOCKS_KEY.location().getPath()), COMPRESSED_BLOCKS);
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(MOD_ID, CRATE_ITEMS_KEY.location().getPath()), CRATE_ITEMS);
 
         ItemGroupEvents.modifyEntriesEvent(COMPRESSED_BLOCKS_KEY).register(content -> content.acceptAll(itemStackBlocks));
         ItemGroupEvents.modifyEntriesEvent(CRATE_ITEMS_KEY).register(content -> content.acceptAll(itemStackCrates));

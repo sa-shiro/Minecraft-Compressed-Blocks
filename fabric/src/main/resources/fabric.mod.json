@@ -20,10 +20,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "${entrypoint_main}"
+      "net.sashiro.compressedblocks.fabric.CompressedBlocksFabric"
     ],
     "client": [
-      "${entrypoint_client}"
+      "net.sashiro.compressedblocks.fabric.client.CompressedBlocksClient"
     ],
     "fabric-datagen": [
       "net.sashiro.compressedblocks.fabric.data.FabricDataGenerator"

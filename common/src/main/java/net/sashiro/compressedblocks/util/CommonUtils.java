@@ -99,7 +99,7 @@ public class CommonUtils {
             }
         } else overlay = "null";
 
-        return new ResourceLocation("compressedblocks", "block/" + overlay);
+        return ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + overlay);
     }
 
     /**
@@ -110,7 +110,7 @@ public class CommonUtils {
      */
     @NotNull
     public static ResourceLocation getResourceLocation(String mc_name) {
-        ResourceLocation location = new ResourceLocation("item/" + mc_name);
+        ResourceLocation location = ResourceLocation.withDefaultNamespace("item/" + mc_name);
 
         if (mc_name.contains("rail")
                 || mc_name.contains("torch")
@@ -136,14 +136,14 @@ public class CommonUtils {
                 || mc_name.contains("vine")
                 || mc_name.contains("lichen")
         )
-            location = new ResourceLocation("block/" + mc_name);
-        if (mc_name.contains("sunflower")) location = new ResourceLocation("block/sunflower_front");
-        if (mc_name.contains("lilac")) location = new ResourceLocation("block/lilac_top");
-        if (mc_name.contains("rose_bush")) location = new ResourceLocation("block/rose_bush_top");
-        if (mc_name.contains("peony")) location = new ResourceLocation("block/peony_top");
+            location = ResourceLocation.withDefaultNamespace("block/" + mc_name);
+        if (mc_name.contains("sunflower")) location = ResourceLocation.withDefaultNamespace("block/sunflower_front");
+        if (mc_name.contains("lilac")) location = ResourceLocation.withDefaultNamespace("block/lilac_top");
+        if (mc_name.contains("rose_bush")) location = ResourceLocation.withDefaultNamespace("block/rose_bush_top");
+        if (mc_name.contains("peony")) location = ResourceLocation.withDefaultNamespace("block/peony_top");
         if (mc_name.contains("carpet"))
-            location = new ResourceLocation("block/" + mc_name.replace("carpet", "wool"));
-        if (mc_name.contains("scute")) location = new ResourceLocation("item/" + mc_name);
+            location = ResourceLocation.withDefaultNamespace("block/" + mc_name.replace("carpet", "wool"));
+        if (mc_name.contains("scute")) location = ResourceLocation.withDefaultNamespace("item/" + mc_name);
         return location;
     }
 
@@ -195,7 +195,7 @@ public class CommonUtils {
         if (blockName.contains("magma_block")) blockName = "magma";
         if (blockName.contains("snow_block")) blockName = "snow";
 
-        return new ResourceLocation("minecraft", "block/" + blockName);
+        return ResourceLocation.fromNamespaceAndPath("minecraft", "block/" + blockName);
     }
 
     /**

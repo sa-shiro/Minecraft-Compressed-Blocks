@@ -22,9 +22,9 @@ public class CBBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        ModelFile.UncheckedModelFile blockBlock = new ModelFile.UncheckedModelFile(new ResourceLocation("compressedblocks", "block/template/template_block"));
-        ModelFile.UncheckedModelFile cubeColumn = new ModelFile.UncheckedModelFile(new ResourceLocation("compressedblocks", "block/template/template_cube_column"));
-        ModelFile.UncheckedModelFile cubeColumnHorizontal = new ModelFile.UncheckedModelFile(new ResourceLocation("compressedblocks", "block/template/template_cube_column_horizontal"));
+        ModelFile.UncheckedModelFile blockBlock = new ModelFile.UncheckedModelFile(ResourceLocation.m_339182_("compressedblocks", "block/template/template_block"));
+        ModelFile.UncheckedModelFile cubeColumn = new ModelFile.UncheckedModelFile(ResourceLocation.m_339182_("compressedblocks", "block/template/template_cube_column"));
+        ModelFile.UncheckedModelFile cubeColumnHorizontal = new ModelFile.UncheckedModelFile(ResourceLocation.m_339182_("compressedblocks", "block/template/template_cube_column_horizontal"));
 
         for (RegistryObject<Block> block : CompressedBlocksForge.BLOCKS.getEntries()) {
             String descriptionId = block.get().getDescriptionId();
@@ -34,10 +34,10 @@ public class CBBlockStateProvider extends BlockStateProvider {
             if (CommonUtils.isRotational(descriptionId)) {
                 RotatedPillarBlock block1 = (RotatedPillarBlock) block.get();
                 ResourceLocation side = CommonUtils.getActualResourceLocation(descriptionId);
-                ResourceLocation end = new ResourceLocation("minecraft", CommonUtils.getCleanName(descriptionId) + "_top");
+                ResourceLocation end = ResourceLocation.m_339182_("minecraft", CommonUtils.getCleanName(descriptionId) + "_top");
 
                 if (descriptionId.contains("froglight") || descriptionId.contains("hay") || descriptionId.contains("melon") || descriptionId.contains("pumpkin")) {
-                    side = new ResourceLocation("minecraft", side.getPath() + "_side");
+                    side = ResourceLocation.m_339182_("minecraft", side.getPath() + "_side");
                 }
 
                 axisBlock(
@@ -85,8 +85,8 @@ public class CBBlockStateProvider extends BlockStateProvider {
 
             horizontalBlock(
                     rotatedPillarBlock,
-                    models().withExistingParent(crate_name, new ResourceLocation("compressedblocks", "block/template/template_cube_column_crate"))
-                            .texture("all", new ResourceLocation(MOD_ID, "block/crate"))
+                    models().withExistingParent(crate_name, ResourceLocation.m_339182_("compressedblocks", "block/template/template_cube_column_crate"))
+                            .texture("all", ResourceLocation.m_339182_(MOD_ID, "block/crate"))
                             .texture("item", location)
                             .texture("number", CommonUtils.getOverlay(descriptionId))
                             .renderType("cutout")
