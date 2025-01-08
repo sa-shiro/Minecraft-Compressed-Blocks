@@ -7,6 +7,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModContainer;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -51,18 +52,18 @@ public class CompressedBlocksForge {
                     output.accept(item.get());
                 }
             }).build());
-    public static final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-    public CompressedBlocksForge() {
+    public CompressedBlocksForge(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
         CompressedBlocks.init();
 
-        BLOCKS.register(eventBus);
-        ITEMS.register(eventBus);
-        CRATE_BLOCKS.register(eventBus);
-        CRATE_ITEMS.register(eventBus);
-        CREATIVE_MODE_TABS.register(eventBus);
+        BLOCKS.register(modEventBus);
+        ITEMS.register(modEventBus);
+        CRATE_BLOCKS.register(modEventBus);
+        CRATE_ITEMS.register(modEventBus);
+        CREATIVE_MODE_TABS.register(modEventBus);
 
-        eventBus.addListener(this::reg);
+        modEventBus.addListener(this::reg);
 
         LOG.info("Successfully registered all Blocks and Crates!");
     }

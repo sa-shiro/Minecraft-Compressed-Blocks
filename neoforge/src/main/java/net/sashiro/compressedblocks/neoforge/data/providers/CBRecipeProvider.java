@@ -17,8 +17,11 @@ import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("DuplicatedCode")
 public class CBRecipeProvider extends RecipeProvider {
-    public CBRecipeProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> completableFuture) {
-        super(packOutput, completableFuture);
+    private final RecipeOutput output;
+
+    protected CBRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
+        super(registries, output);
+        this.output = output;
     }
 
     private static CBBlock getCbBlock(ItemLike result, ItemLike ingredient) {
@@ -31,48 +34,48 @@ public class CBRecipeProvider extends RecipeProvider {
         return block;
     }
 
-    private void makeShapedRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String fileName) {
+    private void makeShapedRecipe(RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String fileName) {
         CBBlock compressedBlock = getCbBlock(result, ingredient);
 
         if (compressedBlock != null && compressedBlock.getCompressor().isLesser()) {
-            ShapedRecipeBuilder.shaped(recipeCategory, result) // result
+            shaped(recipeCategory, result) // result
                     .define('#', ingredient) // ingredient
                     .pattern("##")
                     .pattern("##")
                     .unlockedBy("has_item", has(ingredient.asItem()))
-                    .save(exporter, ResourceLocation.fromNamespaceAndPath("compressedblocks", "shaped_lesser_" + fileName));
+                    .save(output, String.valueOf(ResourceLocation.fromNamespaceAndPath("compressedblocks", "shaped_lesser_" + fileName)));
 
         } else {
-            ShapedRecipeBuilder.shaped(recipeCategory, result) // result
+            shaped(recipeCategory, result) // result
                     .define('#', ingredient) // ingredient
                     .pattern("###")
                     .pattern("###")
                     .pattern("###")
                     .unlockedBy("has_item", has(ingredient.asItem()))
-                    .save(exporter, ResourceLocation.fromNamespaceAndPath("compressedblocks", "shaped_" + fileName));
+                    .save(output, String.valueOf(ResourceLocation.fromNamespaceAndPath("compressedblocks", "shaped_" + fileName)));
         }
     }
 
-    private void makeShapelessRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String recipeName) {
+    private void makeShapelessRecipe(RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String recipeName) {
         CBBlock compressedBlock = getCbBlock(result, ingredient);
 
         if (compressedBlock != null && compressedBlock.getCompressor().isLesser()) {
-            ShapelessRecipeBuilder.shapeless(recipeCategory, result, 4)
+            shapeless(recipeCategory, result, 4)
                     .requires(ingredient)
                     .unlockedBy("has_item", has(ingredient.asItem()))
-                    .save(exporter, ResourceLocation.fromNamespaceAndPath("compressedblocks", "shapeless_lesser_" + recipeName));
+                    .save(output, String.valueOf(ResourceLocation.fromNamespaceAndPath("compressedblocks", "shapeless_lesser_" + recipeName)));
 
         } else {
-            ShapelessRecipeBuilder.shapeless(recipeCategory, result, 9)
+            shapeless(recipeCategory, result, 9)
                     .requires(ingredient)
                     .unlockedBy("has_item", has(ingredient.asItem()))
-                    .save(exporter, ResourceLocation.fromNamespaceAndPath("compressedblocks", "shapeless_" + recipeName));
+                    .save(output, String.valueOf(ResourceLocation.fromNamespaceAndPath("compressedblocks", "shapeless_" + recipeName)));
         }
     }
 
     @Override
     @ParametersAreNonnullByDefault
-    protected void buildRecipes(RecipeOutput exporter) {
+    protected void buildRecipes() {
 
         ArrayList<Block> blocks = Constants.BLOCKS;
 
@@ -84,13 +87,13 @@ public class CBRecipeProvider extends RecipeProvider {
                 for (Block mcBlock : BuiltInRegistries.BLOCK) {
                     String mcBlockName = mcBlock.getDescriptionId().replace("block.minecraft.", "");
                     if (cbBlockName.equals(mcBlockName)) {
-                        makeShapedRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, blocks.get(i), mcBlock, blockName);
-                        makeShapelessRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, mcBlock, blocks.get(i), blockName);
+                        makeShapedRecipe(RecipeCategory.BUILDING_BLOCKS, blocks.get(i), mcBlock, blockName);
+                        makeShapelessRecipe(RecipeCategory.BUILDING_BLOCKS, mcBlock, blocks.get(i), blockName);
                     }
                 }
             } else {
-                makeShapedRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, blocks.get(i), blocks.get(i - 1), blockName);
-                makeShapelessRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, blocks.get(i - 1), blocks.get(i), blockName);
+                makeShapedRecipe(RecipeCategory.BUILDING_BLOCKS, blocks.get(i), blocks.get(i - 1), blockName);
+                makeShapelessRecipe(RecipeCategory.BUILDING_BLOCKS, blocks.get(i - 1), blocks.get(i), blockName);
             }
         }
 
@@ -104,13 +107,13 @@ public class CBRecipeProvider extends RecipeProvider {
                 for (Item vanillaItem : BuiltInRegistries.ITEM) {
                     String vanillaItemName = vanillaItem.getDescriptionId().replace("item.minecraft.", "").replace("block.minecraft.", "");
                     if (crate_itemName_clean.equals(vanillaItemName)) {
-                        makeShapedRecipe(exporter, RecipeCategory.MISC, crate_items.get(i), vanillaItem, crate_itemName);
-                        makeShapelessRecipe(exporter, RecipeCategory.MISC, vanillaItem, crate_items.get(i), crate_itemName);
+                        makeShapedRecipe(RecipeCategory.MISC, crate_items.get(i), vanillaItem, crate_itemName);
+                        makeShapelessRecipe(RecipeCategory.MISC, vanillaItem, crate_items.get(i), crate_itemName);
                     }
                 }
             } else {
-                makeShapedRecipe(exporter, RecipeCategory.MISC, crate_items.get(i), crate_items.get(i - 1), crate_itemName);
-                makeShapelessRecipe(exporter, RecipeCategory.MISC, crate_items.get(i - 1), crate_items.get(i), crate_itemName);
+                makeShapedRecipe(RecipeCategory.MISC, crate_items.get(i), crate_items.get(i - 1), crate_itemName);
+                makeShapelessRecipe(RecipeCategory.MISC, crate_items.get(i - 1), crate_items.get(i), crate_itemName);
             }
         }
     }

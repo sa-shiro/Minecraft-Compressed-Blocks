@@ -61,6 +61,6 @@ public class CompressedBlocksClient implements ClientModInitializer {
         ItemGroupEvents.modifyEntriesEvent(COMPRESSED_BLOCKS_KEY).register(content -> content.acceptAll(itemStackBlocks));
         ItemGroupEvents.modifyEntriesEvent(CRATE_ITEMS_KEY).register(content -> content.acceptAll(itemStackCrates));
 
-        LOG.info(String.format("Successfully registered: %d Blocks and %d Crates!", itemStackBlocks.size(), itemStackCrates.size()));
+        LOG.info("Successfully registered: {} Blocks and {} Crates!", itemStackBlocks.size(), itemStackCrates.size());
     }
 }

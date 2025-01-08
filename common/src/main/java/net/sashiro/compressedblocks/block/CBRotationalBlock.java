@@ -1,6 +1,7 @@
 package net.sashiro.compressedblocks.block;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -18,8 +19,8 @@ import java.util.List;
 public class CBRotationalBlock extends RotatedPillarBlock {
     private final Compression compressor = new Compression();
 
-    public CBRotationalBlock(Properties properties, int compressionLevel) {
-        super(properties);
+    public CBRotationalBlock(Properties properties, int compressionLevel, ResourceKey<Block> id) {
+        super(properties.setId(id));
         compressor.setCompressionLevel(compressionLevel);
     }
 

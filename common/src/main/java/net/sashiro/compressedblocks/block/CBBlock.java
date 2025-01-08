@@ -1,6 +1,7 @@
 package net.sashiro.compressedblocks.block;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -13,8 +14,8 @@ import java.util.List;
 public class CBBlock extends Block {
     private final Compression compressor = new Compression();
 
-    public CBBlock(Properties properties, int compressionLevel, boolean isLesser) {
-        super(properties);
+    public CBBlock(Properties properties, int compressionLevel, boolean isLesser, ResourceKey<Block> id) {
+        super(properties.setId(id));
         compressor.setCompressionLevel(compressionLevel, isLesser);
     }
 

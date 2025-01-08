@@ -44,14 +44,11 @@ repositories {
     }
 }
 
-dependencies {
-    implementation 'org.jetbrains:annotations:24.1.0'
-}
-
 // Declare capabilities on the outgoing configurations.
 // Read more about capabilities here: https://docs.gradle.org/current/userguide/component_capabilities.html#sec:declaring-additional-capabilities-for-a-local-component
 ['apiElements', 'runtimeElements', 'sourcesElements', 'javadocElements'].each { variant ->
     configurations."$variant".outgoing {
+        capability("$group:${project.name}:$version")
         capability("$group:${base.archivesName.get()}:$version")
         capability("$group:$mod_id-${project.name}-${minecraft_version}:$version")
         capability("$group:$mod_id:$version")
@@ -85,27 +82,23 @@ jar {
 }
 
 // Ignoring javadoc warnings as it'll spam the console with no comment warnings.
-tasks.withType(Javadoc).configureEach {
-    options.addStringOption('Xdoclint:none', '-quiet')
-}
+//tasks.withType(Javadoc).configureEach {
+//    options.addStringOption('Xdoclint:none', '-quiet')
+//}
 
 processResources {
     def expandProps = [
-            "java_version": java_version,
+            "java_version"                 : java_version,
             "version"                      : version,
             "group"                        : project.group, //Else we target the task's group.
             "minecraft_version"            : minecraft_version,
             "logo_file"                    : logo_file,
             "forge_version"                : forge_version,
-            "forge_version_range"          : forge_version_range,
-            "loader_version_range"         : loader_version_range,
-            "forge_mc_version_range"       : forge_mc_version_range,
+            "forge_loader_version_range"   : forge_loader_version_range,
             "fabric_version"               : fabric_version,
             "fabric_loader_version"        : fabric_loader_version,
-            "fabric_version_range"         : fabric_version_range,
             "fabric_mc_version_range"      : fabric_mc_version_range,
             "neoforge_version"             : neoforge_version,
-            "neoforge_version_range"       : neoforge_version_range,
             "neoforge_loader_version_range": neoforge_loader_version_range,
             "mod_name"                     : mod_name,
             "mod_author"                   : mod_author,
@@ -137,7 +130,7 @@ publishing {
     }
     repositories {
         maven {
-            url System.getenv("local_maven_url")
+            url System.getenv('local_maven_url')
         }
     }
 }

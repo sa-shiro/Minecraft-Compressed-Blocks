@@ -1,17 +1,18 @@
 package net.sashiro.compressedblocks.fabric.data.providers;
 
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.blockstates.Variant;
+import net.minecraft.client.data.models.blockstates.VariantProperties;
+import net.minecraft.client.data.models.model.ModelTemplate;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.core.Direction;
-import net.minecraft.data.models.BlockModelGenerators;
-import net.minecraft.data.models.ItemModelGenerators;
-import net.minecraft.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.data.models.blockstates.PropertyDispatch;
-import net.minecraft.data.models.blockstates.Variant;
-import net.minecraft.data.models.blockstates.VariantProperties;
-import net.minecraft.data.models.model.ModelTemplate;
-import net.minecraft.data.models.model.TextureMapping;
-import net.minecraft.data.models.model.TextureSlot;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -35,7 +36,7 @@ public class CBModelProvider extends FabricModelProvider {
     }
 
     @Override
-    public void generateBlockStateModels(BlockModelGenerators generator) {
+    public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         for (Block block : Constants.BLOCKS) {
             String descriptionId = block.getDescriptionId();
             String block_name = descriptionId.replace("block.compressedblocks.", "");
@@ -51,27 +52,27 @@ public class CBModelProvider extends FabricModelProvider {
 
                 TextureMapping mapping = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, CommonUtils.getOverlay(descriptionId));
                 TextureMapping mapping_horizontal = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, CommonUtils.getOverlay(descriptionId));
-                ResourceLocation location = TEMPLATE_CUBE_COLUMN.create(block, mapping, generator.modelOutput);
-                ResourceLocation location_horizontal = TEMPLATE_CUBE_COLUMN_HORIZONTAL.createWithSuffix(block, "_horizontal", mapping_horizontal, generator.modelOutput);
+                ResourceLocation location = TEMPLATE_CUBE_COLUMN.create(block, mapping, blockModelGenerators.modelOutput);
+                ResourceLocation location_horizontal = TEMPLATE_CUBE_COLUMN_HORIZONTAL.createWithSuffix(block, "_horizontal", mapping_horizontal, blockModelGenerators.modelOutput);
 
-                generator.blockStateOutput.accept(BlockModelGenerators.createRotatedPillarWithHorizontalVariant(block, location, location_horizontal));
-                generator.delegateItemModel(block, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
+                blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createRotatedPillarWithHorizontalVariant(block, location, location_horizontal));
+                blockModelGenerators.registerSimpleItemModel(block, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
 
             } else {
                 TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, CommonUtils.getActualResourceLocation(descriptionId)).put(OVERLAY_SLOT, CommonUtils.getOverlay(descriptionId));
 
-                generator.createTrivialBlock(block, mapping, TEMPLATE_BLOCK);
-                generator.delegateItemModel(block, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
+                blockModelGenerators.createTrivialBlock(block, (TexturedModel.Provider) TEMPLATE_BLOCK);
+                blockModelGenerators.registerSimpleItemModel(block, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
             }
         }
         for (Block crate : Constants.CRATES) {
             String crate_name = crate.getDescriptionId().replace("block.compressedblocks.", "");
             String mc_name = CommonUtils.getMCName(crate_name);
             TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/crate")).put(ITEM_SLOT, CommonUtils.getResourceLocation(mc_name)).put(NUMBER_SLOT, CommonUtils.getOverlay(crate.getDescriptionId()));
-            ResourceLocation resourcelocation = TEMPLATE_CRATE.create(crate, mapping.copyAndUpdate(ITEM_SLOT, CommonUtils.getResourceLocation(mc_name)), generator.modelOutput);
+            ResourceLocation resourcelocation = TEMPLATE_CRATE.create(crate, mapping.copyAndUpdate(ITEM_SLOT, CommonUtils.getResourceLocation(mc_name)), blockModelGenerators.modelOutput);
 
-            generator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(crate, Variant.variant().with(VariantProperties.MODEL, resourcelocation)).with(createHorizontalFacingDispatch()));
-            generator.delegateItemModel(crate, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + crate_name));
+            blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.multiVariant(crate, Variant.variant().with(VariantProperties.MODEL, resourcelocation)).with(createHorizontalFacingDispatch()));
+            blockModelGenerators.registerSimpleItemModel(crate, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + crate_name));
         }
     }
 
@@ -80,6 +81,6 @@ public class CBModelProvider extends FabricModelProvider {
     }
 
     @Override
-    public void generateItemModels(ItemModelGenerators generator) {
+    public void generateItemModels(ItemModelGenerators itemModelGenerators) {
     }
 }
