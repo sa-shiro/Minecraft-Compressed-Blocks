@@ -1,20 +1,37 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
+name: Bug Report
+about: Submit a detailed bug report to help improve the mod
+title: '[Bug]: Brief Description of the Issue'
 labels: bug
 assignees: sa-shiro
 
 ---
 
-**Mod Version**
-**forge Version**
+**Mod Version:**  
+(Provide the version of the mod you are using.)
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Minecraft Version:**  
+(Provide the version of Minecraft you are using.)
 
-**How did it happen?**
-What did you do that the bug / error / crash happened?
+**Loader and Loader Version:**  
+(Indicate the mod loader (e.g., Forge, NeoForge, Fabric) and its version.)
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**Describe the Bug:**  
+(A clear and concise description of the bug or issue.)
+
+**Steps to Reproduce:**
+1. (List the steps to reproduce the bug step by step.)
+2.
+3.
+
+**Expected Behavior:**  
+(A clear and concise description of what you expected to happen.)
+
+**Actual Behavior:**  
+(Explain what actually happened.)
+
+**Screenshots (if applicable):**  
+(Attach screenshots to help explain your problem. Drag and drop or provide links if necessary.)
+
+**Crash Reports or Logs (if applicable):**  
+(Attach relevant crash reports or logs. Drag and drop or provide links if needed.)  

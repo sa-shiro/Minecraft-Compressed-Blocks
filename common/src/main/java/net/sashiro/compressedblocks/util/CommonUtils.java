@@ -1,11 +1,16 @@
 package net.sashiro.compressedblocks.util;
 
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
+
+import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 public class CommonUtils {
 
@@ -276,5 +281,31 @@ public class CommonUtils {
             default -> properties = properties.rarity(Rarity.COMMON);
         }
         return properties;
+    }
+
+    /**
+     * Utility function to create a Block ID
+     *
+     * @param name Name of the Block.
+     * @return {@link ResourceKey} of the Block.
+     */
+    public static ResourceKey<Block> createBlockId(String name) {
+        return ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
+    }
+
+    /**
+     * Utility function to create an Item ID
+     *
+     * @param name Name of the Item.
+     * @return {@link ResourceKey} of the Item.
+     */
+    public static ResourceKey<Item> createItemId(String name) {
+        return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
+    }
+
+    // todo: add configurable blocks
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
+    public static boolean isEnabled() {
+        return true;
     }
 }

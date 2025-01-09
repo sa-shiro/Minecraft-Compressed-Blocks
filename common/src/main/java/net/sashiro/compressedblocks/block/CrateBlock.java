@@ -3,6 +3,7 @@ package net.sashiro.compressedblocks.block;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -23,12 +24,14 @@ import java.util.List;
 @SuppressWarnings("NullableProblems")
 public class CrateBlock extends HorizontalDirectionalBlock {
     private final Compression compressor = new Compression();
+    private final String name;
     public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 
-    protected CrateBlock(Properties properties, int compressionLevel) {
-        super(properties);
+    protected CrateBlock(Properties properties, int compressionLevel, ResourceKey<Block> name) {
+        super(properties.setId(name));
         compressor.setCompressionLevel(compressionLevel);
         this.registerDefaultState(super.stateDefinition.any().setValue(FACING, Direction.NORTH));
+        this.name = name.location().getPath();
     }
 
     @Override

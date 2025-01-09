@@ -13,7 +13,8 @@ public class FabricDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(CBItemTagsProvider::new);
         pack.addProvider(CBLanguageProvider::new);
         pack.addProvider(CBLootTableProvider::new);
-        pack.addProvider(CBModelProvider::new);
+        // fixme: model provider is not working "cannot be loaded in environment type SERVER"
+        //pack.addProvider(CBModelProvider::new);
         pack.addProvider(CBRecipeProvider::new);
     }
 }

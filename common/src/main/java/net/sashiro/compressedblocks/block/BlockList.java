@@ -1,10 +1,7 @@
 package net.sashiro.compressedblocks.block;
 
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.sashiro.compressedblocks.util.CommonUtils;
 
 import static net.sashiro.compressedblocks.Constants.*;
 
@@ -276,38 +273,26 @@ public class BlockList {
     public static final CBBlock[] SEA_LANTERN = createBlocks("SEA_LANTERN");
 
     private static CBBlock[] createBlocks(String name) {
-        return createBlocks(null, false, name.toLowerCase());
+        return createBlocks(null, false, name);
     }
 
     private static CBBlock[] createBlocks(Float amplifier, String name) {
-        return createBlocks(amplifier, false, name.toLowerCase());
+        return createBlocks(amplifier, false, name);
     }
 
     private static CBBlock[] createGlassBlocks(String name) {
-        return createGlassBlocks(0.125F, name.toLowerCase());
+        return createGlassBlocks(0.125F, name);
     }
 
     private static CBRotationalBlock[] createRotationalBlocks(String name) {
-        return createRotationalBlocks(null, name.toLowerCase());
-    }
-
-    private static ResourceKey<Block> blockId(String name) {
-        return ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, name));
-    }
-
-    // todo: add configurable blocks
-    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
-    private static boolean isEnabled() {
-        return true;
+        return createRotationalBlocks(null, name);
     }
 
     private static CBBlock[] createBlocks(Float amplifier, boolean isLesser, String name) {
-        // todo: add configurable max compression level
-        int maxCompressionLevel = 10;
-        CBBlock[] result = new CBBlock[maxCompressionLevel];
+        CBBlock[] result = new CBBlock[MAX_COMPRESSION_LEVEL];
 
-        for (int i = 0; i < maxCompressionLevel; i++) {
-            if (!isEnabled()) continue;
+        for (int i = 0; i < MAX_COMPRESSION_LEVEL; i++) {
+            if (!CommonUtils.isEnabled()) continue;
             float baseHardness = HARDNESS[i];
             float baseResistance = RESISTANCE[i];
 
@@ -316,20 +301,19 @@ public class BlockList {
             float blockHardness = baseHardness * factor;
             float blockResistance = baseResistance * factor;
 
-            result[i] = new CBBlock(BlockBehaviour.Properties.of().strength(blockHardness, blockResistance), i, isLesser, blockId("c" + i + "_" + name.toLowerCase()));
+            result[i] = new CBBlock(BlockBehaviour.Properties.of().strength(blockHardness, blockResistance), i, isLesser, CommonUtils.createBlockId("c" + i + "_" + name));
         }
         return result;
     }
 
     private static CBBlock[] createGlassBlocks(Float amplifier, String name) {
-        int maxCompressionLevel = 10;
-        CBBlock[] result = new CBBlock[maxCompressionLevel];
-        for (int i = 0; i < maxCompressionLevel; i++) {
-            if (!isEnabled()) continue;
+        CBBlock[] result = new CBBlock[MAX_COMPRESSION_LEVEL];
+        for (int i = 0; i < MAX_COMPRESSION_LEVEL; i++) {
+            if (!CommonUtils.isEnabled()) continue;
             float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];
             float blockResistance = amplifier != null ? RESISTANCE[i] * amplifier : RESISTANCE[i];
 
-            result[i] = new CBBlock(BlockBehaviour.Properties.of().noCollission().strength(blockHardness, blockResistance), i, false, blockId("c" + i + "_" + name.toLowerCase()));
+            result[i] = new CBBlock(BlockBehaviour.Properties.of().noCollission().strength(blockHardness, blockResistance), i, false, CommonUtils.createBlockId("c" + i + "_" + name));
         }
         return result;
     }
@@ -338,10 +322,10 @@ public class BlockList {
         int maxCompressionLevel = 10;
         CBRotationalBlock[] result = new CBRotationalBlock[maxCompressionLevel];
         for (int i = 0; i < maxCompressionLevel; i++) {
-            if (!isEnabled()) continue;
+            if (!CommonUtils.isEnabled()) continue;
             float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];
             float blockResistance = amplifier != null ? RESISTANCE[i] * amplifier : RESISTANCE[i];
-            result[i] = new CBRotationalBlock(BlockBehaviour.Properties.of().strength(blockHardness, blockResistance), i, blockId("c" + i + "_" + name.toLowerCase()));
+            result[i] = new CBRotationalBlock(BlockBehaviour.Properties.of().strength(blockHardness, blockResistance), i, CommonUtils.createBlockId("c" + i + "_" + name));
         }
         return result;
     }

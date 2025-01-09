@@ -33,8 +33,8 @@ public class FabricPlatformHelper implements IPlatformHelper {
     @Override
     public void registerBlock(String name, Block... blocks) {
         for (int i = 0; i < blocks.length; i++) {
-            Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i);
             String prefixedName = "c" + i + "_" + name;
+            Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i).setId(CommonUtils.createItemId(prefixedName));
             Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), blocks[i]);
             Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), new BlockItem(blocks[i], properties));
             BLOCKS.add(blocks[i]);
@@ -44,8 +44,8 @@ public class FabricPlatformHelper implements IPlatformHelper {
     @Override
     public void registerCrate(String name, Block... crateBlocks) {
         for (int i = 0; i < crateBlocks.length; i++) {
-            Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i);
             String prefixedName = CommonUtils.getCratePrefix(i) + name;
+            Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i).setId(CommonUtils.createItemId(prefixedName));
             Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), crateBlocks[i]);
             Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), new CrateItem(crateBlocks[i], properties));
             CRATES.add(crateBlocks[i]);
