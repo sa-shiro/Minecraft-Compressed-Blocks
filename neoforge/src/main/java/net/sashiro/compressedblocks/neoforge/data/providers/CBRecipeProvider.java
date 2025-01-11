@@ -2,8 +2,9 @@ package net.sashiro.compressedblocks.neoforge.data.providers;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.*;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
@@ -13,13 +14,12 @@ import net.sashiro.compressedblocks.block.CBBlock;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
-import java.util.concurrent.CompletableFuture;
 
 @SuppressWarnings("DuplicatedCode")
 public class CBRecipeProvider extends RecipeProvider {
     private final RecipeOutput output;
 
-    protected CBRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
+    public CBRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
         super(registries, output);
         this.output = output;
     }
@@ -76,7 +76,6 @@ public class CBRecipeProvider extends RecipeProvider {
     @Override
     @ParametersAreNonnullByDefault
     protected void buildRecipes() {
-
         ArrayList<Block> blocks = Constants.BLOCKS;
 
         for (int i = 0; i < blocks.size(); i++) {

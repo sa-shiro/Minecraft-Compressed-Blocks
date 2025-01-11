@@ -31,7 +31,6 @@ public class CBTags {
     public static final TagKey<Item> MEGA_ITEM = ItemTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, "mega"));
     public static final TagKey<Item> GIGA_ITEM = ItemTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, "giga"));
 
-
     public static final TagKey<Block> SINGLE_CRATE = BlockTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, "single_crate"));
     public static final TagKey<Block> DOUBLE_CRATE = BlockTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, "double_crate"));
     public static final TagKey<Block> TRIPLE_CRATE = BlockTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, "triple_crate"));

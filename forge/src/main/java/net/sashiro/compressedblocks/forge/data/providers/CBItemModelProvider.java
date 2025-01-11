@@ -10,6 +10,7 @@ import net.sashiro.compressedblocks.util.CommonUtils;
 
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
+@SuppressWarnings("removal")
 public class CBItemModelProvider extends ItemModelProvider {
 
     public CBItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {

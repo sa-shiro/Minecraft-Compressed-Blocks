@@ -31,8 +31,8 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
     @Override
     public void registerBlock(String name, Block... blocks) {
         for (int i = 0; i < blocks.length; i++) {
-            Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i);
             String prefixedName = "c" + i + "_" + name;
+            Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i).setId(CommonUtils.createItemId(prefixedName));
             int finalI = i;
             CompressedBlocksNeoForge.BLOCKS.register(prefixedName.toLowerCase(), () -> blocks[finalI]);
             CompressedBlocksNeoForge.ITEMS.register(prefixedName.toLowerCase(), () -> new BlockItem(blocks[finalI], properties));
@@ -43,9 +43,10 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
     @Override
     public void registerCrate(String name, Block... crateBlocks) {
         for (int i = 0; i < crateBlocks.length; i++) {
-            Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i);
             String prefixedName = CommonUtils.getCratePrefix(i) + name;
+            Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i).setId(CommonUtils.createItemId(prefixedName));
             int finalI = i;
+            //String s = crateBlocks[i].getName().getString();
             CompressedBlocksNeoForge.CRATE_BLOCKS.register(prefixedName.toLowerCase(), () -> crateBlocks[finalI]);
             CompressedBlocksNeoForge.CRATE_ITEMS.register(prefixedName.toLowerCase(), () -> new CrateItem(crateBlocks[finalI], properties));
             Constants.CRATES.add(crateBlocks[i]);
