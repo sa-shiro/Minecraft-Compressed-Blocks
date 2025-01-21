@@ -4,8 +4,6 @@ name: Build
 
 on:
   push:
-    tags-ignore:
-      - 'v*'
     paths-ignore:
       - '**/*.md'
       - '**/*.txt'
@@ -58,32 +56,32 @@ jobs:
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
 
-      - name: "Run gradle task: (${{ matrix.datagen }}) -> datagen (Linux)"
-        if: ${{ runner.os != 'Windows' }}
-        continue-on-error: true
-        run: |
-          if [[ "${{ matrix.datagen }}" == "forge" ]]; then
-            ./gradlew :${{ matrix.datagen }}:Data
-          elif [[ "${{ matrix.datagen }}" == "fabric" ]]; then
-            ./gradlew :${{ matrix.datagen }}:runDatagen
-          else
-            ./gradlew :${{ matrix.datagen }}:runData
-          fi
+      #- name: "Run gradle task: (${{ matrix.datagen }}) -> datagen (Linux)"
+      #  if: ${{ runner.os != 'Windows' }}
+      #  continue-on-error: true
+      #  run: |
+      #    if [[ "${{ matrix.datagen }}" == "forge" ]]; then
+      #      ./gradlew :${{ matrix.datagen }}:Data
+      #    elif [[ "${{ matrix.datagen }}" == "fabric" ]]; then
+      #      ./gradlew :${{ matrix.datagen }}:runDatagen
+      #    else
+      #      ./gradlew :${{ matrix.datagen }}:runData
+      #    fi
 
-      - name: "Run gradle task: (${{ matrix.datagen }}) -> datagen (Windows)"
-        if: ${{ runner.os == 'Windows' }}
-        shell: pwsh
-        continue-on-error: true
-        run: |
-          if ("${{ matrix.datagen }}" -eq "forge") {
-            ./gradlew :${{ matrix.datagen }}:Data
-          }
-          elseif ("${{ matrix.datagen }}" -eq "fabric") {
-            ./gradlew :${{ matrix.datagen }}:runDatagen
-          }
-          else {
-            ./gradlew :${{ matrix.datagen }}:runData
-          }
+      #- name: "Run gradle task: (${{ matrix.datagen }}) -> datagen (Windows)"
+      #  if: ${{ runner.os == 'Windows' }}
+      #  shell: pwsh
+      #  continue-on-error: true
+      #  run: |
+      #    if ("${{ matrix.datagen }}" -eq "forge") {
+      #      ./gradlew :${{ matrix.datagen }}:Data
+      #    }
+      #    elseif ("${{ matrix.datagen }}" -eq "fabric") {
+      #      ./gradlew :${{ matrix.datagen }}:runDatagen
+      #    }
+      #    else {
+      #      ./gradlew :${{ matrix.datagen }}:runData
+      #    }
 
       - name: "Build project"
         run: ./gradlew build

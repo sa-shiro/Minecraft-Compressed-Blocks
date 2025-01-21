@@ -13,6 +13,7 @@ import static net.sashiro.compressedblocks.Constants.MOD_ID;
 @SuppressWarnings("removal")
 public class CBItemModelProvider extends ItemModelProvider {
 
+    // fixme: Item Model Generation is different in 1.21.4, Block Item Models are stored inside assets/items instead of assets/models/item
     public CBItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
         super(packOutput, MOD_ID, existingFileHelper);
     }

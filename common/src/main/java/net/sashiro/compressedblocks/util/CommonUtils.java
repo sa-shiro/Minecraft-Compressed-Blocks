@@ -149,6 +149,7 @@ public class CommonUtils {
         if (mc_name.contains("carpet"))
             location = ResourceLocation.withDefaultNamespace("block/" + mc_name.replace("carpet", "wool"));
         if (mc_name.contains("scute")) location = ResourceLocation.withDefaultNamespace("item/" + mc_name);
+        if (mc_name.contains("map")) location = ResourceLocation.fromNamespaceAndPath(MOD_ID, "item/" + "map");
         return location;
     }
 

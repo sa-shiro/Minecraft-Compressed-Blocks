@@ -102,7 +102,6 @@ public class CrateList {
     public static final CrateBlock[] SPECTRAL_ARROW = createBlocks("SPECTRAL_ARROW");
     public static final CrateBlock[] NAME_TAG = createBlocks("NAME_TAG");
     public static final CrateBlock[] LEAD = createBlocks("LEAD");
-    public static final CrateBlock[] EMPTY_MAP = createBlocks("EMPTY_MAP");
     public static final CrateBlock[] RAIL = createBlocks("RAIL");
     public static final CrateBlock[] POWERED_RAIL = createBlocks("POWERED_RAIL");
     public static final CrateBlock[] DETECTOR_RAIL = createBlocks("DETECTOR_RAIL");
@@ -181,9 +180,9 @@ public class CrateList {
     public static final CrateBlock[] PINK_CARPET = createBlocks("PINK_CARPET");
     public static final CrateBlock[] VINE = createBlocks("VINE");
     public static final CrateBlock[] TWISTING_VINES = createBlocks("TWISTING_VINES");
-    public static final CrateBlock[] WEEPING_VINES = createBlocks("WEEDING_VINES");
+    public static final CrateBlock[] WEEPING_VINES = createBlocks("WEEPING_VINES");
     public static final CrateBlock[] GLOW_LICHEN = createBlocks("GLOW_LICHEN");
-    public static final CrateBlock[] SCULK_VEIN = createBlocks("SKULK_VEIN");
+    public static final CrateBlock[] SCULK_VEIN = createBlocks("SCULK_VEIN");
 
     private static CrateBlock[] createBlocks(String name) {
         CrateBlock[] result = new CrateBlock[MAX_CRATE_COMPRESSION_LEVEL];

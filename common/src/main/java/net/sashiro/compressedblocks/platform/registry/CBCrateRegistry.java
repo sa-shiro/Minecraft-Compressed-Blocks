@@ -37,7 +37,6 @@ public class CBCrateRegistry {
         Services.PLATFORM.registerCrate("COOKIE", COOKIE);
         Services.PLATFORM.registerCrate("ROTTEN_FLESH", ROTTEN_FLESH);
         Services.PLATFORM.registerCrate("SPIDER_EYE", SPIDER_EYE);
-        //Services.PLATFORM.registerCrate("MILK_BUCKET", MILK_BUCKET);
         Services.PLATFORM.registerCrate("HONEY_BOTTLE", HONEY_BOTTLE);
         Services.PLATFORM.registerCrate("CHARCOAL", CHARCOAL);
         Services.PLATFORM.registerCrate("QUARTZ", QUARTZ);
@@ -95,19 +94,15 @@ public class CBCrateRegistry {
         Services.PLATFORM.registerCrate("GHAST_TEAR", GHAST_TEAR);
         Services.PLATFORM.registerCrate("PHANTOM_MEMBRANE", PHANTOM_MEMBRANE);
         Services.PLATFORM.registerCrate("EXPERIENCE_BOTTLE", EXPERIENCE_BOTTLE);
-        //Services.PLATFORM.registerCrate("TOTEM_OF_UNDYING", TOTEM_OF_UNDYING);
         Services.PLATFORM.registerCrate("END_CRYSTAL", END_CRYSTAL);
         Services.PLATFORM.registerCrate("ARROW", ARROW);
         Services.PLATFORM.registerCrate("SPECTRAL_ARROW", SPECTRAL_ARROW);
         Services.PLATFORM.registerCrate("NAME_TAG", NAME_TAG);
         Services.PLATFORM.registerCrate("LEAD", LEAD);
-        Services.PLATFORM.registerCrate("MAP", EMPTY_MAP);
-        //Services.PLATFORM.registerCrate("SADDLE", SADDLE);
         Services.PLATFORM.registerCrate("RAIL", RAIL);
         Services.PLATFORM.registerCrate("POWERED_RAIL", POWERED_RAIL);
         Services.PLATFORM.registerCrate("DETECTOR_RAIL", DETECTOR_RAIL);
         Services.PLATFORM.registerCrate("ACTIVATOR_RAIL", ACTIVATOR_RAIL);
-        //Services.PLATFORM.registerCrate("MINECART", MINECART);
         Services.PLATFORM.registerCrate("REDSTONE_TORCH", REDSTONE_TORCH);
         Services.PLATFORM.registerCrate("REPEATER", REPEATER);
         Services.PLATFORM.registerCrate("COMPARATOR", COMPARATOR);

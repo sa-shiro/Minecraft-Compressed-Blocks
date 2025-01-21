@@ -65,7 +65,7 @@ public class BlockList {
     public static final CBBlock[] BLACKSTONE = createBlocks("BLACKSTONE");
     public static final CBBlock[] DEEPSLATE = createBlocks("DEEPSLATE");
     public static final CBBlock[] COBBLED_DEEPSLATE = createBlocks("COBBLED_DEEPSLATE");
-    public static final CBBlock[] TUFF = createBlocks("TUFT");
+    public static final CBBlock[] TUFF = createBlocks("TUFF");
     public static final CBRotationalBlock[] BASALT = createRotationalBlocks("BASALT");
     public static final CBBlock[] OBSIDIAN = createBlocks(3.5F, "OBSIDIAN");
     public static final CBBlock[] MUD = createBlocks(0.8F, "MUD");

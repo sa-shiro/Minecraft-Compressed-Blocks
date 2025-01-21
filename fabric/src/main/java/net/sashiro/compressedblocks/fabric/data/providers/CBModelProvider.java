@@ -11,7 +11,6 @@ import net.minecraft.client.data.models.blockstates.VariantProperties;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
-import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -40,8 +39,10 @@ public class CBModelProvider extends FabricModelProvider {
         for (Block block : Constants.BLOCKS) {
             String descriptionId = block.getDescriptionId();
             String block_name = descriptionId.replace("block.compressedblocks.", "");
-            if (CommonUtils.isBlock(descriptionId)) continue; // exclude manually added resources
+            // exclude manually added resources
+            if (CommonUtils.isBlock(descriptionId)) continue;
 
+            // Check if the block is a rotational block
             if (CommonUtils.isRotational(descriptionId)) {
                 ResourceLocation side = CommonUtils.getActualResourceLocation(descriptionId);
                 ResourceLocation end = ResourceLocation.fromNamespaceAndPath(side.getNamespace(), side.getPath() + "_top");
@@ -55,14 +56,17 @@ public class CBModelProvider extends FabricModelProvider {
                 ResourceLocation location = TEMPLATE_CUBE_COLUMN.create(block, mapping, blockModelGenerators.modelOutput);
                 ResourceLocation location_horizontal = TEMPLATE_CUBE_COLUMN_HORIZONTAL.createWithSuffix(block, "_horizontal", mapping_horizontal, blockModelGenerators.modelOutput);
 
+                blockModelGenerators.registerSimpleItemModel(block, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
                 blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createRotatedPillarWithHorizontalVariant(block, location, location_horizontal));
-                blockModelGenerators.registerSimpleItemModel(block, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
 
-            } else {
+            }
+            // If the block is not rotational then create a simple block model
+            else {
                 TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, CommonUtils.getActualResourceLocation(descriptionId)).put(OVERLAY_SLOT, CommonUtils.getOverlay(descriptionId));
+                ResourceLocation blockModel = TEMPLATE_CUBE_COLUMN.create(block, mapping, blockModelGenerators.modelOutput);
 
-                blockModelGenerators.createTrivialBlock(block, (TexturedModel.Provider) TEMPLATE_BLOCK);
                 blockModelGenerators.registerSimpleItemModel(block, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
+                blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, blockModel));
             }
         }
         for (Block crate : Constants.CRATES) {
@@ -71,8 +75,8 @@ public class CBModelProvider extends FabricModelProvider {
             TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/crate")).put(ITEM_SLOT, CommonUtils.getResourceLocation(mc_name)).put(NUMBER_SLOT, CommonUtils.getOverlay(crate.getDescriptionId()));
             ResourceLocation resourcelocation = TEMPLATE_CRATE.create(crate, mapping.copyAndUpdate(ITEM_SLOT, CommonUtils.getResourceLocation(mc_name)), blockModelGenerators.modelOutput);
 
-            blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.multiVariant(crate, Variant.variant().with(VariantProperties.MODEL, resourcelocation)).with(createHorizontalFacingDispatch()));
             blockModelGenerators.registerSimpleItemModel(crate, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + crate_name));
+            blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.multiVariant(crate, Variant.variant().with(VariantProperties.MODEL, resourcelocation)).with(createHorizontalFacingDispatch()));
         }
     }
 

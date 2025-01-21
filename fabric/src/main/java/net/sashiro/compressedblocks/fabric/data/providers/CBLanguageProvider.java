@@ -29,13 +29,13 @@ public class CBLanguageProvider extends FabricLanguageProvider {
                 if (name.contains("c" + i))
                     name2 = name.replace("c" + i + "_", "");
             }
-            builder.add("block.compressedblocks." + name, CommonUtils.compressionLevel(name) + CommonUtils.stringFormat(name2.replace("_", " ")));
+            builder.add("item.compressedblocks." + name, CommonUtils.compressionLevel(name) + CommonUtils.stringFormat(name2.replace("_", " ")));
         }
 
         for (Block crate : Constants.CRATES) {
             Item item = crate.asItem();
             assert false;
-            String name = item.getDescriptionId().replace("block.compressedblocks.", "");
+            String name = item.getDescriptionId().replace("block.compressedblocks.", "").replace("item.compressedblocks.", "");
             String translation = CommonUtils.stringFormat(name.replace("_", " "));
 
             if ((translation.endsWith("a")
@@ -95,7 +95,7 @@ public class CBLanguageProvider extends FabricLanguageProvider {
             if (name.contains("totem") || name.contains("dragon"))
                 builder.add("item.compressedblocks." + name, "§6" + translation.replace("Crated", "Crate of"));
             else if (name.startsWith("item.")) return;
-            else builder.add("block.compressedblocks." + name, translation.replace("Crated", "Crate of"));
+            else builder.add("item.compressedblocks." + name, translation.replace("Crated", "Crate of"));
         }
     }
 }
