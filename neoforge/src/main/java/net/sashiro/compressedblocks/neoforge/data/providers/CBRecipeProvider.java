@@ -37,7 +37,7 @@ public class CBRecipeProvider extends RecipeProvider {
     private void makeShapedRecipe(RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String fileName) {
         CBBlock compressedBlock = getCbBlock(result, ingredient);
 
-        if (compressedBlock != null && compressedBlock.getCompressor().isLesser()) {
+        if (compressedBlock != null && compressedBlock.getCompressor().hasSmallerCompression()) {
             shaped(recipeCategory, result) // result
                     .define('#', ingredient) // ingredient
                     .pattern("##")
@@ -59,7 +59,7 @@ public class CBRecipeProvider extends RecipeProvider {
     private void makeShapelessRecipe(RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String recipeName) {
         CBBlock compressedBlock = getCbBlock(result, ingredient);
 
-        if (compressedBlock != null && compressedBlock.getCompressor().isLesser()) {
+        if (compressedBlock != null && compressedBlock.getCompressor().hasSmallerCompression()) {
             shapeless(recipeCategory, result, 4)
                     .requires(ingredient)
                     .unlockedBy("has_item", has(ingredient.asItem()))

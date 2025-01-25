@@ -89,7 +89,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
 
     private void makeShapedRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String fileName) {
         CBBlock compressedBlock = getCbBlock(result, ingredient);
-        if (compressedBlock != null && compressedBlock.getCompressor().isLesser()) {
+        if (compressedBlock != null && compressedBlock.getCompressor().hasSmallerCompression()) {
             ShapedRecipeBuilder.shaped(items, recipeCategory, result) // result
                     .define('#', ingredient) // ingredient
                     .pattern("##")
@@ -111,7 +111,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
     private void makeShapelessRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String recipeName) {
         CBBlock compressedBlock = getCbBlock(result, ingredient);
 
-        if (compressedBlock != null && compressedBlock.getCompressor().isLesser()) {
+        if (compressedBlock != null && compressedBlock.getCompressor().hasSmallerCompression()) {
             ShapelessRecipeBuilder.shapeless(items, recipeCategory, result, 4)
                     .requires(ingredient)
                     .unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))

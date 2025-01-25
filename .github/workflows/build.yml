@@ -25,8 +25,10 @@ jobs:
       matrix:
         java: [ 21 ]
         os: [ ubuntu-latest, windows-latest ]
-        datagen: [ fabric, neoforge ]
-    name: "${{ matrix.datagen }} (Java ${{ matrix.java }} on ${{ matrix.os }})"
+        # Matrix removed as data generation currently non-functional or only partially functional
+        #loader: [ fabric, neoforge, forge ]
+    #name: "${{ matrix.loader }} (Java ${{ matrix.java }} on ${{ matrix.os }})"
+    name: "Build (Java ${{ matrix.java }} on ${{ matrix.os }})"
     runs-on: ${{ matrix.os }}
     steps:
       - name: "Checkout repository"
@@ -56,41 +58,41 @@ jobs:
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
 
-      #- name: "Run gradle task: (${{ matrix.datagen }}) -> datagen (Linux)"
+      #- name: "Run gradle task: (${{ matrix.loader }}) -> loader (Linux)"
       #  if: ${{ runner.os != 'Windows' }}
       #  continue-on-error: true
       #  run: |
-      #    if [[ "${{ matrix.datagen }}" == "forge" ]]; then
-      #      ./gradlew :${{ matrix.datagen }}:Data
-      #    elif [[ "${{ matrix.datagen }}" == "fabric" ]]; then
-      #      ./gradlew :${{ matrix.datagen }}:runDatagen
+      #    if [[ "${{ matrix.loader }}" == "forge" ]]; then
+      #      ./gradlew :${{ matrix.loader }}:Data
+      #    elif [[ "${{ matrix.loader }}" == "fabric" ]]; then
+      #      ./gradlew :${{ matrix.loader }}:loader
       #    else
-      #      ./gradlew :${{ matrix.datagen }}:runData
+      #      ./gradlew :${{ matrix.loader }}:runData
       #    fi
 
-      #- name: "Run gradle task: (${{ matrix.datagen }}) -> datagen (Windows)"
+      #- name: "Run gradle task: (${{ matrix.loader }}) -> loader (Windows)"
       #  if: ${{ runner.os == 'Windows' }}
       #  shell: pwsh
       #  continue-on-error: true
       #  run: |
-      #    if ("${{ matrix.datagen }}" -eq "forge") {
-      #      ./gradlew :${{ matrix.datagen }}:Data
+      #    if ("${{ matrix.loader }}" -eq "forge") {
+      #      ./gradlew :${{ matrix.loader }}:Data
       #    }
-      #    elseif ("${{ matrix.datagen }}" -eq "fabric") {
-      #      ./gradlew :${{ matrix.datagen }}:runDatagen
+      #    elseif ("${{ matrix.loader }}" -eq "fabric") {
+      #      ./gradlew :${{ matrix.loader }}:loader
       #    }
       #    else {
-      #      ./gradlew :${{ matrix.datagen }}:runData
+      #      ./gradlew :${{ matrix.loader }}:runData
       #    }
 
       - name: "Build project"
         run: ./gradlew build
 
       - name: "Capture build artifacts"
-        if: ${{ runner.os == 'Windows' && matrix.java == '17' }}
+        if: ${{ runner.os == 'Windows' && matrix.java == '21' }}
         uses: actions/upload-artifact@v4
         with:
-          name: Artifacts-${{ runner.os }}-${{ matrix.datagen }}
+          name: Artifacts-${{ runner.os }}-${{ matrix.loader }}
           path: |
             forge/build/libs/
             neoforge/build/libs/
