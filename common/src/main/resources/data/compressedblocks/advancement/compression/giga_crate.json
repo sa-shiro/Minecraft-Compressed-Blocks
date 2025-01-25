@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:giga_crated_apple"
+    },
+    "title": "Global Crate Master",
+    "description": "Craft the final crate!",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:compression/mega_crate",
+  "criteria": {
+    "get_giga_crate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#compressedblocks:giga_crate"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_giga_crate"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": true
+}

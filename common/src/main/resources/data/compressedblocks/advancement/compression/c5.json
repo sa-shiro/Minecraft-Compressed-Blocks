@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:c5_stone"
+    },
+    "title": "The Sixth Step",
+    "description": "Continue the compression algorithm.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:compression/c4",
+  "criteria": {
+    "get_c5": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#compressedblocks:c5"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c5"
+    ]
+  ],
+  "rewards": {
+    "experience": 30
+  },
+  "sends_telemetry_event": true
+}

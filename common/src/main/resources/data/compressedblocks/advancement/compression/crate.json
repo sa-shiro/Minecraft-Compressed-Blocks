@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:crated_apple"
+    },
+    "title": "Crates everywhere!",
+    "description": "Crate any item",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:compression/root",
+  "criteria": {
+    "get_crate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#compressedblocks:single_crate"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_crate"
+    ]
+  ],
+  "rewards": {
+    "experience": 5
+  },
+  "sends_telemetry_event": true
+}

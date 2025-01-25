@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:triple_crated_apple"
+    },
+    "title": "Even MOAR Crates!!!",
+    "description": "Continue the crating algorithm.",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:compression/double_crate",
+  "criteria": {
+    "get_triple_crate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#compressedblocks:triple_crate"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_triple_crate"
+    ]
+  ],
+  "rewards": {
+    "experience": 15
+  },
+  "sends_telemetry_event": true
+}

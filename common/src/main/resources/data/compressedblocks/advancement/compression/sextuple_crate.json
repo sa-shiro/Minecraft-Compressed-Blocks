@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:sextuple_crated_apple"
+    },
+    "title": "I NEED EVEN MOOOORE CRATES !!!!!",
+    "description": "Continue the crating algorithm.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:compression/quintuple_crate",
+  "criteria": {
+    "get_sextuple_crate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#compressedblocks:sextuple_crate"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_sextuple_crate"
+    ]
+  ],
+  "rewards": {
+    "experience": 30,
+  "sends_telemetry_event": true
+}
