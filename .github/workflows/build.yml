@@ -92,7 +92,8 @@ jobs:
         if: ${{ runner.os == 'Windows' && matrix.java == '21' }}
         uses: actions/upload-artifact@v4
         with:
-          name: Artifacts-${{ runner.os }}-${{ matrix.loader }}
+          #name: Artifacts-${{ runner.os }}-${{ matrix.loader }}
+          name: Artifacts-${{ runner.os }}
           path: |
             forge/build/libs/
             neoforge/build/libs/

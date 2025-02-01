@@ -273,26 +273,18 @@ public class BlockList {
     public static final CBBlock[] SEA_LANTERN = createBlocks("SEA_LANTERN");
 
     private static CBBlock[] createBlocks(String name) {
-        return createBlocks(name, null, false);
+        return createBlocks(name, null);
     }
 
     private static CBBlock[] createBlocks(String name, Float amplifier) {
         return createBlocks(name, amplifier, false);
     }
 
-    private static CBBlock[] createGlassBlocks(String name) {
-        return createGlassBlocks(name, 0.125F);
-    }
-
-    private static CBRotationalBlock[] createRotationalBlocks(String name) {
-        return createRotationalBlocks(name, null);
-    }
-
     /**
      * Creates a list of blocks with different compression levels.
      *
-     * @param name                 The name of the block.
-     * @param amplifier            The amplifier of the block.
+     * @param name                  The name of the block.
+     * @param amplifier             The amplifier of the block.
      * @param hasSmallerCompression Whether the block has smaller compression levels.
      * @return The list of blocks.
      */
@@ -314,6 +306,10 @@ public class BlockList {
         return result;
     }
 
+    private static CBBlock[] createGlassBlocks(String name) {
+        return createGlassBlocks(name, 0.125F);
+    }
+
     /**
      * Creates a list of glass blocks with different compression levels.
      *
@@ -331,6 +327,10 @@ public class BlockList {
             result[i] = new CBBlock(BlockBehaviour.Properties.of().noCollission().strength(blockHardness, blockResistance), i, false, CommonUtils.createBlockId("c" + i + "_" + name));
         }
         return result;
+    }
+
+    private static CBRotationalBlock[] createRotationalBlocks(String name) {
+        return createRotationalBlocks(name, null);
     }
 
     /**
