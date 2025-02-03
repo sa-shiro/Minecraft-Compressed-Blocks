@@ -272,11 +272,24 @@ public class BlockList {
     public static final CBRotationalBlock[] PEARLESCENT_FROGLIGHT = createRotationalBlocks("PEARLESCENT_FROGLIGHT");
     public static final CBBlock[] SEA_LANTERN = createBlocks("SEA_LANTERN");
 
-    private static CBBlock[] createBlocks(String name) {
+    /**
+     * Creates a list of blocks with different compression levels.
+     *
+     * @param name The name of the block.
+     * @return The list of blocks.
+     */
+    public static CBBlock[] createBlocks(String name) {
         return createBlocks(name, null);
     }
 
-    private static CBBlock[] createBlocks(String name, Float amplifier) {
+    /**
+     * Creates a list of blocks with different compression levels.
+     *
+     * @param name      The name of the block.
+     * @param amplifier The amplifier of the block.
+     * @return The list of blocks.
+     */
+    public static CBBlock[] createBlocks(String name, Float amplifier) {
         return createBlocks(name, amplifier, false);
     }
 
@@ -288,7 +301,7 @@ public class BlockList {
      * @param hasSmallerCompression Whether the block has smaller compression levels.
      * @return The list of blocks.
      */
-    private static CBBlock[] createBlocks(String name, Float amplifier, boolean hasSmallerCompression) {
+    public static CBBlock[] createBlocks(String name, Float amplifier, boolean hasSmallerCompression) {
         CBBlock[] result = new CBBlock[MAX_COMPRESSION_LEVEL];
 
         for (int i = 0; i < MAX_COMPRESSION_LEVEL; i++) {
@@ -306,7 +319,13 @@ public class BlockList {
         return result;
     }
 
-    private static CBBlock[] createGlassBlocks(String name) {
+    /**
+     * Creates a list of glass blocks with different compression levels.
+     *
+     * @param name The name of the block.
+     * @return The list of blocks.
+     */
+    public static CBBlock[] createGlassBlocks(String name) {
         return createGlassBlocks(name, 0.125F);
     }
 
@@ -317,7 +336,7 @@ public class BlockList {
      * @param amplifier The amplifier of the block.
      * @return The list of blocks.
      */
-    private static CBBlock[] createGlassBlocks(String name, Float amplifier) {
+    public static CBBlock[] createGlassBlocks(String name, Float amplifier) {
         CBBlock[] result = new CBBlock[MAX_COMPRESSION_LEVEL];
         for (int i = 0; i < MAX_COMPRESSION_LEVEL; i++) {
             if (!CommonUtils.isEnabled()) continue;
@@ -329,7 +348,13 @@ public class BlockList {
         return result;
     }
 
-    private static CBRotationalBlock[] createRotationalBlocks(String name) {
+    /**
+     * Creates a list of rotational blocks with different compression levels.
+     *
+     * @param name The name of the block.
+     * @return The list of blocks.
+     */
+    public static CBRotationalBlock[] createRotationalBlocks(String name) {
         return createRotationalBlocks(name, null);
     }
 
@@ -340,7 +365,7 @@ public class BlockList {
      * @param amplifier The amplifier of the block.
      * @return The list of blocks.
      */
-    private static CBRotationalBlock[] createRotationalBlocks(String name, Float amplifier) {
+    public static CBRotationalBlock[] createRotationalBlocks(String name, Float amplifier) {
         int maxCompressionLevel = 10;
         CBRotationalBlock[] result = new CBRotationalBlock[maxCompressionLevel];
         for (int i = 0; i < maxCompressionLevel; i++) {

@@ -11,7 +11,7 @@ import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 public class CBTags {
 
-    public static class CBBlockTags {
+    public static class CompressionBlockTags {
         public static final TagKey<Block> COMPRESSION_X_01 = BlockTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, "compression_x01"));
         public static final TagKey<Block> COMPRESSION_X_02 = BlockTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, "compression_x02"));
         public static final TagKey<Block> COMPRESSION_X_03 = BlockTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, "compression_x03"));
@@ -35,7 +35,7 @@ public class CBTags {
         public static final TagKey<Block> CRATE_X_10 = BlockTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, "crate_x10"));
     }
 
-    public static class CBItemTags {
+    public static class CompressionItemTags {
         public static final TagKey<Item> COMPRESSION_X_01 = ItemTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, "compression_x01"));
         public static final TagKey<Item> COMPRESSION_X_02 = ItemTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, "compression_x02"));
         public static final TagKey<Item> COMPRESSION_X_03 = ItemTags.create(ResourceLocation.fromNamespaceAndPath(MOD_ID, "compression_x03"));

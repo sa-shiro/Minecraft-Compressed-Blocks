@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#compressedblocks:septuple_crate"
+            "items": "#compressedblocks:crate_x07"
           }
         ]
       }
@@ -29,7 +29,7 @@
     ]
   ],
   "rewards": {
-    "experience": 35
-  },
-  "sends_telemetry_event": true
+    "experience": 35,
+    "sends_telemetry_event": true
+  }
 }

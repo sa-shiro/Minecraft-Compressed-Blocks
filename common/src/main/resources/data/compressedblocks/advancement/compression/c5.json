@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#compressedblocks:c5"
+            "items": "#compressedblocks:compression_x06"
           }
         ]
       }

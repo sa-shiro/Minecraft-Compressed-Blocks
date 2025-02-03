@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#compressedblocks:quadruple_crate"
+            "items": "#compressedblocks:crate_x04"
           }
         ]
       }

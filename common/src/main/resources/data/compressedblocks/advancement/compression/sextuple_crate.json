@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#compressedblocks:sextuple_crate"
+            "items": "#compressedblocks:crate_x06"
           }
         ]
       }
@@ -30,5 +30,6 @@
   ],
   "rewards": {
     "experience": 30,
-  "sends_telemetry_event": true
+    "sends_telemetry_event": true
+  }
 }
