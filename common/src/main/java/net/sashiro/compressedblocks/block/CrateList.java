@@ -3,9 +3,9 @@ package net.sashiro.compressedblocks.block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.sashiro.compressedblocks.util.CommonUtils;
 
-import static net.sashiro.compressedblocks.Constants.HARDNESS;
-import static net.sashiro.compressedblocks.Constants.RESISTANCE;
+import static net.sashiro.compressedblocks.Constants.*;
 
 public class CrateList {
 
@@ -190,9 +190,9 @@ public class CrateList {
     public static final CrateBlock[] SCULK_VEIN = createBlocks();
 
     private static CrateBlock[] createBlocks() {
-        int maxCompressionLevel = 10;
-        CrateBlock[] result = new CrateBlock[maxCompressionLevel];
-        for (int i = 0; i < maxCompressionLevel; i++) {
+        CrateBlock[] result = new CrateBlock[MAX_CRATE_COMPRESSION_LEVEL];
+        for (int i = 0; i < MAX_CRATE_COMPRESSION_LEVEL; i++) {
+            if (!CommonUtils.isEnabled()) continue;
             result[i] = new CrateBlock(BlockBehaviour.Properties.of().strength(HARDNESS[i] - 0.5F, RESISTANCE[i] - 5.5F).mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD), i);
         }
         return result;

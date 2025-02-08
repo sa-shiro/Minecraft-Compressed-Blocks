@@ -22,44 +22,34 @@ public class CBBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
         for (Block block : Constants.BLOCKS) {
             String name = block.getDescriptionId().replace("block.compressedblocks.", "");
             if (name.startsWith("c0")) {
-                getOrCreateTagBuilder(CBTags.SINGLE).add(block);
-                getOrCreateTagBuilder(CBTags.C0).add(block);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.COMPRESSION_X_01).add(block);
             }
             if (name.startsWith("c1")) {
-                getOrCreateTagBuilder(CBTags.DOUBLE).add(block);
-                getOrCreateTagBuilder(CBTags.C1).add(block);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.COMPRESSION_X_02).add(block);
             }
             if (name.startsWith("c2")) {
-                getOrCreateTagBuilder(CBTags.TRIPLE).add(block);
-                getOrCreateTagBuilder(CBTags.C2).add(block);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.COMPRESSION_X_03).add(block);
             }
             if (name.startsWith("c3")) {
-                getOrCreateTagBuilder(CBTags.QUADRUPLE).add(block);
-                getOrCreateTagBuilder(CBTags.C3).add(block);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.COMPRESSION_X_04).add(block);
             }
             if (name.startsWith("c4")) {
-                getOrCreateTagBuilder(CBTags.QUINTUPLE).add(block);
-                getOrCreateTagBuilder(CBTags.C4).add(block);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.COMPRESSION_X_05).add(block);
             }
             if (name.startsWith("c5")) {
-                getOrCreateTagBuilder(CBTags.SEXTUPLE).add(block);
-                getOrCreateTagBuilder(CBTags.C5).add(block);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.COMPRESSION_X_06).add(block);
             }
             if (name.startsWith("c6")) {
-                getOrCreateTagBuilder(CBTags.SEPTUPLE).add(block);
-                getOrCreateTagBuilder(CBTags.C6).add(block);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.COMPRESSION_X_07).add(block);
             }
             if (name.startsWith("c7")) {
-                getOrCreateTagBuilder(CBTags.OCTUPLE).add(block);
-                getOrCreateTagBuilder(CBTags.C7).add(block);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.COMPRESSION_X_08).add(block);
             }
             if (name.startsWith("c8")) {
-                getOrCreateTagBuilder(CBTags.MEGA).add(block);
-                getOrCreateTagBuilder(CBTags.C8).add(block);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.COMPRESSION_X_09).add(block);
             }
             if (name.startsWith("c9")) {
-                getOrCreateTagBuilder(CBTags.GIGA).add(block);
-                getOrCreateTagBuilder(CBTags.C9).add(block);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.COMPRESSION_X_10).add(block);
             }
 
             if (Stream.of("dirt", "sand", "gravel", "clay", "snow").anyMatch(name::contains) && !name.contains("sandstone")) {
@@ -78,44 +68,34 @@ public class CBBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
             getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE).add(crate);
 
             if (name.startsWith("crated_")) {
-                getOrCreateTagBuilder(CBTags.SINGLE).add(crate);
-                getOrCreateTagBuilder(CBTags.SINGLE_CRATE).add(crate);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.CRATE_X_01).add(crate);
             }
             if (name.startsWith("double_crated_")) {
-                getOrCreateTagBuilder(CBTags.DOUBLE).add(crate);
-                getOrCreateTagBuilder(CBTags.DOUBLE_CRATE).add(crate);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.CRATE_X_02).add(crate);
             }
             if (name.startsWith("triple_crated_")) {
-                getOrCreateTagBuilder(CBTags.TRIPLE).add(crate);
-                getOrCreateTagBuilder(CBTags.TRIPLE_CRATE).add(crate);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.CRATE_X_03).add(crate);
             }
             if (name.startsWith("quadruple_crated_")) {
-                getOrCreateTagBuilder(CBTags.QUADRUPLE).add(crate);
-                getOrCreateTagBuilder(CBTags.QUADRUPLE_CRATE).add(crate);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.CRATE_X_04).add(crate);
             }
             if (name.startsWith("quintuple_crated_")) {
-                getOrCreateTagBuilder(CBTags.QUINTUPLE).add(crate);
-                getOrCreateTagBuilder(CBTags.QUINTUPLE_CRATE).add(crate);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.CRATE_X_05).add(crate);
             }
             if (name.startsWith("sextuple_crated_")) {
-                getOrCreateTagBuilder(CBTags.SEXTUPLE).add(crate);
-                getOrCreateTagBuilder(CBTags.SEXTUPLE_CRATE).add(crate);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.CRATE_X_06).add(crate);
             }
             if (name.startsWith("septuple_crated_")) {
-                getOrCreateTagBuilder(CBTags.SEPTUPLE).add(crate);
-                getOrCreateTagBuilder(CBTags.SEPTUPLE_CRATE).add(crate);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.CRATE_X_07).add(crate);
             }
             if (name.startsWith("octuple_crated_")) {
-                getOrCreateTagBuilder(CBTags.OCTUPLE).add(crate);
-                getOrCreateTagBuilder(CBTags.OCTUPLE_CRATE).add(crate);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.CRATE_X_08).add(crate);
             }
             if (name.startsWith("mega_crated_")) {
-                getOrCreateTagBuilder(CBTags.MEGA).add(crate);
-                getOrCreateTagBuilder(CBTags.MEGA_CRATE).add(crate);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.CRATE_X_09).add(crate);
             }
             if (name.startsWith("giga_crated_")) {
-                getOrCreateTagBuilder(CBTags.GIGA).add(crate);
-                getOrCreateTagBuilder(CBTags.GIGA_CRATE).add(crate);
+                getOrCreateTagBuilder(CBTags.CompressionBlockTags.CRATE_X_10).add(crate);
             }
         }
     }

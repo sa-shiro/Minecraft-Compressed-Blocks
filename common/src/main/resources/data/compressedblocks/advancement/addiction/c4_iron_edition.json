@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:c4_iron_block"
+    },
+    "title": "Iron Addiction: V",
+    "description": "§5Compress 9x Quadruple Compressed §2Iron Block§5 into Quintuple Compressed §2Iron Block",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c3_iron_edition",
+  "criteria": {
+    "get_c4_iron_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c4_iron_block"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c4_iron_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 25
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:c1_cobblestone"
+    },
+    "title": "Cobblestone Addiction: II",
+    "description": "§fCompress 9x Compressed §2Cobblestone§f into Double Compressed §2Cobblestone",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c0_cobblestone_edition",
+  "criteria": {
+    "get_c1_cobblestone_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c1_cobblestone"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c1_cobblestone_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 10
+  },
+  "sends_telemetry_event": true
+}

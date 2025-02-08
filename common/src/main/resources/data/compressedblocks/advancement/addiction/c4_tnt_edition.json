@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:c4_tnt"
+    },
+    "title": "TNT Addiction: V",
+    "description": "§5Compress 9x Quadruple Compressed §2TNT§5 into Quintuple Compressed §2TNT",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c3_tnt_edition",
+  "criteria": {
+    "get_c4_tnt_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c4_tnt"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c4_tnt_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 25
+  },
+  "sends_telemetry_event": true
+}

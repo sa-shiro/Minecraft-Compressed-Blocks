@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:c3_gold_block"
+    },
+    "title": "Gold Addiction: IV",
+    "description": "§fCompress 9x Triple Compressed §2Gold Block§f into Quadruple Compressed §2Gold Block",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c2_gold_edition",
+  "criteria": {
+    "get_c3_gold_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c3_gold_block"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c3_gold_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:c8_gold_block"
+    },
+    "title": "Gold Addiction: IX",
+    "description": "§5Compress 9x Octuple Compressed §2Gold Block§5 into Mega Compressed §2Gold Block",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c7_gold_edition",
+  "criteria": {
+    "get_c8_gold_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c8_gold_block"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c8_gold_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 45
+  },
+  "sends_telemetry_event": true
+}

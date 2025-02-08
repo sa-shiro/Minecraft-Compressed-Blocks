@@ -29,88 +29,68 @@ public class CBBlockTagsProvider extends BlockTagsProvider {
             tag(BlockTags.MINEABLE_WITH_AXE).add(block);
 
             if (name.startsWith("crated_")) {
-                tag(CBTags.SINGLE).add(block);
-                tag(CBTags.SINGLE_CRATE).add(block);
+                tag(CBTags.CompressionBlockTags.COMPRESSION_X_01).add(block);
             }
             if (name.startsWith("double_crated_")) {
-                tag(CBTags.DOUBLE).add(block);
-                tag(CBTags.DOUBLE_CRATE).add(block);
+                tag(CBTags.CompressionBlockTags.COMPRESSION_X_02).add(block);
             }
             if (name.startsWith("triple_crated_")) {
-                tag(CBTags.TRIPLE).add(block);
-                tag(CBTags.TRIPLE_CRATE).add(block);
+                tag(CBTags.CompressionBlockTags.COMPRESSION_X_03).add(block);
             }
             if (name.startsWith("quadruple_crated_")) {
-                tag(CBTags.QUADRUPLE).add(block);
-                tag(CBTags.QUADRUPLE_CRATE).add(block);
+                tag(CBTags.CompressionBlockTags.COMPRESSION_X_04).add(block);
             }
             if (name.startsWith("quintuple_crated_")) {
-                tag(CBTags.QUINTUPLE).add(block);
-                tag(CBTags.QUINTUPLE_CRATE).add(block);
+                tag(CBTags.CompressionBlockTags.COMPRESSION_X_05).add(block);
             }
             if (name.startsWith("sextuple_crated_")) {
-                tag(CBTags.SEXTUPLE).add(block);
-                tag(CBTags.SEXTUPLE_CRATE).add(block);
+                tag(CBTags.CompressionBlockTags.COMPRESSION_X_06).add(block);
             }
             if (name.startsWith("septuple_crated_")) {
-                tag(CBTags.SEPTUPLE).add(block);
-                tag(CBTags.SEPTUPLE_CRATE).add(block);
+                tag(CBTags.CompressionBlockTags.COMPRESSION_X_07).add(block);
             }
             if (name.startsWith("octuple_crated_")) {
-                tag(CBTags.OCTUPLE).add(block);
-                tag(CBTags.OCTUPLE_CRATE).add(block);
+                tag(CBTags.CompressionBlockTags.COMPRESSION_X_08).add(block);
             }
             if (name.startsWith("mega_crated_")) {
-                tag(CBTags.MEGA).add(block);
-                tag(CBTags.MEGA_CRATE).add(block);
+                tag(CBTags.CompressionBlockTags.COMPRESSION_X_09).add(block);
             }
             if (name.startsWith("giga_crated_")) {
-                tag(CBTags.GIGA).add(block);
-                tag(CBTags.GIGA_CRATE).add(block);
+                tag(CBTags.CompressionBlockTags.COMPRESSION_X_10).add(block);
             }
         }
         for (DeferredHolder<Block, ? extends Block> registryObject : CompressedBlocksNeoForge.BLOCKS.getEntries()) {
             Block block = registryObject.get();
             String name = block.getDescriptionId().replace("block.compressedblocks.", "");
             if (name.startsWith("c0")) {
-                tag(CBTags.SINGLE).add(block);
-                tag(CBTags.C0).add(block);
+                tag(CBTags.CompressionBlockTags.CRATE_X_01).add(block);
             }
             if (name.startsWith("c1")) {
-                tag(CBTags.DOUBLE).add(block);
-                tag(CBTags.C1).add(block);
+                tag(CBTags.CompressionBlockTags.CRATE_X_02).add(block);
             }
             if (name.startsWith("c2")) {
-                tag(CBTags.TRIPLE).add(block);
-                tag(CBTags.C2).add(block);
+                tag(CBTags.CompressionBlockTags.CRATE_X_03).add(block);
             }
             if (name.startsWith("c3")) {
-                tag(CBTags.QUADRUPLE).add(block);
-                tag(CBTags.C3).add(block);
+                tag(CBTags.CompressionBlockTags.CRATE_X_04).add(block);
             }
             if (name.startsWith("c4")) {
-                tag(CBTags.QUINTUPLE).add(block);
-                tag(CBTags.C4).add(block);
+                tag(CBTags.CompressionBlockTags.CRATE_X_05).add(block);
             }
             if (name.startsWith("c5")) {
-                tag(CBTags.SEXTUPLE).add(block);
-                tag(CBTags.C5).add(block);
+                tag(CBTags.CompressionBlockTags.CRATE_X_06).add(block);
             }
             if (name.startsWith("c6")) {
-                tag(CBTags.SEPTUPLE).add(block);
-                tag(CBTags.C6).add(block);
+                tag(CBTags.CompressionBlockTags.CRATE_X_07).add(block);
             }
             if (name.startsWith("c7")) {
-                tag(CBTags.OCTUPLE).add(block);
-                tag(CBTags.C7).add(block);
+                tag(CBTags.CompressionBlockTags.CRATE_X_08).add(block);
             }
             if (name.startsWith("c8")) {
-                tag(CBTags.MEGA).add(block);
-                tag(CBTags.C8).add(block);
+                tag(CBTags.CompressionBlockTags.CRATE_X_09).add(block);
             }
             if (name.startsWith("c9")) {
-                tag(CBTags.GIGA).add(block);
-                tag(CBTags.C9).add(block);
+                tag(CBTags.CompressionBlockTags.CRATE_X_10).add(block);
             }
 
             //noinspection StatementWithEmptyBody

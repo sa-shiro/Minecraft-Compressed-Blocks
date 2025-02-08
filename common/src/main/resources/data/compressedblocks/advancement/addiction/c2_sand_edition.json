@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:c2_sand"
+    },
+    "title": "Sand Addiction: III",
+    "description": "§fCompress 9x Double Compressed §2Sand§f into Triple Compressed §2Sand",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c1_sand_edition",
+  "criteria": {
+    "get_c2_sand_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c2_sand"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c2_sand_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 15
+  },
+  "sends_telemetry_event": true
+}

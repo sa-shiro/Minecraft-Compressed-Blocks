@@ -13,9 +13,9 @@ import java.util.List;
 public class CBBlock extends Block {
     private final Compression compressor = new Compression();
 
-    public CBBlock(Properties properties, int compressionLevel, boolean isLesser) {
+    public CBBlock(Properties properties, int compressionLevel, boolean hasSmallerCompression) {
         super(properties);
-        compressor.setCompressionLevel(compressionLevel, isLesser);
+        compressor.setCompressionLevel(compressionLevel, hasSmallerCompression);
     }
 
     @Override

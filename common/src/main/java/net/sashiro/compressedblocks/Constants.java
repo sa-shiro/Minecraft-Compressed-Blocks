@@ -25,4 +25,6 @@ public class Constants {
     public static final String c9 = "giga_crated_";
     public static ArrayList<Block> BLOCKS = new ArrayList<>();
     public static ArrayList<Block> CRATES = new ArrayList<>();
+    public static int MAX_COMPRESSION_LEVEL = 10;
+    public static int MAX_CRATE_COMPRESSION_LEVEL = 10;
 }

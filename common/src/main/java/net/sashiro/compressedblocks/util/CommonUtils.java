@@ -277,4 +277,16 @@ public class CommonUtils {
         }
         return properties;
     }
+
+    // todo: add configurable blocks
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
+    public static boolean isEnabled() {
+        return true;
+    }
+
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
+    public static boolean isEnabled(String blockName) {
+        // todo: implement config check
+        return true;
+    }
 }

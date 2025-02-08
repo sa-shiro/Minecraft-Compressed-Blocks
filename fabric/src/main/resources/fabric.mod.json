@@ -26,7 +26,7 @@
       "net.sashiro.compressedblocks.fabric.client.CompressedBlocksClient"
     ],
     "fabric-datagen": [
-      "net.sashiro.compressedblocks.fabric.data.FabricDataGenerator"
+      "net.sashiro.compressedblocks.fabric.data.CBFabricDataGenerator"
     ]
   },
   "depends": {

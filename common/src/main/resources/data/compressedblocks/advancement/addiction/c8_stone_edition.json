@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:c8_stone"
+    },
+    "title": "Stone Addiction: IX",
+    "description": "§5Compress 9x Octuple Compressed §2Stone into Mega Compressed §2Stone",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c7_stone_edition",
+  "criteria": {
+    "get_c8_stone_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c8_stone"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c8_stone_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 45
+  },
+  "sends_telemetry_event": true
+}

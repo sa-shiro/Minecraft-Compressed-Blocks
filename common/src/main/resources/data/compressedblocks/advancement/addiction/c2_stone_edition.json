@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:c2_stone"
+    },
+    "title": "Stone Addiction: III",
+    "description": "§fCompress 9x Double Compressed §2Stone§f into Triple Compressed §2Stone",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c1_stone_edition",
+  "criteria": {
+    "get_c2_stone_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c2_stone"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c2_stone_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 15
+  },
+  "sends_telemetry_event": true
+}

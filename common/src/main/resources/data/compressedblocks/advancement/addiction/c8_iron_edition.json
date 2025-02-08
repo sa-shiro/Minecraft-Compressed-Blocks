@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "compressedblocks:c8_iron_block"
+    },
+    "title": "Iron Addiction: IX",
+    "description": "§5Compress 9x Octuple Compressed §2Iron Block§5 into Mega Compressed §2Iron Block",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "compressedblocks:addiction/c7_iron_edition",
+  "criteria": {
+    "get_c8_iron_edition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "compressedblocks:c8_iron_block"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_c8_iron_edition"
+    ]
+  ],
+  "rewards": {
+    "experience": 45
+  },
+  "sends_telemetry_event": true
+}
