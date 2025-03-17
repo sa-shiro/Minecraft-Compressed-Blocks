@@ -9,7 +9,9 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.RegisterEvent;
@@ -50,15 +52,17 @@ public class CompressedBlocksNeoForge {
     public static final Supplier<CreativeModeTab> COMPRESSED_BLOCKS_TAB = CREATIVE_MODE_TABS.register("compressed_blocks", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .title(Component.literal("Compressed Blocks"))
-            .icon(() -> STONE[9].asItem().getDefaultInstance())
+            .icon(() -> STONE[0].asItem().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 for (DeferredHolder<Item, ? extends Item> item : ITEMS.getEntries()) {
                     output.accept(item.get());
                 }
             }).build());
 
-    public CompressedBlocksNeoForge(IEventBus modEventBus) {
+    public CompressedBlocksNeoForge(IEventBus modEventBus, ModContainer modContainer) {
         CompressedBlocks.init();
+
+        modContainer.registerConfig(ModConfig.Type.STARTUP, CBNeoForgeConfig.CONFIG_SPEC);
 
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);

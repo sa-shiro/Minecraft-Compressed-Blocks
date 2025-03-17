@@ -1,6 +1,7 @@
 package net.sashiro.compressedblocks.block;
 
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.sashiro.compressedblocks.platform.Services;
 import net.sashiro.compressedblocks.util.CommonUtils;
 
 import static net.sashiro.compressedblocks.Constants.*;
@@ -302,10 +303,10 @@ public class BlockList {
      * @return The list of blocks.
      */
     public static CBBlock[] createBlocks(String name, Float amplifier, boolean hasSmallerCompression) {
+        if (!Services.PLATFORM.isBlockEnabled(name)) return null;
         CBBlock[] result = new CBBlock[MAX_COMPRESSION_LEVEL];
 
         for (int i = 0; i < MAX_COMPRESSION_LEVEL; i++) {
-            if (!CommonUtils.isEnabled()) continue;
             float baseHardness = HARDNESS[i];
             float baseResistance = RESISTANCE[i];
 
@@ -337,9 +338,9 @@ public class BlockList {
      * @return The list of blocks.
      */
     public static CBBlock[] createGlassBlocks(String name, Float amplifier) {
+        if (!Services.PLATFORM.isBlockEnabled(name)) return null;
         CBBlock[] result = new CBBlock[MAX_COMPRESSION_LEVEL];
         for (int i = 0; i < MAX_COMPRESSION_LEVEL; i++) {
-            if (!CommonUtils.isEnabled()) continue;
             float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];
             float blockResistance = amplifier != null ? RESISTANCE[i] * amplifier : RESISTANCE[i];
 
@@ -366,10 +367,9 @@ public class BlockList {
      * @return The list of blocks.
      */
     public static CBRotationalBlock[] createRotationalBlocks(String name, Float amplifier) {
-        int maxCompressionLevel = 10;
-        CBRotationalBlock[] result = new CBRotationalBlock[maxCompressionLevel];
-        for (int i = 0; i < maxCompressionLevel; i++) {
-            if (!CommonUtils.isEnabled()) continue;
+        if (!Services.PLATFORM.isBlockEnabled(name)) return null;
+        CBRotationalBlock[] result = new CBRotationalBlock[MAX_COMPRESSION_LEVEL];
+        for (int i = 0; i < MAX_COMPRESSION_LEVEL; i++) {
             float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];
             float blockResistance = amplifier != null ? RESISTANCE[i] * amplifier : RESISTANCE[i];
             result[i] = new CBRotationalBlock(BlockBehaviour.Properties.of().strength(blockHardness, blockResistance), i, CommonUtils.createBlockId("c" + i + "_" + name));

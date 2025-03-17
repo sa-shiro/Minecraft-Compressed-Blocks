@@ -3,6 +3,7 @@ package net.sashiro.compressedblocks.block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.sashiro.compressedblocks.platform.Services;
 import net.sashiro.compressedblocks.util.CommonUtils;
 
 import static net.sashiro.compressedblocks.Constants.*;
@@ -185,6 +186,7 @@ public class CrateList {
     public static final CrateBlock[] SCULK_VEIN = createBlocks("SCULK_VEIN");
 
     private static CrateBlock[] createBlocks(String name) {
+        if (!Services.PLATFORM.isBlockEnabled(name)) return null;
         CrateBlock[] result = new CrateBlock[MAX_CRATE_COMPRESSION_LEVEL];
         for (int i = 0; i < MAX_CRATE_COMPRESSION_LEVEL; i++) {
             result[i] = new CrateBlock(BlockBehaviour.Properties.of().strength(HARDNESS[i] - 0.5F, RESISTANCE[i] - 5.5F).mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD), i, CommonUtils.createBlockId(CommonUtils.getCratePrefix(i) + name));

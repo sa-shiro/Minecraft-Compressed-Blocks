@@ -303,10 +303,4 @@ public class CommonUtils {
     public static ResourceKey<Item> createItemId(String name) {
         return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
     }
-
-    // todo: add configurable blocks
-    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
-    public static boolean isEnabled() {
-        return true;
-    }
 }
