@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.sashiro.compressedblocks.fabric.CBFabricConfig;
 import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.platform.services.IPlatformHelper;
 import net.sashiro.compressedblocks.util.CommonUtils;
@@ -50,5 +51,30 @@ public class FabricPlatformHelper implements IPlatformHelper {
             Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), new CrateItem(crateBlocks[i], properties));
             CRATES.add(crateBlocks[i]);
         }
+    }
+
+    @Override
+    public boolean areBlocksEnabled() {
+        return CBFabricConfig.CONFIG.CONFIG_BLOCKS_ENABLED.get();
+    }
+
+    @Override
+    public boolean areCratesEnabled() {
+        return CBFabricConfig.CONFIG.CONFIG_CRATES_ENABLED.get();
+    }
+
+    @Override
+    public int maxCompressionLevel() {
+        return CBFabricConfig.CONFIG.CONFIG_MAX_COMPRESSION_LEVEL.get();
+    }
+
+    @Override
+    public int maxCrateCompressionLevel() {
+        return CBFabricConfig.CONFIG.CONFIG_MAX_CRATE_COMPRESSION_LEVEL.get();
+    }
+
+    @Override
+    public boolean isBlockEnabled(String name) {
+        return CBFabricConfig.CONFIG.isBlockEnabled(name);
     }
 }

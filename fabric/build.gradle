@@ -10,6 +10,9 @@ dependencies {
     }
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+
+    // Forge Config API Port - Fabric
+    modApi "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:21.4.1"
 }
 
 loom {

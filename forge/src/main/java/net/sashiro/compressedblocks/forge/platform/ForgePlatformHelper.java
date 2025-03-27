@@ -51,4 +51,29 @@ public class ForgePlatformHelper implements IPlatformHelper {
             Constants.CRATES.add(crateBlocks[i]);
         }
     }
+
+    @Override
+    public boolean areBlocksEnabled() {
+        return false;
+    }
+
+    @Override
+    public boolean areCratesEnabled() {
+        return false;
+    }
+
+    @Override
+    public int maxCompressionLevel() {
+        return 0;
+    }
+
+    @Override
+    public int maxCrateCompressionLevel() {
+        return 0;
+    }
+
+    @Override
+    public boolean isBlockEnabled(String name) {
+        return false;
+    }
 }
