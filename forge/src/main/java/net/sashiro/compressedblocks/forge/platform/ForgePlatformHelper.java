@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
 import net.sashiro.compressedblocks.Constants;
+import net.sashiro.compressedblocks.forge.CBForgeConfig;
 import net.sashiro.compressedblocks.forge.CompressedBlocksForge;
 import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.platform.services.IPlatformHelper;
@@ -54,26 +55,26 @@ public class ForgePlatformHelper implements IPlatformHelper {
 
     @Override
     public boolean areBlocksEnabled() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean areCratesEnabled() {
-        return false;
+        return true;
     }
 
     @Override
     public int maxCompressionLevel() {
-        return 0;
+        return 10;
     }
 
     @Override
     public int maxCrateCompressionLevel() {
-        return 0;
+        return 10;
     }
 
     @Override
     public boolean isBlockEnabled(String name) {
-        return false;
+        return true;
     }
 }
