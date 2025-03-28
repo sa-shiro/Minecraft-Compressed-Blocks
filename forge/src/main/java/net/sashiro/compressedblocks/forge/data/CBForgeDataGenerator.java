@@ -17,7 +17,7 @@ import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class DataGen {
+public class CBForgeDataGenerator {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent e) {
         DataGenerator gen = e.getGenerator();

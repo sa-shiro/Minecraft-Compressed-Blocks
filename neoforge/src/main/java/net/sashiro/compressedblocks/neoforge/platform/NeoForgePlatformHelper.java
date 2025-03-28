@@ -7,6 +7,7 @@ import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.item.CrateItem;
+import net.sashiro.compressedblocks.neoforge.CBNeoForgeConfig;
 import net.sashiro.compressedblocks.neoforge.CompressedBlocksNeoForge;
 import net.sashiro.compressedblocks.platform.services.IPlatformHelper;
 import net.sashiro.compressedblocks.util.CommonUtils;
@@ -50,5 +51,30 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
             CompressedBlocksNeoForge.CRATE_ITEMS.register(prefixedName.toLowerCase(), () -> new CrateItem(crateBlocks[finalI], properties));
             Constants.CRATES.add(crateBlocks[i]);
         }
+    }
+
+    @Override
+    public boolean areBlocksEnabled() {
+        return CBNeoForgeConfig.CONFIG.CONFIG_BLOCKS_ENABLED.get();
+    }
+
+    @Override
+    public boolean areCratesEnabled() {
+        return CBNeoForgeConfig.CONFIG.CONFIG_CRATES_ENABLED.get();
+    }
+
+    @Override
+    public int maxCompressionLevel() {
+        return CBNeoForgeConfig.CONFIG.CONFIG_MAX_COMPRESSION_LEVEL.get();
+    }
+
+    @Override
+    public int maxCrateCompressionLevel() {
+        return CBNeoForgeConfig.CONFIG.CONFIG_MAX_CRATE_COMPRESSION_LEVEL.get();
+    }
+
+    @Override
+    public boolean isBlockEnabled(String name) {
+        return CBNeoForgeConfig.CONFIG.isBlockEnabled(name);
     }
 }

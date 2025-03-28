@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -51,10 +52,12 @@ public class CompressedBlocksForge {
                     output.accept(item.get());
                 }
             }).build());
-    public static final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-    public CompressedBlocksForge() {
+    public CompressedBlocksForge(FMLJavaModLoadingContext context) {
+        IEventBus eventBus = context.getModEventBus();
         CompressedBlocks.init();
+
+        context.registerConfig(ModConfig.Type.COMMON, CBForgeConfig.CONFIG_SPEC);
 
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);

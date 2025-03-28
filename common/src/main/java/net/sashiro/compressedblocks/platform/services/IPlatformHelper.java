@@ -51,4 +51,40 @@ public interface IPlatformHelper {
      * @param crateBlocks the Crate Blocks to be registered
      */
     void registerCrate(String name, Block... crateBlocks);
+
+    /**
+     * Check if compressed blocks are enabled
+     *
+     * @return True if compressed blocks are enabled, false otherwise.
+     */
+    boolean areBlocksEnabled();
+
+    /**
+     * Check if crates are enabled
+     *
+     * @return True if crates are enabled, false otherwise.
+     */
+    boolean areCratesEnabled();
+
+    /**
+     * Get the maximum compression level for blocks
+     *
+     * @return The maximum compression level for blocks
+     */
+    int maxCompressionLevel();
+
+    /**
+     * Get the maximum compression level for crates
+     *
+     * @return The maximum compression level for crates
+     */
+    int maxCrateCompressionLevel();
+
+    /**
+     * Check if a block is enabled
+     *
+     * @param name The name of the block to check
+     * @return True if the block is enabled, false otherwise
+     */
+    boolean isBlockEnabled(String name);
 }

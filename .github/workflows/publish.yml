@@ -86,36 +86,36 @@ jobs:
             fabric/build/libs/
 
       # Not using a matrix here because files should be uploaded in a specific order (forge -> neoforge -> fabric)
-      #- name: "Publish FORGE"
-      #  if: ${{ runner.os == 'Windows' }}
-      #  uses: Kir-Antipov/mc-publish@v3.3
-      #  with:
-      #    modrinth-id: ${{ env.modrinth_id }}
-      #    modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-      #    modrinth-featured: true
-      #    modrinth-unfeature-mode: intersection
+      - name: "Publish FORGE"
+        if: ${{ runner.os == 'Windows' }}
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: ${{ env.modrinth_id }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          modrinth-featured: true
+          modrinth-unfeature-mode: intersection
 
-      #    curseforge-id: ${{ env.curseforge_id }}
-      #    curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          curseforge-id: ${{ env.curseforge_id }}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
-      #    files: |
-      #      forge/build/libs/!(*-@(dev|sources|javadoc)).jar
-      #      forge/build/libs/*-@(dev|sources|javadoc).jar
+          files: |
+            forge/build/libs/!(*-@(dev|sources|javadoc)).jar
+            forge/build/libs/*-@(dev|sources|javadoc).jar
 
-      #    name: "v${{ env.version }} (${{ env.minecraft_version }}) FORGE"
-      #    version: "${{ env.version }}"
-      #    version-type: "${{ env.version_type }}"
-      #    changelog-file: changelog.md
+          name: "v${{ env.version }} (${{ env.minecraft_version }}) FORGE"
+          version: "${{ env.version }}"
+          version-type: "${{ env.version_type }}"
+          changelog-file: changelog.md
 
-      #    loaders: |
-      #      forge
-      #    game-versions: ${{ env.minecraft_version_range }}
+          loaders: |
+            forge
+          game-versions: ${{ env.minecraft_version_range }}
 
-      #    java: ${{ matrix.java }}
+          java: ${{ matrix.java }}
 
-      #    retry-attempts: 2
-      #    retry-delay: 10000
-      #    fail-mode: warn
+          retry-attempts: 2
+          retry-delay: 10000
+          fail-mode: warn
 
       - name: "Publish NEOFORGE"
         if: ${{ runner.os == 'Windows' }}
@@ -172,6 +172,9 @@ jobs:
           loaders: |
             fabric
           game-versions: ${{ env.minecraft_version_range }}
+
+          dependencies: |
+            forgeconfigapiport(required){modrinth:ohNO6lps}{curseforge:547434}
 
           java: ${{ matrix.java }}
 

@@ -34,13 +34,13 @@ public class CBRecipeProvider extends RecipeProvider {
     private void makeShapedRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String fileName) {
         CBBlock compressedBlock = getCbBlock(result, ingredient);
 
-        if (compressedBlock != null && compressedBlock.getCompressor().isLesser()) {
+        if (compressedBlock != null && compressedBlock.getCompressor().hasSmallerCompression()) {
             ShapedRecipeBuilder.shaped(recipeCategory, result) // result
                     .define('#', ingredient) // ingredient
                     .pattern("##")
                     .pattern("##")
                     .unlockedBy("has_item", has(ingredient.asItem()))
-                    .save(exporter, ResourceLocation.m_339182_("compressedblocks", "shaped_lesser_" + fileName));
+                    .save(exporter, ResourceLocation.fromNamespaceAndPath("compressedblocks", "shaped_lesser_" + fileName));
 
         } else {
             ShapedRecipeBuilder.shaped(recipeCategory, result) // result
@@ -49,24 +49,24 @@ public class CBRecipeProvider extends RecipeProvider {
                     .pattern("###")
                     .pattern("###")
                     .unlockedBy("has_item", has(ingredient.asItem()))
-                    .save(exporter, ResourceLocation.m_339182_("compressedblocks", "shaped_" + fileName));
+                    .save(exporter, ResourceLocation.fromNamespaceAndPath("compressedblocks", "shaped_" + fileName));
         }
     }
 
     private void makeShapelessRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String recipeName) {
         CBBlock compressedBlock = getCbBlock(result, ingredient);
 
-        if (compressedBlock != null && compressedBlock.getCompressor().isLesser()) {
+        if (compressedBlock != null && compressedBlock.getCompressor().hasSmallerCompression()) {
             ShapelessRecipeBuilder.shapeless(recipeCategory, result, 4)
                     .requires(ingredient)
                     .unlockedBy("has_item", has(ingredient.asItem()))
-                    .save(exporter, ResourceLocation.m_339182_("compressedblocks", "shapeless_lesser_" + recipeName));
+                    .save(exporter, ResourceLocation.fromNamespaceAndPath("compressedblocks", "shapeless_lesser_" + recipeName));
 
         } else {
             ShapelessRecipeBuilder.shapeless(recipeCategory, result, 9)
                     .requires(ingredient)
                     .unlockedBy("has_item", has(ingredient.asItem()))
-                    .save(exporter, ResourceLocation.m_339182_("compressedblocks", "shapeless_" + recipeName));
+                    .save(exporter, ResourceLocation.fromNamespaceAndPath("compressedblocks", "shapeless_" + recipeName));
         }
     }
 

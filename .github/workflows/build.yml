@@ -20,7 +20,7 @@ jobs:
       matrix:
         java: [ 21 ]
         os: [ ubuntu-latest, windows-latest ]
-        datagen: [ fabric, neoforge ]
+        datagen: [ fabric, neoforge, forge ]
     name: "${{ matrix.datagen }} (Java ${{ matrix.java }} on ${{ matrix.os }})"
     runs-on: ${{ matrix.os }}
     steps:
@@ -54,28 +54,35 @@ jobs:
       - name: "Run gradle task: (${{ matrix.datagen }}) -> datagen (Linux)"
         if: ${{ runner.os != 'Windows' }}
         continue-on-error: true
+        # "forge" replaced with "null" as the datagen task seems to not exist
         run: |
-          if [[ "${{ matrix.datagen }}" == "forge" ]]; then
+          if [[ "${{ matrix.datagen }}" == "null" ]]; then 
             ./gradlew :${{ matrix.datagen }}:Data
           elif [[ "${{ matrix.datagen }}" == "fabric" ]]; then
             ./gradlew :${{ matrix.datagen }}:runDatagen
-          else
+          elif [[ "${{ matrix.datagen }}" == "neoforge" ]]; then
             ./gradlew :${{ matrix.datagen }}:runData
+          else
+            echo "Unknown datagen task: ${{ matrix.datagen }}"
           fi
 
       - name: "Run gradle task: (${{ matrix.datagen }}) -> datagen (Windows)"
         if: ${{ runner.os == 'Windows' }}
         shell: pwsh
         continue-on-error: true
+        # "forge" replaced with "null" as the datagen task seems to not exist
         run: |
-          if ("${{ matrix.datagen }}" -eq "forge") {
+          if ("${{ matrix.datagen }}" -eq "null") {
             ./gradlew :${{ matrix.datagen }}:Data
           }
           elseif ("${{ matrix.datagen }}" -eq "fabric") {
             ./gradlew :${{ matrix.datagen }}:runDatagen
           }
-          else {
+          elseif ("${{ matrix.datagen }}" -eq "neoforge") {
             ./gradlew :${{ matrix.datagen }}:runData
+          }
+          else {
+            echo "Unknown datagen task: ${{ matrix.datagen }}"
           }
 
       - name: "Build project"

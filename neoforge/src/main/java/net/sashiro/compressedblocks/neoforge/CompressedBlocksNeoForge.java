@@ -9,7 +9,9 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.RegisterEvent;
@@ -57,8 +59,10 @@ public class CompressedBlocksNeoForge {
                 }
             }).build());
 
-    public CompressedBlocksNeoForge(IEventBus modEventBus) {
+    public CompressedBlocksNeoForge(IEventBus modEventBus, ModContainer modContainer) {
         CompressedBlocks.init();
+
+        modContainer.registerConfig(ModConfig.Type.STARTUP, CBNeoForgeConfig.CONFIG_SPEC);
 
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);

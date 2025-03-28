@@ -1,8 +1,8 @@
-# v1.7.0 [ 1.21 ]
+# v1.7.2 [ 1.21.1 ]
 
 ## General
 
-- update to 1.21
-- temporarily removed `FORGE`
-
+- updated to 1.21.1
+- added configuration
+- added FORGE support
 ---
