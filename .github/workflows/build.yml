@@ -90,7 +90,7 @@ jobs:
 
       - name: "Capture build artifacts"
         if: ${{ runner.os == 'Windows' }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           #name: Artifacts-${{ runner.os }}-${{ matrix.loader }}
           name: Artifacts-${{ runner.os }}
