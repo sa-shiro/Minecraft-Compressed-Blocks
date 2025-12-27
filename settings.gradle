@@ -48,4 +48,6 @@ rootProject.name = 'Compressed-Blocks'
 include("common")
 include("fabric")
 include("neoforge")
-include("forge")
+// Forge module has been permanently removed from this project as of [27.12.2025].
+// It will not be included in future builds.
+// include("forge")

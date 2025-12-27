@@ -47,3 +47,34 @@ tasks.named('sourcesJar', Jar) {
 // IntelliJ no longer downloads javadocs and sources by default.
 // This tells Gradle to force IDEA to do it.
 idea.module { downloadJavadoc = downloadSources = true }
+
+def ssdCacheBase = new File(gradle.gradleUserHomeDir, "build-cache")
+
+if (ssdCacheBase.exists()) {
+    allprojects { project ->
+        if (project.name != 'buildSrc') {
+            def rootName = project.rootProject.name
+            def moduleName = project.name
+
+            project.buildDir = new File(ssdCacheBase, "${rootName}/${moduleName}/build")
+
+            project.tasks.register("copyLibsBack") {
+                doLast {
+                    def moduleLibs = new File(project.buildDir, "libs")
+                    if (moduleLibs.exists()) {
+                        def targetDir = new File(project.rootProject.projectDir, "artifacts/${moduleName}")
+                        targetDir.mkdirs()
+                        moduleLibs.listFiles()?.findAll { it.name.endsWith(".jar") }?.each { jar ->
+                            project.copy { from jar; into targetDir }
+                        }
+                    }
+                }
+            }
+
+            project.tasks.matching { it.name == "build" || it.name.toLowerCase().contains("assemble") }
+                    .configureEach { t -> t.finalizedBy(project.tasks.named("copyLibsBack")) }
+        }
+    }
+} else {
+    println "[multiloader-loader] SSD cache folder not found, skipping buildDir relocation and copy tasks."
+}
