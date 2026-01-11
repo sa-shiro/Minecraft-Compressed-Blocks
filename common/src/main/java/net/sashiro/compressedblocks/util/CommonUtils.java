@@ -1,8 +1,8 @@
 package net.sashiro.compressedblocks.util;
 
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
@@ -77,9 +77,9 @@ public class CommonUtils {
      * Utility function to get the overlay
      *
      * @param blockName Name of the Compressed Block.
-     * @return Overlay {@link ResourceLocation}.
+     * @return Overlay {@link Identifier}.
      */
-    public static ResourceLocation getOverlay(String blockName) {
+    public static Identifier getOverlay(String blockName) {
         blockName = blockName.replace("block.compressedblocks.", "");
         String overlay = "";
         String[] crateLevels = {
@@ -104,18 +104,18 @@ public class CommonUtils {
             }
         } else overlay = "null";
 
-        return ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + overlay);
+        return Identifier.fromNamespaceAndPath("compressedblocks", "block/" + overlay);
     }
 
     /**
-     * Utility function to get the ResourceLocation of the Item
+     * Utility function to get the Identifier of the Item
      *
      * @param mc_name Name of the Item.
-     * @return {@link ResourceLocation} of the Item.
+     * @return {@link Identifier} of the Item.
      */
     @NotNull
-    public static ResourceLocation getResourceLocation(String mc_name) {
-        ResourceLocation location = ResourceLocation.withDefaultNamespace("item/" + mc_name);
+    public static Identifier getIdentifier(String mc_name) {
+        Identifier location = Identifier.withDefaultNamespace("item/" + mc_name);
 
         if (mc_name.contains("rail")
                 || mc_name.contains("torch")
@@ -141,15 +141,15 @@ public class CommonUtils {
                 || mc_name.contains("vine")
                 || mc_name.contains("lichen")
         )
-            location = ResourceLocation.withDefaultNamespace("block/" + mc_name);
-        if (mc_name.contains("sunflower")) location = ResourceLocation.withDefaultNamespace("block/sunflower_front");
-        if (mc_name.contains("lilac")) location = ResourceLocation.withDefaultNamespace("block/lilac_top");
-        if (mc_name.contains("rose_bush")) location = ResourceLocation.withDefaultNamespace("block/rose_bush_top");
-        if (mc_name.contains("peony")) location = ResourceLocation.withDefaultNamespace("block/peony_top");
+            location = Identifier.withDefaultNamespace("block/" + mc_name);
+        if (mc_name.contains("sunflower")) location = Identifier.withDefaultNamespace("block/sunflower_front");
+        if (mc_name.contains("lilac")) location = Identifier.withDefaultNamespace("block/lilac_top");
+        if (mc_name.contains("rose_bush")) location = Identifier.withDefaultNamespace("block/rose_bush_top");
+        if (mc_name.contains("peony")) location = Identifier.withDefaultNamespace("block/peony_top");
         if (mc_name.contains("carpet"))
-            location = ResourceLocation.withDefaultNamespace("block/" + mc_name.replace("carpet", "wool"));
-        if (mc_name.contains("scute")) location = ResourceLocation.withDefaultNamespace("item/" + mc_name);
-        if (mc_name.contains("map")) location = ResourceLocation.fromNamespaceAndPath(MOD_ID, "item/" + "map");
+            location = Identifier.withDefaultNamespace("block/" + mc_name.replace("carpet", "wool"));
+        if (mc_name.contains("scute")) location = Identifier.withDefaultNamespace("item/" + mc_name);
+        if (mc_name.contains("map")) location = Identifier.fromNamespaceAndPath(MOD_ID, "item/" + "map");
         return location;
     }
 
@@ -177,13 +177,19 @@ public class CommonUtils {
     }
 
     /**
-     * Utility function to get the actual Minecraft {@link ResourceLocation} of the Block
+     * Resolves the underlying vanilla Minecraft block {@link Identifier}
+     * from a compressed block identifier string.
      *
-     * @param resourceLocation Name of the Block.
-     * @return {@link ResourceLocation} of the Block.
+     * <p>This method strips the compressed block prefix, removes compression
+     * suffixes, and normalizes special cases such as copper variants, magma,
+     * and snow blocks.</p>
+     *
+     * @param compressedBlockId the full identifier string of the compressed block
+     *                          (e.g. {@code block.compressedblocks.exposed_cut_copper})
+     * @return the resolved vanilla Minecraft block {@link Identifier}
      */
-    public static ResourceLocation getActualResourceLocation(String resourceLocation) {
-        String blockName = resourceLocation.replace("block.compressedblocks.", "");
+    public static Identifier resolveVanillaBlockId(String compressedBlockId) {
+        String blockName = compressedBlockId.replace("block.compressedblocks.", "");
         blockName = removeCompressionName(blockName);
 
         if (blockName.contains("cut")) {
@@ -201,7 +207,7 @@ public class CommonUtils {
         if (blockName.contains("magma_block")) blockName = "magma";
         if (blockName.contains("snow_block")) blockName = "snow";
 
-        return ResourceLocation.fromNamespaceAndPath("minecraft", "block/" + blockName);
+        return Identifier.fromNamespaceAndPath("minecraft", "block/" + blockName);
     }
 
     /**
@@ -291,7 +297,7 @@ public class CommonUtils {
      * @return {@link ResourceKey} of the Block.
      */
     public static ResourceKey<Block> createBlockId(String name) {
-        return ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
+        return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
     }
 
     /**
@@ -301,6 +307,6 @@ public class CommonUtils {
      * @return {@link ResourceKey} of the Item.
      */
     public static ResourceKey<Item> createItemId(String name) {
-        return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
+        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
     }
 }

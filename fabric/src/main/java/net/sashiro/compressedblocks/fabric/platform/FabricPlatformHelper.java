@@ -3,7 +3,7 @@ package net.sashiro.compressedblocks.fabric.platform;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -36,8 +36,8 @@ public class FabricPlatformHelper implements IPlatformHelper {
         for (int i = 0; i < blocks.length; i++) {
             String prefixedName = "c" + i + "_" + name;
             Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i).setId(CommonUtils.createItemId(prefixedName));
-            Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), blocks[i]);
-            Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), new BlockItem(blocks[i], properties));
+            Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), blocks[i]);
+            Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), new BlockItem(blocks[i], properties));
             BLOCKS.add(blocks[i]);
         }
     }
@@ -47,8 +47,8 @@ public class FabricPlatformHelper implements IPlatformHelper {
         for (int i = 0; i < crateBlocks.length; i++) {
             String prefixedName = CommonUtils.getCratePrefix(i) + name;
             Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i).setId(CommonUtils.createItemId(prefixedName));
-            Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), crateBlocks[i]);
-            Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), new CrateItem(crateBlocks[i], properties));
+            Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), crateBlocks[i]);
+            Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), new CrateItem(crateBlocks[i], properties));
             CRATES.add(crateBlocks[i]);
         }
     }

@@ -344,7 +344,7 @@ public class BlockList {
             float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];
             float blockResistance = amplifier != null ? RESISTANCE[i] * amplifier : RESISTANCE[i];
 
-            result[i] = new CBBlock(BlockBehaviour.Properties.of().noCollission().strength(blockHardness, blockResistance), i, false, CommonUtils.createBlockId("c" + i + "_" + name));
+            result[i] = new CBBlock(BlockBehaviour.Properties.of().noOcclusion().strength(blockHardness, blockResistance), i, false, CommonUtils.createBlockId("c" + i + "_" + name));
         }
         return result;
     }

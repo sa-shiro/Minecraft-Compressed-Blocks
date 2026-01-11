@@ -12,12 +12,12 @@ public class CBFabricDataGenerator implements DataGeneratorEntrypoint {
 
         // todo: fix data generation
         // current workflow: run Fabric Datagen (no models) -> Run Forge Datagen (models)
-        pack.addProvider(CBBlockTagsProvider::new);
-        pack.addProvider(CBItemTagsProvider::new);
+        pack.addProvider(CBTagsProviders.CBBlockTagsProvider::new);
+        pack.addProvider(CBTagsProviders.CBItemTagsProvider::new);
         pack.addProvider(CBLanguageProvider::new);
         pack.addProvider(CBLootTableProvider::new);
         // fixme: Model generator can no longer be run on the server side thus Datagen task will fail!
-        //pack.addProvider(CBModelProvider::new);
+        pack.addProvider(CBModelProvider::new);
         pack.addProvider(CBRecipeProvider::new);
     }
 }

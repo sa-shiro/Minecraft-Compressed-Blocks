@@ -4,9 +4,6 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -14,24 +11,18 @@ import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.sashiro.compressedblocks.util.Compression;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 @SuppressWarnings("NullableProblems")
 public class CrateBlock extends HorizontalDirectionalBlock {
     private final Compression compressor = new Compression();
-    private final String name;
-    public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 
     protected CrateBlock(Properties properties, int compressionLevel, ResourceKey<Block> name) {
         super(properties.setId(name));
         compressor.setCompressionLevel(compressionLevel);
         this.registerDefaultState(super.stateDefinition.any().setValue(FACING, Direction.NORTH));
-        this.name = name.location().getPath();
+        String name1 = name.identifier().getPath();
+        this.properties().overrideDescription(String.valueOf(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle())));
     }
 
     @Override
@@ -40,13 +31,13 @@ public class CrateBlock extends HorizontalDirectionalBlock {
     }
 
     @Override
-    public BlockState rotate(BlockState blockState, Rotation rotation) {
-        return super.rotate(blockState, rotation);
+    protected BlockState rotate(BlockState state, Rotation rot) {
+        return super.rotate(state, rot);
     }
 
     @Override
-    public BlockState mirror(BlockState blockState, Mirror mirror) {
-        return super.mirror(blockState, mirror);
+    protected BlockState mirror(BlockState state, Mirror mirror) {
+        return super.mirror(state, mirror);
     }
 
     @Override
@@ -54,15 +45,17 @@ public class CrateBlock extends HorizontalDirectionalBlock {
         blockStateBuilder.add(FACING);
     }
 
-    @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
-    @Override
-    public void appendHoverText(@NotNull ItemStack is, Item.@NotNull TooltipContext tc, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
-        super.appendHoverText(is, tc, lC, ttf);
-        lC.add(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle()));
+    /**
+     * Function to get the compressor of the block
+     *
+     * @return Compressor
+     */
+    public Compression getCompressor() {
+        return compressor;
     }
 }

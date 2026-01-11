@@ -31,14 +31,12 @@ import static net.sashiro.compressedblocks.block.CrateList.APPLE;
 @Mod(Constants.MOD_ID)
 public class CompressedBlocksNeoForge {
 
-    private static boolean finished = false;
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, MOD_ID);
     public static final DeferredRegister<Block> CRATE_BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, MOD_ID);
     public static final DeferredRegister<Item> CRATE_ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
     public static final Item.Properties PROPERTIES = new Item.Properties();
-
     public static final Supplier<CreativeModeTab> CRATES_TAB = CREATIVE_MODE_TABS.register("compressed_items", () -> CreativeModeTab.builder()
             .withTabsBefore(ResourceLocation.fromNamespaceAndPath(MOD_ID, "compressed_blocks"))
             .title(Component.literal("Crates"))
@@ -48,7 +46,6 @@ public class CompressedBlocksNeoForge {
                     output.accept(item.get());
                 }
             }).build());
-
     public static final Supplier<CreativeModeTab> COMPRESSED_BLOCKS_TAB = CREATIVE_MODE_TABS.register("compressed_blocks", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .title(Component.literal("Compressed Blocks"))
@@ -58,6 +55,7 @@ public class CompressedBlocksNeoForge {
                     output.accept(item.get());
                 }
             }).build());
+    private static boolean finished = false;
 
     public CompressedBlocksNeoForge(IEventBus modEventBus, ModContainer modContainer) {
         CompressedBlocks.init();
