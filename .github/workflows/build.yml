@@ -3,11 +3,6 @@
 name: Build
 
 on:
-  push:
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.txt'
-      - '**/update.json'
   pull_request:
     paths-ignore:
       - '**/*.md'
