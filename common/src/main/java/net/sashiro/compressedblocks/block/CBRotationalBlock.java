@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.sashiro.compressedblocks.util.Compression;
 import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 public class CBRotationalBlock extends RotatedPillarBlock {
     private final Compression compressor = new Compression();
@@ -17,7 +18,7 @@ public class CBRotationalBlock extends RotatedPillarBlock {
     public CBRotationalBlock(Properties properties, int compressionLevel, ResourceKey<Block> id) {
         super(properties.setId(id));
         compressor.setCompressionLevel(compressionLevel);
-        this.properties().overrideDescription(String.valueOf(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle())));
+        this.properties().overrideDescription(String.valueOf(Component.literal(compressor.getQuantity() + " Blocks").withStyle(compressor.getStyle())));
     }
 
     @Override
@@ -31,7 +32,7 @@ public class CBRotationalBlock extends RotatedPillarBlock {
     }
 
     @Override
-    public BlockState getStateForPlacement(@NotNull BlockPlaceContext blockPlaceContext) {
+    public @NonNull BlockState getStateForPlacement(@NotNull BlockPlaceContext blockPlaceContext) {
         return super.getStateForPlacement(blockPlaceContext);
     }
 

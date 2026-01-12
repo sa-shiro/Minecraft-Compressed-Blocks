@@ -28,7 +28,7 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
 
     @Override
     public boolean isDevelopmentEnvironment() {
-        return !FMLLoader.isProduction();
+        return !FMLLoader.getCurrent().isProduction();
     }
 
     @Override
@@ -44,14 +44,14 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
     }
 
     @Override
-    public void registerCrate(String name, Block... crateBlocks) {
-        for (int i = 0; i < crateBlocks.length; i++) {
+    public void registerCrate(String name, CrateItem... crateItems) {
+        for (int i = 0; i < crateItems.length; i++) {
             String prefixedName = CommonUtils.getCratePrefix(i) + name;
             Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i).setId(CommonUtils.createItemId(prefixedName));
             int finalI = i;
-            CompressedBlocksNeoForge.CRATE_BLOCKS.register(prefixedName.toLowerCase(), () -> crateBlocks[finalI]);
-            CompressedBlocksNeoForge.CRATE_ITEMS.register(prefixedName.toLowerCase(), () -> new CrateItem(crateBlocks[finalI], properties));
-            Constants.CRATES.add(crateBlocks[i]);
+            //CompressedBlocksNeoForge.CRATE_BLOCKS.register(prefixedName.toLowerCase(), () -> crateBlocks[finalI]);
+            CompressedBlocksNeoForge.CRATE_ITEMS.register(prefixedName.toLowerCase(), () -> new Item(properties));
+            Constants.CRATES.add(crateItems[i]);
         }
     }
 
@@ -71,12 +71,22 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
     }
 
     @Override
+    public float[] getHardnessArray() {
+        return new float[0];
+    }
+
+    @Override
+    public float[] getResistanceArray() {
+        return new float[0];
+    }
+
+    @Override
     public int maxCrateCompressionLevel() {
         return CBNeoForgeConfig.CONFIG.CONFIG_MAX_CRATE_COMPRESSION_LEVEL.get();
     }
 
     @Override
-    public boolean isBlockEnabled(String name) {
+    public boolean isCompressionEnabled(String name) {
         return CBNeoForgeConfig.CONFIG.isBlockEnabled(name);
     }
 }

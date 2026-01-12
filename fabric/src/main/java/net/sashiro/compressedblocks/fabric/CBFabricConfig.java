@@ -20,8 +20,13 @@ public class CBFabricConfig {
 
     public final ModConfigSpec.BooleanValue CONFIG_BLOCKS_ENABLED;
     public final ModConfigSpec.BooleanValue CONFIG_CRATES_ENABLED;
+
     public final ModConfigSpec.IntValue CONFIG_MAX_COMPRESSION_LEVEL;
     public final ModConfigSpec.IntValue CONFIG_MAX_CRATE_COMPRESSION_LEVEL;
+
+    public final ModConfigSpec.ConfigValue<float[]> CONFIG_HARDNESS_LEVELS;
+    public final ModConfigSpec.ConfigValue<float[]> CONFIG_RESISTANCE_LEVELS;
+
     public ArrayList<ModConfigSpec.BooleanValue> ENABLED_BLOCKS = new ArrayList<>();
     public ArrayList<ModConfigSpec.BooleanValue> ENABLED_CRATES = new ArrayList<>();
 
@@ -54,6 +59,10 @@ public class CBFabricConfig {
         CONFIG_MAX_COMPRESSION_LEVEL = builder.defineInRange("maxCompressionLevel", 10, 1, 10);
         builder.comment("Maximum compression level for crates");
         CONFIG_MAX_CRATE_COMPRESSION_LEVEL = builder.defineInRange("maxCrateCompressionLevel", 10, 1, 10);
+        builder.comment("Hardness levels for each compression level (0-9):");
+        CONFIG_HARDNESS_LEVELS = builder.define("HARDNESS_LEVELS", new float[]{5.0F, 6.5F, 8.5F, 12.5F, 15.0F, 20.5F, 25.5F, 30.5F, 40.0F, 50.0F});
+        builder.comment("Resistance levels for each compression level (0-9):");
+        CONFIG_RESISTANCE_LEVELS = builder.define("RESISTANCE_LEVELS", new float[]{35.5F, 75.0F, 150.0F, 300.0F, 600.0F, 800.0F, 1250.0F, 2000.0F, 5000.0F, 7500.0F});
 
         builder.comment("Enabled blocks:");
         ENABLED_BLOCKS.add(builder.define("DIRT", true));

@@ -43,13 +43,11 @@ public class FabricPlatformHelper implements IPlatformHelper {
     }
 
     @Override
-    public void registerCrate(String name, Block... crateBlocks) {
-        for (int i = 0; i < crateBlocks.length; i++) {
+    public void registerCrate(String name, CrateItem... crateItems) {
+        for (int i = 0; i < crateItems.length; i++) {
             String prefixedName = CommonUtils.getCratePrefix(i) + name;
-            Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i).setId(CommonUtils.createItemId(prefixedName));
-            Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), crateBlocks[i]);
-            Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), new CrateItem(crateBlocks[i], properties));
-            CRATES.add(crateBlocks[i]);
+            Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, prefixedName.toLowerCase()), crateItems[i]);
+            CRATES.add(crateItems[i]);
         }
     }
 
@@ -69,12 +67,23 @@ public class FabricPlatformHelper implements IPlatformHelper {
     }
 
     @Override
+    public float[] getHardnessArray() {
+        return CBFabricConfig.CONFIG.CONFIG_HARDNESS_LEVELS.get();
+    }
+
+    @Override
+    public float[] getResistanceArray() {
+        return CBFabricConfig.CONFIG.CONFIG_RESISTANCE_LEVELS.get();
+    }
+
+
+    @Override
     public int maxCrateCompressionLevel() {
         return CBFabricConfig.CONFIG.CONFIG_MAX_CRATE_COMPRESSION_LEVEL.get();
     }
 
     @Override
-    public boolean isBlockEnabled(String name) {
+    public boolean isCompressionEnabled(String name) {
         return CBFabricConfig.CONFIG.isBlockEnabled(name);
     }
 }

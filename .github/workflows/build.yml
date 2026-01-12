@@ -25,9 +25,6 @@ jobs:
       matrix:
         java: [ 21 ]
         os: [ ubuntu-latest, windows-latest ]
-        # Matrix removed as data generation currently non-functional or only partially functional
-        #loader: [ fabric, neoforge, forge ]
-    #name: "${{ matrix.loader }} (Java ${{ matrix.java }} on ${{ matrix.os }})"
     name: "Build (Java ${{ matrix.java }} on ${{ matrix.os }})"
     runs-on: ${{ matrix.os }}
     steps:
@@ -58,32 +55,8 @@ jobs:
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
 
-      #- name: "Run gradle task: (${{ matrix.loader }}) -> loader (Linux)"
-      #  if: ${{ runner.os != 'Windows' }}
-      #  continue-on-error: true
-      #  run: |
-      #    if [[ "${{ matrix.loader }}" == "forge" ]]; then
-      #      ./gradlew :${{ matrix.loader }}:Data
-      #    elif [[ "${{ matrix.loader }}" == "fabric" ]]; then
-      #      ./gradlew :${{ matrix.loader }}:loader
-      #    else
-      #      ./gradlew :${{ matrix.loader }}:runData
-      #    fi
-
-      #- name: "Run gradle task: (${{ matrix.loader }}) -> loader (Windows)"
-      #  if: ${{ runner.os == 'Windows' }}
-      #  shell: pwsh
-      #  continue-on-error: true
-      #  run: |
-      #    if ("${{ matrix.loader }}" -eq "forge") {
-      #      ./gradlew :${{ matrix.loader }}:Data
-      #    }
-      #    elseif ("${{ matrix.loader }}" -eq "fabric") {
-      #      ./gradlew :${{ matrix.loader }}:loader
-      #    }
-      #    else {
-      #      ./gradlew :${{ matrix.loader }}:runData
-      #    }
+      - name: "Run gradle task: fabric:datagen"
+        run: ./gradlew :fabric:runDatagen
 
       - name: "Build project"
         run: ./gradlew build
@@ -92,9 +65,7 @@ jobs:
         if: ${{ runner.os == 'Windows' }}
         uses: actions/upload-artifact@v4
         with:
-          #name: Artifacts-${{ runner.os }}-${{ matrix.loader }}
           name: Artifacts-${{ runner.os }}
           path: |
-            forge/build/libs/
             neoforge/build/libs/
             fabric/build/libs/

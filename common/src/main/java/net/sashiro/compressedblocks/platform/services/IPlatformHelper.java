@@ -1,6 +1,7 @@
 package net.sashiro.compressedblocks.platform.services;
 
 import net.minecraft.world.level.block.Block;
+import net.sashiro.compressedblocks.item.CrateItem;
 
 @SuppressWarnings("unused")
 public interface IPlatformHelper {
@@ -50,7 +51,7 @@ public interface IPlatformHelper {
      * @param name        the registry name of the Block
      * @param crateBlocks the Crate Blocks to be registered
      */
-    void registerCrate(String name, Block... crateBlocks);
+    void registerCrate(String name, CrateItem... crateBlocks);
 
     /**
      * Check if compressed blocks are enabled
@@ -66,9 +67,39 @@ public interface IPlatformHelper {
      */
     boolean areCratesEnabled();
 
+    /**
+     * Get the maximum compression level supported
+     *
+     * @return The maximum compression level supported.
+     */
     int maxCompressionLevel();
 
+    /**
+     * Get the hardness values for each compression level
+     *
+     * @return An array of hardness values.
+     */
+    float[] getHardnessArray();
+
+    /**
+     * Get the resistance values for each compression level
+     *
+     * @return An array of resistance values.
+     */
+    float[] getResistanceArray();
+
+    /**
+     * Get the maximum crate compression level supported
+     *
+     * @return The maximum crate compression level supported.
+     */
     int maxCrateCompressionLevel();
 
-    boolean isBlockEnabled(String name);
+    /**
+     * Check if compression is enabled for a specific block/item name
+     *
+     * @param name The name of the block/item to check.
+     * @return True if compression is enabled for the block/item, false otherwise.
+     */
+    boolean isCompressionEnabled(String name);
 }

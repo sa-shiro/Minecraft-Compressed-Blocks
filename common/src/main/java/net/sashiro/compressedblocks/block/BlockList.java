@@ -303,7 +303,7 @@ public class BlockList {
      * @return The list of blocks.
      */
     public static CBBlock[] createBlocks(String name, Float amplifier, boolean hasSmallerCompression) {
-        if (!Services.PLATFORM.isBlockEnabled(name)) return null;
+        if (!Services.PLATFORM.isCompressionEnabled(name)) return null;
         CBBlock[] result = new CBBlock[MAX_COMPRESSION_LEVEL];
 
         for (int i = 0; i < MAX_COMPRESSION_LEVEL; i++) {
@@ -338,7 +338,7 @@ public class BlockList {
      * @return The list of blocks.
      */
     public static CBBlock[] createGlassBlocks(String name, Float amplifier) {
-        if (!Services.PLATFORM.isBlockEnabled(name)) return null;
+        if (!Services.PLATFORM.isCompressionEnabled(name)) return null;
         CBBlock[] result = new CBBlock[MAX_COMPRESSION_LEVEL];
         for (int i = 0; i < MAX_COMPRESSION_LEVEL; i++) {
             float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];
@@ -367,7 +367,7 @@ public class BlockList {
      * @return The list of blocks.
      */
     public static CBRotationalBlock[] createRotationalBlocks(String name, Float amplifier) {
-        if (!Services.PLATFORM.isBlockEnabled(name)) return null;
+        if (!Services.PLATFORM.isCompressionEnabled(name)) return null;
         CBRotationalBlock[] result = new CBRotationalBlock[MAX_COMPRESSION_LEVEL];
         for (int i = 0; i < MAX_COMPRESSION_LEVEL; i++) {
             float blockHardness = amplifier != null ? HARDNESS[i] * amplifier : HARDNESS[i];

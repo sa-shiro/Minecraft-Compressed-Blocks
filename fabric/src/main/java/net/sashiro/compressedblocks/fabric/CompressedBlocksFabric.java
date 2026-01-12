@@ -8,7 +8,7 @@ import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.platform.registry.CBBlockRegistry;
 import net.sashiro.compressedblocks.platform.registry.CBCrateRegistry;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"UnstableApiUsage"})
 public class CompressedBlocksFabric implements ModInitializer {
 
     @Override

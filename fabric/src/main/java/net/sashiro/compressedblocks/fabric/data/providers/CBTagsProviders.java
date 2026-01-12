@@ -9,6 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.fabric.data.CBTags;
+import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
@@ -21,7 +22,7 @@ public class CBTagsProviders {
         }
 
         @Override
-        protected void addTags(HolderLookup.Provider provider) {
+        protected void addTags(HolderLookup.@NonNull Provider provider) {
             for (Block block : Constants.BLOCKS) {
                 String name = block.getDescriptionId().replace("block.compressedblocks.", "");
 
@@ -66,50 +67,6 @@ public class CBTagsProviders {
                     addBlockTag(block, BlockTags.MINEABLE_WITH_PICKAXE);
                 }
             }
-
-            for (Block crate : Constants.CRATES) {
-                String name = crate.getDescriptionId().replace("block.compressedblocks.", "");
-                addBlockTag(crate, BlockTags.MINEABLE_WITH_AXE);
-
-                if (name.startsWith("crated_")) {
-                    addBlockTag(crate, CBTags.CompressionBlockTags.CRATE_X_01);
-
-                }
-                if (name.startsWith("double_crated_")) {
-                    addBlockTag(crate, CBTags.CompressionBlockTags.CRATE_X_02);
-
-                }
-                if (name.startsWith("triple_crated_")) {
-                    addBlockTag(crate, CBTags.CompressionBlockTags.CRATE_X_03);
-
-                }
-                if (name.startsWith("quadruple_crated_")) {
-                    addBlockTag(crate, CBTags.CompressionBlockTags.CRATE_X_04);
-
-                }
-                if (name.startsWith("quintuple_crated_")) {
-                    addBlockTag(crate, CBTags.CompressionBlockTags.CRATE_X_05);
-
-                }
-                if (name.startsWith("sextuple_crated_")) {
-                    addBlockTag(crate, CBTags.CompressionBlockTags.CRATE_X_06);
-
-                }
-                if (name.startsWith("septuple_crated_")) {
-                    addBlockTag(crate, CBTags.CompressionBlockTags.CRATE_X_07);
-
-                }
-                if (name.startsWith("octuple_crated_")) {
-                    addBlockTag(crate, CBTags.CompressionBlockTags.CRATE_X_08);
-
-                }
-                if (name.startsWith("mega_crated_")) {
-                    addBlockTag(crate, CBTags.CompressionBlockTags.CRATE_X_09);
-                }
-                if (name.startsWith("giga_crated_")) {
-                    addBlockTag(crate, CBTags.CompressionBlockTags.CRATE_X_10);
-                }
-            }
         }
 
         private void addBlockTag(Block block, TagKey<Block> tag) {
@@ -125,7 +82,7 @@ public class CBTagsProviders {
         }
 
         @Override
-        protected void addTags(HolderLookup.Provider provider) {
+        protected void addTags(HolderLookup.@NonNull Provider provider) {
             for (Block block : Constants.BLOCKS) {
                 String name = block.getDescriptionId().replace("block.compressedblocks.", "");
                 Item blockItem = block.asItem();
@@ -162,11 +119,11 @@ public class CBTagsProviders {
                 }
             }
 
-            for (Block crate : Constants.CRATES) {
-                String name = crate.getDescriptionId().replace("block.compressedblocks.", "");
-                Item crateItem = crate.asItem();
+            for (Item crateItem : Constants.CRATES) {
+                String name = crateItem.getDescriptionId().replace("item.compressedblocks.", "");
 
                 if (name.startsWith("crated_")) {
+                    addItemTag(crateItem, CBTags.CompressionItemTags.CRATE_X_01);
                     addItemTag(crateItem, CBTags.CompressionItemTags.CRATE_X_01);
                 }
                 if (name.startsWith("double_crated_")) {

@@ -11,7 +11,7 @@ public class CBBlock extends Block {
     public CBBlock(Properties properties, int compressionLevel, boolean hasSmallerCompression, ResourceKey<Block> id) {
         super(properties.setId(id));
         compressor.setCompressionLevel(compressionLevel, hasSmallerCompression);
-        this.properties().overrideDescription(String.valueOf(Component.literal(compressor.getBlockCount() + " Blocks").withStyle(compressor.getStyle())));
+        this.properties().overrideDescription(String.valueOf(Component.literal(compressor.getQuantity() + " Blocks").withStyle(compressor.getStyle())));
     }
 
     /**
