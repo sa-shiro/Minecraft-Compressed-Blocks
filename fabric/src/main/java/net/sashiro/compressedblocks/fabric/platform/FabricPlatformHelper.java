@@ -68,12 +68,14 @@ public class FabricPlatformHelper implements IPlatformHelper {
 
     @Override
     public float[] getHardnessArray() {
-        return CBFabricConfig.CONFIG.CONFIG_HARDNESS_LEVELS.get();
+        return null;
+        //return CBFabricConfig.CONFIG.CONFIG_HARDNESS_LEVELS.get();
     }
 
     @Override
     public float[] getResistanceArray() {
-        return CBFabricConfig.CONFIG.CONFIG_RESISTANCE_LEVELS.get();
+        return null;
+        //return CBFabricConfig.CONFIG.CONFIG_RESISTANCE_LEVELS.get();
     }
 
 

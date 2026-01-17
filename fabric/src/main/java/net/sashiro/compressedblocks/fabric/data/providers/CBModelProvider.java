@@ -34,7 +34,7 @@ public class CBModelProvider extends FabricModelProvider {
     public static final ModelTemplate TEMPLATE_BLOCK = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "block/template/template_block")), Optional.empty(), TextureSlot.ALL, OVERLAY_SLOT);
     public static final ModelTemplate TEMPLATE_CUBE_COLUMN = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "block/template/template_cube_column")), Optional.empty(), TextureSlot.END, TextureSlot.SIDE, TextureSlot.PARTICLE, OVERLAY_SLOT);
     public static final ModelTemplate TEMPLATE_CUBE_COLUMN_HORIZONTAL = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "block/template/template_cube_column_horizontal")), Optional.empty(), TextureSlot.END, TextureSlot.SIDE, TextureSlot.PARTICLE, OVERLAY_SLOT);
-    public static final ModelTemplate TEMPLATE_CRATE = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "item/template/template_crate")), Optional.empty(), TextureSlot.LAYER0, TextureSlot.LAYER1);
+    public static final ModelTemplate TEMPLATE_CRATE = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "item/template/template_item_crate_blockstyle")), Optional.empty(), TextureSlot.FRONT, TextureSlot.SIDE, TextureSlot.ALL, TextureSlot.PARTICLE);
 
 
     public CBModelProvider(FabricDataOutput output) {
@@ -100,6 +100,6 @@ public class CBModelProvider extends FabricModelProvider {
     }
 
     private Identifier createCrateItemModel(Item item, String vanillaItem, ModelTemplate modelTemplate, BiConsumer<Identifier, ModelInstance> modelOutput, int compressionLevel) {
-        return modelTemplate.create(ModelLocationUtils.getModelLocation(item), TextureMapping.layered(Identifier.fromNamespaceAndPath("compressedblocks", "item/crate" + compressionLevel), Identifier.fromNamespaceAndPath("minecraft", "item/" + vanillaItem)), modelOutput);
+        return modelTemplate.create(ModelLocationUtils.getModelLocation(item), TextureMapping.particle(Identifier.fromNamespaceAndPath("compressedblocks", "item/crate")).put(TextureSlot.ALL, Identifier.fromNamespaceAndPath("compressedblocks", "item/crate")).put(TextureSlot.FRONT, Identifier.fromNamespaceAndPath("minecraft", "item/" + vanillaItem)).put(TextureSlot.SIDE, Identifier.fromNamespaceAndPath("compressedblocks", "item/level_" + compressionLevel)), modelOutput);
     }
 }

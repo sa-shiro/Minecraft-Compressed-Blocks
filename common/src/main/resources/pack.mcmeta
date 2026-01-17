@@ -1,12 +1,8 @@
 {
   "pack": {
-    "description": {
-      "text": "${mod_name} resources"
-    },
-    "pack_format": 61,
-    "supported_formats": {
-      "min_inclusive": 1,
-      "max_inclusive": 999
-    }
+    "description": "${mod_name} resources",
+    "pack_format": 88,
+    "min_format": 88,
+    "max_format": 999
   }
 }

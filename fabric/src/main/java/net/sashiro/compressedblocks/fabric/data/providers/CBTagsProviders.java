@@ -40,21 +40,27 @@ public class CBTagsProviders {
                 }
                 if (name.startsWith("c4")) {
                     addBlockTag(block, CBTags.CompressionBlockTags.COMPRESSION_X_05);
+                    addBlockTag(block, BlockTags.WITHER_IMMUNE);
                 }
                 if (name.startsWith("c5")) {
                     addBlockTag(block, CBTags.CompressionBlockTags.COMPRESSION_X_06);
+                    addBlockTag(block, BlockTags.WITHER_IMMUNE);
                 }
                 if (name.startsWith("c6")) {
                     addBlockTag(block, CBTags.CompressionBlockTags.COMPRESSION_X_07);
+                    addBlockTag(block, BlockTags.WITHER_IMMUNE);
                 }
                 if (name.startsWith("c7")) {
                     addBlockTag(block, CBTags.CompressionBlockTags.COMPRESSION_X_08);
+                    addBlockTag(block, BlockTags.WITHER_IMMUNE);
                 }
                 if (name.startsWith("c8")) {
                     addBlockTag(block, CBTags.CompressionBlockTags.COMPRESSION_X_09);
+                    addBlockTag(block, BlockTags.WITHER_IMMUNE);
                 }
                 if (name.startsWith("c9")) {
                     addBlockTag(block, CBTags.CompressionBlockTags.COMPRESSION_X_10);
+                    addBlockTag(block, BlockTags.WITHER_IMMUNE);
                 }
 
                 if (Stream.of("dirt", "sand", "gravel", "clay", "snow").anyMatch(name::contains) && !name.contains("sandstone")) {
