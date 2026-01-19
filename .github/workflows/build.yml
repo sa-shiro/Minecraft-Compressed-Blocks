@@ -63,7 +63,7 @@ jobs:
 
       - name: "Capture build artifacts"
         if: ${{ runner.os == 'Windows' }}
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: Artifacts-${{ runner.os }}
           path: |
