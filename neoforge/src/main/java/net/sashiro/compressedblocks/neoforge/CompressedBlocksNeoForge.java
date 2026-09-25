@@ -39,7 +39,7 @@ public class CompressedBlocksNeoForge {
     public static final Supplier<CreativeModeTab> CRATES_TAB = CREATIVE_MODE_TABS.register("compressed_items", () -> CreativeModeTab.builder()
             .withTabsBefore(Identifier.fromNamespaceAndPath(MOD_ID, "compressed_blocks"))
             .title(Component.literal("Crates"))
-            .icon(() -> APPLE[0].asItem().getDefaultInstance())
+            .icon(() -> APPLE.asItem().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 for (DeferredHolder<Item, ? extends Item> item : CRATE_ITEMS.getEntries()) {
                     output.accept(item.get());
@@ -48,7 +48,7 @@ public class CompressedBlocksNeoForge {
     public static final Supplier<CreativeModeTab> COMPRESSED_BLOCKS_TAB = CREATIVE_MODE_TABS.register("compressed_blocks", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .title(Component.literal("Compressed Blocks"))
-            .icon(() -> STONE[0].asItem().getDefaultInstance())
+            .icon(() -> STONE.asItem().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 for (DeferredHolder<Item, ? extends Item> item : ITEMS.getEntries()) {
                     output.accept(item.get());

@@ -12,11 +12,13 @@ import net.sashiro.compressedblocks.util.Compression;
 import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.NonNull;
 
-public class CBRotationalBlock extends RotatedPillarBlock {
+public class CBRotationalBlock extends RotatedPillarBlock implements CompressedBlock {
     private final Compression compressor = new Compression();
+    private final String block_name;
 
     public CBRotationalBlock(Properties properties, int compressionLevel, ResourceKey<Block> id) {
         super(properties.setId(id));
+        this.block_name = id.identifier().getPath();
         compressor.setCompressionLevel(compressionLevel);
         this.properties().overrideDescription(String.valueOf(Component.literal(compressor.getQuantity() + " Blocks").withStyle(compressor.getStyle())));
     }
@@ -43,5 +45,10 @@ public class CBRotationalBlock extends RotatedPillarBlock {
      */
     public Compression getCompressor() {
         return compressor;
+    }
+
+    @Override
+    public String blockName() {
+        return this.block_name;
     }
 }

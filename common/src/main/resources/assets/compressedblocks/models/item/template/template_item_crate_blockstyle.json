@@ -3,8 +3,8 @@
   "textures": {
     "all": "#all",
     "particle": "#particle",
-    "front": "#front",
-    "side": "#side"
+    "item": "#item",
+    "number": "#number"
   },
   "elements": [
     {
@@ -23,8 +23,8 @@
       "from": [0, 0, 0],
       "to": [16, 16, 16],
       "faces": {
-        "north": { "texture": "#front" },
-        "east":  { "texture": "#side" }
+        "north": { "texture": "#item" },
+        "east":  { "texture": "#number" }
       }
     }
   ],

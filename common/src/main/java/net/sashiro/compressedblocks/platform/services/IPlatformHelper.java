@@ -1,6 +1,7 @@
 package net.sashiro.compressedblocks.platform.services;
 
 import net.minecraft.world.level.block.Block;
+import net.sashiro.compressedblocks.block.CrateBlock;
 import net.sashiro.compressedblocks.item.CrateItem;
 
 @SuppressWarnings("unused")
@@ -40,18 +41,16 @@ public interface IPlatformHelper {
     /**
      * Function for platform-dependent registration of Blocks
      *
-     * @param name   the registry name of the Block
-     * @param blocks the Blocks to be registered
+     * @param block the Block to be registered
      */
-    void registerBlock(String name, Block... blocks);
+    void registerBlock(Block block);
 
-    /**
-     * Function for platform-dependent registration of Crates
-     *
-     * @param name        the registry name of the Block
-     * @param crateBlocks the Crate Blocks to be registered
-     */
-    void registerCrate(String name, CrateItem... crateBlocks);
+
+    @Deprecated
+    void registerCrate(CrateItem... crateItems);
+
+    @Deprecated
+    void registerCrate(CrateBlock... crateBlocks);
 
     /**
      * Check if compressed blocks are enabled
@@ -101,5 +100,9 @@ public interface IPlatformHelper {
      * @param name The name of the block/item to check.
      * @return True if compression is enabled for the block/item, false otherwise.
      */
-    boolean isCompressionEnabled(String name);
+    boolean isBlockEnabled(String name);
+
+    float getHardnessResistanceMultiplier(String id);
+
+    int getMaxCompressionLevel(String id);
 }

@@ -125,11 +125,10 @@ public class CBTagsProviders {
                 }
             }
 
-            for (Item crateItem : Constants.CRATES) {
+            for (Item crateItem : Constants.CRATE_ITEMS) {
                 String name = crateItem.getDescriptionId().replace("item.compressedblocks.", "");
 
                 if (name.startsWith("crated_")) {
-                    addItemTag(crateItem, CBTags.CompressionItemTags.CRATE_X_01);
                     addItemTag(crateItem, CBTags.CompressionItemTags.CRATE_X_01);
                 }
                 if (name.startsWith("double_crated_")) {

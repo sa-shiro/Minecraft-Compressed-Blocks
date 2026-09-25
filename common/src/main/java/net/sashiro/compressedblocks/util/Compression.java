@@ -3,6 +3,9 @@ package net.sashiro.compressedblocks.util;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Style;
 
+import java.math.BigInteger;
+import java.util.Locale;
+
 /**
  * Holds display and metadata information derived from a compression level.
  * <p>
@@ -16,24 +19,6 @@ import net.minecraft.network.chat.Style;
  * This class does not assume a specific unit type.
  */
 public class Compression {
-
-    /**
-     * Human-readable quantities for standard compression (e.g. 9, 81, 729, ...)
-     */
-    private static final String[] STANDARD_QUANTITIES = {
-            "9", "81", "729", "6,561", "59,049",
-            "531,441", "4,782,969", "43,046,721",
-            "387,420,489", "3,486.784,401"
-    };
-
-    /**
-     * Human-readable quantities for smaller compression variants (e.g. 4, 16, 64, ...)
-     */
-    private static final String[] SMALLER_QUANTITIES = {
-            "4", "16", "64", "256", "1,024",
-            "4,096", "16,384", "65,536",
-            "262,144", "1,048,576"
-    };
 
     /**
      * Display styles associated with each compression level
@@ -70,6 +55,17 @@ public class Compression {
         setCompressionLevel(0, false);
     }
 
+    private static String formatQuantity(int level, boolean smallerCompression) {
+        BigInteger base = BigInteger.valueOf(smallerCompression ? 4 : 9);
+        BigInteger quantity = BigInteger.valueOf(1);
+
+        for (int i = 0; i <= level; i++) {
+            quantity = quantity.multiply(base);
+        }
+
+        return String.format(Locale.ROOT, "%,d", quantity);
+    }
+
     /**
      * Updates all derived values based on the given compression level.
      *
@@ -80,9 +76,7 @@ public class Compression {
         this.compressionLevel = clamp(level);
         this.smallerCompression = smallerCompression;
 
-        this.quantity = smallerCompression
-                ? SMALLER_QUANTITIES[this.compressionLevel]
-                : STANDARD_QUANTITIES[this.compressionLevel];
+        this.quantity = formatQuantity(this.compressionLevel, smallerCompression);
 
         this.style = Style.EMPTY.applyFormat(LEVEL_STYLES[this.compressionLevel]);
     }

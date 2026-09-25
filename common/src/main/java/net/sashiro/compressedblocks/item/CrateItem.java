@@ -8,11 +8,20 @@ import net.sashiro.compressedblocks.util.Compression;
 public class CrateItem extends Item {
     private final Compression compressor = new Compression();
     private final int compressionLevel;
+    private final String name;
 
-    public CrateItem(int compressionLevel, ResourceKey<Item> id) {
+    /**
+     * Constructor for the CrateItem class
+     *
+     * @param id                    ResourceKey<Item> of the item
+     * @param compressionLevel      Compression level of the item
+     * @param hasSmallerCompression Whether the item has smaller compression
+     */
+    public CrateItem(ResourceKey<Item> id, int compressionLevel, boolean hasSmallerCompression) {
         super(CommonUtils.setRarity(new Item.Properties().stacksTo(64).setId(id), compressionLevel));
-        compressor.setCompressionLevel(compressionLevel);
+        compressor.setCompressionLevel(compressionLevel, hasSmallerCompression);
         this.compressionLevel = compressionLevel;
+        this.name = id.identifier().getPath();
     }
 
     /**
@@ -31,5 +40,14 @@ public class CrateItem extends Item {
      */
     public int getCompressionLevel() {
         return compressionLevel;
+    }
+
+    /**
+     * Function to get the name of the item
+     *
+     * @return Name
+     */
+    public String getCrateName() {
+        return name;
     }
 }

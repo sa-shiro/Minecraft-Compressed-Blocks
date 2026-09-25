@@ -6,6 +6,8 @@
 [![Modrinth][Modrinth]](https://modrinth.com/mod/cb-compressed-blocks)
 [![Paypal][Paypal]](https://www.paypal.com/donate/?cmd=_donations&business=social.sashiro@outlook.com&lc=US&item_name=Donation&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
 
+[![wakatime](https://wakatime.com/badge/user/ef3647e3-15ba-47dd-8255-89f406b638de/project/ed5d1480-b2a7-45e1-a3fe-888be6965620.svg)](https://wakatime.com/badge/user/ef3647e3-15ba-47dd-8255-89f406b638de/project/ed5d1480-b2a7-45e1-a3fe-888be6965620)  
+
 [CurseForge]: https://img.shields.io/curseforge/dt/361354?style=for-the-badge&logo=curseforge&label=Curseforge&labelColor=212121&color=FF6D00
 [Modrinth]: https://img.shields.io/modrinth/dt/IQRVlbit?style=for-the-badge&logo=modrinth&label=Modrinth&labelColor=212121&color=008000
 [Paypal]: https://img.shields.io/badge/Donate-Paypal?style=for-the-badge&logo=paypal&label=Paypal&labelColor=212121&color=00457C

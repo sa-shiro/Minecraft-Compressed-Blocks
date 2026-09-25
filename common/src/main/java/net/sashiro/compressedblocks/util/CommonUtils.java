@@ -6,7 +6,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 
@@ -107,49 +106,50 @@ public class CommonUtils {
         return Identifier.fromNamespaceAndPath("compressedblocks", "block/" + overlay);
     }
 
-    /**
-     * Utility function to get the Identifier of the Item
-     *
-     * @param mc_name Name of the Item.
-     * @return {@link Identifier} of the Item.
-     */
-    @NotNull
-    public static Identifier getIdentifier(String mc_name) {
-        Identifier location = Identifier.withDefaultNamespace("item/" + mc_name);
 
-        if (mc_name.contains("rail")
-                || mc_name.contains("torch")
-                || mc_name.contains("lightning_rod")
-                || mc_name.contains("end_rod")
-                || mc_name.contains("anvil")
-                || mc_name.contains("sapling")
-                || mc_name.contains("mushroom")
-                || mc_name.contains("fungus")
-                || mc_name.contains("dandelion")
-                || mc_name.contains("poppy")
-                || mc_name.contains("orchid")
-                || mc_name.contains("allium")
-                || mc_name.contains("bluet")
-                || mc_name.contains("tulip")
-                || mc_name.contains("daisy")
-                || mc_name.contains("cornflower")
-                || mc_name.contains("valley")
-                || mc_name.contains("rose")
-                || mc_name.contains("turtle")
-                || mc_name.contains("cobweb")
-                || mc_name.contains("vein")
-                || mc_name.contains("vine")
-                || mc_name.contains("lichen")
+    /**
+     * Utility function to get the Minecraft {@link Identifier} of the Block / Item
+     *
+     * @param prefix Prefix of the Block / Item.
+     * @param name   Name of the Block / Item.
+     * @return {@link Identifier} of the Block / Item.
+     */
+    public static Identifier getIdentifier(String prefix, String name) {
+        Identifier location = Identifier.withDefaultNamespace(prefix + "/" + name);
+
+        if (name.contains("rail")
+                || name.contains("torch")
+                || name.contains("lightning_rod")
+                || name.contains("end_rod")
+                || name.contains("anvil")
+                || name.contains("sapling")
+                || name.contains("mushroom")
+                || name.contains("fungus")
+                || name.contains("dandelion")
+                || name.contains("poppy")
+                || name.contains("orchid")
+                || name.contains("allium")
+                || name.contains("bluet")
+                || name.contains("tulip")
+                || name.contains("daisy")
+                || name.contains("cornflower")
+                || name.contains("valley")
+                || name.contains("rose")
+                || name.contains("turtle")
+                || name.contains("cobweb")
+                || name.contains("vein")
+                || name.contains("vine")
+                || name.contains("lichen")
         )
-            location = Identifier.withDefaultNamespace("block/" + mc_name);
-        if (mc_name.contains("sunflower")) location = Identifier.withDefaultNamespace("block/sunflower_front");
-        if (mc_name.contains("lilac")) location = Identifier.withDefaultNamespace("block/lilac_top");
-        if (mc_name.contains("rose_bush")) location = Identifier.withDefaultNamespace("block/rose_bush_top");
-        if (mc_name.contains("peony")) location = Identifier.withDefaultNamespace("block/peony_top");
-        if (mc_name.contains("carpet"))
-            location = Identifier.withDefaultNamespace("block/" + mc_name.replace("carpet", "wool"));
-        if (mc_name.contains("scute")) location = Identifier.withDefaultNamespace("item/" + mc_name);
-        if (mc_name.contains("map")) location = Identifier.fromNamespaceAndPath(MOD_ID, "item/" + "map");
+            location = Identifier.withDefaultNamespace("block/" + name);
+        if (name.contains("sunflower")) location = Identifier.withDefaultNamespace("block/sunflower_front");
+        if (name.contains("lilac")) location = Identifier.withDefaultNamespace("block/lilac_top");
+        if (name.contains("rose_bush")) location = Identifier.withDefaultNamespace("block/rose_bush_top");
+        if (name.contains("peony")) location = Identifier.withDefaultNamespace("block/peony_top");
+        if (name.contains("carpet"))
+            location = Identifier.withDefaultNamespace("block/" + name.replace("carpet", "wool"));
+        if (name.contains("scute")) location = Identifier.withDefaultNamespace("item/" + name);
+        if (name.equals("bamboo")) location = Identifier.withDefaultNamespace("block/bamboo_stage0");
         return location;
     }
 
@@ -159,7 +159,7 @@ public class CommonUtils {
      * @param crateName Name of the Crate.
      * @return Minecraft Name of the Crate.
      */
-    public static String getMCName(String crateName) {
+    public static String removeCrateName(String crateName) {
         crateName = crateName.replace("item.compressedblocks.", "");
         crateName = crateName.replace("block.compressedblocks.", "");
         if (crateName.startsWith("crated_")) crateName = crateName.replace("crated_", "");

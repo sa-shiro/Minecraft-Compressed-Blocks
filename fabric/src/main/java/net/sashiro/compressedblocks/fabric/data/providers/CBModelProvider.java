@@ -26,16 +26,18 @@ import java.util.function.BiConsumer;
 import static net.minecraft.client.data.models.BlockModelGenerators.X_ROT_90;
 import static net.minecraft.client.data.models.BlockModelGenerators.Y_ROT_90;
 
+@SuppressWarnings("SameParameterValue")
 public class CBModelProvider extends FabricModelProvider {
     public static final TextureSlot ITEM_SLOT = TextureSlot.create("item");
+    public static final TextureSlot BLOCK_SLOT = TextureSlot.create("block");
     public static final TextureSlot NUMBER_SLOT = TextureSlot.create("number");
     public static final TextureSlot OVERLAY_SLOT = TextureSlot.create("overlay");
 
     public static final ModelTemplate TEMPLATE_BLOCK = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "block/template/template_block")), Optional.empty(), TextureSlot.ALL, OVERLAY_SLOT);
     public static final ModelTemplate TEMPLATE_CUBE_COLUMN = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "block/template/template_cube_column")), Optional.empty(), TextureSlot.END, TextureSlot.SIDE, TextureSlot.PARTICLE, OVERLAY_SLOT);
     public static final ModelTemplate TEMPLATE_CUBE_COLUMN_HORIZONTAL = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "block/template/template_cube_column_horizontal")), Optional.empty(), TextureSlot.END, TextureSlot.SIDE, TextureSlot.PARTICLE, OVERLAY_SLOT);
-    public static final ModelTemplate TEMPLATE_CRATE = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "item/template/template_item_crate_blockstyle")), Optional.empty(), TextureSlot.FRONT, TextureSlot.SIDE, TextureSlot.ALL, TextureSlot.PARTICLE);
-
+    public static final ModelTemplate TEMPLATE_CRATE = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "item/template/template_item_crate_blockstyle")), Optional.empty(), ITEM_SLOT, NUMBER_SLOT, TextureSlot.ALL, TextureSlot.PARTICLE);
+    public static final ModelTemplate TEMPLATE_CRATE_BLOCK = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "block/template/template_crate")), Optional.empty(), TextureSlot.ALL, BLOCK_SLOT, NUMBER_SLOT);
 
     public CBModelProvider(FabricDataOutput output) {
         super(output);
@@ -76,13 +78,23 @@ public class CBModelProvider extends FabricModelProvider {
                 blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, BlockModelGenerators.plainVariant(blockModel)));
             }
         }
+
+        for (Block crate : Constants.CRATE_BLOCKS) {
+            String crate_name = crate.getDescriptionId().replace("block.compressedblocks.", "");
+            String mc_name = CommonUtils.removeCrateName(crate_name);
+            TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, Identifier.fromNamespaceAndPath("compressedblocks", "block/crate")).put(BLOCK_SLOT, CommonUtils.getIdentifier("block", mc_name)).put(NUMBER_SLOT, CommonUtils.getOverlay(crate.getDescriptionId()));
+            Identifier blockModel = TEMPLATE_CRATE_BLOCK.create(crate, mapping.copyAndUpdate(BLOCK_SLOT, CommonUtils.getIdentifier("block", mc_name)), blockModelGenerators.modelOutput);
+
+            blockModelGenerators.registerSimpleItemModel(crate, Identifier.fromNamespaceAndPath("compressedblocks", "block/" + crate_name));
+            blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(crate, BlockModelGenerators.plainVariant(blockModel)));
+        }
     }
 
     @Override
     public void generateItemModels(@NonNull ItemModelGenerators itemModelGenerators) {
-        for (Item crate : Constants.CRATES) {
+        for (Item crate : Constants.CRATE_ITEMS) {
             String crate_name = crate.getDescriptionId().replace("item.compressedblocks.", "");
-            String mc_name = CommonUtils.getMCName(crate_name);
+            String mc_name = CommonUtils.removeCrateName(crate_name);
             Item vanillaItem = ItemStack.EMPTY.getItem();
 
             for (Item item : BuiltInRegistries.ITEM) {
@@ -100,6 +112,13 @@ public class CBModelProvider extends FabricModelProvider {
     }
 
     private Identifier createCrateItemModel(Item item, String vanillaItem, ModelTemplate modelTemplate, BiConsumer<Identifier, ModelInstance> modelOutput, int compressionLevel) {
-        return modelTemplate.create(ModelLocationUtils.getModelLocation(item), TextureMapping.particle(Identifier.fromNamespaceAndPath("compressedblocks", "item/crate")).put(TextureSlot.ALL, Identifier.fromNamespaceAndPath("compressedblocks", "item/crate")).put(TextureSlot.FRONT, Identifier.fromNamespaceAndPath("minecraft", "item/" + vanillaItem)).put(TextureSlot.SIDE, Identifier.fromNamespaceAndPath("compressedblocks", "item/level_" + compressionLevel)), modelOutput);
+        return modelTemplate.create(
+                ModelLocationUtils.getModelLocation(item),
+                TextureMapping.particle(Identifier.fromNamespaceAndPath("compressedblocks", "item/crate"))
+                        .put(TextureSlot.ALL, Identifier.fromNamespaceAndPath("compressedblocks", "item/crate"))
+                        .put(ITEM_SLOT, Identifier.fromNamespaceAndPath("minecraft", "item/" + vanillaItem))
+                        .put(NUMBER_SLOT, Identifier.fromNamespaceAndPath("compressedblocks", "item/level_" + compressionLevel)),
+                modelOutput
+        );
     }
 }

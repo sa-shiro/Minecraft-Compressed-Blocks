@@ -18,8 +18,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.block.BlockList;
-import net.sashiro.compressedblocks.block.CBBlock;
-import net.sashiro.compressedblocks.block.CBRotationalBlock;
+import net.sashiro.compressedblocks.block.CompressedBlock;
+import net.sashiro.compressedblocks.block.CrateBlock;
 import net.sashiro.compressedblocks.block.CrateList;
 import net.sashiro.compressedblocks.item.CrateItem;
 
@@ -36,12 +36,12 @@ public class CompressedBlocksClient implements ClientModInitializer {
     public static final ResourceKey<CreativeModeTab> CRATE_ITEMS_KEY = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(MOD_ID, "compressed_items"));
 
     private static final CreativeModeTab COMPRESSED_BLOCKS = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(BlockList.STONE[9].asItem()))
+            .icon(() -> new ItemStack(BlockList.STONE))
             .title(Component.translatable("itemGroup.compressed_blocks"))
             .build();
 
     private static final CreativeModeTab CRATE_ITEMS = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(CrateList.APPLE[0].asItem()))
+            .icon(() -> new ItemStack(CrateList.GOLDEN_APPLE))
             .title(Component.translatable("itemGroup.compressed_items"))
             .build();
 
@@ -49,23 +49,53 @@ public class CompressedBlocksClient implements ClientModInitializer {
     public void onInitializeClient() {
         Collection<ItemStack> itemStackBlocks = new ArrayList<>();
         Collection<ItemStack> itemStackCrates = new ArrayList<>();
+        Collection<ItemStack> itemStackBlockCrates = new ArrayList<>();
 
         for (Block block : Constants.BLOCKS) {
             BlockRenderLayerMap.putBlock(block, ChunkSectionLayer.TRANSLUCENT);
             itemStackBlocks.add(new ItemStack(block));
         }
 
-        for (Item item : Constants.CRATES) {
+        for (Item item : Constants.CRATE_ITEMS) {
             itemStackCrates.add(new ItemStack(item));
         }
 
+        for (Block block : Constants.CRATE_BLOCKS) {
+            BlockRenderLayerMap.putBlock(block, ChunkSectionLayer.TRANSLUCENT);
+            itemStackBlockCrates.add(new ItemStack(block));
+        }
+
         ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, list) -> {
-            if (itemStack.is((item) -> item instanceof CBBlock || item instanceof CBRotationalBlock)) {
-                CBBlock block = (CBBlock) Block.byItem(itemStack.getItem());
-                list.add(Component.literal(block.getCompressor().getQuantity() + " Blocks").withStyle(block.getCompressor().getStyle()));
-            } else if (itemStack.is((item) -> item instanceof CrateItem)) {
-                CrateItem crateItem = (CrateItem) itemStack.getItem();
-                list.add(Component.literal(crateItem.getCompressor().getQuantity() + " Items").withStyle(crateItem.getCompressor().getStyle()));
+
+            // Compressed blocks: CBBlock + CBRotationalBlock
+            if (Block.byItem(itemStack.getItem()) instanceof CompressedBlock block) {
+                list.add(
+                        Component.literal(
+                                block.getCompressor().getQuantity() + " Blocks"
+                        ).withStyle(
+                                block.getCompressor().getStyle()
+                        )
+                );
+
+                // Crate item
+            } else if (itemStack.getItem() instanceof CrateItem crateItem) {
+                list.add(
+                        Component.literal(
+                                crateItem.getCompressor().getQuantity() + " Items"
+                        ).withStyle(
+                                crateItem.getCompressor().getStyle()
+                        )
+                );
+
+                // Crate block
+            } else if (Block.byItem(itemStack.getItem()) instanceof CrateBlock crateBlock) {
+                list.add(
+                        Component.literal(
+                                crateBlock.getCompressor().getQuantity() + " Items"
+                        ).withStyle(
+                                crateBlock.getCompressor().getStyle()
+                        )
+                );
             }
         });
 
@@ -74,6 +104,7 @@ public class CompressedBlocksClient implements ClientModInitializer {
 
         ItemGroupEvents.modifyEntriesEvent(COMPRESSED_BLOCKS_KEY).register(content -> content.acceptAll(itemStackBlocks));
         ItemGroupEvents.modifyEntriesEvent(CRATE_ITEMS_KEY).register(content -> content.acceptAll(itemStackCrates));
+        ItemGroupEvents.modifyEntriesEvent(CRATE_ITEMS_KEY).register(content -> content.acceptAll(itemStackBlockCrates));
 
         LOG.info("Successfully registered: {} Blocks and {} Crates!", itemStackBlocks.size(), itemStackCrates.size());
     }

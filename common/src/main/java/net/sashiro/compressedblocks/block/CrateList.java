@@ -1,194 +1,91 @@
 package net.sashiro.compressedblocks.block;
 
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.platform.Services;
 import net.sashiro.compressedblocks.util.CommonUtils;
+import net.sashiro.compressedblocks.util.CompressionCatalog;
+import net.sashiro.compressedblocks.util.CompressionEntry;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 import static net.sashiro.compressedblocks.Constants.MAX_CRATE_COMPRESSION_LEVEL;
 
+/**
+ * The CrateList class is responsible for creating and managing a list of crate items and blocks based on the entries in the CompressionCatalog.
+ * It checks if each crate item or block is enabled and creates the appropriate type (crate item or crate block).
+ * The created crate items and blocks are added to their respective lists.
+ */
 public class CrateList {
+    public static final ArrayList<Item> CRATE_ITEM_LIST = new ArrayList<>();
+    public static final ArrayList<Block> CRATE_BLOCK_LIST = new ArrayList<>();
+    public static CrateItem GOLDEN_APPLE = null;
 
-    public static final CrateItem[] APPLE = createItems("APPLE");
-    public static final CrateItem[] GOLDEN_APPLE = createItems("GOLDEN_APPLE");
-    public static final CrateItem[] SWEET_BERRIES = createItems("SWEET_BERRIES");
-    public static final CrateItem[] GLOW_BERRIES = createItems("GLOW_BERRIES");
-    public static final CrateItem[] CHORUS_FRUIT = createItems("CHORUS_FRUIT");
-    public static final CrateItem[] CARROT = createItems("CARROT");
-    public static final CrateItem[] GOLDEN_CARROT = createItems("GOLDEN_CARROT");
-    public static final CrateItem[] POTATO = createItems("POTATO");
-    public static final CrateItem[] BAKED_POTATO = createItems("BAKED_POTATO");
-    public static final CrateItem[] POISONOUS_POTATO = createItems("POISONOUS_POTATO");
-    public static final CrateItem[] BEETROOT = createItems("BEETROOT");
-    public static final CrateItem[] BEEF = createItems("BEEF");
-    public static final CrateItem[] COOKED_BEEF = createItems("COOKED_BEEF");
-    public static final CrateItem[] PORKCHOP = createItems("PORKCHOP");
-    public static final CrateItem[] COOKED_PORKCHOP = createItems("COOKED_PORKCHOP");
-    public static final CrateItem[] MUTTON = createItems("MUTTON");
-    public static final CrateItem[] COOKED_MUTTON = createItems("COOKED_MUTTON");
-    public static final CrateItem[] CHICKEN = createItems("CHICKEN");
-    public static final CrateItem[] COOKED_CHICKEN = createItems("COOKED_CHICKEN");
-    public static final CrateItem[] RABBIT = createItems("RABBIT");
-    public static final CrateItem[] COOKED_RABBIT = createItems("COOKED_RABBIT");
-    public static final CrateItem[] COD = createItems("COD");
-    public static final CrateItem[] COOKED_COD = createItems("COOKED_COD");
-    public static final CrateItem[] SALMON = createItems("SALMON");
-    public static final CrateItem[] COOKED_SALMON = createItems("COOKED_SALMON");
-    public static final CrateItem[] TROPICAL_FISH = createItems("TROPICAL_FISH");
-    public static final CrateItem[] PUFFERFISH = createItems("PUFFERFISH");
-    public static final CrateItem[] BREAD = createItems("BREAD");
-    public static final CrateItem[] COOKIE = createItems("COOKIE");
-    public static final CrateItem[] ROTTEN_FLESH = createItems("ROTTEN_FLESH");
-    public static final CrateItem[] SPIDER_EYE = createItems("SPIDER_EYE");
-    public static final CrateItem[] HONEY_BOTTLE = createItems("HONEY_BOTTLE");
-    public static final CrateItem[] CHARCOAL = createItems("CHARCOAL");
-    public static final CrateItem[] QUARTZ = createItems("QUARTZ");
-    public static final CrateItem[] AMETHYST_SHARD = createItems("AMETHYST_SHARD");
-    public static final CrateItem[] STICK = createItems("STICK");
-    public static final CrateItem[] FLINT = createItems("FLINT");
-    public static final CrateItem[] BONE = createItems("BONE");
-    public static final CrateItem[] STRING = createItems("STRING");
-    public static final CrateItem[] FEATHER = createItems("FEATHER");
-    public static final CrateItem[] SNOWBALL = createItems("SNOWBALL");
-    public static final CrateItem[] EGG = createItems("EGG");
-    public static final CrateItem[] LEATHER = createItems("LEATHER");
-    public static final CrateItem[] RABBIT_HIDE = createItems("RABBIT_HIDE");
-    public static final CrateItem[] HONEYCOMB = createItems("HONEYCOMB");
-    public static final CrateItem[] INK_SAC = createItems("INK_SAC");
-    public static final CrateItem[] GLOW_INK_SAC = createItems("GLOW_INK_SAC");
-    public static final CrateItem[] TURTLE_SCUTE = createItems("TURTLE_SCUTE");
-    public static final CrateItem[] CLAY_BALL = createItems("CLAY_BALL");
-    public static final CrateItem[] NAUTILUS_SHELL = createItems("NAUTILUS_SHELL");
-    public static final CrateItem[] FIRE_CHARGE = createItems("FIRE_CHARGE");
-    public static final CrateItem[] BLAZE_ROD = createItems("BLAZE_ROD");
-    public static final CrateItem[] NETHER_STAR = createItems("NETHER_STAR");
-    public static final CrateItem[] ENDER_PEARL = createItems("ENDER_PEARL");
-    public static final CrateItem[] ENDER_EYE = createItems("ENDER_EYE");
-    public static final CrateItem[] SHULKER_SHELL = createItems("SHULKER_SHELL");
-    public static final CrateItem[] WHITE_DYE = createItems("WHITE_DYE");
-    public static final CrateItem[] LIGHT_GRAY_DYE = createItems("LIGHT_GRAY_DYE");
-    public static final CrateItem[] GRAY_DYE = createItems("GRAY_DYE");
-    public static final CrateItem[] BLACK_DYE = createItems("BLACK_DYE");
-    public static final CrateItem[] BROWN_DYE = createItems("BROWN_DYE");
-    public static final CrateItem[] RED_DYE = createItems("RED_DYE");
-    public static final CrateItem[] ORANGE_DYE = createItems("ORANGE_DYE");
-    public static final CrateItem[] YELLOW_DYE = createItems("YELLOW_DYE");
-    public static final CrateItem[] LIME_DYE = createItems("LIME_DYE");
-    public static final CrateItem[] GREEN_DYE = createItems("GREEN_DYE");
-    public static final CrateItem[] CYAN_DYE = createItems("CYAN_DYE");
-    public static final CrateItem[] LIGHT_BLUE_DYE = createItems("LIGHT_BLUE_DYE");
-    public static final CrateItem[] BLUE_DYE = createItems("BLUE_DYE");
-    public static final CrateItem[] PURPLE_DYE = createItems("PURPLE_DYE");
-    public static final CrateItem[] MAGENTA_DYE = createItems("MAGENTA_DYE");
-    public static final CrateItem[] PINK_DYE = createItems("PINK_DYE");
-    public static final CrateItem[] PAPER = createItems("PAPER");
-    public static final CrateItem[] BOOK = createItems("BOOK");
-    public static final CrateItem[] FIREWORK_STAR = createItems("FIREWORK_STAR");
-    public static final CrateItem[] GLASS_BOTTLE = createItems("GLASS_BOTTLE");
-    public static final CrateItem[] GLOWSTONE_DUST = createItems("GLOWSTONE_DUST");
-    public static final CrateItem[] GUNPOWDER = createItems("GUNPOWDER");
-    public static final CrateItem[] DRAGON_BREATH = createItems("DRAGON_BREATH");
-    public static final CrateItem[] FERMENTED_SPIDER_EYE = createItems("FERMENTED_SPIDER_EYE");
-    public static final CrateItem[] BLAZE_POWDER = createItems("BLAZE_POWDER");
-    public static final CrateItem[] SUGAR = createItems("SUGAR");
-    public static final CrateItem[] RABBIT_FOOT = createItems("RABBIT_FOOT");
-    public static final CrateItem[] GLISTERING_MELON_SLICE = createItems("GLISTERING_MELON_SLICE");
-    public static final CrateItem[] MAGMA_CREAM = createItems("MAGMA_CREAM");
-    public static final CrateItem[] GHAST_TEAR = createItems("GHAST_TEAR");
-    public static final CrateItem[] PHANTOM_MEMBRANE = createItems("PHANTOM_MEMBRANE");
-    public static final CrateItem[] EXPERIENCE_BOTTLE = createItems("EXPERIENCE_BOTTLE");
-    public static final CrateItem[] END_CRYSTAL = createItems("END_CRYSTAL");
-    public static final CrateItem[] ARROW = createItems("ARROW");
-    public static final CrateItem[] SPECTRAL_ARROW = createItems("SPECTRAL_ARROW");
-    public static final CrateItem[] NAME_TAG = createItems("NAME_TAG");
-    public static final CrateItem[] LEAD = createItems("LEAD");
-    public static final CrateItem[] RAIL = createItems("RAIL");
-    public static final CrateItem[] POWERED_RAIL = createItems("POWERED_RAIL");
-    public static final CrateItem[] DETECTOR_RAIL = createItems("DETECTOR_RAIL");
-    public static final CrateItem[] ACTIVATOR_RAIL = createItems("ACTIVATOR_RAIL");
-    public static final CrateItem[] REDSTONE_TORCH = createItems("REDSTONE_TORCH");
-    public static final CrateItem[] REPEATER = createItems("REPEATER");
-    public static final CrateItem[] COMPARATOR = createItems("COMPARATOR");
-    public static final CrateItem[] LIGHTNING_ROD = createItems("LIGHTNING_ROD");
-    public static final CrateItem[] TORCH = createItems("TORCH");
-    public static final CrateItem[] SOUL_TORCH = createItems("SOUL_TORCH");
-    public static final CrateItem[] LANTERN = createItems("LANTERN");
-    public static final CrateItem[] SOUL_LANTERN = createItems("SOUL_LANTERN");
-    public static final CrateItem[] CHAIN = createItems("CHAIN");
-    public static final CrateItem[] END_ROD = createItems("END_ROD");
-    public static final CrateItem[] ANVIL = createItems("ANVIL");
-    public static final CrateItem[] CAMPFIRE = createItems("CAMPFIRE");
-    public static final CrateItem[] SOUL_CAMPFIRE = createItems("SOUL_CAMPFIRE");
-    public static final CrateItem[] ITEM_FRAME = createItems("ITEM_FRAME");
-    public static final CrateItem[] GLOW_ITEM_FRAME = createItems("GLOW_ITEM_FRAME");
-    public static final CrateItem[] PAINTING = createItems("PAINTING");
-    public static final CrateItem[] POINTED_DRIPSTONE = createItems("POINTED_DRIPSTONE");
-    public static final CrateItem[] OAK_SAPLING = createItems("OAK_SAPLING");
-    public static final CrateItem[] SPRUCE_SAPLING = createItems("SPRUCE_SAPLING");
-    public static final CrateItem[] BIRCH_SAPLING = createItems("BIRCH_SAPLING");
-    public static final CrateItem[] JUNGLE_SAPLING = createItems("JUNGLE_SAPLING");
-    public static final CrateItem[] ACACIA_SAPLING = createItems("ACACIA_SAPLING");
-    public static final CrateItem[] DARK_OAK_SAPLING = createItems("DARK_OAK_SAPLING");
-    public static final CrateItem[] CHERRY_SAPLING = createItems("CHERRY_SAPLING");
-    public static final CrateItem[] MANGROVE_PROPAGULE = createItems("MANGROVE_PROPAGULE");
-    public static final CrateItem[] BROWN_MUSHROOM = createItems("BROWN_MUSHROOM");
-    public static final CrateItem[] RED_MUSHROOM = createItems("RED_MUSHROOM");
-    public static final CrateItem[] CRIMSON_FUNGUS = createItems("CRIMSON_FUNGUS");
-    public static final CrateItem[] WARPED_FUNGUS = createItems("WARPED_FUNGUS");
-    public static final CrateItem[] DANDELION = createItems("DANDELION");
-    public static final CrateItem[] POPPY = createItems("POPPY");
-    public static final CrateItem[] BLUE_ORCHID = createItems("BLUE_ORCHID");
-    public static final CrateItem[] ALLIUM = createItems("ALLIUM");
-    public static final CrateItem[] AZURE_BLUET = createItems("AZURE_BLUET");
-    public static final CrateItem[] RED_TULIP = createItems("RED_TULIP");
-    public static final CrateItem[] ORANGE_TULIP = createItems("ORANGE_TULIP");
-    public static final CrateItem[] WHITE_TULIP = createItems("WHITE_TULIP");
-    public static final CrateItem[] PINK_TULIP = createItems("PINK_TULIP");
-    public static final CrateItem[] OXEYE_DAISY = createItems("OXEYE_DAISY");
-    public static final CrateItem[] CORNFLOWER = createItems("CORNFLOWER");
-    public static final CrateItem[] LILY_OF_THE_VALLEY = createItems("LILY_OF_THE_VALLEY");
-    public static final CrateItem[] SUGAR_CANE = createItems("SUGAR_CANE");
-    public static final CrateItem[] WITHER_ROSE = createItems("WITHER_ROSE");
-    public static final CrateItem[] SUNFLOWER = createItems("SUNFLOWER");
-    public static final CrateItem[] LILAC = createItems("LILAC");
-    public static final CrateItem[] ROSE_BUSH = createItems("ROSE_BUSH");
-    public static final CrateItem[] PEONY = createItems("PEONY");
-    public static final CrateItem[] TURTLE_EGG = createItems("TURTLE_EGG");
-    public static final CrateItem[] WHEAT_SEEDS = createItems("WHEAT_SEEDS");
-    public static final CrateItem[] COCOA_BEANS = createItems("COCOA_BEANS");
-    public static final CrateItem[] PUMPKIN_SEEDS = createItems("PUMPKIN_SEEDS");
-    public static final CrateItem[] MELON_SEEDS = createItems("MELON_SEEDS");
-    public static final CrateItem[] BEETROOT_SEEDS = createItems("BEETROOT_SEEDS");
-    public static final CrateItem[] SEAGRASS = createItems("SEAGRASS");
-    public static final CrateItem[] KELP = createItems("KELP");
-    public static final CrateItem[] COBWEB = createItems("COBWEB");
-    public static final CrateItem[] WHITE_CARPET = createItems("WHITE_CARPET");
-    public static final CrateItem[] LIGHT_GRAY_CARPET = createItems("LIGHT_GRAY_CARPET");
-    public static final CrateItem[] GRAY_CARPET = createItems("GRAY_CARPET");
-    public static final CrateItem[] BLACK_CARPET = createItems("BLACK_CARPET");
-    public static final CrateItem[] BROWN_CARPET = createItems("BROWN_CARPET");
-    public static final CrateItem[] RED_CARPET = createItems("RED_CARPET");
-    public static final CrateItem[] ORANGE_CARPET = createItems("ORANGE_CARPET");
-    public static final CrateItem[] YELLOW_CARPET = createItems("YELLOW_CARPET");
-    public static final CrateItem[] LIME_CARPET = createItems("LIME_CARPET");
-    public static final CrateItem[] GREEN_CARPET = createItems("GREEN_CARPET");
-    public static final CrateItem[] CYAN_CARPET = createItems("CYAN_CARPET");
-    public static final CrateItem[] LIGHT_BLUE_CARPET = createItems("LIGHT_BLUE_CARPET");
-    public static final CrateItem[] BLUE_CARPET = createItems("BLUE_CARPET");
-    public static final CrateItem[] PURPLE_CARPET = createItems("PURPLE_CARPET");
-    public static final CrateItem[] MAGENTA_CARPET = createItems("MAGENTA_CARPET");
-    public static final CrateItem[] PINK_CARPET = createItems("PINK_CARPET");
-    public static final CrateItem[] VINE = createItems("VINE");
-    public static final CrateItem[] TWISTING_VINES = createItems("TWISTING_VINES");
-    public static final CrateItem[] WEEPING_VINES = createItems("WEEPING_VINES");
-    public static final CrateItem[] GLOW_LICHEN = createItems("GLOW_LICHEN");
-    public static final CrateItem[] SCULK_VEIN = createItems("SCULK_VEIN");
+    /**
+     * Creates the crate item and block lists based on the entries in the CompressionCatalog.
+     * It checks if each crate item or block is enabled and creates the appropriate type (crate item or crate block).
+     * The created crate items and blocks are added to their respective lists.
+     */
+    public static void createCrateList() {
+        for (CompressionEntry entry : CompressionCatalog.CRATE_ENTRIES) {
+            if (!Services.PLATFORM.isBlockEnabled(entry.id())) continue;
 
-    private static CrateItem[] createItems(String name) {
-        if (!Services.PLATFORM.isCompressionEnabled(name)) return null;
-        CrateItem[] result = new CrateItem[MAX_CRATE_COMPRESSION_LEVEL];
+            CompressionEntry entry1 = new CompressionEntry(
+                    entry.id(),
+                    entry.kind(),
+                    Services.PLATFORM.getHardnessResistanceMultiplier(entry.id()),
+                    Services.PLATFORM.getMaxCompressionLevel(entry.id()),
+                    entry.hasSmallerCompression(), // todo: make it configurable? not sure
+                    Services.PLATFORM.isBlockEnabled(entry.id())); // actually redundant, because we already checked if the block is enabled so we can just set it to true ;)
 
-        for (int i = 0; i < MAX_CRATE_COMPRESSION_LEVEL; i++) {
-            result[i] = new CrateItem(i, CommonUtils.createItemId(CommonUtils.getCratePrefix(i) + name));
+            if (entry1.kind() == CompressionEntry.Kind.CRATE_ITEM) {
+                CrateItem[] crateItems = createItems(entry1);
+                Collections.addAll(CRATE_ITEM_LIST, crateItems);
+                if (entry1.id().equalsIgnoreCase("GOLDEN_APPLE")) {
+                    GOLDEN_APPLE = crateItems[0];
+                }
+            } else if (entry1.kind() == CompressionEntry.Kind.CRATE_BLOCK) {
+                CrateBlock[] crateBlocks = createBlocks(entry1);
+                Collections.addAll(CRATE_BLOCK_LIST, crateBlocks);
+            }
+        }
+    }
+
+    /**
+     * Creates an array of CrateItem instances based on the provided CompressionEntry.
+     * The number of crate items created is determined by the maximum compression level specified in the entry.
+     *
+     * @param entry The CompressionEntry containing information about the crate item type and properties.
+     * @return An array of CrateItem instances.
+     */
+    private static CrateItem[] createItems(CompressionEntry entry) {
+        int maxCrateCompressionLevel = Math.min(entry.maxCompressionLevel(), MAX_CRATE_COMPRESSION_LEVEL);
+
+        CrateItem[] result = new CrateItem[maxCrateCompressionLevel];
+
+        for (int i = 0; i < maxCrateCompressionLevel; i++) {
+            result[i] = new CrateItem(CommonUtils.createItemId(CommonUtils.getCratePrefix(i) + entry.id()), i, entry.hasSmallerCompression());
+        }
+        return result;
+    }
+
+    /**
+     * Creates an array of CrateBlock instances based on the provided CompressionEntry.
+     * The number of crate blocks created is determined by the maximum compression level specified in the entry.
+     *
+     * @param entry The CompressionEntry containing information about the crate block type and properties.
+     * @return An array of CrateBlock instances.
+     */
+    private static CrateBlock[] createBlocks(CompressionEntry entry) {
+        int maxCrateCompressionLevel = Math.min(entry.maxCompressionLevel(), MAX_CRATE_COMPRESSION_LEVEL);
+
+        CrateBlock[] result = new CrateBlock[maxCrateCompressionLevel];
+
+        for (int i = 0; i < maxCrateCompressionLevel; i++) {
+            result[i] = new CrateBlock(CommonUtils.createBlockId(CommonUtils.getCratePrefix(i) + entry.id()), BlockBehaviour.Properties.of(), i, entry.hasSmallerCompression());
         }
         return result;
     }
