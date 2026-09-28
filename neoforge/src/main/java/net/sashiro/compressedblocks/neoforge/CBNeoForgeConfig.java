@@ -17,7 +17,7 @@ import java.util.Map;
  * It defines various configuration options for compressed blocks and crates, including enabling/disabling
  * specific blocks and crates, as well as their hardness resistance multipliers and compression levels.
  */
-@EventBusSubscriber(modid = Constants.MOD_NAME)
+@EventBusSubscriber(modid = Constants.MOD_ID)
 public class CBNeoForgeConfig {
 
     public static final CBNeoForgeConfig CONFIG;
@@ -85,17 +85,17 @@ public class CBNeoForgeConfig {
 
         builder.comment("Enabled blocks:");
         builder.comment("Note: Stone can not be disabled as it is required for the creative inventory icon.");
-        for (CompressionEntry e : CompressionCatalog.BLOCK_ENTRIES) {
-            builder.push(e.id());
-            COMPRESSED_BLOCKS.put(e.id(), new CompressionSettings(builder, e.hardnessResistanceMultiplier()));
+        for (CompressionEntry entry : CompressionCatalog.BLOCK_ENTRIES) {
+            builder.push(entry.id());
+            COMPRESSED_BLOCKS.put(entry.id(), new CompressionSettings(builder, entry));
             builder.pop();
         }
 
         builder.comment("Enabled crates:");
         builder.comment("Note: Golden Apple can not be disabled as it is required for the creative inventory icon.");
-        for (CompressionEntry e : CompressionCatalog.CRATE_ENTRIES) {
-            builder.push(e.id());
-            CRATES.put(e.id(), new CompressionSettings(builder, e.hardnessResistanceMultiplier()));
+        for (CompressionEntry entry : CompressionCatalog.CRATE_ENTRIES) {
+            builder.push(entry.id());
+            CRATES.put(entry.id(), new CompressionSettings(builder, entry));
             builder.pop();
         }
     }
@@ -219,10 +219,10 @@ public class CBNeoForgeConfig {
         public final ModConfigSpec.IntValue compressionLevel;
         //public final ModConfigSpec.BooleanValue hasSmallerCompression;
 
-        public CompressionSettings(ModConfigSpec.Builder builder, float defaultHardnessResistanceMultiplier) {
-            enabled = builder.define("enabled", true);
+        public CompressionSettings(ModConfigSpec.Builder builder, CompressionEntry entry) {
+            enabled = builder.define("enabled", entry.enabledByDefault());
 
-            double multiplier = roundToThreeDecimals(defaultHardnessResistanceMultiplier);
+            double multiplier = roundToThreeDecimals(entry.hardnessResistanceMultiplier());
 
             hardnessResistanceMultiplier = builder.defineInRange(
                     "hardnessResistanceMultiplier",
@@ -231,7 +231,7 @@ public class CBNeoForgeConfig {
                     10000.0D
             );
 
-            compressionLevel = builder.defineInRange("compressionLevel", 10, 1, 10);
+            compressionLevel = builder.defineInRange("compressionLevel", entry.maxCompressionLevel(), 1, 10);
         }
     }
 

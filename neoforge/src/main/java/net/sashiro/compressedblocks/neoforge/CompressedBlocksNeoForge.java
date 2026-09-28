@@ -67,8 +67,6 @@ public class CompressedBlocksNeoForge {
         CRATE_ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
         modEventBus.addListener(this::reg);
-
-        LOG.info("Compressed Blocks NeoForge mod initialized successfully. Registered {} Blocks and {} Crates.", Constants.BLOCKS.size(), Constants.CRATE_BLOCKS.size() + Constants.CRATE_ITEMS.size());
     }
 
     /**
@@ -80,6 +78,8 @@ public class CompressedBlocksNeoForge {
         if (!finished) {
             BlockRegistration.registerBlocks();
             CrateRegistration.registerCrates();
+            LOG.info("Compressed Blocks NeoForge mod initialized successfully. Registered {} Blocks and {} Crates.", Constants.BLOCKS.size(), Constants.CRATE_BLOCKS.size() + Constants.CRATE_ITEMS.size());
+
             finished = true;
         }
     }

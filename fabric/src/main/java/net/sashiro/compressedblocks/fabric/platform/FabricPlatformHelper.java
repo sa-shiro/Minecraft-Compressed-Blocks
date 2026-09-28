@@ -58,7 +58,7 @@ public class FabricPlatformHelper implements PlatformHelper {
         String crateName = ResourceUtils.removeCrateName(crateBlock.getBlockName().identifier().getPath()).toUpperCase();
         if (!isBlockEnabled(crateName)) return;
 
-        Item.Properties properties = ResourceUtils.setRarity(new Item.Properties(), 0).setId(ResourceUtils.createItemId(crateBlock.blockName().toLowerCase()));
+        Item.Properties properties = ResourceUtils.setRarity(new Item.Properties(), crateBlock.getCompressor().getCompressionLevel()).setId(ResourceUtils.createItemId(crateBlock.blockName().toLowerCase()));
 
         Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, crateBlock.blockName().toLowerCase()), crateBlock);
         Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, crateBlock.blockName().toLowerCase()), new BlockItem(crateBlock, properties));

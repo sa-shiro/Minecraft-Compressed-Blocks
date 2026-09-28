@@ -13,11 +13,12 @@ public class Constants {
     public static final String MOD_ID = "compressedblocks";
     public static final String MOD_NAME = "Compressed Blocks";
     public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);
-    public static final float[] HARDNESS = Services.PLATFORM.getHardnessArray();
-    public static final float[] RESISTANCE = Services.PLATFORM.getResistanceArray();
     public static ArrayList<Block> BLOCKS = new ArrayList<>();
     public static ArrayList<Item> CRATE_ITEMS = new ArrayList<>();
     public static ArrayList<Block> CRATE_BLOCKS = new ArrayList<>();
+    // note: unsafe due to initialization order, but fine as the config is always loaded first (or at least should be)
     public static int MAX_COMPRESSION_LEVEL = Services.PLATFORM.maxCompressionLevel();
     public static int MAX_CRATE_COMPRESSION_LEVEL = Services.PLATFORM.maxCrateCompressionLevel();
+    public static final float[] HARDNESS = Services.PLATFORM.getHardnessArray();
+    public static final float[] RESISTANCE = Services.PLATFORM.getResistanceArray();
 }

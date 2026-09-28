@@ -25,6 +25,7 @@ public class CrateFactory {
     public static final ArrayList<Item> CRATE_ITEM_LIST = new ArrayList<>();
     public static final ArrayList<Block> CRATE_BLOCK_LIST = new ArrayList<>();
     public static CrateItem GOLDEN_APPLE = null;
+    private static boolean finished = false;
 
     /**
      * Creates the crate item and block lists based on the entries in the CompressionCatalog.
@@ -32,6 +33,9 @@ public class CrateFactory {
      * The created crate items and blocks are added to their respective lists.
      */
     public static void createCrateList() {
+        // If the crate lists have already been created, return early to avoid duplicate entries.
+        if (finished) return;
+
         for (CompressionEntry entry : CompressionCatalog.CRATE_ENTRIES) {
             if (!Services.PLATFORM.isBlockEnabled(entry.id())) continue;
             // check what minecraft version we are on first
@@ -56,6 +60,7 @@ public class CrateFactory {
                 Collections.addAll(CRATE_BLOCK_LIST, crateBlocks);
             }
         }
+        finished = true;
     }
 
     /**

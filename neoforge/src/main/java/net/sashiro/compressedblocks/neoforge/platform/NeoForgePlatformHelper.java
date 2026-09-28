@@ -51,7 +51,6 @@ public class NeoForgePlatformHelper implements PlatformHelper {
     public void registerCrate(CrateItem crateItem) {
         String crateName = ResourceUtils.removeCrateName(crateItem.getCrateName()).toUpperCase();
         if (!isBlockEnabled(crateName)) return;
-        //Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, crateItem.getCrateName().toLowerCase()), crateItem);
         CompressedBlocksNeoForge.CRATE_ITEMS.register(crateItem.getCrateName().toLowerCase(), () -> crateItem);
         CRATE_ITEMS.add(crateItem);
     }
@@ -61,7 +60,7 @@ public class NeoForgePlatformHelper implements PlatformHelper {
         String crateName = ResourceUtils.removeCrateName(crateBlock.getBlockName().identifier().getPath()).toUpperCase();
         if (!isBlockEnabled(crateName)) return;
 
-        Item.Properties properties = ResourceUtils.setRarity(new Item.Properties(), 0).setId(ResourceUtils.createItemId(crateBlock.blockName().toLowerCase()));
+        Item.Properties properties = ResourceUtils.setRarity(new Item.Properties(), crateBlock.getCompressor().getCompressionLevel()).setId(ResourceUtils.createItemId(crateBlock.blockName().toLowerCase()));
 
         CompressedBlocksNeoForge.CRATE_BLOCKS.register(crateBlock.blockName().toLowerCase(), () -> crateBlock);
         CompressedBlocksNeoForge.CRATE_ITEMS.register(crateBlock.blockName().toLowerCase(), () -> new BlockItem(crateBlock, properties));

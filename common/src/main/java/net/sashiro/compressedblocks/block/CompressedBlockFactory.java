@@ -21,6 +21,7 @@ import static net.sashiro.compressedblocks.Constants.*;
 public class CompressedBlockFactory {
     public static final ArrayList<Block> BLOCK_LIST = new ArrayList<>();
     public static BasicCompressedBlock STONE = null;
+    private static boolean finished = false;
 
     /**
      * Creates the block list based on the entries in the CompressionCatalog.
@@ -28,6 +29,9 @@ public class CompressedBlockFactory {
      * The created blocks are added to the BLOCK_LIST.
      */
     public static void createBlockList() {
+        // If the block list has already been created, return early to avoid duplicate entries.
+        if (finished) return;
+
         for (CompressionEntry entry : CompressionCatalog.BLOCK_ENTRIES) {
             if (!Services.PLATFORM.isBlockEnabled(entry.id())) continue;
             // check what minecraft version we are on first
@@ -55,6 +59,7 @@ public class CompressedBlockFactory {
                 Collections.addAll(BLOCK_LIST, glassBlocks);
             }
         }
+        finished = true;
     }
 
     /**
