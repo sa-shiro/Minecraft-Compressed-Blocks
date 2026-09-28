@@ -1,4 +1,4 @@
-package net.sashiro.compressedblocks.block;
+package net.sashiro.compressedblocks.crate;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -15,7 +15,8 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.sashiro.compressedblocks.util.Compression;
+import net.sashiro.compressedblocks.block.CompressedBlock;
+import net.sashiro.compressedblocks.compression.Compression;
 
 @SuppressWarnings("NullableProblems")
 public class CrateBlock extends HorizontalDirectionalBlock implements CompressedBlock {
@@ -25,12 +26,12 @@ public class CrateBlock extends HorizontalDirectionalBlock implements Compressed
     private final ResourceKey<Block> name;
 
     /**
-     * Constructor for the CrateBlock class
+     * Constructs a new CrateBlock instance with the specified properties and compression settings.
      *
-     * @param id                    ResourceKey<Block> of the block
-     * @param properties            BlockBehaviour.Properties of the block
-     * @param compressionLevel      Compression level of the block
-     * @param hasSmallerCompression Whether the block has smaller compression
+     * @param id                    The resource key for the block.
+     * @param properties            The block properties.
+     * @param compressionLevel      The compression level for the block.
+     * @param hasSmallerCompression Whether the block allows smaller compression.
      */
     public CrateBlock(ResourceKey<Block> id, Properties properties, int compressionLevel, boolean hasSmallerCompression) {
         super(properties.setId(id));
@@ -38,10 +39,6 @@ public class CrateBlock extends HorizontalDirectionalBlock implements Compressed
         compressor.setCompressionLevel(compressionLevel, hasSmallerCompression);
         this.registerDefaultState(super.stateDefinition.any().setValue(FACING, Direction.NORTH));
         this.properties().overrideDescription(String.valueOf(Component.literal(compressor.getQuantity() + " Blocks").withStyle(compressor.getStyle())));
-    }
-
-    public String getBlockNameString() {
-        return name.identifier().getPath();
     }
 
     @Override
@@ -71,7 +68,7 @@ public class CrateBlock extends HorizontalDirectionalBlock implements Compressed
 
     @Override
     public String blockName() {
-        return getBlockNameString();
+        return this.name.identifier().getPath();
     }
 
     /**

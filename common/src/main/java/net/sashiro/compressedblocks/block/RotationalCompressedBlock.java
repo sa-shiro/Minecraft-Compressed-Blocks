@@ -8,15 +8,22 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.sashiro.compressedblocks.util.Compression;
+import net.sashiro.compressedblocks.compression.Compression;
 import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.NonNull;
 
-public class CBRotationalBlock extends RotatedPillarBlock implements CompressedBlock {
+public class RotationalCompressedBlock extends RotatedPillarBlock implements CompressedBlock {
     private final Compression compressor = new Compression();
     private final String block_name;
 
-    public CBRotationalBlock(Properties properties, int compressionLevel, ResourceKey<Block> id) {
+    /**
+     * Constructs a new RotationalCompressedBlock instance with the specified properties and compression settings.
+     *
+     * @param properties       The block properties.
+     * @param compressionLevel The compression level for the block.
+     * @param id               The resource key for the block.
+     */
+    public RotationalCompressedBlock(Properties properties, int compressionLevel, ResourceKey<Block> id) {
         super(properties.setId(id));
         this.block_name = id.identifier().getPath();
         compressor.setCompressionLevel(compressionLevel);
@@ -38,11 +45,7 @@ public class CBRotationalBlock extends RotatedPillarBlock implements CompressedB
         return super.getStateForPlacement(blockPlaceContext);
     }
 
-    /**
-     * Function to get the compressor of the block
-     *
-     * @return Compressor
-     */
+    @Override
     public Compression getCompressor() {
         return compressor;
     }

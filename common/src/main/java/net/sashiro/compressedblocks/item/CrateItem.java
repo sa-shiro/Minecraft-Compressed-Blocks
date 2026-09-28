@@ -2,8 +2,8 @@ package net.sashiro.compressedblocks.item;
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
-import net.sashiro.compressedblocks.util.CommonUtils;
-import net.sashiro.compressedblocks.util.Compression;
+import net.sashiro.compressedblocks.compression.Compression;
+import net.sashiro.compressedblocks.util.ResourceUtils;
 
 public class CrateItem extends Item {
     private final Compression compressor = new Compression();
@@ -17,8 +17,8 @@ public class CrateItem extends Item {
      * @param compressionLevel      Compression level of the item
      * @param hasSmallerCompression Whether the item has smaller compression
      */
-    public CrateItem(ResourceKey<Item> id, int compressionLevel, boolean hasSmallerCompression) {
-        super(CommonUtils.setRarity(new Item.Properties().stacksTo(64).setId(id), compressionLevel));
+    public CrateItem(ResourceKey<Item> id, Item.Properties properties, int compressionLevel, boolean hasSmallerCompression) {
+        super(ResourceUtils.setRarity(properties.setId(id), compressionLevel));
         compressor.setCompressionLevel(compressionLevel, hasSmallerCompression);
         this.compressionLevel = compressionLevel;
         this.name = id.identifier().getPath();

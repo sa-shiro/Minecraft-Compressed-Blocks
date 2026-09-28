@@ -2,11 +2,12 @@ package net.sashiro.compressedblocks.fabric.data.providers;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
-import net.sashiro.compressedblocks.util.CommonUtils;
+import net.sashiro.compressedblocks.util.ResourceUtils;
 import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -93,37 +94,39 @@ public class CBLanguageProvider extends FabricLanguageProvider {
         for (Block block : Constants.BLOCKS) {
             String name = block.getDescriptionId().replace("block.compressedblocks.", "");
             String name2 = "";
+            ChatFormatting color = ResourceUtils.getRarityColor(ResourceUtils.getCompressionLevel(name));
+
             for (int i = 0; i < 10; i++) {
                 if (name.contains("c" + i))
                     name2 = name.replace("c" + i + "_", "");
             }
-            builder.add("item.compressedblocks." + name, CommonUtils.compressionLevel(name) + CommonUtils.stringFormat(name2.replace("_", " ")));
+            builder.add("item.compressedblocks." + name, color.toString() + ResourceUtils.getCompressionLevelName(name) + ResourceUtils.capitalizeWords(name2.replace("_", " ")));
         }
 
         for (Item crate : Constants.CRATE_ITEMS) {
             Item item = crate.asItem();
             String name = item.getDescriptionId().replace("block.compressedblocks.", "").replace("item.compressedblocks.", "");
-            String translation = CommonUtils.stringFormat(name.replace("_", " "));
+            String translation = ResourceUtils.capitalizeWords(name.replace("_", " "));
             translation = pluralize(translation);
+            ChatFormatting color = ResourceUtils.getRarityColor(ResourceUtils.getCrateLevel(name));
 
             String finalTranslation = translation.replace("Crated", "Crate of");
-            if (name.contains("totem") || name.contains("dragon")) {
+            if (name.contains("totem") || name.contains("dragon") && !name.startsWith("crated_")) {
                 builder.add("item.compressedblocks." + name, "§6" + finalTranslation);
             } else if (!name.startsWith("item.")) {
-                builder.add("item.compressedblocks." + name, finalTranslation);
+                builder.add("item.compressedblocks." + name, color.toString() + finalTranslation);
             }
         }
 
         for (Block crate : Constants.CRATE_BLOCKS) {
             String name = crate.getDescriptionId().replace("block.compressedblocks.", "");
-            String translation = CommonUtils.stringFormat(name.replace("_", " "));
+            String translation = ResourceUtils.capitalizeWords(name.replace("_", " "));
             translation = pluralize(translation);
+            ChatFormatting color = ResourceUtils.getRarityColor(ResourceUtils.getCrateLevel(name));
 
             String finalTranslation = translation.replace("Crated", "Crate of");
-            if (name.contains("totem") || name.contains("dragon")) {
-                builder.add("item.compressedblocks." + name, "§6" + finalTranslation);
-            } else if (!name.startsWith("item.")) {
-                builder.add("item.compressedblocks." + name, finalTranslation);
+            if (!name.startsWith("item.")) {
+                builder.add("item.compressedblocks." + name, color.toString() + finalTranslation);
             }
         }
     }

@@ -1,13 +1,15 @@
-package net.sashiro.compressedblocks.block;
+package net.sashiro.compressedblocks.crate;
 
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.platform.Services;
-import net.sashiro.compressedblocks.util.CommonUtils;
-import net.sashiro.compressedblocks.util.CompressionCatalog;
-import net.sashiro.compressedblocks.util.CompressionEntry;
+import net.sashiro.compressedblocks.util.*;
+import net.sashiro.compressedblocks.compression.CompressionCatalog;
+import net.sashiro.compressedblocks.compression.CompressionEntry;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,11 +17,11 @@ import java.util.Collections;
 import static net.sashiro.compressedblocks.Constants.MAX_CRATE_COMPRESSION_LEVEL;
 
 /**
- * The CrateList class is responsible for creating and managing a list of crate items and blocks based on the entries in the CompressionCatalog.
+ * The CrateFactory class is responsible for creating and managing a list of crate items and blocks based on the entries in the CompressionCatalog.
  * It checks if each crate item or block is enabled and creates the appropriate type (crate item or crate block).
  * The created crate items and blocks are added to their respective lists.
  */
-public class CrateList {
+public class CrateFactory {
     public static final ArrayList<Item> CRATE_ITEM_LIST = new ArrayList<>();
     public static final ArrayList<Block> CRATE_BLOCK_LIST = new ArrayList<>();
     public static CrateItem GOLDEN_APPLE = null;
@@ -32,6 +34,8 @@ public class CrateList {
     public static void createCrateList() {
         for (CompressionEntry entry : CompressionCatalog.CRATE_ENTRIES) {
             if (!Services.PLATFORM.isBlockEnabled(entry.id())) continue;
+            // check what minecraft version we are on first
+            if (!VersionUtils.isCompatibleWithCurrentVersion(entry)) continue;
 
             CompressionEntry entry1 = new CompressionEntry(
                     entry.id(),
@@ -39,7 +43,7 @@ public class CrateList {
                     Services.PLATFORM.getHardnessResistanceMultiplier(entry.id()),
                     Services.PLATFORM.getMaxCompressionLevel(entry.id()),
                     entry.hasSmallerCompression(), // todo: make it configurable? not sure
-                    Services.PLATFORM.isBlockEnabled(entry.id())); // actually redundant, because we already checked if the block is enabled so we can just set it to true ;)
+                    Services.PLATFORM.isBlockEnabled(entry.id()), "null"); // actually redundant, because we already checked if the block is enabled so we can just set it to true ;)
 
             if (entry1.kind() == CompressionEntry.Kind.CRATE_ITEM) {
                 CrateItem[] crateItems = createItems(entry1);
@@ -67,7 +71,14 @@ public class CrateList {
         CrateItem[] result = new CrateItem[maxCrateCompressionLevel];
 
         for (int i = 0; i < maxCrateCompressionLevel; i++) {
-            result[i] = new CrateItem(CommonUtils.createItemId(CommonUtils.getCratePrefix(i) + entry.id()), i, entry.hasSmallerCompression());
+            ResourceKey<Item> itemId = ResourceUtils.createItemId(ResourceUtils.getCratePrefix(i) + entry.id());
+            Item.Properties properties = new Item.Properties().stacksTo(64);
+
+            if (entry.id().toLowerCase().contains("enchanted")) {
+                properties = properties.component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true);
+            }
+
+            result[i] = new CrateItem(itemId, properties, i, entry.hasSmallerCompression());
         }
         return result;
     }
@@ -85,7 +96,7 @@ public class CrateList {
         CrateBlock[] result = new CrateBlock[maxCrateCompressionLevel];
 
         for (int i = 0; i < maxCrateCompressionLevel; i++) {
-            result[i] = new CrateBlock(CommonUtils.createBlockId(CommonUtils.getCratePrefix(i) + entry.id()), BlockBehaviour.Properties.of(), i, entry.hasSmallerCompression());
+            result[i] = new CrateBlock(ResourceUtils.createBlockId(ResourceUtils.getCratePrefix(i) + entry.id()), BlockBehaviour.Properties.of(), i, entry.hasSmallerCompression());
         }
         return result;
     }

@@ -15,11 +15,11 @@ import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.block.CompressedBlock;
 import net.sashiro.compressedblocks.item.CrateItem;
-import net.sashiro.compressedblocks.util.Compression;
+import net.sashiro.compressedblocks.compression.Compression;
 
 import java.util.concurrent.CompletableFuture;
 
-@SuppressWarnings("NullableProblems")
+@SuppressWarnings({"NullableProblems", "SameParameterValue"})
 public class CBRecipeProvider extends FabricRecipeProvider {
 
     private static HolderGetter<Item> items;

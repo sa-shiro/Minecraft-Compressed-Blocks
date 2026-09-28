@@ -1,6 +1,6 @@
 package net.sashiro.compressedblocks.block;
 
-import net.sashiro.compressedblocks.util.Compression;
+import net.sashiro.compressedblocks.compression.Compression;
 
 /**
  * Interface for compressed blocks

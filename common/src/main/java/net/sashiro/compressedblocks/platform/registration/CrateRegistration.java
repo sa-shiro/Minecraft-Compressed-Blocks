@@ -1,14 +1,14 @@
-package net.sashiro.compressedblocks.platform.registry;
+package net.sashiro.compressedblocks.platform.registration;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.sashiro.compressedblocks.block.CrateBlock;
+import net.sashiro.compressedblocks.crate.CrateBlock;
 import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.platform.Services;
 
-import static net.sashiro.compressedblocks.block.CrateList.*;
+import static net.sashiro.compressedblocks.crate.CrateFactory.*;
 
-public class CBCrateRegistry {
+public class CrateRegistration {
     public static void registerCrates() {
         if (Services.PLATFORM.areCratesEnabled()) {
 

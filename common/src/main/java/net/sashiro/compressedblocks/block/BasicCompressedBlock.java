@@ -3,13 +3,21 @@ package net.sashiro.compressedblocks.block;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
-import net.sashiro.compressedblocks.util.Compression;
+import net.sashiro.compressedblocks.compression.Compression;
 
-public class CBBlock extends Block implements CompressedBlock {
+public class BasicCompressedBlock extends Block implements CompressedBlock {
     private final Compression compressor = new Compression();
     private final String block_name;
 
-    public CBBlock(ResourceKey<Block> id, Properties properties, int compressionLevel, boolean hasSmallerCompression) {
+    /**
+     * Constructs a new BasicCompressedBlock instance with the specified properties and compression settings.
+     *
+     * @param id                    The resource key for the block.
+     * @param properties            The block properties.
+     * @param compressionLevel      The compression level for the block.
+     * @param hasSmallerCompression Whether the block allows smaller compression.
+     */
+    public BasicCompressedBlock(ResourceKey<Block> id, Properties properties, int compressionLevel, boolean hasSmallerCompression) {
         super(properties.setId(id));
         this.block_name = id.identifier().getPath();
         compressor.setCompressionLevel(compressionLevel, hasSmallerCompression);

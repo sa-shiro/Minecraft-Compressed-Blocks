@@ -5,15 +5,18 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
-import net.sashiro.compressedblocks.Constants;
-import net.sashiro.compressedblocks.block.CrateBlock;
+import net.sashiro.compressedblocks.block.CompressedBlock;
+import net.sashiro.compressedblocks.crate.CrateBlock;
 import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.neoforge.CBNeoForgeConfig;
 import net.sashiro.compressedblocks.neoforge.CompressedBlocksNeoForge;
-import net.sashiro.compressedblocks.platform.services.IPlatformHelper;
-import net.sashiro.compressedblocks.util.CommonUtils;
+import net.sashiro.compressedblocks.platform.services.PlatformHelper;
+import net.sashiro.compressedblocks.util.ResourceUtils;
 
-public class NeoForgePlatformHelper implements IPlatformHelper {
+import static net.sashiro.compressedblocks.Constants.*;
+
+@SuppressWarnings("unused")
+public class NeoForgePlatformHelper implements PlatformHelper {
 
     public static final NeoForgePlatformHelper INSTANCE = new NeoForgePlatformHelper();
 
@@ -33,39 +36,36 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
     }
 
     @Override
-    public void registerBlock(String name, Block... blocks) {
-        for (int i = 0; i < blocks.length; i++) {
-            String prefixedName = "c" + i + "_" + name;
-            Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i).setId(CommonUtils.createItemId(prefixedName));
-            int finalI = i;
-            CompressedBlocksNeoForge.BLOCKS.register(prefixedName.toLowerCase(), () -> blocks[finalI]);
-            CompressedBlocksNeoForge.ITEMS.register(prefixedName.toLowerCase(), () -> new BlockItem(blocks[finalI], properties));
-            Constants.BLOCKS.add(blocks[i]);
-        }
+    public void registerBlock(Block block) {
+        CompressedBlock cbBlock = (CompressedBlock) block;
+        if (!isBlockEnabled(cbBlock.blockName())) return;
+
+        Item.Properties properties = ResourceUtils.setRarity(new Item.Properties().setId(ResourceUtils.createItemId(cbBlock.blockName())), cbBlock.getCompressor().getCompressionLevel());
+
+        CompressedBlocksNeoForge.BLOCKS.register(cbBlock.blockName().toLowerCase(), () -> block);
+        CompressedBlocksNeoForge.ITEMS.register(cbBlock.blockName().toLowerCase(), () -> new BlockItem(block, properties));
+        BLOCKS.add(block);
     }
 
     @Override
-    public void registerCrate(CrateItem... crateItems) {
-        for (int i = 0; i < crateItems.length; i++) {
-            Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i).setId(CommonUtils.createItemId(crateItems[i].getCrateName().toLowerCase()));
-            int finalI = i;
-
-            CompressedBlocksNeoForge.CRATE_ITEMS.register(crateItems[i].getCrateName().toLowerCase(), () -> new Item(properties));
-            Constants.CRATE_ITEMS.add(crateItems[i]);
-        }
+    public void registerCrate(CrateItem crateItem) {
+        String crateName = ResourceUtils.removeCrateName(crateItem.getCrateName()).toUpperCase();
+        if (!isBlockEnabled(crateName)) return;
+        //Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, crateItem.getCrateName().toLowerCase()), crateItem);
+        CompressedBlocksNeoForge.CRATE_ITEMS.register(crateItem.getCrateName().toLowerCase(), () -> crateItem);
+        CRATE_ITEMS.add(crateItem);
     }
 
     @Override
-    public void registerCrate(CrateBlock... crateBlocks) {
-        for (int i = 0; i < crateBlocks.length; i++) {
-            String crateName = crateBlocks[i].getBlockNameString().toLowerCase();
-            Item.Properties properties = CommonUtils.setRarity(new Item.Properties(), i).setId(CommonUtils.createItemId(crateName));
-            int finalI = i;
+    public void registerCrate(CrateBlock crateBlock) {
+        String crateName = ResourceUtils.removeCrateName(crateBlock.getBlockName().identifier().getPath()).toUpperCase();
+        if (!isBlockEnabled(crateName)) return;
 
-            CompressedBlocksNeoForge.CRATE_BLOCKS.register(crateName.toLowerCase(), () -> crateBlocks[finalI]);
-            CompressedBlocksNeoForge.CRATE_ITEMS.register(crateName.toLowerCase(), () -> new BlockItem(crateBlocks[finalI], properties));
-            Constants.CRATE_BLOCKS.add(crateBlocks[i]);
-        }
+        Item.Properties properties = ResourceUtils.setRarity(new Item.Properties(), 0).setId(ResourceUtils.createItemId(crateBlock.blockName().toLowerCase()));
+
+        CompressedBlocksNeoForge.CRATE_BLOCKS.register(crateBlock.blockName().toLowerCase(), () -> crateBlock);
+        CompressedBlocksNeoForge.CRATE_ITEMS.register(crateBlock.blockName().toLowerCase(), () -> new BlockItem(crateBlock, properties));
+        CRATE_BLOCKS.add(crateBlock);
     }
 
     @Override
@@ -85,12 +85,12 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
 
     @Override
     public float[] getHardnessArray() {
-        return new float[0];
+        return CBNeoForgeConfig.CONFIG.getHardnessArray();
     }
 
     @Override
     public float[] getResistanceArray() {
-        return new float[0];
+        return CBNeoForgeConfig.CONFIG.getResistanceArray();
     }
 
     @Override
@@ -100,6 +100,21 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
 
     @Override
     public boolean isBlockEnabled(String name) {
+        if (name.contains("crate")) {
+            name = ResourceUtils.removeCrateName(name).toUpperCase();
+        } else {
+            name = ResourceUtils.removeCompressionName(name).toUpperCase();
+        }
         return CBNeoForgeConfig.CONFIG.isBlockEnabled(name);
+    }
+
+    @Override
+    public float getHardnessResistanceMultiplier(String id) {
+        return CBNeoForgeConfig.CONFIG.getHardnessResistanceMultiplier(id);
+    }
+
+    @Override
+    public int getMaxCompressionLevel(String id) {
+        return CBNeoForgeConfig.CONFIG.getCompressionLevel(id);
     }
 }
