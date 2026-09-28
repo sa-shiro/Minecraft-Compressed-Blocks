@@ -19,7 +19,8 @@ import net.sashiro.compressedblocks.item.CrateItem;
 @EventBusSubscriber(modid = Constants.MOD_ID, value = Dist.CLIENT)
 public final class CBNeoForgeClient {
 
-    private CBNeoForgeClient() {}
+    private CBNeoForgeClient() {
+    }
 
     /**
      * Handles the ItemTooltipEvent to add additional information to the tooltip for compressed blocks and crates.

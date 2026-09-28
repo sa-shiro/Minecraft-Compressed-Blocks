@@ -1,27 +1,22 @@
-# v1.8.2 [ 1.21.4 ]
+# CB: Compressed Blocks v2.0.0 [ 1.21.11 ]
 
 ## General
 
-- added support for FORGE
+- **Rewritten**: Codebase refactored for better maintainability and performance
+ - **Added**: Support for Minecraft 1.21.11
+ - **Added**: New Blocks and Crates (see [CompressionCatalog](https://github.com/sa-shiro/Minecraft-Compressed-Blocks/tree/master/common/src/main/java/net/sashiro/compressedblocks/compression/CompressionCatalog.java) for a complete list)
+ - **Added**: New Configurations (Blocks and Crates can now be disabled individually in the config)
+ - **Fixed**: Quartz compressed blocks not working properly
+ - **Changed**: Creative Inventory Tab icon for crates (Apple → Enchanted Golden Apple, fixes #72)
 
 ---
 
 ## NeoForge
 
-- fixed registration not working
-- updated neoforge version
+- **Fixed**: Configuration not working properly in NeoForge
 
 ---
 
 ## Fabric
-
-- updated fabric / fabric api version
-
----
-
-## Forge
-
-- added forge support
-- **Note:** forge currently does not support configuration
 
 ---

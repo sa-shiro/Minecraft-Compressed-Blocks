@@ -5,11 +5,12 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.sashiro.compressedblocks.item.CrateItem;
-import net.sashiro.compressedblocks.platform.Services;
-import net.sashiro.compressedblocks.util.*;
 import net.sashiro.compressedblocks.compression.CompressionCatalog;
 import net.sashiro.compressedblocks.compression.CompressionEntry;
+import net.sashiro.compressedblocks.item.CrateItem;
+import net.sashiro.compressedblocks.platform.Services;
+import net.sashiro.compressedblocks.util.ResourceUtils;
+import net.sashiro.compressedblocks.util.VersionUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -14,8 +14,8 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.block.CompressedBlock;
-import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.compression.Compression;
+import net.sashiro.compressedblocks.item.CrateItem;
 
 import java.util.concurrent.CompletableFuture;
 
