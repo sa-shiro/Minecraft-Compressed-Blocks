@@ -242,3 +242,4 @@ act.exe
 # Ignore IDEA run configurations
 .idea/runConfigurations/
 /.github/workflows/release_test.yml
+/notes.txt
