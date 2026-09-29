@@ -1,4 +1,4 @@
-package net.sashiro.compressedblocks.util;
+package net.sashiro.compressedblocks.compression;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Style;
@@ -47,9 +47,9 @@ public class Compression {
     private Style style = Style.EMPTY;
 
     /**
-     * Creates a new {@code CompressionInfo} instance with no compression applied.
+     * Constructs a Compression instance with default values.
      * <p>
-     * The compression level defaults to {@code 0}.
+     * The default compression level is {@code 0} (base), and it does not represent a smaller variant.
      */
     public Compression() {
         setCompressionLevel(0, false);

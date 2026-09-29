@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   push:
     tags:
-      - '*'
+      - 'v*'
 
 jobs:
   publish:
@@ -52,7 +52,7 @@ jobs:
           }
 
       - name: "Validate gradle wrapper"
-        uses: gradle/actions/wrapper-validation@v5
+        uses: gradle/actions/wrapper-validation@v6
 
       - name: "Setup jdk ${{ matrix.java }}"
         uses: actions/setup-java@v5
@@ -72,7 +72,7 @@ jobs:
 
       - name: "Capture build artifacts"
         if: ${{ runner.os == 'Windows' && matrix.java == '17' }} # Only upload artifacts built from the latest java on one OS
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: Artifacts
           path: |
@@ -170,3 +170,27 @@ jobs:
           retry-attempts: 2
           retry-delay: 10000
           fail-mode: warn
+
+      - name: "Prepare Discord announcement"
+        shell: pwsh
+        env:
+          DISCORD_ROLE_ID: ${{ secrets.DISCORD_ANNOUNCEMENT_ROLE_ID }}
+        run: |
+          $changelog = Get-Content changelog.md -Raw
+
+          $payload = @{
+            content = "<@&$($env:DISCORD_ROLE_ID)>`n`n$changelog"
+          } | ConvertTo-Json -Depth 10
+
+          $payload | Out-File discord.json -Encoding utf8
+
+      - name: "Discord Webhook"
+        shell: pwsh
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          Invoke-RestMethod `
+            -Uri $env:DISCORD_WEBHOOK_URL `
+            -Method Post `
+            -ContentType "application/json" `
+            -Body (Get-Content discord.json -Raw)

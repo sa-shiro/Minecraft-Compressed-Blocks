@@ -17,15 +17,15 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.Constants;
-import net.sashiro.compressedblocks.platform.registry.CBBlockRegistry;
-import net.sashiro.compressedblocks.platform.registry.CBCrateRegistry;
+import net.sashiro.compressedblocks.block.CompressedBlockFactory;
+import net.sashiro.compressedblocks.crate.CrateFactory;
+import net.sashiro.compressedblocks.platform.registration.BlockRegistration;
+import net.sashiro.compressedblocks.platform.registration.CrateRegistration;
 
 import java.util.function.Supplier;
 
 import static net.sashiro.compressedblocks.Constants.LOG;
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
-import static net.sashiro.compressedblocks.block.BlockList.STONE;
-import static net.sashiro.compressedblocks.block.CrateList.APPLE;
 
 @SuppressWarnings("unused")
 @Mod(Constants.MOD_ID)
@@ -39,7 +39,7 @@ public class CompressedBlocksNeoForge {
     public static final Supplier<CreativeModeTab> CRATES_TAB = CREATIVE_MODE_TABS.register("compressed_items", () -> CreativeModeTab.builder()
             .withTabsBefore(Identifier.fromNamespaceAndPath(MOD_ID, "compressed_blocks"))
             .title(Component.literal("Crates"))
-            .icon(() -> APPLE.asItem().getDefaultInstance())
+            .icon(() -> CrateFactory.GOLDEN_APPLE.asItem().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 for (DeferredHolder<Item, ? extends Item> item : CRATE_ITEMS.getEntries()) {
                     output.accept(item.get());
@@ -48,7 +48,7 @@ public class CompressedBlocksNeoForge {
     public static final Supplier<CreativeModeTab> COMPRESSED_BLOCKS_TAB = CREATIVE_MODE_TABS.register("compressed_blocks", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .title(Component.literal("Compressed Blocks"))
-            .icon(() -> STONE.asItem().getDefaultInstance())
+            .icon(() -> CompressedBlockFactory.STONE.asItem().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 for (DeferredHolder<Item, ? extends Item> item : ITEMS.getEntries()) {
                     output.accept(item.get());
@@ -67,19 +67,19 @@ public class CompressedBlocksNeoForge {
         CRATE_ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
         modEventBus.addListener(this::reg);
-
-        LOG.info("Successfully registered all Blocks and Crates!");
     }
 
     /**
-     * Required because the registration will be frozen before {@link CBBlockRegistry} is fired.
+     * Required because the registration will be frozen before {@link BlockRegistration} is fired.
      *
      * @param event RegisterEvent
      */
     private void reg(RegisterEvent event) {
         if (!finished) {
-            CBBlockRegistry.registerBlocks();
-            CBCrateRegistry.registerCrates();
+            BlockRegistration.registerBlocks();
+            CrateRegistration.registerCrates();
+            LOG.info("Compressed Blocks NeoForge mod initialized successfully. Registered {} Blocks and {} Crates.", Constants.BLOCKS.size(), Constants.CRATE_BLOCKS.size() + Constants.CRATE_ITEMS.size());
+
             finished = true;
         }
     }

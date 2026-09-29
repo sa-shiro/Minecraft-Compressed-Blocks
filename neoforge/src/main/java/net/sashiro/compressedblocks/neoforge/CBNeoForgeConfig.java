@@ -3,11 +3,21 @@ package net.sashiro.compressedblocks.neoforge;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.sashiro.compressedblocks.Constants;
+import net.sashiro.compressedblocks.compression.CompressionCatalog;
+import net.sashiro.compressedblocks.compression.CompressionEntry;
 import org.apache.commons.lang3.tuple.Pair;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-@EventBusSubscriber(modid = Constants.MOD_NAME)
+/**
+ * CBNeoForgeConfig is a configuration class for the Compressed Blocks mod on the NeoForge platform.
+ * It defines various configuration options for compressed blocks and crates, including enabling/disabling
+ * specific blocks and crates, as well as their hardness resistance multipliers and compression levels.
+ */
+@EventBusSubscriber(modid = Constants.MOD_ID)
 public class CBNeoForgeConfig {
 
     public static final CBNeoForgeConfig CONFIG;
@@ -27,12 +37,16 @@ public class CBNeoForgeConfig {
     public final ModConfigSpec.IntValue CONFIG_MAX_COMPRESSION_LEVEL;
     public final ModConfigSpec.IntValue CONFIG_MAX_CRATE_COMPRESSION_LEVEL;
 
-    public final ModConfigSpec.ConfigValue<float[]> CONFIG_HARDNESS_LEVELS;
-    public final ModConfigSpec.ConfigValue<float[]> CONFIG_RESISTANCE_LEVELS;
+    public final ModConfigSpec.ConfigValue<List<? extends Float>> CONFIG_HARDNESS_LEVELS;
+    public final ModConfigSpec.ConfigValue<List<? extends Float>> CONFIG_RESISTANCE_LEVELS;
+    public final Map<String, CompressionSettings> COMPRESSED_BLOCKS = new HashMap<>();
+    public final Map<String, CompressionSettings> CRATES = new HashMap<>();
 
-    public ArrayList<ModConfigSpec.BooleanValue> ENABLED_BLOCKS = new ArrayList<>();
-    public ArrayList<ModConfigSpec.BooleanValue> ENABLED_CRATES = new ArrayList<>();
-
+    /**
+     * Initializes the configuration settings for compressed blocks and crates.
+     *
+     * @param builder The ModConfigSpec.Builder used to define configuration options.
+     */
     private CBNeoForgeConfig(ModConfigSpec.Builder builder) {
         // Compressed Blocks Configuration
         // ----------------------------------------------------------------------------------
@@ -58,475 +72,170 @@ public class CBNeoForgeConfig {
         CONFIG_BLOCKS_ENABLED = builder.define("blocksEnabled", true);
         builder.comment("Enable crates");
         CONFIG_CRATES_ENABLED = builder.define("cratesEnabled", true);
-        builder.comment("Maximum compression level for blocks");
+        builder.comment("Maximum compression level for all blocks");
         CONFIG_MAX_COMPRESSION_LEVEL = builder.defineInRange("maxCompressionLevel", 10, 1, 10);
-        builder.comment("Maximum compression level for crates");
+        builder.comment("Maximum compression level for all crates");
         CONFIG_MAX_CRATE_COMPRESSION_LEVEL = builder.defineInRange("maxCrateCompressionLevel", 10, 1, 10);
-        builder.comment("Hardness levels for each compression level (0-9):");
-        CONFIG_HARDNESS_LEVELS = builder.define("HARDNESS_LEVELS", new float[]{5.0F, 6.5F, 8.5F, 12.5F, 15.0F, 20.5F, 25.5F, 30.5F, 40.0F, 50.0F});
-        builder.comment("Resistance levels for each compression level (0-9):");
-        CONFIG_RESISTANCE_LEVELS = builder.define("RESISTANCE_LEVELS", new float[]{35.5F, 75.0F, 150.0F, 300.0F, 600.0F, 800.0F, 1250.0F, 2000.0F, 5000.0F, 7500.0F});
+
+        builder.comment("Hardness levels for each compression level");
+        CONFIG_HARDNESS_LEVELS = builder.defineList("hardnessLevels", Arrays.asList(5.0F, 6.5F, 8.5F, 12.5F, 15.0F, 20.5F, 25.5F, 30.5F, 40.0F, 50.0F), () -> 0.0F, o -> o instanceof Float);
+        builder.comment("Resistance levels for each compression level");
+        CONFIG_RESISTANCE_LEVELS = builder.defineList("resistanceLevels", Arrays.asList(35.5F, 75.0F, 150.0F, 300.0F, 600.0F, 800.0F, 1250.0F, 2000.0F, 5000.0F, 7500.0F), () -> 0.0F, o -> o instanceof Float);
+
 
         builder.comment("Enabled blocks:");
-        ENABLED_BLOCKS.add(builder.define("DIRT", true));
-        ENABLED_BLOCKS.add(builder.define("GRAVEL", true));
-        ENABLED_BLOCKS.add(builder.define("COBBLESTONE", true));
         builder.comment("Note: Stone can not be disabled as it is required for the creative inventory icon.");
-        ENABLED_BLOCKS.add(builder.define("STONE", true));
-        ENABLED_BLOCKS.add(builder.define("GRANITE", true));
-        ENABLED_BLOCKS.add(builder.define("DIORITE", true));
-        ENABLED_BLOCKS.add(builder.define("ANDESITE", true));
-        ENABLED_BLOCKS.add(builder.define("CRIMSON_NYLIUM", true));
-        ENABLED_BLOCKS.add(builder.define("WARPED_NYLIUM", true));
-        ENABLED_BLOCKS.add(builder.define("CLAY", true));
-        ENABLED_BLOCKS.add(builder.define("SAND", true));
-        ENABLED_BLOCKS.add(builder.define("RED_SAND", true));
-        ENABLED_BLOCKS.add(builder.define("SANDSTONE", true));
-        ENABLED_BLOCKS.add(builder.define("RED_SANDSTONE", true));
-        ENABLED_BLOCKS.add(builder.define("COAL_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("COPPER_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("IRON_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("GOLD_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("REDSTONE_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("EMERALD_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("LAPIS_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("DIAMOND_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("NETHER_GOLD_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("NETHER_QUARTZ_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("DEEPSLATE_COAL_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("DEEPSLATE_COPPER_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("DEEPSLATE_IRON_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("DEEPSLATE_GOLD_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("DEEPSLATE_REDSTONE_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("DEEPSLATE_EMERALD_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("DEEPSLATE_LAPIS_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("DEEPSLATE_DIAMOND_ORE", true));
-        ENABLED_BLOCKS.add(builder.define("RAW_IRON_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("RAW_COPPER_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("RAW_GOLD_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("IRON_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("GOLD_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("REDSTONE_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("EMERALD_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("LAPIS_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("DIAMOND_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("NETHERITE_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("COAL_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("SLIME_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("HONEY_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("STONE_BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("NETHERRACK", true));
-        ENABLED_BLOCKS.add(builder.define("NETHER_BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("RED_NETHER_BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("NETHER_WART_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("SOUL_SAND", true));
-        ENABLED_BLOCKS.add(builder.define("SOUL_SOIL", true));
-        ENABLED_BLOCKS.add(builder.define("END_STONE", true));
-        ENABLED_BLOCKS.add(builder.define("END_STONE_BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("BLACKSTONE", true));
-        ENABLED_BLOCKS.add(builder.define("DEEPSLATE", true));
-        ENABLED_BLOCKS.add(builder.define("COBBLED_DEEPSLATE", true));
-        ENABLED_BLOCKS.add(builder.define("TUFF", true));
-        ENABLED_BLOCKS.add(builder.define("BASALT", true));
-        ENABLED_BLOCKS.add(builder.define("OBSIDIAN", true));
-        ENABLED_BLOCKS.add(builder.define("MUD", true));
-        ENABLED_BLOCKS.add(builder.define("OAK_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("SPRUCE_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("BIRCH_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("JUNGLE_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("ACACIA_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("DARK_OAK_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("MANGROVE_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("CHERRY_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("STRIPPED_OAK_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("STRIPPED_SPRUCE_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("STRIPPED_BIRCH_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("STRIPPED_JUNGLE_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("STRIPPED_ACACIA_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("STRIPPED_DARK_OAK_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("STRIPPED_MANGROVE_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("STRIPPED_CHERRY_LOG", true));
-        ENABLED_BLOCKS.add(builder.define("OAK_PLANKS", true));
-        ENABLED_BLOCKS.add(builder.define("SPRUCE_PLANKS", true));
-        ENABLED_BLOCKS.add(builder.define("BIRCH_PLANKS", true));
-        ENABLED_BLOCKS.add(builder.define("JUNGLE_PLANKS", true));
-        ENABLED_BLOCKS.add(builder.define("ACACIA_PLANKS", true));
-        ENABLED_BLOCKS.add(builder.define("DARK_OAK_PLANKS", true));
-        ENABLED_BLOCKS.add(builder.define("MANGROVE_PLANKS", true));
-        ENABLED_BLOCKS.add(builder.define("CHERRY_PLANKS", true));
-        ENABLED_BLOCKS.add(builder.define("BAMBOO_PLANKS", true));
-        ENABLED_BLOCKS.add(builder.define("BAMBOO_MOSAIC", true));
-        ENABLED_BLOCKS.add(builder.define("COPPER_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("CUT_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("EXPOSED_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("EXPOSED_CUT_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("WEATHERED_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("WEATHERED_CUT_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("OXIDIZED_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("OXIDIZED_CUT_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("WAXED_COPPER_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("WAXED_CUT_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("WAXED_EXPOSED_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("WAXED_EXPOSED_CUT_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("WAXED_WEATHERED_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("WAXED_WEATHERED_CUT_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("WAXED_OXIDIZED_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("WAXED_OXIDIZED_CUT_COPPER", true));
-        ENABLED_BLOCKS.add(builder.define("BONE_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("SCULK", true));
-        ENABLED_BLOCKS.add(builder.define("SMOOTH_SANDSTONE", true));
-        ENABLED_BLOCKS.add(builder.define("CUT_SANDSTONE", true));
-        ENABLED_BLOCKS.add(builder.define("CHISELED_SANDSTONE", true));
-        ENABLED_BLOCKS.add(builder.define("SMOOTH_RED_SANDSTONE", true));
-        ENABLED_BLOCKS.add(builder.define("CUT_RED_SANDSTONE", true));
-        ENABLED_BLOCKS.add(builder.define("CHISELED_RED_SANDSTONE", true));
-        ENABLED_BLOCKS.add(builder.define("CRIMSON_STEM", true));
-        ENABLED_BLOCKS.add(builder.define("WARPED_STEM", true));
-        ENABLED_BLOCKS.add(builder.define("TNT", true));
-        ENABLED_BLOCKS.add(builder.define("BAMBOO_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("STRIPPED_BAMBOO_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("STRIPPED_CRIMSON_STEM", true));
-        ENABLED_BLOCKS.add(builder.define("CRIMSON_PLANKS", true));
-        ENABLED_BLOCKS.add(builder.define("STRIPPED_WARPED_STEM", true));
-        ENABLED_BLOCKS.add(builder.define("WARPED_PLANKS", true));
-        ENABLED_BLOCKS.add(builder.define("MOSSY_COBBLESTONE", true));
-        ENABLED_BLOCKS.add(builder.define("MOSSY_STONE_BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("CRACKED_STONE_BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("CHISELED_STONE_BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("POLISHED_GRANITE", true));
-        ENABLED_BLOCKS.add(builder.define("POLISHED_DIORITE", true));
-        ENABLED_BLOCKS.add(builder.define("POLISHED_ANDESITE", true));
-        ENABLED_BLOCKS.add(builder.define("CHISELED_DEEPSLATE", true));
-        ENABLED_BLOCKS.add(builder.define("POLISHED_DEEPSLATE", true));
-        ENABLED_BLOCKS.add(builder.define("DEEPSLATE_BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("CRACKED_DEEPSLATE_BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("DEEPSLATE_TILES", true));
-        ENABLED_BLOCKS.add(builder.define("CRACKED_DEEPSLATE_TILES", true));
-        ENABLED_BLOCKS.add(builder.define("PACKED_MUD", true));
-        ENABLED_BLOCKS.add(builder.define("MUD_BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("PRISMARINE", true));
-        ENABLED_BLOCKS.add(builder.define("PRISMARINE_BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("DARK_PRISMARINE", true));
-        ENABLED_BLOCKS.add(builder.define("QUARTZ_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("CHISELED_QUARTZ_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("QUARTZ_BRICKS", true));
-        ENABLED_BLOCKS.add(builder.define("QUARTZ_PILLAR", true));
-        ENABLED_BLOCKS.add(builder.define("SMOOTH_QUARTZ_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("AMETHYST_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("WHITE_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("LIGHT_GRAY_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("GRAY_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("BLACK_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("BROWN_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("RED_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("ORANGE_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("YELLOW_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("LIME_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("GREEN_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("CYAN_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("LIGHT_BLUE_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("BLUE_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("PURPLE_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("MAGENTA_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("PINK_WOOL", true));
-        ENABLED_BLOCKS.add(builder.define("TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("WHITE_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("LIGHT_GRAY_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("GRAY_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("BLACK_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("BROWN_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("RED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("ORANGE_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("YELLOW_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("LIME_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("GREEN_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("CYAN_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("LIGHT_BLUE_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("BLUE_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("PURPLE_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("MAGENTA_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("PINK_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("WHITE_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("LIGHT_GRAY_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("GRAY_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("BLACK_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("BROWN_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("RED_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("ORANGE_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("YELLOW_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("LIME_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("GREEN_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("CYAN_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("LIGHT_BLUE_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("BLUE_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("PURPLE_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("MAGENTA_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("PINK_GLAZED_TERRACOTTA", true));
-        ENABLED_BLOCKS.add(builder.define("WHITE_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("LIGHT_GRAY_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("GRAY_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("BLACK_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("BROWN_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("RED_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("ORANGE_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("YELLOW_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("LIME_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("GREEN_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("CYAN_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("LIGHT_BLUE_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("BLUE_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("PURPLE_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("MAGENTA_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("PINK_CONCRETE_POWDER", true));
-        ENABLED_BLOCKS.add(builder.define("WHITE_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("LIGHT_GRAY_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("GRAY_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("BLACK_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("BROWN_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("RED_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("ORANGE_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("YELLOW_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("LIME_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("GREEN_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("CYAN_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("LIGHT_BLUE_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("BLUE_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("PURPLE_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("MAGENTA_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("PINK_CONCRETE", true));
-        ENABLED_BLOCKS.add(builder.define("GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("TINTED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("WHITE_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("LIGHT_GRAY_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("GRAY_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("BLACK_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("BROWN_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("RED_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("ORANGE_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("YELLOW_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("LIME_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("GREEN_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("CYAN_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("LIGHT_BLUE_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("BLUE_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("PURPLE_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("MAGENTA_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("PINK_STAINED_GLASS", true));
-        ENABLED_BLOCKS.add(builder.define("ICE", true));
-        ENABLED_BLOCKS.add(builder.define("PACKED_ICE", true));
-        ENABLED_BLOCKS.add(builder.define("BLUE_ICE", true));
-        ENABLED_BLOCKS.add(builder.define("SNOW_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("MOSS_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("CALCITE", true));
-        ENABLED_BLOCKS.add(builder.define("DRIPSTONE_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("MAGMA_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("GLOWSTONE", true));
-        ENABLED_BLOCKS.add(builder.define("DRIED_KELP_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("BROWN_MUSHROOM_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("RED_MUSHROOM_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("SHROOMLIGHT", true));
-        ENABLED_BLOCKS.add(builder.define("MELON", true));
-        ENABLED_BLOCKS.add(builder.define("PUMPKIN", true));
-        ENABLED_BLOCKS.add(builder.define("HAY_BLOCK", true));
-        ENABLED_BLOCKS.add(builder.define("OCHRE_FROGLIGHT", true));
-        ENABLED_BLOCKS.add(builder.define("VERDANT_FROGLIGHT", true));
-        ENABLED_BLOCKS.add(builder.define("PEARLESCENT_FROGLIGHT", true));
-        ENABLED_BLOCKS.add(builder.define("SEA_LANTERN", true));
-
-        builder.comment("Enabled crates:");
-        builder.comment("Note: Apple can not be disabled as it is required for the creative inventory icon.");
-        ENABLED_CRATES.add(builder.define("APPLE", true));
-        ENABLED_CRATES.add(builder.define("GOLDEN_APPLE", true));
-        ENABLED_CRATES.add(builder.define("SWEET_BERRIES", true));
-        ENABLED_CRATES.add(builder.define("GLOW_BERRIES", true));
-        ENABLED_CRATES.add(builder.define("CHORUS_FRUIT", true));
-        ENABLED_CRATES.add(builder.define("CARROT", true));
-        ENABLED_CRATES.add(builder.define("GOLDEN_CARROT", true));
-        ENABLED_CRATES.add(builder.define("POTATO", true));
-        ENABLED_CRATES.add(builder.define("BAKED_POTATO", true));
-        ENABLED_CRATES.add(builder.define("POISONOUS_POTATO", true));
-        ENABLED_CRATES.add(builder.define("BEETROOT", true));
-        ENABLED_CRATES.add(builder.define("BEEF", true));
-        ENABLED_CRATES.add(builder.define("COOKED_BEEF", true));
-        ENABLED_CRATES.add(builder.define("PORKCHOP", true));
-        ENABLED_CRATES.add(builder.define("COOKED_PORKCHOP", true));
-        ENABLED_CRATES.add(builder.define("MUTTON", true));
-        ENABLED_CRATES.add(builder.define("COOKED_MUTTON", true));
-        ENABLED_CRATES.add(builder.define("CHICKEN", true));
-        ENABLED_CRATES.add(builder.define("COOKED_CHICKEN", true));
-        ENABLED_CRATES.add(builder.define("RABBIT", true));
-        ENABLED_CRATES.add(builder.define("COOKED_RABBIT", true));
-        ENABLED_CRATES.add(builder.define("COD", true));
-        ENABLED_CRATES.add(builder.define("COOKED_COD", true));
-        ENABLED_CRATES.add(builder.define("SALMON", true));
-        ENABLED_CRATES.add(builder.define("COOKED_SALMON", true));
-        ENABLED_CRATES.add(builder.define("TROPICAL_FISH", true));
-        ENABLED_CRATES.add(builder.define("PUFFERFISH", true));
-        ENABLED_CRATES.add(builder.define("BREAD", true));
-        ENABLED_CRATES.add(builder.define("COOKIE", true));
-        ENABLED_CRATES.add(builder.define("ROTTEN_FLESH", true));
-        ENABLED_CRATES.add(builder.define("SPIDER_EYE", true));
-        ENABLED_CRATES.add(builder.define("HONEY_BOTTLE", true));
-        ENABLED_CRATES.add(builder.define("CHARCOAL", true));
-        ENABLED_CRATES.add(builder.define("QUARTZ", true));
-        ENABLED_CRATES.add(builder.define("AMETHYST_SHARD", true));
-        ENABLED_CRATES.add(builder.define("STICK", true));
-        ENABLED_CRATES.add(builder.define("FLINT", true));
-        ENABLED_CRATES.add(builder.define("BONE", true));
-        ENABLED_CRATES.add(builder.define("STRING", true));
-        ENABLED_CRATES.add(builder.define("FEATHER", true));
-        ENABLED_CRATES.add(builder.define("SNOWBALL", true));
-        ENABLED_CRATES.add(builder.define("EGG", true));
-        ENABLED_CRATES.add(builder.define("LEATHER", true));
-        ENABLED_CRATES.add(builder.define("RABBIT_HIDE", true));
-        ENABLED_CRATES.add(builder.define("HONEYCOMB", true));
-        ENABLED_CRATES.add(builder.define("INK_SAC", true));
-        ENABLED_CRATES.add(builder.define("GLOW_INK_SAC", true));
-        ENABLED_CRATES.add(builder.define("TURTLE_SCUTE", true));
-        ENABLED_CRATES.add(builder.define("CLAY_BALL", true));
-        ENABLED_CRATES.add(builder.define("NAUTILUS_SHELL", true));
-        ENABLED_CRATES.add(builder.define("FIRE_CHARGE", true));
-        ENABLED_CRATES.add(builder.define("BLAZE_ROD", true));
-        ENABLED_CRATES.add(builder.define("NETHER_STAR", true));
-        ENABLED_CRATES.add(builder.define("ENDER_PEARL", true));
-        ENABLED_CRATES.add(builder.define("ENDER_EYE", true));
-        ENABLED_CRATES.add(builder.define("SHULKER_SHELL", true));
-        ENABLED_CRATES.add(builder.define("WHITE_DYE", true));
-        ENABLED_CRATES.add(builder.define("LIGHT_GRAY_DYE", true));
-        ENABLED_CRATES.add(builder.define("GRAY_DYE", true));
-        ENABLED_CRATES.add(builder.define("BLACK_DYE", true));
-        ENABLED_CRATES.add(builder.define("BROWN_DYE", true));
-        ENABLED_CRATES.add(builder.define("RED_DYE", true));
-        ENABLED_CRATES.add(builder.define("ORANGE_DYE", true));
-        ENABLED_CRATES.add(builder.define("YELLOW_DYE", true));
-        ENABLED_CRATES.add(builder.define("LIME_DYE", true));
-        ENABLED_CRATES.add(builder.define("GREEN_DYE", true));
-        ENABLED_CRATES.add(builder.define("CYAN_DYE", true));
-        ENABLED_CRATES.add(builder.define("LIGHT_BLUE_DYE", true));
-        ENABLED_CRATES.add(builder.define("BLUE_DYE", true));
-        ENABLED_CRATES.add(builder.define("PURPLE_DYE", true));
-        ENABLED_CRATES.add(builder.define("MAGENTA_DYE", true));
-        ENABLED_CRATES.add(builder.define("PINK_DYE", true));
-        ENABLED_CRATES.add(builder.define("PAPER", true));
-        ENABLED_CRATES.add(builder.define("BOOK", true));
-        ENABLED_CRATES.add(builder.define("FIREWORK_STAR", true));
-        ENABLED_CRATES.add(builder.define("GLASS_BOTTLE", true));
-        ENABLED_CRATES.add(builder.define("GLOWSTONE_DUST", true));
-        ENABLED_CRATES.add(builder.define("GUNPOWDER", true));
-        ENABLED_CRATES.add(builder.define("DRAGON_BREATH", true));
-        ENABLED_CRATES.add(builder.define("FERMENTED_SPIDER_EYE", true));
-        ENABLED_CRATES.add(builder.define("BLAZE_POWDER", true));
-        ENABLED_CRATES.add(builder.define("SUGAR", true));
-        ENABLED_CRATES.add(builder.define("RABBIT_FOOT", true));
-        ENABLED_CRATES.add(builder.define("GLISTERING_MELON_SLICE", true));
-        ENABLED_CRATES.add(builder.define("MAGMA_CREAM", true));
-        ENABLED_CRATES.add(builder.define("GHAST_TEAR", true));
-        ENABLED_CRATES.add(builder.define("PHANTOM_MEMBRANE", true));
-        ENABLED_CRATES.add(builder.define("EXPERIENCE_BOTTLE", true));
-        ENABLED_CRATES.add(builder.define("END_CRYSTAL", true));
-        ENABLED_CRATES.add(builder.define("ARROW", true));
-        ENABLED_CRATES.add(builder.define("SPECTRAL_ARROW", true));
-        ENABLED_CRATES.add(builder.define("NAME_TAG", true));
-        ENABLED_CRATES.add(builder.define("LEAD", true));
-        ENABLED_CRATES.add(builder.define("RAIL", true));
-        ENABLED_CRATES.add(builder.define("POWERED_RAIL", true));
-        ENABLED_CRATES.add(builder.define("DETECTOR_RAIL", true));
-        ENABLED_CRATES.add(builder.define("ACTIVATOR_RAIL", true));
-        ENABLED_CRATES.add(builder.define("REDSTONE_TORCH", true));
-        ENABLED_CRATES.add(builder.define("REPEATER", true));
-        ENABLED_CRATES.add(builder.define("COMPARATOR", true));
-        ENABLED_CRATES.add(builder.define("LIGHTNING_ROD", true));
-        ENABLED_CRATES.add(builder.define("TORCH", true));
-        ENABLED_CRATES.add(builder.define("SOUL_TORCH", true));
-        ENABLED_CRATES.add(builder.define("LANTERN", true));
-        ENABLED_CRATES.add(builder.define("SOUL_LANTERN", true));
-        ENABLED_CRATES.add(builder.define("CHAIN", true));
-        ENABLED_CRATES.add(builder.define("END_ROD", true));
-        ENABLED_CRATES.add(builder.define("ANVIL", true));
-        ENABLED_CRATES.add(builder.define("CAMPFIRE", true));
-        ENABLED_CRATES.add(builder.define("SOUL_CAMPFIRE", true));
-        ENABLED_CRATES.add(builder.define("ITEM_FRAME", true));
-        ENABLED_CRATES.add(builder.define("GLOW_ITEM_FRAME", true));
-        ENABLED_CRATES.add(builder.define("PAINTING", true));
-        ENABLED_CRATES.add(builder.define("POINTED_DRIPSTONE", true));
-        ENABLED_CRATES.add(builder.define("OAK_SAPLING", true));
-        ENABLED_CRATES.add(builder.define("SPRUCE_SAPLING", true));
-        ENABLED_CRATES.add(builder.define("BIRCH_SAPLING", true));
-        ENABLED_CRATES.add(builder.define("JUNGLE_SAPLING", true));
-        ENABLED_CRATES.add(builder.define("ACACIA_SAPLING", true));
-        ENABLED_CRATES.add(builder.define("DARK_OAK_SAPLING", true));
-        ENABLED_CRATES.add(builder.define("CHERRY_SAPLING", true));
-        ENABLED_CRATES.add(builder.define("MANGROVE_PROPAGULE", true));
-        ENABLED_CRATES.add(builder.define("BROWN_MUSHROOM", true));
-        ENABLED_CRATES.add(builder.define("RED_MUSHROOM", true));
-        ENABLED_CRATES.add(builder.define("CRIMSON_FUNGUS", true));
-        ENABLED_CRATES.add(builder.define("WARPED_FUNGUS", true));
-        ENABLED_CRATES.add(builder.define("DANDELION", true));
-        ENABLED_CRATES.add(builder.define("POPPY", true));
-        ENABLED_CRATES.add(builder.define("BLUE_ORCHID", true));
-        ENABLED_CRATES.add(builder.define("ALLIUM", true));
-        ENABLED_CRATES.add(builder.define("AZURE_BLUET", true));
-        ENABLED_CRATES.add(builder.define("RED_TULIP", true));
-        ENABLED_CRATES.add(builder.define("ORANGE_TULIP", true));
-        ENABLED_CRATES.add(builder.define("WHITE_TULIP", true));
-        ENABLED_CRATES.add(builder.define("PINK_TULIP", true));
-        ENABLED_CRATES.add(builder.define("OXEYE_DAISY", true));
-        ENABLED_CRATES.add(builder.define("CORNFLOWER", true));
-        ENABLED_CRATES.add(builder.define("LILY_OF_THE_VALLEY", true));
-        ENABLED_CRATES.add(builder.define("SUGAR_CANE", true));
-        ENABLED_CRATES.add(builder.define("WITHER_ROSE", true));
-        ENABLED_CRATES.add(builder.define("SUNFLOWER", true));
-        ENABLED_CRATES.add(builder.define("LILAC", true));
-        ENABLED_CRATES.add(builder.define("ROSE_BUSH", true));
-        ENABLED_CRATES.add(builder.define("PEONY", true));
-        ENABLED_CRATES.add(builder.define("TURTLE_EGG", true));
-        ENABLED_CRATES.add(builder.define("WHEAT_SEEDS", true));
-        ENABLED_CRATES.add(builder.define("COCOA_BEANS", true));
-        ENABLED_CRATES.add(builder.define("PUMPKIN_SEEDS", true));
-        ENABLED_CRATES.add(builder.define("MELON_SEEDS", true));
-        ENABLED_CRATES.add(builder.define("BEETROOT_SEEDS", true));
-        ENABLED_CRATES.add(builder.define("SEAGRASS", true));
-        ENABLED_CRATES.add(builder.define("KELP", true));
-        ENABLED_CRATES.add(builder.define("COBWEB", true));
-        ENABLED_CRATES.add(builder.define("WHITE_CARPET", true));
-        ENABLED_CRATES.add(builder.define("LIGHT_GRAY_CARPET", true));
-        ENABLED_CRATES.add(builder.define("GRAY_CARPET", true));
-        ENABLED_CRATES.add(builder.define("BLACK_CARPET", true));
-        ENABLED_CRATES.add(builder.define("BROWN_CARPET", true));
-        ENABLED_CRATES.add(builder.define("RED_CARPET", true));
-        ENABLED_CRATES.add(builder.define("ORANGE_CARPET", true));
-        ENABLED_CRATES.add(builder.define("YELLOW_CARPET", true));
-        ENABLED_CRATES.add(builder.define("LIME_CARPET", true));
-        ENABLED_CRATES.add(builder.define("GREEN_CARPET", true));
-        ENABLED_CRATES.add(builder.define("CYAN_CARPET", true));
-        ENABLED_CRATES.add(builder.define("LIGHT_BLUE_CARPET", true));
-        ENABLED_CRATES.add(builder.define("BLUE_CARPET", true));
-        ENABLED_CRATES.add(builder.define("PURPLE_CARPET", true));
-        ENABLED_CRATES.add(builder.define("MAGENTA_CARPET", true));
-        ENABLED_CRATES.add(builder.define("PINK_CARPET", true));
-        ENABLED_CRATES.add(builder.define("VINE", true));
-        ENABLED_CRATES.add(builder.define("TWISTING_VINES", true));
-        ENABLED_CRATES.add(builder.define("WEEPING_VINES", true));
-        ENABLED_CRATES.add(builder.define("GLOW_LICHEN", true));
-        ENABLED_CRATES.add(builder.define("SCULK_VEIN", true));
-    }
-
-    public boolean isBlockEnabled(String blockName) {
-        for (ModConfigSpec.BooleanValue value : ENABLED_BLOCKS) {
-            if (value.getPath().getFirst().contains("STONE")) return true;
-            else if (value.getPath().getFirst().contains(blockName)) {
-                return value.get();
-            }
+        for (CompressionEntry entry : CompressionCatalog.BLOCK_ENTRIES) {
+            builder.push(entry.id());
+            COMPRESSED_BLOCKS.put(entry.id(), new CompressionSettings(builder, entry));
+            builder.pop();
         }
 
-        for (ModConfigSpec.BooleanValue value : ENABLED_CRATES) {
-            if (value.getPath().getFirst().contains("APPLE")) return true;
-            else if (value.getPath().getFirst().contains(blockName)) {
-                return value.get();
-            }
+        builder.comment("Enabled crates:");
+        builder.comment("Note: Golden Apple can not be disabled as it is required for the creative inventory icon.");
+        for (CompressionEntry entry : CompressionCatalog.CRATE_ENTRIES) {
+            builder.push(entry.id());
+            CRATES.put(entry.id(), new CompressionSettings(builder, entry));
+            builder.pop();
+        }
+    }
+
+    /**
+     * Checks if a block or crate is enabled based on the configuration settings.
+     *
+     * @param blockName The name of the block or crate to check.
+     * @return true if the block or crate is enabled, false otherwise.
+     */
+    public boolean isBlockEnabled(String blockName) {
+        blockName = blockName.toUpperCase(); // normalize to uppercase for consistent lookup
+
+        CompressionSettings block = COMPRESSED_BLOCKS.get(blockName);
+        if (block != null) {
+            if (!CONFIG_BLOCKS_ENABLED.get()) return false;
+            if ("STONE".equals(blockName)) return true;
+            return block.enabled.get();
+        }
+
+        CompressionSettings crate = CRATES.get(blockName);
+        if (crate != null) {
+            if (!CONFIG_CRATES_ENABLED.get()) return false;
+            if ("GOLDEN_APPLE".equals(blockName)) return true;
+            return crate.enabled.get();
         }
 
         return false;
+    }
+
+    /**
+     * Retrieves the hardness values for each compression level from the configuration.
+     *
+     * @return An array of hardness values corresponding to each compression level.
+     */
+    public float[] getHardnessArray() {
+        List<? extends Float> hardnessList = CONFIG_HARDNESS_LEVELS.get();
+        float[] hardnessArray = new float[hardnessList.size()];
+
+        if (hardnessArray.length < 10) {
+            throw new IllegalStateException("Hardness levels configuration must contain at least 10 values.");
+        }
+
+        for (int i = 0; i < hardnessList.size(); i++) {
+            hardnessArray[i] = hardnessList.get(i);
+        }
+        return hardnessArray;
+    }
+
+    /**
+     * Retrieves the resistance values for each compression level from the configuration.
+     *
+     * @return An array of resistance values corresponding to each compression level.
+     */
+    public float[] getResistanceArray() {
+        List<? extends Float> resistanceList = CONFIG_RESISTANCE_LEVELS.get();
+        float[] resistanceArray = new float[resistanceList.size()];
+
+        if (resistanceArray.length < 10) {
+            throw new IllegalStateException("Resistance levels configuration must contain at least 10 values.");
+        }
+
+        for (int i = 0; i < resistanceList.size(); i++) {
+            resistanceArray[i] = resistanceList.get(i);
+        }
+        return resistanceArray;
+    }
+
+    /**
+     * Retrieves the hardness resistance multiplier for a given block or crate.
+     *
+     * @param blockName The name of the block or crate.
+     * @return The hardness resistance multiplier, or 1.0F if not found.
+     */
+    public float getHardnessResistanceMultiplier(String blockName) {
+        blockName = blockName.toUpperCase();
+
+        CompressionSettings block = COMPRESSED_BLOCKS.get(blockName);
+        if (block != null) {
+            return block.hardnessResistanceMultiplier.get().floatValue();
+        }
+
+        CompressionSettings crate = CRATES.get(blockName);
+        if (crate != null) {
+            return crate.hardnessResistanceMultiplier.get().floatValue();
+        }
+
+        return 1.0F;
+    }
+
+    /**
+     * Retrieves the maximum compression level for a given block or crate.
+     *
+     * @param blockName The name of the block or crate.
+     * @return The maximum compression level, or 9 if not found.
+     */
+    public int getCompressionLevel(String blockName) {
+        blockName = blockName.toUpperCase();
+
+        CompressionSettings block = COMPRESSED_BLOCKS.get(blockName);
+        if (block != null) {
+            return block.compressionLevel.get();
+        }
+
+        CompressionSettings crate = CRATES.get(blockName);
+        if (crate != null) {
+            return crate.compressionLevel.get();
+        }
+
+        return 10; // Default to 10 if not found
+    }
+
+    /**
+     * CompressionSettings is a nested class that holds configuration settings for a specific block or crate.
+     * It includes options for enabling/disabling the block, hardness resistance multiplier, compression level,
+     * and whether smaller compression is allowed.
+     */
+    public static final class CompressionSettings {
+        public final ModConfigSpec.BooleanValue enabled;
+        public final ModConfigSpec.DoubleValue hardnessResistanceMultiplier;
+        public final ModConfigSpec.IntValue compressionLevel;
+        //public final ModConfigSpec.BooleanValue hasSmallerCompression;
+
+        public CompressionSettings(ModConfigSpec.Builder builder, CompressionEntry entry) {
+            enabled = builder.define("enabled", entry.enabledByDefault());
+
+            double multiplier = roundToThreeDecimals(entry.hardnessResistanceMultiplier());
+
+            hardnessResistanceMultiplier = builder.defineInRange(
+                    "hardnessResistanceMultiplier",
+                    multiplier,
+                    0.0D,
+                    10000.0D
+            );
+
+            compressionLevel = builder.defineInRange("compressionLevel", entry.maxCompressionLevel(), 1, 10);
+        }
+    }
+
+    private static double roundToThreeDecimals(double value) {
+        return Math.round(value * 1000.0D) / 1000.0D;
     }
 }

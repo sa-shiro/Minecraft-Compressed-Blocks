@@ -1,12 +1,12 @@
-package net.sashiro.compressedblocks.platform.registry;
+package net.sashiro.compressedblocks.platform.registration;
 
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.platform.Services;
 
-import static net.sashiro.compressedblocks.block.BlockList.BLOCK_LIST;
-import static net.sashiro.compressedblocks.block.BlockList.createBlockList;
+import static net.sashiro.compressedblocks.block.CompressedBlockFactory.BLOCK_LIST;
+import static net.sashiro.compressedblocks.block.CompressedBlockFactory.createBlockList;
 
-public class CBBlockRegistry {
+public class BlockRegistration {
     public static void registerBlocks() {
         if (Services.PLATFORM.areBlocksEnabled()) {
 

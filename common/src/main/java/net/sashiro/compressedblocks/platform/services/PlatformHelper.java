@@ -1,11 +1,11 @@
 package net.sashiro.compressedblocks.platform.services;
 
 import net.minecraft.world.level.block.Block;
-import net.sashiro.compressedblocks.block.CrateBlock;
+import net.sashiro.compressedblocks.crate.CrateBlock;
 import net.sashiro.compressedblocks.item.CrateItem;
 
 @SuppressWarnings("unused")
-public interface IPlatformHelper {
+public interface PlatformHelper {
 
     /**
      * Gets the name of the current platform
@@ -45,12 +45,19 @@ public interface IPlatformHelper {
      */
     void registerBlock(Block block);
 
+    /**
+     * Function for platform-dependent registration of Crates
+     *
+     * @param crateItem the CrateItem to be registered
+     */
+    void registerCrate(CrateItem crateItem);
 
-    @Deprecated
-    void registerCrate(CrateItem... crateItems);
-
-    @Deprecated
-    void registerCrate(CrateBlock... crateBlocks);
+    /**
+     * Function for platform-dependent registration of Crates
+     *
+     * @param crateBlock the CrateBlock to be registered
+     */
+    void registerCrate(CrateBlock crateBlock);
 
     /**
      * Check if compressed blocks are enabled
@@ -102,7 +109,19 @@ public interface IPlatformHelper {
      */
     boolean isBlockEnabled(String name);
 
+    /**
+     * Get the hardness and resistance multiplier for a specific block/item
+     *
+     * @param id The ID of the block/item to get the multiplier for.
+     * @return The hardness and resistance multiplier.
+     */
     float getHardnessResistanceMultiplier(String id);
 
+    /**
+     * Get the maximum compression level for a specific block/item
+     *
+     * @param id The ID of the block/item to get the maximum compression level for.
+     * @return The maximum compression level.
+     */
     int getMaxCompressionLevel(String id);
 }

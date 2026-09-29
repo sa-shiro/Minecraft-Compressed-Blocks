@@ -17,10 +17,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
-import net.sashiro.compressedblocks.block.BlockList;
 import net.sashiro.compressedblocks.block.CompressedBlock;
-import net.sashiro.compressedblocks.block.CrateBlock;
-import net.sashiro.compressedblocks.block.CrateList;
+import net.sashiro.compressedblocks.block.CompressedBlockFactory;
+import net.sashiro.compressedblocks.crate.CrateBlock;
+import net.sashiro.compressedblocks.crate.CrateFactory;
 import net.sashiro.compressedblocks.item.CrateItem;
 
 import java.util.ArrayList;
@@ -30,18 +30,18 @@ import static net.sashiro.compressedblocks.Constants.LOG;
 import static net.sashiro.compressedblocks.Constants.MOD_ID;
 
 @SuppressWarnings("unused")
-public class CompressedBlocksClient implements ClientModInitializer {
+public class CBFabricClient implements ClientModInitializer {
 
     public static final ResourceKey<CreativeModeTab> COMPRESSED_BLOCKS_KEY = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(MOD_ID, "compressed_blocks"));
     public static final ResourceKey<CreativeModeTab> CRATE_ITEMS_KEY = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(MOD_ID, "compressed_items"));
 
     private static final CreativeModeTab COMPRESSED_BLOCKS = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(BlockList.STONE))
+            .icon(() -> new ItemStack(CompressedBlockFactory.STONE))
             .title(Component.translatable("itemGroup.compressed_blocks"))
             .build();
 
     private static final CreativeModeTab CRATE_ITEMS = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(CrateList.GOLDEN_APPLE))
+            .icon(() -> new ItemStack(CrateFactory.GOLDEN_APPLE))
             .title(Component.translatable("itemGroup.compressed_items"))
             .build();
 
@@ -67,7 +67,7 @@ public class CompressedBlocksClient implements ClientModInitializer {
 
         ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, list) -> {
 
-            // Compressed blocks: CBBlock + CBRotationalBlock
+            // Compressed blocks: BasicCompressedBlock + RotationalCompressedBlock
             if (Block.byItem(itemStack.getItem()) instanceof CompressedBlock block) {
                 list.add(
                         Component.literal(

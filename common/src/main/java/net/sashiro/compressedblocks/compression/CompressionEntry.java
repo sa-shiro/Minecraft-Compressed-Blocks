@@ -1,7 +1,7 @@
-package net.sashiro.compressedblocks.util;
+package net.sashiro.compressedblocks.compression;
 
 public record CompressionEntry(String id, Kind kind, float hardnessResistanceMultiplier, int maxCompressionLevel,
-                               boolean hasSmallerCompression, boolean enabledByDefault) {
+                               boolean hasSmallerCompression, boolean enabledByDefault, String minecraftVersion) {
 
     public enum Kind {
         BLOCK,

@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.item.CrateItem;
-import net.sashiro.compressedblocks.util.CommonUtils;
+import net.sashiro.compressedblocks.util.ResourceUtils;
 import org.jspecify.annotations.NonNull;
 
 import java.util.Optional;
@@ -49,19 +49,19 @@ public class CBModelProvider extends FabricModelProvider {
             String descriptionId = block.getDescriptionId();
             String block_name = descriptionId.replace("block.compressedblocks.", "");
             // exclude manually added resources
-            if (CommonUtils.isBlock(descriptionId)) continue;
+            if (ResourceUtils.hasManuallyAddedResources(descriptionId)) continue;
 
             // Check if the block is a rotational block
-            if (CommonUtils.isRotational(descriptionId)) {
-                Identifier side = CommonUtils.resolveVanillaBlockId(descriptionId);
+            if (ResourceUtils.isRotationalBlock(descriptionId)) {
+                Identifier side = ResourceUtils.resolveVanillaBlockId(descriptionId);
                 Identifier end = Identifier.fromNamespaceAndPath(side.getNamespace(), side.getPath() + "_top");
 
                 if (descriptionId.contains("froglight") || descriptionId.contains("hay") || descriptionId.contains("melon") || descriptionId.contains("pumpkin")) {
                     side = Identifier.fromNamespaceAndPath("minecraft", side.getPath() + "_side");
                 }
 
-                TextureMapping mapping = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, CommonUtils.getOverlay(descriptionId));
-                TextureMapping mapping_horizontal = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, CommonUtils.getOverlay(descriptionId));
+                TextureMapping mapping = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, ResourceUtils.getOverlay(descriptionId));
+                TextureMapping mapping_horizontal = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, ResourceUtils.getOverlay(descriptionId));
                 MultiVariant variant = BlockModelGenerators.plainVariant(TEMPLATE_CUBE_COLUMN.create(block, mapping, blockModelGenerators.modelOutput));
                 MultiVariant horizontalVariant = BlockModelGenerators.plainVariant(TEMPLATE_CUBE_COLUMN_HORIZONTAL.createWithSuffix(block, "_horizontal", mapping_horizontal, blockModelGenerators.modelOutput));
 
@@ -71,7 +71,7 @@ public class CBModelProvider extends FabricModelProvider {
             }
             // If the block is not rotational then create a simple block model
             else {
-                TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, CommonUtils.resolveVanillaBlockId(descriptionId)).put(OVERLAY_SLOT, CommonUtils.getOverlay(descriptionId));
+                TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, ResourceUtils.resolveVanillaBlockId(descriptionId)).put(OVERLAY_SLOT, ResourceUtils.getOverlay(descriptionId));
                 Identifier blockModel = TEMPLATE_BLOCK.create(block, mapping, blockModelGenerators.modelOutput);
 
                 blockModelGenerators.registerSimpleItemModel(block, Identifier.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
@@ -81,9 +81,9 @@ public class CBModelProvider extends FabricModelProvider {
 
         for (Block crate : Constants.CRATE_BLOCKS) {
             String crate_name = crate.getDescriptionId().replace("block.compressedblocks.", "");
-            String mc_name = CommonUtils.removeCrateName(crate_name);
-            TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, Identifier.fromNamespaceAndPath("compressedblocks", "block/crate")).put(BLOCK_SLOT, CommonUtils.getIdentifier("block", mc_name)).put(NUMBER_SLOT, CommonUtils.getOverlay(crate.getDescriptionId()));
-            Identifier blockModel = TEMPLATE_CRATE_BLOCK.create(crate, mapping.copyAndUpdate(BLOCK_SLOT, CommonUtils.getIdentifier("block", mc_name)), blockModelGenerators.modelOutput);
+            String mc_name = ResourceUtils.removeCrateName(crate_name);
+            TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, Identifier.fromNamespaceAndPath("compressedblocks", "block/crate")).put(BLOCK_SLOT, ResourceUtils.getIdentifier("block", mc_name)).put(NUMBER_SLOT, ResourceUtils.getOverlay(crate.getDescriptionId()));
+            Identifier blockModel = TEMPLATE_CRATE_BLOCK.create(crate, mapping.copyAndUpdate(BLOCK_SLOT, ResourceUtils.getIdentifier("block", mc_name)), blockModelGenerators.modelOutput);
 
             blockModelGenerators.registerSimpleItemModel(crate, Identifier.fromNamespaceAndPath("compressedblocks", "block/" + crate_name));
             blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(crate, BlockModelGenerators.plainVariant(blockModel)));
@@ -94,19 +94,34 @@ public class CBModelProvider extends FabricModelProvider {
     public void generateItemModels(@NonNull ItemModelGenerators itemModelGenerators) {
         for (Item crate : Constants.CRATE_ITEMS) {
             String crate_name = crate.getDescriptionId().replace("item.compressedblocks.", "");
-            String mc_name = CommonUtils.removeCrateName(crate_name);
+            String vanillaItemName = ResourceUtils.removeCrateName(crate_name);
             Item vanillaItem = ItemStack.EMPTY.getItem();
 
             for (Item item : BuiltInRegistries.ITEM) {
-                if (item.getDescriptionId().equals("item.minecraft." + mc_name)) {
+                if (item.getDescriptionId().equals("item.minecraft." + vanillaItemName)) {
                     vanillaItem = item;
                 }
             }
+
+            // Special case for pointed dripstone, because the vanilla item results in minecraft:air so we need to get the block instead and convert it to an item
+            if (crate_name.toLowerCase().contains("pointed_dripstone")) {
+                for (Block block : BuiltInRegistries.BLOCK) {
+                    if (block.getDescriptionId().equals("block.minecraft." + vanillaItemName)) {
+                        vanillaItem = block.asItem();
+                    }
+                }
+            }
+
+            // Special case for enchanted golden apple, because it uses the golden apple texture with the enchantment glint data component
+            if (crate_name.contains("enchanted_golden_apple")) {
+                vanillaItemName = "golden_apple";
+            }
+
             CrateItem crateItem = (CrateItem) crate;
             int compressionLevel = crateItem.getCompressionLevel();
 
             if (!vanillaItem.equals(ItemStack.EMPTY.getItem())) {
-                itemModelGenerators.itemModelOutput.accept(crate, ItemModelUtils.plainModel(this.createCrateItemModel(crate, mc_name, TEMPLATE_CRATE, itemModelGenerators.modelOutput, compressionLevel)));
+                itemModelGenerators.itemModelOutput.accept(crate, ItemModelUtils.plainModel(this.createCrateItemModel(crate, vanillaItemName, TEMPLATE_CRATE, itemModelGenerators.modelOutput, compressionLevel)));
             }
         }
     }
