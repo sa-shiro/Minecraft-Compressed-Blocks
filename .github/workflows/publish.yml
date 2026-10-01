@@ -103,13 +103,13 @@ jobs:
 #
 #          loaders: |
 #            forge
-#          game-versions: ${{ env.minecraft_version_range }}
+#          game-versions: ${{ env.minecraft_version }}
 #
 #          java: ${{ matrix.java }}
 #
 #          retry-attempts: 2
 #          retry-delay: 10000
-#          fail-mode: warn
+#          fail-mode: fail
 
       - name: "Publish NEOFORGE"
         if: ${{ runner.os == 'Windows' }}
@@ -133,13 +133,13 @@ jobs:
 
           loaders: |
             neoforge
-          game-versions: ${{ env.minecraft_version_range }}
+          game-versions: ${{ env.minecraft_version }}
 
           java: ${{ matrix.java }}
 
           retry-attempts: 2
           retry-delay: 10000
-          fail-mode: warn
+          fail-mode: fail
 
       - name: "Publish FABRIC"
         if: ${{ runner.os == 'Windows' }}
@@ -163,13 +163,13 @@ jobs:
 
           loaders: |
             fabric
-          game-versions: ${{ env.minecraft_version_range }}
+          game-versions: ${{ env.minecraft_version }}
 
           java: ${{ matrix.java }}
 
           retry-attempts: 2
           retry-delay: 10000
-          fail-mode: warn
+          fail-mode: fail
 
       - name: "Prepare Discord announcement"
         shell: pwsh
