@@ -71,7 +71,7 @@ jobs:
         run: ./gradlew build
 
       - name: "Capture build artifacts"
-        if: ${{ runner.os == 'Windows' && matrix.java == '17' }} # Only upload artifacts built from the latest java on one OS
+        if: ${{ runner.os == 'Windows' }}
         uses: actions/upload-artifact@v7
         with:
           name: Artifacts
