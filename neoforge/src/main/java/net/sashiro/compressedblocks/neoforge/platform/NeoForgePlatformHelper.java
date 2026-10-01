@@ -57,7 +57,7 @@ public class NeoForgePlatformHelper implements PlatformHelper {
 
     @Override
     public void registerCrate(CrateBlock crateBlock) {
-        String crateName = ResourceUtils.removeCrateName(crateBlock.getBlockName().identifier().getPath()).toUpperCase();
+        String crateName = ResourceUtils.removeCrateName(crateBlock.getBlockName().location().getPath()).toUpperCase();
         if (!isBlockEnabled(crateName)) return;
 
         Item.Properties properties = ResourceUtils.setRarity(new Item.Properties(), crateBlock.getCompressor().getCompressionLevel()).setId(ResourceUtils.createItemId(crateBlock.blockName().toLowerCase()));

@@ -19,7 +19,7 @@ public class BasicCompressedBlock extends Block implements CompressedBlock {
      */
     public BasicCompressedBlock(ResourceKey<Block> id, Properties properties, int compressionLevel, boolean hasSmallerCompression) {
         super(properties.setId(id));
-        this.block_name = id.identifier().getPath();
+        this.block_name = id.location().getPath();
         compressor.setCompressionLevel(compressionLevel, hasSmallerCompression);
         this.properties().overrideDescription(String.valueOf(Component.literal(compressor.getQuantity() + " Blocks").withStyle(compressor.getStyle())));
     }

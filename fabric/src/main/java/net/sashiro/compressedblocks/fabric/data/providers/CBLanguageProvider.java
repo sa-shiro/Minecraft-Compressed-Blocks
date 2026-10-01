@@ -8,7 +8,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.util.ResourceUtils;
-import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -87,7 +86,7 @@ public class CBLanguageProvider extends FabricLanguageProvider {
     }
 
     @Override
-    public void generateTranslations(HolderLookup.@NonNull Provider registryLookup, TranslationBuilder builder) {
+    public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder builder) {
         builder.add("itemGroup.compressed_blocks", "Compressed Blocks");
         builder.add("itemGroup.compressed_items", "Item Crates");
 

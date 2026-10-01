@@ -68,7 +68,7 @@ public class CrateBlock extends HorizontalDirectionalBlock implements Compressed
 
     @Override
     public String blockName() {
-        return this.name.identifier().getPath();
+        return this.name.location().getPath();
     }
 
     /**

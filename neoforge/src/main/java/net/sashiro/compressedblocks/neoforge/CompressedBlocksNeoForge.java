@@ -3,7 +3,7 @@ package net.sashiro.compressedblocks.neoforge;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
@@ -37,7 +37,7 @@ public class CompressedBlocksNeoForge {
     public static final DeferredRegister<Item> CRATE_ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
     public static final Supplier<CreativeModeTab> CRATES_TAB = CREATIVE_MODE_TABS.register("compressed_items", () -> CreativeModeTab.builder()
-            .withTabsBefore(Identifier.fromNamespaceAndPath(MOD_ID, "compressed_blocks"))
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(MOD_ID, "compressed_blocks"))
             .title(Component.literal("Crates"))
             .icon(() -> CrateFactory.GOLDEN_APPLE.asItem().getDefaultInstance())
             .displayItems((parameters, output) -> {

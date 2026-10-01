@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class CompressionCatalog {
 
-    // BLOCKS, Count = 264
+    // BLOCKS
     /**
      * List of all compression entries for blocks.
      * Each entry contains the block ID, kind, hardness/resistance multiplier, max compression level, and whether it's enabled by default.
@@ -24,15 +24,15 @@ public class CompressionCatalog {
             new CompressionEntry("DIORITE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
             new CompressionEntry("ANDESITE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
             new CompressionEntry("TUFF", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.17"),
-            new CompressionEntry("DEEPSLATE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
-            new CompressionEntry("COBBLED_DEEPSLATE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
+            new CompressionEntry("DEEPSLATE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.17"),
+            new CompressionEntry("COBBLED_DEEPSLATE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.17"),
             new CompressionEntry("CLAY", CompressionEntry.Kind.BLOCK, 0.925F, 10, false, true, "1.0"),
             new CompressionEntry("SAND", CompressionEntry.Kind.BLOCK, 0.925F, 10, false, true, "1.0"),
             new CompressionEntry("RED_SAND", CompressionEntry.Kind.BLOCK, 0.925F, 10, false, true, "1.0"),
-            new CompressionEntry("MUD", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.19"),
             new CompressionEntry("MOSS_BLOCK", CompressionEntry.Kind.BLOCK, 0.5F, 10, false, true, "1.17"),
-            new CompressionEntry("PACKED_MUD", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
-            new CompressionEntry("MUD_BRICKS", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
+            new CompressionEntry("MUD", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.19"),
+            new CompressionEntry("PACKED_MUD", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.19"),
+            new CompressionEntry("MUD_BRICKS", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.19"),
             new CompressionEntry("SULFUR", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "26.2"),
             new CompressionEntry("CINNABAR", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "26.2"),
             // Ores
@@ -76,14 +76,14 @@ public class CompressionCatalog {
             new CompressionEntry("POLISHED_DIORITE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.14"),
             new CompressionEntry("POLISHED_ANDESITE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.14"),
             new CompressionEntry("POLISHED_TUFF", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.21"),
-            new CompressionEntry("POLISHED_DEEPSLATE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.14"),
-            new CompressionEntry("CHISELED_DEEPSLATE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
+            new CompressionEntry("POLISHED_DEEPSLATE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.17"),
+            new CompressionEntry("CHISELED_DEEPSLATE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.17"),
             new CompressionEntry("BRICKS", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
             new CompressionEntry("STONE_BRICKS", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
-            new CompressionEntry("DEEPSLATE_BRICKS", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
-            new CompressionEntry("DEEPSLATE_TILES", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
-            new CompressionEntry("CRACKED_DEEPSLATE_BRICKS", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
-            new CompressionEntry("CRACKED_DEEPSLATE_TILES", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
+            new CompressionEntry("DEEPSLATE_BRICKS", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.17"),
+            new CompressionEntry("DEEPSLATE_TILES", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.17"),
+            new CompressionEntry("CRACKED_DEEPSLATE_BRICKS", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.17"),
+            new CompressionEntry("CRACKED_DEEPSLATE_TILES", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.17"),
             new CompressionEntry("SANDSTONE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
             new CompressionEntry("RED_SANDSTONE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0"),
             new CompressionEntry("SMOOTH_SANDSTONE", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.17"),
@@ -319,7 +319,7 @@ public class CompressionCatalog {
             new CompressionEntry("TNT", CompressionEntry.Kind.BLOCK, 1.0f, 10, false, true, "1.0")
     );
 
-    // CRATES, Count = 174
+    // CRATES
     /**
      * List of all compression entries for crates.
      * Each entry contains the block ID, kind, hardness/resistance multiplier, max compression level, and whether it's enabled by default.

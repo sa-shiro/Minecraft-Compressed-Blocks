@@ -10,7 +10,7 @@ import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
@@ -18,7 +18,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.util.ResourceUtils;
-import org.jspecify.annotations.NonNull;
 
 import java.util.Optional;
 import java.util.function.BiConsumer;
@@ -33,18 +32,18 @@ public class CBModelProvider extends FabricModelProvider {
     public static final TextureSlot NUMBER_SLOT = TextureSlot.create("number");
     public static final TextureSlot OVERLAY_SLOT = TextureSlot.create("overlay");
 
-    public static final ModelTemplate TEMPLATE_BLOCK = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "block/template/template_block")), Optional.empty(), TextureSlot.ALL, OVERLAY_SLOT);
-    public static final ModelTemplate TEMPLATE_CUBE_COLUMN = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "block/template/template_cube_column")), Optional.empty(), TextureSlot.END, TextureSlot.SIDE, TextureSlot.PARTICLE, OVERLAY_SLOT);
-    public static final ModelTemplate TEMPLATE_CUBE_COLUMN_HORIZONTAL = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "block/template/template_cube_column_horizontal")), Optional.empty(), TextureSlot.END, TextureSlot.SIDE, TextureSlot.PARTICLE, OVERLAY_SLOT);
-    public static final ModelTemplate TEMPLATE_CRATE = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "item/template/template_item_crate_blockstyle")), Optional.empty(), ITEM_SLOT, NUMBER_SLOT, TextureSlot.ALL, TextureSlot.PARTICLE);
-    public static final ModelTemplate TEMPLATE_CRATE_BLOCK = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("compressedblocks", "block/template/template_crate")), Optional.empty(), TextureSlot.ALL, BLOCK_SLOT, NUMBER_SLOT);
+    public static final ModelTemplate TEMPLATE_BLOCK = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/template/template_block")), Optional.empty(), TextureSlot.ALL, OVERLAY_SLOT);
+    public static final ModelTemplate TEMPLATE_CUBE_COLUMN = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/template/template_cube_column")), Optional.empty(), TextureSlot.END, TextureSlot.SIDE, TextureSlot.PARTICLE, OVERLAY_SLOT);
+    public static final ModelTemplate TEMPLATE_CUBE_COLUMN_HORIZONTAL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/template/template_cube_column_horizontal")), Optional.empty(), TextureSlot.END, TextureSlot.SIDE, TextureSlot.PARTICLE, OVERLAY_SLOT);
+    public static final ModelTemplate TEMPLATE_CRATE = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("compressedblocks", "item/template/template_item_crate_blockstyle")), Optional.empty(), ITEM_SLOT, NUMBER_SLOT, TextureSlot.ALL, TextureSlot.PARTICLE);
+    public static final ModelTemplate TEMPLATE_CRATE_BLOCK = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/template/template_crate")), Optional.empty(), TextureSlot.ALL, BLOCK_SLOT, NUMBER_SLOT);
 
     public CBModelProvider(FabricDataOutput output) {
         super(output);
     }
 
     @Override
-    public void generateBlockStateModels(@NonNull BlockModelGenerators blockModelGenerators) {
+    public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         for (Block block : Constants.BLOCKS) {
             String descriptionId = block.getDescriptionId();
             String block_name = descriptionId.replace("block.compressedblocks.", "");
@@ -53,11 +52,11 @@ public class CBModelProvider extends FabricModelProvider {
 
             // Check if the block is a rotational block
             if (ResourceUtils.isRotationalBlock(descriptionId)) {
-                Identifier side = ResourceUtils.resolveVanillaBlockId(descriptionId);
-                Identifier end = Identifier.fromNamespaceAndPath(side.getNamespace(), side.getPath() + "_top");
+                ResourceLocation side = ResourceUtils.resolveVanillaBlockId(descriptionId);
+                ResourceLocation end = ResourceLocation.fromNamespaceAndPath(side.getNamespace(), side.getPath() + "_top");
 
                 if (descriptionId.contains("froglight") || descriptionId.contains("hay") || descriptionId.contains("melon") || descriptionId.contains("pumpkin")) {
-                    side = Identifier.fromNamespaceAndPath("minecraft", side.getPath() + "_side");
+                    side = ResourceLocation.fromNamespaceAndPath("minecraft", side.getPath() + "_side");
                 }
 
                 TextureMapping mapping = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, ResourceUtils.getOverlay(descriptionId));
@@ -65,16 +64,16 @@ public class CBModelProvider extends FabricModelProvider {
                 MultiVariant variant = BlockModelGenerators.plainVariant(TEMPLATE_CUBE_COLUMN.create(block, mapping, blockModelGenerators.modelOutput));
                 MultiVariant horizontalVariant = BlockModelGenerators.plainVariant(TEMPLATE_CUBE_COLUMN_HORIZONTAL.createWithSuffix(block, "_horizontal", mapping_horizontal, blockModelGenerators.modelOutput));
 
-                blockModelGenerators.registerSimpleItemModel(block, Identifier.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
+                blockModelGenerators.registerSimpleItemModel(block, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
                 blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(PropertyDispatch.initial(BlockStateProperties.AXIS).select(Direction.Axis.Y, variant).select(Direction.Axis.Z, horizontalVariant.with(X_ROT_90)).select(Direction.Axis.X, horizontalVariant.with(X_ROT_90).with(Y_ROT_90))));
 
             }
             // If the block is not rotational then create a simple block model
             else {
                 TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, ResourceUtils.resolveVanillaBlockId(descriptionId)).put(OVERLAY_SLOT, ResourceUtils.getOverlay(descriptionId));
-                Identifier blockModel = TEMPLATE_BLOCK.create(block, mapping, blockModelGenerators.modelOutput);
+                ResourceLocation blockModel = TEMPLATE_BLOCK.create(block, mapping, blockModelGenerators.modelOutput);
 
-                blockModelGenerators.registerSimpleItemModel(block, Identifier.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
+                blockModelGenerators.registerSimpleItemModel(block, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
                 blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, BlockModelGenerators.plainVariant(blockModel)));
             }
         }
@@ -82,16 +81,16 @@ public class CBModelProvider extends FabricModelProvider {
         for (Block crate : Constants.CRATE_BLOCKS) {
             String crate_name = crate.getDescriptionId().replace("block.compressedblocks.", "");
             String mc_name = ResourceUtils.removeCrateName(crate_name);
-            TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, Identifier.fromNamespaceAndPath("compressedblocks", "block/crate")).put(BLOCK_SLOT, ResourceUtils.getIdentifier("block", mc_name)).put(NUMBER_SLOT, ResourceUtils.getOverlay(crate.getDescriptionId()));
-            Identifier blockModel = TEMPLATE_CRATE_BLOCK.create(crate, mapping.copyAndUpdate(BLOCK_SLOT, ResourceUtils.getIdentifier("block", mc_name)), blockModelGenerators.modelOutput);
+            TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/crate")).put(BLOCK_SLOT, ResourceUtils.getResourceLocation("block", mc_name)).put(NUMBER_SLOT, ResourceUtils.getOverlay(crate.getDescriptionId()));
+            ResourceLocation blockModel = TEMPLATE_CRATE_BLOCK.create(crate, mapping.copyAndUpdate(BLOCK_SLOT, ResourceUtils.getResourceLocation("block", mc_name)), blockModelGenerators.modelOutput);
 
-            blockModelGenerators.registerSimpleItemModel(crate, Identifier.fromNamespaceAndPath("compressedblocks", "block/" + crate_name));
+            blockModelGenerators.registerSimpleItemModel(crate, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + crate_name));
             blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(crate, BlockModelGenerators.plainVariant(blockModel)));
         }
     }
 
     @Override
-    public void generateItemModels(@NonNull ItemModelGenerators itemModelGenerators) {
+    public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         for (Item crate : Constants.CRATE_ITEMS) {
             String crate_name = crate.getDescriptionId().replace("item.compressedblocks.", "");
             String vanillaItemName = ResourceUtils.removeCrateName(crate_name);
@@ -126,13 +125,13 @@ public class CBModelProvider extends FabricModelProvider {
         }
     }
 
-    private Identifier createCrateItemModel(Item item, String vanillaItem, ModelTemplate modelTemplate, BiConsumer<Identifier, ModelInstance> modelOutput, int compressionLevel) {
+    private ResourceLocation createCrateItemModel(Item item, String vanillaItem, ModelTemplate modelTemplate, BiConsumer<ResourceLocation, ModelInstance> modelOutput, int compressionLevel) {
         return modelTemplate.create(
                 ModelLocationUtils.getModelLocation(item),
-                TextureMapping.particle(Identifier.fromNamespaceAndPath("compressedblocks", "item/crate"))
-                        .put(TextureSlot.ALL, Identifier.fromNamespaceAndPath("compressedblocks", "item/crate"))
-                        .put(ITEM_SLOT, Identifier.fromNamespaceAndPath("minecraft", "item/" + vanillaItem))
-                        .put(NUMBER_SLOT, Identifier.fromNamespaceAndPath("compressedblocks", "item/level_" + compressionLevel)),
+                TextureMapping.particle(ResourceLocation.fromNamespaceAndPath("compressedblocks", "item/crate"))
+                        .put(TextureSlot.ALL, ResourceLocation.fromNamespaceAndPath("compressedblocks", "item/crate"))
+                        .put(ITEM_SLOT, ResourceLocation.fromNamespaceAndPath("minecraft", "item/" + vanillaItem))
+                        .put(NUMBER_SLOT, ResourceLocation.fromNamespaceAndPath("compressedblocks", "item/level_" + compressionLevel)),
                 modelOutput
         );
     }

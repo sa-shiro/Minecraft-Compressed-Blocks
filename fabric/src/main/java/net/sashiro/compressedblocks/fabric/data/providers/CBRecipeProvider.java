@@ -2,13 +2,13 @@ package net.sashiro.compressedblocks.fabric.data.providers;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.advancements.criterion.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -146,7 +146,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
                     .pattern("##")
                     .pattern("##")
                     .unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))
-                    .save(exporter, String.valueOf(Identifier.fromNamespaceAndPath("compressedblocks", "shaped_lesser_" + fileName)));
+                    .save(exporter, String.valueOf(ResourceLocation.fromNamespaceAndPath("compressedblocks", "shaped_lesser_" + fileName)));
 
         } else {
             ShapedRecipeBuilder.shaped(items, recipeCategory, result) // result
@@ -155,7 +155,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
                     .pattern("###")
                     .pattern("###")
                     .unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))
-                    .save(exporter, String.valueOf(Identifier.fromNamespaceAndPath("compressedblocks", "shaped_" + fileName)));
+                    .save(exporter, String.valueOf(ResourceLocation.fromNamespaceAndPath("compressedblocks", "shaped_" + fileName)));
         }
     }
 
@@ -175,7 +175,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
                     .pattern("##")
                     .pattern("##")
                     .unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))
-                    .save(exporter, String.valueOf(Identifier.fromNamespaceAndPath("compressedblocks", "shaped_lesser_" + fileName)));
+                    .save(exporter, String.valueOf(ResourceLocation.fromNamespaceAndPath("compressedblocks", "shaped_lesser_" + fileName)));
 
         } else {
             ShapedRecipeBuilder.shaped(items, recipeCategory, result) // result
@@ -184,7 +184,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
                     .pattern("###")
                     .pattern("###")
                     .unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))
-                    .save(exporter, String.valueOf(Identifier.fromNamespaceAndPath("compressedblocks", "shaped_" + fileName)));
+                    .save(exporter, String.valueOf(ResourceLocation.fromNamespaceAndPath("compressedblocks", "shaped_" + fileName)));
         }
     }
 
@@ -202,13 +202,13 @@ public class CBRecipeProvider extends FabricRecipeProvider {
             ShapelessRecipeBuilder.shapeless(items, recipeCategory, result, 4)
                     .requires(ingredient)
                     .unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))
-                    .save(exporter, String.valueOf(Identifier.fromNamespaceAndPath("compressedblocks", "shapeless_lesser_" + recipeName)));
+                    .save(exporter, String.valueOf(ResourceLocation.fromNamespaceAndPath("compressedblocks", "shapeless_lesser_" + recipeName)));
 
         } else {
             ShapelessRecipeBuilder.shapeless(items, recipeCategory, result, 9)
                     .requires(ingredient)
                     .unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))
-                    .save(exporter, String.valueOf(Identifier.fromNamespaceAndPath("compressedblocks", "shapeless_" + recipeName)));
+                    .save(exporter, String.valueOf(ResourceLocation.fromNamespaceAndPath("compressedblocks", "shapeless_" + recipeName)));
         }
     }
 
@@ -226,13 +226,13 @@ public class CBRecipeProvider extends FabricRecipeProvider {
             ShapelessRecipeBuilder.shapeless(items, recipeCategory, result, 4)
                     .requires(ingredient)
                     .unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))
-                    .save(exporter, String.valueOf(Identifier.fromNamespaceAndPath("compressedblocks", "shapeless_lesser_" + recipeName)));
+                    .save(exporter, String.valueOf(ResourceLocation.fromNamespaceAndPath("compressedblocks", "shapeless_lesser_" + recipeName)));
 
         } else {
             ShapelessRecipeBuilder.shapeless(items, recipeCategory, result, 9)
                     .requires(ingredient)
                     .unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))
-                    .save(exporter, String.valueOf(Identifier.fromNamespaceAndPath("compressedblocks", "shapeless_" + recipeName)));
+                    .save(exporter, String.valueOf(ResourceLocation.fromNamespaceAndPath("compressedblocks", "shapeless_" + recipeName)));
         }
     }
 

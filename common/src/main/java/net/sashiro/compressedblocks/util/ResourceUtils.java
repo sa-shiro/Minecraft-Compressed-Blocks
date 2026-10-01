@@ -2,7 +2,7 @@ package net.sashiro.compressedblocks.util;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -54,14 +54,14 @@ public class ResourceUtils {
     }
 
     /**
-     * Utility function to get the Minecraft {@link Identifier} of the Block / Item
+     * Utility function to get the Minecraft {@link ResourceLocation} of the Block / Item
      *
      * @param prefix Prefix of the Block / Item.
      * @param name   Name of the Block / Item.
-     * @return {@link Identifier} of the Block / Item.
+     * @return {@link ResourceLocation} of the Block / Item.
      */
-    public static Identifier getIdentifier(String prefix, String name) {
-        Identifier location = Identifier.withDefaultNamespace(prefix + "/" + name);
+    public static ResourceLocation getResourceLocation(String prefix, String name) {
+        ResourceLocation location = ResourceLocation.withDefaultNamespace(prefix + "/" + name);
 
         if (name.contains("rail")
                 || name.contains("torch")
@@ -87,15 +87,15 @@ public class ResourceUtils {
                 || name.contains("vine")
                 || name.contains("lichen")
         )
-            location = Identifier.withDefaultNamespace("block/" + name);
-        if (name.contains("sunflower")) location = Identifier.withDefaultNamespace("block/sunflower_front");
-        if (name.contains("lilac")) location = Identifier.withDefaultNamespace("block/lilac_top");
-        if (name.contains("rose_bush")) location = Identifier.withDefaultNamespace("block/rose_bush_top");
-        if (name.contains("peony")) location = Identifier.withDefaultNamespace("block/peony_top");
+            location = ResourceLocation.withDefaultNamespace("block/" + name);
+        if (name.contains("sunflower")) location = ResourceLocation.withDefaultNamespace("block/sunflower_front");
+        if (name.contains("lilac")) location = ResourceLocation.withDefaultNamespace("block/lilac_top");
+        if (name.contains("rose_bush")) location = ResourceLocation.withDefaultNamespace("block/rose_bush_top");
+        if (name.contains("peony")) location = ResourceLocation.withDefaultNamespace("block/peony_top");
         if (name.contains("carpet"))
-            location = Identifier.withDefaultNamespace("block/" + name.replace("carpet", "wool"));
-        if (name.contains("scute")) location = Identifier.withDefaultNamespace("item/" + name);
-        if (name.equals("bamboo")) location = Identifier.withDefaultNamespace("block/bamboo_stage0");
+            location = ResourceLocation.withDefaultNamespace("block/" + name.replace("carpet", "wool"));
+        if (name.contains("scute")) location = ResourceLocation.withDefaultNamespace("item/" + name);
+        if (name.equals("bamboo")) location = ResourceLocation.withDefaultNamespace("block/bamboo_stage0");
         return location;
     }
 
@@ -106,7 +106,7 @@ public class ResourceUtils {
      * @return {@link ResourceKey} of the Block.
      */
     public static ResourceKey<Block> createBlockId(String name) {
-        return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
+        return ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
     }
 
     /**
@@ -116,7 +116,7 @@ public class ResourceUtils {
      * @return {@link ResourceKey} of the Item.
      */
     public static ResourceKey<Item> createItemId(String name) {
-        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
+        return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
     }
 
     /**
@@ -241,9 +241,9 @@ public class ResourceUtils {
      * Utility function to get the overlay
      *
      * @param blockName Name of the Compressed Block.
-     * @return Overlay {@link Identifier}.
+     * @return Overlay {@link ResourceLocation}.
      */
-    public static Identifier getOverlay(String blockName) {
+    public static ResourceLocation getOverlay(String blockName) {
         blockName = blockName.replace("block.compressedblocks.", "");
         String overlay = "";
         String[] crateLevels = {
@@ -268,22 +268,22 @@ public class ResourceUtils {
             }
         } else overlay = "null";
 
-        return Identifier.fromNamespaceAndPath("compressedblocks", "block/" + overlay);
+        return ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + overlay);
     }
 
     /**
-     * Resolves the underlying vanilla Minecraft block {@link Identifier}
-     * from a compressed block identifier string.
+     * Resolves the underlying vanilla Minecraft block {@link ResourceLocation}
+     * from a compressed block ResourceLocation string.
      *
      * <p>This method strips the compressed block prefix, removes compression
      * suffixes, and normalizes special cases such as copper variants, magma,
      * and snow blocks.</p>
      *
-     * @param compressedBlockId the full identifier string of the compressed block
+     * @param compressedBlockId the full ResourceLocation string of the compressed block
      *                          (e.g. {@code block.compressedblocks.exposed_cut_copper})
-     * @return the resolved vanilla Minecraft block {@link Identifier}
+     * @return the resolved vanilla Minecraft block {@link ResourceLocation}
      */
-    public static Identifier resolveVanillaBlockId(String compressedBlockId) {
+    public static ResourceLocation resolveVanillaBlockId(String compressedBlockId) {
         String blockName = compressedBlockId.replace("block.compressedblocks.", "");
         blockName = removeCompressionName(blockName);
 
@@ -302,7 +302,7 @@ public class ResourceUtils {
         if (blockName.contains("magma_block")) blockName = "magma";
         if (blockName.contains("snow_block")) blockName = "snow";
 
-        return Identifier.fromNamespaceAndPath("minecraft", "block/" + blockName);
+        return ResourceLocation.fromNamespaceAndPath("minecraft", "block/" + blockName);
     }
 
     /**

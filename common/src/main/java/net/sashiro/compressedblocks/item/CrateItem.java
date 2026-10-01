@@ -21,7 +21,7 @@ public class CrateItem extends Item {
         super(ResourceUtils.setRarity(properties.setId(id), compressionLevel));
         compressor.setCompressionLevel(compressionLevel, hasSmallerCompression);
         this.compressionLevel = compressionLevel;
-        this.name = id.identifier().getPath();
+        this.name = id.location().getPath();
     }
 
     /**

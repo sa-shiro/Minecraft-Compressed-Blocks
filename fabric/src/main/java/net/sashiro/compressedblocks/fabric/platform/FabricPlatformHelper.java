@@ -3,7 +3,7 @@ package net.sashiro.compressedblocks.fabric.platform;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -40,8 +40,8 @@ public class FabricPlatformHelper implements PlatformHelper {
 
         Item.Properties properties = ResourceUtils.setRarity(new Item.Properties().setId(ResourceUtils.createItemId(cbBlock.blockName())), cbBlock.getCompressor().getCompressionLevel());
 
-        Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, cbBlock.blockName()), block);
-        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, cbBlock.blockName()), new BlockItem(block, properties));
+        Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, cbBlock.blockName()), block);
+        Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, cbBlock.blockName()), new BlockItem(block, properties));
         BLOCKS.add(block);
     }
 
@@ -49,19 +49,19 @@ public class FabricPlatformHelper implements PlatformHelper {
     public void registerCrate(CrateItem crateItem) {
         String crateName = ResourceUtils.removeCrateName(crateItem.getCrateName()).toUpperCase();
         if (!isBlockEnabled(crateName)) return;
-        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, crateItem.getCrateName().toLowerCase()), crateItem);
+        Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, crateItem.getCrateName().toLowerCase()), crateItem);
         CRATE_ITEMS.add(crateItem);
     }
 
     @Override
     public void registerCrate(CrateBlock crateBlock) {
-        String crateName = ResourceUtils.removeCrateName(crateBlock.getBlockName().identifier().getPath()).toUpperCase();
+        String crateName = ResourceUtils.removeCrateName(crateBlock.getBlockName().location().getPath()).toUpperCase();
         if (!isBlockEnabled(crateName)) return;
 
         Item.Properties properties = ResourceUtils.setRarity(new Item.Properties(), crateBlock.getCompressor().getCompressionLevel()).setId(ResourceUtils.createItemId(crateBlock.blockName().toLowerCase()));
 
-        Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, crateBlock.blockName().toLowerCase()), crateBlock);
-        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, crateBlock.blockName().toLowerCase()), new BlockItem(crateBlock, properties));
+        Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, crateBlock.blockName().toLowerCase()), crateBlock);
+        Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(MOD_ID, crateBlock.blockName().toLowerCase()), new BlockItem(crateBlock, properties));
         CRATE_BLOCKS.add(crateBlock);
     }
 

@@ -9,7 +9,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.fabric.data.CBTags;
-import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
@@ -21,8 +20,9 @@ public class CBTagsProviders {
             super(output, registriesFuture);
         }
 
+
         @Override
-        protected void addTags(HolderLookup.@NonNull Provider provider) {
+        protected void addTags(HolderLookup.Provider provider) {
             for (Block block : Constants.BLOCKS) {
                 String name = block.getDescriptionId().replace("block.compressedblocks.", "");
 
@@ -88,7 +88,7 @@ public class CBTagsProviders {
         }
 
         @Override
-        protected void addTags(HolderLookup.@NonNull Provider provider) {
+        protected void addTags(HolderLookup.Provider provider) {
             for (Block block : Constants.BLOCKS) {
                 String name = block.getDescriptionId().replace("block.compressedblocks.", "");
                 Item blockItem = block.asItem();
