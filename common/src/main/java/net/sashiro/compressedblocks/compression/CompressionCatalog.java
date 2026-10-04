@@ -513,4 +513,18 @@ public class CompressionCatalog {
             new CompressionEntry("BAMBOO", CompressionEntry.Kind.CRATE_BLOCK, 1.0f, 10, true, true, "1.0"),
             new CompressionEntry("RESIN_CLUMP", CompressionEntry.Kind.CRATE_ITEM, 1.0f, 10, true, true, "1.21.4")
     );
+
+    public static CompressionEntry getEntryById(String entryId) {
+        for (CompressionEntry entry : BLOCK_ENTRIES) {
+            if (entry.id().equals(entryId)) {
+                return entry;
+            }
+        }
+        for (CompressionEntry entry : CRATE_ENTRIES) {
+            if (entry.id().equals(entryId)) {
+                return entry;
+            }
+        }
+        return null;
+    }
 }

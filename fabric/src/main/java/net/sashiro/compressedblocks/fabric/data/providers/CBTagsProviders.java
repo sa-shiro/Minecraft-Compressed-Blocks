@@ -76,7 +76,7 @@ public class CBTagsProviders {
         }
 
         private void addBlockTag(Block block, TagKey<Block> tag) {
-            var builder = this.valueLookupBuilder(tag);
+            var builder = this.getOrCreateTagBuilder(tag);
             builder.add(block);
         }
     }
@@ -162,7 +162,7 @@ public class CBTagsProviders {
         }
 
         private void addItemTag(Item item, TagKey<Item> tag) {
-            var builder = this.valueLookupBuilder(tag);
+            var builder = this.getOrCreateTagBuilder(tag);
             builder.add(item);
         }
     }

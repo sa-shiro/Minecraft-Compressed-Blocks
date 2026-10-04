@@ -20,7 +20,7 @@ public class VersionUtils {
      * @return true if the entry is compatible with the current Minecraft version, false otherwise.
      */
     public static boolean isCompatibleWithCurrentVersion(CompressionEntry entry) {
-        int[] currentVersion = parseVersion(SharedConstants.getCurrentVersion().id());
+        int[] currentVersion = parseVersion(SharedConstants.getCurrentVersion().getId());
         int[] entryVersion = parseVersion(entry.minecraftVersion());
 
         // Different versioning schemes:

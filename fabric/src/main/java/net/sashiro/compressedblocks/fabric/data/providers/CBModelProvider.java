@@ -16,6 +16,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.sashiro.compressedblocks.Constants;
+import net.sashiro.compressedblocks.fabric.CBFabricConfig;
 import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.util.ResourceUtils;
 
@@ -48,19 +49,20 @@ public class CBModelProvider extends FabricModelProvider {
             String descriptionId = block.getDescriptionId();
             String block_name = descriptionId.replace("block.compressedblocks.", "");
             // exclude manually added resources
-            if (ResourceUtils.hasManuallyAddedResources(descriptionId)) continue;
+            if (ResourceUtils.hasManuallyAddedResources(block_name)) continue;
+            if (!CBFabricConfig.CONFIG.isEnabled(ResourceUtils.removeCompressionName(block_name))) continue;
 
             // Check if the block is a rotational block
-            if (ResourceUtils.isRotationalBlock(descriptionId)) {
-                ResourceLocation side = ResourceUtils.resolveVanillaBlockId(descriptionId);
+            if (ResourceUtils.isRotationalBlock(block_name)) {
+                ResourceLocation side = ResourceUtils.resolveVanillaBlockId(block_name);
                 ResourceLocation end = ResourceLocation.fromNamespaceAndPath(side.getNamespace(), side.getPath() + "_top");
 
-                if (descriptionId.contains("froglight") || descriptionId.contains("hay") || descriptionId.contains("melon") || descriptionId.contains("pumpkin")) {
+                if (block_name.contains("froglight") || block_name.contains("hay") || block_name.contains("melon") || block_name.contains("pumpkin")) {
                     side = ResourceLocation.fromNamespaceAndPath("minecraft", side.getPath() + "_side");
                 }
 
-                TextureMapping mapping = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, ResourceUtils.getOverlay(descriptionId));
-                TextureMapping mapping_horizontal = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, ResourceUtils.getOverlay(descriptionId));
+                TextureMapping mapping = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, ResourceUtils.getOverlay(block_name));
+                TextureMapping mapping_horizontal = new TextureMapping().put(TextureSlot.END, end).put(TextureSlot.SIDE, side).put(TextureSlot.PARTICLE, side).put(OVERLAY_SLOT, ResourceUtils.getOverlay(block_name));
                 MultiVariant variant = BlockModelGenerators.plainVariant(TEMPLATE_CUBE_COLUMN.create(block, mapping, blockModelGenerators.modelOutput));
                 MultiVariant horizontalVariant = BlockModelGenerators.plainVariant(TEMPLATE_CUBE_COLUMN_HORIZONTAL.createWithSuffix(block, "_horizontal", mapping_horizontal, blockModelGenerators.modelOutput));
 
@@ -70,7 +72,7 @@ public class CBModelProvider extends FabricModelProvider {
             }
             // If the block is not rotational then create a simple block model
             else {
-                TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, ResourceUtils.resolveVanillaBlockId(descriptionId)).put(OVERLAY_SLOT, ResourceUtils.getOverlay(descriptionId));
+                TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, ResourceUtils.resolveVanillaBlockId(block_name)).put(OVERLAY_SLOT, ResourceUtils.getOverlay(block_name));
                 ResourceLocation blockModel = TEMPLATE_BLOCK.create(block, mapping, blockModelGenerators.modelOutput);
 
                 blockModelGenerators.registerSimpleItemModel(block, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/" + block_name));
@@ -81,6 +83,9 @@ public class CBModelProvider extends FabricModelProvider {
         for (Block crate : Constants.CRATE_BLOCKS) {
             String crate_name = crate.getDescriptionId().replace("block.compressedblocks.", "");
             String mc_name = ResourceUtils.removeCrateName(crate_name);
+
+            if (!CBFabricConfig.CONFIG.isEnabled(mc_name)) continue;
+
             TextureMapping mapping = new TextureMapping().put(TextureSlot.ALL, ResourceLocation.fromNamespaceAndPath("compressedblocks", "block/crate")).put(BLOCK_SLOT, ResourceUtils.getResourceLocation("block", mc_name)).put(NUMBER_SLOT, ResourceUtils.getOverlay(crate.getDescriptionId()));
             ResourceLocation blockModel = TEMPLATE_CRATE_BLOCK.create(crate, mapping.copyAndUpdate(BLOCK_SLOT, ResourceUtils.getResourceLocation("block", mc_name)), blockModelGenerators.modelOutput);
 
@@ -95,6 +100,8 @@ public class CBModelProvider extends FabricModelProvider {
             String crate_name = crate.getDescriptionId().replace("item.compressedblocks.", "");
             String vanillaItemName = ResourceUtils.removeCrateName(crate_name);
             Item vanillaItem = ItemStack.EMPTY.getItem();
+
+            if (!CBFabricConfig.CONFIG.isEnabled(vanillaItemName)) continue;
 
             for (Item item : BuiltInRegistries.ITEM) {
                 if (item.getDescriptionId().equals("item.minecraft." + vanillaItemName)) {

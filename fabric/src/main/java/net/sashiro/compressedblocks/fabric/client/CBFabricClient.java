@@ -1,17 +1,17 @@
 package net.sashiro.compressedblocks.fabric.client;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
-import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -52,7 +52,7 @@ public class CBFabricClient implements ClientModInitializer {
         Collection<ItemStack> itemStackBlockCrates = new ArrayList<>();
 
         for (Block block : Constants.BLOCKS) {
-            BlockRenderLayerMap.putBlock(block, ChunkSectionLayer.TRANSLUCENT);
+            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.translucent());
             itemStackBlocks.add(new ItemStack(block));
         }
 
@@ -61,7 +61,7 @@ public class CBFabricClient implements ClientModInitializer {
         }
 
         for (Block block : Constants.CRATE_BLOCKS) {
-            BlockRenderLayerMap.putBlock(block, ChunkSectionLayer.TRANSLUCENT);
+            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.translucent());
             itemStackBlockCrates.add(new ItemStack(block));
         }
 

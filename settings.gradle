@@ -11,7 +11,6 @@ pluginManagement {
             }
             filter {
                 includeGroup('net.fabricmc')
-                includeGroup('net.fabricmc.unpick')
                 includeGroup('fabric-loom')
             }
         }
@@ -26,6 +25,17 @@ pluginManagement {
                 includeGroupAndSubgroups("org.spongepowered")
             }
         }
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = 'Forge'
+                    url = uri('https://maven.minecraftforge.net')
+                }
+            }
+            filter {
+                includeGroupAndSubgroups('net.minecraftforge')
+            }
+        }
     }
 }
 
@@ -38,6 +48,4 @@ rootProject.name = 'Compressed-Blocks'
 include("common")
 include("fabric")
 include("neoforge")
-// Forge module has been permanently removed from this project as of [27.12.2025].
-// It will not be included in future builds.
-// include("forge")
+include("forge")

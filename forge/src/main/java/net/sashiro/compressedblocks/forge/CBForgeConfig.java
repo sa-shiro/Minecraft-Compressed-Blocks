@@ -1,9 +1,10 @@
-package net.sashiro.compressedblocks.fabric;
+package net.sashiro.compressedblocks.forge;
 
-import net.neoforged.neoforge.common.ModConfigSpec;
+import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.fml.common.Mod;
+import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.compression.CompressionCatalog;
 import net.sashiro.compressedblocks.compression.CompressionEntry;
-import net.sashiro.compressedblocks.util.VersionUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.Arrays;
@@ -12,40 +13,41 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * CBFabricConfig is a configuration class for the Compressed Blocks mod on the Fabric platform.
+ * CBForgeConfig is a configuration class for the Compressed Blocks mod on the NeoForge platform.
  * It defines various configuration options for compressed blocks and crates, including enabling/disabling
  * specific blocks and crates, as well as their hardness resistance multipliers and compression levels.
  */
-public class CBFabricConfig {
+@Mod.EventBusSubscriber(modid = Constants.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class CBForgeConfig {
 
-    public static final CBFabricConfig CONFIG;
-    public static final ModConfigSpec CONFIG_SPEC;
+    public static final CBForgeConfig CONFIG;
+    public static final ForgeConfigSpec CONFIG_SPEC;
 
     static {
-        Pair<CBFabricConfig, ModConfigSpec> pair = new ModConfigSpec.Builder().configure(CBFabricConfig::new);
+        Pair<CBForgeConfig, ForgeConfigSpec> pair = new ForgeConfigSpec.Builder().configure(CBForgeConfig::new);
 
         //Store the resulting values
         CONFIG = pair.getLeft();
         CONFIG_SPEC = pair.getRight();
     }
 
-    public final ModConfigSpec.BooleanValue CONFIG_BLOCKS_ENABLED;
-    public final ModConfigSpec.BooleanValue CONFIG_CRATES_ENABLED;
+    public final ForgeConfigSpec.BooleanValue CONFIG_BLOCKS_ENABLED;
+    public final ForgeConfigSpec.BooleanValue CONFIG_CRATES_ENABLED;
 
-    public final ModConfigSpec.IntValue CONFIG_MAX_COMPRESSION_LEVEL;
-    public final ModConfigSpec.IntValue CONFIG_MAX_CRATE_COMPRESSION_LEVEL;
+    public final ForgeConfigSpec.IntValue CONFIG_MAX_COMPRESSION_LEVEL;
+    public final ForgeConfigSpec.IntValue CONFIG_MAX_CRATE_COMPRESSION_LEVEL;
 
-    public final ModConfigSpec.ConfigValue<List<? extends Float>> CONFIG_HARDNESS_LEVELS;
-    public final ModConfigSpec.ConfigValue<List<? extends Float>> CONFIG_RESISTANCE_LEVELS;
+    public final ForgeConfigSpec.ConfigValue<List<? extends Float>> CONFIG_HARDNESS_LEVELS;
+    public final ForgeConfigSpec.ConfigValue<List<? extends Float>> CONFIG_RESISTANCE_LEVELS;
     public final Map<String, CompressionSettings> COMPRESSED_BLOCKS = new HashMap<>();
     public final Map<String, CompressionSettings> CRATES = new HashMap<>();
 
     /**
      * Initializes the configuration settings for compressed blocks and crates.
      *
-     * @param builder The ModConfigSpec.Builder used to define configuration options.
+     * @param builder The ForgeConfigSpec.Builder used to define configuration options.
      */
-    private CBFabricConfig(ModConfigSpec.Builder builder) {
+    private CBForgeConfig(ForgeConfigSpec.Builder builder) {
         // Compressed Blocks Configuration
         // ----------------------------------------------------------------------------------
         // IMPORTANT:
@@ -76,9 +78,9 @@ public class CBFabricConfig {
         CONFIG_MAX_CRATE_COMPRESSION_LEVEL = builder.defineInRange("maxCrateCompressionLevel", 10, 1, 10);
 
         builder.comment("Hardness levels for each compression level");
-        CONFIG_HARDNESS_LEVELS = builder.defineList("hardnessLevels", Arrays.asList(5.0F, 6.5F, 8.5F, 12.5F, 15.0F, 20.5F, 25.5F, 30.5F, 40.0F, 50.0F), () -> 0.0F, o -> o instanceof Float);
+        CONFIG_HARDNESS_LEVELS = builder.defineList("hardnessLevels", Arrays.asList(5.0F, 6.5F, 8.5F, 12.5F, 15.0F, 20.5F, 25.5F, 30.5F, 40.0F, 50.0F), o -> o instanceof Float);
         builder.comment("Resistance levels for each compression level");
-        CONFIG_RESISTANCE_LEVELS = builder.defineList("resistanceLevels", Arrays.asList(35.5F, 75.0F, 150.0F, 300.0F, 600.0F, 800.0F, 1250.0F, 2000.0F, 5000.0F, 7500.0F), () -> 0.0F, o -> o instanceof Float);
+        CONFIG_RESISTANCE_LEVELS = builder.defineList("resistanceLevels", Arrays.asList(35.5F, 75.0F, 150.0F, 300.0F, 600.0F, 800.0F, 1250.0F, 2000.0F, 5000.0F, 7500.0F), o -> o instanceof Float);
 
 
         builder.comment("Enabled blocks:");
@@ -104,26 +106,20 @@ public class CBFabricConfig {
      * @param blockName The name of the block or crate to check.
      * @return true if the block or crate is enabled, false otherwise.
      */
-    public boolean isEnabled(String blockName) {
+    public boolean isBlockEnabled(String blockName) {
         blockName = blockName.toUpperCase(); // normalize to uppercase for consistent lookup
-
-        if ("STONE".equals(blockName)) return true;
-        if ("GOLDEN_APPLE".equals(blockName)) return true;
-
-        CompressionEntry entry = CompressionCatalog.getEntryById(blockName);
-        if (entry != null && !VersionUtils.isCompatibleWithCurrentVersion(entry)) {
-            return false;
-        }
 
         CompressionSettings block = COMPRESSED_BLOCKS.get(blockName);
         if (block != null) {
             if (!CONFIG_BLOCKS_ENABLED.get()) return false;
+            if ("STONE".equals(blockName)) return true;
             return block.enabled.get();
         }
 
         CompressionSettings crate = CRATES.get(blockName);
         if (crate != null) {
             if (!CONFIG_CRATES_ENABLED.get()) return false;
+            if ("GOLDEN_APPLE".equals(blockName)) return true;
             return crate.enabled.get();
         }
 
@@ -218,15 +214,15 @@ public class CBFabricConfig {
      * and whether smaller compression is allowed.
      */
     public static final class CompressionSettings {
-        public final ModConfigSpec.BooleanValue enabled;
-        public final ModConfigSpec.DoubleValue hardnessResistanceMultiplier;
-        public final ModConfigSpec.IntValue compressionLevel;
-        //public final ModConfigSpec.BooleanValue hasSmallerCompression;
+        public final ForgeConfigSpec.BooleanValue enabled;
+        public final ForgeConfigSpec.DoubleValue hardnessResistanceMultiplier;
+        public final ForgeConfigSpec.IntValue compressionLevel;
+        //public final ForgeConfigSpec.BooleanValue hasSmallerCompression;
 
-        public CompressionSettings(ModConfigSpec.Builder builder, CompressionEntry entry) {
+        public CompressionSettings(ForgeConfigSpec.Builder builder, CompressionEntry entry) {
             enabled = builder.define("enabled", entry.enabledByDefault());
 
-            double multiplier = roundToThreeDecimals(entry.hardnessResistanceMultiplier());
+            double multiplier = entry.hardnessResistanceMultiplier();
 
             hardnessResistanceMultiplier = builder.defineInRange(
                     "hardnessResistanceMultiplier",
@@ -237,9 +233,5 @@ public class CBFabricConfig {
 
             compressionLevel = builder.defineInRange("compressionLevel", entry.maxCompressionLevel(), 1, 10);
         }
-    }
-
-    private static double roundToThreeDecimals(double value) {
-        return Math.round(value * 1000.0D) / 1000.0D;
     }
 }
