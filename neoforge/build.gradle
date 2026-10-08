@@ -5,11 +5,7 @@ plugins {
 
 neoForge {
     version = neoforge_version
-    // Automatically enable neoforge AccessTransformers if the file exists
-    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
-    if (at.exists()) {
-        accessTransformers.add(at.absolutePath)
-    }
+
     parchment {
         minecraftVersion = parchment_minecraft
         mappingsVersion = parchment_version
@@ -22,10 +18,6 @@ neoForge {
         client {
             client()
         }
-        data {
-            data()
-            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath(), '--existing', file('../common/src/main/resources/').getAbsolutePath()
-        }
         server {
             server()
         }
@@ -37,4 +29,9 @@ neoForge {
     }
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
+sourceSets.main.resources { srcDir '../fabric/src/main/generated' }
+
+dependencies {
+    // Forge Config API Port - NeoForge
+    api("fuzs.forgeconfigapiport:forgeconfigapiport-neoforge:${forgeconfigapi_version}")
+}

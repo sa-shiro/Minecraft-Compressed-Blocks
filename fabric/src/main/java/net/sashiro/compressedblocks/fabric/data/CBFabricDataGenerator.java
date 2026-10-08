@@ -10,11 +10,12 @@ public class CBFabricDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-        pack.addProvider(CBBlockTagsProvider::new);
-        pack.addProvider(CBItemTagsProvider::new);
+        pack.addProvider(CBTagsProviders.CBBlockTagsProvider::new);
+        pack.addProvider(CBTagsProviders.CBItemTagsProvider::new);
         pack.addProvider(CBLanguageProvider::new);
         pack.addProvider(CBLootTableProvider::new);
         pack.addProvider(CBModelProvider::new);
         pack.addProvider(CBRecipeProvider::new);
+        pack.addProvider(CBAdvancementProvider::new);
     }
 }

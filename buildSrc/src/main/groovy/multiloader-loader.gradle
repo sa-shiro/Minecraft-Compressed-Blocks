@@ -1,13 +1,12 @@
 plugins {
     id 'multiloader-common'
-    id 'idea'
 }
 
 configurations {
-    commonJava{
+    commonJava {
         canBeResolved = true
     }
-    commonResources{
+    commonResources {
         canBeResolved = true
     }
 }
@@ -32,18 +31,9 @@ processResources {
     from(configurations.commonResources)
 }
 
-tasks.named('javadoc', Javadoc).configure {
-    dependsOn(configurations.commonJava)
-    source(configurations.commonJava)
-}
-
 tasks.named('sourcesJar', Jar) {
     dependsOn(configurations.commonJava)
     from(configurations.commonJava)
     dependsOn(configurations.commonResources)
     from(configurations.commonResources)
 }
-
-// IntelliJ no longer downloads javadocs and sources by default.
-// This tells Gradle to force IDEA to do it.
-idea.module { downloadJavadoc = downloadSources = true }

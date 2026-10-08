@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "block.compressedblocks.c0_bop_white_sand": "§fCompressed White Sand",
+    "block.compressedblocks.c1_bop_white_sand": "§aDouble Compressed White Sand",
+    "block.compressedblocks.c2_bop_white_sand": "§bTriple Compressed White Sand",
+    "block.compressedblocks.c3_bop_white_sand": "§9Quadruple Compressed White Sand",
+    "block.compressedblocks.c4_bop_white_sand": "§1Quintuple Compressed White Sand",
+    "block.compressedblocks.c5_bop_white_sand": "§eSextuple Compressed White Sand",
+    "block.compressedblocks.c6_bop_white_sand": "§6Septuple Compressed White Sand",
+    "block.compressedblocks.c7_bop_white_sand": "§5Octuple Compressed White Sand",
+    "block.compressedblocks.c8_bop_white_sand": "§dMega Compressed White Sand",
+    "block.compressedblocks.c9_bop_white_sand": "§cGiga Compressed White Sand"
+}

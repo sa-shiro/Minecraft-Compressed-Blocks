@@ -1,0 +1,8 @@
+{
+  "pack": {
+    "description": "CB custom block/item resources",
+    "pack_format": 34,
+    "min_format": 34,
+    "max_format": 999
+  }
+}

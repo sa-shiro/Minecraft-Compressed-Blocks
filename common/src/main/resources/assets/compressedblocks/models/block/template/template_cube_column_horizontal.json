@@ -1,11 +1,16 @@
 {
   "parent": "minecraft:block/cube_column_horizontal",
-  "render_type": "minecraft:cutout",
   "textures": {
     "end": "#end",
     "overlay": "#overlay",
     "particle": "#particle",
-    "side": "#side"
+    "side": "#side",
+    "down": "#end",
+    "up": "#end",
+    "north": "#side",
+    "east": "#side",
+    "south": "#side",
+    "west": "#side"
   },
   "elements": [
     {

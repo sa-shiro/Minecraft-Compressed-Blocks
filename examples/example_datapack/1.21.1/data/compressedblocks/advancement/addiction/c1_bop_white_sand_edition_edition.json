@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/c0_bop_white_sand_edition",
+  "criteria": {
+    "get_c1_bop_white_sand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c1_bop_white_sand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Compression Level 2 for White Sand!",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c1_bop_white_sand"
+    },
+    "title": "Getting Serious"
+  },
+  "requirements": [
+    [
+      "get_c1_bop_white_sand"
+    ]
+  ],
+  "rewards": {
+    "experience": 4
+  },
+  "sends_telemetry_event": true
+}

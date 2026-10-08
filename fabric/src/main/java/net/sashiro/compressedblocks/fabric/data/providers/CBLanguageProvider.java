@@ -2,11 +2,15 @@ package net.sashiro.compressedblocks.fabric.data.providers;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
-import net.sashiro.compressedblocks.util.CommonUtils;
+import net.sashiro.compressedblocks.compression.CompressionCatalog;
+import net.sashiro.compressedblocks.compression.CompressionEntry;
+import net.sashiro.compressedblocks.util.ResourceUtils;
+import net.sashiro.compressedblocks.util.VersionUtils;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,82 +24,87 @@ public class CBLanguageProvider extends FabricLanguageProvider {
     public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder builder) {
         builder.add("itemGroup.compressed_blocks", "Compressed Blocks");
         builder.add("itemGroup.compressed_items", "Item Crates");
+        builder.add("compressedblocks.configuration.blocksEnabled", "Enable Block Compression");
+        builder.add("compressedblocks.configuration.cratesEnabled", "Enable Crate Compression");
+        builder.add("compressedblocks.configuration.maxCompressionLevel", "Maximum Block Compression Level");
+        builder.add("compressedblocks.configuration.maxCrateCompressionLevel", "Maximum Crate Compression Level");
+        builder.add("compressedblocks.configuration.hardnessLevels", "Hardness Levels");
+        builder.add("compressedblocks.configuration.resistanceLevels", "Resistance Levels");
+        builder.add("compressedblocks.configuration.enabled", "Enabled");
+        builder.add("compressedblocks.configuration.hardnessResistanceMultiplier", "Hardness/Resistance Multiplier");
+        builder.add("compressedblocks.configuration.compressionLevel", "Compression Level");
 
+        /*
+         * Add translations for all blocks and items in the Constants class.
+         * The translation key is generated based on the block/item name, and the translation value is generated based on the block/item name and compression level.
+         */
         for (Block block : Constants.BLOCKS) {
-            assert false;
-            String name = block.getDescriptionId().replace("block.compressedblocks.", "");
+            String name = ResourceUtils.removeNamespace(block.getDescriptionId());
             String name2 = "";
+            ChatFormatting color = ResourceUtils.getRarityColor(ResourceUtils.getCompressionLevel(name));
+
             for (int i = 0; i < 10; i++) {
                 if (name.contains("c" + i))
                     name2 = name.replace("c" + i + "_", "");
             }
-            builder.add("block.compressedblocks." + name, CommonUtils.compressionLevel(name) + CommonUtils.stringFormat(name2.replace("_", " ")));
+            builder.add("block.compressedblocks." + name, color.toString() + ResourceUtils.getCompressionLevelName(name) + ResourceUtils.capitalizeWords(name2.replace("_", " ")));
         }
 
-        for (Block crate : Constants.CRATES) {
+        /*
+         * Add translations for all crate items and blocks in the Constants class.
+         * The translation key is generated based on the crate item/block name, and the translation value is generated based on the crate item/block name and compression level.
+         */
+        for (Item crate : Constants.CRATE_ITEMS) {
             Item item = crate.asItem();
-            assert false;
-            String name = item.getDescriptionId().replace("block.compressedblocks.", "");
-            String translation = CommonUtils.stringFormat(name.replace("_", " "));
+            String name = ResourceUtils.removeNamespace(item.getDescriptionId());
+            String translation = ResourceUtils.capitalizeWords(name.replace("_", " "));
+            translation = ResourceUtils.pluralize(translation);
+            ChatFormatting color = ResourceUtils.getRarityColor(ResourceUtils.getCrateLevel(name));
 
-            if ((translation.endsWith("a")
-                    || translation.endsWith("b")
-                    || translation.endsWith("c")
-                    || translation.endsWith("d")
-                    || translation.endsWith("e")
-                    || translation.endsWith("f")
-                    || translation.endsWith("g")
-                    || translation.endsWith("k")
-                    || translation.endsWith("l")
-                    || translation.endsWith("m")
-                    || translation.endsWith("n")
-                    || translation.endsWith("p")
-                    || translation.endsWith("r")
-                    || translation.endsWith("t")
-                    || translation.endsWith("w"))
-                    && !translation.endsWith("ead")
-                    && !translation.endsWith("af")
-                    && !translation.endsWith("ef")
-                    && !translation.endsWith("ns")
-                    && !translation.endsWith("tton")
-                    && !translation.endsWith("ken")
-                    && !translation.endsWith("lp")
-                    && !translation.endsWith("op")
-                    && !translation.endsWith("ts")
-                    && !translation.endsWith("it")
-                    && !translation.endsWith("der")
-                    && !translation.endsWith("gar")
-                    && !translation.endsWith("ing")
-                    && !translation.contains("coal")
-                    && !translation.contains("per")
-            ) {
-                translation += ("s");
-            } else if (translation.endsWith("o") && !translation.endsWith("oo")) {
-                translation += ("es");
-            } else if (translation.endsWith("ly") && !translation.endsWith("y")) {
-                translation = translation.replace("ly", "ies");
-            } else if (translation.endsWith("s")
-                    && !translation.endsWith("es")
-                    && !translation.endsWith("ns")
-                    && !translation.endsWith("rs")
-                    && !translation.endsWith("ds")
-                    && !translation.endsWith("ss")
-                    && !translation.endsWith("us")
-                    && !translation.endsWith("ts")
-            ) {
-                StringBuilder b = new StringBuilder(translation);
-                b.replace(translation.lastIndexOf("s"), translation.lastIndexOf("s") + 1, "es");
-                translation = b.toString();
-            } else if (translation.endsWith("sh") || translation.endsWith("ch") && !translation.contains("rotten")) {
-                translation += "es";
-            } else if (translation.contains("leaf")) {
-                translation = translation.replace("leaf", "leaves");
+            String finalTranslation = translation.replace("Crated", "Crate of");
+            if (name.contains("totem") || name.contains("dragon") && !name.startsWith("crated_")) {
+                builder.add("item.compressedblocks." + name, "§6" + finalTranslation);
+            } else if (!name.startsWith("item.")) {
+                builder.add("item.compressedblocks." + name, color.toString() + finalTranslation);
             }
+        }
 
-            if (name.contains("totem") || name.contains("dragon"))
-                builder.add("item.compressedblocks." + name, "§6" + translation.replace("Crated", "Crate of"));
-            else if (name.startsWith("item.")) return;
-            else builder.add("block.compressedblocks." + name, translation.replace("Crated", "Crate of"));
+        /*
+         * Add translations for all crate blocks in the Constants class.
+         * The translation key is generated based on the crate block name, and the translation value is generated based on the crate block name and compression level.
+         */
+        for (Block crate : Constants.CRATE_BLOCKS) {
+            String name = ResourceUtils.removeNamespace(crate.getDescriptionId());
+            String translation = ResourceUtils.capitalizeWords(name.replace("_", " "));
+            translation = ResourceUtils.pluralize(translation);
+            ChatFormatting color = ResourceUtils.getRarityColor(ResourceUtils.getCrateLevel(name));
+
+            String finalTranslation = translation.replace("Crated", "Crate of");
+            if (!name.startsWith("item.")) {
+                builder.add("block.compressedblocks." + name, color.toString() + finalTranslation);
+            }
+        }
+
+        /*
+         * Add translations for all compression entries in the CompressionCatalog class.
+         * The translation key is generated based on the compression entry name, and the translation value is generated based on the compression entry name.
+         */
+        for (CompressionEntry entry : CompressionCatalog.BLOCK_ENTRIES) {
+            if (!VersionUtils.isCompatibleWithCurrentVersion(entry)) continue;
+            String name = entry.id();
+            String translation = ResourceUtils.capitalizeWords(name.replace("_", " "));
+            builder.add("compressedblocks.configuration." + name, translation);
+        }
+
+        /*
+         * Add translations for all crate entries in the CompressionCatalog class.
+         * The translation key is generated based on the crate entry name, and the translation value is generated based on the crate entry name.
+         */
+        for (CompressionEntry entry : CompressionCatalog.CRATE_ENTRIES) {
+            if (!VersionUtils.isCompatibleWithCurrentVersion(entry)) continue;
+            String name = entry.id();
+            String translation = ResourceUtils.capitalizeWords(name.replace("_", " "));
+            builder.add("compressedblocks.configuration." + name, translation);
         }
     }
 }

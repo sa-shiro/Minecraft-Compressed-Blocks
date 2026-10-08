@@ -20,8 +20,9 @@ public class CBLootTableProvider extends FabricBlockLootTableProvider {
         for (Block block : Constants.BLOCKS) {
             dropSelf(block);
         }
-        for (Block crate : Constants.CRATES) {
-            dropSelf(crate);
+
+        for (Block block : Constants.CRATE_BLOCKS) {
+            dropSelf(block);
         }
     }
 }

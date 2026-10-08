@@ -1,63 +1,65 @@
 package net.sashiro.compressedblocks.item;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.BlockItem;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.block.Block;
-import net.sashiro.compressedblocks.util.CommonUtils;
-import net.sashiro.compressedblocks.util.Compression;
+import net.sashiro.compressedblocks.compression.Compression;
+import net.sashiro.compressedblocks.util.ResourceUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-@SuppressWarnings("NullableProblems")
-public class CrateItem extends BlockItem {
+public class CrateItem extends Item {
+    private final Compression compressor = new Compression();
+    private final int compressionLevel;
+    private final String name;
 
-    private final Block block;
-    private final String itemCount;
-    private final Compression comp = new Compression();
-
-    public CrateItem(Block block, Properties properties) {
-        super(block, properties.stacksTo(64));
-        this.block = block;
-        comp.setCompressionLevel(getLevel());
-        this.itemCount = comp.getBlockCount();
+    /**
+     * Constructor for the CrateItem class
+     *
+     * @param id                    ResourceKey<Item> of the item
+     * @param compressionLevel      Compression level of the item
+     * @param hasSmallerCompression Whether the item has smaller compression
+     */
+    public CrateItem(ResourceKey<Item> id, Item.Properties properties, int compressionLevel, boolean hasSmallerCompression) {
+        super(ResourceUtils.setRarity(properties, compressionLevel));
+        compressor.setCompressionLevel(compressionLevel, hasSmallerCompression);
+        this.compressionLevel = compressionLevel;
+        this.name = id.location().getPath();
     }
 
-    private int getLevel() {
-        String name = block.getDescriptionId().replace("block.compressedblocks.", "").replace("item.compressedblocks.", "");
-        if (name.startsWith("crated_")) return 0;
-        if (name.startsWith("double_")) return 1;
-        if (name.startsWith("triple_")) return 2;
-        if (name.startsWith("quadruple_")) return 3;
-        if (name.startsWith("quintuple_")) return 4;
-        if (name.startsWith("sextuple_")) return 5;
-        if (name.startsWith("septuple_")) return 6;
-        if (name.startsWith("octuple_")) return 7;
-        if (name.startsWith("mega_")) return 8;
-        if (name.startsWith("giga_")) return 9;
-        else return 0;
+    /**
+     * Function to get the compressor of the block
+     *
+     * @return Compressor
+     */
+    public Compression getCompressor() {
+        return compressor;
+    }
+
+    /**
+     * Function to get the compression level of the item
+     *
+     * @return Compression level
+     */
+    public int getCompressionLevel() {
+        return compressionLevel;
+    }
+
+    /**
+     * Function to get the name of the item
+     *
+     * @return Name
+     */
+    public String getCrateName() {
+        return name;
     }
 
     @Override
-    public void appendHoverText(ItemStack s, Item.@NotNull TooltipContext tc, List<Component> c, TooltipFlag t) {
-        //super.appendHoverText(s, tc, c, t);
-        String itemName = CommonUtils.stringFormat(this.getDescriptionId()
-                .replace("block.compressedblocks.", "")
-                .replace("item.compressedblocks.", "")
-                .replace("crated_", "")
-                .replace("double_", "")
-                .replace("triple_", "")
-                .replace("quadruple_", "")
-                .replace("quintuple_", "")
-                .replace("sextuple_", "")
-                .replace("septuple_", "")
-                .replace("octuple_", "")
-                .replace("mega_", "")
-                .replace("giga_", "")
-        );
-        c.add(Component.literal(itemCount + "x " + itemName).withStyle(comp.getStyle()));
+    public void appendHoverText(@NotNull ItemStack is, Item.@NotNull TooltipContext tc, @NotNull List<Component> lC, @NotNull TooltipFlag ttf) {
+        super.appendHoverText(is, tc, lC, ttf);
+        lC.add(Component.literal(compressor.getQuantity() + " Blocks").withStyle(compressor.getStyle()));
     }
 }
