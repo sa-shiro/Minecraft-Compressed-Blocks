@@ -30,7 +30,6 @@ jobs:
         os: [ ubuntu-latest, windows-latest ]
     env:
       JAVA_VERSION: 21
-    name: "Build (Java ${{ env.JAVA_VERSION }} on ${{ matrix.os }})"
     runs-on: ${{ matrix.os }}
     steps:
       - name: "Checkout repository"

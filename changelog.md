@@ -10,7 +10,7 @@ NeoForge.
 - Added configuration screen support for Fabric and NeoForge.
 - Added JSONC-based custom entries for blocks and crates, with support for assets supplied by resource packs.
 - Added generated advancements for compressed blocks and crates.
-- Added the ability to add custom entries. See the **[Custom Entries guide](https://github.com/sa-shiro/Minecraft-Compressed-Blocks/wiki)** for instructions, required resources, and examples.
+- Added the ability to add custom entries. See the **[Custom Entries guide](<https://github.com/sa-shiro/Minecraft-Compressed-Blocks/wiki>)** for instructions, required resources, and examples.
 
 ### Improved
 
@@ -31,11 +31,7 @@ NeoForge.
 
 ## Downloads and Dependencies
 
-- **CB: Compressed
-  Blocks:** [CurseForge](https://www.curseforge.com/minecraft/mc-mods/cb-compressed-blocks) | [Modrinth](https://modrinth.com/mod/cb-compressed-blocks)
-- **Forge Config API
-  Port:** [CurseForge](https://www.curseforge.com/minecraft/mc-mods/forge-config-api-port) | [Modrinth](https://modrinth.com/mod/forge-config-api-port)
-- **Fabric
-  API:** [CurseForge](https://www.curseforge.com/minecraft/mc-mods/fabric-api) | [Modrinth](https://modrinth.com/mod/fabric-api)
-- **Mod
-  Menu:** [CurseForge](https://www.curseforge.com/minecraft/mc-mods/modmenu) | [Modrinth](https://modrinth.com/mod/modmenu)
+- **CB: Compressed Blocks:** [CurseForge](<https://www.curseforge.com/minecraft/mc-mods/cb-compressed-blocks>) | [Modrinth](<https://modrinth.com/mod/cb-compressed-blocks>)
+- **Forge Config API Port:** [CurseForge](<https://www.curseforge.com/minecraft/mc-mods/forge-config-api-port>) | [Modrinth](<https://modrinth.com/mod/forge-config-api-port>)
+- **Fabric API:** [CurseForge](<https://www.curseforge.com/minecraft/mc-mods/fabric-api>) | [Modrinth](<https://modrinth.com/mod/fabric-api>)
+- **Mod Menu:** [CurseForge](<https://www.curseforge.com/minecraft/mc-mods/modmenu>) | [Modrinth](<https://modrinth.com/mod/modmenu>)
