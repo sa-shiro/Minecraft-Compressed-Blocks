@@ -1,7 +1,8 @@
 package net.sashiro.compressedblocks.platform;
 
-import net.sashiro.compressedblocks.Constants;
-import net.sashiro.compressedblocks.platform.services.IPlatformHelper;
+import net.sashiro.compressedblocks.platform.services.PlatformHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ServiceLoader;
 
@@ -10,10 +11,12 @@ import java.util.ServiceLoader;
 // is swapped out for the platform specific implementation at runtime.
 public class Services {
 
+    private static final Logger LOG = LoggerFactory.getLogger(Services.class);
+
     // In this example we provide a platform helper which provides information about what platform the mod is running on.
     // For example this can be used to check if the code is running on Forge vs Fabric, or to ask the modloader if another
     // mod is loaded.
-    public static final IPlatformHelper PLATFORM = load(IPlatformHelper.class);
+    public static final PlatformHelper PLATFORM = load(PlatformHelper.class);
 
     // This code is used to load a service for the current environment. Your implementation of the service must be defined
     // manually by including a text file in META-INF/services named with the fully qualified class name of the service.
@@ -24,7 +27,7 @@ public class Services {
         final T loadedService = ServiceLoader.load(clazz)
                 .findFirst()
                 .orElseThrow(() -> new NullPointerException("Failed to load service for " + clazz.getName()));
-        Constants.LOG.debug("Loaded {} for service {}", loadedService, clazz);
+        LOG.debug("Loaded {} for service {}", loadedService, clazz);
         return loadedService;
     }
 }

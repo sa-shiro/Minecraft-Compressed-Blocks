@@ -20,21 +20,37 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "${entrypoint_main}"
+      "net.sashiro.compressedblocks.fabric.CompressedBlocksFabric"
     ],
     "client": [
-      "${entrypoint_client}"
+      "net.sashiro.compressedblocks.fabric.client.CBFabricClient"
     ],
     "fabric-datagen": [
-      "net.sashiro.compressedblocks.fabric.data.FabricDataGenerator"
+      "net.sashiro.compressedblocks.fabric.data.CBFabricDataGenerator"
+    ],
+    "modmenu": [
+      "net.sashiro.compressedblocks.fabric.client.CBModMenuApiImpl"
     ]
   },
   "depends": {
-    "minecraft": "${fabric_mc_version_range}",
-    "java": ">=17",
-    "fabricloader": "${fabric_version_range}",
-    "fabric-api": "*"
+    "fabricloader": ">=${fabric_loader_version}",
+    "fabric-api": ">=${fabric_api_version}",
+    "minecraft": ">=${minecraft_version}",
+    "java": ">=${java_version}",
+    "forgeconfigapiport": ">=${forgeconfigapi_version}"
   },
-  "suggests": {}
+  "suggests": {
+    "modmenu": ">=${modmenu_version}"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.curseforge": "${curseforge_page}",
+        "modmenu.modrinth": "${modrinth_page}",
+        "modmenu.discord": "${discord}"
+      },
+      "update_checker": true
+    }
+  }
 }
   

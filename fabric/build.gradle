@@ -2,35 +2,38 @@ plugins {
     id 'multiloader-loader'
     id 'fabric-loom' version '1.6-SNAPSHOT'
 }
+repositories {
+    maven {
+        name = "Terraformers"
+        url = "https://maven.terraformersmc.com/"
+    }
+}
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
     mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+    //modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
 
-    // Fabric API. This is technically optional, but you probably want it anyway.
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+    // Forge Config API Port - Fabric
+    modApi "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${forgeconfigapi_version}"
+
+    // Prior to Minecraft 26.x, use "modImplementation" instead
+    modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")
 }
 
 loom {
-    def aw = project(":common").file("src/main/resources/${mod_id}.accesswidener")
-    if (aw.exists()) {
-        accessWidenerPath.set(aw)
-    }
-    //mixin {
-    //    defaultRefmapName.set("${mod_id}.refmap.json")
-    //}
     runs {
         client {
             client()
-            setConfigName("Fabric Client")
+            setConfigName('Fabric Client')
             ideConfigGenerated(true)
-            runDir("runs/client")
+            runDir('runs/client')
         }
         server {
             server()
-            setConfigName("Fabric Server")
+            setConfigName('Fabric Server')
             ideConfigGenerated(true)
-            runDir("runs/server")
+            runDir('runs/server')
         }
     }
 }

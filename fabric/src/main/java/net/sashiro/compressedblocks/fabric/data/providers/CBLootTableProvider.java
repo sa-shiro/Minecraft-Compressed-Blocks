@@ -7,6 +7,7 @@ import net.sashiro.compressedblocks.Constants;
 
 @SuppressWarnings("unused")
 public class CBLootTableProvider extends FabricBlockLootTableProvider {
+
     public CBLootTableProvider(FabricDataOutput dataOutput) {
         super(dataOutput);
     }
@@ -16,8 +17,9 @@ public class CBLootTableProvider extends FabricBlockLootTableProvider {
         for (Block block : Constants.BLOCKS) {
             dropSelf(block);
         }
-        for (Block crate : Constants.CRATES) {
-            dropSelf(crate);
+
+        for (Block block : Constants.CRATE_BLOCKS) {
+            dropSelf(block);
         }
     }
 }

@@ -12,7 +12,8 @@ minecraft {
 }
 
 dependencies {
-    //compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
+    // NeoForge's config system
+    api("fuzs.forgeconfigapiport:forgeconfigapiport-common-neoforgeapi:${forgeconfigapi_version}")
 }
 
 configurations {
@@ -30,4 +31,3 @@ artifacts {
     commonJava sourceSets.main.java.sourceDirectories.singleFile
     commonResources sourceSets.main.resources.sourceDirectories.singleFile
 }
-

@@ -1,0 +1,7 @@
+{
+  "parent": "compressedblocks:block/template/template_block",
+  "textures": {
+    "all": "biomesoplenty:block/white_sand",
+    "overlay": "compressedblocks:block/compression_level_6"
+  }
+}
