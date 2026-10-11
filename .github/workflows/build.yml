@@ -33,10 +33,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: "Checkout repository"
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: "Cache Gradle dependencies"
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         id: cache-gradle-dependencies
         with:
           path: |
@@ -50,7 +50,7 @@ jobs:
         uses: gradle/actions/wrapper-validation@v6
 
       - name: "Setup jdk ${{ matrix.java }}"
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v6
         with:
           java-version: ${{ matrix.java }}
           distribution: 'temurin'
