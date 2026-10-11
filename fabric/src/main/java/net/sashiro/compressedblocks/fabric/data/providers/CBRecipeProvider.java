@@ -4,8 +4,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -17,6 +17,8 @@ import net.sashiro.compressedblocks.compression.CompressionCatalog;
 import net.sashiro.compressedblocks.compression.CompressionEntry;
 import net.sashiro.compressedblocks.util.ResourceUtils;
 import net.sashiro.compressedblocks.util.VersionUtils;
+
+import java.util.function.Consumer;
 
 @SuppressWarnings({"NullableProblems", "SameParameterValue", "BooleanMethodIsAlwaysInverted"})
 public class CBRecipeProvider extends FabricRecipeProvider {
@@ -44,7 +46,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    public void buildRecipes(RecipeOutput exporter) {
+    public void buildRecipes(Consumer<FinishedRecipe> exporter) {
         Block previousBlock = null;
 
         for (Block currentBlock : Constants.BLOCKS) {
@@ -143,7 +145,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
      * @param ingredient     The ingredient item used in the recipe.
      * @param fileName       The file name for the saved recipe.
      */
-    private void makeShapedBlockRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String fileName) {
+    private void makeShapedBlockRecipe(Consumer<FinishedRecipe> exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String fileName) {
         if (hasSmallerCompression(result, ingredient)) {
             ShapedRecipeBuilder.shaped(recipeCategory, result) // result
                     .define('#', ingredient) // ingredient
@@ -172,7 +174,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
      * @param ingredient     The ingredient item used in the recipe.
      * @param fileName       The file name for the saved recipe.
      */
-    private void makeShapedCrateRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String fileName) {
+    private void makeShapedCrateRecipe(Consumer<FinishedRecipe> exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String fileName) {
         if (hasSmallerCompression(result, ingredient)) {
             ShapedRecipeBuilder.shaped(recipeCategory, result) // result
                     .define('#', ingredient) // ingredient
@@ -201,7 +203,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
      * @param ingredient     The ingredient item used in the recipe.
      * @param recipeName     The name for the saved recipe.
      */
-    private void makeShapelessBlockRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String recipeName) {
+    private void makeShapelessBlockRecipe(Consumer<FinishedRecipe> exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String recipeName) {
         if (hasSmallerCompression(result, ingredient)) {
             ShapelessRecipeBuilder.shapeless(recipeCategory, result, 4)
                     .requires(ingredient)
@@ -225,7 +227,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
      * @param ingredient     The ingredient item used in the recipe.
      * @param recipeName     The name for the saved recipe.
      */
-    private void makeShapelessCrateRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String recipeName) {
+    private void makeShapelessCrateRecipe(Consumer<FinishedRecipe> exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String recipeName) {
         if (hasSmallerCompression(result, ingredient)) {
             ShapelessRecipeBuilder.shapeless(recipeCategory, result, 4)
                     .requires(ingredient)

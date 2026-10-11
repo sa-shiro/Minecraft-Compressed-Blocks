@@ -50,11 +50,11 @@ public class CompressedBlocksForge {
                     output.accept(item.get());
                 }
             }).build());
-    public static final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
     private static boolean finished = false;
 
-    public CompressedBlocksForge() {
+    public CompressedBlocksForge(FMLJavaModLoadingContext context) {
         CompressedBlocks.init();
+        IEventBus modEventBus = context.getModEventBus();
 
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);

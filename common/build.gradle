@@ -13,7 +13,7 @@ minecraft {
 
 dependencies {
     // NeoForge's config system
-    api("fuzs.forgeconfigapiport:forgeconfigapiport-common-neoforgeapi:${forgeconfigapi_version}")
+    api("fuzs.forgeconfigapiport:forgeconfigapiport-common:${forgeconfigapi_version}")
 }
 
 configurations {

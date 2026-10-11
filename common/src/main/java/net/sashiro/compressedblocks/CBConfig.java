@@ -1,7 +1,7 @@
 package net.sashiro.compressedblocks;
 
 
-import net.neoforged.neoforge.common.ModConfigSpec;
+import net.minecraftforge.common.ForgeConfigSpec;
 import net.sashiro.compressedblocks.compression.CompressionCatalog;
 import net.sashiro.compressedblocks.compression.CompressionEntry;
 import net.sashiro.compressedblocks.util.VersionUtils;
@@ -20,33 +20,36 @@ import java.util.Map;
 public class CBConfig {
 
     public static final CBConfig CONFIG;
-    public static final ModConfigSpec CONFIG_SPEC;
+    public static final ForgeConfigSpec CONFIG_SPEC;
+
+    private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
+    static final ForgeConfigSpec SPEC = BUILDER.build();
 
     static {
-        Pair<CBConfig, ModConfigSpec> pair = new ModConfigSpec.Builder().configure(CBConfig::new);
+        Pair<CBConfig, ForgeConfigSpec> pair =
+                new ForgeConfigSpec.Builder().configure(CBConfig::new);
 
-        //Store the resulting values
         CONFIG = pair.getLeft();
         CONFIG_SPEC = pair.getRight();
     }
 
-    public final ModConfigSpec.BooleanValue CONFIG_BLOCKS_ENABLED;
-    public final ModConfigSpec.BooleanValue CONFIG_CRATES_ENABLED;
+    public final ForgeConfigSpec.BooleanValue CONFIG_BLOCKS_ENABLED;
+    public final ForgeConfigSpec.BooleanValue CONFIG_CRATES_ENABLED;
 
-    public final ModConfigSpec.IntValue CONFIG_MAX_COMPRESSION_LEVEL;
-    public final ModConfigSpec.IntValue CONFIG_MAX_CRATE_COMPRESSION_LEVEL;
+    public final ForgeConfigSpec.IntValue CONFIG_MAX_COMPRESSION_LEVEL;
+    public final ForgeConfigSpec.IntValue CONFIG_MAX_CRATE_COMPRESSION_LEVEL;
 
-    public final ModConfigSpec.ConfigValue<List<? extends Double>> CONFIG_HARDNESS_LEVELS;
-    public final ModConfigSpec.ConfigValue<List<? extends Double>> CONFIG_RESISTANCE_LEVELS;
+    public final ForgeConfigSpec.ConfigValue<List<? extends Double>> CONFIG_HARDNESS_LEVELS;
+    public final ForgeConfigSpec.ConfigValue<List<? extends Double>> CONFIG_RESISTANCE_LEVELS;
     public final Map<String, CompressionSettings> COMPRESSED_BLOCKS = new HashMap<>();
     public final Map<String, CompressionSettings> CRATES = new HashMap<>();
 
     /**
      * Initializes the configuration settings for compressed blocks and crates.
      *
-     * @param builder The ModConfigSpec.Builder used to define configuration options.
+     * @param builder The ForgeConfigSpec.Builder used to define configuration options.
      */
-    private CBConfig(ModConfigSpec.Builder builder) {
+    private CBConfig(ForgeConfigSpec.Builder builder) {
         // Compressed Blocks Configuration
         // ----------------------------------------------------------------------------------
         // IMPORTANT:
@@ -247,12 +250,12 @@ public class CBConfig {
      * and whether smaller compression is allowed.
      */
     public static final class CompressionSettings {
-        public final ModConfigSpec.BooleanValue enabled;
-        public final ModConfigSpec.DoubleValue hardnessResistanceMultiplier;
-        public final ModConfigSpec.IntValue compressionLevel;
-        //public final ModConfigSpec.BooleanValue hasSmallerCompression;
+        public final ForgeConfigSpec.BooleanValue enabled;
+        public final ForgeConfigSpec.DoubleValue hardnessResistanceMultiplier;
+        public final ForgeConfigSpec.IntValue compressionLevel;
+        //public final ForgeConfigSpec.BooleanValue hasSmallerCompression;
 
-        public CompressionSettings(ModConfigSpec.Builder builder, CompressionEntry entry) {
+        public CompressionSettings(ForgeConfigSpec.Builder builder, CompressionEntry entry) {
             enabled = builder.define("enabled", entry.enabledByDefault());
 
             double multiplier = entry.hardnessResistanceMultiplier();

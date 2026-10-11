@@ -59,5 +59,6 @@ plugins {
 rootProject.name = 'Compressed-Blocks'
 include('common')
 include('fabric')
-include('neoforge')
+// Removed for 1.20.1
+//include('neoforge')
 include('forge')

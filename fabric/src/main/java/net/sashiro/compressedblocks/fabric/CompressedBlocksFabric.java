@@ -1,8 +1,8 @@
 package net.sashiro.compressedblocks.fabric;
 
-import fuzs.forgeconfigapiport.fabric.api.neoforge.v4.NeoForgeConfigRegistry;
+import fuzs.forgeconfigapiport.api.config.v2.ForgeConfigRegistry;
 import net.fabricmc.api.ModInitializer;
-import net.neoforged.fml.config.ModConfig;
+import net.minecraftforge.fml.config.ModConfig;
 import net.sashiro.compressedblocks.CBConfig;
 import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.Constants;
@@ -16,7 +16,7 @@ public class CompressedBlocksFabric implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        NeoForgeConfigRegistry.INSTANCE.register(Constants.MOD_ID, ModConfig.Type.CLIENT, CBConfig.CONFIG_SPEC);
+        ForgeConfigRegistry.INSTANCE.register(Constants.MOD_ID, ModConfig.Type.CLIENT, CBConfig.CONFIG_SPEC);
         Constants.LOG.info("Is config loaded: {}", CBConfig.CONFIG_SPEC.isLoaded());
 
         CompressedBlocks.init();

@@ -1,8 +1,8 @@
 # CB: Compressed Blocks
 
-## v3.0.0 - Minecraft 1.20.2
+## v3.0.0 - Minecraft 1.20.1
 
-### Backport of 3.0.0@1.21.1 to 1.20.2, 1.20.4
+### Backport of 3.0.0@1.21.1 to 1.20.1
 
 ### Added
 

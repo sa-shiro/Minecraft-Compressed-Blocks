@@ -3,7 +3,6 @@ package net.sashiro.compressedblocks.fabric.data.providers;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -91,7 +90,7 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
         }
     }
 
-    private static AdvancementHolder createAdvancement(AdvancementHolder parentAdvancement, Item item, String title, String description, int level, String criterion, int experienceReward, String path, Consumer<AdvancementHolder> consumer) {
+    private static Advancement createAdvancement(Advancement parentAdvancement, Item item, String title, String description, int level, String criterion, int experienceReward, String path, Consumer<Advancement> consumer) {
         boolean announce = level > 5; // Announce for levels greater than 5
         return Advancement.Builder.advancement()
                 .parent(parentAdvancement)
@@ -114,9 +113,9 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
     }
 
     @Override
-    public void generateAdvancement(Consumer<AdvancementHolder> consumer) {
+    public void generateAdvancement(Consumer<Advancement> consumer) {
 
-        AdvancementHolder addiction_root = Advancement.Builder.advancement()
+        Advancement addiction_root = Advancement.Builder.advancement()
                 .display(
                         Items.DIAMOND,
                         Component.literal("Block Addiction"),
@@ -133,7 +132,7 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
                 )
                 .save(consumer, "compressedblocks:addiction/root");
 
-        AdvancementHolder compression_root = Advancement.Builder.advancement()
+        Advancement compression_root = Advancement.Builder.advancement()
                 .display(
                         Items.BEDROCK,
                         Component.literal("Compression"),
@@ -152,7 +151,7 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
 
 
         for (CompressionEntry entry : CompressionCatalog.BLOCK_ENTRIES) {
-            AdvancementHolder previousAdvancement = null;
+            Advancement previousAdvancement = null;
 
             if (!VersionUtils.isCompatibleWithCurrentVersion(entry)) continue;
 
@@ -174,7 +173,7 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
         }
 
         for (CompressionEntry entry : CompressionCatalog.CRATE_ENTRIES) {
-            AdvancementHolder previousAdvancement = null;
+            Advancement previousAdvancement = null;
 
             if (!VersionUtils.isCompatibleWithCurrentVersion(entry)) continue;
 
@@ -195,7 +194,7 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
             }
         }
 
-        AdvancementHolder previousAdvancement = null;
+        Advancement previousAdvancement = null;
         for (int i = 0; i < 10; i++) {
             Item compressedBlock = BuiltInRegistries.ITEM.get(new ResourceLocation(MOD_ID, "c" + i + "_stone"));
 
@@ -213,7 +212,7 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
                     )
                     .addCriterion(
                             "get_c" + i,
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(CBTags.getCompressionTag(i)))
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(CBTags.getCompressionTag(i)).build())
                     )
                     .rewards(AdvancementRewards.Builder.experience(COMPRESSION_XP[i]))
                     .save(consumer, "compressedblocks:" + "compression/c" + i);
@@ -237,7 +236,7 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
                     )
                     .addCriterion(
                             "get_crate",
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(CBTags.getCrateTag(i)))
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(CBTags.getCrateTag(i)).build())
                     )
                     .rewards(AdvancementRewards.Builder.experience(COMPRESSION_XP[i]))
                     .save(consumer, "compressedblocks:" + "compression/" + ResourceUtils.getCratePrefix(i));

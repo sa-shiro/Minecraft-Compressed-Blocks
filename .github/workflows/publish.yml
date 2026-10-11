@@ -6,6 +6,8 @@ run-name: ${{ github.ref_name }}
 on:
   workflow_dispatch:
   push:
+    branches:
+      - "1.20.1"
     tags:
       - 'v*'
 
@@ -15,8 +17,8 @@ jobs:
     env:
       JAVA_VERSION: 17
       MINECRAFT_VERSIONS: |
-        1.20.2
-        1.20.4
+        1.20.1
+      ACT: ${{ vars.ACT }}
     steps:
       - name: "Checkout repository"
         uses: actions/checkout@v7
@@ -67,6 +69,7 @@ jobs:
         run: ./gradlew build
 
       - name: "Capture build artifacts"
+        if: ${{ !env.ACT }}
         uses: actions/upload-artifact@v7
         with:
           name: Artifacts
