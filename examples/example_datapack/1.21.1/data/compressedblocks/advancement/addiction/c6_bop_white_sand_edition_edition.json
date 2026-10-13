@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/c5_bop_white_sand_edition",
+  "criteria": {
+    "get_c6_bop_white_sand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c6_bop_white_sand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "You have reached Compression Level 7 for White Sand!",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c6_bop_white_sand"
+    },
+    "title": "Please Stop"
+  },
+  "requirements": [
+    [
+      "get_c6_bop_white_sand"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": true
+}

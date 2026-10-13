@@ -1,0 +1,9 @@
+{
+  "parent": "compressedblocks:item/template/template_item_crate_blockstyle",
+  "textures": {
+    "all": "compressedblocks:item/crate",
+    "item": "minecraft:item/apple",
+    "number": "compressedblocks:item/level_7",
+    "particle": "compressedblocks:item/crate"
+  }
+}

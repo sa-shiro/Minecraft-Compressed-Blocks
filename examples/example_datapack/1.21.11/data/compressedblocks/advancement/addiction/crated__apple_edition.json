@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/root",
+  "criteria": {
+    "get_crated_apple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:crated_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Crate Level 1 for Apples!",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:crated_apple"
+    },
+    "title": "A Little Storage"
+  },
+  "requirements": [
+    [
+      "get_crated_apple"
+    ]
+  ],
+  "rewards": {
+    "experience": 2
+  },
+  "sends_telemetry_event": true
+}

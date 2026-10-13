@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/triple_crated__apple_edition",
+  "criteria": {
+    "get_quadruple_crated_apple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:quadruple_crated_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Crate Level 4 for Apples!",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:quadruple_crated_apple"
+    },
+    "title": "You Really Like Crates"
+  },
+  "requirements": [
+    [
+      "get_quadruple_crated_apple"
+    ]
+  ],
+  "rewards": {
+    "experience": 12
+  },
+  "sends_telemetry_event": true
+}

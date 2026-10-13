@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/c6_bop_white_sand_edition",
+  "criteria": {
+    "get_c7_bop_white_sand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c7_bop_white_sand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "You have reached Compression Level 8 for White Sand!",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c7_bop_white_sand"
+    },
+    "title": "You Have A Problem"
+  },
+  "requirements": [
+    [
+      "get_c7_bop_white_sand"
+    ]
+  ],
+  "rewards": {
+    "experience": 80
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "compressedblocks:c3_dirt"
+  ],
+  "result": {
+    "count": 9,
+    "id": "compressedblocks:c2_dirt"
+  }
+}

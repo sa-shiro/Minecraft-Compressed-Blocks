@@ -4,6 +4,8 @@ import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.crate.CrateBlock;
 import net.sashiro.compressedblocks.item.CrateItem;
 
+import java.nio.file.Path;
+
 @SuppressWarnings("unused")
 public interface PlatformHelper {
 
@@ -124,4 +126,6 @@ public interface PlatformHelper {
      * @return The maximum compression level.
      */
     int getMaxCompressionLevel(String id);
+
+    Path getConfigDirectory();
 }

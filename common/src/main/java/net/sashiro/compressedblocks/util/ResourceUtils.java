@@ -9,13 +9,15 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
-import static net.sashiro.compressedblocks.Constants.MOD_ID;
+import static net.sashiro.compressedblocks.CompressedBlocks.MOD_ID;
 
 /**
  * Utility class for handling resource-related operations in the Compressed Blocks mod.
  */
+@SuppressWarnings("SpellCheckingInspection")
 public class ResourceUtils {
 
     private static final String[] CRATE_PREFIXES = {
@@ -38,30 +40,33 @@ public class ResourceUtils {
     /**
      * Utility function to capitalize the first letter of each word in a string.
      *
-     * @param value The input string to capitalize.
+     * @param input The input string to capitalize.
      * @return The capitalized string with the first letter of each word in uppercase.
      */
-    public static String capitalizeWords(String value) {
-        if (value == null || value.isBlank()) {
-            return value;
+    public static String capitalizeWords(String input) {
+        if (input == null || input.isBlank()) {
+            return input;
         }
 
-        String[] words = value.replace('_', ' ').split("\\s+");
+        String normalizedInput = input.toLowerCase(Locale.ROOT);
+        String[] words = normalizedInput.replace('_', ' ').split("\\s+");
 
         return Arrays.stream(words)
+                .filter(word -> !word.isEmpty())
                 .map(word -> Character.toUpperCase(word.charAt(0)) + word.substring(1))
                 .collect(Collectors.joining(" "));
     }
 
     /**
-     * Utility function to get the Minecraft {@link Identifier} of the Block / Item
+     * Resolves the vanilla Minecraft texture resource location for the given prefix and resource name,
+     * applying special cases where the texture path differs from the resource name.
      *
-     * @param prefix Prefix of the Block / Item.
-     * @param name   Name of the Block / Item.
-     * @return {@link Identifier} of the Block / Item.
+     * @param prefix the texture directory, such as {@code block} or {@code item}
+     * @param name   the resource name used to resolve the texture
+     * @return the resolved vanilla Minecraft texture {@link Identifier}
      */
-    public static Identifier getIdentifier(String prefix, String name) {
-        Identifier location = Identifier.withDefaultNamespace(prefix + "/" + name);
+    public static Identifier resolveVanillaResource(String prefix, String name) {
+        Identifier resourceLocation = Identifier.withDefaultNamespace(prefix + "/" + name);
 
         if (name.contains("rail")
                 || name.contains("torch")
@@ -80,23 +85,29 @@ public class ResourceUtils {
                 || name.contains("daisy")
                 || name.contains("cornflower")
                 || name.contains("valley")
-                || name.contains("rose")
-                || name.contains("turtle")
+                || (name.contains("rose") && !name.contains("rose_bush"))
+                || name.contains("turtle_egg")
                 || name.contains("cobweb")
                 || name.contains("vein")
                 || name.contains("vine")
-                || name.contains("lichen")
-        )
-            location = Identifier.withDefaultNamespace("block/" + name);
-        if (name.contains("sunflower")) location = Identifier.withDefaultNamespace("block/sunflower_front");
-        if (name.contains("lilac")) location = Identifier.withDefaultNamespace("block/lilac_top");
-        if (name.contains("rose_bush")) location = Identifier.withDefaultNamespace("block/rose_bush_top");
-        if (name.contains("peony")) location = Identifier.withDefaultNamespace("block/peony_top");
-        if (name.contains("carpet"))
-            location = Identifier.withDefaultNamespace("block/" + name.replace("carpet", "wool"));
-        if (name.contains("scute")) location = Identifier.withDefaultNamespace("item/" + name);
-        if (name.equals("bamboo")) location = Identifier.withDefaultNamespace("block/bamboo_stage0");
-        return location;
+                || name.contains("lichen")) {
+            resourceLocation = Identifier.withDefaultNamespace("block/" + name);
+        } else if (name.contains("sunflower"))
+            resourceLocation = Identifier.withDefaultNamespace("block/sunflower_front");
+        else if (name.contains("lilac")) resourceLocation = Identifier.withDefaultNamespace("block/lilac_top");
+        else if (name.contains("rose_bush"))
+            resourceLocation = Identifier.withDefaultNamespace("block/rose_bush_top");
+        else if (name.contains("peony")) resourceLocation = Identifier.withDefaultNamespace("block/peony_top");
+        else if (name.contains("carpet"))
+            resourceLocation = Identifier.withDefaultNamespace("block/" + name.replace("carpet", "wool"));
+        else if (name.contains("scute")) resourceLocation = Identifier.withDefaultNamespace("item/" + name);
+        else if (name.equals("bamboo")) resourceLocation = Identifier.withDefaultNamespace("block/bamboo_stage0");
+        else if (name.equals("enchanted_golden_apple"))
+            resourceLocation = Identifier.withDefaultNamespace("item/golden_apple");
+        else if (name.equals("pointed_dripstone"))
+            resourceLocation = Identifier.withDefaultNamespace("block/pointed_dripstone_down_base");
+
+        return resourceLocation;
     }
 
     /**
@@ -106,7 +117,7 @@ public class ResourceUtils {
      * @return {@link ResourceKey} of the Block.
      */
     public static ResourceKey<Block> createBlockId(String name) {
-        return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
+        return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, name));
     }
 
     /**
@@ -116,7 +127,7 @@ public class ResourceUtils {
      * @return {@link ResourceKey} of the Item.
      */
     public static ResourceKey<Item> createItemId(String name) {
-        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, name.toLowerCase()));
+        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, name));
     }
 
     /**
@@ -127,8 +138,23 @@ public class ResourceUtils {
      */
     public static String removeNamespace(String name) {
         return name
-                .replace("item.compressedblocks.", "")
-                .replace("block.compressedblocks.", "");
+                .replace("item." + MOD_ID + ".", "")
+                .replace("block." + MOD_ID + ".", "")
+                .replace("item.minecraft.", "")
+                .replace("block.minecraft.", "");
+    }
+
+    /**
+     * Extracts the root name from a block, item, or translation key by removing
+     * its namespace, resource-type prefix, crate prefix, and compression prefix.
+     *
+     * @param name the resource identifier or translation key to normalize
+     * @return the root name without namespace or compression-related prefixes
+     */
+    public static String normalizeResourceName(String name) {
+        String normalizedName = removeNamespace(name);
+        normalizedName = removeCrateName(normalizedName);
+        return removeCompressionName(normalizedName);
     }
 
     /**
@@ -145,6 +171,10 @@ public class ResourceUtils {
         return CRATE_PREFIXES[level];
     }
 
+    private static String getCrateOverlayName(int level) {
+        return "level_" + level;
+    }
+
     /**
      * Utility function to get the Minecraft Name of the Crate
      *
@@ -152,15 +182,16 @@ public class ResourceUtils {
      * @return Minecraft Name of the Crate.
      */
     public static String removeCrateName(String crateName) {
-        crateName = removeNamespace(crateName);
+        if (!crateName.contains("crate")) return crateName;
+        String normalizedCrateName = removeNamespace(crateName);
 
-        int level = getCrateLevel(crateName);
+        int level = getCrateLevel(normalizedCrateName);
 
         if (level < 0) {
-            return crateName;
+            return normalizedCrateName;
         }
 
-        return crateName.substring(getCratePrefix(level).length());
+        return normalizedCrateName.substring(getCratePrefix(level).length());
     }
 
     /**
@@ -212,6 +243,7 @@ public class ResourceUtils {
      * @return Name of the Block without Compression Level Name.
      */
     public static String removeCompressionName(String name) {
+        if (name.contains("crate")) return name;
         int level = getCompressionLevel(name);
 
         if (level < 0) {
@@ -219,6 +251,10 @@ public class ResourceUtils {
         }
 
         return name.substring(3);
+    }
+
+    private static String getCompressionOverlayName(int level) {
+        return "compression_level_" + level;
     }
 
     /**
@@ -244,48 +280,42 @@ public class ResourceUtils {
      * @return Overlay {@link Identifier}.
      */
     public static Identifier getOverlay(String blockName) {
-        blockName = blockName.replace("block.compressedblocks.", "");
-        String overlay = "";
-        String[] crateLevels = {
-                "crated_", "double_crated_", "triple_crated_", "quadruple_crated_",
-                "quintuple_crated_", "sextuple_crated_", "septuple_crated_",
-                "octuple_crated_", "mega_crated_", "giga_crated_"
-        };
+        String normalizedBlockName = removeNamespace(blockName);
+        String overlayName = "null";
 
-        if (blockName.contains("crated")) {
-            for (int i = 0; i < crateLevels.length; i++) {
-                if (blockName.startsWith(crateLevels[i])) {
-                    overlay = "level_" + i;
+        if (normalizedBlockName.contains("crated")) {
+            for (int level = 0; level < CRATE_PREFIXES.length; level++) {
+                if (normalizedBlockName.startsWith(CRATE_PREFIXES[level])) {
+                    overlayName = getCrateOverlayName(level);
                     break;
                 }
             }
-        } else if (blockName.startsWith("c")) {
-            for (int i = 0; i < 10; i++) {
-                if (blockName.contains("c" + i)) {
-                    overlay = "compression_level_" + i;
+        } else if (normalizedBlockName.startsWith("c")) {
+            for (int level = 0; level < 10; level++) {
+                if (normalizedBlockName.contains("c" + level)) {
+                    overlayName = getCompressionOverlayName(level);
                     break;
                 }
             }
-        } else overlay = "null";
+        }
 
-        return Identifier.fromNamespaceAndPath("compressedblocks", "block/" + overlay);
+        return Identifier.fromNamespaceAndPath(MOD_ID, "block/" + overlayName);
     }
 
     /**
      * Resolves the underlying vanilla Minecraft block {@link Identifier}
-     * from a compressed block identifier string.
+     * from a compressed block Identifier string.
      *
      * <p>This method strips the compressed block prefix, removes compression
      * suffixes, and normalizes special cases such as copper variants, magma,
      * and snow blocks.</p>
      *
-     * @param compressedBlockId the full identifier string of the compressed block
+     * @param compressedBlockId the full Identifier string of the compressed block
      *                          (e.g. {@code block.compressedblocks.exposed_cut_copper})
      * @return the resolved vanilla Minecraft block {@link Identifier}
      */
     public static Identifier resolveVanillaBlockId(String compressedBlockId) {
-        String blockName = compressedBlockId.replace("block.compressedblocks.", "");
-        blockName = removeCompressionName(blockName);
+        String blockName = normalizeResourceName(compressedBlockId);
 
         if (blockName.contains("cut")) {
             if (blockName.contains("exposed_cut_copper")) blockName = "exposed_cut_copper";
@@ -300,52 +330,28 @@ public class ResourceUtils {
         }
 
         if (blockName.contains("magma_block")) blockName = "magma";
-        if (blockName.contains("snow_block")) blockName = "snow";
+        else if (blockName.contains("snow_block")) blockName = "snow";
+        else if (blockName.contains("smooth_sandstone")) blockName = "sandstone_top";
+        else if (blockName.contains("smooth_red_sandstone")) blockName = "red_sandstone_top";
+        else if (blockName.contains("smooth_quartz")) blockName = "quartz_block_bottom";
 
         return Identifier.fromNamespaceAndPath("minecraft", "block/" + blockName);
     }
 
     /**
-     * Utility function to check if the resources of a block has been added manually
-     *
-     * @param blockName Name of the block.
-     * @return true if the resources has been added manually.
-     */
-    public static boolean hasManuallyAddedResources(String blockName) {
-        for (String s : Arrays.asList("honey_block", "basalt", "bone_block", "sandstone", "tnt", "smooth_quartz", "quartz_block", "kelp")) {
-            if (blockName.contains(s)) return true;
-        }
-        return false;
-    }
-
-    /**
-     * Utility function to check if the block is Rotational
-     *
-     * @param blockName Name of the block.
-     * @return true if the block is rotational.
-     */
-    public static boolean isRotationalBlock(String blockName) {
-        for (String s : Arrays.asList("log", "pillar", "stem", "stripped", "hyphae", "bamboo_block", "froglight", "melon", "pumpkin", "hay")) {
-            if (blockName.contains(s)) return true;
-        }
-        return false;
-    }
-
-    /**
      * Utility function to set the Rarity of the Item
      *
-     * @param properties Item Properties.
-     * @param i          Compression level of the Item.
+     * @param properties       Item Properties.
+     * @param compressionLevel Compression level of the Item.
      * @return Item Properties with Rarity set.
      */
-    public static Item.Properties setRarity(Item.Properties properties, int i) {
-        switch (i) {
-            case 4, 5 -> properties = properties.rarity(Rarity.UNCOMMON);
-            case 6, 7 -> properties = properties.rarity(Rarity.RARE);
-            case 8, 9 -> properties = properties.rarity(Rarity.EPIC);
-            default -> properties = properties.rarity(Rarity.COMMON);
-        }
-        return properties;
+    public static Item.Properties setRarity(Item.Properties properties, int compressionLevel) {
+        return switch (compressionLevel) {
+            case 4, 5 -> properties.rarity(Rarity.UNCOMMON);
+            case 6, 7 -> properties.rarity(Rarity.RARE);
+            case 8, 9 -> properties.rarity(Rarity.EPIC);
+            default -> properties.rarity(Rarity.COMMON);
+        };
     }
 
     /**
@@ -367,5 +373,73 @@ public class ResourceUtils {
             case 9 -> ChatFormatting.RED;
             default -> ChatFormatting.WHITE;
         };
+    }
+
+    /**
+     * Pluralizes English words using common grammar rules.
+     *
+     * @param word the word to pluralize
+     * @return the pluralized form of the word
+     */
+    public static String pluralize(String word) {
+        // Special cases
+        if (word.contains("leaf")) {
+            return word.replace("leaf", "leaves");
+        }
+
+        // Words ending in -ly (excluding those already ending in -y)
+        if (word.endsWith("ly") && !word.endsWith("y")) {
+            return word.replace("ly", "ies");
+        }
+
+        // Words ending in -o (excluding -oo)
+        if (word.endsWith("o") && !word.endsWith("oo")) {
+            return word + "es";
+        }
+
+        // Words ending in -sh or -ch (with exception for "rotten")
+        if ((word.endsWith("sh") || word.endsWith("ch")) && !word.contains("rotten")) {
+            return word + "es";
+        }
+
+        // Words ending in -s (replacing with -es)
+        if (word.endsWith("s") && !word.endsWith("es") && !word.endsWith("ns")
+                && !word.endsWith("rs") && !word.endsWith("ds") && !word.endsWith("ss")
+                && !word.endsWith("us") && !word.endsWith("ts")) {
+            int lastIndex = word.lastIndexOf("s");
+            return word.substring(0, lastIndex) + "es";
+        }
+
+        // Words ending in specific consonants that need -s
+        if (shouldAddSimpleS(word)) {
+            return word + "s";
+        }
+
+        return word;
+    }
+
+    /**
+     * Determines if a word should have a simple -s suffix based on its ending.
+     * Excludes specific exceptions that need different rules.
+     */
+    private static boolean shouldAddSimpleS(String word) {
+        // Endings that require -s
+        char lastChar = word.charAt(word.length() - 1);
+        boolean endsInConsonant = "abcdefgklmnprtw".indexOf(lastChar) >= 0;
+
+        if (!endsInConsonant) {
+            return false;
+        }
+
+        // Exceptions that should NOT get simple -s
+        String[] exceptions = {"ead", "af", "ef", "ns", "tton", "ken", "lp", "op", "ts", "it", "der", "gar", "ing"};
+        for (String exception : exceptions) {
+            if (word.endsWith(exception)) {
+                return false;
+            }
+        }
+
+        // Words containing these should not get -s
+        return !word.contains("coal") && !word.contains("per");
     }
 }

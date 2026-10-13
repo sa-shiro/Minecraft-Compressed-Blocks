@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/double_crated__apple_edition",
+  "criteria": {
+    "get_triple_crated_apple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:triple_crated_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Crate Level 3 for Apples!",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:triple_crated_apple"
+    },
+    "title": "Storage Enthusiast"
+  },
+  "requirements": [
+    [
+      "get_triple_crated_apple"
+    ]
+  ],
+  "rewards": {
+    "experience": 7
+  },
+  "sends_telemetry_event": true
+}

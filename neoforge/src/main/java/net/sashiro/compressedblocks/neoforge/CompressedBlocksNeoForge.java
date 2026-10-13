@@ -15,6 +15,7 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.RegisterEvent;
+import net.sashiro.compressedblocks.CBConfig;
 import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.block.CompressedBlockFactory;
@@ -24,11 +25,11 @@ import net.sashiro.compressedblocks.platform.registration.CrateRegistration;
 
 import java.util.function.Supplier;
 
-import static net.sashiro.compressedblocks.Constants.LOG;
-import static net.sashiro.compressedblocks.Constants.MOD_ID;
+import static net.sashiro.compressedblocks.CompressedBlocks.LOGGER;
+import static net.sashiro.compressedblocks.CompressedBlocks.MOD_ID;
 
 @SuppressWarnings("unused")
-@Mod(Constants.MOD_ID)
+@Mod(CompressedBlocks.MOD_ID)
 public class CompressedBlocksNeoForge {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, MOD_ID);
@@ -59,7 +60,7 @@ public class CompressedBlocksNeoForge {
     public CompressedBlocksNeoForge(IEventBus modEventBus, ModContainer modContainer) {
         CompressedBlocks.init();
 
-        modContainer.registerConfig(ModConfig.Type.STARTUP, CBNeoForgeConfig.CONFIG_SPEC);
+        modContainer.registerConfig(ModConfig.Type.STARTUP, CBConfig.CONFIG_SPEC);
 
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
@@ -67,6 +68,7 @@ public class CompressedBlocksNeoForge {
         CRATE_ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
         modEventBus.addListener(this::reg);
+
     }
 
     /**
@@ -78,7 +80,7 @@ public class CompressedBlocksNeoForge {
         if (!finished) {
             BlockRegistration.registerBlocks();
             CrateRegistration.registerCrates();
-            LOG.info("Compressed Blocks NeoForge mod initialized successfully. Registered {} Blocks and {} Crates.", Constants.BLOCKS.size(), Constants.CRATE_BLOCKS.size() + Constants.CRATE_ITEMS.size());
+            LOGGER.info("Compressed Blocks NeoForge mod initialized successfully. Registered {} Blocks and {} Crates.", Constants.BLOCKS.size(), Constants.CRATE_BLOCKS.size() + Constants.CRATE_ITEMS.size());
 
             finished = true;
         }

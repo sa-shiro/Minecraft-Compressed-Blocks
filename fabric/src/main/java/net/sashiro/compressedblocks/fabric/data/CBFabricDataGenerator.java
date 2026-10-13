@@ -16,5 +16,6 @@ public class CBFabricDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(CBLootTableProvider::new);
         pack.addProvider(CBModelProvider::new);
         pack.addProvider(CBRecipeProvider::new);
+        pack.addProvider(CBAdvancementProvider::new);
     }
 }

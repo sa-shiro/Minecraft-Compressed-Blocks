@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/septuple_crated__apple_edition",
+  "criteria": {
+    "get_octuple_crated_apple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:octuple_crated_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "You have reached Crate Level 8 for Apples!",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:octuple_crated_apple"
+    },
+    "title": "Crate Hoarder"
+  },
+  "requirements": [
+    [
+      "get_octuple_crated_apple"
+    ]
+  ],
+  "rewards": {
+    "experience": 80
+  },
+  "sends_telemetry_event": true
+}

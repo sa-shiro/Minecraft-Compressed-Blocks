@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/c8_dirt_edition",
+  "criteria": {
+    "get_c9_dirt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c9_dirt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "You have reached Compression Level 10 for Dirt!",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c9_dirt"
+    },
+    "title": "I Have No Life!!!"
+  },
+  "requirements": [
+    [
+      "get_c9_dirt"
+    ]
+  ],
+  "rewards": {
+    "experience": 200
+  },
+  "sends_telemetry_event": true
+}

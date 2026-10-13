@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/root",
+  "criteria": {
+    "get_c0_bop_white_sand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c0_bop_white_sand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Compression Level 1 for White Sand!",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c0_bop_white_sand"
+    },
+    "title": "Getting Started"
+  },
+  "requirements": [
+    [
+      "get_c0_bop_white_sand"
+    ]
+  ],
+  "rewards": {
+    "experience": 2
+  },
+  "sends_telemetry_event": true
+}

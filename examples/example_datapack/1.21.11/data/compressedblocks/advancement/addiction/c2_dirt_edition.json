@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/c1_dirt_edition",
+  "criteria": {
+    "get_c2_dirt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c2_dirt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Compression Level 3 for Dirt!",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c2_dirt"
+    },
+    "title": "Okay, That's A Lot"
+  },
+  "requirements": [
+    [
+      "get_c2_dirt"
+    ]
+  ],
+  "rewards": {
+    "experience": 7
+  },
+  "sends_telemetry_event": true
+}

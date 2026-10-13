@@ -1,7 +1,17 @@
+//file:noinspection SpellCheckingInspection
+
 plugins {
     id 'multiloader-loader'
     id 'fabric-loom'
 }
+
+repositories {
+    maven {
+        name = "Terraformers"
+        url = "https://maven.terraformersmc.com/"
+    }
+}
+
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
     mappings loom.layered {
@@ -9,31 +19,33 @@ dependencies {
         parchment("org.parchmentmc.data:parchment-${parchment_minecraft}:${parchment_version}@zip")
     }
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
 
     // Forge Config API Port - Fabric
     modApi "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${forgeconfigapi_version}"
+
+    // Mod Menu - Prior to Minecraft 26.x, use "modImplementation" instead
+    modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")
+}
+
+afterEvaluate {
+    loom.runConfigs.named("datagen") {
+        runDirectory = file("runs/datagen")
+    }
 }
 
 loom {
-    def aw = project(':common').file("src/main/resources/${mod_id}.accesswidener")
-    if (aw.exists()) {
-        accessWidenerPath.set(aw)
-    }
-    //mixin {
-    //    defaultRefmapName.set("${mod_id}.refmap.json")
-    //}
     runs {
         client {
             client()
             setConfigName('Fabric Client')
-            ideConfigGenerated(true)
+            ideConfigGenerated(false)
             runDir('runs/client')
         }
         server {
             server()
             setConfigName('Fabric Server')
-            ideConfigGenerated(true)
+            ideConfigGenerated(false)
             runDir('runs/server')
         }
     }

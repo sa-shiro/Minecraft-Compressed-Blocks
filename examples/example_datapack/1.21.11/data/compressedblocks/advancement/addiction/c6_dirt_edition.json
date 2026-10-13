@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/c5_dirt_edition",
+  "criteria": {
+    "get_c6_dirt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c6_dirt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "You have reached Compression Level 7 for Dirt!",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c6_dirt"
+    },
+    "title": "Please Stop"
+  },
+  "requirements": [
+    [
+      "get_c6_dirt"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": true
+}

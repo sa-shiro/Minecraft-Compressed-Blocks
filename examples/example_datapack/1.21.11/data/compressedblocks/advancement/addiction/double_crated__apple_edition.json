@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/crated__apple_edition",
+  "criteria": {
+    "get_double_crated_apple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:double_crated_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Crate Level 2 for Apples!",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:double_crated_apple"
+    },
+    "title": "That's Quite A Lot"
+  },
+  "requirements": [
+    [
+      "get_double_crated_apple"
+    ]
+  ],
+  "rewards": {
+    "experience": 4
+  },
+  "sends_telemetry_event": true
+}

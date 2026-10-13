@@ -1,0 +1,34 @@
+{
+  "parent": "compressedblocks:addiction/c4_bop_white_sand_edition",
+  "criteria": {
+    "get_c5_bop_white_sand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c5_bop_white_sand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Compression Level 6 for White Sand!",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c5_bop_white_sand"
+    },
+    "title": "Why Do You Need This Much?"
+  },
+  "requirements": [
+    [
+      "get_c5_bop_white_sand"
+    ]
+  ],
+  "rewards": {
+    "experience": 32
+  },
+  "sends_telemetry_event": true
+}

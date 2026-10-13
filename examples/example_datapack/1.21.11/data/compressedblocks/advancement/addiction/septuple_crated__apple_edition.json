@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/sextuple_crated__apple_edition",
+  "criteria": {
+    "get_septuple_crated_apple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:septuple_crated_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "You have reached Crate Level 7 for Apples!",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:septuple_crated_apple"
+    },
+    "title": "You Need A Bigger Warehouse"
+  },
+  "requirements": [
+    [
+      "get_septuple_crated_apple"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": true
+}

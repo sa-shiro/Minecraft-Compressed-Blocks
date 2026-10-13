@@ -13,13 +13,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.sashiro.compressedblocks.Constants;
-import net.sashiro.compressedblocks.block.CompressedBlock;
-import net.sashiro.compressedblocks.compression.Compression;
-import net.sashiro.compressedblocks.item.CrateItem;
+import net.sashiro.compressedblocks.compression.CompressionCatalog;
+import net.sashiro.compressedblocks.compression.CompressionEntry;
+import net.sashiro.compressedblocks.util.ResourceUtils;
+import net.sashiro.compressedblocks.util.VersionUtils;
 
 import java.util.concurrent.CompletableFuture;
 
-@SuppressWarnings({"NullableProblems", "SameParameterValue"})
+@SuppressWarnings({"NullableProblems", "SameParameterValue", "BooleanMethodIsAlwaysInverted"})
 public class CBRecipeProvider extends FabricRecipeProvider {
 
     private static HolderGetter<Item> items;
@@ -28,20 +29,22 @@ public class CBRecipeProvider extends FabricRecipeProvider {
         super(output, registriesFuture);
     }
 
-    private static Compression getCompression(ItemLike result, ItemLike ingredient) {
-        if (ingredient instanceof CrateItem crateItem) {
-            return crateItem.getCompressor();
+    private static boolean hasSmallerCompression(ItemLike result, ItemLike ingredient) {
+        CompressionEntry resultEntry = CompressionCatalog.getEntryById(ResourceUtils.removeNamespace(result.asItem().getDescriptionId()));
+        CompressionEntry ingredientEntry = CompressionCatalog.getEntryById(ResourceUtils.removeNamespace(ingredient.asItem().getDescriptionId()));
+
+        if (resultEntry != null) {
+            return resultEntry.hasSmallerCompression();
+        } else if (ingredientEntry != null) {
+            return ingredientEntry.hasSmallerCompression();
         }
-        if (ingredient instanceof CompressedBlock compressedBlock) {
-            return compressedBlock.getCompressor();
-        }
-        if (result instanceof CrateItem crateItem) {
-            return crateItem.getCompressor();
-        }
-        if (result instanceof CompressedBlock compressedBlock) {
-            return compressedBlock.getCompressor();
-        }
-        return null;
+        return false;
+    }
+
+    private boolean isAvailable(String id) {
+        CompressionEntry entry = CompressionCatalog.getEntryById(ResourceUtils.removeCompressionName(id));
+        if (entry == null) return false;
+        return VersionUtils.isCompatibleWithCurrentVersion(entry);
     }
 
     @Override
@@ -51,11 +54,12 @@ public class CBRecipeProvider extends FabricRecipeProvider {
         return new RecipeProvider(registryLookup, exporter) {
             @Override
             public void buildRecipes() {
-
                 Block previousBlock = null;
 
                 for (Block currentBlock : Constants.BLOCKS) {
-                    String blockName = currentBlock.getDescriptionId().replace("block.compressedblocks.", "");
+                    String blockName = ResourceUtils.removeNamespace(currentBlock.getDescriptionId());
+
+                    if (!isAvailable(ResourceUtils.removeCompressionName(blockName))) continue;
 
                     if (blockName.startsWith("c0_")) {
                         String mcBlockName = blockName.substring(3);
@@ -79,7 +83,9 @@ public class CBRecipeProvider extends FabricRecipeProvider {
                 Item previousCrate = null;
 
                 for (Item currentCrate : Constants.CRATE_ITEMS) {
-                    String crate_itemName = currentCrate.getDescriptionId().replace("item.compressedblocks.", "");
+                    String crate_itemName = ResourceUtils.removeNamespace(currentCrate.getDescriptionId());
+
+                    if (!isAvailable(ResourceUtils.removeCrateName(crate_itemName))) continue;
 
                     if (crate_itemName.startsWith("crated_")) {
                         String vanillaItemName = crate_itemName.substring(7);
@@ -102,11 +108,12 @@ public class CBRecipeProvider extends FabricRecipeProvider {
                     previousCrate = currentCrate;
                 }
 
-                Block previousCrateBlock = null;
+                ItemLike previousCrateBlock = null;
 
                 for (Block currentBlock : Constants.CRATE_BLOCKS) {
-                    String crate_blockName = currentBlock.getDescriptionId()
-                            .replace("block.compressedblocks.", "");
+                    String crate_blockName = ResourceUtils.removeNamespace(currentBlock.getDescriptionId());
+
+                    if (!isAvailable(ResourceUtils.removeCrateName(crate_blockName))) continue;
 
                     if (crate_blockName.startsWith("crated_")) {
                         String vanillaBlockName = crate_blockName.substring(7);
@@ -116,6 +123,14 @@ public class CBRecipeProvider extends FabricRecipeProvider {
 
                             if (vanillaBlockName.equals(registryName)) {
                                 previousCrateBlock = vanillaBlock;
+                                break;
+                            }
+                        }
+                        for (Item vanillaItem : BuiltInRegistries.ITEM) {
+                            String registryName = vanillaItem.getDescriptionId().replace("item.minecraft.", "");
+
+                            if (vanillaBlockName.equals(registryName)) {
+                                previousCrateBlock = vanillaItem;
                                 break;
                             }
                         }
@@ -140,7 +155,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
      * @param fileName       The file name for the saved recipe.
      */
     private void makeShapedBlockRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String fileName) {
-        if (getCompression(result, ingredient).isSmallerCompression()) {
+        if (hasSmallerCompression(result, ingredient)) {
             ShapedRecipeBuilder.shaped(items, recipeCategory, result) // result
                     .define('#', ingredient) // ingredient
                     .pattern("##")
@@ -169,7 +184,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
      * @param fileName       The file name for the saved recipe.
      */
     private void makeShapedCrateRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String fileName) {
-        if (getCompression(result, ingredient).isSmallerCompression()) {
+        if (hasSmallerCompression(result, ingredient)) {
             ShapedRecipeBuilder.shaped(items, recipeCategory, result) // result
                     .define('#', ingredient) // ingredient
                     .pattern("##")
@@ -198,7 +213,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
      * @param recipeName     The name for the saved recipe.
      */
     private void makeShapelessBlockRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String recipeName) {
-        if (getCompression(result, ingredient).isSmallerCompression()) {
+        if (hasSmallerCompression(result, ingredient)) {
             ShapelessRecipeBuilder.shapeless(items, recipeCategory, result, 4)
                     .requires(ingredient)
                     .unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))
@@ -222,7 +237,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
      * @param recipeName     The name for the saved recipe.
      */
     private void makeShapelessCrateRecipe(RecipeOutput exporter, RecipeCategory recipeCategory, ItemLike result, ItemLike ingredient, String recipeName) {
-        if (getCompression(result, ingredient).isSmallerCompression()) {
+        if (hasSmallerCompression(result, ingredient)) {
             ShapelessRecipeBuilder.shapeless(items, recipeCategory, result, 4)
                     .requires(ingredient)
                     .unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ingredient))

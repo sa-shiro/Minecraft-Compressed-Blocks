@@ -42,7 +42,7 @@ public class CrateFactory {
             // check what minecraft version we are on first
             if (!VersionUtils.isCompatibleWithCurrentVersion(entry)) continue;
 
-            CompressionEntry entry1 = new CompressionEntry(
+            CompressionEntry configuredEntry = new CompressionEntry(
                     entry.id(),
                     entry.kind(),
                     Services.PLATFORM.getHardnessResistanceMultiplier(entry.id()),
@@ -50,14 +50,14 @@ public class CrateFactory {
                     entry.hasSmallerCompression(), // todo: make it configurable? not sure
                     Services.PLATFORM.isBlockEnabled(entry.id()), "null"); // actually redundant, because we already checked if the block is enabled so we can just set it to true ;)
 
-            if (entry1.kind() == CompressionEntry.Kind.CRATE_ITEM) {
-                CrateItem[] crateItems = createItems(entry1);
+            if (configuredEntry.kind() == CompressionEntry.Kind.CRATE_ITEM) {
+                CrateItem[] crateItems = createItems(configuredEntry);
                 Collections.addAll(CRATE_ITEM_LIST, crateItems);
-                if (entry1.id().equalsIgnoreCase("GOLDEN_APPLE")) {
+                if (configuredEntry.id().equalsIgnoreCase("GOLDEN_APPLE")) {
                     GOLDEN_APPLE = crateItems[0];
                 }
-            } else if (entry1.kind() == CompressionEntry.Kind.CRATE_BLOCK) {
-                CrateBlock[] crateBlocks = createBlocks(entry1);
+            } else if (configuredEntry.kind() == CompressionEntry.Kind.CRATE_BLOCK) {
+                CrateBlock[] crateBlocks = createBlocks(configuredEntry);
                 Collections.addAll(CRATE_BLOCK_LIST, crateBlocks);
             }
         }
@@ -80,7 +80,7 @@ public class CrateFactory {
             ResourceKey<Item> itemId = ResourceUtils.createItemId(ResourceUtils.getCratePrefix(i) + entry.id());
             Item.Properties properties = new Item.Properties().stacksTo(64);
 
-            if (entry.id().toLowerCase().contains("enchanted")) {
+            if (entry.id().contains("enchanted")) {
                 properties = properties.component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true);
             }
 

@@ -7,12 +7,15 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.sashiro.compressedblocks.CBConfig;
+import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.block.CompressedBlock;
 import net.sashiro.compressedblocks.crate.CrateBlock;
-import net.sashiro.compressedblocks.fabric.CBFabricConfig;
 import net.sashiro.compressedblocks.item.CrateItem;
 import net.sashiro.compressedblocks.platform.services.PlatformHelper;
 import net.sashiro.compressedblocks.util.ResourceUtils;
+
+import java.nio.file.Path;
 
 import static net.sashiro.compressedblocks.Constants.*;
 
@@ -40,78 +43,83 @@ public class FabricPlatformHelper implements PlatformHelper {
 
         Item.Properties properties = ResourceUtils.setRarity(new Item.Properties().setId(ResourceUtils.createItemId(cbBlock.blockName())), cbBlock.getCompressor().getCompressionLevel());
 
-        Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, cbBlock.blockName()), block);
-        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, cbBlock.blockName()), new BlockItem(block, properties));
+        Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(CompressedBlocks.MOD_ID, cbBlock.blockName()), block);
+        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(CompressedBlocks.MOD_ID, cbBlock.blockName()), new BlockItem(block, properties));
         BLOCKS.add(block);
     }
 
     @Override
     public void registerCrate(CrateItem crateItem) {
-        String crateName = ResourceUtils.removeCrateName(crateItem.getCrateName()).toUpperCase();
+        String crateName = ResourceUtils.removeCrateName(crateItem.getCrateName());
         if (!isBlockEnabled(crateName)) return;
-        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, crateItem.getCrateName().toLowerCase()), crateItem);
+        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(CompressedBlocks.MOD_ID, crateItem.getCrateName()), crateItem);
         CRATE_ITEMS.add(crateItem);
     }
 
     @Override
     public void registerCrate(CrateBlock crateBlock) {
-        String crateName = ResourceUtils.removeCrateName(crateBlock.getBlockName().identifier().getPath()).toUpperCase();
+        String crateName = ResourceUtils.removeCrateName(crateBlock.getBlockName().identifier().getPath());
         if (!isBlockEnabled(crateName)) return;
 
-        Item.Properties properties = ResourceUtils.setRarity(new Item.Properties(), crateBlock.getCompressor().getCompressionLevel()).setId(ResourceUtils.createItemId(crateBlock.blockName().toLowerCase()));
+        Item.Properties properties = ResourceUtils.setRarity(new Item.Properties(), crateBlock.getCompressor().getCompressionLevel()).setId(ResourceUtils.createItemId(crateBlock.blockName()));
 
-        Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, crateBlock.blockName().toLowerCase()), crateBlock);
-        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, crateBlock.blockName().toLowerCase()), new BlockItem(crateBlock, properties));
+        Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(CompressedBlocks.MOD_ID, crateBlock.blockName()), crateBlock);
+        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(CompressedBlocks.MOD_ID, crateBlock.blockName()), new BlockItem(crateBlock, properties));
         CRATE_BLOCKS.add(crateBlock);
     }
 
     @Override
     public boolean areBlocksEnabled() {
-        return CBFabricConfig.CONFIG.CONFIG_BLOCKS_ENABLED.get();
+        return CBConfig.CONFIG.CONFIG_BLOCKS_ENABLED.get();
     }
 
     @Override
     public boolean areCratesEnabled() {
-        return CBFabricConfig.CONFIG.CONFIG_CRATES_ENABLED.get();
+        return CBConfig.CONFIG.CONFIG_CRATES_ENABLED.get();
     }
 
     @Override
     public int maxCompressionLevel() {
-        return CBFabricConfig.CONFIG.CONFIG_MAX_COMPRESSION_LEVEL.get();
+        return CBConfig.CONFIG.CONFIG_MAX_COMPRESSION_LEVEL.get();
     }
 
     @Override
     public float[] getHardnessArray() {
-        return CBFabricConfig.CONFIG.getHardnessArray();
+        return CBConfig.CONFIG.getHardnessArray();
     }
 
     @Override
     public float[] getResistanceArray() {
-        return CBFabricConfig.CONFIG.getResistanceArray();
+        return CBConfig.CONFIG.getResistanceArray();
     }
 
     @Override
     public int maxCrateCompressionLevel() {
-        return CBFabricConfig.CONFIG.CONFIG_MAX_CRATE_COMPRESSION_LEVEL.get();
+        return CBConfig.CONFIG.CONFIG_MAX_CRATE_COMPRESSION_LEVEL.get();
     }
 
     @Override
     public boolean isBlockEnabled(String name) {
         if (name.contains("crate")) {
-            name = ResourceUtils.removeCrateName(name).toUpperCase();
+            name = ResourceUtils.removeCrateName(name);
         } else {
-            name = ResourceUtils.removeCompressionName(name).toUpperCase();
+            name = ResourceUtils.removeCompressionName(name);
         }
-        return CBFabricConfig.CONFIG.isBlockEnabled(name);
+        return CBConfig.CONFIG.isEnabled(name);
     }
 
     @Override
     public float getHardnessResistanceMultiplier(String id) {
-        return CBFabricConfig.CONFIG.getHardnessResistanceMultiplier(id);
+        return CBConfig.CONFIG.getHardnessResistanceMultiplier(id);
     }
 
     @Override
     public int getMaxCompressionLevel(String id) {
-        return CBFabricConfig.CONFIG.getCompressionLevel(id);
+        return CBConfig.CONFIG.getCompressionLevel(id);
+    }
+
+    @Override
+    public Path getConfigDirectory() {
+        return FabricLoader.getInstance().getConfigDir();
     }
 }

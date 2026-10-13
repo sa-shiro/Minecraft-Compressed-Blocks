@@ -26,8 +26,8 @@ import net.sashiro.compressedblocks.item.CrateItem;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static net.sashiro.compressedblocks.Constants.LOG;
-import static net.sashiro.compressedblocks.Constants.MOD_ID;
+import static net.sashiro.compressedblocks.CompressedBlocks.LOGGER;
+import static net.sashiro.compressedblocks.CompressedBlocks.MOD_ID;
 
 @SuppressWarnings("unused")
 public class CBFabricClient implements ClientModInitializer {
@@ -106,6 +106,6 @@ public class CBFabricClient implements ClientModInitializer {
         ItemGroupEvents.modifyEntriesEvent(CRATE_ITEMS_KEY).register(content -> content.acceptAll(itemStackCrates));
         ItemGroupEvents.modifyEntriesEvent(CRATE_ITEMS_KEY).register(content -> content.acceptAll(itemStackBlockCrates));
 
-        LOG.info("Successfully registered: {} Blocks and {} Crates!", itemStackBlocks.size(), itemStackCrates.size());
+        LOGGER.info("Successfully registered: {} Blocks and {} Crates!", itemStackBlocks.size(), itemStackCrates.size());
     }
 }

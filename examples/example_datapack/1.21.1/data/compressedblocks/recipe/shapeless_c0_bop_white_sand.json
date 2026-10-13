@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "compressedblocks:c0_bop_white_sand"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "biomesoplenty:white_sand"
+  }
+}

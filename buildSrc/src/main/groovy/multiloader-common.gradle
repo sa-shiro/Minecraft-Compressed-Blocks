@@ -1,3 +1,4 @@
+//file:noinspection SpellCheckingInspection
 plugins {
     id 'java-library'
     id 'maven-publish'
@@ -10,7 +11,6 @@ base {
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(java_version)
     withSourcesJar()
-    //withJavadocJar()
 }
 
 repositories {
@@ -39,9 +39,14 @@ repositories {
         filter { includeGroup('org.parchmentmc.data') }
     }
     maven {
+        name = 'Forge'
+        url = uri('https://maven.minecraftforge.net')
+    }
+    maven {
         name = 'BlameJared'
         url = 'https://maven.blamejared.com'
     }
+    // Forge Config Api Port
     maven {
         name = "Fuzs Mod Resources"
         url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
@@ -85,43 +90,61 @@ jar {
     }
 }
 
-// Ignoring javadoc warnings as it'll spam the console with no comment warnings.
-//tasks.withType(Javadoc).configureEach {
-//    options.addStringOption('Xdoclint:none', '-quiet')
-//}
-
 processResources {
     def expandProps = [
+            // Project / Minecraft
             "java_version"                 : java_version,
             "version"                      : version,
-            "group"                        : project.group, //Else we target the task's group.
+            "group"                        : project.group, // Else we target the task's group.
             "minecraft_version"            : minecraft_version,
             "minecraft_version_range"      : minecraft_version_range,
             "logo_file"                    : logo_file,
-            "fabric_version"               : fabric_version,
-            "fabric_loader_version"        : fabric_loader_version,
-            "fabric_mc_version_range"      : fabric_mc_version_range,
+
+            // Mappings / Toolchain
+            "mappings_version"             : mappings_version,
+            "neo_form_version"             : neo_form_version,
+            "parchment_minecraft"          : parchment_minecraft,
+            "parchment_version"            : parchment_version,
+
+            // Forge
+            "forge_version"                : forge_version,
+            "forge_loader_version_range"   : forge_loader_version_range,
+
+            // NeoForge
             "neoforge_version"             : neoforge_version,
             "neoforge_loader_version_range": neoforge_loader_version_range,
+
+            // Fabric
+            "fabric_api_version"           : fabric_api_version,
+            "fabric_loader_version"        : fabric_loader_version,
+            "fabric_mc_version_range"      : fabric_mc_version_range,
+
+            // Configuration / UI
+            "forgeconfigapi_version"       : forgeconfigapi_version,
+            "modmenu_version"              : modmenu_version,
+
+            // Mod Metadata
             "mod_name"                     : mod_name,
             "mod_author"                   : mod_author,
             "mod_id"                       : mod_id,
             "mod_license"                  : mod_license,
             "mod_author_email"             : mod_author_email,
             "mod_description"              : mod_description,
+
+            // Distribution / Project Links
             "curseforge_page"              : curseforge_page,
             "modrinth_page"                : modrinth_page,
             "source"                       : project.source,
             "update_url"                   : update_url,
-            "homepage"                     : homepage
+            "homepage"                     : homepage,
+            "discord"                      : discord
     ]
 
     filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', 'META-INF/neoforge.mods.toml', '*.mixins.json']) {
         expand expandProps
     }
-    inputs.properties(expandProps)
 
-    exclude("**/.cache/**")
+    inputs.properties(expandProps)
 }
 
 publishing {

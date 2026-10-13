@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/c2_bop_white_sand_edition",
+  "criteria": {
+    "get_c3_bop_white_sand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c3_bop_white_sand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Compression Level 4 for White Sand!",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c3_bop_white_sand"
+    },
+    "title": "This Is Getting Stupid"
+  },
+  "requirements": [
+    [
+      "get_c3_bop_white_sand"
+    ]
+  ],
+  "rewards": {
+    "experience": 12
+  },
+  "sends_telemetry_event": true
+}

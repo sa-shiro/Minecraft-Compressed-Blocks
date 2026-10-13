@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "compressedblocks:crated_apple"
+  ],
+  "result": {
+    "count": 9,
+    "id": "minecraft:apple"
+  }
+}

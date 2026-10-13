@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/mega_crated__apple_edition",
+  "criteria": {
+    "get_giga_crated_apple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:giga_crated_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "You have reached Crate Level 10 for Apples!",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:giga_crated_apple"
+    },
+    "title": "There Is No More Room"
+  },
+  "requirements": [
+    [
+      "get_giga_crated_apple"
+    ]
+  ],
+  "rewards": {
+    "experience": 200
+  },
+  "sends_telemetry_event": true
+}

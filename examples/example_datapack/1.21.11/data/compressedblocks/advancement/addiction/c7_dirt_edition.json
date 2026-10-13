@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/c6_dirt_edition",
+  "criteria": {
+    "get_c7_dirt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c7_dirt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "You have reached Compression Level 8 for Dirt!",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c7_dirt"
+    },
+    "title": "You Have A Problem"
+  },
+  "requirements": [
+    [
+      "get_c7_dirt"
+    ]
+  ],
+  "rewards": {
+    "experience": 80
+  },
+  "sends_telemetry_event": true
+}

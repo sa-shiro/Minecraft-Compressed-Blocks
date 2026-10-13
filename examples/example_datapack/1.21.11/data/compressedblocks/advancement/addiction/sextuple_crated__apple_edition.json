@@ -1,0 +1,34 @@
+{
+  "parent": "compressedblocks:addiction/quintuple_crated__apple_edition",
+  "criteria": {
+    "get_sextuple_crated_apple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:sextuple_crated_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Crate Level 6 for Apples!",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:sextuple_crated_apple"
+    },
+    "title": "Where Did You Get All That?"
+  },
+  "requirements": [
+    [
+      "get_sextuple_crated_apple"
+    ]
+  ],
+  "rewards": {
+    "experience": 32
+  },
+  "sends_telemetry_event": true
+}

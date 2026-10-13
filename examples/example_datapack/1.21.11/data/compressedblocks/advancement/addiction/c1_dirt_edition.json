@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/c0_dirt_edition",
+  "criteria": {
+    "get_c1_dirt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c1_dirt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Compression Level 2 for Dirt!",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c1_dirt"
+    },
+    "title": "Getting Serious"
+  },
+  "requirements": [
+    [
+      "get_c1_dirt"
+    ]
+  ],
+  "rewards": {
+    "experience": 4
+  },
+  "sends_telemetry_event": true
+}

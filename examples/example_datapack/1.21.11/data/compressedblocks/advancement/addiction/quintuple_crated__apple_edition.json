@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/quadruple_crated__apple_edition",
+  "criteria": {
+    "get_quintuple_crated_apple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:quintuple_crated_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Crate Level 5 for Apples!",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:quintuple_crated_apple"
+    },
+    "title": "This Is Excessive"
+  },
+  "requirements": [
+    [
+      "get_quintuple_crated_apple"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  },
+  "sends_telemetry_event": true
+}

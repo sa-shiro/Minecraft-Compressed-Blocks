@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/c1_bop_white_sand_edition",
+  "criteria": {
+    "get_c2_bop_white_sand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c2_bop_white_sand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Compression Level 3 for White Sand!",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c2_bop_white_sand"
+    },
+    "title": "Okay, That's A Lot"
+  },
+  "requirements": [
+    [
+      "get_c2_bop_white_sand"
+    ]
+  ],
+  "rewards": {
+    "experience": 7
+  },
+  "sends_telemetry_event": true
+}

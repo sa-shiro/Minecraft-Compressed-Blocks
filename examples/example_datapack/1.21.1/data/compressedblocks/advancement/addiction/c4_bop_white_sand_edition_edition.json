@@ -1,0 +1,33 @@
+{
+  "parent": "compressedblocks:addiction/c3_bop_white_sand_edition",
+  "criteria": {
+    "get_c4_bop_white_sand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "compressedblocks:c4_bop_white_sand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "You have reached Compression Level 5 for White Sand!",
+    "icon": {
+      "count": 1,
+      "id": "compressedblocks:c4_bop_white_sand"
+    },
+    "title": "Storage Is Not The Problem"
+  },
+  "requirements": [
+    [
+      "get_c4_bop_white_sand"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  },
+  "sends_telemetry_event": true
+}
