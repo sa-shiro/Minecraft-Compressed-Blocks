@@ -15,16 +15,13 @@ configurations {
 
 dependencies {
     compileOnly(project(':common')) {
-        capabilities {
-            requireCapability "$group:$mod_id"
-        }
         def loaderAttribute = Attribute.of('io.github.mcgradleconventions.loader', String)
         attributes {
             attribute(loaderAttribute, 'common')
         }
     }
-    commonJava project(path: ':common', configuration: 'commonJava')
-    commonResources project(path: ':common', configuration: 'commonResources')
+    commonJava(project(path: ':common', configuration: 'commonJava'))
+    commonResources(project(path: ':common', configuration: 'commonResources'))
 }
 
 tasks.named('compileJava', JavaCompile) {
@@ -43,10 +40,6 @@ tasks.named('sourcesJar', Jar) {
     dependsOn(configurations.commonResources)
     from(configurations.commonResources)
 }
-
-// IntelliJ no longer downloads javadocs and sources by default.
-// This tells Gradle to force IDEA to do it.
-idea.module { downloadJavadoc = downloadSources = true }
 
 allprojects { project ->
     if (project.name != 'buildSrc') {

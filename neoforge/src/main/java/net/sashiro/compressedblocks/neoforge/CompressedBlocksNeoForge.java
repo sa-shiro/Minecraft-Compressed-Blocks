@@ -17,7 +17,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.sashiro.compressedblocks.CBConfig;
 import net.sashiro.compressedblocks.CompressedBlocks;
-import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.block.CompressedBlockFactory;
 import net.sashiro.compressedblocks.crate.CrateFactory;
 import net.sashiro.compressedblocks.platform.registration.BlockRegistration;
@@ -28,6 +27,25 @@ import java.util.function.Supplier;
 import static net.sashiro.compressedblocks.CompressedBlocks.LOGGER;
 import static net.sashiro.compressedblocks.CompressedBlocks.MOD_ID;
 
+/**
+ * NeoForge entry point for Compressed Blocks.
+ *
+ * <p>Initializes the common mod infrastructure, registers the startup configuration,
+ * and attaches the deferred registries for compressed blocks, block items, crates,
+ * crate items, and creative mode tabs to the mod event bus.</p>
+ *
+ * <p>Block and crate registration is handled through a {@link RegisterEvent} listener.
+ * The {@code finished} flag prevents the registration logic and initialization log
+ * from executing more than once.</p>
+ *
+ * @see CompressedBlocks
+ * @see CBConfig
+ * @see BlockRegistration
+ * @see CrateRegistration
+ * @see CompressedBlockFactory
+ * @see CrateFactory
+ * @see <a href="https://docs.neoforged.net/">NeoForge Documentation</a>
+ */
 @SuppressWarnings("unused")
 @Mod(CompressedBlocks.MOD_ID)
 public class CompressedBlocksNeoForge {
@@ -80,7 +98,7 @@ public class CompressedBlocksNeoForge {
         if (!finished) {
             BlockRegistration.registerBlocks();
             CrateRegistration.registerCrates();
-            LOGGER.info("Compressed Blocks NeoForge mod initialized successfully. Registered {} Blocks and {} Crates.", Constants.BLOCKS.size(), Constants.CRATE_BLOCKS.size() + Constants.CRATE_ITEMS.size());
+            LOGGER.info("Compressed Blocks NeoForge mod initialized successfully. Registered {} Blocks and {} Crates.", CompressedBlocks.COMPRESSED_BLOCKS.size(), CompressedBlocks.CRATE_BLOCKS.size() + CompressedBlocks.CRATE_ITEMS.size());
 
             finished = true;
         }

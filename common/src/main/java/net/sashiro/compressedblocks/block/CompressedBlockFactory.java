@@ -11,8 +11,6 @@ import net.sashiro.compressedblocks.util.VersionUtils;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static net.sashiro.compressedblocks.Constants.*;
-
 /**
  * The CompressedBlockFactory class is responsible for creating and managing a list of blocks based on the entries in the CompressionCatalog.
  * It checks if each block is enabled and creates the appropriate block type (normal, rotational, or glass).
@@ -71,13 +69,13 @@ public class CompressedBlockFactory {
      * @return An array of BasicCompressedBlock instances.
      */
     public static BasicCompressedBlock[] createBlocks(CompressionEntry entry) {
-        int maxBlockCompressionLevel = Math.min(entry.maxCompressionLevel(), MAX_COMPRESSION_LEVEL);
+        int maxBlockCompressionLevel = Math.min(entry.maxCompressionLevel(), Services.PLATFORM.maxCompressionLevel());
 
         BasicCompressedBlock[] result = new BasicCompressedBlock[maxBlockCompressionLevel];
 
         for (int i = 0; i < maxBlockCompressionLevel; i++) {
-            float baseHardness = HARDNESS[i];
-            float baseResistance = RESISTANCE[i];
+            float baseHardness = Services.PLATFORM.getHardnessArray()[i];
+            float baseResistance = Services.PLATFORM.getResistanceArray()[i];
 
             float factor = entry.hardnessResistanceMultiplier();
 
@@ -98,12 +96,12 @@ public class CompressedBlockFactory {
      * @return An array of RotationalCompressedBlock instances.
      */
     public static RotationalCompressedBlock[] createRotationalBlocks(CompressionEntry entry) {
-        int maxBlockCompressionLevel = Math.min(entry.maxCompressionLevel(), MAX_COMPRESSION_LEVEL);
+        int maxBlockCompressionLevel = Math.min(entry.maxCompressionLevel(), Services.PLATFORM.maxCompressionLevel());
 
         RotationalCompressedBlock[] result = new RotationalCompressedBlock[maxBlockCompressionLevel];
         for (int i = 0; i < maxBlockCompressionLevel; i++) {
-            float blockHardness = HARDNESS[i] * entry.hardnessResistanceMultiplier();
-            float blockResistance = RESISTANCE[i] * entry.hardnessResistanceMultiplier();
+            float blockHardness = Services.PLATFORM.getHardnessArray()[i] * entry.hardnessResistanceMultiplier();
+            float blockResistance = Services.PLATFORM.getResistanceArray()[i] * entry.hardnessResistanceMultiplier();
             result[i] = new RotationalCompressedBlock(BlockBehaviour.Properties.of().strength(blockHardness, blockResistance), i, ResourceUtils.createBlockId("c" + i + "_" + entry.id()));
         }
         return result;
@@ -118,12 +116,12 @@ public class CompressedBlockFactory {
      * @return An array of BasicCompressedBlock instances with glass properties.
      */
     public static BasicCompressedBlock[] createGlassBlocks(CompressionEntry entry) {
-        int maxBlockCompressionLevel = Math.min(entry.maxCompressionLevel(), MAX_COMPRESSION_LEVEL);
+        int maxBlockCompressionLevel = Math.min(entry.maxCompressionLevel(), Services.PLATFORM.maxCompressionLevel());
 
         BasicCompressedBlock[] result = new BasicCompressedBlock[maxBlockCompressionLevel];
         for (int i = 0; i < maxBlockCompressionLevel; i++) {
-            float blockHardness = HARDNESS[i] * entry.hardnessResistanceMultiplier();
-            float blockResistance = RESISTANCE[i] * entry.hardnessResistanceMultiplier();
+            float blockHardness = Services.PLATFORM.getHardnessArray()[i] * entry.hardnessResistanceMultiplier();
+            float blockResistance = Services.PLATFORM.getResistanceArray()[i] * entry.hardnessResistanceMultiplier();
 
             result[i] = new BasicCompressedBlock(ResourceUtils.createBlockId("c" + i + "_" + entry.id()), BlockBehaviour.Properties.of().noOcclusion().strength(blockHardness, blockResistance), i, false);
         }

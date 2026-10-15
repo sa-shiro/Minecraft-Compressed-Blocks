@@ -20,7 +20,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
 import net.sashiro.compressedblocks.CompressedBlocks;
-import net.sashiro.compressedblocks.Constants;
 import net.sashiro.compressedblocks.block.CompressedBlockFactory;
 import net.sashiro.compressedblocks.crate.CrateFactory;
 import net.sashiro.compressedblocks.platform.registration.BlockRegistration;
@@ -31,6 +30,24 @@ import java.util.function.Supplier;
 import static net.sashiro.compressedblocks.CompressedBlocks.LOGGER;
 import static net.sashiro.compressedblocks.CompressedBlocks.MOD_ID;
 
+/**
+ * Forge entry point for Compressed Blocks.
+ *
+ * <p>Initializes the common mod infrastructure and registers the mod's deferred
+ * registries for compressed blocks, block items, crates, crate items, and creative
+ * mode tabs.</p>
+ *
+ * <p>Block and crate registration is performed when the block registry is being
+ * processed. The {@code finished} flag ensures that this registration and the
+ * initialization log are executed only once.</p>
+ *
+ * @see CompressedBlocks
+ * @see BlockRegistration
+ * @see CrateRegistration
+ * @see CompressedBlockFactory
+ * @see CrateFactory
+ * @see <a href="https://docs.minecraftforge.net/en/latest/">Forge Documentation</a>
+ */
 @SuppressWarnings("unused")
 @Mod(MOD_ID)
 public class CompressedBlocksForge {
@@ -83,7 +100,7 @@ public class CompressedBlocksForge {
 
             BlockRegistration.registerBlocks();
             CrateRegistration.registerCrates();
-            LOGGER.info("Compressed Blocks Forge mod initialized successfully. Registered {} Blocks and {} Crates.", Constants.BLOCKS.size(), Constants.CRATE_BLOCKS.size() + Constants.CRATE_ITEMS.size());
+            LOGGER.info("Compressed Blocks Forge mod initialized successfully. Registered {} Blocks and {} Crates.", CompressedBlocks.COMPRESSED_BLOCKS.size(), CompressedBlocks.CRATE_BLOCKS.size() + CompressedBlocks.CRATE_ITEMS.size());
 
             finished = true;
         }

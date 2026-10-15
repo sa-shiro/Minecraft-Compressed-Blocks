@@ -53,20 +53,6 @@ repositories {
     }
 }
 
-// Declare capabilities on the outgoing configurations.
-// Read more about capabilities here: https://docs.gradle.org/current/userguide/component_capabilities.html#sec:declaring-additional-capabilities-for-a-local-component
-['apiElements', 'runtimeElements', 'sourcesElements'].each { variant ->
-    configurations."$variant".outgoing {
-        capability("$group:${project.name}:$version")
-        capability("$group:${base.archivesName.get()}:$version")
-        capability("$group:$mod_id-${project.name}-${minecraft_version}:$version")
-        capability("$group:$mod_id:$version")
-    }
-    publishing.publications.configureEach {
-        suppressPomMetadataWarningsFor(variant)
-    }
-}
-
 sourcesJar {
     from(rootProject.file("LICENSE.md"))
 }
@@ -93,55 +79,61 @@ jar {
 processResources {
     def expandProps = [
             // Project / Minecraft
-            "java_version"                 : java_version,
-            "version"                      : version,
-            "group"                        : project.group, // Else we target the task's group.
-            "minecraft_version"            : minecraft_version,
-            "minecraft_version_range"      : minecraft_version_range,
-            "logo_file"                    : logo_file,
+            "java_version"            : java_version,
+            "version"                 : version,
+            "group"                   : project.group, // Else we target the task's group.
+            "minecraft_version"       : minecraft_version,
+            "minecraft_version_range" : minecraft_version_range,
+            "logo_file"               : logo_file,
 
             // Mappings / Toolchain
-            "mappings_version"             : mappings_version,
-            "neo_form_version"             : neo_form_version,
-            "parchment_minecraft"          : parchment_minecraft,
-            "parchment_version"            : parchment_version,
+            "neo_form_version"        : neo_form_version,
 
             // Forge
-            "forge_version"                : forge_version,
-            "forge_loader_version_range"   : forge_loader_version_range,
+            "forge_version"           : forge_version,
+            "forge_version_range"     : forge_version_range,
 
             // NeoForge
-            "neoforge_version"             : neoforge_version,
-            "neoforge_loader_version_range": neoforge_loader_version_range,
+            "neoforge_version"        : neoforge_version,
+            "neoforge_version_range"  : neoforge_version_range,
 
             // Fabric
-            "fabric_api_version"           : fabric_api_version,
-            "fabric_loader_version"        : fabric_loader_version,
-            "fabric_mc_version_range"      : fabric_mc_version_range,
+            "fabric_api_version"      : fabric_api_version,
+            "fabric_api_version_range": fabric_api_version_range,
+            "fabric_loader_version"   : fabric_loader_version,
+            "fabric_mc_version_range" : fabric_mc_version_range,
 
             // Configuration / UI
-            "forgeconfigapi_version"       : forgeconfigapi_version,
-            "modmenu_version"              : modmenu_version,
+            "forgeconfigapi_version"  : forgeconfigapi_version,
+            "modmenu_version"         : modmenu_version,
 
             // Mod Metadata
-            "mod_name"                     : mod_name,
-            "mod_author"                   : mod_author,
-            "mod_id"                       : mod_id,
-            "mod_license"                  : mod_license,
-            "mod_author_email"             : mod_author_email,
-            "mod_description"              : mod_description,
+            "mod_name"                : mod_name,
+            "mod_author"              : mod_author,
+            "mod_id"                  : mod_id,
+            "mod_license"             : mod_license,
+            "mod_author_email"        : mod_author_email,
+            "mod_description"         : mod_description,
 
             // Distribution / Project Links
-            "curseforge_page"              : curseforge_page,
-            "modrinth_page"                : modrinth_page,
-            "source"                       : project.source,
-            "update_url"                   : update_url,
-            "homepage"                     : homepage,
-            "discord"                      : discord
+            "curseforge_page"         : curseforge_page,
+            "modrinth_page"           : modrinth_page,
+            "source"                  : project.source,
+            "update_url"              : update_url,
+            "homepage"                : homepage,
+            "discord"                 : discord
     ]
 
-    filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', 'META-INF/neoforge.mods.toml', '*.mixins.json']) {
+    var jsonExpandProps = expandProps.collectEntries {
+        key, value -> [(key): value instanceof String ? value.replace('\n', '\\\\n') : value]
+    }
+
+    filesMatching(['META-INF/mods.toml', 'META-INF/neoforge.mods.toml']) {
         expand expandProps
+    }
+
+    filesMatching(['pack.mcmeta', 'fabric.mod.json', '*.mixins.json']) {
+        expand jsonExpandProps
     }
 
     inputs.properties(expandProps)

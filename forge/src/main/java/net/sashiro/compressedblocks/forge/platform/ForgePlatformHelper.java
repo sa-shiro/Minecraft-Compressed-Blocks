@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
 import net.minecraftforge.fml.loading.FMLPaths;
+import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.block.CompressedBlock;
 import net.sashiro.compressedblocks.compression.CompressionCatalog;
 import net.sashiro.compressedblocks.compression.CompressionEntry;
@@ -17,8 +18,6 @@ import net.sashiro.compressedblocks.util.ResourceUtils;
 import net.sashiro.compressedblocks.util.VersionUtils;
 
 import java.nio.file.Path;
-
-import static net.sashiro.compressedblocks.Constants.*;
 
 @SuppressWarnings("unused")
 public class ForgePlatformHelper implements PlatformHelper {
@@ -32,7 +31,7 @@ public class ForgePlatformHelper implements PlatformHelper {
 
     @Override
     public boolean isModLoaded(String modId) {
-        return ModList.get().isLoaded(modId);
+        return ModList.isLoaded(modId);
     }
 
     @Override
@@ -49,7 +48,7 @@ public class ForgePlatformHelper implements PlatformHelper {
 
         CompressedBlocksForge.BLOCKS.register(cbBlock.blockName(), () -> block);
         CompressedBlocksForge.ITEMS.register(cbBlock.blockName(), () -> new BlockItem(block, properties));
-        BLOCKS.add(block);
+        CompressedBlocks.COMPRESSED_BLOCKS.add(block);
     }
 
 
@@ -58,7 +57,7 @@ public class ForgePlatformHelper implements PlatformHelper {
         String crateName = ResourceUtils.removeCrateName(crateItem.getCrateName());
         if (!isBlockEnabled(crateName)) return;
         CompressedBlocksForge.CRATE_ITEMS.register(crateItem.getCrateName(), () -> crateItem);
-        CRATE_ITEMS.add(crateItem);
+        CompressedBlocks.CRATE_ITEMS.add(crateItem);
     }
 
     @Override
@@ -70,7 +69,7 @@ public class ForgePlatformHelper implements PlatformHelper {
 
         CompressedBlocksForge.CRATE_BLOCKS.register(crateBlock.blockName(), () -> crateBlock);
         CompressedBlocksForge.CRATE_ITEMS.register(crateBlock.blockName(), () -> new BlockItem(crateBlock, properties));
-        CRATE_BLOCKS.add(crateBlock);
+        CompressedBlocks.CRATE_BLOCKS.add(crateBlock);
     }
 
 

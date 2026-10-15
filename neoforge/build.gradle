@@ -12,10 +12,6 @@ dependencies {
 neoForge {
     version = neoforge_version
 
-    parchment {
-        minecraftVersion = parchment_minecraft
-        mappingsVersion = parchment_version
-    }
     runs {
         configureEach {
             systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
@@ -23,11 +19,13 @@ neoForge {
         }
         client {
             client()
-            gameDirectory = project.file('runs/client')
+            this.file('runs/client').createParentDirectories()
+            gameDirectory = this.mkdir(this.file('runs/client'))
         }
         server {
             server()
-            gameDirectory = project.file('runs/server')
+            this.file('runs/server').createParentDirectories()
+            gameDirectory = this.mkdir(this.file('runs/server'))
         }
     }
     mods {
@@ -42,7 +40,7 @@ sourceSets.main.resources { srcDir '../fabric/src/main/generated' }
 // Implement mcgradleconventions loader attribute
 def loaderAttribute = Attribute.of('io.github.mcgradleconventions.loader', String)
 ['apiElements', 'runtimeElements', 'sourcesElements'].each { variant ->
-    configurations.named("$variant") {
+    configurations.named(variant) {
         attributes {
             attribute(loaderAttribute, 'neoforge')
         }
@@ -50,7 +48,7 @@ def loaderAttribute = Attribute.of('io.github.mcgradleconventions.loader', Strin
 }
 sourceSets.configureEach {
     [it.compileClasspathConfigurationName, it.runtimeClasspathConfigurationName, it.getTaskName(null, 'jarJar')].each { variant ->
-        configurations.named("$variant") {
+        configurations.named(variant) {
             attributes {
                 attribute(loaderAttribute, 'neoforge')
             }

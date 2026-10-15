@@ -1,18 +1,21 @@
 package net.sashiro.compressedblocks.fabric.data.providers;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.advancements.criterion.InventoryChangeTrigger;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.triggers.InventoryChangeTrigger;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.sashiro.compressedblocks.Constants;
+import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.compression.CompressionCatalog;
 import net.sashiro.compressedblocks.compression.CompressionEntry;
 import net.sashiro.compressedblocks.util.ResourceUtils;
@@ -25,7 +28,7 @@ public class CBRecipeProvider extends FabricRecipeProvider {
 
     private static HolderGetter<Item> items;
 
-    public CBRecipeProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+    public CBRecipeProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
@@ -41,22 +44,15 @@ public class CBRecipeProvider extends FabricRecipeProvider {
         return false;
     }
 
-    private boolean isAvailable(String id) {
-        CompressionEntry entry = CompressionCatalog.getEntryById(ResourceUtils.removeCompressionName(id));
-        if (entry == null) return false;
-        return VersionUtils.isCompatibleWithCurrentVersion(entry);
-    }
-
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup, RecipeOutput exporter) {
-        items = registryLookup.lookupOrThrow(Registries.ITEM);
-
-        return new RecipeProvider(registryLookup, exporter) {
+    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, BootstrapContext<Recipe<?>> recipes, BootstrapContext<Advancement> advancements) {
+        items = registries.lookupOrThrow(Registries.ITEM);
+        return new RecipeProvider(recipes, advancements) {
             @Override
             public void buildRecipes() {
                 Block previousBlock = null;
 
-                for (Block currentBlock : Constants.BLOCKS) {
+                for (Block currentBlock : CompressedBlocks.COMPRESSED_BLOCKS) {
                     String blockName = ResourceUtils.removeNamespace(currentBlock.getDescriptionId());
 
                     if (!isAvailable(ResourceUtils.removeCompressionName(blockName))) continue;
@@ -74,15 +70,15 @@ public class CBRecipeProvider extends FabricRecipeProvider {
                         }
                     }
 
-                    makeShapedBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, currentBlock, previousBlock, blockName);
-                    makeShapelessBlockRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, previousBlock, currentBlock, blockName);
+                    makeShapedBlockRecipe(this.output, RecipeCategory.BUILDING_BLOCKS, currentBlock, previousBlock, blockName);
+                    makeShapelessBlockRecipe(this.output, RecipeCategory.BUILDING_BLOCKS, previousBlock, currentBlock, blockName);
 
                     previousBlock = currentBlock;
                 }
 
                 Item previousCrate = null;
 
-                for (Item currentCrate : Constants.CRATE_ITEMS) {
+                for (Item currentCrate : CompressedBlocks.CRATE_ITEMS) {
                     String crate_itemName = ResourceUtils.removeNamespace(currentCrate.getDescriptionId());
 
                     if (!isAvailable(ResourceUtils.removeCrateName(crate_itemName))) continue;
@@ -102,15 +98,15 @@ public class CBRecipeProvider extends FabricRecipeProvider {
                         }
                     }
 
-                    makeShapedCrateRecipe(exporter, RecipeCategory.MISC, currentCrate, previousCrate, crate_itemName);
-                    makeShapelessCrateRecipe(exporter, RecipeCategory.MISC, previousCrate, currentCrate, crate_itemName);
+                    makeShapedCrateRecipe(this.output, RecipeCategory.MISC, currentCrate, previousCrate, crate_itemName);
+                    makeShapelessCrateRecipe(this.output, RecipeCategory.MISC, previousCrate, currentCrate, crate_itemName);
 
                     previousCrate = currentCrate;
                 }
 
                 ItemLike previousCrateBlock = null;
 
-                for (Block currentBlock : Constants.CRATE_BLOCKS) {
+                for (Block currentBlock : CompressedBlocks.CRATE_BLOCKS) {
                     String crate_blockName = ResourceUtils.removeNamespace(currentBlock.getDescriptionId());
 
                     if (!isAvailable(ResourceUtils.removeCrateName(crate_blockName))) continue;
@@ -136,13 +132,19 @@ public class CBRecipeProvider extends FabricRecipeProvider {
                         }
                     }
 
-                    makeShapedCrateRecipe(exporter, RecipeCategory.MISC, currentBlock, previousCrateBlock, crate_blockName);
-                    makeShapelessCrateRecipe(exporter, RecipeCategory.MISC, previousCrateBlock, currentBlock, crate_blockName);
+                    makeShapedCrateRecipe(this.output, RecipeCategory.MISC, currentBlock, previousCrateBlock, crate_blockName);
+                    makeShapelessCrateRecipe(this.output, RecipeCategory.MISC, previousCrateBlock, currentBlock, crate_blockName);
 
                     previousCrateBlock = currentBlock;
                 }
             }
         };
+    }
+
+    private boolean isAvailable(String id) {
+        CompressionEntry entry = CompressionCatalog.getEntryById(ResourceUtils.removeCompressionName(id));
+        if (entry == null) return false;
+        return VersionUtils.isCompatibleWithCurrentVersion(entry);
     }
 
     /**

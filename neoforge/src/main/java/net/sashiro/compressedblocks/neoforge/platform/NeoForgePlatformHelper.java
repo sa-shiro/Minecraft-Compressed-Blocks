@@ -7,6 +7,7 @@ import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.fml.loading.FMLPaths;
 import net.sashiro.compressedblocks.CBConfig;
+import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.block.CompressedBlock;
 import net.sashiro.compressedblocks.crate.CrateBlock;
 import net.sashiro.compressedblocks.item.CrateItem;
@@ -15,8 +16,6 @@ import net.sashiro.compressedblocks.platform.services.PlatformHelper;
 import net.sashiro.compressedblocks.util.ResourceUtils;
 
 import java.nio.file.Path;
-
-import static net.sashiro.compressedblocks.Constants.*;
 
 @SuppressWarnings("unused")
 public class NeoForgePlatformHelper implements PlatformHelper {
@@ -47,7 +46,7 @@ public class NeoForgePlatformHelper implements PlatformHelper {
 
         CompressedBlocksNeoForge.BLOCKS.register(cbBlock.blockName(), () -> block);
         CompressedBlocksNeoForge.ITEMS.register(cbBlock.blockName(), () -> new BlockItem(block, properties));
-        BLOCKS.add(block);
+        CompressedBlocks.COMPRESSED_BLOCKS.add(block);
     }
 
     @Override
@@ -55,7 +54,7 @@ public class NeoForgePlatformHelper implements PlatformHelper {
         String crateName = ResourceUtils.removeCrateName(crateItem.getCrateName());
         if (!isBlockEnabled(crateName)) return;
         CompressedBlocksNeoForge.CRATE_ITEMS.register(crateItem.getCrateName(), () -> crateItem);
-        CRATE_ITEMS.add(crateItem);
+        CompressedBlocks.CRATE_ITEMS.add(crateItem);
     }
 
     @Override
@@ -67,7 +66,7 @@ public class NeoForgePlatformHelper implements PlatformHelper {
 
         CompressedBlocksNeoForge.CRATE_BLOCKS.register(crateBlock.blockName(), () -> crateBlock);
         CompressedBlocksNeoForge.CRATE_ITEMS.register(crateBlock.blockName(), () -> new BlockItem(crateBlock, properties));
-        CRATE_BLOCKS.add(crateBlock);
+        CompressedBlocks.CRATE_BLOCKS.add(crateBlock);
     }
 
     @Override

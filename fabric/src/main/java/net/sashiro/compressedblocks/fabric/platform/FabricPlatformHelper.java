@@ -17,8 +17,6 @@ import net.sashiro.compressedblocks.util.ResourceUtils;
 
 import java.nio.file.Path;
 
-import static net.sashiro.compressedblocks.Constants.*;
-
 public class FabricPlatformHelper implements PlatformHelper {
 
     @Override
@@ -45,7 +43,7 @@ public class FabricPlatformHelper implements PlatformHelper {
 
         Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(CompressedBlocks.MOD_ID, cbBlock.blockName()), block);
         Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(CompressedBlocks.MOD_ID, cbBlock.blockName()), new BlockItem(block, properties));
-        BLOCKS.add(block);
+        CompressedBlocks.COMPRESSED_BLOCKS.add(block);
     }
 
     @Override
@@ -53,7 +51,7 @@ public class FabricPlatformHelper implements PlatformHelper {
         String crateName = ResourceUtils.removeCrateName(crateItem.getCrateName());
         if (!isBlockEnabled(crateName)) return;
         Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(CompressedBlocks.MOD_ID, crateItem.getCrateName()), crateItem);
-        CRATE_ITEMS.add(crateItem);
+        CompressedBlocks.CRATE_ITEMS.add(crateItem);
     }
 
     @Override
@@ -65,7 +63,7 @@ public class FabricPlatformHelper implements PlatformHelper {
 
         Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(CompressedBlocks.MOD_ID, crateBlock.blockName()), crateBlock);
         Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(CompressedBlocks.MOD_ID, crateBlock.blockName()), new BlockItem(crateBlock, properties));
-        CRATE_BLOCKS.add(crateBlock);
+        CompressedBlocks.CRATE_BLOCKS.add(crateBlock);
     }
 
     @Override

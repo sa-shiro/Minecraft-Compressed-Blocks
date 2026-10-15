@@ -46,9 +46,8 @@ plugins {
 
 // This should match the folder name of the project, or else IDEA may complain (see https://youtrack.jetbrains.com/issue/IDEA-317606)
 rootProject.name = 'Compressed-Blocks'
+includeBuild('build-logic')
 include("common")
 include("fabric")
 include("neoforge")
-// Forge module has been permanently removed from this project as of [27.12.2025].
-// It will not be included in future builds.
 include("forge")

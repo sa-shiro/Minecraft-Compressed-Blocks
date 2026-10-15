@@ -1,12 +1,12 @@
 package net.sashiro.compressedblocks.fabric.data.providers;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.sashiro.compressedblocks.Constants;
+import net.sashiro.compressedblocks.CompressedBlocks;
 import net.sashiro.compressedblocks.compression.CompressionCatalog;
 import net.sashiro.compressedblocks.compression.CompressionEntry;
 import net.sashiro.compressedblocks.util.ResourceUtils;
@@ -17,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class CBLanguageProvider extends FabricLanguageProvider {
 
-    public CBLanguageProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+    public CBLanguageProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, registryLookup);
     }
 
@@ -39,7 +39,7 @@ public class CBLanguageProvider extends FabricLanguageProvider {
          * Add translations for all blocks and items in the Constants class.
          * The translation key is generated based on the block/item name, and the translation value is generated based on the block/item name and compression level.
          */
-        for (Block block : Constants.BLOCKS) {
+        for (Block block : CompressedBlocks.COMPRESSED_BLOCKS) {
             String name = ResourceUtils.removeNamespace(block.getDescriptionId());
             String name2 = "";
             ChatFormatting color = ResourceUtils.getRarityColor(ResourceUtils.getCompressionLevel(name));
@@ -56,7 +56,7 @@ public class CBLanguageProvider extends FabricLanguageProvider {
          * Add translations for all crate items and blocks in the Constants class.
          * The translation key is generated based on the crate item/block name, and the translation value is generated based on the crate item/block name and compression level.
          */
-        for (Item crate : Constants.CRATE_ITEMS) {
+        for (Item crate : CompressedBlocks.CRATE_ITEMS) {
             Item item = crate.asItem();
             String name = ResourceUtils.removeNamespace(item.getDescriptionId());
             String translation = ResourceUtils.capitalizeWords(name.replace("_", " "));
@@ -73,7 +73,7 @@ public class CBLanguageProvider extends FabricLanguageProvider {
          * Add translations for all crate blocks in the Constants class.
          * The translation key is generated based on the crate block name, and the translation value is generated based on the crate block name and compression level.
          */
-        for (Block crate : Constants.CRATE_BLOCKS) {
+        for (Block crate : CompressedBlocks.CRATE_BLOCKS) {
             String name = ResourceUtils.removeNamespace(crate.getDescriptionId());
             String translation = ResourceUtils.capitalizeWords(name.replace("_", " "));
             translation = ResourceUtils.pluralize(translation);

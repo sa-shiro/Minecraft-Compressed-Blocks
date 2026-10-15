@@ -13,9 +13,13 @@ jobs:
   publish:
     runs-on: windows-latest
     env:
-      JAVA_VERSION: 21
+      JAVA_VERSION: 25
       MINECRAFT_VERSIONS: |
-        1.21.11
+        26.1
+        26.1.1
+        26.1.2
+        26.2
+        26.3
     steps:
       - name: "Checkout repository"
         uses: actions/checkout@v7
@@ -75,7 +79,6 @@ jobs:
             fabric/build/libs/
           if-no-files-found: error
 
-      # Not using a matrix here because files should be uploaded in a specific order (forge -> neoforge -> fabric)
       - name: "Publish FORGE"
         uses: Kir-Antipov/mc-publish@v3.3
         with:

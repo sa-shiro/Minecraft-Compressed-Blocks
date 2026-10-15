@@ -15,8 +15,6 @@ import net.sashiro.compressedblocks.util.VersionUtils;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static net.sashiro.compressedblocks.Constants.MAX_CRATE_COMPRESSION_LEVEL;
-
 /**
  * The CrateFactory class is responsible for creating and managing a list of crate items and blocks based on the entries in the CompressionCatalog.
  * It checks if each crate item or block is enabled and creates the appropriate type (crate item or crate block).
@@ -72,7 +70,7 @@ public class CrateFactory {
      * @return An array of CrateItem instances.
      */
     private static CrateItem[] createItems(CompressionEntry entry) {
-        int maxCrateCompressionLevel = Math.min(entry.maxCompressionLevel(), MAX_CRATE_COMPRESSION_LEVEL);
+        int maxCrateCompressionLevel = Math.min(entry.maxCompressionLevel(), Services.PLATFORM.maxCrateCompressionLevel());
 
         CrateItem[] result = new CrateItem[maxCrateCompressionLevel];
 
@@ -97,7 +95,7 @@ public class CrateFactory {
      * @return An array of CrateBlock instances.
      */
     private static CrateBlock[] createBlocks(CompressionEntry entry) {
-        int maxCrateCompressionLevel = Math.min(entry.maxCompressionLevel(), MAX_CRATE_COMPRESSION_LEVEL);
+        int maxCrateCompressionLevel = Math.min(entry.maxCompressionLevel(), Services.PLATFORM.maxCrateCompressionLevel());
 
         CrateBlock[] result = new CrateBlock[maxCrateCompressionLevel];
 

@@ -34,11 +34,10 @@
   },
   "depends": {
     "fabricloader": ">=${fabric_loader_version}",
-    "fabric-api": ">=${fabric_api_version}",
-    "minecraft": ">=${minecraft_version}",
+    "fabric-api": "${fabric_api_version_range}",
+    "minecraft": "${fabric_mc_version_range}",
     "java": ">=${java_version}",
-    "forgeconfigapiport": "*",
-    "modmenu": "*"
+    "forgeconfigapiport": "*"
   },
   "suggests": {},
   "custom": {

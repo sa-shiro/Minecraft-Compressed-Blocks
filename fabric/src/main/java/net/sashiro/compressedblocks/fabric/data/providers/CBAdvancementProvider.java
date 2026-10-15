@@ -1,13 +1,13 @@
 package net.sashiro.compressedblocks.fabric.data.providers;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.AdvancementType;
-import net.minecraft.advancements.criterion.InventoryChangeTrigger;
-import net.minecraft.advancements.criterion.ItemPredicate;
+import net.minecraft.advancements.predicates.ItemPredicate;
+import net.minecraft.advancements.triggers.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -81,7 +81,7 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
             "There Is No More Room"
     };
 
-    public CBAdvancementProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
+    public CBAdvancementProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(output, registryLookup);
     }
 
@@ -103,7 +103,6 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
                         item,
                         Component.literal(title),
                         Component.literal(description),
-                        null,
                         getAdvancementType(level),
                         true,
                         announce,
@@ -114,14 +113,14 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
                         InventoryChangeTrigger.TriggerInstance.hasItems(item)
                 )
                 .rewards(AdvancementRewards.Builder.experience(experienceReward))
-                .save(consumer, "compressedblocks:" + path);
+                .save(consumer, Identifier.fromNamespaceAndPath(MOD_ID, path));
     }
 
     @Override
     public void generateAdvancement(HolderLookup.@NonNull Provider registryLookup, @NonNull Consumer<AdvancementHolder> consumer) {
 
         AdvancementHolder addiction_root = Advancement.Builder.advancement()
-                .display(
+                .rootDisplay(
                         Items.DIAMOND,
                         Component.literal("Block Addiction"),
                         Component.literal("The War of Addiction"),
@@ -135,10 +134,10 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
                         "crafting_table",
                         InventoryChangeTrigger.TriggerInstance.hasItems(Items.CRAFTING_TABLE)
                 )
-                .save(consumer, "compressedblocks:addiction/root");
+                .save(consumer, Identifier.fromNamespaceAndPath(MOD_ID, "addiction/root"));
 
         AdvancementHolder compression_root = Advancement.Builder.advancement()
-                .display(
+                .rootDisplay(
                         Items.BEDROCK,
                         Component.literal("Compression"),
                         Component.literal("The way of compression!"),
@@ -152,7 +151,7 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
                         "crafting_table",
                         InventoryChangeTrigger.TriggerInstance.hasItems(Items.CRAFTING_TABLE)
                 )
-                .save(consumer, "compressedblocks:compression/root");
+                .save(consumer, Identifier.fromNamespaceAndPath(MOD_ID, "compression/root"));
 
 
         // Block Addiction
@@ -219,7 +218,6 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
                             compressedBlock,
                             Component.literal(BLOCK_INITIAL_COMPRESSION_TITLES[i]),
                             Component.literal("Compress a block to level " + (i + 1) + "!"),
-                            null,
                             AdvancementType.TASK,
                             true,
                             true,
@@ -230,7 +228,7 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
                             InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(registryLookup.lookupOrThrow(Registries.ITEM), CBTags.getCompressionTag(i)))
                     )
                     .rewards(AdvancementRewards.Builder.experience(COMPRESSION_XP[i]))
-                    .save(consumer, "compressedblocks:compression/c" + i);
+                    .save(consumer, Identifier.fromNamespaceAndPath(MOD_ID, "compression/c" + i));
         }
 
         // Compression: Crates
@@ -247,7 +245,6 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
                             crateItem,
                             Component.literal(CRATE_INITIAL_COMPRESSION_TITLES[i]),
                             Component.literal("Obtain a crate compressed to level " + (i + 1) + "!"),
-                            null,
                             AdvancementType.TASK,
                             true,
                             true,
@@ -258,7 +255,7 @@ public class CBAdvancementProvider extends FabricAdvancementProvider {
                             InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(registryLookup.lookupOrThrow(Registries.ITEM), CBTags.getCrateTag(i)))
                     )
                     .rewards(AdvancementRewards.Builder.experience(COMPRESSION_XP[i]))
-                    .save(consumer, "compressedblocks:compression/" + ResourceUtils.getCratePrefix(i).replaceAll("_$", ""));
+                    .save(consumer, Identifier.fromNamespaceAndPath(MOD_ID, "compression/" + ResourceUtils.getCratePrefix(i).replaceAll("_$", "")));
         }
     }
 }
